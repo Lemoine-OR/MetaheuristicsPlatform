@@ -144,15 +144,42 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           RELEASE_TAG: ${{ steps.release_info.outputs.tag }}
         run: |
+          $ErrorActionPreference = "Stop"
+
           $remoteTag = & git ls-remote --tags --refs origin "refs/tags/$env:RELEASE_TAG"
-          if ($LASTEXITCODE -ne 0) { throw "Unable to query remote Git tags." }
+          $gitExitCode = $LASTEXITCODE
+
+          if ($gitExitCode -ne 0) {
+            throw "Unable to query remote Git tags."
+          }
+
           if (-not [string]::IsNullOrWhiteSpace(($remoteTag | Out-String).Trim())) {
             throw "Git tag '$env:RELEASE_TAG' already exists."
           }
-          & gh release view $env:RELEASE_TAG --repo $env:GITHUB_REPOSITORY *> $null
-          if ($LASTEXITCODE -eq 0) {
+
+          $headers = @{
+            Accept = "application/vnd.github+json"
+            Authorization = "Bearer $env:GH_TOKEN"
+            "X-GitHub-Api-Version" = "2022-11-28"
+          }
+
+          $releaseUrl =
+            "https://api.github.com/repos/$env:GITHUB_REPOSITORY/releases/tags/$env:RELEASE_TAG"
+
+          $response = Invoke-WebRequest `
+            -Uri $releaseUrl `
+            -Headers $headers `
+            -SkipHttpErrorCheck
+
+          if ($response.StatusCode -eq 200) {
             throw "GitHub Release '$env:RELEASE_TAG' already exists."
           }
+
+          if ($response.StatusCode -ne 404) {
+            throw "Unable to query GitHub Release '$env:RELEASE_TAG' (HTTP $($response.StatusCode))."
+          }
+
+          Write-Host "No existing Git tag or GitHub Release found for '$env:RELEASE_TAG'."
 
       - name: Upload release bundle as workflow artifact
         uses: actions/upload-artifact@v7
