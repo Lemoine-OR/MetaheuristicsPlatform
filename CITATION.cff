@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use MetaheuristicsPlatform in scientific work, please cite the software and the original papers for the algorithms you use."
+title: "MetaheuristicsPlatform"
+type: software
+authors:
+  - family-names: "Lemoine"
+    given-names: "David"
+version: "0.19.0"
+license: MIT
+repository-code: "https://github.com/Lemoine-OR/MetaheuristicsPlatform"
+url: "https://lemoine-or.github.io/MetaheuristicsPlatform/"

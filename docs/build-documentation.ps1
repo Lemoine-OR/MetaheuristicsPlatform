@@ -1,0 +1,207 @@
+[CmdletBinding()]
+param(
+    [string]$Root = (Split-Path -Parent $PSScriptRoot),
+    [switch]$SkipDoxygenIfUnavailable
+)
+
+$ErrorActionPreference = "Stop"
+Set-StrictMode -Version Latest
+
+function Html([string]$value) {
+    return [System.Net.WebUtility]::HtmlEncode($value)
+}
+
+function Write-Utf8([string]$path, [string]$content) {
+    $directory = Split-Path -Parent $path
+    if ($directory -and -not (Test-Path $directory)) {
+        New-Item -ItemType Directory -Force -Path $directory | Out-Null
+    }
+
+    [System.IO.File]::WriteAllText(
+        $path,
+        $content,
+        [System.Text.UTF8Encoding]::new($false))
+}
+
+function PageShell(
+    [string]$title,
+    [string]$body,
+    [string]$relativePrefix = "") {
+
+    $logo = "${relativePrefix}assets/metaheuristicsplatform-logo.svg"
+    $css = "${relativePrefix}assets/site.css"
+    $homePage = "${relativePrefix}index.html"
+    $api = "${relativePrefix}api/index.html"
+
+    return @"
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>$(Html $title) Â· MetaheuristicsPlatform</title>
+<link rel="stylesheet" href="$css">
+<script>
+window.MathJax = { tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] } };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<header><div class="wrap">
+<div class="brand"><a href="$homePage"><img src="$logo" alt="MetaheuristicsPlatform"></a></div>
+<nav>
+<a href="$homePage">Home</a>
+<a href="$homePage#algorithms">Algorithms</a>
+<a href="$homePage#families">Families</a>
+<a href="$api">API</a>
+<a href="https://github.com/Lemoine-OR/MetaheuristicsPlatform">GitHub</a>
+</nav>
+</div></header>
+<main class="wrap">
+$body
+</main>
+<footer><div class="wrap">MetaheuristicsPlatform Â· Lemoine-OR Algorithms Â· Clean. Scientific. Open.</div></footer>
+</body></html>
+"@
+}
+
+& (Join-Path $Root "docs\Test-DocumentationParity.ps1") -Root $Root
+
+$catalog =
+    Get-Content (Join-Path $Root "docs\algorithm-catalog.json") -Raw |
+    ConvertFrom-Json
+
+$site =
+    Join-Path $Root "Documentation\site"
+
+if (Test-Path $site) {
+    Remove-Item $site -Recurse -Force
+}
+
+New-Item -ItemType Directory -Force -Path $site | Out-Null
+New-Item -ItemType Directory -Force -Path (Join-Path $site "assets") | Out-Null
+New-Item -ItemType Directory -Force -Path (Join-Path $site "algorithms") | Out-Null
+New-Item -ItemType Directory -Force -Path (Join-Path $site "families") | Out-Null
+
+Copy-Item (Join-Path $Root "docs\portal\site.css") (Join-Path $site "assets\site.css") -Force
+Copy-Item (Join-Path $Root "docs\assets\metaheuristicsplatform-logo.svg") (Join-Path $site "assets\metaheuristicsplatform-logo.svg") -Force
+Copy-Item (Join-Path $Root "docs\assets\algorithms-icon.svg") (Join-Path $site "assets\algorithms-icon.svg") -Force
+Copy-Item (Join-Path $Root "docs\algorithm-catalog.json") (Join-Path $site "algorithm-catalog.json") -Force
+
+$familyCards = New-Object System.Collections.Generic.List[string]
+foreach ($family in @($catalog.families)) {
+    $count = @($catalog.algorithms | Where-Object category -eq $family.id).Count
+    $familyCards.Add(
+        "<div class='family'><h3><a href='families/$($family.id).html'>$(Html $family.name)</a></h3><div class='meta'>$(Html $family.description)<br><strong>$count public method(s)</strong></div></div>")
+}
+
+$algorithmCards = New-Object System.Collections.Generic.List[string]
+foreach ($algorithm in @($catalog.algorithms)) {
+    $composition = if ($algorithm.requiresComposition) { "<span class='badge'>composition</span>" } else { "" }
+    $algorithmCards.Add(
+        "<div class='card'><h3><a href='algorithms/$($algorithm.id).html'>$(Html $algorithm.name)</a>$composition</h3><div class='meta'>$(Html $algorithm.family)<br>$(Html $algorithm.time)<br>$(Html $algorithm.space)</div><span class='id'>$(Html $algorithm.id)</span></div>")
+}
+
+$homeBody = @"
+<section class="hero"><div class="wrap">
+<h1>MetaheuristicsPlatform</h1>
+<p>Fast, scientific and reusable C#/.NET metaheuristics with one generic lifecycle, stable catalog IDs, literature-backed implementations and mandatory mathematical documentation.</p>
+</div></section>
+<h2 id="families">Choose a family</h2>
+<div class="family-grid">$($familyCards -join "`n")</div>
+<h2 id="algorithms">All algorithms</h2>
+<div class="grid">$($algorithmCards -join "`n")</div>
+"@
+
+Write-Utf8 (Join-Path $site "index.html") (PageShell "Home" $homeBody "")
+
+foreach ($family in @($catalog.families)) {
+    $items = @($catalog.algorithms | Where-Object category -eq $family.id)
+    $cards = New-Object System.Collections.Generic.List[string]
+
+    foreach ($algorithm in $items) {
+        $cards.Add(
+            "<div class='card'><h3><a href='../algorithms/$($algorithm.id).html'>$(Html $algorithm.name)</a></h3><div class='meta'>$(Html $algorithm.time)<br>$(Html $algorithm.applicability)</div><span class='id'>$(Html $algorithm.id)</span></div>")
+    }
+
+    if ($cards.Count -eq 0) {
+        $cards.Add("<div class='card'><h3>Foundation ready</h3><div class='meta'>No public algorithm is assigned to this family yet.</div></div>")
+    }
+
+    $body = "<h1>$(Html $family.name)</h1><p>$(Html $family.description)</p><div class='grid'>$($cards -join "`n")</div>"
+    Write-Utf8 (Join-Path $site "families\$($family.id).html") (PageShell $family.name $body "../")
+}
+
+foreach ($algorithm in @($catalog.algorithms)) {
+    $body = @"
+<h1>$(Html $algorithm.name)</h1>
+<div class="section">
+<h2>General description</h2>
+<p>$(Html $algorithm.implementation)</p>
+</div>
+<div class="section">
+<h2>Technical specifications</h2>
+<p><strong>Stable factory ID:</strong> <code>$(Html $algorithm.id)</code><br>
+<strong>Class:</strong> <code>$(Html $algorithm.class)</code><br>
+<strong>Family:</strong> $(Html $algorithm.family)<br>
+<strong>Source:</strong> <code>$(Html $algorithm.sourcePath)</code></p>
+</div>
+<div class="section"><h2>Complexity</h2>
+<p><strong>Time:</strong> $(Html $algorithm.time)<br><strong>Space:</strong> $(Html $algorithm.space)</p></div>
+<div class="section"><h2>Applicability</h2><p>$(Html $algorithm.applicability)</p></div>
+<div class="section"><h2>Detailed operation</h2><p>$(Html $algorithm.implementation)</p></div>
+<div class="section"><h2>Parameters</h2><p>Generic stopping, callbacks, deterministic randomization and cancellation are common. Method-specific parameters are exposed by the corresponding parameter type and generated API.</p></div>
+<div class="section"><h2>API example</h2><pre><code>MetaheuristicFactory.Create&lt;...&gt;("$(Html $algorithm.id)");</code></pre></div>
+<div class="section">
+<h2>Mathematical details</h2>
+<h3>Problem formulation</h3><div class="math">\[$($algorithm.problem)\]</div>
+<h3>Update equations / iterations</h3><div class="math">\[$($algorithm.update)\]</div>
+<h3>Assumptions</h3><p>$(Html $algorithm.assumptions)</p>
+<h3>Convergence conditions</h3><p>$(Html $algorithm.convergence)</p>
+<h3>Scientific references</h3><p>$(Html $algorithm.publication)<br>DOI: <code>$(Html $algorithm.doi)</code></p>
+</div>
+"@
+
+    Write-Utf8 (Join-Path $site "algorithms\$($algorithm.id).html") (PageShell $algorithm.name $body "../")
+}
+
+$doxygen =
+    Get-Command doxygen -ErrorAction SilentlyContinue
+
+if ($null -eq $doxygen) {
+    if (-not $SkipDoxygenIfUnavailable) {
+        throw "Doxygen is not installed. Run tools/Install-Doxygen.ps1 or pass -SkipDoxygenIfUnavailable."
+    }
+
+    New-Item -ItemType Directory -Force -Path (Join-Path $site "api") | Out-Null
+    Write-Utf8 (Join-Path $site "api\index.html") (PageShell "API unavailable" "<h1>Generated API</h1><p>Doxygen was not available during this local build.</p>" "../")
+}
+else {
+    Push-Location (Join-Path $Root "docs")
+    try {
+        & $doxygen.Source "Doxyfile"
+        if ($LASTEXITCODE -ne 0) {
+            throw "Doxygen build failed."
+        }
+    }
+    finally {
+        Pop-Location
+    }
+
+    $doxygenHtml =
+        Join-Path $Root "Documentation\doxygen\html"
+
+    if (-not (Test-Path $doxygenHtml)) {
+        throw "Doxygen did not produce Documentation/doxygen/html."
+    }
+
+    Copy-Item $doxygenHtml (Join-Path $site "api") -Recurse -Force
+}
+
+& (Join-Path $Root "docs\Test-DocumentationLinks.ps1") -Root $Root
+
+Write-Host ""
+Write-Host "MetaheuristicsPlatform documentation successfully built and validated." -ForegroundColor Green
+Write-Host "Portal: $site"
+Write-Host "Algorithms: $(@($catalog.algorithms).Count)"
+Write-Host "Families: $(@($catalog.families).Count)"

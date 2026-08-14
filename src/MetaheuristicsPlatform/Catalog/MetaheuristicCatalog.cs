@@ -1,0 +1,140 @@
+namespace MetaheuristicsPlatform.Catalog;
+
+public static class MetaheuristicCatalog
+{
+    private static readonly MetaheuristicCatalogEntry[] Entries =
+    [
+        new(
+            "particle-swarm",
+            "Particle Swarm Optimization",
+            "ParticleSwarmOptimizer",
+            "swarm-intelligence",
+            "Swarm intelligence",
+            "O(ND) per iteration for the canonical graphless fast path; topology/social policies may add overhead",
+            "O(ND)",
+            "Continuous bounded search spaces; generic platform infrastructure also supports alternative social/topology policies",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/PSO/ParticleSwarmOptimizer.cs",
+            "Kennedy & Eberhart (1995), Particle Swarm Optimization, IEEE ICNN; Clerc & Kennedy (2002), The particle swarm — explosion, stability, and convergence in a multidimensional complex space, IEEE TEC 6(1), 58–73",
+            "10.1109/4235.985692",
+            "Flat particle-major buffers, deterministic target-owned RNG streams, graphless fully-connected canonical fast path, calibrated movement/evaluation parallelism."),
+        new(
+            "differential-evolution",
+            "Differential Evolution",
+            "DifferentialEvolutionOptimizer",
+            "evolutionary-methods",
+            "Evolutionary methods",
+            "O(ND) per generation for classical mutation/crossover, plus objective-evaluation cost",
+            "O(ND)",
+            "Continuous bounded search spaces",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/DE/DifferentialEvolutionOptimizer.cs",
+            "Storn & Price (1997), Differential Evolution — A Simple and Efficient Heuristic for Global Optimization over Continuous Spaces, Journal of Global Optimization 11(4), 341–359",
+            "10.1023/A:1008202821328",
+            "Flat parent/trial buffers; classical mutation and crossover strategies; deterministic per-target RNG; calibrated variation and independent evaluation parallelism."),
+        new(
+            "jde-brest-2006",
+            "jDE — Self-Adaptive Differential Evolution",
+            "SelfAdaptiveDifferentialEvolutionOptimizer",
+            "evolutionary-methods",
+            "Evolutionary methods",
+            "O(ND) per generation plus objective-evaluation cost",
+            "O(ND + N)",
+            "Continuous bounded search spaces; canonical DE/rand/1/bin self-adaptation",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/DE/Adaptive/SelfAdaptiveDifferentialEvolutionOptimizer.cs",
+            "Brest et al. (2006), Self-Adapting Control Parameters in Differential Evolution: A Comparative Study on Numerical Benchmark Problems, IEEE TEC 10(6), 646–657",
+            "10.1109/TEVC.2006.872133",
+            "Per-individual inherited F_i/CR_i proposals; trial parameters are committed only after strict successful selection."),
+        new(
+            "jade-2009",
+            "JADE",
+            "JadeOptimizer",
+            "evolutionary-methods",
+            "Evolutionary methods",
+            "O(ND + N log N) per generation plus objective-evaluation cost",
+            "O(ND) population plus O(ND) optional archive",
+            "Continuous bounded search spaces",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/DE/Adaptive/JadeOptimizer.cs",
+            "Zhang & Sanderson (2009), JADE: Adaptive Differential Evolution With Optional External Archive, IEEE TEC 13(5), 945–958",
+            "10.1109/TEVC.2009.2014613",
+            "current-to-pbest/1/bin, optional external archive, Cauchy F sampling, normal CR sampling and success-mean adaptation."),
+        new(
+            "shade-2013",
+            "SHADE",
+            "ShadeOptimizer",
+            "evolutionary-methods",
+            "Evolutionary methods",
+            "O(ND + N log N) per generation plus objective-evaluation cost",
+            "O(ND + H)",
+            "Continuous bounded search spaces",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/DE/Adaptive/ShadeOptimizer.cs",
+            "Tanabe & Fukunaga (2013), Success-History Based Parameter Adaptation for Differential Evolution, IEEE CEC, 71–78",
+            "10.1109/CEC.2013.6557555",
+            "Historical memories M_F/M_CR, random memory slot per target, improvement-weighted success learning and external archive."),
+        new(
+            "lshade-2014",
+            "L-SHADE",
+            "LShadeOptimizer",
+            "evolutionary-methods",
+            "Evolutionary methods",
+            "O(N_kD + N_k log N_k) at generation k plus objective-evaluation cost",
+            "O(N_init D + H)",
+            "Continuous bounded search spaces with an evaluation budget driving LPSR",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/DE/Adaptive/LShadeOptimizer.cs",
+            "Tanabe & Fukunaga (2014), Improving the Search Performance of SHADE Using Linear Population Size Reduction, IEEE CEC, 1658–1665",
+            "10.1109/CEC.2014.6900380",
+            "SHADE 1.1 success-history semantics with linear population-size reduction, fixed physical capacity and shrinking active prefix."),
+        new(
+            "simulated-annealing-metropolis",
+            "Simulated Annealing",
+            "SimulatedAnnealingOptimizer<TSolution,TMove,TUndo>",
+            "trajectory-based-methods",
+            "Trajectory-based methods",
+            "O(C_move + C_eval) per attempted transition; O(C_delta) when an exact differential evaluator is available",
+            "O(|solution| + |move| + |undo|); no mandatory per-transition solution clone on the reversible path",
+            "Any solution representation admitting a stochastic neighborhood and reversible move operator; exact delta evaluation is optional",
+            true,
+            "src/MetaheuristicsPlatform/Algorithms/SA/SimulatedAnnealingOptimizer.cs",
+            "Metropolis et al. (1953), Journal of Chemical Physics 21(6), 1087–1092; Kirkpatrick, Gelatt & Vecchi (1983), Science 220(4598), 671–680",
+            "10.1126/science.220.4598.671",
+            "Generic reversible trajectory engine, Metropolis acceptance, pluggable cooling schedules, exact-delta fast path and common OptimizationContext lifecycle.")
+    ];
+
+    private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>
+        ById =
+        Entries.ToDictionary(
+            static entry => entry.Id,
+            StringComparer.Ordinal);
+
+    public static IReadOnlyList<MetaheuristicCatalogEntry> All =>
+        Entries;
+
+    public static bool TryGet(
+        string id,
+        out MetaheuristicCatalogEntry? entry)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(id);
+
+        return ById.TryGetValue(
+            id,
+            out entry);
+    }
+
+    public static MetaheuristicCatalogEntry GetRequired(
+        string id)
+    {
+        if (!TryGet(
+                id,
+                out MetaheuristicCatalogEntry? entry))
+        {
+            throw new KeyNotFoundException(
+                $"Unknown metaheuristic algorithm id '{id}'.");
+        }
+
+        return entry!;
+    }
+}

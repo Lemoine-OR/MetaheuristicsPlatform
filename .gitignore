@@ -1,0 +1,23 @@
+**/bin/
+**/obj/
+.vs/
+.idea/
+TestResults/
+BenchmarkDotNet.Artifacts/
+Documentation/doxygen/
+Documentation/site/
+Documentation/release/
+*.user
+*.suo
+
+# Local documentation build logs
+Documentation-build*.log
+
+# Generated benchmark/calibration reports
+benchmarks/Reports/
+
+# Local documentation build logs
+Documentation-build*.log
+
+# Generated benchmark/calibration reports
+benchmarks/Reports/

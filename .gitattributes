@@ -1,0 +1,25 @@
+# MetaheuristicsPlatform repository text policy
+#
+# Keep repository text canonical and cross-platform.
+# Git stores text as LF. Windows-specific command files remain CRLF.
+
+* text=auto eol=lf
+
+# Windows command files
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Visual Studio solution files
+*.sln text eol=crlf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.dll binary
+*.exe binary
+*.pdb binary

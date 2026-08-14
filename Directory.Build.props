@@ -1,0 +1,48 @@
+<Project>
+  <PropertyGroup>
+    <GitVersionBaseDirectory>$(MSBuildThisFileDirectory)</GitVersionBaseDirectory>
+
+    <Authors>David Lemoine</Authors>
+    <Company>Lemoine-OR</Company>
+    <AssemblyCompany>Lemoine-OR</AssemblyCompany>
+    <Product>MetaheuristicsPlatform</Product>
+    <AssemblyProduct>MetaheuristicsPlatform</AssemblyProduct>
+    <Title>$(MSBuildProjectName)</Title>
+    <AssemblyTitle>$(MSBuildProjectName)</AssemblyTitle>
+    <Description Condition="'$(Description)' == ''">$(MSBuildProjectName) component of MetaheuristicsPlatform, developed by David Lemoine (Lemoine-OR).</Description>
+    <Copyright>Copyright © David Lemoine — Lemoine-OR</Copyright>
+
+    <RepositoryUrl>https://github.com/Lemoine-OR/MetaheuristicsPlatform</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/Lemoine-OR/MetaheuristicsPlatform</PackageProjectUrl>
+
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+    <ContinuousIntegrationBuild Condition="'$(CI)' == 'true'">true</ContinuousIntegrationBuild>
+    <LangVersion>latest</LangVersion>
+
+    <NBGV_ThisAssemblyNamespace>MetaheuristicsPlatform.Build</NBGV_ThisAssemblyNamespace>
+    <NBGV_ThisAssemblyIncludesPackageVersion>true</NBGV_ThisAssemblyIncludesPackageVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Nerdbank.GitVersioning"
+                      Version="3.10.70"
+                      PrivateAssets="all"
+                      Condition="!Exists('packages.config')" />
+    <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
+      <_Parameter1>Author</_Parameter1>
+      <_Parameter2>David Lemoine</_Parameter2>
+    </AssemblyAttribute>
+    <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
+      <_Parameter1>Organization</_Parameter1>
+      <_Parameter2>Lemoine-OR</_Parameter2>
+    </AssemblyAttribute>
+    <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
+      <_Parameter1>Repository</_Parameter1>
+      <_Parameter2>https://github.com/Lemoine-OR/MetaheuristicsPlatform</_Parameter2>
+    </AssemblyAttribute>
+  </ItemGroup>
+</Project>

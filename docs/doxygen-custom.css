@@ -1,0 +1,13 @@
+:root {
+  --mp-navy:#071D43;
+  --mp-navy2:#0B2D63;
+  --mp-cyan:#0EA5E9;
+  --mp-blue:#2563EB;
+  --mp-orange:#FF9500;
+  --mp-slate:#64748B;
+}
+#projectname { color: var(--mp-navy); font-weight: 700; }
+#projectbrief { color: var(--mp-slate); }
+a { color: var(--mp-blue); }
+.contents h1, .contents h2, .contents h3 { color: var(--mp-navy); }
+code, .fragment { border-radius: 6px; }

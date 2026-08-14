@@ -1,0 +1,17 @@
+@page family_evolutionary_methods Evolutionary methods
+
+# Evolutionary methods
+
+Population methods based on stochastic variation, recombination, selection and adaptive control parameters.
+
+## Methods
+
+- **[Differential Evolution](../algorithms/differential-evolution.md)** — `differential-evolution` — O(ND) per generation for classical mutation/crossover, plus objective-evaluation cost
+- **[jDE — Self-Adaptive Differential Evolution](../algorithms/jde-brest-2006.md)** — `jde-brest-2006` — O(ND) per generation plus objective-evaluation cost
+- **[JADE](../algorithms/jade-2009.md)** — `jade-2009` — O(ND + N log N) per generation plus objective-evaluation cost
+- **[SHADE](../algorithms/shade-2013.md)** — `shade-2013` — O(ND + N log N) per generation plus objective-evaluation cost
+- **[L-SHADE](../algorithms/lshade-2014.md)** — `lshade-2014` — O(N_kD + N_k log N_k) at generation k plus objective-evaluation cost
+
+## Navigation
+
+Return to @ref method_families "method families".

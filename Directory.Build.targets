@@ -1,0 +1,27 @@
+<Project>
+  <Target Name="WriteMetaheuristicsPlatformVersion"
+          DependsOnTargets="GetBuildVersion">
+    <PropertyGroup>
+      <MetaheuristicsPlatformVersionOutput Condition="'$(MetaheuristicsPlatformVersionOutput)' == ''">$(BaseIntermediateOutputPath)MetaheuristicsPlatform.version.txt</MetaheuristicsPlatformVersionOutput>
+    </PropertyGroup>
+    <ItemGroup>
+      <_MetaheuristicsPlatformVersionLine Include="AssemblyVersion=$(AssemblyVersion)" />
+      <_MetaheuristicsPlatformVersionLine Include="AssemblyFileVersion=$(AssemblyFileVersion)" />
+      <_MetaheuristicsPlatformVersionLine Include="AssemblyInformationalVersion=$(AssemblyInformationalVersion)" />
+      <_MetaheuristicsPlatformVersionLine Include="BuildVersion=$(BuildVersion)" />
+      <_MetaheuristicsPlatformVersionLine Include="BuildVersionSimple=$(BuildVersionSimple)" />
+      <_MetaheuristicsPlatformVersionLine Include="BuildVersion3Components=$(BuildVersion3Components)" />
+      <_MetaheuristicsPlatformVersionLine Include="GitCommitId=$(GitCommitId)" />
+      <_MetaheuristicsPlatformVersionLine Include="GitCommitIdShort=$(GitCommitIdShort)" />
+      <_MetaheuristicsPlatformVersionLine Include="GitVersionHeight=$(GitVersionHeight)" />
+      <_MetaheuristicsPlatformVersionLine Include="MajorMinorVersion=$(MajorMinorVersion)" />
+      <_MetaheuristicsPlatformVersionLine Include="PackageVersion=$(PackageVersion)" />
+      <_MetaheuristicsPlatformVersionLine Include="NuGetPackageVersion=$(NuGetPackageVersion)" />
+      <_MetaheuristicsPlatformVersionLine Include="PublicRelease=$(PublicRelease)" />
+    </ItemGroup>
+    <WriteLinesToFile File="$(MetaheuristicsPlatformVersionOutput)"
+                      Lines="@(_MetaheuristicsPlatformVersionLine)"
+                      Overwrite="true"
+                      Encoding="UTF-8" />
+  </Target>
+</Project>
