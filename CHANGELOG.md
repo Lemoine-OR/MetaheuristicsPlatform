@@ -4,6 +4,15 @@ All notable changes to MetaheuristicsPlatform will be documented in this file.
 
 ## [Unreleased]
 
+## [0.24.1]
+
+### Fixed
+- Repaired UTF-8 mojibake in the README, changelog, machine-readable algorithm catalog and generated documentation shell.
+- Corrected the README public-algorithm count and integrated all seven trajectory algorithms into one coherent catalog section.
+- Added deterministic text-encoding validation so common UTF-8/Windows-1252 corruption fails CI.
+- Added a project favicon and consistent favicon injection across generated portal, component and Doxygen HTML pages.
+- Added release notes sourced from the matching CHANGELOG section instead of relying only on generic generated notes.
+- Added a repository metadata helper for description, homepage and topics.
 ## [0.24.0]
 
 ### Added
@@ -13,8 +22,8 @@ All notable changes to MetaheuristicsPlatform will be documented in this file.
 - Dedicated parameter types, stable IDs, runtime catalog entries, machine-readable catalog, mathematical documentation, validator and focused tests.
 
 ### Scientific basis
-- LourenÃ§o, Martin & StÃ¼tzle (2003), *Iterated Local Search*, DOI 10.1007/0-306-48056-5_11.
-- MartÃ­ (2003), *Multi-Start Methods*, DOI 10.1007/0-306-48056-5_12.
+- Lourenço, Martin & Stützle (2003), *Iterated Local Search*, DOI 10.1007/0-306-48056-5_11.
+- Martí (2003), *Multi-Start Methods*, DOI 10.1007/0-306-48056-5_12.
 - Talbi (2009), DOI 10.1002/9780470496916.
 
 ### Compatibility

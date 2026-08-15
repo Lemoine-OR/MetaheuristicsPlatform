@@ -39,7 +39,7 @@ function PageShell(
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>$(Html $title) Â· MetaheuristicsPlatform</title>
+<title>$(Html $title) &middot; MetaheuristicsPlatform</title>
 <link rel="stylesheet" href="$css">
 <script>
 window.MathJax = { tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] } };
@@ -60,7 +60,7 @@ window.MathJax = { tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]
 <main class="wrap">
 $body
 </main>
-<footer><div class="wrap">MetaheuristicsPlatform Â· Lemoine-OR Algorithms Â· Clean. Scientific. Open.</div></footer>
+<footer><div class="wrap">MetaheuristicsPlatform &middot; Lemoine-OR Algorithms &middot; Clean. Scientific. Open.</div></footer>
 </body></html>
 "@
 }
@@ -68,8 +68,10 @@ $body
 & (Join-Path $Root "docs\Test-DocumentationParity.ps1") -Root $Root
 
 $catalog =
-    Get-Content (Join-Path $Root "docs\algorithm-catalog.json") -Raw |
+    [System.IO.File]::ReadAllText((Join-Path $Root "docs\algorithm-catalog.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
+
+$projectVersion = (([System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) | ConvertFrom-Json).version).ToString()
 
 $site =
     Join-Path $Root "Documentation\site"
@@ -85,6 +87,7 @@ New-Item -ItemType Directory -Force -Path (Join-Path $site "families") | Out-Nul
 
 Copy-Item (Join-Path $Root "docs\portal\site.css") (Join-Path $site "assets\site.css") -Force
 Copy-Item (Join-Path $Root "docs\assets\metaheuristicsplatform-logo.svg") (Join-Path $site "assets\metaheuristicsplatform-logo.svg") -Force
+Copy-Item (Join-Path $Root "docs\assets\metaheuristicsplatform-favicon.svg") (Join-Path $site "assets\metaheuristicsplatform-favicon.svg") -Force
 Copy-Item (Join-Path $Root "docs\assets\algorithms-icon.svg") (Join-Path $site "assets\algorithms-icon.svg") -Force
 Copy-Item (Join-Path $Root "docs\algorithm-catalog.json") (Join-Path $site "algorithm-catalog.json") -Force
 
@@ -106,6 +109,7 @@ $homeBody = @"
 <section class="hero"><div class="wrap">
 <h1>MetaheuristicsPlatform</h1>
 <p>Fast, scientific and reusable C#/.NET metaheuristics with one generic lifecycle, stable catalog IDs, literature-backed implementations and mandatory mathematical documentation.</p>
+<p class="meta">Version v$projectVersion &middot; $(@($catalog.algorithms).Count) public algorithms &middot; validated documentation</p>
 </div></section>
 <h2 id="families">Choose a family</h2>
 <div class="family-grid">$($familyCards -join "`n")</div>
@@ -200,6 +204,22 @@ else {
 
 & (Join-Path $Root "docs\Build-SimulatedAnnealingCoolingDocumentation.ps1") -Root $Root -Site $site
 & (Join-Path $Root "docs\Build-TabuSearchAdvancedDocumentation.ps1") -Root $Root -Site $site
+# Inject the project favicon into every generated HTML page, including Doxygen output.
+$allHtmlPages = Get-ChildItem -LiteralPath $site -Recurse -Filter "*.html" -File
+foreach ($htmlPage in $allHtmlPages) {
+    $htmlText = [System.IO.File]::ReadAllText($htmlPage.FullName, [System.Text.Encoding]::UTF8)
+    if (-not $htmlText.Contains('metaheuristicsplatform-favicon.svg')) {
+        $relativeFile = $htmlPage.FullName.Substring($site.Length).TrimStart('\','/')
+        $depth = ([regex]::Matches($relativeFile, '[\\/]').Count)
+        $prefix = ""
+        for ($i = 0; $i -lt $depth; $i++) { $prefix += "../" }
+        $iconTag = '<link rel="icon" type="image/svg+xml" href="' + $prefix + 'assets/metaheuristicsplatform-favicon.svg">'
+        $htmlText = $htmlText.Replace('</head>', $iconTag + "`n</head>")
+        Write-Utf8 $htmlPage.FullName $htmlText
+    }
+}
+
+& (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root -AdditionalPath $site
 & (Join-Path $Root "docs\Test-DocumentationLinks.ps1") -Root $Root
 
 Write-Host ""

@@ -42,7 +42,7 @@ stable catalog IDs.
 </tr>
 </table>
 
-<p align="center"><strong>11 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>13 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -113,10 +113,10 @@ stable ID used by the canonical catalog/factory.
 ### Trajectory-based methods
 
 <table>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/simulated-annealing-metropolis.html"><strong>Simulated Annealing</strong></a><br><sub>Trajectory-based methods · O(C_move + C_eval) per attempted transition; O(C_delta) when an exact differential evaluator is available</sub><br><code>simulated-annealing-metropolis</code><br><sub><code>SimulatedAnnealingOptimizer<TSolution,TMove,TUndo></code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/tabu-search-glover.html"><strong>Tabu Search</strong></a><br><sub>Trajectory-based methods - best-admissible memory-guided neighborhood search with exact-delta fast path</sub><br><code>tabu-search-glover</code><br><sub><code>TabuSearchOptimizer&lt;...&gt;</code></sub></td></tr>
-</table>
-<table>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/reactive-tabu-search-battiti-tecchiolli-1994.html"><strong>Reactive Tabu Search</strong></a><br><sub>Trajectory-based methods &middot; repetition-aware adaptive tenure and reactive diversification</sub><br><code>reactive-tabu-search-battiti-tecchiolli-1994</code><br><sub><code>ReactiveTabuSearchOptimizer&lt;...&gt;</code></sub></td><td width="50%"></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/simulated-annealing-metropolis.html"><strong>Simulated Annealing</strong></a><br><sub>Metropolis trajectory with scientific cooling catalog and reversible-move fast paths.</sub><br><code>simulated-annealing-metropolis</code><br><sub><code>SimulatedAnnealingOptimizer&lt;...&gt;</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/tabu-search-glover.html"><strong>Tabu Search</strong></a><br><sub>Best-admissible memory-guided neighborhood search with aspiration and exact-delta fast path.</sub><br><code>tabu-search-glover</code><br><sub><code>TabuSearchOptimizer&lt;...&gt;</code></sub></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/reactive-tabu-search-battiti-tecchiolli-1994.html"><strong>Reactive Tabu Search</strong></a><br><sub>Adaptive tenure, repetition memory and reactive diversification.</sub><br><code>reactive-tabu-search-battiti-tecchiolli-1994</code><br><sub><code>ReactiveTabuSearchOptimizer&lt;...&gt;</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/local-search-best-improvement.html"><strong>Local Search - Best Improvement</strong></a><br><sub>Full-neighborhood best-improvement descent using the reusable local-search core.</sub><br><code>local-search-best-improvement</code><br><sub><code>BestImprovementLocalSearchOptimizer&lt;...&gt;</code></sub></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/local-search-first-improvement.html"><strong>Local Search - First Improvement</strong></a><br><sub>First-improving descent using the same allocation-conscious neighborhood engine.</sub><br><code>local-search-first-improvement</code><br><sub><code>FirstImprovementLocalSearchOptimizer&lt;...&gt;</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/multi-start-local-search.html"><strong>Multi-Start Local Search</strong></a><br><sub>Independent restart composition around a reusable local-search procedure.</sub><br><code>multi-start-local-search</code><br><sub><code>MultiStartLocalSearchOptimizer&lt;TSolution&gt;</code></sub></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/iterated-local-search-lourenco-martin-stutzle.html"><strong>Iterated Local Search</strong></a><br><sub>Perturbation, local improvement and incumbent acceptance following the canonical ILS framework.</sub><br><code>iterated-local-search-lourenco-martin-stutzle</code><br><sub><code>IteratedLocalSearchOptimizer&lt;TSolution&gt;</code></sub></td><td width="50%"></td></tr>
 </table>
 ### Simulated Annealing scientific cooling catalog
 
@@ -136,17 +136,6 @@ stable ID used by the canonical catalog/factory.
 </table>
 
 
-### Local Search Core (v0.23.0)
-
-<table>
-<tr><td width="50%"><strong>Local Search - Best Improvement</strong><br><code>local-search-best-improvement</code><br><sub>BestImprovementLocalSearchOptimizer&lt;TSolution,TMove,TUndo,TEnumerator&gt;</sub></td><td width="50%"><strong>Local Search - First Improvement</strong><br><code>local-search-first-improvement</code><br><sub>FirstImprovementLocalSearchOptimizer&lt;TSolution,TMove,TUndo,TEnumerator&gt;</sub></td></tr>
-</table>
-
-### Restart & Iterated Local Search (v0.24.0)
-
-<table>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/multi-start-local-search.html"><strong>Multi-Start Local Search</strong></a><br><code>multi-start-local-search</code><br><sub>MultiStartLocalSearchOptimizer&lt;TSolution&gt; Â· MartÃ­ (2003)</sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/iterated-local-search-lourenco-martin-stutzle.html"><strong>Iterated Local Search</strong></a><br><code>iterated-local-search-lourenco-martin-stutzle</code><br><sub>IteratedLocalSearchOptimizer&lt;TSolution&gt; Â· LourenÃ§o, Martin &amp; StÃ¼tzle (2003)</sub></td></tr>
-</table>
 ## Documentation contract
 
 Every public algorithm page must contain:

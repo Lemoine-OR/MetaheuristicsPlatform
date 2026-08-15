@@ -14,7 +14,7 @@ if (-not (Test-Path $catalogPath)) {
 }
 
 $catalog =
-    Get-Content $catalogPath -Raw |
+    [System.IO.File]::ReadAllText($catalogPath, [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
 $algorithms = @($catalog.algorithms)
@@ -56,7 +56,7 @@ foreach ($algorithm in $algorithms) {
     }
 
     $page =
-        Get-Content $pagePath -Raw
+        [System.IO.File]::ReadAllText($pagePath, [System.Text.Encoding]::UTF8)
 
     $requiredPageMarkers = @(
         "## General description",
@@ -111,6 +111,7 @@ $requiredRepoFiles = @(
     "docs\build-documentation.ps1",
     "docs\Test-DocumentationLinks.ps1",
     "docs\Test-DocumentationParity.ps1",
+    "docs\Test-TextEncoding.ps1",
     "docs\Test-SimulatedAnnealingCoolingCatalog.ps1",
     "docs\Build-SimulatedAnnealingCoolingDocumentation.ps1",
     "docs\sa-cooling-catalog.json",
@@ -129,14 +130,17 @@ $requiredRepoFiles = @(
     "docs\doxygen-custom.css",
     "docs\assets\algorithms-icon.svg",
     "docs\assets\metaheuristicsplatform-logo.svg",
+    "docs\assets\metaheuristicsplatform-favicon.svg",
     ".github\workflows\build.yml",
     ".github\workflows\documentation.yml",
     ".github\workflows\release.yml",
     "build\Build-Validated.ps1",
     "build\Build-All.ps1",
     "build\Prepare-ReleaseAssets.ps1",
+    "build\Get-ReleaseNotes.ps1",
     "tools\Test-PowerShellSyntax.ps1",
     "tools\Test-Automation.ps1",
+    "tools\Configure-GitHubRepository.ps1",
     "tools\Get-BuildTarget.ps1"
 )
 
@@ -147,7 +151,7 @@ foreach ($relative in $requiredRepoFiles) {
 }
 
 $readme =
-    Get-Content (Join-Path $Root "README.md") -Raw
+    [System.IO.File]::ReadAllText((Join-Path $Root "README.md"), [System.Text.Encoding]::UTF8)
 
 foreach ($algorithm in $algorithms) {
     if (-not $readme.Contains($algorithm.id)) {
@@ -164,7 +168,7 @@ if (-not (Test-Path $idsSourcePath)) {
 }
 
 $idsSource =
-    Get-Content $idsSourcePath -Raw
+    [System.IO.File]::ReadAllText($idsSourcePath, [System.Text.Encoding]::UTF8)
 
 foreach ($algorithm in $algorithms) {
     if (-not $idsSource.Contains('"' + $algorithm.id + '"')) {
@@ -173,13 +177,14 @@ foreach ($algorithm in $algorithms) {
 }
 
 $version =
-    Get-Content (Join-Path $Root "version.json") -Raw |
+    [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.24.0") {
-    throw "Documentation parity: version.json must be 0.24.0 for this pack."
+if ([string]$version.version -ne "0.24.1") {
+    throw "Documentation parity: version.json must be 0.24.1 for this repair release."
 }
 
+& (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-SimulatedAnnealingCoolingCatalog.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-TabuSearchFoundation.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-TabuSearchAdvancedMemory.ps1") -Root $Root
