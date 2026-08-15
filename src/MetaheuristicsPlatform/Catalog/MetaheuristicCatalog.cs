@@ -157,7 +157,35 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Neighborhood/LocalSearchOptimizers.cs",
             "Talbi (2009), Metaheuristics: From Design to Implementation",
             "10.1002/9780470496916",
-            "First-descent scan that stops immediately at the first strict improving move.")
+            "First-descent scan that stops immediately at the first strict improving move."),
+        new(
+            "multi-start-local-search",
+            "Multi-Start Local Search",
+            "MultiStartLocalSearchOptimizer<TSolution>",
+            "trajectory-based-methods",
+            "Trajectory-based methods",
+            "O(S * (C_init + C_LS)) for S starts; C_LS depends on the composed local search",
+            "O(|solution| + local-search workspace)",
+            "Any representation with a start generator and compatible reusable local-search procedure",
+            true,
+            "src/MetaheuristicsPlatform/Algorithms/Neighborhood/RestartIteratedLocalSearchOptimizers.cs",
+            "Marti (2003), Multi-Start Methods, Handbook of Metaheuristics, 355-368; Talbi (2009)",
+            "10.1007/0-306-48056-5_12",
+            "Sequential restart composition reusing the v0.23 local-search engine under one exact OptimizationContext lifecycle."),
+        new(
+            "iterated-local-search-lourenco-martin-stutzle",
+            "Iterated Local Search - Lourenco-Martin-Stutzle",
+            "IteratedLocalSearchOptimizer<TSolution>",
+            "trajectory-based-methods",
+            "Trajectory-based methods",
+            "O(C_LS0 + sum_k(C_perturb,k + C_eval,k + C_LS,k))",
+            "O(|solution| + local-search workspace)",
+            "Any representation with a reusable local search, owned solution cloning and a domain-defined perturbation",
+            true,
+            "src/MetaheuristicsPlatform/Algorithms/Neighborhood/RestartIteratedLocalSearchOptimizers.cs",
+            "Lourenco, Martin & Stutzle (2003), Iterated Local Search, Handbook of Metaheuristics, 320-353; Talbi (2009)",
+            "10.1007/0-306-48056-5_11",
+            "Canonical initial-local-search / perturb / local-search / accept framework with independent best-so-far ownership.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

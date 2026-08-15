@@ -4,6 +4,23 @@ All notable changes to MetaheuristicsPlatform will be documented in this file.
 
 ## [Unreleased]
 
+## [0.24.0]
+
+### Added
+- Multi-Start Local Search (`multi-start-local-search`) composed from the reusable v0.23 local-search procedure.
+- Iterated Local Search (`iterated-local-search-lourenco-martin-stutzle`) with initial descent, domain-owned perturbation, repeated local improvement and configurable incumbent acceptance.
+- `ISolutionPerturbation<TSolution>`, delegate-backed perturbations and `NeighborhoodAcceptanceKind`.
+- Dedicated parameter types, stable IDs, runtime catalog entries, machine-readable catalog, mathematical documentation, validator and focused tests.
+
+### Scientific basis
+- LourenÃ§o, Martin & StÃ¼tzle (2003), *Iterated Local Search*, DOI 10.1007/0-306-48056-5_11.
+- MartÃ­ (2003), *Multi-Start Methods*, DOI 10.1007/0-306-48056-5_12.
+- Talbi (2009), DOI 10.1002/9780470496916.
+
+### Compatibility
+- The v0.23 first- and best-improvement implementations and stable IDs are unchanged.
+- Restart and ILS reuse `ILocalSearchProcedure<TSolution>`; neighborhood scan logic is not duplicated.
+- v0.23 validation now checks the foundation on later releases without forbidding legitimate v0.24 extensions.
 ## [0.23.0]
 
 ### Added

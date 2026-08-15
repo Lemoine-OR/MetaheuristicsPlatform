@@ -46,15 +46,11 @@ $contracts = Read-Utf8 "src\MetaheuristicsPlatform\Algorithms\Neighborhood\Neigh
 foreach ($marker in @("LocalSearchSelectionPolicy", "FirstImprovement", "BestImprovement", "ILocalSearchProcedure")) {
     if (-not $contracts.Contains($marker)) { throw "Local Search core: contracts missing '$marker'." }
 }
-if ($contracts.Contains("ISolutionPerturbation") -or $contracts.Contains("NeighborhoodAcceptanceKind")) {
-    throw "Local Search core: future ILS contracts must not be preintroduced in v0.23.0."
-}
+
 
 $parameters = Read-Utf8 "src\MetaheuristicsPlatform\Algorithms\Neighborhood\NeighborhoodSearchParameters.cs"
-if (-not $parameters.Contains("LocalSearchParameters") -or
-    $parameters.Contains("MultiStartLocalSearchParameters") -or
-    $parameters.Contains("IteratedLocalSearchParameters")) {
-    throw "Local Search core: parameter surface is not limited to v0.23.0 scope."
+if (-not $parameters.Contains("LocalSearchParameters")) {
+    throw "Local Search core: LocalSearchParameters is missing."
 }
 
 $engine = Read-Utf8 "src\MetaheuristicsPlatform\Algorithms\Neighborhood\MoveLocalSearchProcedure.cs"
@@ -115,11 +111,7 @@ foreach ($id in $ids) {
     if (-not $idsSource.Contains('"' + $id + '"')) { throw "Local Search core: public IDs missing '$id'." }
     if (-not $readme.Contains($id)) { throw "Local Search core: README missing '$id'." }
 }
-foreach ($forbidden in @("multi-start-local-search", "iterated-local-search-lourenco-martin-stutzle")) {
-    if ($runtimeCatalog.Contains('"' + $forbidden + '"') -or $idsSource.Contains('"' + $forbidden + '"')) {
-        throw "Local Search core: future algorithm '$forbidden' must not be exposed in v0.23.0."
-    }
-}
+
 
 $pageMarkers = @(
     "## General description", "## Technical specifications", "## Complexity", "## Applicability",

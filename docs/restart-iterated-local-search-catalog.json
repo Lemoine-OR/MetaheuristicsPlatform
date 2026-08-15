@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "version": "0.24.0",
+  "family": "trajectory-based-methods",
+  "algorithms": [
+    {
+      "id": "multi-start-local-search",
+      "reference": "Marti (2003)",
+      "doi": "10.1007/0-306-48056-5_12",
+      "composition": ["initial-solution-generator", "local-search-procedure"]
+    },
+    {
+      "id": "iterated-local-search-lourenco-martin-stutzle",
+      "reference": "Lourenco, Martin and Stutzle (2003)",
+      "doi": "10.1007/0-306-48056-5_11",
+      "composition": ["initial-solution-generator", "local-search-procedure", "solution-perturbation", "acceptance-rule"]
+    }
+  ]
+}

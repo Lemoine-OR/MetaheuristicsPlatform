@@ -12,6 +12,8 @@ contracts:
 - public Reactive Tabu Search stable ID (`reactive-tabu-search-battiti-tecchiolli-1994`);
 - public Tabu Search component IDs (`ts.*`);
 - public Local Search Foundation algorithm IDs introduced in v0.23.0;
+- public Multi-Start Local Search ID (`multi-start-local-search`) introduced in v0.24.0;
+- public Iterated Local Search ID (`iterated-local-search-lourenco-martin-stutzle`) introduced in v0.24.0;
 - scientific method identity;
 - serialized/reproducibility-facing identifiers;
 - documentation URLs generated from stable IDs.

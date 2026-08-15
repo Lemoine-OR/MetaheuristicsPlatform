@@ -17,4 +17,6 @@ public static class MetaheuristicAlgorithmIds
         "reactive-tabu-search-battiti-tecchiolli-1994";
     public const string LocalSearchBestImprovement = "local-search-best-improvement";
     public const string LocalSearchFirstImprovement = "local-search-first-improvement";
+    public const string MultiStartLocalSearch = "multi-start-local-search";
+    public const string IteratedLocalSearch = "iterated-local-search-lourenco-martin-stutzle";
 }

@@ -37,7 +37,7 @@ stable catalog IDs.
 <tr>
 <td width="25%"><strong>1 swarm method</strong><br><sub>PSO with topology/social/dynamics specializations.</sub></td>
 <td width="25%"><strong>5 DE methods</strong><br><sub>DE, jDE, JADE, SHADE and L-SHADE.</sub></td>
-<td width="25%"><strong>5 trajectory methods</strong><br><sub>Scientific SA, Glover Tabu Search and Reactive Tabu Search.</sub></td>
+<td width="25%"><strong>7 trajectory methods</strong><br><sub>Scientific SA, Tabu Search, Reactive Tabu Search, Local Search, Multi-Start and ILS.</sub></td>
 <td width="25%"><strong>Generic foundations</strong><br><sub>Evaluation pipelines, neighborhoods, reversible moves and hybrid composition.</sub></td>
 </tr>
 </table>
@@ -142,6 +142,11 @@ stable ID used by the canonical catalog/factory.
 <tr><td width="50%"><strong>Local Search - Best Improvement</strong><br><code>local-search-best-improvement</code><br><sub>BestImprovementLocalSearchOptimizer&lt;TSolution,TMove,TUndo,TEnumerator&gt;</sub></td><td width="50%"><strong>Local Search - First Improvement</strong><br><code>local-search-first-improvement</code><br><sub>FirstImprovementLocalSearchOptimizer&lt;TSolution,TMove,TUndo,TEnumerator&gt;</sub></td></tr>
 </table>
 
+### Restart & Iterated Local Search (v0.24.0)
+
+<table>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/multi-start-local-search.html"><strong>Multi-Start Local Search</strong></a><br><code>multi-start-local-search</code><br><sub>MultiStartLocalSearchOptimizer&lt;TSolution&gt; Â· MartÃ­ (2003)</sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/iterated-local-search-lourenco-martin-stutzle.html"><strong>Iterated Local Search</strong></a><br><code>iterated-local-search-lourenco-martin-stutzle</code><br><sub>IteratedLocalSearchOptimizer&lt;TSolution&gt; Â· LourenÃ§o, Martin &amp; StÃ¼tzle (2003)</sub></td></tr>
+</table>
 ## Documentation contract
 
 Every public algorithm page must contain:
