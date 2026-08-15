@@ -37,12 +37,12 @@ stable catalog IDs.
 <tr>
 <td width="25%"><strong>1 swarm method</strong><br><sub>PSO with topology/social/dynamics specializations.</sub></td>
 <td width="25%"><strong>5 DE methods</strong><br><sub>DE, jDE, JADE, SHADE and L-SHADE.</sub></td>
-<td width="25%"><strong>1 trajectory method</strong><br><sub>Generic Metropolis SA with 10 built-in scientific cooling laws.</sub></td>
+<td width="25%"><strong>2 trajectory methods</strong><br><sub>Scientific SA plus memory-based Tabu Search.</sub></td>
 <td width="25%"><strong>Generic foundations</strong><br><sub>Evaluation pipelines, neighborhoods, reversible moves and hybrid composition.</sub></td>
 </tr>
 </table>
 
-<p align="center"><strong>7 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>8 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -113,7 +113,7 @@ stable ID used by the canonical catalog/factory.
 ### Trajectory-based methods
 
 <table>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/simulated-annealing-metropolis.html"><strong>Simulated Annealing</strong></a><br><sub>Trajectory-based methods · O(C_move + C_eval) per attempted transition; O(C_delta) when an exact differential evaluator is available</sub><br><code>simulated-annealing-metropolis</code><br><sub><code>SimulatedAnnealingOptimizer<TSolution,TMove,TUndo></code></sub></td><td width="50%"></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/simulated-annealing-metropolis.html"><strong>Simulated Annealing</strong></a><br><sub>Trajectory-based methods · O(C_move + C_eval) per attempted transition; O(C_delta) when an exact differential evaluator is available</sub><br><code>simulated-annealing-metropolis</code><br><sub><code>SimulatedAnnealingOptimizer<TSolution,TMove,TUndo></code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/tabu-search-glover.html"><strong>Tabu Search</strong></a><br><sub>Trajectory-based methods - best-admissible memory-guided neighborhood search with exact-delta fast path</sub><br><code>tabu-search-glover</code><br><sub><code>TabuSearchOptimizer&lt;...&gt;</code></sub></td></tr>
 </table>
 ### Simulated Annealing scientific cooling catalog
 

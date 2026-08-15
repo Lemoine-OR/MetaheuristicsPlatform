@@ -8,6 +8,7 @@ Even during the 0.x development line, the following are treated as compatibility
 contracts:
 - public algorithm catalog IDs;
 - public Simulated Annealing cooling-schedule IDs (`sa.cooling.*`);
+- public Tabu Search stable ID (`tabu-search-glover`);
 - scientific method identity;
 - serialized/reproducibility-facing identifiers;
 - documentation URLs generated from stable IDs.

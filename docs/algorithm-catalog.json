@@ -178,6 +178,28 @@
       "assumptions": "The neighborhood must be sampleable and moves must be reversible for the zero-clone fast path. Cooling schedule assumptions depend on the chosen schedule.",
       "convergence": "Classical asymptotic global-convergence theorems require sufficiently slow logarithmic cooling under irreducibility/communication assumptions. The practical geometric default does not claim that theorem.",
       "factoryMode": "composition"
+    },
+    {
+      "id": "tabu-search-glover",
+      "name": "Tabu Search",
+      "class": "TabuSearchOptimizer<TSolution,TMove,TUndo,TAttribute,TEnumerator>",
+      "category": "trajectory-based-methods",
+      "kind": "single-solution",
+      "family": "Trajectory-based methods",
+      "time": "O(|N(x)| * C_delta + log M) per iteration with exact deltas; otherwise O(|N(x)| * (C_move + C_eval + C_undo) + log M)",
+      "space": "O(|solution| + M) for retained short-term tabu records",
+      "applicability": "Any finite enumerated neighborhood with reversible moves and domain-defined tabu attributes",
+      "requiresComposition": true,
+      "sourcePath": "src/MetaheuristicsPlatform/Algorithms/TS/TabuSearchOptimizer.cs",
+      "publication": "Glover (1989), Tabu Search-Part I, ORSA Journal on Computing 1(3), 190-206; Glover (1990), Tabu Search-Part II, ORSA Journal on Computing 2(1), 4-32",
+      "doi": "10.1287/ijoc.1.3.190",
+      "implementation": "Allocation-free best-admissible neighborhood scan, attribute-based expiration memory, best-so-far aspiration, fixed or varying tenure, exact-delta fast path and reversible full-evaluation fallback.",
+      "page": "docs/pages/algorithms/tabu-search-glover.md",
+      "problem": "\\min_{x\\in\\mathcal X} f(x)\\quad\\text{or}\\quad\\max_{x\\in\\mathcal X} f(x)",
+      "update": "\\mathcal M_k(x)=\\{m\\in N(x):a(x,m)\\notin T_k\\ \\lor\\ A_k(x,m)\\},\\qquad m_k^*\\in\\arg\\min_{m\\in\\mathcal M_k(x_k)} f(m(x_k))",
+      "assumptions": "Finite neighborhood enumeration, stable tabu-attribute equality/hash semantics, and exactness of any supplied delta evaluator. The attribute mapping defines which reversals or features are forbidden.",
+      "convergence": "No universal finite-time global-optimum guarantee is claimed. Classical behavior depends on neighborhood, attribute memory, tenure, aspiration and optional longer-term strategies.",
+      "factoryMode": "composition"
     }
   ]
 }

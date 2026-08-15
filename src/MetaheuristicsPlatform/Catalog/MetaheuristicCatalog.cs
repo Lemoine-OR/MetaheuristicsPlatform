@@ -101,7 +101,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/SA/SimulatedAnnealingOptimizer.cs",
             "Metropolis et al. (1953), Journal of Chemical Physics 21(6), 1087–1092; Kirkpatrick, Gelatt & Vecchi (1983), Science 220(4598), 671–680",
             "10.1126/science.220.4598.671",
-            "Generic reversible trajectory engine, Metropolis acceptance, pluggable cooling schedules, exact-delta fast path and common OptimizationContext lifecycle.")
+            "Generic reversible trajectory engine, Metropolis acceptance, pluggable cooling schedules, exact-delta fast path and common OptimizationContext lifecycle."),
+        new(
+            "tabu-search-glover",
+            "Tabu Search",
+            "TabuSearchOptimizer<TSolution,TMove,TUndo,TAttribute,TEnumerator>",
+            "trajectory-based-methods",
+            "Trajectory-based methods",
+            "O(|N(x)| * C_delta + log M) per iteration with exact deltas; otherwise O(|N(x)| * (C_move + C_eval + C_undo) + log M)",
+            "O(|solution| + M) for retained short-term tabu records",
+            "Any finite enumerated neighborhood with reversible moves and domain-defined tabu attributes",
+            true,
+            "src/MetaheuristicsPlatform/Algorithms/TS/TabuSearchOptimizer.cs",
+            "Glover (1989), Tabu Search-Part I, ORSA Journal on Computing 1(3), 190-206; Glover (1990), Tabu Search-Part II, ORSA Journal on Computing 2(1), 4-32",
+            "10.1287/ijoc.1.3.190",
+            "Allocation-free neighborhood scan, attribute-based expiration memory, best-so-far aspiration, configurable tenure, exact-delta fast path and reversible full-evaluation fallback.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

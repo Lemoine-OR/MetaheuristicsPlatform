@@ -20,8 +20,8 @@ $catalog =
 $algorithms = @($catalog.algorithms)
 $families = @($catalog.families)
 
-if ($algorithms.Count -lt 7) {
-    throw "Documentation parity: expected at least the seven currently public algorithms."
+if ($algorithms.Count -lt 8) {
+    throw "Documentation parity: expected at least the eight currently public algorithms."
 }
 
 $requiredFields = @(
@@ -115,6 +115,8 @@ $requiredRepoFiles = @(
     "docs\Build-SimulatedAnnealingCoolingDocumentation.ps1",
     "docs\sa-cooling-catalog.json",
     "docs\pages\components\simulated-annealing-cooling-schedules.md",
+    "docs\pages\algorithms\tabu-search-glover.md",
+    "docs\Test-TabuSearchFoundation.ps1",
     "docs\doxygen-custom.css",
     "docs\assets\algorithms-icon.svg",
     "docs\assets\metaheuristicsplatform-logo.svg",
@@ -165,10 +167,11 @@ $version =
     Get-Content (Join-Path $Root "version.json") -Raw |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.20.0") {
-    throw "Documentation parity: version.json must be 0.20.0 for this pack."
+if ([string]$version.version -ne "0.21.0") {
+    throw "Documentation parity: version.json must be 0.21.0 for this pack."
 }
 
 & (Join-Path $Root "docs\Test-SimulatedAnnealingCoolingCatalog.ps1") -Root $Root
+& (Join-Path $Root "docs\Test-TabuSearchFoundation.ps1") -Root $Root
 
 Write-Host "Documentation parity validation passed: $($algorithms.Count) algorithms, $($families.Count) family pages." -ForegroundColor Green

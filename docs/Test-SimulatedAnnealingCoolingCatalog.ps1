@@ -214,8 +214,23 @@ $version =
     Get-Content -LiteralPath $versionPath -Raw -Encoding UTF8 |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.20.0") {
-    throw "SA cooling catalog validation: version.json must be 0.20.0 for this pack."
+$versionText = [string]$version.version
+$versionMatch = [System.Text.RegularExpressions.Regex]::Match(
+    $versionText,
+    '^(?<major>\d+)\.(?<minor>\d+)\.(?<patch>\d+)')
+
+if (-not $versionMatch.Success) {
+    throw "SA cooling catalog validation: version.json contains unsupported version '$versionText'."
+}
+
+$repositoryVersion = [System.Version]::new(
+    [int]$versionMatch.Groups['major'].Value,
+    [int]$versionMatch.Groups['minor'].Value,
+    [int]$versionMatch.Groups['patch'].Value)
+$minimumSupportedVersion = [System.Version]::new(0, 20, 0)
+
+if ($repositoryVersion -lt $minimumSupportedVersion) {
+    throw "SA cooling catalog validation: the scientific cooling catalog requires repository version 0.20.0 or later."
 }
 
 Write-Host (

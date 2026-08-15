@@ -4,6 +4,28 @@ All notable changes to MetaheuristicsPlatform will be documented in this file.
 
 ## [Unreleased]
 
+## [0.21.0]
+
+### Added
+- Generic Glover-style Tabu Search short-term-memory engine with stable ID `tabu-search-glover`.
+- Allocation-free full-neighborhood scan through the existing value-type neighborhood cursor contract.
+- Attribute-based expiration memory with expected O(1) lookup and min-heap expiration ordering for varying tenures.
+- Best-so-far aspiration criterion plus a zero-evaluation fast rejection path when aspiration is disabled.
+- Fixed and uniformly varying tabu-tenure policies, with custom tenure and aspiration extension points.
+- Exact objective-delta fast path and reversible apply/evaluate/undo fallback without per-candidate solution cloning.
+- Probe-evaluation lifecycle in `OptimizationContext` so candidate scans preserve exact evaluation accounting without promoting unvisited neighbors.
+- Full ULSAlgorithms-parity algorithm page, catalog metadata, README panel, validator, and unit tests from the first public TS version.
+
+### Scientific basis
+- Glover (1986), DOI 10.1016/0305-0548(86)90048-1.
+- Glover (1989), DOI 10.1287/ijoc.1.3.190.
+- Glover (1990), DOI 10.1287/ijoc.2.1.4.
+- Glover & Laguna (1997), DOI 10.1007/978-1-4615-6089-0.
+- Battiti & Tecchiolli (1994), DOI 10.1287/ijoc.6.2.126, reviewed as a later reactive-search extension rather than falsely claimed as part of the fixed short-term core.
+
+### Scope
+- v0.21 implements the generic short-term-memory TS foundation.
+- Intermediate/long-term intensification-diversification memory and Reactive Tabu Search remain explicit future controllers because they require additional problem/state memory beyond a scalar tenure rule.
 ## [0.20.0]
 
 ### Added

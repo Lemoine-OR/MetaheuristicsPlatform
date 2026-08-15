@@ -108,7 +108,7 @@ window.MathJax = { tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]
 </div></header>
 <main class="wrap">
 <h1>Simulated Annealing Scientific Cooling Catalog</h1>
-<p>Version 0.20.0 separates executable temperature laws from broader annealing controllers. The catalog contains <strong>$implementedCount executable schedules</strong> and <strong>$reviewedCount reviewed composite controllers</strong>.</p>
+<p>The scientific cooling catalog introduced in v0.20.0 separates executable temperature laws from broader annealing controllers. The catalog contains <strong>$implementedCount executable schedules</strong> and <strong>$reviewedCount reviewed composite controllers</strong>.</p>
 <div class="section">
 <h2>Scientific contract</h2>
 <p>A temperature formula extracted from FSA, VFSR/ASA, GSA or another composite annealing method is explicitly identified as a component when the rest of the published method is not implemented. Statistical schedules use allocation-free level statistics only when required.</p>
@@ -173,7 +173,7 @@ $saPage =
 $saSection = @"
 <div class="section">
 <h2>Scientific cooling catalog</h2>
-<p>The v0.20.0 SA engine exposes <strong>$implementedCount built-in executable schedules</strong>, including deterministic, logarithmic, fast, dimension-dependent, generalized and statistical/adaptive laws. Broader controllers are reviewed without being reduced to scientifically misleading scalar approximations.</p>
+<p>Since v0.20.0, the SA engine exposes <strong>$implementedCount built-in executable schedules</strong>, including deterministic, logarithmic, fast, dimension-dependent, generalized and statistical/adaptive laws. Broader controllers are reviewed without being reduced to scientifically misleading scalar approximations.</p>
 <p><a href="../components/simulated-annealing-cooling-schedules.html"><strong>Open the complete Simulated Annealing Scientific Cooling Catalog</strong></a></p>
 </div>
 "@

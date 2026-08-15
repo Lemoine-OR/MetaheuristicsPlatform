@@ -264,6 +264,66 @@ public sealed class OptimizationContext<TSolution>
                 algorithmData);
         }
     }
+    /// <summary>
+    /// Registers an externally computed candidate objective as a probe evaluation without
+    /// promoting the candidate to best-so-far. This supports best-candidate selection
+    /// algorithms that evaluate several neighbors before deciding which solution is visited.
+    /// Returns the common evaluation index assigned to the probe.
+    /// </summary>
+    public long RegisterExternalProbeEvaluation(
+        double fitness,
+        object? algorithmData = null)
+    {
+        EnsureRunning();
+
+        _evaluations++;
+
+        Emit(
+            OptimizationCallbackEvents.EvaluationCompleted,
+            OptimizationEventKind.EvaluationCompleted,
+            fitness,
+            algorithmData);
+
+        return _evaluations;
+    }
+
+    /// <summary>
+    /// Promotes a previously registered probe evaluation to best-so-far without counting a
+    /// second objective evaluation. The supplied solution must already be an owned snapshot.
+    /// </summary>
+    public void PromoteOwnedExternalProbeSnapshot(
+        TSolution ownedSnapshot,
+        double fitness,
+        long evaluationIndex,
+        object? algorithmData = null)
+    {
+        EnsureRunning();
+
+        if (evaluationIndex <= 0 || evaluationIndex > _evaluations)
+        {
+            throw new ArgumentOutOfRangeException(nameof(evaluationIndex));
+        }
+
+        if (_hasBestSolution &&
+            !_problem.Sense.IsBetter(fitness, _bestFitness))
+        {
+            return;
+        }
+
+        _bestFitness = fitness;
+        _bestSolution = ownedSnapshot;
+        _hasBestSolution = true;
+        _lastImprovementIteration = _iteration;
+        _lastImprovementEvaluation = evaluationIndex;
+        _lastImprovementElapsed = _stopwatch.Elapsed;
+        _improvementCount++;
+
+        Emit(
+            OptimizationCallbackEvents.BestImproved,
+            OptimizationEventKind.BestImproved,
+            fitness,
+            algorithmData);
+    }
     /// <summary>Marks one algorithm iteration as completed.</summary>
     public void CompleteIteration(double? currentFitness = null, object? algorithmState = null)
     {
