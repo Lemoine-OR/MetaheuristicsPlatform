@@ -4,6 +4,29 @@ All notable changes to MetaheuristicsPlatform will be documented in this file.
 
 ## [Unreleased]
 
+## [0.22.0]
+
+### Added
+- Reactive Tabu Search as a distinct public algorithm with stable ID `reactive-tabu-search-battiti-tecchiolli-1994`.
+- Hash-based configuration-repetition memory with cycle-length observation and domain-owned 64-bit solution signatures.
+- Reactive prohibition-period controller: tenure grows on detected repetition, decreases after sustained non-repetition, and requests diversification when repetitions persist.
+- Allocation-free random-walk escape using reservoir sampling; only the selected escape move is objectively evaluated.
+- Long-term attribute-frequency memory and optional frequency-guided candidate ranking.
+- Optional elite-restart intensification after configurable stagnation.
+- Runtime and machine-readable `ts.*` component catalogs with 10 executable components and 3 reviewed advanced strategies.
+- Full documentation-parity page, family panel, scientific component page, validator and dedicated tests.
+
+### Scientific basis
+- Glover (1989), DOI 10.1287/ijoc.1.3.190.
+- Glover (1990), DOI 10.1287/ijoc.2.1.4.
+- Battiti & Tecchiolli (1994), DOI 10.1287/ijoc.6.2.126.
+- Glover & Laguna (1997), DOI 10.1007/978-1-4615-6089-0.
+
+### Compatibility
+- `tabu-search-glover` remains the stable Glover short-term-memory foundation introduced in v0.21.
+- Reactive Tabu Search has a separate stable algorithm identity rather than changing v0.21 semantics.
+- Tabu Search component IDs use the stable `ts.*` namespace.
+
 ## [0.21.0]
 
 ### Added

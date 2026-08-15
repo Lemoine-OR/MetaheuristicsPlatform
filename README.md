@@ -37,12 +37,12 @@ stable catalog IDs.
 <tr>
 <td width="25%"><strong>1 swarm method</strong><br><sub>PSO with topology/social/dynamics specializations.</sub></td>
 <td width="25%"><strong>5 DE methods</strong><br><sub>DE, jDE, JADE, SHADE and L-SHADE.</sub></td>
-<td width="25%"><strong>2 trajectory methods</strong><br><sub>Scientific SA plus memory-based Tabu Search.</sub></td>
+<td width="25%"><strong>3 trajectory methods</strong><br><sub>Scientific SA, Glover Tabu Search and Reactive Tabu Search.</sub></td>
 <td width="25%"><strong>Generic foundations</strong><br><sub>Evaluation pipelines, neighborhoods, reversible moves and hybrid composition.</sub></td>
 </tr>
 </table>
 
-<p align="center"><strong>8 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>9 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -115,12 +115,20 @@ stable ID used by the canonical catalog/factory.
 <table>
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/simulated-annealing-metropolis.html"><strong>Simulated Annealing</strong></a><br><sub>Trajectory-based methods · O(C_move + C_eval) per attempted transition; O(C_delta) when an exact differential evaluator is available</sub><br><code>simulated-annealing-metropolis</code><br><sub><code>SimulatedAnnealingOptimizer<TSolution,TMove,TUndo></code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/tabu-search-glover.html"><strong>Tabu Search</strong></a><br><sub>Trajectory-based methods - best-admissible memory-guided neighborhood search with exact-delta fast path</sub><br><code>tabu-search-glover</code><br><sub><code>TabuSearchOptimizer&lt;...&gt;</code></sub></td></tr>
 </table>
+<table>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/reactive-tabu-search-battiti-tecchiolli-1994.html"><strong>Reactive Tabu Search</strong></a><br><sub>Trajectory-based methods &middot; repetition-aware adaptive tenure and reactive diversification</sub><br><code>reactive-tabu-search-battiti-tecchiolli-1994</code><br><sub><code>ReactiveTabuSearchOptimizer&lt;...&gt;</code></sub></td><td width="50%"></td></tr>
+</table>
 ### Simulated Annealing scientific cooling catalog
 
 <table>
 <tr><td><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/simulated-annealing-cooling-schedules.html"><strong>Scientific Cooling Catalog</strong></a><br><sub>10 executable laws &middot; geometric, Lundy-Mees, linear, logarithmic/Hajek, Szu-Hartley, Ingber, Tsallis-Stariolo, Aarts-van Laarhoven, Huang and Triki &middot; stable <code>sa.cooling.*</code> IDs &middot; broader controllers reviewed without false reduction.</sub></td></tr>
 </table>
 
+### Tabu Search memory and reactive-control catalog
+
+<table>
+<tr><td><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/tabu-search-memory-control-strategies.html"><strong>Memory &amp; Reactive Control Catalog</strong></a><br><sub>10 executable components &middot; short/long-term memory &middot; reactive tenure &middot; intensification &middot; diversification &middot; stable <code>ts.*</code> IDs.</sub></td></tr>
+</table>
 ### Hybrid / memetic methods
 
 <table>

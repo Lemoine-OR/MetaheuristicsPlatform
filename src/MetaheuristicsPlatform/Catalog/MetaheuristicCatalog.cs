@@ -115,7 +115,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/TS/TabuSearchOptimizer.cs",
             "Glover (1989), Tabu Search-Part I, ORSA Journal on Computing 1(3), 190-206; Glover (1990), Tabu Search-Part II, ORSA Journal on Computing 2(1), 4-32",
             "10.1287/ijoc.1.3.190",
-            "Allocation-free neighborhood scan, attribute-based expiration memory, best-so-far aspiration, configurable tenure, exact-delta fast path and reversible full-evaluation fallback.")
+            "Allocation-free neighborhood scan, attribute-based expiration memory, best-so-far aspiration, configurable tenure, exact-delta fast path and reversible full-evaluation fallback."),
+        new(
+            "reactive-tabu-search-battiti-tecchiolli-1994",
+            "Reactive Tabu Search",
+            "ReactiveTabuSearchOptimizer<TSolution,TMove,TUndo,TAttribute,TEnumerator>",
+            "trajectory-based-methods",
+            "Trajectory-based methods",
+            "O(|N(x)| * C_delta + log M_s) per normal iteration with exact deltas; escape steps reservoir-scan N(x) and evaluate one selected move",
+            "O(|solution| + M_s + M_f + M_r) for short-term, frequency and repetition memories",
+            "Finite enumerated neighborhoods with reversible moves, domain-defined tabu attributes and a stable configuration signature",
+            true,
+            "src/MetaheuristicsPlatform/Algorithms/TS/ReactiveTabuSearchOptimizer.cs",
+            "Battiti & Tecchiolli (1994), The Reactive Tabu Search, ORSA Journal on Computing 6(2), 126-140; Glover (1989, 1990)",
+            "10.1287/ijoc.6.2.126",
+            "Explicit repetition detection, feedback tabu tenure, cycle-length moving average, reactive random-walk escape, optional frequency diversification, optional elite intensification, exact-delta fast path and common OptimizationContext lifecycle.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

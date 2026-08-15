@@ -200,6 +200,28 @@
       "assumptions": "Finite neighborhood enumeration, stable tabu-attribute equality/hash semantics, and exactness of any supplied delta evaluator. The attribute mapping defines which reversals or features are forbidden.",
       "convergence": "No universal finite-time global-optimum guarantee is claimed. Classical behavior depends on neighborhood, attribute memory, tenure, aspiration and optional longer-term strategies.",
       "factoryMode": "composition"
+    },
+    {
+      "id": "reactive-tabu-search-battiti-tecchiolli-1994",
+      "name": "Reactive Tabu Search",
+      "class": "ReactiveTabuSearchOptimizer<TSolution,TMove,TUndo,TAttribute,TEnumerator>",
+      "category": "trajectory-based-methods",
+      "kind": "single-solution",
+      "family": "Trajectory-based methods",
+      "time": "O(|N(x)| * C_delta + log M_s) per normal iteration with exact deltas; escape steps reservoir-scan N(x) and evaluate one selected move",
+      "space": "O(|solution| + M_s + M_f + M_r) for short-term, frequency and repetition memories",
+      "applicability": "Finite enumerated neighborhoods with reversible moves, domain-defined tabu attributes and a stable configuration signature",
+      "requiresComposition": true,
+      "sourcePath": "src/MetaheuristicsPlatform/Algorithms/TS/ReactiveTabuSearchOptimizer.cs",
+      "publication": "Battiti & Tecchiolli (1994), The Reactive Tabu Search, ORSA Journal on Computing 6(2), 126-140; Glover (1989, 1990)",
+      "doi": "10.1287/ijoc.6.2.126",
+      "implementation": "Explicit repetition detection, feedback tabu tenure, cycle-length moving average, reactive random-walk escape, optional frequency diversification, optional elite intensification, exact-delta fast path and common OptimizationContext lifecycle.",
+      "page": "docs/pages/algorithms/reactive-tabu-search-battiti-tecchiolli-1994.md",
+      "problem": "\\min_{x\\in\\mathcal X} f(x)\\quad\\text{or}\\quad\\max_{x\\in\\mathcal X} f(x)",
+      "update": "L_k=k-\\operatorname{last}(h(x_k)),\\qquad n_{esc,k}=\\lceil\\gamma\\overline L_k\\rceil",
+      "assumptions": "Finite neighborhood enumeration, stable tabu-attribute semantics, stable domain-owned configuration signatures, and exactness of any supplied delta evaluator.",
+      "convergence": "Reactive Tabu Search is an adaptive memory-based heuristic; no universal finite-time global-optimum guarantee is claimed.",
+      "factoryMode": "composition"
     }
   ]
 }

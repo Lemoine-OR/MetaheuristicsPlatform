@@ -199,6 +199,7 @@ else {
 }
 
 & (Join-Path $Root "docs\Build-SimulatedAnnealingCoolingDocumentation.ps1") -Root $Root -Site $site
+& (Join-Path $Root "docs\Build-TabuSearchAdvancedDocumentation.ps1") -Root $Root -Site $site
 & (Join-Path $Root "docs\Test-DocumentationLinks.ps1") -Root $Root
 
 Write-Host ""
