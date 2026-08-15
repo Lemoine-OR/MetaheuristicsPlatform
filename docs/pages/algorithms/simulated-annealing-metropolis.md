@@ -87,6 +87,14 @@ Metropolis et al. (1953), Journal of Chemical Physics 21(6), 1087–1092; Kirkpa
 
 DOI: `10.1126/science.220.4598.671`
 
+## Scientific cooling catalog
+
+Version 0.20.0 provides **10 built-in executable cooling laws** with stable `sa.cooling.*` IDs, plus explicit literature review of broader controllers that cannot be faithfully represented by a scalar level-only temperature rule.
+
+See [Simulated Annealing Scientific Cooling Catalog](../components/simulated-annealing-cooling-schedules.md) for formulas, assumptions, asymptotic behavior, implementation scope and primary references.
+
+The catalog distinguishes a **temperature component** from a complete published annealing algorithm: Szu-Hartley FSA also specifies a Cauchy visiting distribution; Ingber VFSR/ASA includes re-annealing and parameter adaptation; Tsallis-Stariolo GSA changes visiting and acceptance distributions; and Huang et al. additionally control chain length and freezing.
+
 ## Scientific references
 
 - Metropolis et al. (1953), Journal of Chemical Physics 21(6), 1087–1092; Kirkpatrick, Gelatt & Vecchi (1983), Science 220(4598), 671–680

@@ -165,6 +165,15 @@ public sealed class SimulatedAnnealingOptimizer<
         ISimulatedAnnealingCoolingSchedule coolingSchedule =
             parameters.CreateCoolingSchedule();
 
+        bool collectCoolingLevelStatistics =
+            coolingSchedule is ISimulatedAnnealingStatisticalCoolingSchedule;
+
+        var coolingLevelStatistics =
+            new SimulatedAnnealingLevelStatisticsAccumulator();
+
+        long levelAttemptStart = 0;
+        long levelAcceptedStart = 0;
+
         var executor =
             new ReversibleTrajectoryStepExecutor<
                 TSolution,
@@ -322,6 +331,12 @@ public sealed class SimulatedAnnealingOptimizer<
             statistics.Record(
                 in step);
 
+            if (collectCoolingLevelStatistics)
+            {
+                coolingLevelStatistics.Record(
+                    currentObjective);
+            }
+
             transitionsInLevel++;
 
             if (transitionsInLevel >=
@@ -340,20 +355,50 @@ public sealed class SimulatedAnnealingOptimizer<
                         InitialTemperature:
                             parameters.InitialTemperature,
                         CurrentTemperature:
-                            temperature);
+                            temperature)
+                    {
+                        LevelAttemptedTransitions =
+                            statistics.Attempts -
+                            levelAttemptStart,
+                        LevelAcceptedTransitions =
+                            statistics.Accepted -
+                            levelAcceptedStart,
+                        LevelObjectiveSamples =
+                            collectCoolingLevelStatistics
+                                ? coolingLevelStatistics.Count
+                                : 0,
+                        LevelObjectiveMean =
+                            collectCoolingLevelStatistics
+                                ? coolingLevelStatistics.Mean
+                                : 0.0,
+                        LevelObjectiveVariance =
+                            collectCoolingLevelStatistics
+                                ? coolingLevelStatistics.PopulationVariance
+                                : 0.0
+                    };
 
-                temperature =
+                double nextTemperature =
                     coolingSchedule.GetNextTemperature(
                         in coolingContext);
 
-                if (temperature <
-                    parameters.MinimumTemperature)
+                if (!double.IsFinite(nextTemperature) ||
+                    nextTemperature < 0.0)
                 {
-                    temperature =
-                        parameters.MinimumTemperature;
+                    throw new InvalidOperationException(
+                        "The simulated-annealing cooling schedule returned a non-finite or negative temperature.");
                 }
 
+                temperature =
+                    Math.Max(
+                        nextTemperature,
+                        parameters.MinimumTemperature);
+
                 transitionsInLevel = 0;
+                coolingLevelStatistics.Reset();
+                levelAttemptStart =
+                    statistics.Attempts;
+                levelAcceptedStart =
+                    statistics.Accepted;
             }
 
             state =

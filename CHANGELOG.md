@@ -4,6 +4,37 @@ All notable changes to MetaheuristicsPlatform will be documented in this file.
 
 ## [Unreleased]
 
+## [0.20.0]
+
+### Added
+- Scientific Simulated Annealing cooling-schedule catalog with stable `sa.cooling.*` IDs.
+- Ten executable built-in cooling laws: geometric, Lundy-Mees, linear finite-horizon, normalized Hajek logarithmic, Szu-Hartley inverse-linear, Ingber very-fast, Tsallis-Stariolo generalized, Aarts-van Laarhoven statistical, Huang statistical and Triki adaptive.
+- Runtime cooling-schedule descriptors and discovery catalog.
+- Optional `CustomCoolingSchedule` extension point.
+- Allocation-free Welford objective statistics activated only for statistical cooling schedules.
+- Scientific catalog JSON, dedicated documentation page and repository validator.
+- Explicit reviewed-composite treatment of Otten-van Ginneken adaptive control, Lam-Delosme and constant-thermodynamic-speed annealing rather than scientifically incomplete approximations.
+
+### Scientific basis
+- Aarts & van Laarhoven (1985), *Statistical cooling: a general approach to combinatorial optimization problems*.
+- Lundy & Mees (1986), DOI 10.1007/BF01582166.
+- Huang, Romeo & Sangiovanni-Vincentelli (1986), IEEE ICCAD.
+- Szu & Hartley (1987), DOI 10.1016/0375-9601(87)90796-1.
+- Hajek (1988), DOI 10.1287/moor.13.2.311.
+- Lam & Delosme (1988), DOI 10.1109/DAC.1988.14775.
+- Salamon et al. (1988), DOI 10.1016/0010-4655(88)90003-3.
+- Otten & van Ginneken (1989), *The Annealing Algorithm*, DOI 10.1007/978-1-4613-1627-5.
+- Ingber (1989), DOI 10.1016/0895-7177(89)90202-1.
+- Strenski & Kirkpatrick (1991), *Analysis of finite length annealing schedules*, Algorithmica 6(3), 346-366.
+- Tsallis & Stariolo (1996), DOI 10.1016/S0378-4371(96)00271-3.
+- Cohn & Fielding (1999), DOI 10.1137/S1052623497329683.
+- Triki, Collette & Siarry (2005), DOI 10.1016/j.ejor.2004.03.035.
+
+### Compatibility
+- Existing `Geometric = 0` and `LundyMees = 1` enum numeric values are preserved.
+- Existing five-position `SimulatedAnnealingCoolingContext` constructor is preserved; v0.20 adds init-only per-level statistics.
+- Non-statistical schedules retain the previous hot path without objective-statistics accumulation.
+
 ## [0.16.0]
 
 ### Added

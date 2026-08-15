@@ -17,10 +17,37 @@ public sealed class SimulatedAnnealingParameters :
     public SimulatedAnnealingCoolingScheduleKind CoolingSchedule { get; init; } =
         SimulatedAnnealingCoolingScheduleKind.Geometric;
 
+    /// <summary>
+    /// Optional user-supplied schedule. When non-null, this overrides
+    /// <see cref="CoolingSchedule"/> and all built-in schedule parameters.
+    /// </summary>
+    public ISimulatedAnnealingCoolingSchedule? CustomCoolingSchedule { get; init; }
+
     public double GeometricAlpha { get; init; } =
         0.95;
 
     public double LundyMeesBeta { get; init; } =
+        0.001;
+
+    public double LinearDecrement { get; init; } =
+        0.01;
+
+    public int IngberDimension { get; init; } =
+        1;
+
+    public double IngberC { get; init; } =
+        1.0;
+
+    public double TsallisVisitingQ { get; init; } =
+        2.0;
+
+    public double AartsVanLaarhovenDelta { get; init; } =
+        0.1;
+
+    public double HuangLambda { get; init; } =
+        0.6;
+
+    public double TrikiTargetMeanObjectiveDecrease { get; init; } =
         0.001;
 
     public bool StopAtMinimumTemperature { get; init; } =
@@ -67,24 +94,72 @@ public sealed class SimulatedAnnealingParameters :
                 nameof(MaximumConsecutiveSamplingFailures));
         }
 
-        _ =
+        ISimulatedAnnealingCoolingSchedule schedule =
             CreateCoolingSchedule();
+
+        if (schedule is ISimulatedAnnealingStatisticalCoolingSchedule &&
+            TransitionsPerTemperatureLevel < 2)
+        {
+            throw new ArgumentOutOfRangeException(
+                nameof(TransitionsPerTemperatureLevel),
+                "Statistical cooling schedules require at least two transitions per temperature level.");
+        }
     }
 
     internal ISimulatedAnnealingCoolingSchedule
-        CreateCoolingSchedule() =>
-        CoolingSchedule switch
+        CreateCoolingSchedule()
+    {
+        if (CustomCoolingSchedule is not null)
         {
-            SimulatedAnnealingCoolingScheduleKind.Geometric =>
-                new GeometricCoolingSchedule(
-                    GeometricAlpha),
+            return
+                CustomCoolingSchedule;
+        }
 
-            SimulatedAnnealingCoolingScheduleKind.LundyMees =>
-                new LundyMeesCoolingSchedule(
-                    LundyMeesBeta),
+        return
+            CoolingSchedule switch
+            {
+                SimulatedAnnealingCoolingScheduleKind.Geometric =>
+                    new GeometricCoolingSchedule(
+                        GeometricAlpha),
 
-            _ =>
-                throw new ArgumentOutOfRangeException(
-                    nameof(CoolingSchedule))
-        };
+                SimulatedAnnealingCoolingScheduleKind.LundyMees =>
+                    new LundyMeesCoolingSchedule(
+                        LundyMeesBeta),
+
+                SimulatedAnnealingCoolingScheduleKind.Linear =>
+                    new LinearCoolingSchedule(
+                        LinearDecrement),
+
+                SimulatedAnnealingCoolingScheduleKind.HajekLogarithmic =>
+                    new HajekLogarithmicCoolingSchedule(),
+
+                SimulatedAnnealingCoolingScheduleKind.SzuHartleyFastCauchy =>
+                    new SzuHartleyFastCauchyCoolingSchedule(),
+
+                SimulatedAnnealingCoolingScheduleKind.IngberVeryFast =>
+                    new IngberVeryFastCoolingSchedule(
+                        IngberDimension,
+                        IngberC),
+
+                SimulatedAnnealingCoolingScheduleKind.TsallisStarioloGeneralized =>
+                    new TsallisStarioloGeneralizedCoolingSchedule(
+                        TsallisVisitingQ),
+
+                SimulatedAnnealingCoolingScheduleKind.AartsVanLaarhovenStatistical =>
+                    new AartsVanLaarhovenStatisticalCoolingSchedule(
+                        AartsVanLaarhovenDelta),
+
+                SimulatedAnnealingCoolingScheduleKind.HuangStatistical =>
+                    new HuangStatisticalCoolingSchedule(
+                        HuangLambda),
+
+                SimulatedAnnealingCoolingScheduleKind.TrikiAdaptive =>
+                    new TrikiAdaptiveCoolingSchedule(
+                        TrikiTargetMeanObjectiveDecrease),
+
+                _ =>
+                    throw new ArgumentOutOfRangeException(
+                        nameof(CoolingSchedule))
+            };
+    }
 }

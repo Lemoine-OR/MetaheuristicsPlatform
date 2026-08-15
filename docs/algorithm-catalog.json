@@ -171,7 +171,7 @@
       "sourcePath": "src/MetaheuristicsPlatform/Algorithms/SA/SimulatedAnnealingOptimizer.cs",
       "publication": "Metropolis et al. (1953), Journal of Chemical Physics 21(6), 1087–1092; Kirkpatrick, Gelatt & Vecchi (1983), Science 220(4598), 671–680",
       "doi": "10.1126/science.220.4598.671",
-      "implementation": "Generic reversible trajectory engine, Metropolis acceptance, pluggable cooling schedules, exact-delta fast path and common OptimizationContext lifecycle.",
+      "implementation": "Generic reversible trajectory engine, Metropolis acceptance, ten built-in scientific cooling laws plus custom schedules, allocation-free statistical-cooling fast path, exact-delta fast path and common OptimizationContext lifecycle.",
       "page": "docs/pages/algorithms/simulated-annealing-metropolis.md",
       "problem": "\\min_{x\\in\\mathcal X} f(x)\\quad\\text{or}\\quad\\max_{x\\in\\mathcal X} f(x)",
       "update": "P(x\\rightarrow x')=\\begin{cases}1,&\\Delta\\le 0\\\\\\exp(-\\Delta/T_k),&\\Delta>0\\end{cases},\\qquad \\Delta=\\begin{cases}f(x')-f(x),&\\min\\\\f(x)-f(x'),&\\max\\end{cases}",

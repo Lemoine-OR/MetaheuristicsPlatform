@@ -37,7 +37,7 @@ stable catalog IDs.
 <tr>
 <td width="25%"><strong>1 swarm method</strong><br><sub>PSO with topology/social/dynamics specializations.</sub></td>
 <td width="25%"><strong>5 DE methods</strong><br><sub>DE, jDE, JADE, SHADE and L-SHADE.</sub></td>
-<td width="25%"><strong>1 trajectory method</strong><br><sub>Generic Metropolis Simulated Annealing.</sub></td>
+<td width="25%"><strong>1 trajectory method</strong><br><sub>Generic Metropolis SA with 10 built-in scientific cooling laws.</sub></td>
 <td width="25%"><strong>Generic foundations</strong><br><sub>Evaluation pipelines, neighborhoods, reversible moves and hybrid composition.</sub></td>
 </tr>
 </table>
@@ -115,6 +115,12 @@ stable ID used by the canonical catalog/factory.
 <table>
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/simulated-annealing-metropolis.html"><strong>Simulated Annealing</strong></a><br><sub>Trajectory-based methods · O(C_move + C_eval) per attempted transition; O(C_delta) when an exact differential evaluator is available</sub><br><code>simulated-annealing-metropolis</code><br><sub><code>SimulatedAnnealingOptimizer<TSolution,TMove,TUndo></code></sub></td><td width="50%"></td></tr>
 </table>
+### Simulated Annealing scientific cooling catalog
+
+<table>
+<tr><td><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/simulated-annealing-cooling-schedules.html"><strong>Scientific Cooling Catalog</strong></a><br><sub>10 executable laws &middot; geometric, Lundy-Mees, linear, logarithmic/Hajek, Szu-Hartley, Ingber, Tsallis-Stariolo, Aarts-van Laarhoven, Huang and Triki &middot; stable <code>sa.cooling.*</code> IDs &middot; broader controllers reviewed without false reduction.</sub></td></tr>
+</table>
+
 ### Hybrid / memetic methods
 
 <table>

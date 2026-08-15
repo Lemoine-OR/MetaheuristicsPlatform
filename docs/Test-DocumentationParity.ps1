@@ -111,6 +111,10 @@ $requiredRepoFiles = @(
     "docs\build-documentation.ps1",
     "docs\Test-DocumentationLinks.ps1",
     "docs\Test-DocumentationParity.ps1",
+    "docs\Test-SimulatedAnnealingCoolingCatalog.ps1",
+    "docs\Build-SimulatedAnnealingCoolingDocumentation.ps1",
+    "docs\sa-cooling-catalog.json",
+    "docs\pages\components\simulated-annealing-cooling-schedules.md",
     "docs\doxygen-custom.css",
     "docs\assets\algorithms-icon.svg",
     "docs\assets\metaheuristicsplatform-logo.svg",
@@ -161,8 +165,10 @@ $version =
     Get-Content (Join-Path $Root "version.json") -Raw |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.19.0") {
-    throw "Documentation parity: version.json must be 0.19.0 for this pack."
+if ([string]$version.version -ne "0.20.0") {
+    throw "Documentation parity: version.json must be 0.20.0 for this pack."
 }
+
+& (Join-Path $Root "docs\Test-SimulatedAnnealingCoolingCatalog.ps1") -Root $Root
 
 Write-Host "Documentation parity validation passed: $($algorithms.Count) algorithms, $($families.Count) family pages." -ForegroundColor Green

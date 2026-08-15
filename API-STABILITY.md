@@ -7,6 +7,7 @@ MetaheuristicsPlatform follows the same repository discipline as ULSAlgorithms.
 Even during the 0.x development line, the following are treated as compatibility
 contracts:
 - public algorithm catalog IDs;
+- public Simulated Annealing cooling-schedule IDs (`sa.cooling.*`);
 - scientific method identity;
 - serialized/reproducibility-facing identifiers;
 - documentation URLs generated from stable IDs.
