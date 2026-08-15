@@ -4,6 +4,19 @@ All notable changes to MetaheuristicsPlatform will be documented in this file.
 
 ## [Unreleased]
 
+## [0.23.0]
+
+### Added
+- Generic allocation-free local-search procedure with first- and best-improvement selection.
+- Exact objective-delta fast path and reversible apply/evaluate/undo fallback.
+- Best-Improvement Local Search (`local-search-best-improvement`).
+- First-Improvement Local Search (`local-search-first-improvement`).
+- Stable-ID, runtime-catalog, documentation, validation and focused-test coverage for the Local Search core.
+
+### Scientific basis
+- Talbi (2009), DOI 10.1002/9780470496916.
+
+
 ## [0.22.0]
 
 ### Added

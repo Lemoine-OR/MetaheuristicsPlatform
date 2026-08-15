@@ -37,12 +37,12 @@ stable catalog IDs.
 <tr>
 <td width="25%"><strong>1 swarm method</strong><br><sub>PSO with topology/social/dynamics specializations.</sub></td>
 <td width="25%"><strong>5 DE methods</strong><br><sub>DE, jDE, JADE, SHADE and L-SHADE.</sub></td>
-<td width="25%"><strong>3 trajectory methods</strong><br><sub>Scientific SA, Glover Tabu Search and Reactive Tabu Search.</sub></td>
+<td width="25%"><strong>5 trajectory methods</strong><br><sub>Scientific SA, Glover Tabu Search and Reactive Tabu Search.</sub></td>
 <td width="25%"><strong>Generic foundations</strong><br><sub>Evaluation pipelines, neighborhoods, reversible moves and hybrid composition.</sub></td>
 </tr>
 </table>
 
-<p align="center"><strong>9 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>11 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -135,6 +135,12 @@ stable ID used by the canonical catalog/factory.
 <tr><td><strong>Foundation ready</strong><br><sub>No public hybrid algorithm yet; the generic evaluation and trajectory contracts are designed for memetic/hybrid composition.</sub></td></tr>
 </table>
 
+
+### Local Search Core (v0.23.0)
+
+<table>
+<tr><td width="50%"><strong>Local Search - Best Improvement</strong><br><code>local-search-best-improvement</code><br><sub>BestImprovementLocalSearchOptimizer&lt;TSolution,TMove,TUndo,TEnumerator&gt;</sub></td><td width="50%"><strong>Local Search - First Improvement</strong><br><code>local-search-first-improvement</code><br><sub>FirstImprovementLocalSearchOptimizer&lt;TSolution,TMove,TUndo,TEnumerator&gt;</sub></td></tr>
+</table>
 
 ## Documentation contract
 

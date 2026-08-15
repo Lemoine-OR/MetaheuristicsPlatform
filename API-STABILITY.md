@@ -11,6 +11,7 @@ contracts:
 - public Tabu Search stable ID (`tabu-search-glover`);
 - public Reactive Tabu Search stable ID (`reactive-tabu-search-battiti-tecchiolli-1994`);
 - public Tabu Search component IDs (`ts.*`);
+- public Local Search Foundation algorithm IDs introduced in v0.23.0;
 - scientific method identity;
 - serialized/reproducibility-facing identifiers;
 - documentation URLs generated from stable IDs.

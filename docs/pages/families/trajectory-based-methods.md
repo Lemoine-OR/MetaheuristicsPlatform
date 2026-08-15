@@ -21,6 +21,10 @@ memory and state-transition policies.
 - @ref simulated_annealing_cooling_schedules "Simulated Annealing Scientific Cooling Catalog".
 - @ref tabu_search_memory_control_strategies "Tabu Search Memory and Reactive Control Catalog".
 
+## v0.23.0 Local Search Core
+
+- `local-search-best-improvement` - Local Search, best improvement.
+- `local-search-first-improvement` - Local Search, first improvement.
 ## Navigation
 
 Return to @ref method_families "method families".

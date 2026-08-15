@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "suite": "Local Search Core",
+  "introducedIn": "0.23.0",
+  "algorithms": [
+    {
+      "id": "local-search-best-improvement",
+      "name": "Local Search — Best Improvement",
+      "family": "Trajectory-based methods",
+      "doi": "10.1002/9780470496916",
+      "problem": "\\min_{x\\in\\mathcal X} f(x)\\quad\\text{or}\\quad\\max_{x\\in\\mathcal X} f(x)",
+      "update": "x_{k+1}\\in\\arg\\min_{y\\in N(x_k)} f(y)\\ \\text{among strict improvements}",
+      "requiresComposition": true,
+      "sourcePath": "src/MetaheuristicsPlatform/Algorithms/Neighborhood/LocalSearchOptimizers.cs",
+      "page": "docs/pages/algorithms/local-search-best-improvement.md",
+      "kind": "single-solution",
+      "factoryMode": "composition",
+      "class": "BestImprovementLocalSearchOptimizer<TSolution,TMove,TUndo,TEnumerator>",
+      "category": "trajectory-based-methods",
+      "time": "O(|N(x)| C_delta) per descent step with exact deltas; reversible full evaluation otherwise",
+      "space": "O(|solution|)",
+      "applicability": "Finite enumerated neighborhoods with reversible moves",
+      "publication": "Talbi (2009), Metaheuristics: From Design to Implementation",
+      "implementation": "Steepest-descent best-improvement scan with allocation-free neighborhood cursor, exact-delta fast path and reversible fallback.",
+      "assumptions": "Finite neighborhood; exact delta evaluator, when supplied, must match full objective evaluation.",
+      "convergence": "Terminates at a local optimum under finite neighborhoods and strict improvement, absent earlier generic stopping."
+    },
+    {
+      "id": "local-search-first-improvement",
+      "name": "Local Search — First Improvement",
+      "family": "Trajectory-based methods",
+      "doi": "10.1002/9780470496916",
+      "problem": "\\min_{x\\in\\mathcal X} f(x)\\quad\\text{or}\\quad\\max_{x\\in\\mathcal X} f(x)",
+      "update": "x_{k+1}=\\operatorname{first}\\{y\\in N(x_k):f(y)<f(x_k)\\}",
+      "requiresComposition": true,
+      "sourcePath": "src/MetaheuristicsPlatform/Algorithms/Neighborhood/LocalSearchOptimizers.cs",
+      "page": "docs/pages/algorithms/local-search-first-improvement.md",
+      "kind": "single-solution",
+      "factoryMode": "composition",
+      "class": "FirstImprovementLocalSearchOptimizer<TSolution,TMove,TUndo,TEnumerator>",
+      "category": "trajectory-based-methods",
+      "time": "O(q C_delta) per accepted move, where q is the number of candidates scanned until first improvement",
+      "space": "O(|solution|)",
+      "applicability": "Finite ordered neighborhoods with reversible moves",
+      "publication": "Talbi (2009), Metaheuristics: From Design to Implementation",
+      "implementation": "First-descent scan that stops immediately at the first strict improving move.",
+      "assumptions": "Neighborhood enumeration order is meaningful; strict improvement prevents objective cycles.",
+      "convergence": "Terminates at an order-dependent local optimum for finite neighborhoods under strict improvement."
+    }
+  ]
+}

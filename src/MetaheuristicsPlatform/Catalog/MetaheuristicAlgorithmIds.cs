@@ -15,4 +15,6 @@ public static class MetaheuristicAlgorithmIds
     public const string TabuSearch = "tabu-search-glover";
     public const string ReactiveTabuSearch =
         "reactive-tabu-search-battiti-tecchiolli-1994";
+    public const string LocalSearchBestImprovement = "local-search-best-improvement";
+    public const string LocalSearchFirstImprovement = "local-search-first-improvement";
 }

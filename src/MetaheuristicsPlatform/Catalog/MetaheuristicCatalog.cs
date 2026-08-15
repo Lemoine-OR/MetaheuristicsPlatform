@@ -129,7 +129,35 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/TS/ReactiveTabuSearchOptimizer.cs",
             "Battiti & Tecchiolli (1994), The Reactive Tabu Search, ORSA Journal on Computing 6(2), 126-140; Glover (1989, 1990)",
             "10.1287/ijoc.6.2.126",
-            "Explicit repetition detection, feedback tabu tenure, cycle-length moving average, reactive random-walk escape, optional frequency diversification, optional elite intensification, exact-delta fast path and common OptimizationContext lifecycle.")
+            "Explicit repetition detection, feedback tabu tenure, cycle-length moving average, reactive random-walk escape, optional frequency diversification, optional elite intensification, exact-delta fast path and common OptimizationContext lifecycle."),
+        new(
+            "local-search-best-improvement",
+            "Local Search — Best Improvement",
+            "BestImprovementLocalSearchOptimizer<TSolution,TMove,TUndo,TEnumerator>",
+            "trajectory-based-methods",
+            "Trajectory-based methods",
+            "O(|N(x)| C_delta) per descent step with exact deltas; reversible full evaluation otherwise",
+            "O(|solution|)",
+            "Finite enumerated neighborhoods with reversible moves",
+            true,
+            "src/MetaheuristicsPlatform/Algorithms/Neighborhood/LocalSearchOptimizers.cs",
+            "Talbi (2009), Metaheuristics: From Design to Implementation",
+            "10.1002/9780470496916",
+            "Steepest-descent best-improvement scan with allocation-free neighborhood cursor, exact-delta fast path and reversible fallback."),
+        new(
+            "local-search-first-improvement",
+            "Local Search — First Improvement",
+            "FirstImprovementLocalSearchOptimizer<TSolution,TMove,TUndo,TEnumerator>",
+            "trajectory-based-methods",
+            "Trajectory-based methods",
+            "O(q C_delta) per accepted move, where q is the number of candidates scanned until first improvement",
+            "O(|solution|)",
+            "Finite ordered neighborhoods with reversible moves",
+            true,
+            "src/MetaheuristicsPlatform/Algorithms/Neighborhood/LocalSearchOptimizers.cs",
+            "Talbi (2009), Metaheuristics: From Design to Implementation",
+            "10.1002/9780470496916",
+            "First-descent scan that stops immediately at the first strict improving move.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>
