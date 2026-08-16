@@ -213,7 +213,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Neighborhood/VariableNeighborhoodSearchOptimizers.cs",
             "Mladenovic & Hansen (1997), Variable neighborhood search; Hansen & Mladenovic (2001), Variable neighborhood search: Principles and applications",
             "10.1016/S0305-0548(97)00031-2",
-            "Canonical basic VNS: shake in N_k, locally improve, accept strict improvement and restart at the first shaking neighborhood.")
+            "Canonical basic VNS: shake in N_k, locally improve, accept strict improvement and restart at the first shaking neighborhood."),
+        new(
+            "guided-local-search-voudouris-tsang-1999",
+            "Guided Local Search - Voudouris-Tsang",
+            "GuidedLocalSearchOptimizer<TSolution,TMove,TUndo,TMoveEnumerator,TFeature,TFeatureEnumerator>",
+            "trajectory-based-methods",
+            "Trajectory-based methods",
+            "O(|N(x)|*(C_delta_f+C_delta_p)) per guided scan on the full exact-delta fast path; reversible full evaluation and active-feature scans otherwise",
+            "O(|solution| + P) where P is the number of distinct penalized features",
+            "Any representation with a reversible move neighborhood and domain-defined unique active features with non-negative feature costs",
+            true,
+            "src/MetaheuristicsPlatform/Algorithms/Neighborhood/GuidedLocalSearchOptimizer.cs",
+            "Tsang & Voudouris (1997), Fast local search and guided local search; Voudouris & Tsang (1999), Guided local search and its application to the traveling salesman problem",
+            "10.1016/S0377-2217(98)00099-X",
+            "Canonical GLS augmented objective and utility penalties, allocation-free move/feature cursors, exact objective-delta and penalty-sum-delta fast paths, and independent original-objective best-so-far ownership.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

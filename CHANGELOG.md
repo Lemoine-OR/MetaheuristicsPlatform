@@ -4,6 +4,29 @@ All notable changes to MetaheuristicsPlatform will be documented in this file.
 
 ## [Unreleased]
 
+## [0.26.0]
+
+### Added
+- Canonical Guided Local Search (`guided-local-search-voudouris-tsang-1999`).
+- Allocation-free domain feature cursors and generic feature-cost modeling.
+- Canonical utility `c_i / (1 + p_i)` with all maximum-utility ties penalized together.
+- Sense-consistent augmented objective for minimization and maximization.
+- Optional exact penalty-sum delta evaluator complementing the existing exact objective-delta path.
+- Original-objective best-so-far promotion for probed candidates even when augmented guidance rejects them.
+- Stable ID, runtime/documentation catalogs, mathematical documentation, focused tests and dedicated validation.
+
+### Scientific basis
+- Tsang & Voudouris (1997), *Fast local search and guided local search and their application to British Telecom's workforce scheduling problem*, DOI 10.1016/S0167-6377(96)00042-9.
+- Voudouris & Tsang (1999), *Guided local search and its application to the traveling salesman problem*, DOI 10.1016/S0377-2217(98)00099-X.
+
+### Performance
+- Move and feature enumeration are allocation-free.
+- Exact objective and exact penalty-sum deltas can eliminate full candidate objective evaluation and full active-feature rescans.
+- Candidate solution cloning is reserved for original-objective best-so-far promotion rather than every neighborhood probe.
+
+### Compatibility
+- All v0.25.0 public IDs and behavior remain unchanged.
+- GLS reuses the established reversible-move, neighborhood, delta-evaluation and common OptimizationContext contracts.
 ## [0.25.0]
 
 ### Added

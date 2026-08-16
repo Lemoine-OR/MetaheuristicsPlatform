@@ -354,6 +354,28 @@
                            "assumptions":  "Each shaking operator and local search are valid for the same solution representation; useful basin reachability depends on the domain neighborhood system.",
                            "convergence":  "No universal finite-time global convergence theorem is claimed; asymptotic reachability requires additional domain-specific stochastic assumptions.",
                            "factoryMode":  "composition"
+                       },
+                       {
+                           "id":  "guided-local-search-voudouris-tsang-1999",
+                           "name":  "Guided Local Search - Voudouris-Tsang",
+                           "class":  "GuidedLocalSearchOptimizer\u003cTSolution,TMove,TUndo,TMoveEnumerator,TFeature,TFeatureEnumerator\u003e",
+                           "category":  "trajectory-based-methods",
+                           "kind":  "single-solution",
+                           "family":  "Trajectory-based methods",
+                           "time":  "O(|N(x)|*(C_delta_f+C_delta_p)) per guided scan on the exact-delta fast path; reversible full evaluation and active-feature scans otherwise",
+                           "space":  "O(|solution| + P) for P distinct penalized features",
+                           "applicability":  "Reversible move neighborhoods plus domain-defined unique active features with finite non-negative feature costs",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Neighborhood/GuidedLocalSearchOptimizer.cs",
+                           "publication":  "Tsang \u0026 Voudouris (1997), Fast local search and guided local search; Voudouris \u0026 Tsang (1999), Guided local search and its application to the traveling salesman problem",
+                           "doi":  "10.1016/S0377-2217(98)00099-X",
+                           "implementation":  "Canonical augmented-objective GLS with feature-utility penalties, exact objective-delta and penalty-sum-delta fast paths, and original-objective best-so-far ownership.",
+                           "page":  "docs/pages/algorithms/guided-local-search-voudouris-tsang-1999.md",
+                           "problem":  "\\min_{x\\in X} f(x)",
+                           "update":  "h(x)=f(x)+\\lambda\\sum_i p_i I_i(x),\\quad u_i(x)=I_i(x)c_i(x)/(1+p_i),\\quad p_i\\leftarrow p_i+1\\text{ for maximal positive utility}",
+                           "assumptions":  "Active features are unique per solution; feature costs are finite and non-negative; optional delta evaluators are exact.",
+                           "convergence":  "Each strict augmented-descent phase terminates on finite spaces for fixed penalties; the finite penalty-update cap guarantees library termination, without a universal global-optimum guarantee.",
+                           "factoryMode":  "composition"
                        }
                    ]
 }

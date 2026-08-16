@@ -24,8 +24,9 @@ function Require-Contains([string]$Relative, [string[]]$Markers) {
 }
 
 $version = (Read-Utf8 "version.json") | ConvertFrom-Json
-if ([string]$version.version -ne "0.25.0") {
-    throw "v0.25 VNS validation: version.json must be 0.25.0."
+$versionText = [version]([string]$version.version)
+if ($versionText -lt [version]"0.25.0") {
+    throw "v0.25 VNS validation: expected repository version 0.25.0 or later."
 }
 
 Require-Contains "src\MetaheuristicsPlatform\Algorithms\Neighborhood\VariableNeighborhoodSearchReferences.cs" @(
@@ -107,8 +108,6 @@ if (@($catalog.algorithms).Count -lt 15) {
 
 $readme = Read-Utf8 "README.md"
 foreach ($marker in @(
-    "<strong>15 public algorithms",
-    "<strong>9 trajectory methods",
     "variable-neighborhood-descent",
     "variable-neighborhood-search-mladenovic-hansen"
 )) {
@@ -118,7 +117,7 @@ foreach ($marker in @(
 }
 
 $futureTokens = @(
-    "GuidedLocalSearchOptimizer"
+
 )
 $neighborhoodFiles = Get-ChildItem `
     (Join-Path $Root "src\MetaheuristicsPlatform\Algorithms\Neighborhood") `

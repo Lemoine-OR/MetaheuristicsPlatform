@@ -98,7 +98,7 @@ foreach ($id in @("multi-start-local-search", "iterated-local-search-lourenco-ma
 # Keep the v0.24 scope exact. These belong to later neighborhood-search releases.
 $futureTokens = @(
 
-    "GuidedLocalSearchOptimizer"
+
 )
 $neighborhoodFiles = Get-ChildItem (Join-Path $Root "src\MetaheuristicsPlatform\Algorithms\Neighborhood") -Filter "*.cs" -File
 foreach ($file in $neighborhoodFiles) {
