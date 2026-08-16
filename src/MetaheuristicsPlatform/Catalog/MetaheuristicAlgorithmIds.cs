@@ -25,4 +25,5 @@ public static class MetaheuristicAlgorithmIds
     public const string ReducedVariableNeighborhoodSearch = "reduced-variable-neighborhood-search";
     public const string GeneralVariableNeighborhoodSearch = "general-variable-neighborhood-search";
     public const string SkewedVariableNeighborhoodSearch = "skewed-variable-neighborhood-search-hansen-mladenovic-2001";
+    public const string Grasp = "grasp-feo-resende-1995";
 }

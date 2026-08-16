@@ -4,6 +4,26 @@ All notable changes to MetaheuristicsPlatform will be documented in this file.
 
 ## [Unreleased]
 
+## [0.28.0]
+
+### Added
+- Canonical GRASP (`grasp-feo-resende-1995`) following Feo & Resende's two-phase construction + local-search framework.
+- Generic allocation-free `IGraspCandidateEnumerator` and `IGraspConstructionModel` contracts for domain-owned constructive components and greedy scores.
+- `CanonicalGraspConstructionProcedure` with adaptive threshold RCL, sense-aware greedy scoring and uniform reservoir sampling without materializing the RCL.
+- Reuse of the existing `ILocalSearchProcedure<TSolution>` contract, preserving common objective accounting, callbacks, deterministic RNG, best-so-far ownership and stopping.
+- First-class `Constructive methods` documentation family.
+- Scientific GRASP catalog recording canonical GRASP as executable while Reactive GRASP and GRASP with Path Relinking remain reviewed/deferred for later advanced contracts.
+- Focused GRASP validation and unit tests.
+
+### Scientific basis
+- Feo & Resende (1989), *A probabilistic heuristic for a computationally difficult set covering problem*, DOI `10.1016/0167-6377(89)90002-3`.
+- Feo & Resende (1995), *Greedy Randomized Adaptive Search Procedures*, DOI `10.1007/BF01096763`.
+- Prais & Ribeiro (2000), *Reactive GRASP*, DOI `10.1287/ijoc.12.3.164.12639` (reviewed/deferred).
+
+### Performance
+- The RCL is never allocated: construction uses two restartable candidate scans and O(1) reservoir state.
+- Greedy scores are recomputed after every accepted construction component, preserving canonical adaptivity.
+- Local improvement reuses the already optimized local-search engine and exact-delta/reversible fast paths when the composed procedure supports them.
 ## [0.27.1]
 
 ### Fixed

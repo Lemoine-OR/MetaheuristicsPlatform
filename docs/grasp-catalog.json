@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "release": "0.28.0",
+  "algorithm": "grasp-feo-resende-1995",
+  "executable": [
+    {
+      "id": "grasp-feo-resende-1995",
+      "name": "GRASP - Feo-Resende",
+      "construction": "canonical threshold RCL",
+      "selection": "uniform reservoir sampling",
+      "localSearch": "ILocalSearchProcedure<TSolution>",
+      "status": "executable"
+    }
+  ],
+  "reviewedDeferred": [
+    {
+      "id": "reactive-grasp-prais-ribeiro-2000",
+      "name": "Reactive GRASP",
+      "reason": "Deferred to the advanced GRASP layer because it requires a probability/adaptation controller over multiple alpha values.",
+      "doi": "10.1287/ijoc.12.3.164.12639"
+    },
+    {
+      "id": "grasp-path-relinking",
+      "name": "GRASP with Path Relinking",
+      "reason": "Deferred until an elite-set/path-relinking contract is introduced without coupling the core constructor to a problem-specific path representation.",
+      "doi": "10.1007/978-1-4939-6530-4"
+    }
+  ],
+  "references": [
+    {
+      "publication": "Feo & Resende (1989), A probabilistic heuristic for a computationally difficult set covering problem",
+      "doi": "10.1016/0167-6377(89)90002-3"
+    },
+    {
+      "publication": "Feo & Resende (1995), Greedy Randomized Adaptive Search Procedures",
+      "doi": "10.1007/BF01096763"
+    },
+    {
+      "publication": "Prais & Ribeiro (2000), Reactive GRASP",
+      "doi": "10.1287/ijoc.12.3.164.12639"
+    }
+  ]
+}

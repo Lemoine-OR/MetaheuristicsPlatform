@@ -35,14 +35,15 @@ stable catalog IDs.
 
 <table>
 <tr>
-<td width="25%"><strong>1 swarm method</strong><br><sub>PSO with topology/social/dynamics specializations.</sub></td>
-<td width="25%"><strong>5 DE methods</strong><br><sub>DE, jDE, JADE, SHADE and L-SHADE.</sub></td>
-<td width="25%"><strong>13 trajectory methods</strong><br><sub>Scientific SA, Tabu Search, Reactive Tabu Search, Local Search, Multi-Start, ILS, VND/VNS variants and GLS.</sub></td>
-<td width="25%"><strong>Generic foundations</strong><br><sub>Evaluation pipelines, neighborhoods, reversible moves and hybrid composition.</sub></td>
+<td width="20%"><strong>1 swarm method</strong><br><sub>PSO with topology/social/dynamics specializations.</sub></td>
+<td width="20%"><strong>5 DE methods</strong><br><sub>DE, jDE, JADE, SHADE and L-SHADE.</sub></td>
+<td width="20%"><strong>13 trajectory methods</strong><br><sub>SA, Tabu Search, Local Search, ILS, VNS variants and GLS.</sub></td>
+<td width="20%"><strong>1 constructive method</strong><br><sub>Canonical GRASP with adaptive randomized greedy construction and local search.</sub></td>
+<td width="20%"><strong>Generic foundations</strong><br><sub>Evaluation pipelines, neighborhoods, reversible moves and hybrid composition.</sub></td>
 </tr>
 </table>
 
-<p align="center"><strong>19 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>20 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -86,10 +87,11 @@ MetaheuristicFactory.Register(
 
 <table>
 <tr>
-<td width="25%"><strong>Swarm intelligence</strong><br><sub>Collective motion and social information.</sub></td>
-<td width="25%"><strong>Evolutionary methods</strong><br><sub>Population variation, selection and adaptive DE.</sub></td>
-<td width="25%"><strong>Trajectory-based</strong><br><sub>Single-solution neighborhood trajectories.</sub></td>
-<td width="25%"><strong>Hybrid / memetic</strong><br><sub>Compositions with local search, decoders and subsolvers.</sub></td>
+<td width="20%"><strong>Swarm intelligence</strong><br><sub>Collective motion and social information.</sub></td>
+<td width="20%"><strong>Evolutionary methods</strong><br><sub>Population variation, selection and adaptive DE.</sub></td>
+<td width="20%"><strong>Trajectory-based</strong><br><sub>Single-solution neighborhood trajectories.</sub></td>
+<td width="20%"><strong>Constructive methods</strong><br><sub>Adaptive randomized construction followed by improvement.</sub></td>
+<td width="20%"><strong>Hybrid / memetic</strong><br><sub>Compositions with local search, decoders and subsolvers.</sub></td>
 </tr>
 </table>
 
@@ -122,6 +124,12 @@ stable ID used by the canonical catalog/factory.
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/variable-neighborhood-search-mladenovic-hansen.html"><strong>Basic Variable Neighborhood Search</strong></a><br><code>variable-neighborhood-search-mladenovic-hansen</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/reduced-variable-neighborhood-search.html"><strong>Reduced Variable Neighborhood Search</strong></a><br><code>reduced-variable-neighborhood-search</code></td></tr>
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/general-variable-neighborhood-search.html"><strong>General Variable Neighborhood Search</strong></a><br><code>general-variable-neighborhood-search</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/skewed-variable-neighborhood-search-hansen-mladenovic-2001.html"><strong>Skewed Variable Neighborhood Search</strong></a><br><code>skewed-variable-neighborhood-search-hansen-mladenovic-2001</code></td></tr>
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/guided-local-search-voudouris-tsang-1999.html"><strong>Guided Local Search</strong></a><br><code>guided-local-search-voudouris-tsang-1999</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/advanced-variable-neighborhood-search-variants.html"><strong>Advanced VNS catalog</strong></a><br><sub>RVNS / GVNS / SVNS executable; VNDS reviewed/deferred pending a decomposition contract.</sub></td></tr>
+</table>
+
+### Constructive methods
+
+<table>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/grasp-feo-resende-1995.html"><strong>GRASP - Feo-Resende</strong></a><br><sub>Adaptive randomized greedy threshold-RCL construction + reusable local search; allocation-free RCL selection.</sub><br><code>grasp-feo-resende-1995</code><br><sub><code>GraspOptimizer&lt;TSolution&gt;</code></sub></td><td width="50%"></td></tr>
 </table>
 
 ### Hybrid / memetic methods

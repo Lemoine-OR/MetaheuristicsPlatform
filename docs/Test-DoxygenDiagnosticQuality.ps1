@@ -22,8 +22,10 @@ $version =
     (Read-Utf8 "version.json") |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.27.1") {
-    throw "Doxygen quality validation: version.json must be 0.27.1."
+$versionText = [version]([string]$version.version)
+
+if ($versionText -lt [version]"0.27.1") {
+    throw "Doxygen quality validation: expected repository version 0.27.1 or later."
 }
 
 $doxyfile = Read-Utf8 "docs\Doxyfile"

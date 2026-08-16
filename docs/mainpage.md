@@ -17,6 +17,7 @@ use, start from the project portal and the short guides below.
 - @subpage family_swarm_intelligence — swarm intelligence.
 - @subpage family_evolutionary_methods — evolutionary methods.
 - @subpage family_trajectory_based_methods — trajectory-based methods.
+- @subpage family_constructive_methods - constructive methods.
 - @subpage family_hybrid_methods — hybrid / memetic methods.
 - @subpage algorithm_catalog — complete generated inventory.
 

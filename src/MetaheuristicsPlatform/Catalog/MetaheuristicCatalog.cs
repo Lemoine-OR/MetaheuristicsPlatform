@@ -269,7 +269,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Neighborhood/AdvancedVariableNeighborhoodSearchOptimizers.cs",
             "Hansen & Mladenovic (2001), Variable neighborhood search: Principles and applications; Hansen et al. (2017)",
             "10.1016/S0377-2217(00)00100-4",
-            "Canonical SVNS recentering with a distance-skewed objective comparison while preserving original-objective best-so-far.")
+            "Canonical SVNS recentering with a distance-skewed objective comparison while preserving original-objective best-so-far."),
+        new(
+            "grasp-feo-resende-1995",
+            "GRASP - Feo-Resende",
+            "GraspOptimizer<TSolution>",
+            "constructive-methods",
+            "Constructive methods",
+            "O(2 * sum_t |C_t| * C_g + C_eval + C_LS) per outer iteration",
+            "O(|solution| + construction cursor + local-search workspace); RCL overhead O(1)",
+            "Constructive optimization problems with a domain greedy score, restartable candidate cursor and compatible reusable local search",
+            true,
+            "src/MetaheuristicsPlatform/Algorithms/Constructive/GraspOptimizer.cs",
+            "Feo & Resende (1989), Operations Research Letters 8(2), 67-71; Feo & Resende (1995), Journal of Global Optimization 6(2), 109-133",
+            "10.1007/BF01096763",
+            "Canonical adaptive threshold-RCL construction with allocation-free two-pass scans and uniform reservoir selection, followed by reusable local search under one OptimizationContext lifecycle.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

@@ -22,6 +22,11 @@
                          "id":  "hybrid-methods",
                          "name":  "Hybrid / memetic methods",
                          "description":  "Compositions of population, trajectory, local-search, decoder and exact/heuristic subsolver mechanisms."
+                     },
+                     {
+                         "id":  "constructive-methods",
+                         "name":  "Constructive methods",
+                         "description":  "Methods that build complete solutions progressively from domain-defined components, often followed by local improvement."
                      }
                  ],
     "algorithms":  [
@@ -441,6 +446,28 @@
                            "update":  "For minimization recenter when f(x\u0027\u0027) - alpha*rho(x,x\u0027\u0027) \u003c f(x); maximization uses the sense-consistent plus form.",
                            "assumptions":  "Distance is finite and non-negative; local search and shaking return valid candidates.",
                            "convergence":  "Finite MaximumCycles guarantees termination; skewed recentering has no universal global-optimum guarantee.",
+                           "factoryMode":  "composition"
+                       },
+                       {
+                           "id":  "grasp-feo-resende-1995",
+                           "name":  "GRASP - Feo-Resende",
+                           "class":  "GraspOptimizer\u003cTSolution\u003e",
+                           "category":  "constructive-methods",
+                           "kind":  "constructive",
+                           "family":  "Constructive methods",
+                           "time":  "O(2 * sum_t |C_t| * C_g + C_eval + C_LS) per outer iteration",
+                           "space":  "O(|solution| + construction cursor + local-search workspace); RCL overhead O(1)",
+                           "applicability":  "Constructive problems with domain-defined finite greedy scores, restartable candidate cursors and compatible local search",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Constructive/GraspOptimizer.cs",
+                           "publication":  "Feo \u0026 Resende (1989), A probabilistic heuristic for a computationally difficult set covering problem; Feo \u0026 Resende (1995), Greedy Randomized Adaptive Search Procedures",
+                           "doi":  "10.1007/BF01096763",
+                           "implementation":  "Canonical adaptive threshold-RCL construction; two allocation-free candidate scans; uniform reservoir sampling; reusable local search; common OptimizationContext.",
+                           "page":  "docs/pages/algorithms/grasp-feo-resende-1995.md",
+                           "problem":  "\\min_{x\\in\\mathcal X} f(x)",
+                           "update":  "RCL={e:c(e)\u003c=c_min+alpha(c_max-c_min)} for minimizing greedy scores, with the sense-consistent maximizing form; x\u0027=LS(x)",
+                           "assumptions":  "The domain supplies a complete constructive model with finite side-effect-free greedy scores, restartable candidate cursors and a compatible local search.",
+                           "convergence":  "No unconditional finite-time global convergence claim; with positive probability of reaching a globally optimal basin and indefinitely many independent iterations, failure probability tends to zero.",
                            "factoryMode":  "composition"
                        }
                    ]
