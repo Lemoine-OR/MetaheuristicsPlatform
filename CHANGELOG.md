@@ -4,6 +4,23 @@ All notable changes to MetaheuristicsPlatform will be documented in this file.
 
 ## [Unreleased]
 
+## [0.27.0]
+
+### Added
+- Reduced Variable Neighborhood Search (`reduced-variable-neighborhood-search`).
+- General Variable Neighborhood Search (`general-variable-neighborhood-search`) using the reusable VND procedure as its improvement phase.
+- Skewed Variable Neighborhood Search (`skewed-variable-neighborhood-search-hansen-mladenovic-2001`) with a domain-owned solution-distance contract and sense-consistent skewed recentering.
+- Advanced VNS catalog with three executable variants and Variable Neighborhood Decomposition Search (VNDS) explicitly reviewed/deferred rather than falsely reduced to ordinary shaking.
+- Stable IDs, runtime/documentation catalog entries, mathematical pages, focused tests and dedicated validation.
+
+### Scientific basis
+- Hansen & Mladenovic (2001), *Variable neighborhood search: Principles and applications*, DOI 10.1016/S0377-2217(00)00100-4.
+- Hansen, Mladenovic, Todosijevic & Hanafi (2017), *Variable neighborhood search: basics and variants*, DOI 10.1007/s13675-016-0075-x.
+
+### Compatibility
+- All v0.26.0 public IDs and behavior remain unchanged.
+- RVNS/GVNS/SVNS reuse established shaking, local-search, VND, cloning and OptimizationContext contracts.
+- VNDS remains non-executable until a truthful generic decomposition/subproblem abstraction is introduced.
 ## [0.26.0]
 
 ### Added

@@ -20,8 +20,8 @@ $catalog =
 $algorithms = @($catalog.algorithms)
 $families = @($catalog.families)
 
-if ($algorithms.Count -lt 16) {
-    throw "Documentation parity: expected at least the sixteen currently public algorithms."
+if ($algorithms.Count -lt 19) {
+    throw "Documentation parity: expected at least the nineteen currently public algorithms."
 }
 
 $requiredFields = @(
@@ -131,6 +131,9 @@ $requiredRepoFiles = @(
     "docs\variable-neighborhood-search-catalog.json",
     "docs\Test-GuidedLocalSearch.ps1",
     "docs\guided-local-search-catalog.json",
+    "docs\Test-AdvancedVariableNeighborhoodSearch.ps1",
+    "docs\advanced-variable-neighborhood-search-catalog.json",
+    "docs\pages\components\advanced-variable-neighborhood-search-variants.md",
     "docs\doxygen-custom.css",
     "docs\assets\algorithms-icon.svg",
     "docs\assets\metaheuristicsplatform-logo.svg",
@@ -184,8 +187,8 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.26.0") {
-    throw "Documentation parity: version.json must be 0.26.0 for this release."
+if ([string]$version.version -ne "0.27.0") {
+    throw "Documentation parity: version.json must be 0.27.0 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root
@@ -196,5 +199,6 @@ if ([string]$version.version -ne "0.26.0") {
 & (Join-Path $Root "docs\Test-RestartIteratedLocalSearch.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-VariableNeighborhoodSearch.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-GuidedLocalSearch.ps1") -Root $Root
+& (Join-Path $Root "docs\Test-AdvancedVariableNeighborhoodSearch.ps1") -Root $Root
 
 Write-Host "Documentation parity validation passed: $($algorithms.Count) algorithms, $($families.Count) family pages." -ForegroundColor Green

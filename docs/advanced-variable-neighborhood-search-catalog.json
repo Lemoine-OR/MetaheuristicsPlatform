@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "release": "0.27.0",
+  "family": "Advanced Variable Neighborhood Search",
+  "executable": [
+    {
+      "id": "reduced-variable-neighborhood-search",
+      "acronym": "RVNS",
+      "status": "executable",
+      "description": "VNS shaking and neighborhood change without a local-improvement phase."
+    },
+    {
+      "id": "general-variable-neighborhood-search",
+      "acronym": "GVNS",
+      "status": "executable",
+      "description": "VNS shaking with Variable Neighborhood Descent as the improvement phase."
+    },
+    {
+      "id": "skewed-variable-neighborhood-search-hansen-mladenovic-2001",
+      "acronym": "SVNS",
+      "status": "executable",
+      "description": "Distance-skewed recentering that may accept a slightly worse but sufficiently distant local optimum."
+    }
+  ],
+  "reviewedDeferred": [
+    {
+      "id": "variable-neighborhood-decomposition-search",
+      "acronym": "VNDS",
+      "status": "reviewed-deferred",
+      "reason": "Requires a first-class decomposition/subproblem contract rather than ordinary shaking or whole-space local search."
+    }
+  ],
+  "references": [
+    {
+      "publication": "Hansen & Mladenovic (2001), Variable neighborhood search: Principles and applications",
+      "doi": "10.1016/S0377-2217(00)00100-4"
+    },
+    {
+      "publication": "Hansen, Mladenovic, Todosijevic & Hanafi (2017), Variable neighborhood search: basics and variants",
+      "doi": "10.1007/s13675-016-0075-x"
+    }
+  ]
+}

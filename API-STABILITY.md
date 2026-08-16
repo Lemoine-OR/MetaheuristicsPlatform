@@ -17,6 +17,9 @@ contracts:
 - public Variable Neighborhood Descent ID (`variable-neighborhood-descent`) introduced in v0.25.0;
 - public canonical Variable Neighborhood Search ID (`variable-neighborhood-search-mladenovic-hansen`) introduced in v0.25.0;
 - public Guided Local Search ID (`guided-local-search-voudouris-tsang-1999`) introduced in v0.26.0;
+- public Reduced Variable Neighborhood Search ID (`reduced-variable-neighborhood-search`) introduced in v0.27.0;
+- public General Variable Neighborhood Search ID (`general-variable-neighborhood-search`) introduced in v0.27.0;
+- public Skewed Variable Neighborhood Search ID (`skewed-variable-neighborhood-search-hansen-mladenovic-2001`) introduced in v0.27.0;
 - scientific method identity;
 - serialized/reproducibility-facing identifiers;
 - documentation URLs generated from stable IDs.

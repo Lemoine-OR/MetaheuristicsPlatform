@@ -22,4 +22,7 @@ public static class MetaheuristicAlgorithmIds
     public const string VariableNeighborhoodDescent = "variable-neighborhood-descent";
     public const string VariableNeighborhoodSearch = "variable-neighborhood-search-mladenovic-hansen";
     public const string GuidedLocalSearch = "guided-local-search-voudouris-tsang-1999";
+    public const string ReducedVariableNeighborhoodSearch = "reduced-variable-neighborhood-search";
+    public const string GeneralVariableNeighborhoodSearch = "general-variable-neighborhood-search";
+    public const string SkewedVariableNeighborhoodSearch = "skewed-variable-neighborhood-search-hansen-mladenovic-2001";
 }

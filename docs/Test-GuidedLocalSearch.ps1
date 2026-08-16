@@ -31,8 +31,9 @@ function Require-Contains(
 }
 
 $version = (Read-Utf8 "version.json") | ConvertFrom-Json
-if ([string]$version.version -ne "0.26.0") {
-    throw "v0.26 GLS validation: version.json must be 0.26.0."
+$versionText = [version]([string]$version.version)
+if ($versionText -lt [version]"0.26.0") {
+    throw "v0.26 GLS validation: expected repository version 0.26.0 or later."
 }
 
 Require-Contains `
@@ -121,8 +122,6 @@ if (@($catalog.algorithms).Count -lt 16) {
 
 $readme = Read-Utf8 "README.md"
 foreach ($marker in @(
-    "<strong>16 public algorithms",
-    "<strong>10 trajectory methods",
     "guided-local-search-voudouris-tsang-1999"
 )) {
     if (-not $readme.Contains($marker)) {
