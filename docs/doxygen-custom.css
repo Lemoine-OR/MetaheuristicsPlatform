@@ -11,3 +11,15 @@
 a { color: var(--mp-blue); }
 .contents h1, .contents h2, .contents h3 { color: var(--mp-navy); }
 code, .fragment { border-radius: 6px; }
+
+/* DOCUMENTATION-MATH-OVERFLOW-V0301 */
+.formulaDsp {
+  max-width:100%;
+  overflow-x:auto;
+  overflow-y:hidden;
+  padding:.25rem 0;
+  -webkit-overflow-scrolling:touch;
+}
+.formulaDsp mjx-container[display="true"] {
+  margin:.45rem 0 !important;
+}

@@ -23,6 +23,76 @@ function Write-Utf8([string]$path, [string]$content) {
         [System.Text.UTF8Encoding]::new($false))
 }
 
+function Get-MarkdownApiExample([string]$RelativePage) {
+    $path = Join-Path $Root $RelativePage
+
+    if (-not (Test-Path -LiteralPath $path)) {
+        throw "Canonical algorithm page not found: '$RelativePage'."
+    }
+
+    $text =
+        [System.IO.File]::ReadAllText(
+            $path,
+            [System.Text.Encoding]::UTF8)
+
+    $section =
+        [regex]::Match(
+            $text,
+            '(?ms)^##[ \t]+API example[ \t]*\r?\n(?<body>.*?)(?=^##[ \t]+|\z)')
+
+    if (-not $section.Success) {
+        throw "Canonical algorithm page '$RelativePage' has no API example section."
+    }
+
+    $code =
+        [regex]::Match(
+            $section.Groups["body"].Value,
+            '(?ms)```(?:csharp)?[ \t]*\r?\n(?<code>.*?)\r?\n```[ \t]*$')
+
+    if (-not $code.Success) {
+        throw "Canonical algorithm page '$RelativePage' has no fenced C# API example."
+    }
+
+    return $code.Groups["code"].Value.Trim()
+}
+function Get-DoxygenPageFile([string]$RelativePage) {
+    $path = Join-Path $Root $RelativePage
+
+    if (-not (Test-Path -LiteralPath $path)) {
+        throw "Canonical algorithm page not found: '$RelativePage'."
+    }
+
+    $text =
+        [System.IO.File]::ReadAllText(
+            $path,
+            [System.Text.Encoding]::UTF8)
+
+    $explicit =
+        [regex]::Match(
+            $text,
+            '(?m)^[ \t]*@page[ \t]+(?<id>[A-Za-z0-9_]+)\b')
+
+    if ($explicit.Success) {
+        return $explicit.Groups["id"].Value + ".html"
+    }
+
+    $relative =
+        $RelativePage.Replace('\','/')
+
+    if ($relative.StartsWith(
+            'docs/',
+            [System.StringComparison]::OrdinalIgnoreCase)) {
+        $relative = $relative.Substring(5)
+    }
+
+    if ($relative.EndsWith(
+            '.md',
+            [System.StringComparison]::OrdinalIgnoreCase)) {
+        $relative = $relative.Substring(0, $relative.Length - 3)
+    }
+
+    return 'md_' + $relative.Replace('/', '_2') + '.html'
+}
 function PageShell(
     [string]$title,
     [string]$body,
@@ -44,7 +114,7 @@ function PageShell(
 <script>
 window.MathJax = { tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] } };
 </script>
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
 </head>
 <body>
 <header><div class="wrap">
@@ -152,6 +222,18 @@ foreach ($family in @($catalog.families)) {
 }
 
 foreach ($algorithm in @($catalog.algorithms)) {
+    $apiExample =
+        Get-MarkdownApiExample ([string]$algorithm.page)
+
+    $apiExampleHtml =
+        Html $apiExample
+
+    $doxygenPageFile =
+        Get-DoxygenPageFile ([string]$algorithm.page)
+
+    $doxygenHref =
+        "../api/" + $doxygenPageFile
+
     $body = @"
 <h1>$(Html $algorithm.name)</h1>
 <div class="section">
@@ -168,16 +250,25 @@ foreach ($algorithm in @($catalog.algorithms)) {
 <div class="section"><h2>Complexity</h2>
 <p><strong>Time:</strong> $(Html $algorithm.time)<br><strong>Space:</strong> $(Html $algorithm.space)</p></div>
 <div class="section"><h2>Applicability</h2><p>$(Html $algorithm.applicability)</p></div>
-<div class="section"><h2>Detailed operation</h2><p>$(Html $algorithm.implementation)</p></div>
-<div class="section"><h2>Parameters</h2><p>Generic stopping, callbacks, deterministic randomization and cancellation are common. Method-specific parameters are exposed by the corresponding parameter type and generated API.</p></div>
-<div class="section"><h2>API example</h2><pre><code>MetaheuristicFactory.Create&lt;...&gt;("$(Html $algorithm.id)");</code></pre></div>
+<div class="section"><h2>Detailed operation</h2>
+<p>This catalog page is the concise algorithm overview. The canonical scientific page contains the complete step-by-step operation, parameter semantics, mathematical derivation, assumptions, convergence qualifications and bibliography.</p>
+<p><a class="science-link" href="$doxygenHref"><strong>Open the full scientific documentation</strong></a></p>
+</div>
+<div class="section"><h2>Parameters</h2>
+<p>Generic stopping, callbacks, deterministic randomization and cancellation are common. Exact method-specific parameters, defaults and domain-composition requirements are maintained in the canonical scientific page and generated API.</p>
+<p><a href="$doxygenHref">Open parameter documentation and API details.</a></p>
+</div>
+<div class="section"><h2>API example</h2><pre><code>$apiExampleHtml</code></pre></div>
 <div class="section">
 <h2>Mathematical details</h2>
-<h3>Problem formulation</h3><div class="math">\[$($algorithm.problem)\]</div>
-<h3>Update equations / iterations</h3><div class="math">\[$($algorithm.update)\]</div>
+<h3>Problem formulation</h3><div class="math">\[$(Html ([string]$algorithm.problem))\]</div>
+<h3>Update equations / iterations</h3><div class="math">\[$(Html ([string]$algorithm.update))\]</div>
 <h3>Assumptions</h3><p>$(Html $algorithm.assumptions)</p>
 <h3>Convergence conditions</h3><p>$(Html $algorithm.convergence)</p>
-<h3>Scientific references</h3><p>$(Html $algorithm.publication)<br>DOI: <code>$(Html $algorithm.doi)</code></p>
+<h3>Scientific references</h3>
+<p>$(Html $algorithm.publication)</p>
+<p><strong>Principal catalog DOI:</strong> <a href="https://doi.org/$(Html $algorithm.doi)"><code>$(Html $algorithm.doi)</code></a></p>
+<p><a href="$doxygenHref">Open the complete bibliography, provenance and convergence notes.</a></p>
 </div>
 "@
 
@@ -276,6 +367,7 @@ foreach ($htmlPage in $allHtmlPages) {
     }
 }
 
+& (Join-Path $Root "docs\Test-RenderedPortalQuality.ps1") -Root $Root -Site $site
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root -AdditionalPath $site
 & (Join-Path $Root "docs\Test-DocumentationLinks.ps1") -Root $Root
 

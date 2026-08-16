@@ -12,3 +12,50 @@ h2{color:var(--navy);margin-top:36px}.grid{display:grid;grid-template-columns:re
 footer{margin-top:48px;background:var(--navy);color:#dce8f8}.family-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
 .family{background:white;border:1px solid #dbe4f0;border-radius:10px;padding:16px}
 @media(max-width:800px){.grid,.family-grid{grid-template-columns:1fr}.hero h1{font-size:32px}}
+
+/* DOCUMENTATION-MATH-OVERFLOW-V0301 */
+.math {
+  max-width:100%;
+  overflow-x:auto;
+  overflow-y:hidden;
+  -webkit-overflow-scrolling:touch;
+}
+.math mjx-container[display="true"] {
+  margin:.45rem 0 !important;
+  max-width:none;
+}
+pre {
+  max-width:100%;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+}
+/* DOCUMENTATION-AUDIT-ROUND2-V0301 */
+.math {
+  text-align:center;
+}
+.formula-note {
+  margin:10px 0 12px;
+  padding:10px 12px;
+  border-left:4px solid var(--orange);
+  background:#fffaf2;
+  line-height:1.5;
+}
+.science-link {
+  display:inline-block;
+  margin-top:4px;
+  padding:9px 12px;
+  border:1px solid #c7d8ef;
+  border-radius:8px;
+  background:#f3f7fd;
+  color:var(--navy2);
+  text-decoration:none;
+}
+.science-link:hover {
+  background:#eaf2fc;
+}
+.tt {
+  font-family:Consolas,monospace;
+  background:#edf4ff;
+  padding:1px 4px;
+  border-radius:4px;
+}

@@ -35,7 +35,10 @@ foreach ($marker in @(
     'Doxygen-CSharpCompatibilityFilter.ps1',
     'WARN_AS_ERROR',
     'FAIL_ON_WARNINGS',
-    'WARN_LOGFILE'
+    'WARN_LOGFILE',
+    'MATHJAX_FORMAT',
+    'MATHJAX_RELPATH',
+    'mathjax@3.2.2'
 )) {
     if (-not $doxyfile.Contains($marker)) {
         throw "Doxygen quality validation: Doxyfile is missing '$marker'."

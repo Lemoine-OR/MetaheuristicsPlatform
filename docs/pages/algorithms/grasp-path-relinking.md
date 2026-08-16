@@ -215,9 +215,9 @@ qualification.
 
 - Feo, T. A.; Resende, M. G. C. (1995). *Greedy Randomized Adaptive Search Procedures*,
   Journal of Global Optimization 6(2), 109-133. DOI: `10.1007/BF01096763`.
-- Resende, M. G. C.; Ribeiro, C. C. (2003). *GRASP and path-relinking: Recent advances
-  and applications*. AT&T Labs Research Technical Report / Metaheuristics International
-  Conference tutorial.
+- Resende, M. G. C.; Ribeiro, C. C. (2005). *GRASP with path-relinking: Recent advances
+  and applications*, in *Metaheuristics: Progress as Real Problem Solvers*, pp. 29-63.
+  DOI: `10.1007/0-387-25383-1_2`.
 - Aiex, R. M.; Resende, M. G. C.; Pardalos, P. M.; Toraldo, G. (2005).
   *GRASP with Path Relinking for Three-Index Assignment*, INFORMS Journal on Computing
   17(2), 224-247. DOI: `10.1287/ijoc.1030.0059`.

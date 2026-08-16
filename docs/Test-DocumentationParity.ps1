@@ -139,6 +139,8 @@ $requiredRepoFiles = @(
     "docs\Build-PsoTopologyDocumentation.ps1",
     "docs\Build-AdvancedVariableNeighborhoodDocumentation.ps1",
     "docs\Test-ScientificComponentDocumentationParity.ps1",
+    "docs\Test-ScientificFormulaQuality.ps1",
+    "docs\Test-RenderedPortalQuality.ps1",
     "docs\Test-DoxygenDiagnosticQuality.ps1",
     "docs\Doxygen-CSharpCompatibilityFilter.ps1",
     "docs\Test-Grasp.ps1",
@@ -201,8 +203,8 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.30.0") {
-    throw "Documentation parity: version.json must be 0.30.0 for this release."
+if ([string]$version.version -ne "0.30.1") {
+    throw "Documentation parity: version.json must be 0.30.1 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root
@@ -218,6 +220,7 @@ if ([string]$version.version -ne "0.30.0") {
 & (Join-Path $Root "docs\Test-ReactiveGrasp.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-GraspPathRelinking.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-ScientificComponentDocumentationParity.ps1") -Root $Root
+& (Join-Path $Root "docs\Test-ScientificFormulaQuality.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-DoxygenDiagnosticQuality.ps1") -Root $Root
 
 Write-Host "Documentation parity validation passed: $($algorithms.Count) algorithms, $($families.Count) family pages." -ForegroundColor Green

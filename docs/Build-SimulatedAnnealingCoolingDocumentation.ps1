@@ -68,10 +68,31 @@ foreach ($entry in $entries) {
             "<br><strong>DOI:</strong> <code>$(Html ([string]$entry.doi))</code>"
         }
 
+    $formulaMode =
+        [string]$entry.formulaMode
+
+    $formulaBlock =
+        switch ($formulaMode) {
+            "math" {
+                '<div class="math">\[' +
+                (Html ([string]$entry.formula)) +
+                '\]</div>'
+            }
+
+            "prose" {
+                '<div class="formula-note"><strong>Scientific model:</strong> ' +
+                (Html ([string]$entry.formula)) +
+                '</div>'
+            }
+
+            default {
+                throw "Unsupported formulaMode '$formulaMode' for '$($entry.id)'."
+            }
+        }
     $cards.Add(@"
 <div class="card">
 <h3>$(Html ([string]$entry.name)) <span class="badge">$(Html $status)</span></h3>
-<div class="math">\($(Html ([string]$entry.formula))\)</div>
+$formulaBlock
 <div class="meta">
 <strong>Scope:</strong> $(Html ([string]$entry.scope))<br>
 <strong>Parameters:</strong> $(Html ([string]$entry.parameters))<br>
@@ -93,7 +114,7 @@ $page = @"
 <script>
 window.MathJax = { tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] } };
 </script>
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
 </head>
 <body>
 <header><div class="wrap">

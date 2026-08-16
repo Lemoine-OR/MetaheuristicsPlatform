@@ -4,6 +4,23 @@ All notable changes to MetaheuristicsPlatform will be documented in this file.
 
 ## [Unreleased]
 
+## [0.30.1]
+
+### Fixed
+- HTML-encode catalog TeX before inserting formulas into portal HTML, preventing `<`, `>` and `&` from being interpreted as markup and truncating mathematical content.
+- Replace pseudo-mathematical catalog text with explicit MathJax-compatible TeX for all 22 public algorithms.
+- Replace the generated `MetaheuristicFactory.Create<...>` placeholder on every portal algorithm page with the canonical C# API example from that algorithm's Markdown documentation.
+- Add horizontal overflow protection for long MathJax equations in both the portal and Doxygen output.
+- Correct the GRASP Path Relinking bibliography to the published Resende-Ribeiro 2005 chapter, DOI `10.1007/0-387-25383-1_2`.
+- Reformat all 22 primary update equations as aligned display mathematics to avoid excessive single-line widths.
+- Component catalog formulas now carry an explicit `formulaMode` so reviewed qualitative controllers are rendered as prose rather than fake mathematics.
+- Replace duplicated portal "Detailed operation" content with a direct link to the canonical full scientific Doxygen page.
+- Pin portal and Doxygen rendering to MathJax `3.2.2` instead of the rolling `@3` CDN alias.
+
+### Validation
+- Add `Test-ScientificFormulaQuality.ps1` to reject pseudo-math, malformed delimiter ownership, unbalanced braces and unsynchronized API examples.
+- Add `Test-RenderedPortalQuality.ps1` to validate the generated HTML itself: two safe formula blocks per algorithm, exact catalog-to-HTML formula parity and canonical API-example parity.
+
 ## [0.30.0]
 
 ### Added
