@@ -20,6 +20,12 @@ use, start from the project portal and the short guides below.
 - @subpage family_hybrid_methods — hybrid / memetic methods.
 - @subpage algorithm_catalog — complete generated inventory.
 
+## Scientific components
+
+- @subpage pso_communication_topologies - PSO communication graphs, rebuild semantics, exact/generic status and DCluster.
+- @subpage simulated_annealing_cooling_schedules - SA cooling laws and reviewed composite controllers.
+- @subpage tabu_search_memory_control_strategies - Tabu Search memory and reactive-control components.
+- @subpage advanced_variable_neighborhood_search_variants - executable and reviewed/deferred VNS variants.
 ## Validation and reproducibility
 
 - @subpage complexity_applicability

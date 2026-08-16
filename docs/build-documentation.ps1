@@ -181,15 +181,55 @@ if ($null -eq $doxygen) {
     Write-Utf8 (Join-Path $site "api\index.html") (PageShell "API unavailable" "<h1>Generated API</h1><p>Doxygen was not available during this local build.</p>" "../")
 }
 else {
+    $doxygenBuildLog =
+        Join-Path $Root "Documentation\doxygen-build.log"
+
+    if (Test-Path -LiteralPath $doxygenBuildLog) {
+        Remove-Item -LiteralPath $doxygenBuildLog -Force
+    }
+
+    $doxygenOutput = @()
+
     Push-Location (Join-Path $Root "docs")
     try {
-        & $doxygen.Source "Doxyfile"
-        if ($LASTEXITCODE -ne 0) {
-            throw "Doxygen build failed."
-        }
+        & $doxygen.Source "Doxyfile" 2>&1 |
+            Tee-Object -Variable doxygenOutput |
+            Out-Host
+
+        $doxygenExitCode = $LASTEXITCODE
     }
     finally {
         Pop-Location
+    }
+
+    $doxygenText =
+        @($doxygenOutput |
+          ForEach-Object { [string]$_ })
+
+    [System.IO.File]::WriteAllLines(
+        $doxygenBuildLog,
+        $doxygenText,
+        [System.Text.UTF8Encoding]::new($false))
+
+    $doxygenDiagnostics =
+        @(
+            $doxygenText |
+            Where-Object {
+                $_ -match '(?i)(^|:\s)(warning|error):'
+            }
+        )
+
+    if ($doxygenExitCode -ne 0) {
+        throw (
+            "Doxygen build failed with exit code {0}. See {1}" -f
+            $doxygenExitCode,
+            $doxygenBuildLog)
+    }
+
+    if ($doxygenDiagnostics.Count -gt 0) {
+        throw (
+            "Doxygen emitted diagnostics despite a zero exit code. See {0}" -f
+            $doxygenBuildLog)
     }
 
     $doxygenHtml =
@@ -204,6 +244,8 @@ else {
 
 & (Join-Path $Root "docs\Build-SimulatedAnnealingCoolingDocumentation.ps1") -Root $Root -Site $site
 & (Join-Path $Root "docs\Build-TabuSearchAdvancedDocumentation.ps1") -Root $Root -Site $site
+& (Join-Path $Root "docs\Build-PsoTopologyDocumentation.ps1") -Root $Root -Site $site
+& (Join-Path $Root "docs\Build-AdvancedVariableNeighborhoodDocumentation.ps1") -Root $Root -Site $site
 # Inject the project favicon into every generated HTML page, including Doxygen output.
 $allHtmlPages = Get-ChildItem -LiteralPath $site -Recurse -Filter "*.html" -File
 foreach ($htmlPage in $allHtmlPages) {

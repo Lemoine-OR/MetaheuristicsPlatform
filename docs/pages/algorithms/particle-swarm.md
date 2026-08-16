@@ -27,6 +27,13 @@ Continuous bounded search spaces; generic platform infrastructure also supports 
 
 The implementation follows the cited scientific method while preserving the platform invariants: deterministic random streams where applicable, explicit ownership of mutable state, common stopping/callback lifecycle, and no avoidable hot-loop allocation.
 
+## Implemented communication topologies
+
+PSO topology is a first-class scientific component in MetaheuristicsPlatform. The implementation currently contains ten documented topology classes: complete, ring, hub-and-spoke, toroidal Von Neumann, random connected, general clustered, Watts-Strogatz-style small world, Barabasi-Albert-style scale free, exact dynamic DCluster, and caller-supplied custom graph.
+
+The documentation distinguishes exact published structures from generalized/inspired graph implementations and explains whether a graph is built once, randomized once per run, or rebuilt from current optimization state.
+
+- @subpage pso_communication_topologies - complete topology catalog and exact construction semantics.
 ## Parameters
 
 Generic: seed, stopping criteria, callbacks, cancellation, evaluation execution. Specific parameters are exposed by the algorithm parameter object and documented by the generated API reference.

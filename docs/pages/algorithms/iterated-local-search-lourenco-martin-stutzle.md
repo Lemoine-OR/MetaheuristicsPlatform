@@ -17,9 +17,9 @@ Iterated Local Search (ILS) performs local search on an initial solution, pertur
 
 For `K` ILS cycles,
 
-\[
+\f[
 O\!\left(C_{\mathrm{LS},0}+\sum_{k=1}^{K}(C_{\mathrm{perturb},k}+C_{\mathrm{eval},k}+C_{\mathrm{LS},k})\right).
-\]
+\f]
 
 Memory is `O(|solution| + W_LS)`: one incumbent, one candidate clone, the best-so-far snapshot managed by the common context, and the workspace of the composed local-search procedure.
 
@@ -89,12 +89,12 @@ The method is catalogued as a composition because the local search and perturbat
 
 Let `L` be a local-search operator, `P` a perturbation operator and `A` an acceptance rule. Starting from `x_0`,
 
-\[
+\f[
 x_0^{\star}=L(x_0),\qquad
 x_{k}^{\prime}=P(x_{k-1}^{\star}),\qquad
 \widehat{x}_{k}=L(x_k^{\prime}),\qquad
 x_k^{\star}=A(x_{k-1}^{\star},\widehat{x}_k).
-\]
+\f]
 
 The returned solution is the best solution observed over the complete run, not necessarily the final incumbent when an exploratory acceptance rule is used.
 
@@ -102,12 +102,12 @@ The returned solution is the best solution observed over the complete run, not n
 
 For minimization with strict-improvement acceptance,
 
-\[
+\f[
 x_k^{\star}=\begin{cases}
 \widehat{x}_k,& f(\widehat{x}_k)<f(x_{k-1}^{\star}),\\
 x_{k-1}^{\star},&\text{otherwise}.
 \end{cases}
-\]
+\f]
 
 For maximization, the comparison is reversed. `ImprovingOrEqual` also accepts equality; `Always` accepts every non-NaN candidate and therefore allows the incumbent trajectory to worsen while best-so-far remains protected.
 

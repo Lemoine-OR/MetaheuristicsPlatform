@@ -21,3 +21,5 @@ Documentation-build*.log
 
 # Generated benchmark/calibration reports
 benchmarks/Reports/
+Documentation/doxygen-build.log
+docs/doxygen-warnings.log

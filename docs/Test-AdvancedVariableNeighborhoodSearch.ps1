@@ -32,9 +32,10 @@ function Require-Contains(
 }
 
 $version = (Read-Utf8 "version.json") | ConvertFrom-Json
+$versionText = [version]([string]$version.version)
 
-if ([string]$version.version -ne "0.27.0") {
-    throw "v0.27 advanced VNS validation: version.json must be 0.27.0."
+if ($versionText -lt [version]"0.27.0") {
+    throw "v0.27 advanced VNS validation: expected repository version 0.27.0 or later."
 }
 
 Require-Contains `
@@ -142,8 +143,6 @@ if (@($catalog.algorithms).Count -lt 19) {
 $readme = Read-Utf8 "README.md"
 
 foreach ($marker in @(
-    "<strong>19 public algorithms",
-    "<strong>13 trajectory methods",
     "reduced-variable-neighborhood-search",
     "general-variable-neighborhood-search",
     "skewed-variable-neighborhood-search-hansen-mladenovic-2001"

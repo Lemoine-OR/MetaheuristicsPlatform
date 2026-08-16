@@ -17,9 +17,9 @@ Multi-Start Local Search (MSLS) repeatedly generates an independent starting sol
 
 For `S` starts, the total cost is
 
-\[
+\f[
 O\!\left(\sum_{s=1}^{S}(C_{\mathrm{init},s}+C_{\mathrm{LS},s})\right),
-\]
+\f]
 
 or `O(S(C_init + C_LS))` under homogeneous costs. Memory is the solution plus the workspace required by the composed local search; the algorithm does not retain all local optima.
 
@@ -74,17 +74,17 @@ Because the method requires domain-owned generation and local-search components,
 
 For an optimization problem `best_{x in X} f(x)`, let `G_s` generate start `s` and `L` denote the local-search mapping. MSLS returns
 
-\[
+\f[
 x^{\star}=\operatorname{best}_{s=1,\ldots,S}\;L(G_s()).
-\]
+\f]
 
 ### Update equations / iterations
 
-\[
+\f[
 x_s^{(0)}=G_s(),\qquad
 x_s^{\mathrm{LS}}=L(x_s^{(0)}),\qquad
 x^{\star}_s=\operatorname{best}(x^{\star}_{s-1},x_s^{\mathrm{LS}}).
-\]
+\f]
 
 ### Assumptions
 

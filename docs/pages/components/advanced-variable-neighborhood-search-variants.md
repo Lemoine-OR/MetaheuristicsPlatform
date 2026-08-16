@@ -1,3 +1,5 @@
+@page advanced_variable_neighborhood_search_variants Advanced Variable Neighborhood Search Variants
+
 # Advanced Variable Neighborhood Search variants
 
 MetaheuristicsPlatform v0.27.0 separates the main VNS variants according to the scientific mechanism they actually change.

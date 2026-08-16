@@ -4,6 +4,24 @@ All notable changes to MetaheuristicsPlatform will be documented in this file.
 
 ## [Unreleased]
 
+## [0.27.1]
+
+### Fixed
+- Doxygen warnings and internal parser diagnostics are now release-blocking.
+- Markdown mathematical displays use Doxygen-native `\f[ ... \f]` delimiters; legacy `\[ ... \]` / `\( ... \)` source delimiters are rejected by validation.
+- Modern C# record/required/init syntax is transformed only in Doxygen's input stream through `Doxygen-CSharpCompatibilityFilter.ps1`; compiled source and public API remain unchanged.
+- Doxygen output is captured in `Documentation/doxygen-build.log` for reproducible diagnostics.
+- Added complete PSO communication-topology documentation for all ten implemented topology classes.
+- Added machine-readable `pso-topology-catalog.json` with exact/generic provenance, construction parameters, information-flow semantics and graph rebuild behavior.
+- Documented exact dynamic DCluster, including `N = p(p+1)`, worst-to-best current-fitness ranking, clique construction and per-iteration fitness-dynamic rebuild.
+- Added the PSO topology catalog to the generated portal `Scientific components` section and linked it from the Particle Swarm algorithm page.
+- Generated the existing Advanced VNS component catalog in the public documentation portal, eliminating the previously source-only component page.
+- Reorganized README scientific components and fixed missing blank lines after raw HTML tables so all `All algorithms` family headings render uniformly on GitHub.
+- Added validation that fails when PSO topology documentation becomes incomplete or README family-heading rendering regresses.
+
+### Compatibility
+- No algorithm behavior, stable algorithm ID, topology implementation or public optimization API changed.
+- The release is documentation/build-validation only; the validated algorithm count remains 19.
 ## [0.27.0]
 
 ### Added

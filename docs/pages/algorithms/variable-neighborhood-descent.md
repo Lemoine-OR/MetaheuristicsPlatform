@@ -17,17 +17,17 @@ Variable Neighborhood Descent (VND) systematically changes the neighborhood used
 
 Let `K` be the number of configured neighborhoods and let `C_k(x)` be the cost of fully applying the local-search procedure associated with neighborhood `k` from solution `x`. One complete non-improving sweep costs
 
-\[
+\f[
 O\!\left(\sum_{k=1}^{K} C_k(x)\right).
-\]
+\f]
 
 Whenever a strict improvement occurs, the sequence restarts at neighborhood 1. Therefore total runtime is problem dependent and equals the accumulated costs of all local-search invocations until a complete non-improving sweep or a stopping criterion is reached.
 
 Memory is
 
-\[
+\f[
 O(|solution| + \max_k W_k),
-\]
+\f]
 
 where `W_k` is the workspace of the active local-search procedure.
 
@@ -91,9 +91,9 @@ The method is catalogued as a composition because the neighborhood-specific loca
 
 For
 
-\[
+\f[
 \min_{x\in X} f(x),
-\]
+\f]
 
 let `N_1,\ldots,N_K` be an ordered set of neighborhood structures and let `L_k(x)` denote local improvement using `N_k`.
 
@@ -101,19 +101,19 @@ let `N_1,\ldots,N_K` be an ordered set of neighborhood structures and let `L_k(x
 
 Starting with `k=1`, compute
 
-\[
+\f[
 x' = L_k(x).
-\]
+\f]
 
 For minimization,
 
-\[
+\f[
 (x,k)\leftarrow
 \begin{cases}
 (x',1), & f(x') < f(x),\\
 (x,k+1), & \text{otherwise}.
 \end{cases}
-\]
+\f]
 
 For maximization the strict comparison is reversed.
 

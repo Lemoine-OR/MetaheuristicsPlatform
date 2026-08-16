@@ -103,6 +103,7 @@ stable ID used by the canonical catalog/factory.
 <table>
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/particle-swarm.html"><strong>Particle Swarm Optimization</strong></a><br><sub>Swarm intelligence · O(ND) per iteration for the canonical graphless fast path; topology/social policies may add overhead</sub><br><code>particle-swarm</code><br><sub><code>ParticleSwarmOptimizer</code></sub></td><td width="50%"></td></tr>
 </table>
+
 ### Evolutionary methods
 
 <table>
@@ -110,6 +111,7 @@ stable ID used by the canonical catalog/factory.
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/jade-2009.html"><strong>JADE</strong></a><br><sub>Evolutionary methods · O(ND + N log N) per generation plus objective-evaluation cost</sub><br><code>jade-2009</code><br><sub><code>JadeOptimizer</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/shade-2013.html"><strong>SHADE</strong></a><br><sub>Evolutionary methods · O(ND + N log N) per generation plus objective-evaluation cost</sub><br><code>shade-2013</code><br><sub><code>ShadeOptimizer</code></sub></td></tr>
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/lshade-2014.html"><strong>L-SHADE</strong></a><br><sub>Evolutionary methods · O(N_kD + N_k log N_k) at generation k plus objective-evaluation cost</sub><br><code>lshade-2014</code><br><sub><code>LShadeOptimizer</code></sub></td><td width="50%"></td></tr>
 </table>
+
 ### Trajectory-based methods
 
 <table>
@@ -121,21 +123,24 @@ stable ID used by the canonical catalog/factory.
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/general-variable-neighborhood-search.html"><strong>General Variable Neighborhood Search</strong></a><br><code>general-variable-neighborhood-search</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/skewed-variable-neighborhood-search-hansen-mladenovic-2001.html"><strong>Skewed Variable Neighborhood Search</strong></a><br><code>skewed-variable-neighborhood-search-hansen-mladenovic-2001</code></td></tr>
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/guided-local-search-voudouris-tsang-1999.html"><strong>Guided Local Search</strong></a><br><code>guided-local-search-voudouris-tsang-1999</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/advanced-variable-neighborhood-search-variants.html"><strong>Advanced VNS catalog</strong></a><br><sub>RVNS / GVNS / SVNS executable; VNDS reviewed/deferred pending a decomposition contract.</sub></td></tr>
 </table>
-### Simulated Annealing scientific cooling catalog
 
-<table>
-<tr><td><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/simulated-annealing-cooling-schedules.html"><strong>Scientific Cooling Catalog</strong></a><br><sub>10 executable laws &middot; geometric, Lundy-Mees, linear, logarithmic/Hajek, Szu-Hartley, Ingber, Tsallis-Stariolo, Aarts-van Laarhoven, Huang and Triki &middot; stable <code>sa.cooling.*</code> IDs &middot; broader controllers reviewed without false reduction.</sub></td></tr>
-</table>
-
-### Tabu Search memory and reactive-control catalog
-
-<table>
-<tr><td><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/tabu-search-memory-control-strategies.html"><strong>Memory &amp; Reactive Control Catalog</strong></a><br><sub>10 executable components &middot; short/long-term memory &middot; reactive tenure &middot; intensification &middot; diversification &middot; stable <code>ts.*</code> IDs.</sub></td></tr>
-</table>
 ### Hybrid / memetic methods
 
 <table>
 <tr><td><strong>Foundation ready</strong><br><sub>No public hybrid algorithm yet; the generic evaluation and trajectory contracts are designed for memetic/hybrid composition.</sub></td></tr>
+</table>
+
+## Scientific components
+
+<table>
+<tr>
+<td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/pso-communication-topologies.html"><strong>PSO Communication Topology Catalog</strong></a><br><sub>10 implemented topology classes &middot; exact-vs-generic provenance &middot; static, random-static and dynamic rebuild semantics &middot; exact DCluster documented in detail</sub><br><code>pso.topology.*</code></td>
+<td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/simulated-annealing-cooling-schedules.html"><strong>Simulated Annealing Scientific Cooling Catalog</strong></a><br><sub>10 executable cooling schedules &middot; broader controllers reviewed without false reduction</sub><br><code>sa.cooling.*</code></td>
+</tr>
+<tr>
+<td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/tabu-search-memory-control-strategies.html"><strong>Tabu Search Memory &amp; Reactive Control Catalog</strong></a><br><sub>10 executable components &middot; memory, reactive tenure, intensification and diversification</sub><br><code>ts.*</code></td>
+<td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/advanced-variable-neighborhood-search-variants.html"><strong>Advanced Variable Neighborhood Search Variants</strong></a><br><sub>RVNS / GVNS / SVNS executable &middot; VNDS reviewed/deferred pending a decomposition contract</sub><br><code>vns.variants</code></td>
+</tr>
 </table>
 
 

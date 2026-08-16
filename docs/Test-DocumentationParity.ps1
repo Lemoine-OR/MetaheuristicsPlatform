@@ -134,6 +134,13 @@ $requiredRepoFiles = @(
     "docs\Test-AdvancedVariableNeighborhoodSearch.ps1",
     "docs\advanced-variable-neighborhood-search-catalog.json",
     "docs\pages\components\advanced-variable-neighborhood-search-variants.md",
+    "docs\pso-topology-catalog.json",
+    "docs\pages\components\pso-communication-topologies.md",
+    "docs\Build-PsoTopologyDocumentation.ps1",
+    "docs\Build-AdvancedVariableNeighborhoodDocumentation.ps1",
+    "docs\Test-ScientificComponentDocumentationParity.ps1",
+    "docs\Test-DoxygenDiagnosticQuality.ps1",
+    "docs\Doxygen-CSharpCompatibilityFilter.ps1",
     "docs\doxygen-custom.css",
     "docs\assets\algorithms-icon.svg",
     "docs\assets\metaheuristicsplatform-logo.svg",
@@ -187,8 +194,8 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.27.0") {
-    throw "Documentation parity: version.json must be 0.27.0 for this release."
+if ([string]$version.version -ne "0.27.1") {
+    throw "Documentation parity: version.json must be 0.27.1 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root
@@ -200,5 +207,7 @@ if ([string]$version.version -ne "0.27.0") {
 & (Join-Path $Root "docs\Test-VariableNeighborhoodSearch.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-GuidedLocalSearch.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-AdvancedVariableNeighborhoodSearch.ps1") -Root $Root
+& (Join-Path $Root "docs\Test-ScientificComponentDocumentationParity.ps1") -Root $Root
+& (Join-Path $Root "docs\Test-DoxygenDiagnosticQuality.ps1") -Root $Root
 
 Write-Host "Documentation parity validation passed: $($algorithms.Count) algorithms, $($families.Count) family pages." -ForegroundColor Green

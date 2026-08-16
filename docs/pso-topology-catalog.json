@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 1,
+  "release": "0.27.1",
+  "defaultPsoTopologyId": "fully-connected",
+  "entries": [
+    {
+      "id": "fully-connected",
+      "name": "Fully Connected",
+      "class": "FullyConnectedTopology",
+      "dynamics": "Static",
+      "requiredData": "None",
+      "inDefaultCatalog": true,
+      "isPsoParameterDefault": true,
+      "publishedStatus": "published-exact",
+      "parameters": "IncludeSelf=true",
+      "construction": "Builds the complete undirected communication graph: every distinct pair of particles is connected; optional self-loops are then added.",
+      "informationFlow": "With CanonicalBestInfluencePolicy, every particle can select the swarm-wide best personal-best as its neighborhood guide; this is the graph underlying classical gbest PSO.",
+      "rebuildPolicy": "Built at most once per run and reused. For FullyConnectedTopology + CanonicalBestInfluencePolicy, ParticleSwarmOptimizer bypasses the graph entirely through the graphless fully-connected fast path.",
+      "references": [
+        {
+          "text": "Kennedy & Eberhart (1995), Particle Swarm Optimization",
+          "doi": "10.1109/ICNN.1995.488968"
+        },
+        {
+          "text": "Kennedy & Mendes (2002), Population Structure and Particle Swarm Performance",
+          "doi": "10.1109/CEC.2002.1004493"
+        },
+        {
+          "text": "Mendes, Kennedy & Neves (2004), The Fully Informed Particle Swarm",
+          "doi": "10.1109/TEVC.2004.826074"
+        }
+      ]
+    },
+    {
+      "id": "ring",
+      "name": "Ring",
+      "class": "RingTopology",
+      "dynamics": "Static",
+      "requiredData": "None",
+      "inDefaultCatalog": true,
+      "isPsoParameterDefault": false,
+      "publishedStatus": "published-exact",
+      "parameters": "Radius=1; IncludeSelf=true",
+      "construction": "Particles are arranged on a cycle. Particle i is connected to i-d and i+d modulo N for every d=1..Radius. Radius 1 gives the classical two adjacent neighbors.",
+      "informationFlow": "Information propagates locally around the ring, slowing global diffusion relative to gbest and preserving diversity for longer.",
+      "rebuildPolicy": "Built once and reused for the whole run.",
+      "references": [
+        {
+          "text": "Kennedy & Mendes (2002), Population Structure and Particle Swarm Performance",
+          "doi": "10.1109/CEC.2002.1004493"
+        },
+        {
+          "text": "Mendes, Kennedy & Neves (2004), The Fully Informed Particle Swarm",
+          "doi": "10.1109/TEVC.2004.826074"
+        }
+      ]
+    },
+    {
+      "id": "hub-and-spoke",
+      "name": "Hub-and-Spoke",
+      "class": "HubAndSpokeTopology",
+      "dynamics": "Static",
+      "requiredData": "None",
+      "inDefaultCatalog": true,
+      "isPsoParameterDefault": false,
+      "publishedStatus": "published-exact",
+      "parameters": "HubIndex=0; IncludeSelf=true",
+      "construction": "One designated hub particle is connected to every other particle; non-hub particles are not directly connected to one another.",
+      "informationFlow": "The hub is an information bottleneck/accelerator: peripheral particles interact through the central particle. Kennedy & Mendes (2002) call this structure 'star'.",
+      "rebuildPolicy": "Built once and reused for the whole run.",
+      "references": [
+        {
+          "text": "Kennedy & Mendes (2002), Population Structure and Particle Swarm Performance",
+          "doi": "10.1109/CEC.2002.1004493"
+        }
+      ]
+    },
+    {
+      "id": "toroidal-von-neumann",
+      "name": "Toroidal Von Neumann",
+      "class": "ToroidalVonNeumannTopology",
+      "dynamics": "Static",
+      "requiredData": "None",
+      "inDefaultCatalog": true,
+      "isPsoParameterDefault": false,
+      "publishedStatus": "published-exact",
+      "parameters": "Rows=null; Columns=null; IncludeSelf=true",
+      "construction": "Particles occupy a two-dimensional toroidal grid and connect north, south, east and west. If dimensions are omitted, the implementation chooses a factorization of N near sqrt(N); explicit rows/columns must multiply to N.",
+      "informationFlow": "Each particle has local four-direction communication with wrap-around boundaries, producing slower structured diffusion than a complete graph.",
+      "rebuildPolicy": "Built once and reused for the whole run.",
+      "references": [
+        {
+          "text": "Kennedy & Mendes (2002), Population Structure and Particle Swarm Performance",
+          "doi": "10.1109/CEC.2002.1004493"
+        },
+        {
+          "text": "Mendes, Kennedy & Neves (2004), The Fully Informed Particle Swarm",
+          "doi": "10.1109/TEVC.2004.826074"
+        }
+      ]
+    },
+    {
+      "id": "random-connected",
+      "name": "Random Connected",
+      "class": "RandomConnectedTopology",
+      "dynamics": "RandomStatic",
+      "requiredData": "None",
+      "inDefaultCatalog": true,
+      "isPsoParameterDefault": false,
+      "publishedStatus": "generic-inspired",
+      "parameters": "ExtraEdgeProbability=0.15; IncludeSelf=true",
+      "construction": "A randomized spanning tree is built first to guarantee connectivity; then every undirected pair is independently proposed as an additional edge with probability ExtraEdgeProbability.",
+      "informationFlow": "Creates an irregular connected communication network with run-specific shortcuts and heterogeneous degrees.",
+      "rebuildPolicy": "RandomStatic means the random graph is sampled once for the optimization run and then reused; it is not resampled every iteration.",
+      "references": [
+        {
+          "text": "Inspired by random population structures studied by Kennedy & Mendes (2002)",
+          "doi": "10.1109/CEC.2002.1004493"
+        }
+      ]
+    },
+    {
+      "id": "clustered-general",
+      "name": "General Clustered",
+      "class": "ClusteredTopology",
+      "dynamics": "Static",
+      "requiredData": "None",
+      "inDefaultCatalog": true,
+      "isPsoParameterDefault": false,
+      "publishedStatus": "generic-inspired",
+      "parameters": "ClusterCount=4 in PsoTopologyCatalog.CreateDefaults(); GatewaysPerAdjacentPair=1; IncludeSelf=true",
+      "construction": "Particles are partitioned into contiguous, near-balanced clusters. Each cluster is a clique. Adjacent clusters are linked by gateway particles, and the cluster-level gateways form a ring.",
+      "informationFlow": "Dense exploitation occurs inside each clique while only a limited number of gateway edges move information between clusters.",
+      "rebuildPolicy": "Built once and reused. This is a generalized clique-and-gateway topology, not the exact FourClusters adjacency matrix of Mendes et al. (2004).",
+      "references": [
+        {
+          "text": "Mendes, Kennedy & Neves (2004), The Fully Informed Particle Swarm",
+          "doi": "10.1109/TEVC.2004.826074"
+        }
+      ]
+    },
+    {
+      "id": "small-world-watts-strogatz",
+      "name": "Small World (Watts-Strogatz style)",
+      "class": "WattsStrogatzSmallWorldTopology",
+      "dynamics": "RandomStatic",
+      "requiredData": "None",
+      "inDefaultCatalog": true,
+      "isPsoParameterDefault": false,
+      "publishedStatus": "generic-inspired",
+      "parameters": "NeighborhoodSize=4 (must be positive/even and < N); RewiringProbability=0.1; IncludeSelf=true",
+      "construction": "Starts from a regular ring lattice with NeighborhoodSize/2 forward links on each side, then each eligible lattice edge is rewired with probability RewiringProbability to a previously unconnected target.",
+      "informationFlow": "Combines high local clustering with occasional long-range shortcuts, accelerating diffusion while retaining local structure.",
+      "rebuildPolicy": "RandomStatic: sampled once and reused. This is a static Watts-Strogatz-style graph, not the exact adaptive SWPSO of Gong & Zhang (2013).",
+      "references": [
+        {
+          "text": "Gong & Zhang (2013), Small-world particle swarm optimization with topology adaptation",
+          "doi": "10.1145/2463372.2463381"
+        }
+      ]
+    },
+    {
+      "id": "scale-free-barabasi-albert",
+      "name": "Scale Free (Barabasi-Albert style)",
+      "class": "BarabasiAlbertScaleFreeTopology",
+      "dynamics": "RandomStatic",
+      "requiredData": "None",
+      "inDefaultCatalog": true,
+      "isPsoParameterDefault": false,
+      "publishedStatus": "generic-inspired",
+      "parameters": "InitialCliqueSize=3; EdgesPerNewNode=2; IncludeSelf=true",
+      "construction": "Starts from a clique. New particles are added sequentially and connect to distinct existing particles sampled by preferential attachment with weight max(1, degree).",
+      "informationFlow": "Produces hub-like high-degree particles and many lower-degree particles, yielding heterogeneous communication paths.",
+      "rebuildPolicy": "RandomStatic: sampled once and reused. This generic static graph is intentionally distinct from Zhang & Yi's full SFIPSO method.",
+      "references": [
+        {
+          "text": "Zhang & Yi (2011), Scale-free fully informed particle swarm optimization algorithm",
+          "doi": "10.1016/j.ins.2011.02.026"
+        }
+      ]
+    },
+    {
+      "id": "dcluster-exact",
+      "name": "DCluster / Dynamic Cluster",
+      "class": "DClusterTopology",
+      "dynamics": "FitnessDynamic",
+      "requiredData": "CurrentFitness",
+      "inDefaultCatalog": false,
+      "isPsoParameterDefault": false,
+      "publishedStatus": "published-exact",
+      "parameters": "ClusterSize=p; IncludeSelf=true; required swarm size N=p(p+1)",
+      "construction": "At every rebuild, particles are ranked from worst current fitness to best. The ranked sequence is partitioned into p+1 contiguous cliques of size p. The first/worst clique is central; its j-th particle is connected to the worst particle of outer cluster j.",
+      "informationFlow": "The topology is deliberately reorganized from the current fitness ranking. The worst particles form the central cluster and establish one bridge to each outer cluster, changing informer relationships as fitness ordering changes.",
+      "rebuildPolicy": "FitnessDynamic: ParticleSwarmOptimizer invalidates the graph after every completed iteration and rebuilds it before the next movement step from the new CurrentFitness values.",
+      "references": [
+        {
+          "text": "El Dor, Lemoine, Clerc, Siarry, Deroussi & Gourgand (2015), Dynamic cluster in particle swarm optimization algorithm",
+          "doi": "10.1007/s11047-014-9465-2"
+        }
+      ]
+    },
+    {
+      "id": "custom-graph",
+      "name": "Custom Graph",
+      "class": "CustomGraphTopology",
+      "dynamics": "Static",
+      "requiredData": "None",
+      "inDefaultCatalog": false,
+      "isPsoParameterDefault": false,
+      "publishedStatus": "extension-point",
+      "parameters": "NeighborhoodGraph graph; optional id/name",
+      "construction": "Uses the immutable NeighborhoodGraph supplied by the caller. The graph node count must equal the swarm size.",
+      "informationFlow": "Lets an application inject any preconstructed communication graph while reusing the same PSO social policies and movement engine.",
+      "rebuildPolicy": "The supplied graph is static and returned unchanged for the run.",
+      "references": []
+    }
+  ]
+}

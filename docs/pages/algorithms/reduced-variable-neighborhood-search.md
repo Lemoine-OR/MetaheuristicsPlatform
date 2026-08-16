@@ -16,9 +16,9 @@ Reduced Variable Neighborhood Search (RVNS) is a literature-established VNS vari
 
 For ordered shaking neighborhoods `N_1,...,N_K`, one complete non-improving sweep costs
 
-\[
+\f[
 O\left(\sum_{k=1}^{K}(C_{\mathrm{shake},k}+C_{\mathrm{eval},k})\right).
-\]
+\f]
 
 Space is `O(|solution|)` beyond domain-owned shaking workspace.
 
@@ -58,24 +58,24 @@ The method requires typed composition because shaking neighborhoods depend on th
 
 ### Problem formulation
 
-\[
+\f[
 \min_{x\in X} f(x).
-\]
+\f]
 
 ### Update equations / iterations
 
-For a shaken candidate \(x'\in N_k(x)\),
+For a shaken candidate \f$x'\in N_k(x)\f$,
 
-\[
+\f[
 x\leftarrow x',\quad k\leftarrow1
 \quad\text{if } f(x')<f(x),
-\]
+\f]
 
 otherwise
 
-\[
+\f[
 k\leftarrow k+1.
-\]
+\f]
 
 No local-improvement step is performed.
 

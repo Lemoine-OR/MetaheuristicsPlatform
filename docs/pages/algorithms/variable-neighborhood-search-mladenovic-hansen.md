@@ -20,15 +20,15 @@ v0.25.0 implements the generic basic VNS framework of Mladenovic and Hansen rath
 
 Let `K` be the number of shaking neighborhoods, `C_{S,k}` the cost of shaking neighborhood `k`, `C_E` the objective-evaluation cost, and `C_L` the cost of the injected local search. A complete non-improving VNS neighborhood sweep costs
 
-\[
+\f[
 O\!\left(\sum_{k=1}^{K}(C_{S,k}+C_E+C_L)\right).
-\]
+\f]
 
 Strict improvements reset the neighborhood index, so the total runtime depends on the number and position of successful improvements. Memory is
 
-\[
+\f[
 O(|solution| + W_L),
-\]
+\f]
 
 in addition to the best-so-far snapshot maintained by the common context.
 
@@ -99,9 +99,9 @@ The method is catalogued as a composition because both the shaking neighborhoods
 
 For
 
-\[
+\f[
 \min_{x\in X} f(x),
-\]
+\f]
 
 let `N_1,\ldots,N_K` be the ordered shaking neighborhoods and let `L` denote the injected local-search operator.
 
@@ -109,21 +109,21 @@ let `N_1,\ldots,N_K` be the ordered shaking neighborhoods and let `L` denote the
 
 At neighborhood `k`, sample
 
-\[
+\f[
 x' \in_R N_k(x),
 \qquad
 \widehat{x}=L(x').
-\]
+\f]
 
 For minimization,
 
-\[
+\f[
 (x,k)\leftarrow
 \begin{cases}
 (\widehat{x},1), & f(\widehat{x})<f(x),\\
 (x,k+1), & \text{otherwise}.
 \end{cases}
-\]
+\f]
 
 For maximization the strict comparison is reversed.
 

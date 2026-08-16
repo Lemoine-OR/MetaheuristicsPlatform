@@ -16,11 +16,11 @@ General Variable Neighborhood Search (GVNS) combines the VNS shaking phase with 
 
 A complete non-improving shaking sweep costs
 
-\[
+\f[
 O\left(\sum_{k=1}^{K}
 (C_{\mathrm{shake},k}+C_{\mathrm{eval},k}+C_{\mathrm{VND},k})
 \right).
-\]
+\f]
 
 Space is `O(|solution| + VND workspace)`.
 
@@ -58,26 +58,26 @@ var gvns = new GeneralVariableNeighborhoodSearchOptimizer<MySolution>(
 
 ### Problem formulation
 
-\[
+\f[
 \min_{x\in X} f(x).
-\]
+\f]
 
 ### Update equations / iterations
 
-After shaking \(x'\in N_k(x)\), let
+After shaking \f$x'\in N_k(x)\f$, let
 
-\[
+\f[
 x''=\mathrm{VND}(x').
-\]
+\f]
 
 Then
 
-\[
+\f[
 x\leftarrow x'',\quad k\leftarrow1
 \quad\text{if } f(x'')<f(x),
-\]
+\f]
 
-otherwise \(k\leftarrow k+1\).
+otherwise \f$k\leftarrow k+1\f$.
 
 Within VND, every strict local improvement restarts the local-neighborhood sequence at its first neighborhood.
 

@@ -17,13 +17,13 @@ Skewed Variable Neighborhood Search (SVNS) modifies the neighborhood-change crit
 
 One complete non-accepting sweep costs
 
-\[
+\f[
 O\left(\sum_{k=1}^{K}
 (C_{\mathrm{shake},k}+C_{\mathrm{eval},k}+C_{\mathrm{LS},k}+C_{\rho,k})
 \right),
-\]
+\f]
 
-where \(C_{\rho,k}\) is the cost of the supplied solution distance.
+where \f$C_{\rho,k}\f$ is the cost of the supplied solution distance.
 
 ## Applicability
 
@@ -61,29 +61,29 @@ var svns = new SkewedVariableNeighborhoodSearchOptimizer<MySolution>(
 
 ### Problem formulation
 
-\[
+\f[
 \min_{x\in X} f(x).
-\]
+\f]
 
 ### Update equations / iterations
 
-For minimization, after shaking and local improvement yield \(x''\), SVNS recenters when
+For minimization, after shaking and local improvement yield \f$x''\f$, SVNS recenters when
 
-\[
+\f[
 f(x'')-\alpha\rho(x,x'') < f(x).
-\]
+\f]
 
 For maximization MetaheuristicsPlatform uses the sense-consistent extension
 
-\[
+\f[
 f(x'')+\alpha\rho(x,x'') > f(x).
-\]
+\f]
 
-The ordinary strict-improvement case is included automatically. Any accepted recentering resets \(k\leftarrow1\).
+The ordinary strict-improvement case is included automatically. Any accepted recentering resets \f$k\leftarrow1\f$.
 
 ### Assumptions
 
-The supplied distance \(\rho\) is finite and non-negative. Shaking and local search return candidates valid for the underlying problem.
+The supplied distance \f$\rho\f$ is finite and non-negative. Shaking and local search return candidates valid for the underlying problem.
 
 ### Convergence conditions
 

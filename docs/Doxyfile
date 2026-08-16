@@ -12,6 +12,7 @@ RECURSIVE              = YES
 FILE_PATTERNS          = *.cs *.md
 EXCLUDE_PATTERNS       = */bin/* */obj/*
 EXTENSION_MAPPING      = cs=Csharp
+FILTER_PATTERNS        = *.cs="powershell -NoProfile -ExecutionPolicy Bypass -File Doxygen-CSharpCompatibilityFilter.ps1"
 SOURCE_BROWSER         = YES
 INLINE_SOURCES         = NO
 REFERENCED_BY_RELATION = YES
@@ -32,7 +33,8 @@ DOT_IMAGE_FORMAT       = svg
 INTERACTIVE_SVG        = YES
 WARN_IF_UNDOCUMENTED   = NO
 WARN_IF_DOC_ERROR      = YES
-WARN_AS_ERROR          = NO
+WARN_AS_ERROR          = FAIL_ON_WARNINGS
+WARN_LOGFILE           = doxygen-warnings.log
 QUIET                  = NO
 INPUT                   = ../src mainpage.md pages
 OUTPUT_DIRECTORY        = ../Documentation/doxygen

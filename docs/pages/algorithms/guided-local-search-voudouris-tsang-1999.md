@@ -25,26 +25,26 @@ Let `N(x)` be the move neighborhood and `F(x)` the set of active GLS features.
 
 Without exact delta evaluators, one augmented-neighborhood scan costs
 
-\[
+\f[
 O\!\left(
 |N(x)|\,
 (C_{\mathrm{move}} + C_f + |F(x)| + C_{\mathrm{undo}})
 \right).
-\]
+\f]
 
 With both exact objective and exact penalty-sum delta evaluators, the scan becomes
 
-\[
+\f[
 O\!\left(|N(x)|(C_{\Delta f}+C_{\Delta p})\right)
-\]
+\f]
 
 plus rare move application/cloning when a probed candidate improves the original global best.
 
 At a guided local optimum, feature-utility selection costs
 
-\[
+\f[
 O(|F(x)|)
-\]
+\f]
 
 and penalty updates cost `O(q)` for `q` tied maximum-utility features.
 
@@ -121,23 +121,23 @@ The method is catalogued as a composition because its move neighborhood, feature
 
 For the canonical minimization setting,
 
-\[
+\f[
 \min_{x\in X} f(x),
-\]
+\f]
 
 let the application define features `i=1,\ldots,m`, indicator functions `I_i(x)`, non-negative feature costs `c_i(x)`, integer penalties `p_i`, and a penalty weight `\lambda>0`.
 
 The GLS augmented objective is
 
-\[
+\f[
 h(x)=f(x)+\lambda\sum_{i=1}^{m}p_i I_i(x).
-\]
+\f]
 
 For a maximization problem, MetaheuristicsPlatform uses the sense-consistent extension
 
-\[
+\f[
 h(x)=f(x)-\lambda\sum_{i=1}^{m}p_i I_i(x),
-\]
+\f]
 
 so higher penalties still make active features less attractive.
 
@@ -145,24 +145,24 @@ so higher penalties still make active features less attractive.
 
 At a guided local optimum `x*`, the canonical utility of active feature `i` is
 
-\[
+\f[
 u_i(x^*)=
 I_i(x^*)\frac{c_i(x^*)}{1+p_i}.
-\]
+\f]
 
 Let
 
-\[
+\f[
 U_{\max}=\max_i u_i(x^*).
-\]
+\f]
 
 Every active feature tied at the maximum strictly positive utility is updated by
 
-\[
+\f[
 p_i \leftarrow p_i+1
 \qquad
 \text{when }u_i(x^*)=U_{\max}>0.
-\]
+\f]
 
 Local search then resumes under the modified `h`.
 
