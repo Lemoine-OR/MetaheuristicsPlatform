@@ -38,12 +38,12 @@ stable catalog IDs.
 <td width="20%"><strong>1 swarm method</strong><br><sub>PSO with topology/social/dynamics specializations.</sub></td>
 <td width="20%"><strong>5 DE methods</strong><br><sub>DE, jDE, JADE, SHADE and L-SHADE.</sub></td>
 <td width="20%"><strong>13 trajectory methods</strong><br><sub>SA, Tabu Search, Local Search, ILS, VNS variants and GLS.</sub></td>
-<td width="20%"><strong>2 constructive methods</strong><br><sub>Canonical GRASP with adaptive randomized greedy construction and local search.</sub></td>
+<td width="20%"><strong>3 constructive methods</strong><br><sub>Canonical GRASP, Reactive GRASP and elite-memory Path Relinking.</sub></td>
 <td width="20%"><strong>Generic foundations</strong><br><sub>Evaluation pipelines, neighborhoods, reversible moves and hybrid composition.</sub></td>
 </tr>
 </table>
 
-<p align="center"><strong>21 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>22 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -130,12 +130,13 @@ stable ID used by the canonical catalog/factory.
 
 <table>
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/grasp-feo-resende-1995.html"><strong>GRASP - Feo-Resende</strong></a><br><sub>Adaptive randomized greedy threshold-RCL construction + reusable local search; allocation-free RCL selection.</sub><br><code>grasp-feo-resende-1995</code><br><sub><code>GraspOptimizer&lt;TSolution&gt;</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/reactive-grasp-prais-ribeiro-2000.html"><strong>Reactive GRASP - Prais-Ribeiro</strong></a><br><sub>Self-tuning discrete alpha probabilities learned from per-alpha solution quality.</sub><br><code>reactive-grasp-prais-ribeiro-2000</code><br><sub><code>ReactiveGraspOptimizer&lt;TSolution&gt;</code></sub></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/grasp-path-relinking.html"><strong>GRASP with Path Relinking</strong></a><br><sub>Quality/diversity elite memory + greedy forward target-directed intensification.</sub><br><code>grasp-path-relinking</code><br><sub><code>GraspPathRelinkingOptimizer&lt;TSolution&gt;</code></sub></td><td width="50%"></td></tr>
 </table>
 
 ### Hybrid / memetic methods
 
 <table>
-<tr><td><strong>Foundation ready</strong><br><sub>No public hybrid algorithm yet; the generic evaluation and trajectory contracts are designed for memetic/hybrid composition.</sub></td></tr>
+<tr><td><strong>GRASP with Path Relinking</strong><br><sub>The first public hybrid composition combines constructive GRASP, local search, elite memory and path intensification through reusable generic contracts.</sub></td></tr>
 </table>
 
 ## Scientific components

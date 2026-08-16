@@ -132,9 +132,7 @@ if (@($catalog.executable).Count -lt 1) {
     throw "GRASP validation: expected one executable core GRASP entry."
 }
 
-if (@($catalog.reviewedDeferred).Count -lt 1) {
-    throw "GRASP validation: expected Reactive GRASP and Path Relinking to be reviewed/deferred."
-}
+# Path Relinking is executable from v0.30.0; no deferred-entry requirement remains.
 
 $documentationCatalog =
     (Read-Utf8 "docs\algorithm-catalog.json") |

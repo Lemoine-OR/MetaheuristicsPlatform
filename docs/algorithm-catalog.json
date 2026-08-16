@@ -491,6 +491,31 @@
                            "assumptions":  "Configured alpha values are finite and unique in [0,1]; the canonical ratio update requires strictly positive objective observations.",
                            "convergence":  "No unconditional finite-time global convergence claim; adaptive alpha probabilities preserve stochastic sampling while useful alpha values retain positive probability.",
                            "factoryMode":  "composition"
+                       },
+                       {
+                           "id":  "grasp-path-relinking",
+                           "name":  "GRASP with Path Relinking",
+                           "class":  "GraspPathRelinkingOptimizer\u003cTSolution\u003e",
+                           "category":  "constructive-methods",
+                           "additionalCategories":  [
+                                                        "hybrid-methods"
+                                                    ],
+                           "kind":  "hybrid",
+                           "family":  "Constructive / hybrid methods",
+                           "time":  "Canonical GRASP construction/local-search cost plus O(sum_k P_k*C_probe + D*C_distance) per path and O(E*C_distance) elite maintenance",
+                           "space":  "O(E*|solution| + |solution| + path workspace)",
+                           "applicability":  "Finite attribute-based path spaces with GRASP construction, compatible local search, non-negative integral distance and target-directed reversible moves",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Constructive/GraspPathRelinkingOptimizer.cs",
+                           "publication":  "Resende \u0026 Ribeiro (2003), GRASP and path-relinking: Recent advances and applications; Aiex, Resende, Pardalos \u0026 Toraldo (2005), GRASP with Path Relinking for Three-Index Assignment",
+                           "doi":  "10.1287/ijoc.1030.0059",
+                           "implementation":  "Quality/diversity elite pool plus greedy forward path relinking with allocation-free target-directed move cursors, exact-delta fast path, reversible fallback and probe-only accounting for unvisited candidates.",
+                           "page":  "docs/pages/algorithms/grasp-path-relinking.md",
+                           "problem":  "\\min_{x\\in\\mathcal X} f(x), with elite guiding solution x^G and integral path distance \\rho(x,x^G)",
+                           "update":  "m_k^* in argbest_{m in M(x_k,x^G)} f(m(x_k)); x_{k+1}=m_k^*(x_k); require rho(x_{k+1},x^G)\u003crho(x_k,x^G)",
+                           "assumptions":  "Finite non-negative path distance; nonempty target-directed move set at positive distance; reversible moves; exact optional deltas.",
+                           "convergence":  "Strict integral-distance decrease gives finite path termination when uncapped; no unconditional global-optimum guarantee is claimed for GRASP-PR.",
+                           "factoryMode":  "composition"
                        }
                    ]
 }

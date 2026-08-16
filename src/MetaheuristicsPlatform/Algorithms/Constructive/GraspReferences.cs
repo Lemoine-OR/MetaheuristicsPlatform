@@ -27,4 +27,20 @@ public static class GraspReferences
         2000,
         "Reactive GRASP: An Application to a Matrix Decomposition Problem in TDMA Traffic Assignment",
         "INFORMS Journal on Computing 12(3), 164-176",
-        "10.1287/ijoc.12.3.164.12639");}
+        "10.1287/ijoc.12.3.164.12639");
+
+    /// <summary>GRASP + path-relinking framework and implementation template.</summary>
+    public static ScientificReference ResendeRibeiro2003 { get; } = new(
+        "Mauricio G. C. Resende; Celso C. Ribeiro",
+        2003,
+        "GRASP and path-relinking: Recent advances and applications",
+        "AT&T Labs Research Technical Report / MIC 2003 tutorial");
+
+    /// <summary>Peer-reviewed GRASP with path relinking implementation and variants.</summary>
+    public static ScientificReference AiexResendePardalosToraldo2005 { get; } = new(
+        "Renata M. Aiex; Mauricio G. C. Resende; Panos M. Pardalos; Gerardo Toraldo",
+        2005,
+        "GRASP with Path Relinking for Three-Index Assignment",
+        "INFORMS Journal on Computing 17(2), 224-247",
+        "10.1287/ijoc.1030.0059");
+}

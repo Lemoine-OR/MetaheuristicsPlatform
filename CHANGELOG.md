@@ -4,6 +4,28 @@ All notable changes to MetaheuristicsPlatform will be documented in this file.
 
 ## [Unreleased]
 
+## [0.30.0]
+
+### Added
+- GRASP with Path Relinking (`grasp-path-relinking`) as the first public constructive/hybrid method.
+- Explicit `IPathRelinkingDistance<TSolution>`, target-directed path-neighborhood and reusable path-procedure contracts.
+- `GreedyForwardPathRelinkingProcedure` with allocation-free path cursors, exact move-objective delta fast path and reversible full-evaluation fallback.
+- Fixed-capacity `EliteSolutionPool<TSolution>` with owned snapshots, duplicate suppression, minimum-distance diversity and quality-based worst replacement.
+- Uniform allocation-free elite-guide selection by reservoir sampling.
+- Common-runtime probe accounting: all path candidates consume objective-evaluation budget, while only actually visited selected path states may promote global best.
+- Focused GRASP-PR tests and full documentation-parity validation.
+
+### Scientific basis
+- Resende & Ribeiro (2003), *GRASP and path-relinking: Recent advances and applications*.
+- Aiex, Resende, Pardalos & Toraldo (2005), *GRASP with Path Relinking for Three-Index Assignment*, DOI `10.1287/ijoc.1030.0059`.
+- Feo & Resende (1995), *Greedy Randomized Adaptive Search Procedures*, DOI `10.1007/BF01096763`.
+
+### Performance
+- Elite memory is bounded by `ElitePoolSize`; guide selection allocates no temporary list.
+- Target-directed candidate scans use value-type cursors.
+- Exact candidate objectives avoid apply/evaluate/undo when `IMoveObjectiveDeltaEvaluator` is supplied.
+- Unvisited candidates use probe accounting and therefore do not require solution snapshots.
+
 ## [0.29.0]
 
 ### Added

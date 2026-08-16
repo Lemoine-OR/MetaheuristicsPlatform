@@ -20,8 +20,8 @@ $catalog =
 $algorithms = @($catalog.algorithms)
 $families = @($catalog.families)
 
-if ($algorithms.Count -lt 21) {
-    throw "Documentation parity: expected at least the twenty-one currently public algorithms."
+if ($algorithms.Count -lt 22) {
+    throw "Documentation parity: expected at least the twenty-two currently public algorithms."
 }
 
 $requiredFields = @(
@@ -143,6 +143,8 @@ $requiredRepoFiles = @(
     "docs\Doxygen-CSharpCompatibilityFilter.ps1",
     "docs\Test-Grasp.ps1",
     "docs\Test-ReactiveGrasp.ps1",
+    "docs\Test-GraspPathRelinking.ps1",
+    "docs\pages\algorithms\grasp-path-relinking.md",
     "docs\grasp-catalog.json",
     "docs\pages\algorithms\grasp-feo-resende-1995.md",
     "docs\pages\families\constructive-methods.md",
@@ -199,8 +201,8 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.29.0") {
-    throw "Documentation parity: version.json must be 0.29.0 for this release."
+if ([string]$version.version -ne "0.30.0") {
+    throw "Documentation parity: version.json must be 0.30.0 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root
@@ -214,6 +216,7 @@ if ([string]$version.version -ne "0.29.0") {
 & (Join-Path $Root "docs\Test-AdvancedVariableNeighborhoodSearch.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-Grasp.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-ReactiveGrasp.ps1") -Root $Root
+& (Join-Path $Root "docs\Test-GraspPathRelinking.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-ScientificComponentDocumentationParity.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-DoxygenDiagnosticQuality.ps1") -Root $Root
 

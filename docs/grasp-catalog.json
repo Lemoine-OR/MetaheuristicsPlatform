@@ -1,46 +1,60 @@
 {
-  "schemaVersion": 1,
-  "release": "0.29.0",
-  "family": "grasp",
-  "executable": [
-    {
-      "id": "grasp-feo-resende-1995",
-      "name": "GRASP - Feo-Resende",
-      "construction": "canonical threshold RCL",
-      "selection": "uniform reservoir sampling",
-      "localSearch": "ILocalSearchProcedure<TSolution>",
-      "status": "executable"
-    },
-    {
-      "id": "reactive-grasp-prais-ribeiro-2000",
-      "name": "Reactive GRASP - Prais-Ribeiro",
-      "construction": "canonical threshold RCL with discrete adaptive alpha selection",
-      "selection": "Prais-Ribeiro probability update over alpha values",
-      "localSearch": "ILocalSearchProcedure<TSolution>",
-      "status": "executable",
-      "doi": "10.1287/ijoc.12.3.164.12639"
-    }
-  ],
-  "reviewedDeferred": [
-    {
-      "id": "grasp-path-relinking",
-      "name": "GRASP with Path Relinking",
-      "reason": "Deferred until an elite-set/path-relinking contract is introduced without coupling GRASP to a problem-specific attribute path.",
-      "reference": "Resende & Ribeiro, GRASP and path-relinking: recent advances and applications"
-    }
-  ],
-  "references": [
-    {
-      "publication": "Feo & Resende (1989), A probabilistic heuristic for a computationally difficult set covering problem",
-      "doi": "10.1016/0167-6377(89)90002-3"
-    },
-    {
-      "publication": "Feo & Resende (1995), Greedy Randomized Adaptive Search Procedures",
-      "doi": "10.1007/BF01096763"
-    },
-    {
-      "publication": "Prais & Ribeiro (2000), Reactive GRASP",
-      "doi": "10.1287/ijoc.12.3.164.12639"
-    }
-  ]
+    "schemaVersion":  1,
+    "release":  "0.30.0",
+    "family":  "grasp",
+    "executable":  [
+                       {
+                           "id":  "grasp-feo-resende-1995",
+                           "name":  "GRASP - Feo-Resende",
+                           "construction":  "canonical threshold RCL",
+                           "selection":  "uniform reservoir sampling",
+                           "localSearch":  "ILocalSearchProcedure\u003cTSolution\u003e",
+                           "status":  "executable"
+                       },
+                       {
+                           "id":  "reactive-grasp-prais-ribeiro-2000",
+                           "name":  "Reactive GRASP - Prais-Ribeiro",
+                           "construction":  "canonical threshold RCL with discrete adaptive alpha selection",
+                           "selection":  "Prais-Ribeiro probability update over alpha values",
+                           "localSearch":  "ILocalSearchProcedure\u003cTSolution\u003e",
+                           "status":  "executable",
+                           "doi":  "10.1287/ijoc.12.3.164.12639"
+                       },
+                       {
+                           "id":  "grasp-path-relinking",
+                           "name":  "GRASP with Path Relinking",
+                           "construction":  "canonical threshold RCL followed by reusable local search",
+                           "selection":  "uniform elite-guide reservoir selection + greedy best target-directed path move",
+                           "localSearch":  "ILocalSearchProcedure\u003cTSolution\u003e",
+                           "memory":  "fixed-capacity quality/diversity elite pool",
+                           "path":  "greedy forward path relinking",
+                           "status":  "executable",
+                           "doi":  "10.1287/ijoc.1030.0059"
+                       }
+                   ],
+    "reviewedDeferred":  [
+
+                         ],
+    "references":  [
+                       {
+                           "publication":  "Feo \u0026 Resende (1989), A probabilistic heuristic for a computationally difficult set covering problem",
+                           "doi":  "10.1016/0167-6377(89)90002-3"
+                       },
+                       {
+                           "publication":  "Feo \u0026 Resende (1995), Greedy Randomized Adaptive Search Procedures",
+                           "doi":  "10.1007/BF01096763"
+                       },
+                       {
+                           "publication":  "Prais \u0026 Ribeiro (2000), Reactive GRASP",
+                           "doi":  "10.1287/ijoc.12.3.164.12639"
+                       },
+                       {
+                           "publication":  "Aiex, Resende, Pardalos \u0026 Toraldo (2005), GRASP with Path Relinking for Three-Index Assignment",
+                           "doi":  "10.1287/ijoc.1030.0059"
+                       },
+                       {
+                           "publication":  "Resende \u0026 Ribeiro (2003), GRASP and path-relinking: Recent advances and applications",
+                           "doi":  ""
+                       }
+                   ]
 }

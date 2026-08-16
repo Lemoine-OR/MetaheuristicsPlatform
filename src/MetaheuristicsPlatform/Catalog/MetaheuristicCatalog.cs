@@ -297,7 +297,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Constructive/ReactiveGraspOptimizer.cs",
             "Prais & Ribeiro (2000), Reactive GRASP: An Application to a Matrix Decomposition Problem in TDMA Traffic Assignment, INFORMS Journal on Computing 12(3), 164-176",
             "10.1287/ijoc.12.3.164.12639",
-            "Discrete alpha probabilities start uniformly and are periodically updated from per-alpha average locally improved solution quality using the Prais-Ribeiro ratio rule.")
+            "Discrete alpha probabilities start uniformly and are periodically updated from per-alpha average locally improved solution quality using the Prais-Ribeiro ratio rule."),
+        new(
+            "grasp-path-relinking",
+            "GRASP with Path Relinking",
+            "GraspPathRelinkingOptimizer<TSolution>",
+            "constructive-methods",
+            "Constructive methods",
+            "Canonical GRASP construction/local-search cost plus O(sum_k P_k*C_probe + D*C_distance) per relinking invocation and O(E*C_distance) elite maintenance",
+            "O(E*|solution| + |solution| + path workspace)",
+            "Finite attribute-based path spaces with GRASP construction, compatible local search, integral non-negative distance and target-directed reversible moves",
+            true,
+            "src/MetaheuristicsPlatform/Algorithms/Constructive/GraspPathRelinkingOptimizer.cs",
+            "Resende & Ribeiro (2003), GRASP and path-relinking: Recent advances and applications; Aiex, Resende, Pardalos & Toraldo (2005), INFORMS Journal on Computing 17(2), 224-247",
+            "10.1287/ijoc.1030.0059",
+            "Quality/diversity elite memory plus greedy forward path relinking; allocation-free path cursors, exact-delta fast path, reversible fallback and probe-only accounting for unvisited candidates.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

@@ -6,7 +6,7 @@ Compositions of population, trajectory, local-search, decoder and exact/heuristi
 
 ## Methods
 
-- No public algorithm is assigned to this family yet.
+- @subpage grasp_path_relinking - Constructive GRASP + local search + elite memory + path-relinking intensification.
 
 ## Navigation
 

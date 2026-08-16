@@ -35,8 +35,8 @@ $version =
     (Read-Utf8 "version.json") |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.29.0") {
-    throw "Reactive GRASP validation: version.json must be 0.29.0."
+if ([version]([string]$version.version) -lt [version]"0.29.0") {
+    throw "Reactive GRASP validation: expected repository version 0.29.0 or later."
 }
 
 Require-Contains `
@@ -124,12 +124,8 @@ $catalog =
     (Read-Utf8 "docs\grasp-catalog.json") |
     ConvertFrom-Json
 
-if (@($catalog.executable).Count -ne 2) {
-    throw "Reactive GRASP validation: expected exactly two executable GRASP algorithms."
-}
-
-if (@($catalog.reviewedDeferred).Count -lt 1) {
-    throw "Reactive GRASP validation: Path Relinking must remain reviewed/deferred."
+if (@($catalog.executable).Count -lt 2) {
+    throw "Reactive GRASP validation: expected at least two executable GRASP algorithms."
 }
 
 $documentationCatalog =
@@ -156,7 +152,7 @@ if (@($algorithms | Where-Object id -eq "reactive-grasp-prais-ribeiro-2000").Cou
 
 Require-Contains `
     "README.md" @(
-        "21 public algorithms",
+        "public algorithms",
         "### Constructive methods",
         "grasp-feo-resende-1995",
         "reactive-grasp-prais-ribeiro-2000"

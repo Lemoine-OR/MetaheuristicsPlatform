@@ -27,4 +27,5 @@ public static class MetaheuristicAlgorithmIds
     public const string SkewedVariableNeighborhoodSearch = "skewed-variable-neighborhood-search-hansen-mladenovic-2001";
     public const string Grasp = "grasp-feo-resende-1995";
     public const string ReactiveGrasp = "reactive-grasp-prais-ribeiro-2000";
+    public const string GraspPathRelinking = "grasp-path-relinking";
 }

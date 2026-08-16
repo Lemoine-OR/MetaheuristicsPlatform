@@ -93,7 +93,14 @@ Copy-Item (Join-Path $Root "docs\algorithm-catalog.json") (Join-Path $site "algo
 
 $familyCards = New-Object System.Collections.Generic.List[string]
 foreach ($family in @($catalog.families)) {
-    $count = @($catalog.algorithms | Where-Object category -eq $family.id).Count
+    $count = @(
+        $catalog.algorithms |
+        Where-Object {
+            $_.category -eq $family.id -or
+            ($_.PSObject.Properties.Name -contains "additionalCategories" -and
+             @($_.additionalCategories) -contains $family.id)
+        }
+    ).Count
     $familyCards.Add(
         "<div class='family'><h3><a href='families/$($family.id).html'>$(Html $family.name)</a></h3><div class='meta'>$(Html $family.description)<br><strong>$count public method(s)</strong></div></div>")
 }
@@ -120,7 +127,15 @@ $homeBody = @"
 Write-Utf8 (Join-Path $site "index.html") (PageShell "Home" $homeBody "")
 
 foreach ($family in @($catalog.families)) {
-    $items = @($catalog.algorithms | Where-Object category -eq $family.id)
+    # MULTI-FAMILY-ITEMS
+    $items = @(
+        $catalog.algorithms |
+        Where-Object {
+            $_.category -eq $family.id -or
+            ($_.PSObject.Properties.Name -contains "additionalCategories" -and
+             @($_.additionalCategories) -contains $family.id)
+        }
+    )
     $cards = New-Object System.Collections.Generic.List[string]
 
     foreach ($algorithm in $items) {
