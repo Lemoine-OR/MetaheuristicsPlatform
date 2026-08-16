@@ -24,9 +24,9 @@ function Require-Contains(
 }
 
 $version = Get-Content (Join-Path $Root "version.json") -Raw | ConvertFrom-Json
-$versionText = [string]$version.version
-if ($versionText -ne "0.24.0" -and $versionText -ne "0.24.1") {
-    throw "v0.24 validation: expected a v0.24.x repository version supported by this validator."
+$versionText = [version]([string]$version.version)
+if ($versionText -lt [version]"0.24.0") {
+    throw "v0.24 validation: expected repository version 0.24.0 or later."
 }
 
 Require-Contains "src\MetaheuristicsPlatform\Algorithms\Neighborhood\NeighborhoodSearchContracts.cs" @(
@@ -97,7 +97,7 @@ foreach ($id in @("multi-start-local-search", "iterated-local-search-lourenco-ma
 
 # Keep the v0.24 scope exact. These belong to later neighborhood-search releases.
 $futureTokens = @(
-    "VariableNeighborhoodSearchOptimizer",
+
     "GuidedLocalSearchOptimizer"
 )
 $neighborhoodFiles = Get-ChildItem (Join-Path $Root "src\MetaheuristicsPlatform\Algorithms\Neighborhood") -Filter "*.cs" -File

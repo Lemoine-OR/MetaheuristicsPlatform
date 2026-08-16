@@ -185,7 +185,35 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Neighborhood/RestartIteratedLocalSearchOptimizers.cs",
             "Lourenco, Martin & Stutzle (2003), Iterated Local Search, Handbook of Metaheuristics, 320-353; Talbi (2009)",
             "10.1007/0-306-48056-5_11",
-            "Canonical initial-local-search / perturb / local-search / accept framework with independent best-so-far ownership.")
+            "Canonical initial-local-search / perturb / local-search / accept framework with independent best-so-far ownership."),
+        new(
+            "variable-neighborhood-descent",
+            "Variable Neighborhood Descent",
+            "VariableNeighborhoodDescentOptimizer<TSolution>",
+            "trajectory-based-methods",
+            "Trajectory-based methods",
+            "O(sum_k C_LS,k) per non-improving sweep, with restart to neighborhood 1 after each strict improvement",
+            "O(|solution| + max_k W_LS,k)",
+            "Any representation with two or more compatible reusable local-search neighborhoods",
+            true,
+            "src/MetaheuristicsPlatform/Algorithms/Neighborhood/VariableNeighborhoodSearchOptimizers.cs",
+            "Mladenovic & Hansen (1997), Variable neighborhood search; Hansen & Mladenovic (2001), Variable neighborhood search: Principles and applications",
+            "10.1016/S0377-2217(00)00100-4",
+            "Ordered variable-neighborhood descent that restarts at the first neighborhood after strict improvement and reuses the generic local-search procedure contract."),
+        new(
+            "variable-neighborhood-search-mladenovic-hansen",
+            "Variable Neighborhood Search - Mladenovic-Hansen",
+            "VariableNeighborhoodSearchOptimizer<TSolution>",
+            "trajectory-based-methods",
+            "Trajectory-based methods",
+            "O(sum_k(C_shake,k + C_eval + C_LS)) per complete non-improving shaking sweep",
+            "O(|solution| + local-search workspace)",
+            "Any representation with ordered shaking neighborhoods and a compatible reusable local-search procedure",
+            true,
+            "src/MetaheuristicsPlatform/Algorithms/Neighborhood/VariableNeighborhoodSearchOptimizers.cs",
+            "Mladenovic & Hansen (1997), Variable neighborhood search; Hansen & Mladenovic (2001), Variable neighborhood search: Principles and applications",
+            "10.1016/S0305-0548(97)00031-2",
+            "Canonical basic VNS: shake in N_k, locally improve, accept strict improvement and restart at the first shaking neighborhood.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

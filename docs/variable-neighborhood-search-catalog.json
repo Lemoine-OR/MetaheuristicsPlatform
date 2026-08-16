@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "release": "0.25.0",
+  "family": "Variable Neighborhood Search",
+  "algorithms": [
+    {
+      "id": "variable-neighborhood-descent",
+      "name": "Variable Neighborhood Descent",
+      "kind": "deterministic ordered multi-neighborhood local search",
+      "doi": "10.1016/S0377-2217(00)00100-4"
+    },
+    {
+      "id": "variable-neighborhood-search-mladenovic-hansen",
+      "name": "Variable Neighborhood Search - Mladenovic-Hansen",
+      "kind": "canonical basic VNS",
+      "doi": "10.1016/S0305-0548(97)00031-2"
+    }
+  ],
+  "components": [
+    "VariableNeighborhoodDescentProcedure<TSolution>",
+    "ISolutionPerturbation<TSolution>",
+    "ILocalSearchProcedure<TSolution>"
+  ]
+}

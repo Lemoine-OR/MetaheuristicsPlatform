@@ -4,6 +4,23 @@ All notable changes to MetaheuristicsPlatform will be documented in this file.
 
 ## [Unreleased]
 
+## [0.25.0]
+
+### Added
+- Variable Neighborhood Descent (`variable-neighborhood-descent`) as both a standalone optimizer and reusable `ILocalSearchProcedure<TSolution>`.
+- Canonical basic Variable Neighborhood Search (`variable-neighborhood-search-mladenovic-hansen`).
+- Ordered shaking neighborhoods through the existing `ISolutionPerturbation<TSolution>` abstraction.
+- Direct VNS/VND composition without duplicating the v0.23 local-search engine.
+- Stable IDs, runtime/documentation catalog entries, mathematical documentation, focused tests and dedicated validation.
+
+### Scientific basis
+- Mladenovic & Hansen (1997), *Variable neighborhood search*, DOI 10.1016/S0305-0548(97)00031-2.
+- Hansen & Mladenovic (2001), *Variable neighborhood search: Principles and applications*, DOI 10.1016/S0377-2217(00)00100-4.
+
+### Compatibility
+- All v0.24.1 public IDs and behavior remain unchanged.
+- VND and VNS reuse `ILocalSearchProcedure<TSolution>`, `ISolutionPerturbation<TSolution>` and the common `OptimizationContext`.
+- Existing exact-delta and reversible local-search fast paths remain available inside VND/VNS compositions.
 ## [0.24.1]
 
 ### Fixed

@@ -20,8 +20,8 @@ $catalog =
 $algorithms = @($catalog.algorithms)
 $families = @($catalog.families)
 
-if ($algorithms.Count -lt 13) {
-    throw "Documentation parity: expected at least the thirteen currently public algorithms."
+if ($algorithms.Count -lt 15) {
+    throw "Documentation parity: expected at least the fifteen currently public algorithms."
 }
 
 $requiredFields = @(
@@ -127,6 +127,8 @@ $requiredRepoFiles = @(
     "docs\local-search-foundation-catalog.json",
     "docs\Test-RestartIteratedLocalSearch.ps1",
     "docs\restart-iterated-local-search-catalog.json",
+    "docs\Test-VariableNeighborhoodSearch.ps1",
+    "docs\variable-neighborhood-search-catalog.json",
     "docs\doxygen-custom.css",
     "docs\assets\algorithms-icon.svg",
     "docs\assets\metaheuristicsplatform-logo.svg",
@@ -180,8 +182,8 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.24.1") {
-    throw "Documentation parity: version.json must be 0.24.1 for this repair release."
+if ([string]$version.version -ne "0.25.0") {
+    throw "Documentation parity: version.json must be 0.25.0 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root
@@ -190,5 +192,6 @@ if ([string]$version.version -ne "0.24.1") {
 & (Join-Path $Root "docs\Test-TabuSearchAdvancedMemory.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-LocalSearchFoundation.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-RestartIteratedLocalSearch.ps1") -Root $Root
+& (Join-Path $Root "docs\Test-VariableNeighborhoodSearch.ps1") -Root $Root
 
 Write-Host "Documentation parity validation passed: $($algorithms.Count) algorithms, $($families.Count) family pages." -ForegroundColor Green

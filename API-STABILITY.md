@@ -14,6 +14,8 @@ contracts:
 - public Local Search Foundation algorithm IDs introduced in v0.23.0;
 - public Multi-Start Local Search ID (`multi-start-local-search`) introduced in v0.24.0;
 - public Iterated Local Search ID (`iterated-local-search-lourenco-martin-stutzle`) introduced in v0.24.0;
+- public Variable Neighborhood Descent ID (`variable-neighborhood-descent`) introduced in v0.25.0;
+- public canonical Variable Neighborhood Search ID (`variable-neighborhood-search-mladenovic-hansen`) introduced in v0.25.0;
 - scientific method identity;
 - serialized/reproducibility-facing identifiers;
 - documentation URLs generated from stable IDs.
