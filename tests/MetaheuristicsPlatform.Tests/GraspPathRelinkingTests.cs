@@ -248,6 +248,247 @@ public sealed class GraspPathRelinkingTests
                 MetaheuristicMechanism.MemoryBased));
     }
 
+    [Fact]
+    public void AdvancedBackwardRelinkingUsesKnownEliteFitnessAndReachesOppositeEndpoint()
+    {
+        var problem = new PositiveIntMinimizationProblem();
+        var procedure = CreateAdvancedProcedure();
+        var context = new OptimizationContext<int>(
+            TestDescriptor(),
+            problem,
+            new ImmutableSolutionCloner<int>(),
+            new MaxEvaluationsStoppingCriterion(100));
+
+        context.Start();
+
+        int initiating = 5;
+        int guide = 1;
+        double initiatingFitness = context.Evaluate(initiating);
+
+        PathRelinkingProcedureResult<int> result =
+            procedure.RelinkAdvanced(
+                in initiating,
+                initiatingFitness,
+                in guide,
+                guidingFitness: 1.0,
+                new PathRelinkingExecutionOptions(
+                    PathRelinkingDirectionStrategy.Backward,
+                    PathRelinkingMoveSelectionStrategy.Greedy,
+                    1.0,
+                    0.2),
+                context,
+                new ImmutableSolutionCloner<int>(),
+                maximumPathSteps: 20,
+                TestContext.Current.CancellationToken);
+
+        Assert.True(result.ReachedGuidingSolution);
+        Assert.Equal(1, result.BestSolution);
+        Assert.Equal(1.0, result.BestFitness);
+    }
+
+    [Fact]
+    public void AdvancedBackAndForwardTraversesBothDirections()
+    {
+        var problem = new PositiveIntMinimizationProblem();
+        var procedure = CreateAdvancedProcedure();
+        var context = new OptimizationContext<int>(
+            TestDescriptor(),
+            problem,
+            new ImmutableSolutionCloner<int>(),
+            new MaxEvaluationsStoppingCriterion(100));
+
+        context.Start();
+
+        int initiating = 5;
+        int guide = 1;
+        double initiatingFitness = context.Evaluate(initiating);
+
+        PathRelinkingProcedureResult<int> result =
+            procedure.RelinkAdvanced(
+                in initiating,
+                initiatingFitness,
+                in guide,
+                1.0,
+                new PathRelinkingExecutionOptions(
+                    PathRelinkingDirectionStrategy.BackAndForward,
+                    PathRelinkingMoveSelectionStrategy.Greedy,
+                    1.0,
+                    0.2),
+                context,
+                new ImmutableSolutionCloner<int>(),
+                20,
+                TestContext.Current.CancellationToken);
+
+        Assert.True(result.ReachedGuidingSolution);
+        Assert.True(result.PathSteps > 2);
+        Assert.Equal(1, result.BestSolution);
+    }
+
+    [Fact]
+    public void AdvancedMixedRelinkingAlternatesEndpointsUntilTheyMeet()
+    {
+        var problem = new PositiveIntMinimizationProblem();
+        var procedure = CreateAdvancedProcedure();
+        var context = new OptimizationContext<int>(
+            TestDescriptor(),
+            problem,
+            new ImmutableSolutionCloner<int>(),
+            new MaxEvaluationsStoppingCriterion(100));
+
+        context.Start();
+
+        int initiating = 5;
+        int guide = 1;
+        double initiatingFitness = context.Evaluate(initiating);
+
+        PathRelinkingProcedureResult<int> result =
+            procedure.RelinkAdvanced(
+                in initiating,
+                initiatingFitness,
+                in guide,
+                1.0,
+                new PathRelinkingExecutionOptions(
+                    PathRelinkingDirectionStrategy.Mixed,
+                    PathRelinkingMoveSelectionStrategy.Greedy,
+                    1.0,
+                    0.2),
+                context,
+                new ImmutableSolutionCloner<int>(),
+                20,
+                TestContext.Current.CancellationToken);
+
+        Assert.True(result.ReachedGuidingSolution);
+        Assert.True(result.PathSteps >= 2);
+        Assert.Equal(1, result.BestSolution);
+    }
+
+    [Fact]
+    public void TruncatedPathRelinkingStopsAfterRequestedDistanceFraction()
+    {
+        var problem = new PositiveIntMinimizationProblem();
+        var procedure = CreateAdvancedProcedure();
+        var context = new OptimizationContext<int>(
+            TestDescriptor(),
+            problem,
+            new ImmutableSolutionCloner<int>(),
+            new MaxEvaluationsStoppingCriterion(100));
+
+        context.Start();
+
+        int initiating = 5;
+        int guide = 1;
+        double initiatingFitness = context.Evaluate(initiating);
+
+        PathRelinkingProcedureResult<int> result =
+            procedure.RelinkAdvanced(
+                in initiating,
+                initiatingFitness,
+                in guide,
+                1.0,
+                new PathRelinkingExecutionOptions(
+                    PathRelinkingDirectionStrategy.Forward,
+                    PathRelinkingMoveSelectionStrategy.Greedy,
+                    0.5,
+                    0.2),
+                context,
+                new ImmutableSolutionCloner<int>(),
+                20,
+                TestContext.Current.CancellationToken);
+
+        Assert.False(result.ReachedGuidingSolution);
+        Assert.Equal(1, result.PathSteps);
+        Assert.Equal("PathRelinkingTruncatedFractionCompleted", result.StoppingDecision.Criterion);
+    }
+
+    [Fact]
+    public void GreedyRandomizedAdaptivePathRelinkingUsesRclSampling()
+    {
+        var problem = new PositiveIntMinimizationProblem();
+        var procedure = CreateAdvancedProcedure();
+        var context = new OptimizationContext<int>(
+            TestDescriptor(),
+            problem,
+            new ImmutableSolutionCloner<int>(),
+            new MaxEvaluationsStoppingCriterion(100),
+            new OptimizationOptions { Seed = 1UL });
+
+        context.Start();
+
+        int initiating = 5;
+        int guide = 1;
+        double initiatingFitness = context.Evaluate(initiating);
+
+        PathRelinkingProcedureResult<int> result =
+            procedure.RelinkAdvanced(
+                in initiating,
+                initiatingFitness,
+                in guide,
+                1.0,
+                new PathRelinkingExecutionOptions(
+                    PathRelinkingDirectionStrategy.Forward,
+                    PathRelinkingMoveSelectionStrategy.GreedyRandomizedAdaptive,
+                    1.0,
+                    1.0),
+                context,
+                new ImmutableSolutionCloner<int>(),
+                20,
+                TestContext.Current.CancellationToken);
+
+        Assert.True(result.ReachedGuidingSolution);
+        Assert.True(result.CandidateEvaluations >= result.PathSteps);
+    }
+
+    [Fact]
+    public void ElitePoolCanReturnStoredGuideFitnessWithoutReevaluation()
+    {
+        var pool = new EliteSolutionPool<int>(
+            3,
+            1,
+            new IntDistance(),
+            new PositiveIntMinimizationProblem(),
+            new ImmutableSolutionCloner<int>());
+
+        int elite = 7;
+        int initiating = 10;
+        Assert.True(pool.TryAdd(in elite, 7.0, out _));
+
+        Assert.True(
+            pool.TrySelectGuide(
+                in initiating,
+                new FixedRandomSource(),
+                out int guide,
+                out double guideFitness));
+
+        Assert.Equal(7, guide);
+        Assert.Equal(7.0, guideFitness);
+    }
+
+    [Fact]
+    public void AdvancedParametersRejectInvalidPathFractionAndRclAlpha()
+    {
+        Assert.Throws<ArgumentOutOfRangeException>(() =>
+            new GraspPathRelinkingParameters { PathFraction = 0.0 }.Validate());
+
+        Assert.Throws<ArgumentOutOfRangeException>(() =>
+            new GraspPathRelinkingParameters { PathFraction = 1.01 }.Validate());
+
+        Assert.Throws<ArgumentOutOfRangeException>(() =>
+            new GraspPathRelinkingParameters { PathRelinkingAlpha = -0.01 }.Validate());
+
+        Assert.Throws<ArgumentOutOfRangeException>(() =>
+            new GraspPathRelinkingParameters { PathRelinkingAlpha = 1.01 }.Validate());
+    }
+
+    private static AdvancedPathRelinkingProcedure<
+        int,
+        int,
+        int,
+        TowardGuideMoveEnumerator> CreateAdvancedProcedure() =>
+        new(
+            new IntTowardGuideNeighborhood(),
+            new IntDistance(),
+            new IntMoveOperator(),
+            new IntDeltaEvaluator());
     private static GreedyForwardPathRelinkingProcedure<
         int,
         int,

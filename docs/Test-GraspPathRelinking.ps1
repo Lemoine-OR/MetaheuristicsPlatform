@@ -8,22 +8,14 @@ Set-StrictMode -Version Latest
 
 function Read-Utf8([string]$Relative) {
     $path = Join-Path $Root $Relative
-
     if (-not (Test-Path -LiteralPath $path)) {
         throw "GRASP Path Relinking validation: missing '$Relative'."
     }
-
-    return [System.IO.File]::ReadAllText(
-        $path,
-        [System.Text.Encoding]::UTF8)
+    return [System.IO.File]::ReadAllText($path, [System.Text.Encoding]::UTF8)
 }
 
-function Require-Contains(
-    [string]$Relative,
-    [string[]]$Markers) {
-
+function Require-Contains([string]$Relative, [string[]]$Markers) {
     $text = Read-Utf8 $Relative
-
     foreach ($marker in $Markers) {
         if (-not $text.Contains($marker)) {
             throw "GRASP Path Relinking validation: '$Relative' is missing '$marker'."
@@ -31,134 +23,108 @@ function Require-Contains(
     }
 }
 
-$version =
-    (Read-Utf8 "version.json") |
-    ConvertFrom-Json
-
-if ([version]([string]$version.version) -lt [version]"0.30.0") {
-    throw "GRASP Path Relinking validation: expected repository version 0.30.0 or later."
+$version = (Read-Utf8 "version.json") | ConvertFrom-Json
+if ([version]([string]$version.version) -lt [version]"0.31.0") {
+    throw "GRASP Path Relinking validation: expected repository version 0.31.0 or later."
 }
 
-Require-Contains `
-    "src\MetaheuristicsPlatform\Algorithms\Constructive\GraspPathRelinkingOptimizer.cs" @(
-        'Id = "grasp-path-relinking"',
-        "EliteSolutionPool<TSolution>",
-        "IPathRelinkingProcedure<TSolution>",
-        "MetaheuristicFamily.Hybrid",
-        "MetaheuristicMechanism.MemoryBased",
-        "context.CompleteIteration",
-        "MaximumGraspPathRelinkingIterations"
-    )
+Require-Contains "src\MetaheuristicsPlatform\Algorithms\Constructive\AdvancedPathRelinkingProcedure.cs" @(
+    "IAdvancedPathRelinkingProcedure<TSolution>",
+    "PathRelinkingDirectionStrategy.Backward",
+    "PathRelinkingDirectionStrategy.BackAndForward",
+    "PathRelinkingDirectionStrategy.Mixed",
+    "PathRelinkingMoveSelectionStrategy.GreedyRandomizedAdaptive",
+    "ArrayPool<CandidateProbe>",
+    "RegisterExternalProbeEvaluation",
+    "PromoteOwnedExternalProbeSnapshot",
+    "strictly decrease",
+    "PathRelinkingTruncatedFractionCompleted"
+)
 
-Require-Contains `
-    "src\MetaheuristicsPlatform\Algorithms\Constructive\GreedyForwardPathRelinkingProcedure.cs" @(
-        "RegisterExternalProbeEvaluation",
-        "PromoteOwnedExternalProbeSnapshot",
-        "TryEvaluateCandidateObjective",
-        "strictly decrease",
-        "MaximumPathSteps"
-    )
+Require-Contains "src\MetaheuristicsPlatform\Algorithms\Constructive\PathRelinkingExecutionOptions.cs" @(
+    "Forward",
+    "Backward",
+    "BackAndForward",
+    "Mixed",
+    "GreedyRandomizedAdaptive",
+    "PathFraction",
+    "GreedyRandomizedAlpha",
+    "IsCanonicalGreedyForward"
+)
 
-Require-Contains `
-    "src\MetaheuristicsPlatform\Algorithms\Constructive\EliteSolutionPool.cs" @(
-        "Reservoir",
-        "_minimumDistance",
-        "TrySelectGuide",
-        "TryAdd"
-    )
+Require-Contains "src\MetaheuristicsPlatform\Algorithms\Constructive\GraspPathRelinkingOptimizer.cs" @(
+    'Id = "grasp-path-relinking"',
+    "IAdvancedPathRelinkingProcedure<TSolution>",
+    "CreatePathRelinkingExecutionOptions",
+    "guidingFitness",
+    "RelinkAdvanced",
+    "RibeiroResende2012"
+)
 
-Require-Contains `
-    "src\MetaheuristicsPlatform\Algorithms\Constructive\PathRelinkingContracts.cs" @(
-        "IPathRelinkingDistance",
-        "IPathRelinkingNeighborhood",
-        "IPathRelinkingProcedure",
-        "PathRelinkingProcedureResult"
-    )
+Require-Contains "src\MetaheuristicsPlatform\Algorithms\Constructive\EliteSolutionPool.cs" @(
+    "out double guidingFitness",
+    "guidingFitness = _fitness[selectedIndex]",
+    "Reservoir"
+)
 
-Require-Contains `
-    "tests\MetaheuristicsPlatform.Tests\GraspPathRelinkingTests.cs" @(
-        "ForwardRelinkingSelectsBestTargetDirectedMoveAndReachesGuide",
-        "ForwardRelinkingRejectsMoveThatDoesNotDecreaseGuideDistance",
-        "ElitePoolRejectsNonDiverseCandidate",
-        "ElitePoolReplacesWorstWhenBetterDiverseCandidateArrives",
-        "OptimizerUsesCommonOuterIterationStoppingLifecycle",
-        "StableIdAndRuntimeCatalogExposeGraspPathRelinking"
-    )
+Require-Contains "tests\MetaheuristicsPlatform.Tests\GraspPathRelinkingTests.cs" @(
+    "AdvancedBackwardRelinkingUsesKnownEliteFitnessAndReachesOppositeEndpoint",
+    "AdvancedBackAndForwardTraversesBothDirections",
+    "AdvancedMixedRelinkingAlternatesEndpointsUntilTheyMeet",
+    "TruncatedPathRelinkingStopsAfterRequestedDistanceFraction",
+    "GreedyRandomizedAdaptivePathRelinkingUsesRclSampling",
+    "ElitePoolCanReturnStoredGuideFitnessWithoutReevaluation",
+    "AdvancedParametersRejectInvalidPathFractionAndRclAlpha"
+)
 
-Require-Contains `
-    "src\MetaheuristicsPlatform\Catalog\MetaheuristicAlgorithmIds.cs" @(
-        '"grasp-path-relinking"'
-    )
-
-Require-Contains `
-    "src\MetaheuristicsPlatform\Catalog\MetaheuristicCatalog.cs" @(
-        '"grasp-path-relinking"',
-        '"constructive-methods"',
-        '"10.1287/ijoc.1030.0059"'
-    )
-
-Require-Contains `
-    "docs\pages\families\hybrid-methods.md" @(
-        "@subpage grasp_path_relinking"
-    )
-
-Require-Contains `
-    "docs\build-documentation.ps1" @(
-        "additionalCategories",
-        "# MULTI-FAMILY-ITEMS"
-    )
-
-Require-Contains `
-    "docs\pages\algorithms\grasp-path-relinking.md" @(
-        "## General description",
-        "## Technical specifications",
-        "## Complexity",
-        "## Applicability",
-        "## Detailed operation",
-        "## Parameters",
-        "## API example",
-        "## Stable factory ID",
-        "## Mathematical details",
-        "### Problem formulation",
-        "### Update equations / iterations",
-        "### Assumptions",
-        "### Convergence conditions",
-        "### Scientific references",
-        "grasp-path-relinking",
-        "10.1287/ijoc.1030.0059",
-        "\f["
-    )
-
-$catalog =
-    (Read-Utf8 "docs\grasp-catalog.json") |
-    ConvertFrom-Json
-
-if (@($catalog.executable | Where-Object id -eq "grasp-path-relinking").Count -ne 1) {
-    throw "GRASP Path Relinking validation: executable catalog entry missing."
+$catalog = (Read-Utf8 "docs\path-relinking-strategy-catalog.json") | ConvertFrom-Json
+if (@($catalog.implemented).Count -ne 6) {
+    throw "GRASP Path Relinking validation: expected 6 implemented advanced strategy entries."
+}
+if (@($catalog.reviewedDeferred).Count -ne 1 -or
+    [string]$catalog.reviewedDeferred[0].id -ne "pr.evolutionary") {
+    throw "GRASP Path Relinking validation: evolutionary path relinking must remain explicitly reviewed/deferred."
+}
+foreach ($entry in @($catalog.implemented)) {
+    if ([string]::IsNullOrWhiteSpace([string]$entry.formula) -or
+        [string]$entry.formulaMode -ne "math") {
+        throw "GRASP Path Relinking validation: implemented entry '$($entry.id)' lacks a mathematical model."
+    }
 }
 
-if (@($catalog.reviewedDeferred | Where-Object id -eq "grasp-path-relinking").Count -ne 0) {
-    throw "GRASP Path Relinking validation: method must no longer be deferred."
-}
+Require-Contains "docs\pages\components\path-relinking-strategies.md" @(
+    "@page path_relinking_strategies",
+    "## Direction policies",
+    "## Greedy-randomized adaptive move selection",
+    "## Truncated path relinking",
+    "## Evolutionary path relinking",
+    "10.1007/s10732-011-9167-1",
+    "\f["
+)
 
-$documentationCatalog =
-    (Read-Utf8 "docs\algorithm-catalog.json") |
-    ConvertFrom-Json
+Require-Contains "docs\pages\algorithms\grasp-path-relinking.md" @(
+    "AdvancedPathRelinkingProcedure",
+    "PathDirection",
+    "PathMoveSelection",
+    "PathFraction",
+    "PathRelinkingAlpha",
+    "@subpage path_relinking_strategies",
+    "10.1007/s10732-011-9167-1"
+)
 
-if (@($documentationCatalog.algorithms).Count -lt 22) {
-    throw "GRASP Path Relinking validation: expected at least 22 public algorithms."
-}
+Require-Contains "docs\Build-PathRelinkingStrategyDocumentation.ps1" @(
+    "Advanced Path Relinking Strategies",
+    "path-relinking-strategies.html",
+    "formula-note",
+    "mathjax@3.2.2/es5/tex-chtml.js"
+)
 
-if (@($documentationCatalog.algorithms | Where-Object id -eq "grasp-path-relinking").Count -ne 1) {
-    throw "GRASP Path Relinking validation: documentation catalog entry missing or duplicated."
-}
+Require-Contains "docs\build-documentation.ps1" @(
+    "Build-PathRelinkingStrategyDocumentation.ps1"
+)
 
-Require-Contains `
-    "README.md" @(
-        "22 public algorithms",
-        "grasp-path-relinking"
-    )
-
-Write-Host `
-    "GRASP Path Relinking validation passed: elite memory + greedy forward path engine + public GRASP-PR optimizer." `
-    -ForegroundColor Green
+Require-Contains "README.md" @(
+    "components/path-relinking-strategies.html",
+    "Evolutionary Path Relinking"
+)
+Write-Host "GRASP Path Relinking validation passed: 6 executable advanced pairwise strategies + evolutionary PR reviewed/deferred." -ForegroundColor Green

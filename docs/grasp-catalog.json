@@ -1,6 +1,6 @@
 {
     "schemaVersion":  1,
-    "release":  "0.30.1",
+    "release":  "0.31.0",
     "family":  "grasp",
     "executable":  [
                        {
@@ -24,12 +24,13 @@
                            "id":  "grasp-path-relinking",
                            "name":  "GRASP with Path Relinking",
                            "construction":  "canonical threshold RCL followed by reusable local search",
-                           "selection":  "uniform elite-guide reservoir selection + greedy best target-directed path move",
+                           "selection":  "uniform elite-guide reservoir selection + configurable greedy or greedy-randomized target-directed move selection",
                            "localSearch":  "ILocalSearchProcedure\u003cTSolution\u003e",
                            "memory":  "fixed-capacity quality/diversity elite pool",
-                           "path":  "greedy forward path relinking",
+                           "path":  "forward / backward / back-and-forward / mixed; optional truncation",
                            "status":  "executable",
-                           "doi":  "10.1287/ijoc.1030.0059"
+                           "doi":  "10.1287/ijoc.1030.0059",
+                           "advancedEngine":  "AdvancedPathRelinkingProcedure\u003cTSolution,TMove,TUndo,TEnumerator\u003e"
                        }
                    ],
     "reviewedDeferred":  [
@@ -55,6 +56,10 @@
                        {
                            "publication":  "Resende \u0026 Ribeiro (2005), GRASP with path-relinking: Recent advances and applications",
                            "doi":  "10.1007/0-387-25383-1_2"
+                       },
+                       {
+                           "publication":  "Ribeiro \u0026 Resende (2012), Path-relinking intensification methods for stochastic local search algorithms",
+                           "doi":  "10.1007/s10732-011-9167-1"
                        }
                    ]
 }

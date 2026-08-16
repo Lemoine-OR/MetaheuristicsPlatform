@@ -192,6 +192,46 @@ foreach ($catalogRelative in @(
     }
 }
 
+$pathRelinkingCatalog =
+    (Read-Utf8 "docs\path-relinking-strategy-catalog.json") |
+    ConvertFrom-Json
+
+$pathRelinkingEntries =
+    @($pathRelinkingCatalog.implemented) +
+    @($pathRelinkingCatalog.reviewedDeferred)
+
+foreach ($entry in $pathRelinkingEntries) {
+    $mode = [string]$entry.formulaMode
+    $formula = [string]$entry.formula
+
+    switch ($mode) {
+        "math" {
+            Assert-TeXContent `
+                -Id ([string]$entry.id) `
+                -Field "formula" `
+                -Formula $formula
+            $componentMathCount++
+        }
+
+        "prose" {
+            if ([string]::IsNullOrWhiteSpace($formula)) {
+                throw "Scientific formula quality: '$($entry.id)' has empty prose model description."
+            }
+
+            if ($formula.Contains('\begin') -or
+                $formula.Contains('\frac') -or
+                $formula.Contains('\sum')) {
+                throw "Scientific formula quality: '$($entry.id)' is marked prose but still contains TeX mathematics."
+            }
+
+            $componentProseCount++
+        }
+
+        default {
+            throw "Scientific formula quality: '$($entry.id)' has unsupported formulaMode '$mode'."
+        }
+    }
+}
 $builder = Read-Utf8 "docs\build-documentation.ps1"
 
 foreach ($marker in @(
@@ -219,7 +259,8 @@ if ($implementationCount -ne 1) {
 
 foreach ($specialBuilder in @(
     "docs\Build-SimulatedAnnealingCoolingDocumentation.ps1",
-    "docs\Build-TabuSearchAdvancedDocumentation.ps1"
+    "docs\Build-TabuSearchAdvancedDocumentation.ps1",
+    "docs\Build-PathRelinkingStrategyDocumentation.ps1"
 )) {
     $specialSource = Read-Utf8 $specialBuilder
 

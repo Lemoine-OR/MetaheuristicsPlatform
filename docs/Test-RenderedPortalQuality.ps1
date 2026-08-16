@@ -232,6 +232,68 @@ foreach ($check in $componentChecks) {
     }
 }
 
+$pathRelinkingCatalog =
+    (Read-Utf8Path (Join-Path $Root "docs\path-relinking-strategy-catalog.json")) |
+    ConvertFrom-Json
+
+$pathRelinkingHtml =
+    Read-Utf8Path (Join-Path $Site "components\path-relinking-strategies.html")
+
+if (-not $pathRelinkingHtml.Contains('mathjax@3.2.2/es5/tex-chtml.js')) {
+    throw "Rendered portal quality: Path Relinking component is not using pinned MathJax 3.2.2."
+}
+
+foreach ($entry in @($pathRelinkingCatalog.implemented)) {
+    $encoded =
+        [System.Net.WebUtility]::HtmlEncode([string]$entry.formula)
+
+    $expected =
+        '<div class="math">\[' +
+        $encoded +
+        '\]</div>'
+
+    if (-not $pathRelinkingHtml.Contains($expected)) {
+        throw "Rendered portal quality: Path Relinking component '$($entry.id)' math formula is not rendered as display mathematics."
+    }
+
+    $componentMathBlocks++
+}
+
+foreach ($entry in @($pathRelinkingCatalog.reviewedDeferred)) {
+    $encoded =
+        [System.Net.WebUtility]::HtmlEncode([string]$entry.formula)
+
+    if (-not $pathRelinkingHtml.Contains('<div class="formula-note">') -or
+        -not $pathRelinkingHtml.Contains($encoded)) {
+        throw "Rendered portal quality: Path Relinking component '$($entry.id)' prose model is missing."
+    }
+
+    $mathWrapped =
+        '<div class="math">\[' +
+        $encoded +
+        '\]</div>'
+
+    if ($pathRelinkingHtml.Contains($mathWrapped)) {
+        throw "Rendered portal quality: Path Relinking prose component '$($entry.id)' is incorrectly wrapped in MathJax."
+    }
+
+    $componentProseModels++
+}
+
+$graspPathRelinkingPortal =
+    Read-Utf8Path (Join-Path $Site "algorithms\grasp-path-relinking.html")
+
+if (-not $graspPathRelinkingPortal.Contains(
+    '../components/path-relinking-strategies.html')) {
+    throw "Rendered portal quality: GRASP-PR portal page is missing the Advanced Path Relinking component link."
+}
+
+$pathRelinkingDoxygen =
+    Join-Path $Site "api\path_relinking_strategies.html"
+
+if (-not (Test-Path -LiteralPath $pathRelinkingDoxygen)) {
+    throw "Rendered portal quality: canonical Path Relinking Doxygen page is missing."
+}
 $apiHtmlFiles =
     @(
         Get-ChildItem `

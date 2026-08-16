@@ -43,4 +43,11 @@ public static class GraspReferences
         "GRASP with Path Relinking for Three-Index Assignment",
         "INFORMS Journal on Computing 17(2), 224-247",
         "10.1287/ijoc.1030.0059");
+    /// <summary>Canonical review of advanced path-relinking implementation strategies.</summary>
+    public static ScientificReference RibeiroResende2012 { get; } = new(
+        "Celso C. Ribeiro; Mauricio G. C. Resende",
+        2012,
+        "Path-relinking intensification methods for stochastic local search algorithms",
+        "Journal of Heuristics 18(2), 193-214",
+        "10.1007/s10732-011-9167-1");
 }

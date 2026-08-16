@@ -4,104 +4,82 @@
 
 ## General description
 
-GRASP with Path Relinking (GRASP-PR) augments the independent multistart GRASP cycle with
-memory and intensification. Locally improved GRASP solutions populate a small elite set.
-A newly generated local optimum may then be used as an initiating solution and an earlier
-elite solution as a guide. Path relinking explores intermediate solutions obtained by
-progressively introducing attributes of the guiding solution.
+GRASP with Path Relinking (GRASP-PR) augments randomized greedy construction and local search
+with a quality/diversity elite set and target-directed intensification trajectories. Version
+0.31.0 retains the canonical greedy-forward engine from v0.30.x and adds a configurable advanced
+engine implementing forward, backward, back-and-forward, mixed, truncated and greedy-randomized
+adaptive path-relinking strategies.
 
-The v0.30.0 implementation provides the reusable scientific foundation required by the
-GRASP family: a fixed-capacity quality/diversity elite pool, an explicit domain distance,
-an allocation-free target-directed move cursor and a greedy forward path-relinking engine.
+@subpage path_relinking_strategies
 
 ## Technical specifications
 
 - Stable ID: `grasp-path-relinking`.
 - Public optimizer: `GraspPathRelinkingOptimizer<TSolution>`.
-- Reusable engine: `GreedyForwardPathRelinkingProcedure<TSolution,TMove,TUndo,TEnumerator>`.
-- Elite memory: `EliteSolutionPool<TSolution>`.
-- Path cursor: value-type `INeighborhoodEnumerator<TMove>`.
-- Objective fast path: optional `IMoveObjectiveDeltaEvaluator<TSolution,TMove>`.
-- Fallback: reversible apply/evaluate/undo through `IReversibleMoveOperator`.
-- Common callbacks, accounting, deterministic RNG ownership and stopping use `OptimizationContext`.
-- The elite pool owns clones; guide selection uses allocation-free reservoir sampling.
+- Compatibility engine: `GreedyForwardPathRelinkingProcedure<TSolution,TMove,TUndo,TEnumerator>`.
+- Advanced engine: `AdvancedPathRelinkingProcedure<TSolution,TMove,TUndo,TEnumerator>`.
+- Advanced capability: `IAdvancedPathRelinkingProcedure<TSolution>`.
+- Direction policies: forward, backward, back-and-forward, mixed.
+- Move policies: greedy, greedy-randomized adaptive RCL.
+- Truncation: orthogonal `PathFraction` in \f$(0,1]\f$.
+- Objective fast path: optional exact `IMoveObjectiveDeltaEvaluator<TSolution,TMove>`.
+- Randomized path candidate storage: pooled arrays, not per-step `List<T>` allocation.
+- Elite guides expose their stored fitness so backward/mixed paths do not duplicate objective evaluations.
+- Common callbacks, probe accounting, stopping, cancellation and RNG ownership remain in `OptimizationContext`.
 
 ## Complexity
 
-Let \f$E\f$ be the elite-pool capacity, \f$D\f$ the number of selected path moves,
-\f$P_k\f$ the number of target-directed candidate moves at path step \f$k\f$,
-\f$C_\delta\f$ the exact candidate-objective cost, \f$C_f\f$ a full objective evaluation cost,
-and \f$C_\rho\f$ the domain distance cost.
-
-With an exact move evaluator, one relinking call is
+Let \f$D\f$ be the number of accepted path moves, \f$P_k\f$ the number of target-directed
+candidates at step \f$k\f$, \f$C_p\f$ their objective-probe cost, \f$C_\rho\f$ the distance
+cost, and \f$E\f$ the elite-set capacity. One directional path costs
 
 \f[
-O\!\left(\sum_{k=1}^{D} P_k C_\delta + D C_\rho\right).
+O\!\left(\sum_{k=1}^{D}P_kC_p + DC_\rho\right).
 \f]
 
-Without an exact move evaluator it is
-
-\f[
-O\!\left(\sum_{k=1}^{D} P_k(C_{\mathrm{apply}}+C_f+C_{\mathrm{undo}})
-+ D C_\rho\right).
-\f]
-
-Elite insertion and guide selection require \f$O(E C_\rho)\f$ distance work and no
-temporary candidate list. Memory is \f$O(E|x|+|x|)\f$ for owned elite snapshots and
-the active/best path solutions, excluding domain move-cursor workspace.
+Back-and-forward performs up to two such traversals. Mixed performs one candidate scan per
+accepted alternating endpoint move. Elite insertion/selection remains \f$O(EC_\rho)\f$.
+Greedy move selection uses constant extra candidate memory; greedy-randomized selection uses
+\f$O(P_k)\f$ pooled temporary storage at the active path position.
 
 ## Applicability
 
-The method targets finite combinatorial or mixed representations for which the domain can:
-
-1. construct complete feasible GRASP solutions;
-2. provide compatible local search;
-3. define a non-negative integral distance between path-relinking attributes;
-4. enumerate target-directed moves toward a guiding solution;
-5. apply those moves reversibly;
-6. optionally evaluate their exact objective values without applying them.
-
-Continuous interpolation is deliberately not claimed by this contract: v0.30.0 models
-attribute-introduction path relinking rather than arithmetic interpolation.
+The method targets finite combinatorial or mixed representations with a non-negative integral
+attribute distance, restartable target-directed move enumeration, reversible move application,
+compatible GRASP construction/local search and, optionally, exact objective-delta evaluation.
 
 ## Detailed operation
 
-For each GRASP outer iteration:
+For each outer GRASP iteration the optimizer constructs and locally improves a solution, selects
+a distinct elite guide, then dispatches path relinking. With the advanced engine, the direction,
+move selection and path fraction are taken from `GraspPathRelinkingParameters`. All unvisited
+candidate moves are registered as objective probes; only a selected, actually visited move can
+be promoted from its existing probe evaluation to global best. Every accepted path move must
+strictly decrease the relevant endpoint distance.
 
-1. construct a randomized greedy feasible solution with the canonical threshold RCL;
-2. evaluate it through the common runtime;
-3. apply the configured local-search procedure;
-4. if a distinct earlier elite exists, choose one uniformly as the guiding solution;
-5. start from the new local optimum and enumerate target-directed moves;
-6. probe every candidate objective and select the best candidate at the current path step;
-7. apply only that selected move and verify that the distance to the guide strictly decreases;
-8. retain the best solution actually visited on the path;
-9. insert the resulting best path solution into the elite pool if quality/diversity rules allow it;
-10. complete exactly one common outer iteration.
-
-Unvisited path candidates are registered as probe evaluations. They can consume evaluation
-budgets and emit evaluation callbacks, but they are never promoted to global best. A selected
-visited candidate is promoted without double-counting its already registered probe evaluation.
+Backward uses the already-stored elite fitness. Back-and-forward executes backward then forward.
+Mixed alternates the active endpoint while continuously shrinking the distance between the two
+active endpoint states. Greedy-randomized mode builds a GRASP-style RCL from the candidate
+objective values and samples uniformly. Truncation stops after the requested fraction of initial
+path distance has been eliminated.
 
 ## Parameters
 
-`GraspPathRelinkingParameters` exposes:
+`GraspPathRelinkingParameters` exposes the existing GRASP/elite limits plus:
 
-- `MaximumIterations`: GRASP outer-iteration safety limit;
-- `Alpha`: canonical threshold-RCL parameter in \f$[0,1]\f$;
-- `MaximumConstructionSteps`: safety cap for one construction;
-- `ElitePoolSize`: maximum number of elite snapshots;
-- `MinimumEliteDistance`: required distance between distinct retained elites;
-- `MaximumPathSteps`: safety cap for one relinking trajectory.
+- `PathDirection`: `Forward`, `Backward`, `BackAndForward`, `Mixed`;
+- `PathMoveSelection`: `Greedy` or `GreedyRandomizedAdaptive`;
+- `PathFraction`: \f$(0,1]\f$, where values below one activate truncation;
+- `PathRelinkingAlpha`: RCL parameter in \f$[0,1]\f$ for randomized path moves;
+- `MaximumPathSteps`: safety limit for each directional or mixed traversal.
 
-A minimum elite distance of one removes exact duplicates while allowing every distinct
-integral path configuration.
+The defaults reproduce v0.30.x behavior exactly: greedy forward, full path.
 
 ## API example
 
 ```csharp
 var relinking =
-    new GreedyForwardPathRelinkingProcedure<
+    new AdvancedPathRelinkingProcedure<
         MySolution,
         MyMove,
         MyUndo,
@@ -125,7 +103,11 @@ OptimizationResult<MySolution> result =
         {
             Alpha = 0.2,
             ElitePoolSize = 10,
-            MinimumEliteDistance = 1
+            MinimumEliteDistance = 1,
+            PathDirection = PathRelinkingDirectionStrategy.Mixed,
+            PathMoveSelection = PathRelinkingMoveSelectionStrategy.GreedyRandomizedAdaptive,
+            PathFraction = 0.75,
+            PathRelinkingAlpha = 0.2
         },
         solutionCloner,
         stoppingCriterion);
@@ -135,93 +117,76 @@ OptimizationResult<MySolution> result =
 
 `grasp-path-relinking`
 
-This optimizer requires domain composition, so the stable ID is used with the same explicit
-typed registration pattern as the other generic composed algorithms.
+The stable algorithm identity is unchanged. This optimizer requires explicit domain composition.
 
 ## Mathematical details
 
 ### Problem formulation
 
-For an optimization problem
-
 \f[
-\min_{x\in\mathcal X} f(x),
+\min_{x\in\mathcal X}f(x),
+\qquad
+x^I,x^G\in\mathcal X,
+\qquad
+\rho(x^I,x^G)\in\mathbb Z_{\ge0}.
 \f]
 
-let \f$x^I\f$ be an initiating locally optimal solution, \f$x^G\f$ a guiding elite solution,
-and \f$\rho(x,x^G)\in\mathbb Z_{\ge 0}\f$ the domain path distance.
-
-At path position \f$x_k\f$, let
+At an active endpoint \f$x_k\f$ with target \f$g_k\f$,
 
 \f[
-M(x_k,x^G)=
-\{m:\rho(m(x_k),x^G)<\rho(x_k,x^G)\}
+M(x_k,g_k)=\{m:\rho(m(x_k),g_k)<\rho(x_k,g_k)\}.
 \f]
-
-denote target-directed moves supplied by the domain.
 
 ### Update equations / iterations
 
-Greedy forward path relinking selects
+Greedy selection uses the sense-consistent best member of \f$M(x_k,g_k)\f$. For randomized
+minimization selection,
 
 \f[
-m_k^* \in
-\operatorname*{arg\,min}_{m\in M(x_k,x^G)}
-f(m(x_k))
+\begin{aligned}
+ f_{best}&=\min_{m\in M}f(m(x_k)),\\
+ f_{worst}&=\max_{m\in M}f(m(x_k)),\\
+ \tau_\alpha&=f_{best}+\alpha(f_{worst}-f_{best}),\\
+ RCL_\alpha&=\{m\in M:f(m(x_k))\le\tau_\alpha\},\\
+ m_k&\sim U(RCL_\alpha),\\
+ x_{k+1}&=m_k(x_k).
+\end{aligned}
 \f]
 
-for minimization, with the optimization-sense-consistent maximizing form for maximization,
-then updates
+Every accepted move satisfies strict progress. Truncation with fraction \f$\theta\f$ stops once
 
 \f[
-x_{k+1}=m_k^*(x_k).
+\rho_0-\rho_k\ge\lceil\theta\rho_0\rceil.
 \f]
-
-The implementation requires the strict progress invariant
-
-\f[
-\rho(x_{k+1},x^G)<\rho(x_k,x^G).
-\f]
-
-The elite pool stores at most \f$E\f$ owned solutions. Exact duplicates are merged by quality.
-When full, a candidate can replace the current worst elite only when it is strictly better
-and remains at least `MinimumEliteDistance` from every surviving elite.
 
 ### Assumptions
 
-- The path distance is non-negative and returns zero for solutions with identical
-  path-relinking attributes.
-- The target-directed neighborhood is nonempty whenever the remaining distance is positive.
-- The selected path move strictly decreases the remaining distance.
-- Reversible move operators restore the exact pre-move solution.
-- Optional delta evaluators return the exact objective of the corresponding moved solution.
-- Construction, local search, distance and relinking contracts operate on one compatible
-  solution representation.
+- Path distance is non-negative and zero identifies equal path-relinking attribute configurations.
+- A positive remaining distance exposes at least one target-directed move.
+- Every selected move strictly reduces the relevant endpoint distance.
+- Reversible operators restore the exact pre-probe state.
+- Optional delta evaluators are exact.
+- Greedy-randomized RCL construction requires finite candidate objective values.
 
 ### Convergence conditions
 
-For a finite path distance and strict decrease at every accepted path step, an uncapped
-relinking trajectory reaches the guiding attribute configuration in finitely many steps.
-This termination property is not a global-optimality theorem.
-
-GRASP-PR inherits the usual stochastic-search qualification: no unconditional finite-time
-global convergence guarantee is claimed. If the GRASP construction/local-search mechanism
-has positive probability of reaching a globally optimal basin and the search continues
-indefinitely under suitable independence/reachability assumptions, failure probability can
-tend to zero. Path relinking changes intensification and memory, not that fundamental
-qualification.
+Strict decrease of a non-negative integral distance gives finite full-path termination in the
+absence of external caps. Truncation deliberately terminates earlier after the requested distance
+fraction. These are termination properties, not global-optimality theorems. GRASP-PR retains the
+usual stochastic-search qualification: no unconditional finite-time global convergence guarantee
+is claimed.
 
 ### Scientific references
 
-- Feo, T. A.; Resende, M. G. C. (1995). *Greedy Randomized Adaptive Search Procedures*,
-  Journal of Global Optimization 6(2), 109-133. DOI: `10.1007/BF01096763`.
-- Resende, M. G. C.; Ribeiro, C. C. (2005). *GRASP with path-relinking: Recent advances
-  and applications*, in *Metaheuristics: Progress as Real Problem Solvers*, pp. 29-63.
+- Feo, T. A.; Resende, M. G. C. (1995). *Greedy Randomized Adaptive Search Procedures*.
+  DOI: `10.1007/BF01096763`.
+- Resende, M. G. C.; Ribeiro, C. C. (2005). *GRASP with path-relinking: Recent advances and applications*.
   DOI: `10.1007/0-387-25383-1_2`.
 - Aiex, R. M.; Resende, M. G. C.; Pardalos, P. M.; Toraldo, G. (2005).
-  *GRASP with Path Relinking for Three-Index Assignment*, INFORMS Journal on Computing
-  17(2), 224-247. DOI: `10.1287/ijoc.1030.0059`.
+  *GRASP with Path Relinking for Three-Index Assignment*. DOI: `10.1287/ijoc.1030.0059`.
+- Ribeiro, C. C.; Resende, M. G. C. (2012).
+  *Path-relinking intensification methods for stochastic local search algorithms*,
+  Journal of Heuristics 18(2), 193-214. DOI: `10.1007/s10732-011-9167-1`.
 
-The v0.30.0 public implementation is intentionally the greedy **forward** foundation.
-Backward, back-and-forward, mixed, truncated and evolutionary path-relinking policies can
-reuse the explicit contracts in later releases without changing the stable GRASP-PR identity.
+Evolutionary path relinking remains reviewed/deferred because it evolves an elite population over
+multiple generations and therefore deserves a distinct population-level intensification contract.

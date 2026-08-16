@@ -1,0 +1,82 @@
+{
+    "schemaVersion":  1,
+    "release":  "0.31.0",
+    "component":  "Path Relinking strategies",
+    "implementedCount":  6,
+    "reviewedDeferredCount":  1,
+    "implemented":  [
+                        {
+                            "id":  "pr.forward",
+                            "name":  "Forward path relinking",
+                            "kind":  "direction",
+                            "formulaMode":  "math",
+                            "formula":  "x^I \\rightarrow x^G",
+                            "status":  "implemented"
+                        },
+                        {
+                            "id":  "pr.backward",
+                            "name":  "Backward path relinking",
+                            "kind":  "direction",
+                            "formulaMode":  "math",
+                            "formula":  "x^G \\rightarrow x^I",
+                            "status":  "implemented"
+                        },
+                        {
+                            "id":  "pr.back-and-forward",
+                            "name":  "Back-and-forward path relinking",
+                            "kind":  "direction",
+                            "formulaMode":  "math",
+                            "formula":  "P_{BF}=P(x^G,x^I)\\cup P(x^I,x^G)",
+                            "status":  "implemented"
+                        },
+                        {
+                            "id":  "pr.mixed",
+                            "name":  "Mixed path relinking",
+                            "kind":  "direction",
+                            "formulaMode":  "math",
+                            "formula":  "x^I_{k+1}\\rightarrow x^G_k,\\quad x^G_{k+1}\\rightarrow x^I_{k+1}\\quad\\text{alternately}",
+                            "status":  "implemented"
+                        },
+                        {
+                            "id":  "pr.truncated",
+                            "name":  "Truncated path relinking",
+                            "kind":  "orthogonal-path-fraction",
+                            "formulaMode":  "math",
+                            "formula":  "\\rho_0-\\rho_k\\ge\\lceil\\theta\\rho_0\\rceil,\\quad 0\u003c\\theta\\le1",
+                            "status":  "implemented"
+                        },
+                        {
+                            "id":  "pr.greedy-randomized-adaptive",
+                            "name":  "Greedy-randomized adaptive path relinking",
+                            "kind":  "move-selection",
+                            "formulaMode":  "math",
+                            "formula":  "RCL_\\alpha=\\{m:f_m\\le f_{best}+\\alpha(f_{worst}-f_{best})\\}",
+                            "status":  "implemented"
+                        }
+                    ],
+    "reviewedDeferred":  [
+                             {
+                                 "id":  "pr.evolutionary",
+                                 "name":  "Evolutionary path relinking",
+                                 "kind":  "elite-population-evolution",
+                                 "formulaMode":  "prose",
+                                 "reason":  "Requires a generation-level elite-population evolution contract rather than a single pairwise path procedure.",
+                                 "status":  "reviewed-deferred",
+                                 "formula":  "Population-level multi-generation elite evolution; not reducible to one pairwise path traversal."
+                             }
+                         ],
+    "references":  [
+                       {
+                           "publication":  "Resende \u0026 Ribeiro (2005), GRASP with path-relinking: Recent advances and applications",
+                           "doi":  "10.1007/0-387-25383-1_2"
+                       },
+                       {
+                           "publication":  "Aiex, Resende, Pardalos \u0026 Toraldo (2005), GRASP with Path Relinking for Three-Index Assignment",
+                           "doi":  "10.1287/ijoc.1030.0059"
+                       },
+                       {
+                           "publication":  "Ribeiro \u0026 Resende (2012), Path-relinking intensification methods for stochastic local search algorithms",
+                           "doi":  "10.1007/s10732-011-9167-1"
+                       }
+                   ]
+}

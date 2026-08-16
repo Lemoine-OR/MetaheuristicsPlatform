@@ -27,6 +27,7 @@ use, start from the project portal and the short guides below.
 - @subpage simulated_annealing_cooling_schedules - SA cooling laws and reviewed composite controllers.
 - @subpage tabu_search_memory_control_strategies - Tabu Search memory and reactive-control components.
 - @subpage advanced_variable_neighborhood_search_variants - executable and reviewed/deferred VNS variants.
+- @subpage path_relinking_strategies - forward/backward/mixed direction policies, truncation and greedy-randomized path construction.
 ## Validation and reproducibility
 
 - @subpage complexity_applicability

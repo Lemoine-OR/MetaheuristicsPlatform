@@ -64,7 +64,8 @@ public sealed class GraspPathRelinkingOptimizer<TSolution> :
         [
             GraspReferences.FeoResende1995,
             GraspReferences.ResendeRibeiro2003,
-            GraspReferences.AiexResendePardalosToraldo2005
+            GraspReferences.AiexResendePardalosToraldo2005,
+            GraspReferences.RibeiroResende2012
         ]
     };
 
@@ -87,6 +88,17 @@ public sealed class GraspPathRelinkingOptimizer<TSolution> :
         ArgumentNullException.ThrowIfNull(stoppingCriterion);
 
         parameters.Validate();
+
+        PathRelinkingExecutionOptions pathRelinkingOptions =
+            parameters.CreatePathRelinkingExecutionOptions();
+
+        if (!pathRelinkingOptions.IsCanonicalGreedyForward &&
+            _pathRelinking is not IAdvancedPathRelinkingProcedure<TSolution>)
+        {
+            throw new InvalidOperationException(
+                "Advanced path-relinking parameters require an " +
+                "IAdvancedPathRelinkingProcedure<TSolution> implementation.");
+        }
 
         var context = new OptimizationContext<TSolution>(
             Descriptor,
@@ -204,19 +216,39 @@ public sealed class GraspPathRelinkingOptimizer<TSolution> :
             if (elitePool.TrySelectGuide(
                     in solution,
                     context.Random,
-                    out TSolution guidingSolution))
+                    out TSolution guidingSolution,
+                    out double guidingFitness))
             {
                 pathRelinkingInvocations++;
 
-                PathRelinkingProcedureResult<TSolution> relinkingResult =
-                    _pathRelinking.Relink(
-                        in solution,
-                        fitness,
-                        in guidingSolution,
-                        context,
-                        solutionCloner,
-                        parameters.MaximumPathSteps,
-                        cancellationToken);
+                PathRelinkingProcedureResult<TSolution> relinkingResult;
+
+                if (_pathRelinking is IAdvancedPathRelinkingProcedure<TSolution> advancedPathRelinking)
+                {
+                    relinkingResult =
+                        advancedPathRelinking.RelinkAdvanced(
+                            in solution,
+                            fitness,
+                            in guidingSolution,
+                            guidingFitness,
+                            pathRelinkingOptions,
+                            context,
+                            solutionCloner,
+                            parameters.MaximumPathSteps,
+                            cancellationToken);
+                }
+                else
+                {
+                    relinkingResult =
+                        _pathRelinking.Relink(
+                            in solution,
+                            fitness,
+                            in guidingSolution,
+                            context,
+                            solutionCloner,
+                            parameters.MaximumPathSteps,
+                            cancellationToken);
+                }
 
                 totalPathSteps +=
                     relinkingResult.PathSteps;

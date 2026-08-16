@@ -4,6 +4,20 @@ All notable changes to MetaheuristicsPlatform will be documented in this file.
 
 ## [Unreleased]
 
+## [0.31.0]
+
+### Added
+- Add `AdvancedPathRelinkingProcedure<TSolution,TMove,TUndo,TEnumerator>` with forward, backward, back-and-forward and mixed trajectory policies.
+- Add orthogonal truncated path relinking through `PathFraction` and greedy-randomized adaptive path move selection through a GRASP-style RCL.
+- Add `IAdvancedPathRelinkingProcedure<TSolution>` without breaking the existing `IPathRelinkingProcedure<TSolution>` compatibility contract.
+- Return stored elite guide fitness to advanced relinking so backward and mixed policies avoid duplicate objective evaluations.
+- Use pooled candidate-probe buffers for randomized RCL selection while keeping greedy scans allocation-free.
+- Add a machine-readable advanced path-relinking strategy catalog and canonical scientific component page.
+
+### Scientific scope
+- Implement the pairwise strategies reviewed by Ribeiro & Resende (2012), DOI `10.1007/s10732-011-9167-1`.
+- Keep evolutionary path relinking explicitly reviewed/deferred because it requires a population-level elite evolution contract rather than a pairwise path flag.
+
 ## [0.30.1]
 
 ### Fixed

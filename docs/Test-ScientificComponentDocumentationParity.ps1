@@ -177,15 +177,26 @@ Require-Contains `
     )
 
 Require-Contains `
+    "docs\Build-PathRelinkingStrategyDocumentation.ps1" @(
+        "Advanced Path Relinking Strategies",
+        "path-relinking-strategies.html",
+        "path-relinking-strategy-catalog.json",
+        "formula-note",
+        "mathjax@3.2.2/es5/tex-chtml.js"
+    )
+
+Require-Contains `
     "docs\build-documentation.ps1" @(
         "Build-PsoTopologyDocumentation.ps1",
-        "Build-AdvancedVariableNeighborhoodDocumentation.ps1"
+        "Build-AdvancedVariableNeighborhoodDocumentation.ps1",
+        "Build-PathRelinkingStrategyDocumentation.ps1"
     )
 
 Require-Contains `
     "docs\mainpage.md" @(
         "@subpage pso_communication_topologies",
-        "@subpage advanced_variable_neighborhood_search_variants"
+        "@subpage advanced_variable_neighborhood_search_variants",
+        "@subpage path_relinking_strategies"
     )
 
 Require-Contains `
@@ -207,7 +218,8 @@ foreach ($marker in @(
     "components/pso-communication-topologies.html",
     "components/simulated-annealing-cooling-schedules.html",
     "components/tabu-search-memory-control-strategies.html",
-    "components/advanced-variable-neighborhood-search-variants.html"
+    "components/advanced-variable-neighborhood-search-variants.html",
+    "components/path-relinking-strategies.html"
 )) {
     if (-not $readme.Contains($marker)) {
         throw "README documentation parity: missing '$marker'."
@@ -231,5 +243,5 @@ foreach ($heading in @(
 }
 
 Write-Host `
-    "Scientific component documentation parity passed: 10 PSO topologies, 4 README family headings, PSO/VNS component builders wired." `
+    "Scientific component documentation parity passed: 10 PSO topologies, 4 README family headings, PSO/VNS/Path-Relinking component builders wired." `
     -ForegroundColor Green

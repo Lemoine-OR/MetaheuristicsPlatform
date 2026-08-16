@@ -169,7 +169,22 @@ public sealed class EliteSolutionPool<TSolution>
     public bool TrySelectGuide(
         in TSolution initiatingSolution,
         IRandomSource random,
-        out TSolution guidingSolution)
+        out TSolution guidingSolution) =>
+        TrySelectGuide(
+            in initiatingSolution,
+            random,
+            out guidingSolution,
+            out _);
+
+    /// <summary>
+    /// Selects a distinct guide and returns the objective value already stored with it.
+    /// This avoids duplicate objective evaluations for backward and mixed relinking.
+    /// </summary>
+    public bool TrySelectGuide(
+        in TSolution initiatingSolution,
+        IRandomSource random,
+        out TSolution guidingSolution,
+        out double guidingFitness)
     {
         ArgumentNullException.ThrowIfNull(random);
 
@@ -196,10 +211,12 @@ public sealed class EliteSolutionPool<TSolution>
         if (selectedIndex < 0)
         {
             guidingSolution = default!;
+            guidingFitness = double.NaN;
             return false;
         }
 
         guidingSolution = _solutions[selectedIndex];
+        guidingFitness = _fitness[selectedIndex];
         return true;
     }
 

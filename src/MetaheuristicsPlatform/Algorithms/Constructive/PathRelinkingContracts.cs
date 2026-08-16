@@ -60,3 +60,25 @@ public interface IPathRelinkingProcedure<TSolution>
         int maximumPathSteps,
         CancellationToken cancellationToken);
 }
+
+/// <summary>
+/// Optional advanced capability implemented by procedures that support direction,
+/// mixed trajectories, truncation and greedy-randomized move selection. The guiding
+/// fitness is supplied explicitly so backward and mixed strategies never re-evaluate
+/// an elite endpoint merely to recover a value already known by the elite pool.
+/// </summary>
+public interface IAdvancedPathRelinkingProcedure<TSolution> :
+    IPathRelinkingProcedure<TSolution>
+{
+    /// <summary>Explores one or more paths according to the supplied execution policies.</summary>
+    PathRelinkingProcedureResult<TSolution> RelinkAdvanced(
+        in TSolution initiatingSolution,
+        double initiatingFitness,
+        in TSolution guidingSolution,
+        double guidingFitness,
+        PathRelinkingExecutionOptions executionOptions,
+        OptimizationContext<TSolution> context,
+        ISolutionCloner<TSolution> solutionCloner,
+        int maximumPathSteps,
+        CancellationToken cancellationToken);
+}
