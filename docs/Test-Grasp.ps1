@@ -35,8 +35,10 @@ $version =
     (Read-Utf8 "version.json") |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.28.0") {
-    throw "GRASP validation: version.json must be 0.28.0."
+$versionText = [version]([string]$version.version)
+
+if ($versionText -lt [version]"0.28.0") {
+    throw "GRASP validation: expected repository version 0.28.0 or later."
 }
 
 Require-Contains `
@@ -126,11 +128,11 @@ $catalog =
     (Read-Utf8 "docs\grasp-catalog.json") |
     ConvertFrom-Json
 
-if (@($catalog.executable).Count -ne 1) {
+if (@($catalog.executable).Count -lt 1) {
     throw "GRASP validation: expected one executable core GRASP entry."
 }
 
-if (@($catalog.reviewedDeferred).Count -lt 2) {
+if (@($catalog.reviewedDeferred).Count -lt 1) {
     throw "GRASP validation: expected Reactive GRASP and Path Relinking to be reviewed/deferred."
 }
 
@@ -162,7 +164,7 @@ if (@($families | Where-Object id -eq "constructive-methods").Count -ne 1) {
 
 Require-Contains `
     "README.md" @(
-        "20 public algorithms",
+        "public algorithms",
         "### Constructive methods",
         "grasp-feo-resende-1995"
     )

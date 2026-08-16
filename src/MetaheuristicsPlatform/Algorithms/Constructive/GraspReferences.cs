@@ -20,4 +20,11 @@ public static class GraspReferences
         "Greedy Randomized Adaptive Search Procedures",
         "Journal of Global Optimization 6(2), 109-133",
         "10.1007/BF01096763");
-}
+
+    /// <summary>Reactive GRASP probability adaptation.</summary>
+    public static ScientificReference PraisRibeiro2000 { get; } = new(
+        "Marcelo Prais; Celso C. Ribeiro",
+        2000,
+        "Reactive GRASP: An Application to a Matrix Decomposition Problem in TDMA Traffic Assignment",
+        "INFORMS Journal on Computing 12(3), 164-176",
+        "10.1287/ijoc.12.3.164.12639");}

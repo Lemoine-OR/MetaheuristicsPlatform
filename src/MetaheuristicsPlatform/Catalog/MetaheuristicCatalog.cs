@@ -283,7 +283,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Constructive/GraspOptimizer.cs",
             "Feo & Resende (1989), Operations Research Letters 8(2), 67-71; Feo & Resende (1995), Journal of Global Optimization 6(2), 109-133",
             "10.1007/BF01096763",
-            "Canonical adaptive threshold-RCL construction with allocation-free two-pass scans and uniform reservoir selection, followed by reusable local search under one OptimizationContext lifecycle.")
+            "Canonical adaptive threshold-RCL construction with allocation-free two-pass scans and uniform reservoir selection, followed by reusable local search under one OptimizationContext lifecycle."),
+        new(
+            "reactive-grasp-prais-ribeiro-2000",
+            "Reactive GRASP - Prais-Ribeiro",
+            "ReactiveGraspOptimizer<TSolution>",
+            "constructive-methods",
+            "Constructive methods",
+            "Canonical GRASP construction/local-search cost plus O(m) alpha sampling and periodic O(m) probability updates",
+            "Canonical GRASP workspace plus O(m) reactive alpha statistics",
+            "Constructive optimization problems with positive objective values, a GRASP construction model and compatible reusable local search",
+            true,
+            "src/MetaheuristicsPlatform/Algorithms/Constructive/ReactiveGraspOptimizer.cs",
+            "Prais & Ribeiro (2000), Reactive GRASP: An Application to a Matrix Decomposition Problem in TDMA Traffic Assignment, INFORMS Journal on Computing 12(3), 164-176",
+            "10.1287/ijoc.12.3.164.12639",
+            "Discrete alpha probabilities start uniformly and are periodically updated from per-alpha average locally improved solution quality using the Prais-Ribeiro ratio rule.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

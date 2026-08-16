@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "release": "0.28.0",
-  "algorithm": "grasp-feo-resende-1995",
+  "release": "0.29.0",
+  "family": "grasp",
   "executable": [
     {
       "id": "grasp-feo-resende-1995",
@@ -10,20 +10,23 @@
       "selection": "uniform reservoir sampling",
       "localSearch": "ILocalSearchProcedure<TSolution>",
       "status": "executable"
+    },
+    {
+      "id": "reactive-grasp-prais-ribeiro-2000",
+      "name": "Reactive GRASP - Prais-Ribeiro",
+      "construction": "canonical threshold RCL with discrete adaptive alpha selection",
+      "selection": "Prais-Ribeiro probability update over alpha values",
+      "localSearch": "ILocalSearchProcedure<TSolution>",
+      "status": "executable",
+      "doi": "10.1287/ijoc.12.3.164.12639"
     }
   ],
   "reviewedDeferred": [
     {
-      "id": "reactive-grasp-prais-ribeiro-2000",
-      "name": "Reactive GRASP",
-      "reason": "Deferred to the advanced GRASP layer because it requires a probability/adaptation controller over multiple alpha values.",
-      "doi": "10.1287/ijoc.12.3.164.12639"
-    },
-    {
       "id": "grasp-path-relinking",
       "name": "GRASP with Path Relinking",
-      "reason": "Deferred until an elite-set/path-relinking contract is introduced without coupling the core constructor to a problem-specific path representation.",
-      "doi": "10.1007/978-1-4939-6530-4"
+      "reason": "Deferred until an elite-set/path-relinking contract is introduced without coupling GRASP to a problem-specific attribute path.",
+      "reference": "Resende & Ribeiro, GRASP and path-relinking: recent advances and applications"
     }
   ],
   "references": [

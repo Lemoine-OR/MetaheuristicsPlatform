@@ -6,7 +6,8 @@ Constructive metaheuristics build solutions progressively from problem-defined c
 
 ## Public algorithms
 
-- @subpage grasp_feo_resende_1995 — canonical GRASP with adaptive threshold-RCL construction and reusable local search.
+- @subpage grasp_feo_resende_1995
+- @subpage reactive_grasp_prais_ribeiro_2000 - Reactive GRASP with Prais-Ribeiro alpha adaptation. — canonical GRASP with adaptive threshold-RCL construction and reusable local search.
 
 ## Platform contract
 

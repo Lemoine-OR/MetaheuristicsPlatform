@@ -7,18 +7,18 @@ using MetaheuristicsPlatform.Stopping;
 namespace MetaheuristicsPlatform.Algorithms.Constructive;
 
 /// <summary>
-/// Canonical Greedy Randomized Adaptive Search Procedure (GRASP) of Feo and Resende.
-/// Each outer iteration constructs one randomized greedy solution, then improves it by
-/// a reusable local-search procedure. Best-so-far ownership remains in OptimizationContext.
+/// Reactive GRASP of Prais and Ribeiro.
+/// The RCL parameter alpha is sampled from a discrete probability distribution whose
+/// weights are periodically updated from the average locally improved solution quality.
 /// </summary>
-public sealed class GraspOptimizer<TSolution> :
-    IMetaheuristic<TSolution, GraspParameters>
+public sealed class ReactiveGraspOptimizer<TSolution> :
+    IMetaheuristic<TSolution, ReactiveGraspParameters>
 {
     private readonly IGraspConstructionProcedure<TSolution> _construction;
     private readonly ILocalSearchProcedure<TSolution> _localSearch;
 
-    /// <summary>Creates a canonical GRASP composition.</summary>
-    public GraspOptimizer(
+    /// <summary>Creates a Reactive GRASP composition.</summary>
+    public ReactiveGraspOptimizer(
         IGraspConstructionProcedure<TSolution> construction,
         ILocalSearchProcedure<TSolution> localSearch)
     {
@@ -31,16 +31,17 @@ public sealed class GraspOptimizer<TSolution> :
     /// <inheritdoc />
     public MetaheuristicDescriptor Descriptor { get; } = new()
     {
-        Id = "grasp-feo-resende-1995",
-        Name = "GRASP - Feo-Resende",
-        Acronym = "GRASP",
+        Id = "reactive-grasp-prais-ribeiro-2000",
+        Name = "Reactive GRASP - Prais-Ribeiro",
+        Acronym = "R-GRASP",
         SolutionModel = MetaheuristicSolutionModel.SingleSolution,
         Families =
             MetaheuristicFamily.Constructive |
             MetaheuristicFamily.LocalSearch,
         Mechanisms =
             MetaheuristicMechanism.Constructive |
-            MetaheuristicMechanism.Neighborhood,
+            MetaheuristicMechanism.Neighborhood |
+            MetaheuristicMechanism.Adaptive,
         SearchSpaces =
             SearchSpaceKind.Binary |
             SearchSpaceKind.Integer |
@@ -51,18 +52,18 @@ public sealed class GraspOptimizer<TSolution> :
         IsStochastic = true,
         References =
         [
-            GraspReferences.FeoResende1989,
-            GraspReferences.FeoResende1995
+            GraspReferences.FeoResende1995,
+            GraspReferences.PraisRibeiro2000
         ]
     };
 
     /// <inheritdoc />
-    public GraspParameters CreateDefaultParameters() => new();
+    public ReactiveGraspParameters CreateDefaultParameters() => new();
 
     /// <inheritdoc />
     public OptimizationResult<TSolution> Optimize(
         IOptimizationProblem<TSolution> problem,
-        GraspParameters parameters,
+        ReactiveGraspParameters parameters,
         ISolutionCloner<TSolution> solutionCloner,
         IStoppingCriterion stoppingCriterion,
         OptimizationOptions? options = null,
@@ -85,12 +86,20 @@ public sealed class GraspOptimizer<TSolution> :
             callback,
             cancellationToken);
 
-        var state = new GraspState(
+        var controller =
+            new PraisRibeiroReactiveAlphaController(
+                parameters.AlphaValues,
+                parameters.ProbabilityUpdatePeriod,
+                problem.Sense);
+
+        var state = new ReactiveGraspState(
             OuterIterationsCompleted: 0,
             ConstructionSteps: 0,
             GreedyScoreEvaluations: 0,
             AcceptedLocalMoves: 0,
-            Alpha: parameters.Alpha);
+            CurrentAlpha: double.NaN,
+            DistinctAlphaValuesObserved: 0,
+            ProbabilityUpdates: 0);
 
         context.Start(state);
 
@@ -104,11 +113,17 @@ public sealed class GraspOptimizer<TSolution> :
         {
             cancellationToken.ThrowIfCancellationRequested();
 
+            int alphaIndex =
+                controller.SelectAlphaIndex(context.Random);
+
+            double alpha =
+                controller.GetAlpha(alphaIndex);
+
             GraspConstructionResult<TSolution> constructionResult =
                 _construction.Construct(
                     problem,
                     context.Random,
-                    parameters.Alpha,
+                    alpha,
                     parameters.MaximumConstructionSteps,
                     cancellationToken);
 
@@ -117,12 +132,14 @@ public sealed class GraspOptimizer<TSolution> :
             totalGreedyScoreEvaluations +=
                 constructionResult.GreedyScoreEvaluations;
 
-            state = new GraspState(
+            state = new ReactiveGraspState(
                 outerIteration - 1,
                 totalConstructionSteps,
                 totalGreedyScoreEvaluations,
                 totalAcceptedLocalMoves,
-                parameters.Alpha);
+                alpha,
+                controller.DistinctObserved,
+                controller.ProbabilityUpdates);
 
             TSolution solution =
                 constructionResult.Solution;
@@ -148,25 +165,41 @@ public sealed class GraspOptimizer<TSolution> :
                     solutionCloner,
                     cancellationToken);
 
+            fitness = localResult.Fitness;
             totalAcceptedLocalMoves +=
                 localResult.AcceptedMoves;
 
-            state = new GraspState(
-                outerIteration,
-                totalConstructionSteps,
-                totalGreedyScoreEvaluations,
-                totalAcceptedLocalMoves,
-                parameters.Alpha);
-
             if (localResult.StoppingDecision.ShouldStop)
             {
+                state = new ReactiveGraspState(
+                    outerIteration - 1,
+                    totalConstructionSteps,
+                    totalGreedyScoreEvaluations,
+                    totalAcceptedLocalMoves,
+                    alpha,
+                    controller.DistinctObserved,
+                    controller.ProbabilityUpdates);
+
                 return context.Complete(
                     localResult.StoppingDecision,
                     state);
             }
 
+            controller.Observe(
+                alphaIndex,
+                fitness);
+
+            state = new ReactiveGraspState(
+                outerIteration,
+                totalConstructionSteps,
+                totalGreedyScoreEvaluations,
+                totalAcceptedLocalMoves,
+                alpha,
+                controller.DistinctObserved,
+                controller.ProbabilityUpdates);
+
             context.CompleteIteration(
-                localResult.Fitness,
+                fitness,
                 state);
 
             stop =
@@ -180,21 +213,25 @@ public sealed class GraspOptimizer<TSolution> :
 
         return context.Complete(
             StoppingDecision.Stop(
-                "MaximumGraspIterations",
-                "The configured GRASP outer-iteration limit was reached."),
-            new GraspState(
+                "MaximumReactiveGraspIterations",
+                "The configured Reactive GRASP outer-iteration limit was reached."),
+            new ReactiveGraspState(
                 parameters.MaximumIterations,
                 totalConstructionSteps,
                 totalGreedyScoreEvaluations,
                 totalAcceptedLocalMoves,
-                parameters.Alpha));
+                state.CurrentAlpha,
+                controller.DistinctObserved,
+                controller.ProbabilityUpdates));
     }
 }
 
-/// <summary>Observable GRASP state for callbacks and custom stopping criteria.</summary>
-public readonly record struct GraspState(
+/// <summary>Observable Reactive GRASP state for callbacks and custom stopping criteria.</summary>
+public readonly record struct ReactiveGraspState(
     int OuterIterationsCompleted,
     long ConstructionSteps,
     long GreedyScoreEvaluations,
     long AcceptedLocalMoves,
-    double Alpha);
+    double CurrentAlpha,
+    int DistinctAlphaValuesObserved,
+    int ProbabilityUpdates);

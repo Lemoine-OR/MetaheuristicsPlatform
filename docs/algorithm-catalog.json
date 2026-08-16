@@ -469,6 +469,28 @@
                            "assumptions":  "The domain supplies a complete constructive model with finite side-effect-free greedy scores, restartable candidate cursors and a compatible local search.",
                            "convergence":  "No unconditional finite-time global convergence claim; with positive probability of reaching a globally optimal basin and indefinitely many independent iterations, failure probability tends to zero.",
                            "factoryMode":  "composition"
+                       },
+                       {
+                           "id":  "reactive-grasp-prais-ribeiro-2000",
+                           "name":  "Reactive GRASP - Prais-Ribeiro",
+                           "class":  "ReactiveGraspOptimizer\u003cTSolution\u003e",
+                           "category":  "constructive-methods",
+                           "kind":  "constructive",
+                           "family":  "Constructive methods",
+                           "time":  "Canonical GRASP construction/local-search cost plus O(m) alpha sampling and periodic O(m) probability updates",
+                           "space":  "Canonical GRASP workspace plus O(m) reactive alpha statistics",
+                           "applicability":  "Constructive problems with strictly positive objective values, reusable GRASP construction and compatible local search",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Constructive/ReactiveGraspOptimizer.cs",
+                           "publication":  "Prais \u0026 Ribeiro (2000), Reactive GRASP: An Application to a Matrix Decomposition Problem in TDMA Traffic Assignment",
+                           "doi":  "10.1287/ijoc.12.3.164.12639",
+                           "implementation":  "Per-run discrete alpha controller, uniform initial probabilities, online per-alpha means, periodic Prais-Ribeiro ratio updates, canonical GRASP construction and common lifecycle.",
+                           "page":  "docs/pages/algorithms/reactive-grasp-prais-ribeiro-2000.md",
+                           "problem":  "\\min_{x\\in\\mathcal X} f(x), f(x)\u003e0",
+                           "update":  "p_i=q_i/sum_j(q_j), q_i=z_best/A_i for positive minimization; sense-consistent mirrored ratio for maximization",
+                           "assumptions":  "Configured alpha values are finite and unique in [0,1]; the canonical ratio update requires strictly positive objective observations.",
+                           "convergence":  "No unconditional finite-time global convergence claim; adaptive alpha probabilities preserve stochastic sampling while useful alpha values retain positive probability.",
+                           "factoryMode":  "composition"
                        }
                    ]
 }

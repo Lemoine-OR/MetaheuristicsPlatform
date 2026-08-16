@@ -4,6 +4,30 @@ All notable changes to MetaheuristicsPlatform will be documented in this file.
 
 ## [Unreleased]
 
+## [0.29.0]
+
+### Added
+- Reactive GRASP (`reactive-grasp-prais-ribeiro-2000`) following Prais & Ribeiro (2000).
+- Per-run `PraisRibeiroReactiveAlphaController` with a discrete alpha set, uniform initial probabilities, online per-alpha objective means and periodic probability updates.
+- Canonical minimization quality rule `q_i = z_best / A_i`, followed by `p_i = q_i / sum(q_j)`.
+- Sense-consistent maximization mirror `q_i = A_i / z_best`.
+- Explicit runtime protection of the canonical ratio assumption: objective observations used for adaptation must be strictly positive.
+- Reactive GRASP documentation, stable catalog ID and focused validation.
+- Eleven focused tests including probability learning, positivity guards, stable catalog identity and common stopping lifecycle.
+
+### Fixed
+- Canonical GRASP now calls `OptimizationContext.CompleteIteration` after each completed construction + local-search cycle, so common iteration statistics, callbacks and `MaxIterationsStoppingCriterion` work correctly.
+
+### Scientific basis
+- Prais & Ribeiro (2000), *Reactive GRASP: An Application to a Matrix Decomposition Problem in TDMA Traffic Assignment*, DOI `10.1287/ijoc.12.3.164.12639`.
+- Feo & Resende (1995), *Greedy Randomized Adaptive Search Procedures*, DOI `10.1007/BF01096763`.
+- GRASP with Path Relinking remains reviewed/deferred until an explicit elite-set/path contract is introduced.
+
+### Performance
+- Reactive state is O(m) for m configured alpha values.
+- Alpha selection and periodic probability recomputation are O(m).
+- Running per-alpha means avoid retaining historical objective samples.
+- Construction keeps the v0.28 allocation-free threshold-RCL reservoir-selection fast path.
 ## [0.28.0]
 
 ### Added

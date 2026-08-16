@@ -38,12 +38,12 @@ stable catalog IDs.
 <td width="20%"><strong>1 swarm method</strong><br><sub>PSO with topology/social/dynamics specializations.</sub></td>
 <td width="20%"><strong>5 DE methods</strong><br><sub>DE, jDE, JADE, SHADE and L-SHADE.</sub></td>
 <td width="20%"><strong>13 trajectory methods</strong><br><sub>SA, Tabu Search, Local Search, ILS, VNS variants and GLS.</sub></td>
-<td width="20%"><strong>1 constructive method</strong><br><sub>Canonical GRASP with adaptive randomized greedy construction and local search.</sub></td>
+<td width="20%"><strong>2 constructive methods</strong><br><sub>Canonical GRASP with adaptive randomized greedy construction and local search.</sub></td>
 <td width="20%"><strong>Generic foundations</strong><br><sub>Evaluation pipelines, neighborhoods, reversible moves and hybrid composition.</sub></td>
 </tr>
 </table>
 
-<p align="center"><strong>20 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>21 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -129,7 +129,7 @@ stable ID used by the canonical catalog/factory.
 ### Constructive methods
 
 <table>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/grasp-feo-resende-1995.html"><strong>GRASP - Feo-Resende</strong></a><br><sub>Adaptive randomized greedy threshold-RCL construction + reusable local search; allocation-free RCL selection.</sub><br><code>grasp-feo-resende-1995</code><br><sub><code>GraspOptimizer&lt;TSolution&gt;</code></sub></td><td width="50%"></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/grasp-feo-resende-1995.html"><strong>GRASP - Feo-Resende</strong></a><br><sub>Adaptive randomized greedy threshold-RCL construction + reusable local search; allocation-free RCL selection.</sub><br><code>grasp-feo-resende-1995</code><br><sub><code>GraspOptimizer&lt;TSolution&gt;</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/reactive-grasp-prais-ribeiro-2000.html"><strong>Reactive GRASP - Prais-Ribeiro</strong></a><br><sub>Self-tuning discrete alpha probabilities learned from per-alpha solution quality.</sub><br><code>reactive-grasp-prais-ribeiro-2000</code><br><sub><code>ReactiveGraspOptimizer&lt;TSolution&gt;</code></sub></td></tr>
 </table>
 
 ### Hybrid / memetic methods

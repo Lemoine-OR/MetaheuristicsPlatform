@@ -21,6 +21,7 @@ contracts:
 - public General Variable Neighborhood Search ID (`general-variable-neighborhood-search`) introduced in v0.27.0;
 - public Skewed Variable Neighborhood Search ID (`skewed-variable-neighborhood-search-hansen-mladenovic-2001`) introduced in v0.27.0;
 - public canonical GRASP ID (`grasp-feo-resende-1995`) introduced in v0.28.0;
+- public Reactive GRASP ID (`reactive-grasp-prais-ribeiro-2000`) introduced in v0.29.0;
 - scientific method identity;
 - serialized/reproducibility-facing identifiers;
 - documentation URLs generated from stable IDs.
