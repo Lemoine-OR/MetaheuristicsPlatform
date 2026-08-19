@@ -38,7 +38,7 @@ stable catalog IDs.
 <td width="20%"><strong>1 swarm method</strong><br><sub>PSO with topology/social/dynamics specializations.</sub></td>
 <td width="20%"><strong>5 DE methods</strong><br><sub>DE, jDE, JADE, SHADE and L-SHADE.</sub></td>
 <td width="20%"><strong>13 trajectory methods</strong><br><sub>SA, Tabu Search, Local Search, ILS, VNS variants and GLS.</sub></td>
-<td width="20%"><strong>3 constructive methods</strong><br><sub>Canonical GRASP, Reactive GRASP and elite-memory Path Relinking with advanced trajectory policies.</sub></td>
+<td width="20%"><strong>3 constructive methods</strong><br><sub>Canonical GRASP, Reactive GRASP and elite-memory Path Relinking with advanced trajectory and evolutionary elite-population policies.</sub></td>
 <td width="20%"><strong>Generic foundations</strong><br><sub>Evaluation pipelines, neighborhoods, reversible moves and hybrid composition.</sub></td>
 </tr>
 </table>
@@ -130,13 +130,13 @@ stable ID used by the canonical catalog/factory.
 
 <table>
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/grasp-feo-resende-1995.html"><strong>GRASP - Feo-Resende</strong></a><br><sub>Adaptive randomized greedy threshold-RCL construction + reusable local search; allocation-free RCL selection.</sub><br><code>grasp-feo-resende-1995</code><br><sub><code>GraspOptimizer&lt;TSolution&gt;</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/reactive-grasp-prais-ribeiro-2000.html"><strong>Reactive GRASP - Prais-Ribeiro</strong></a><br><sub>Self-tuning discrete alpha probabilities learned from per-alpha solution quality.</sub><br><code>reactive-grasp-prais-ribeiro-2000</code><br><sub><code>ReactiveGraspOptimizer&lt;TSolution&gt;</code></sub></td></tr>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/grasp-path-relinking.html"><strong>GRASP with Path Relinking</strong></a><br><sub>Quality/diversity elite memory + forward/backward/back-and-forward/mixed, truncated and greedy-randomized path intensification.</sub><br><code>grasp-path-relinking</code><br><sub><code>GraspPathRelinkingOptimizer&lt;TSolution&gt;</code></sub></td><td width="50%"></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/grasp-path-relinking.html"><strong>GRASP with Path Relinking</strong></a><br><sub>Quality/diversity elite memory + advanced pairwise path intensification + optional generational Evolutionary Path Relinking.</sub><br><code>grasp-path-relinking</code><br><sub><code>GraspPathRelinkingOptimizer&lt;TSolution&gt;</code></sub></td><td width="50%"></td></tr>
 </table>
 
 ### Hybrid / memetic methods
 
 <table>
-<tr><td><strong>GRASP with Path Relinking</strong><br><sub>The public hybrid composition combines constructive GRASP, local search and elite memory with configurable forward/backward/back-and-forward/mixed path intensification, optional truncation and greedy-randomized move selection.</sub></td></tr>
+<tr><td><strong>GRASP with Path Relinking</strong><br><sub>The public hybrid composition combines constructive GRASP, local search and elite memory with configurable pairwise path intensification and optional generational Evolutionary Path Relinking.</sub></td></tr>
 </table>
 
 ## Scientific components
@@ -151,8 +151,8 @@ stable ID used by the canonical catalog/factory.
 <td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/advanced-variable-neighborhood-search-variants.html"><strong>Advanced Variable Neighborhood Search Variants</strong></a><br><sub>RVNS / GVNS / SVNS executable &middot; VNDS reviewed/deferred pending a decomposition contract</sub><br><code>vns.variants</code></td>
 </tr>
 <tr>
-<td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/path-relinking-strategies.html"><strong>Advanced Path Relinking Strategies</strong></a><br><sub>6 executable pairwise strategies &middot; forward / backward / back-and-forward / mixed &middot; truncation &middot; greedy-randomized RCL</sub><br><code>pr.*</code></td>
-<td width="50%"><strong>Evolutionary Path Relinking</strong><br><sub>Scientifically reviewed/deferred pending a dedicated population-level elite-evolution contract.</sub><br><code>pr.evolutionary</code></td>
+<td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/path-relinking-strategies.html"><strong>Advanced Path Relinking Strategies</strong></a><br><sub>7 executable strategies &middot; forward / backward / back-and-forward / mixed &middot; truncation &middot; greedy-randomized RCL &middot; generational EvPR</sub><br><code>pr.*</code></td>
+<td width="50%"><strong>Evolutionary Path Relinking</strong><br><sub>Implemented generational all-pairs elite evolution with quality/diversity replacement and convergence on non-improving generation best.</sub><br><code>pr.evolutionary</code></td>
 </tr></table>
 
 

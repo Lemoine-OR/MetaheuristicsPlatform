@@ -304,14 +304,14 @@ public static class MetaheuristicCatalog
             "GraspPathRelinkingOptimizer<TSolution>",
             "constructive-methods",
             "Constructive methods",
-            "Canonical GRASP construction/local-search cost plus O(sum_k P_k*C_probe + D*C_distance) per relinking invocation and O(E*C_distance) elite maintenance",
-            "O(E*|solution| + |solution| + path workspace)",
+            "Canonical GRASP + online pairwise PR; optional EvPR adds O(E^2*C_PR) per evolutionary generation plus optional offspring local-search cost",
+            "O(E*|solution| + path workspace); EvPR keeps bounded current/next elite populations and pooled randomized-path probes",
             "Finite attribute-based path spaces with GRASP construction, compatible local search, integral non-negative distance and target-directed reversible moves",
             true,
             "src/MetaheuristicsPlatform/Algorithms/Constructive/GraspPathRelinkingOptimizer.cs",
-            "Resende & Ribeiro (2003), GRASP and path-relinking: Recent advances and applications; Aiex, Resende, Pardalos & Toraldo (2005), INFORMS Journal on Computing 17(2), 224-247",
+            "Resende & Werneck (2004), Journal of Heuristics 10(1), 59-88; Aiex, Resende, Pardalos & Toraldo (2005), INFORMS Journal on Computing 17(2), 224-247; Resende, Marti, Gallego & Duarte (2010), Computers & Operations Research 37(3), 498-508; Ribeiro & Resende (2012), Journal of Heuristics 18(2), 193-214",
             "10.1287/ijoc.1030.0059",
-            "Quality/diversity elite memory plus greedy forward path relinking; allocation-free path cursors, exact-delta fast path, reversible fallback and probe-only accounting for unvisited candidates.")
+            "Quality/diversity elite memory, advanced forward/backward/back-and-forward/mixed pairwise path relinking, truncation, greedy-randomized pooled RCL selection, and optional EvolutionaryPathRelinkingProcedure<TSolution> all-pairs elite evolution.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

@@ -152,7 +152,7 @@ window.MathJax = { tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]
 </div></header>
 <main class="wrap">
 <h1>Advanced Path Relinking Strategies</h1>
-<p>Six executable pairwise path-relinking strategies are available in v0.31.0. Evolutionary path relinking is reviewed separately because it requires a population-level elite evolution lifecycle rather than a single pairwise trajectory.</p>
+<p>Seven executable path-relinking strategies are available in v0.32.0, including generational Evolutionary Path Relinking over a bounded quality/diversity elite population.</p>
 <div class="grid">
 $($cards -join "`n")
 </div>
@@ -190,7 +190,7 @@ $homeContent =
 $homeCard = @"
 <div class="card">
 <h3><a href="components/path-relinking-strategies.html">Advanced Path Relinking Strategies</a></h3>
-<div class="meta">6 executable pairwise strategies &middot; forward / backward / back-and-forward / mixed &middot; truncation &middot; greedy-randomized RCL &middot; evolutionary PR reviewed/deferred</div>
+<div class="meta">7 executable strategies &middot; forward / backward / back-and-forward / mixed &middot; truncation &middot; greedy-randomized RCL &middot; generational evolutionary PR</div>
 <span class="id">pr.*</span>
 </div>
 "@

@@ -5,9 +5,7 @@ namespace MetaheuristicsPlatform.Algorithms.Constructive;
 
 /// <summary>
 /// Fixed-capacity quality/diversity elite pool for GRASP path relinking.
-/// Stored solutions are owned clones. Exact duplicates can be replaced by a better copy;
-/// when full, a better candidate may replace the current worst elite if diversity with
-/// all surviving elites is preserved.
+/// Stored solutions are owned clones.
 /// </summary>
 public sealed class EliteSolutionPool<TSolution>
 {
@@ -49,89 +47,49 @@ public sealed class EliteSolutionPool<TSolution>
         _fitness = new double[capacity];
     }
 
-    /// <summary>Maximum number of elite solutions retained.</summary>
     public int Capacity => _solutions.Length;
 
-    /// <summary>Current number of elite solutions.</summary>
     public int Count => _count;
 
     /// <summary>
-    /// Attempts to insert a candidate while preserving the configured minimum distance.
+    /// Ordinary online GRASP elite admission. When full, a better diverse candidate
+    /// replaces the current worst retained elite.
     /// </summary>
     public bool TryAdd(
         in TSolution solution,
         double fitness,
         out bool replaced)
     {
-        if (double.IsNaN(fitness))
-        {
-            throw new ArgumentOutOfRangeException(nameof(fitness));
-        }
-
+        ValidateFitness(fitness);
         replaced = false;
 
-        int exactDuplicate = -1;
-
-        for (int i = 0; i < _count; i++)
-        {
-            int distance =
-                GetValidatedDistance(
-                    in solution,
-                    in _solutions[i]);
-
-            if (distance == 0)
-            {
-                exactDuplicate = i;
-                break;
-            }
-        }
+        int exactDuplicate =
+            FindExactDuplicate(in solution);
 
         if (exactDuplicate >= 0)
         {
-            if (!_problem.Sense.IsBetter(
-                    fitness,
-                    _fitness[exactDuplicate]))
-            {
-                return false;
-            }
-
-            _solutions[exactDuplicate] =
-                _solutionCloner.Clone(solution);
-            _fitness[exactDuplicate] = fitness;
-            replaced = true;
-            return true;
+            return ReplaceDuplicateIfBetter(
+                exactDuplicate,
+                in solution,
+                fitness,
+                out replaced);
         }
 
         if (_count < Capacity)
         {
-            for (int i = 0; i < _count; i++)
+            if (!IsSufficientlyDiverse(
+                    in solution,
+                    excludedIndex: -1))
             {
-                if (GetValidatedDistance(
-                        in solution,
-                        in _solutions[i]) < _minimumDistance)
-                {
-                    return false;
-                }
+                return false;
             }
 
-            _solutions[_count] =
-                _solutionCloner.Clone(solution);
-            _fitness[_count] = fitness;
-            _count++;
+            AddOwned(in solution, fitness);
             return true;
         }
 
-        int worstIndex = 0;
-
-        for (int i = 1; i < _count; i++)
-        {
-            if (_problem.Sense.IsBetter(
-                    _fitness[worstIndex],
-                    _fitness[i]))
-            {
-                worstIndex = i;
-            }
-        }
+        int worstIndex =
+            FindWorstIndex();
 
         if (!_problem.Sense.IsBetter(
                 fitness,
@@ -140,26 +98,160 @@ public sealed class EliteSolutionPool<TSolution>
             return false;
         }
 
+        if (!IsSufficientlyDiverse(
+                in solution,
+                worstIndex))
+        {
+            return false;
+        }
+
+        ReplaceOwned(
+            worstIndex,
+            in solution,
+            fitness);
+
+        replaced = true;
+        return true;
+    }
+
+    /// <summary>
+    /// Evolutionary path-relinking population admission following the
+    /// Resende-Werneck quality/diversity replacement policy.
+    /// </summary>
+    public bool TryAddEvolutionary(
+        in TSolution solution,
+        double fitness,
+        out bool replaced)
+    {
+        ValidateFitness(fitness);
+        replaced = false;
+
+        int exactDuplicate =
+            FindExactDuplicate(in solution);
+
+        if (exactDuplicate >= 0)
+        {
+            return ReplaceDuplicateIfBetter(
+                exactDuplicate,
+                in solution,
+                fitness,
+                out replaced);
+        }
+
+        if (_count < Capacity)
+        {
+            if (!IsSufficientlyDiverse(
+                    in solution,
+                    excludedIndex: -1))
+            {
+                return false;
+            }
+
+            AddOwned(in solution, fitness);
+            return true;
+        }
+
+        int bestIndex =
+            FindBestIndex();
+        int worstIndex =
+            FindWorstIndex();
+
+        bool improvesBest =
+            _problem.Sense.IsBetter(
+                fitness,
+                _fitness[bestIndex]);
+
+        bool improvesWorst =
+            _problem.Sense.IsBetter(
+                fitness,
+                _fitness[worstIndex]);
+
+        if (!improvesBest && !improvesWorst)
+        {
+            return false;
+        }
+
+        if (!improvesBest &&
+            !IsSufficientlyDiverse(
+                in solution,
+                excludedIndex: -1))
+        {
+            return false;
+        }
+
+        int replacementIndex = -1;
+        int closestDistance = int.MaxValue;
+
         for (int i = 0; i < _count; i++)
         {
-            if (i == worstIndex)
+            if (_problem.Sense.IsBetter(
+                    _fitness[i],
+                    fitness))
             {
                 continue;
             }
 
-            if (GetValidatedDistance(
+            int distance =
+                GetValidatedDistance(
                     in solution,
-                    in _solutions[i]) < _minimumDistance)
+                    in _solutions[i]);
+
+            if (distance < closestDistance)
             {
-                return false;
+                closestDistance = distance;
+                replacementIndex = i;
             }
         }
 
-        _solutions[worstIndex] =
-            _solutionCloner.Clone(solution);
-        _fitness[worstIndex] = fitness;
+        if (replacementIndex < 0)
+        {
+            return false;
+        }
+
+        ReplaceOwned(
+            replacementIndex,
+            in solution,
+            fitness);
+
         replaced = true;
         return true;
+    }
+
+    /// <summary>Returns the best retained elite and its stored objective value.</summary>
+    public bool TryGetBest(
+        out TSolution solution,
+        out double fitness)
+    {
+        if (_count == 0)
+        {
+            solution = default!;
+            fitness = double.NaN;
+            return false;
+        }
+
+        int index =
+            FindBestIndex();
+
+        solution = _solutions[index];
+        fitness = _fitness[index];
+        return true;
+    }
+
+    /// <summary>
+    /// Returns one retained elite by slot index. Treat the returned solution as read-only.
+    /// </summary>
+    public void GetAt(
+        int index,
+        out TSolution solution,
+        out double fitness)
+    {
+        if ((uint)index >= (uint)_count)
+        {
+            throw new ArgumentOutOfRangeException(nameof(index));
+        }
+
+        solution = _solutions[index];
+        fitness = _fitness[index];
     }
 
     /// <summary>
@@ -178,7 +270,6 @@ public sealed class EliteSolutionPool<TSolution>
 
     /// <summary>
     /// Selects a distinct guide and returns the objective value already stored with it.
-    /// This avoids duplicate objective evaluations for backward and mixed relinking.
     /// </summary>
     public bool TrySelectGuide(
         in TSolution initiatingSolution,
@@ -218,6 +309,139 @@ public sealed class EliteSolutionPool<TSolution>
         guidingSolution = _solutions[selectedIndex];
         guidingFitness = _fitness[selectedIndex];
         return true;
+    }
+
+    internal EliteSolutionPool<TSolution> CreateEmptySibling() =>
+        new(
+            Capacity,
+            _minimumDistance,
+            _distance,
+            _problem,
+            _solutionCloner);
+
+    private int FindExactDuplicate(
+        in TSolution solution)
+    {
+        for (int i = 0; i < _count; i++)
+        {
+            if (GetValidatedDistance(
+                    in solution,
+                    in _solutions[i]) == 0)
+            {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    private int FindBestIndex()
+    {
+        int bestIndex = 0;
+
+        for (int i = 1; i < _count; i++)
+        {
+            if (_problem.Sense.IsBetter(
+                    _fitness[i],
+                    _fitness[bestIndex]))
+            {
+                bestIndex = i;
+            }
+        }
+
+        return bestIndex;
+    }
+
+    private int FindWorstIndex()
+    {
+        int worstIndex = 0;
+
+        for (int i = 1; i < _count; i++)
+        {
+            if (_problem.Sense.IsBetter(
+                    _fitness[worstIndex],
+                    _fitness[i]))
+            {
+                worstIndex = i;
+            }
+        }
+
+        return worstIndex;
+    }
+
+    private bool IsSufficientlyDiverse(
+        in TSolution solution,
+        int excludedIndex)
+    {
+        for (int i = 0; i < _count; i++)
+        {
+            if (i == excludedIndex)
+            {
+                continue;
+            }
+
+            if (GetValidatedDistance(
+                    in solution,
+                    in _solutions[i]) < _minimumDistance)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private bool ReplaceDuplicateIfBetter(
+        int duplicateIndex,
+        in TSolution solution,
+        double fitness,
+        out bool replaced)
+    {
+        replaced = false;
+
+        if (!_problem.Sense.IsBetter(
+                fitness,
+                _fitness[duplicateIndex]))
+        {
+            return false;
+        }
+
+        ReplaceOwned(
+            duplicateIndex,
+            in solution,
+            fitness);
+
+        replaced = true;
+        return true;
+    }
+
+    private void AddOwned(
+        in TSolution solution,
+        double fitness)
+    {
+        _solutions[_count] =
+            _solutionCloner.Clone(solution);
+        _fitness[_count] = fitness;
+        _count++;
+    }
+
+    private void ReplaceOwned(
+        int index,
+        in TSolution solution,
+        double fitness)
+    {
+        _solutions[index] =
+            _solutionCloner.Clone(solution);
+        _fitness[index] = fitness;
+    }
+
+    private static void ValidateFitness(
+        double fitness)
+    {
+        if (double.IsNaN(fitness))
+        {
+            throw new ArgumentOutOfRangeException(nameof(fitness));
+        }
     }
 
     private int GetValidatedDistance(

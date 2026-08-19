@@ -479,6 +479,230 @@ public sealed class GraspPathRelinkingTests
             new GraspPathRelinkingParameters { PathRelinkingAlpha = 1.01 }.Validate());
     }
 
+    [Fact]
+    public void EvolutionaryAdmissionReplacesClosestDominatedElite()
+    {
+        var pool = new EliteSolutionPool<int>(
+            3,
+            1,
+            new IntDistance(),
+            new PositiveIntMinimizationProblem(),
+            new ImmutableSolutionCloner<int>());
+
+        int ten = 10;
+        int twenty = 20;
+        int thirty = 30;
+        int fifteen = 15;
+
+        Assert.True(pool.TryAdd(in ten, 10.0, out _));
+        Assert.True(pool.TryAdd(in twenty, 20.0, out _));
+        Assert.True(pool.TryAdd(in thirty, 30.0, out _));
+
+        Assert.True(
+            pool.TryAddEvolutionary(
+                in fifteen,
+                15.0,
+                out bool replaced));
+
+        Assert.True(replaced);
+
+        var values = new List<int>();
+
+        for (int i = 0; i < pool.Count; i++)
+        {
+            pool.GetAt(i, out int solution, out _);
+            values.Add(solution);
+        }
+
+        Assert.Contains(10, values);
+        Assert.Contains(15, values);
+        Assert.Contains(30, values);
+        Assert.DoesNotContain(20, values);
+    }
+
+    [Fact]
+    public void EvolutionaryAllPairsFindsInteriorImprovement()
+    {
+        var problem =
+            new CenteredIntMinimizationProblem(center: 5);
+
+        var cloner =
+            new ImmutableSolutionCloner<int>();
+
+        var context =
+            new OptimizationContext<int>(
+                TestDescriptor(),
+                problem,
+                cloner,
+                new MaxEvaluationsStoppingCriterion(1000),
+                new OptimizationOptions { Seed = 1UL });
+
+        context.Start();
+
+        var pool =
+            new EliteSolutionPool<int>(
+                3,
+                1,
+                new IntDistance(),
+                problem,
+                cloner);
+
+        int one = 1;
+        int nine = 9;
+        int eleven = 11;
+
+        Assert.True(
+            pool.TryAdd(
+                in one,
+                context.Evaluate(one),
+                out _));
+        Assert.True(
+            pool.TryAdd(
+                in nine,
+                context.Evaluate(nine),
+                out _));
+        Assert.True(
+            pool.TryAdd(
+                in eleven,
+                context.Evaluate(eleven),
+                out _));
+
+        var pairwise =
+            new AdvancedPathRelinkingProcedure<
+                int,
+                int,
+                int,
+                TowardGuideMoveEnumerator>(
+                    new IntTowardGuideNeighborhood(),
+                    new IntDistance(),
+                    new IntMoveOperator());
+
+        var evolutionary =
+            new EvolutionaryPathRelinkingProcedure<int>(
+                pairwise,
+                new NoOpLocalSearchProcedure());
+
+        EvolutionaryPathRelinkingResult<int> result =
+            evolutionary.Evolve(
+                pool,
+                new PathRelinkingExecutionOptions(
+                    PathRelinkingDirectionStrategy.Forward,
+                    PathRelinkingMoveSelectionStrategy.Greedy,
+                    1.0,
+                    0.2),
+                context,
+                cloner,
+                maximumGenerations: 5,
+                maximumPathSteps: 20,
+                improveOffspring: false,
+                TestContext.Current.CancellationToken);
+
+        Assert.Equal(5, result.BestSolution);
+        Assert.Equal(0.0, result.BestFitness);
+        Assert.True(result.GenerationsCompleted >= 1);
+        Assert.True(result.PairRelinkings >= 3);
+        Assert.False(result.StoppingDecision.ShouldStop);
+    }
+
+    [Fact]
+    public void OptimizerRunsEvolutionaryPathRelinkingPostOptimization()
+    {
+        var optimizer =
+            new GraspPathRelinkingOptimizer<int>(
+                new SequenceConstructionProcedure(1, 9, 11),
+                new NoOpLocalSearchProcedure(),
+                new AdvancedPathRelinkingProcedure<
+                    int,
+                    int,
+                    int,
+                    TowardGuideMoveEnumerator>(
+                        new IntTowardGuideNeighborhood(),
+                        new IntDistance(),
+                        new IntMoveOperator()),
+                new IntDistance());
+
+        OptimizationResult<int> result =
+            optimizer.Optimize(
+                new CenteredIntMinimizationProblem(center: 5),
+                new GraspPathRelinkingParameters
+                {
+                    MaximumIterations = 3,
+                    ElitePoolSize = 3,
+                    MinimumEliteDistance = 1,
+                    MaximumPathSteps = 1,
+                    PathDirection = PathRelinkingDirectionStrategy.Forward,
+                    PathMoveSelection = PathRelinkingMoveSelectionStrategy.Greedy,
+                    PathFraction = 0.1,
+                    EvolutionaryPathRelinkingEnabled = true,
+                    MaximumEvolutionaryGenerations = 5,
+                    MaximumEvolutionaryPathSteps = 20,
+                    ImproveEvolutionaryOffspring = false,
+                    EvolutionaryPathDirection = PathRelinkingDirectionStrategy.Forward,
+                    EvolutionaryPathMoveSelection = PathRelinkingMoveSelectionStrategy.Greedy,
+                    EvolutionaryPathFraction = 1.0
+                },
+                new ImmutableSolutionCloner<int>(),
+                new MaxEvaluationsStoppingCriterion(1000),
+                new OptimizationOptions { Seed = 1UL },
+                cancellationToken: TestContext.Current.CancellationToken);
+
+        Assert.Equal(
+            "MaximumGraspPathRelinkingIterations",
+            result.StopDecision.Criterion);
+        Assert.Equal(5, result.BestSolution);
+        Assert.Equal(0.0, result.BestFitness);
+    }
+
+    [Fact]
+    public void EvolutionaryParametersRejectInvalidGenerationAndPathLimits()
+    {
+        Assert.Throws<ArgumentOutOfRangeException>(() =>
+            new GraspPathRelinkingParameters
+            {
+                MaximumEvolutionaryGenerations = 0
+            }.Validate());
+
+        Assert.Throws<ArgumentOutOfRangeException>(() =>
+            new GraspPathRelinkingParameters
+            {
+                MaximumEvolutionaryPathSteps = 0
+            }.Validate());
+
+        Assert.Throws<ArgumentOutOfRangeException>(() =>
+            new GraspPathRelinkingParameters
+            {
+                EvolutionaryPathFraction = 0.0
+            }.Validate());
+
+        Assert.Throws<ArgumentOutOfRangeException>(() =>
+            new GraspPathRelinkingParameters
+            {
+                EvolutionaryPathRelinkingAlpha = 1.01
+            }.Validate());
+    }
+
+    [Fact]
+    public void DescriptorCarriesResendeWerneckEvolutionaryReference()
+    {
+        var optimizer =
+            new GraspPathRelinkingOptimizer<int>(
+                new SequenceConstructionProcedure(5),
+                new NoOpLocalSearchProcedure(),
+                CreateForwardProcedure(),
+                new IntDistance());
+
+        Assert.Contains(
+            optimizer.Descriptor.References,
+            reference =>
+                reference.Doi ==
+                "10.1023/B:HEUR.0000019986.96257.50");
+
+        Assert.Contains(
+            optimizer.Descriptor.References,
+            reference =>
+                reference.Doi ==
+                "10.1016/j.cor.2008.05.011");
+    }
     private static AdvancedPathRelinkingProcedure<
         int,
         int,
@@ -518,6 +742,22 @@ public sealed class GraspPathRelinkingTests
             solution;
     }
 
+    private sealed class CenteredIntMinimizationProblem :
+        IOptimizationProblem<int>
+    {
+        private readonly int _center;
+
+        public CenteredIntMinimizationProblem(int center)
+        {
+            _center = center;
+        }
+
+        public OptimizationSense Sense =>
+            OptimizationSense.Minimize;
+
+        public double Evaluate(int solution) =>
+            Math.Abs(solution - _center);
+    }
     private sealed class IntDistance :
         IPathRelinkingDistance<int>
     {

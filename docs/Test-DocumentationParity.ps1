@@ -206,8 +206,8 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.31.0") {
-    throw "Documentation parity: version.json must be 0.31.0 for this release."
+if ([string]$version.version -ne "0.32.0") {
+    throw "Documentation parity: version.json must be 0.32.0 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root

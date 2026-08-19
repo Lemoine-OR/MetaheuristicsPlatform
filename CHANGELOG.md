@@ -4,6 +4,28 @@ All notable changes to MetaheuristicsPlatform will be documented in this file.
 
 ## [Unreleased]
 
+## [0.32.0]
+
+### Added
+- Add `EvolutionaryPathRelinkingProcedure<TSolution>` implementing generational all-pairs elite-population evolution.
+- Add the Resende-Werneck EvPR population admission rule: best-improving override, otherwise worst-quality improvement plus diversity, followed by replacement of the closest dominated elite.
+- Add opt-in EvPR post-optimization to `GraspPathRelinkingOptimizer<TSolution>` while preserving the existing `grasp-path-relinking` stable ID.
+- Add independent evolutionary pairwise controls with efficient defaults: mixed direction, greedy-randomized adaptive move selection and full path.
+- Add optional local improvement of every EvPR offspring before elite admission.
+- Extend `GraspPathRelinkingState` with non-breaking init-only evolutionary generation, pairing, path, evaluation, local-search and elite-update statistics.
+- Promote `pr.evolutionary` from reviewed/deferred to executable in the scientific Path Relinking catalog.
+
+### Scientific basis
+- Resende & Werneck (2004), *A Hybrid Heuristic for the p-Median Problem*, DOI `10.1023/B:HEUR.0000019986.96257.50`.
+- Resende, Marti, Gallego & Duarte (2010), *GRASP and path relinking for the max-min diversity problem*, DOI `10.1016/j.cor.2008.05.011`.
+- Ribeiro & Resende (2012), *Path-relinking intensification methods for stochastic local search algorithms*, DOI `10.1007/s10732-011-9167-1`.
+
+### Compatibility and performance
+- `EvolutionaryPathRelinkingEnabled` defaults to `false`; v0.31.0 behavior is unchanged unless EvPR is explicitly enabled.
+- The elite population remains bounded by `ElitePoolSize`.
+- One EvPR generation performs at most `E(E-1)/2` pairwise relinkings for elite capacity `E`.
+- Mixed PR is the default evolutionary direction to explore both endpoint regions without the approximately doubled traversal cost of back-and-forward.
+- Greedy-randomized adaptive PR is the default evolutionary move policy to reduce deterministic path replay across recurring elite pairs.
 ## [0.31.0]
 
 ### Added
