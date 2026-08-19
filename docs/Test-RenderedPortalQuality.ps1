@@ -169,6 +169,9 @@ $componentChecks = @(
         page = "components\simulated-annealing-cooling-schedules.html"
     },
     @{
+        catalog = "docs\threshold-accepting-schedule-catalog.json"
+        page = "components\threshold-accepting-schedules.html"
+    },    @{
         catalog = "docs\ts-memory-control-catalog.json"
         page = "components\tabu-search-memory-control-strategies.html"
     }
@@ -232,6 +235,20 @@ foreach ($check in $componentChecks) {
     }
 }
 
+$thresholdAcceptingPortal =
+    Read-Utf8Path (Join-Path $Site "algorithms\threshold-accepting-dueck-scheuer-1990.html")
+
+if (-not $thresholdAcceptingPortal.Contains(
+    '../components/threshold-accepting-schedules.html')) {
+    throw "Rendered portal quality: Threshold Accepting portal page is missing the schedule-catalog link."
+}
+
+$thresholdAcceptingDoxygen =
+    Join-Path $Site "api\threshold_accepting_schedules.html"
+
+if (-not (Test-Path -LiteralPath $thresholdAcceptingDoxygen)) {
+    throw "Rendered portal quality: canonical Threshold Accepting schedule Doxygen page is missing."
+}
 $pathRelinkingCatalog =
     (Read-Utf8Path (Join-Path $Root "docs\path-relinking-strategy-catalog.json")) |
     ConvertFrom-Json

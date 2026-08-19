@@ -29,6 +29,37 @@ public static class TrajectoryObjectiveComparison
         double reference) =>
         candidate == reference;
 
+    /// <summary>
+    /// Returns the non-negative objective degradation of a candidate relative to
+    /// the current solution. Improving and equal candidates have zero degradation.
+    /// </summary>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static double ComputeDegradation(
+        OptimizationSense sense,
+        double currentObjective,
+        double candidateObjective)
+    {
+        double degradation =
+            sense switch
+            {
+                OptimizationSense.Minimize =>
+                    candidateObjective -
+                    currentObjective,
+
+                OptimizationSense.Maximize =>
+                    currentObjective -
+                    candidateObjective,
+
+                _ =>
+                    throw new ArgumentOutOfRangeException(
+                        nameof(sense))
+            };
+
+        return Math.Max(
+            0.0,
+            degradation);
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static TrajectoryTransitionQuality Classify(
         OptimizationSense sense,

@@ -42,3 +42,6 @@ Use the **Classes**, **Namespaces** and **Files** tabs when implementation-level
 is required.
 
 Source repository: `Lemoine-OR/MetaheuristicsPlatform`.
+
+
+@subpage threshold_accepting_schedules

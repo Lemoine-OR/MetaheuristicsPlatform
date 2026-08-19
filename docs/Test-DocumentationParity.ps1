@@ -20,8 +20,8 @@ $catalog =
 $algorithms = @($catalog.algorithms)
 $families = @($catalog.families)
 
-if ($algorithms.Count -lt 22) {
-    throw "Documentation parity: expected at least the twenty-two currently public algorithms."
+if ($algorithms.Count -lt 23) {
+    throw "Documentation parity: expected at least the twenty-three currently public algorithms."
 }
 
 $requiredFields = @(
@@ -116,6 +116,11 @@ $requiredRepoFiles = @(
     "docs\Build-SimulatedAnnealingCoolingDocumentation.ps1",
     "docs\sa-cooling-catalog.json",
     "docs\pages\components\simulated-annealing-cooling-schedules.md",
+    "docs\Test-ThresholdAccepting.ps1",
+    "docs\threshold-accepting-schedule-catalog.json",
+    "docs\Build-ThresholdAcceptingScheduleDocumentation.ps1",
+    "docs\pages\components\threshold-accepting-schedules.md",
+    "docs\pages\algorithms\threshold-accepting-dueck-scheuer-1990.md",
     "docs\pages\algorithms\tabu-search-glover.md",
     "docs\Test-TabuSearchFoundation.ps1",
     "docs\Test-TabuSearchAdvancedMemory.ps1",
@@ -206,12 +211,13 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.32.0") {
-    throw "Documentation parity: version.json must be 0.32.0 for this release."
+if ([string]$version.version -ne "0.33.0") {
+    throw "Documentation parity: version.json must be 0.33.0 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-SimulatedAnnealingCoolingCatalog.ps1") -Root $Root
+& (Join-Path $Root "docs\Test-ThresholdAccepting.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-TabuSearchFoundation.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-TabuSearchAdvancedMemory.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-LocalSearchFoundation.ps1") -Root $Root

@@ -4,6 +4,29 @@ All notable changes to MetaheuristicsPlatform will be documented in this file.
 
 ## [Unreleased]
 
+## [0.33.0]
+
+### Added
+- Add canonical Dueck-Scheuer Threshold Accepting as public stable ID `threshold-accepting-dueck-scheuer-1990`.
+- Add `ThresholdAcceptancePolicy` with deterministic sense-aware acceptance of worsening transitions whose degradation does not exceed the active threshold.
+- Reuse `ReversibleTrajectoryStepExecutor` so exact move-objective deltas reject moves without mutation and accepted moves are applied exactly once.
+- Add linear, geometric and explicit non-increasing threshold schedules plus a custom schedule contract.
+- Add common trajectory degradation computation to `TrajectoryObjectiveComparison`.
+- Add complete runtime state, callback/stopping integration, neighborhood-exhaustion handling and exact external-evaluation accounting.
+- Add a scientific Threshold Accepting schedule catalog and generated portal component page.
+- Add focused tests for minimization/maximization acceptance, zero-threshold behavior, schedules, delta fast path, threshold-level stopping and stable catalog identity.
+
+### Scientific basis
+- Dueck & Scheuer (1990), *Threshold accepting: A general purpose optimization algorithm appearing superior to simulated annealing*, DOI `10.1016/0021-9991(90)90201-B`.
+- Winker & Fang (1997), *Application of Threshold-Accepting to the Evaluation of the Discrepancy of a Set of Points*, DOI `10.1137/S0036142995286076`.
+- Hu, Kahng & Tsao (1995), *Old Bachelor Acceptance*, DOI `10.1287/ijoc.7.4.417`, reviewed/deferred because its self-tuning non-monotone and potentially negative threshold semantics require a distinct controller.
+
+### Performance
+- Threshold acceptance is O(1), deterministic and requires neither a Metropolis exponential nor an acceptance random draw.
+- The exact-delta fast path is O(C_delta) for rejected transitions and applies accepted moves once.
+- No per-transition solution clone is required on the reversible trajectory path.
+- Threshold control uses O(1) state for linear/geometric schedules; explicit schedules retain only their configured finite sequence.
+
 ## [0.32.0]
 
 ### Added

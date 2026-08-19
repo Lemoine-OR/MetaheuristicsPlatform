@@ -12,6 +12,8 @@ public static class MetaheuristicAlgorithmIds
     public const string Shade = "shade-2013";
     public const string LShade = "lshade-2014";
     public const string SimulatedAnnealing = "simulated-annealing-metropolis";
+    public const string ThresholdAccepting =
+        "threshold-accepting-dueck-scheuer-1990";
     public const string TabuSearch = "tabu-search-glover";
     public const string ReactiveTabuSearch =
         "reactive-tabu-search-battiti-tecchiolli-1994";

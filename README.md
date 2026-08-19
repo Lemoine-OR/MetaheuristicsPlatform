@@ -37,13 +37,13 @@ stable catalog IDs.
 <tr>
 <td width="20%"><strong>1 swarm method</strong><br><sub>PSO with topology/social/dynamics specializations.</sub></td>
 <td width="20%"><strong>5 DE methods</strong><br><sub>DE, jDE, JADE, SHADE and L-SHADE.</sub></td>
-<td width="20%"><strong>13 trajectory methods</strong><br><sub>SA, Tabu Search, Local Search, ILS, VNS variants and GLS.</sub></td>
+<td width="20%"><strong>14 trajectory methods</strong><br><sub>SA, Threshold Accepting, Tabu Search, Local Search, ILS, VNS variants and GLS.</sub></td>
 <td width="20%"><strong>3 constructive methods</strong><br><sub>Canonical GRASP, Reactive GRASP and elite-memory Path Relinking with advanced trajectory and evolutionary elite-population policies.</sub></td>
 <td width="20%"><strong>Generic foundations</strong><br><sub>Evaluation pipelines, neighborhoods, reversible moves and hybrid composition.</sub></td>
 </tr>
 </table>
 
-<p align="center"><strong>22 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>23 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -117,7 +117,8 @@ stable ID used by the canonical catalog/factory.
 ### Trajectory-based methods
 
 <table>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/simulated-annealing-metropolis.html"><strong>Simulated Annealing</strong></a><br><code>simulated-annealing-metropolis</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/tabu-search-glover.html"><strong>Tabu Search</strong></a><br><code>tabu-search-glover</code></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/simulated-annealing-metropolis.html"><strong>Simulated Annealing</strong></a><br><code>simulated-annealing-metropolis</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/threshold-accepting-dueck-scheuer-1990.html"><strong>Threshold Accepting</strong></a><br><code>threshold-accepting-dueck-scheuer-1990</code></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/tabu-search-glover.html"><strong>Tabu Search</strong></a><br><code>tabu-search-glover</code></td><td width="50%"></td></tr>
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/reactive-tabu-search-battiti-tecchiolli-1994.html"><strong>Reactive Tabu Search</strong></a><br><code>reactive-tabu-search-battiti-tecchiolli-1994</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/local-search-best-improvement.html"><strong>Local Search - Best Improvement</strong></a><br><code>local-search-best-improvement</code></td></tr>
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/local-search-first-improvement.html"><strong>Local Search - First Improvement</strong></a><br><code>local-search-first-improvement</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/multi-start-local-search.html"><strong>Multi-Start Local Search</strong></a><br><code>multi-start-local-search</code></td></tr>
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/iterated-local-search-lourenco-martin-stutzle.html"><strong>Iterated Local Search</strong></a><br><code>iterated-local-search-lourenco-martin-stutzle</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/variable-neighborhood-descent.html"><strong>Variable Neighborhood Descent</strong></a><br><code>variable-neighborhood-descent</code></td></tr>
@@ -153,6 +154,10 @@ stable ID used by the canonical catalog/factory.
 <tr>
 <td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/path-relinking-strategies.html"><strong>Advanced Path Relinking Strategies</strong></a><br><sub>7 executable strategies &middot; forward / backward / back-and-forward / mixed &middot; truncation &middot; greedy-randomized RCL &middot; generational EvPR</sub><br><code>pr.*</code></td>
 <td width="50%"><strong>Evolutionary Path Relinking</strong><br><sub>Implemented generational all-pairs elite evolution with quality/diversity replacement and convergence on non-improving generation best.</sub><br><code>pr.evolutionary</code></td>
+</tr>
+<tr>
+<td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/threshold-accepting-schedules.html"><strong>Threshold Accepting Schedule Catalog</strong></a><br><sub>3 executable monotone threshold schedules &middot; deterministic Dueck-Scheuer acceptance &middot; Old Bachelor Acceptance reviewed/deferred</sub><br><code>ta.threshold.*</code></td>
+<td width="50%"></td>
 </tr></table>
 
 

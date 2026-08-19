@@ -516,6 +516,28 @@
                            "assumptions":  "Finite non-negative integral path distance; nonempty target-directed move set at positive distance; reversible moves; exact optional deltas; finite randomized-RCL objectives; EvPR starts from at least two elites.",
                            "convergence":  "Strict integral-distance decrease gives finite pairwise path termination when uncapped; EvPR stops at the first non-improving generation best or its generation cap; no unconditional global-optimum guarantee is claimed.",
                            "factoryMode":  "composition"
+                       },
+                       {
+                           "id":  "threshold-accepting-dueck-scheuer-1990",
+                           "name":  "Threshold Accepting",
+                           "class":  "ThresholdAcceptingOptimizer\u003cTSolution,TMove,TUndo\u003e",
+                           "category":  "trajectory-based-methods",
+                           "kind":  "single-solution",
+                           "family":  "Trajectory-based methods",
+                           "time":  "O(C_move + C_eval) per attempted transition; O(C_delta) when an exact move-objective evaluator is available",
+                           "space":  "O(|solution| + |move| + |undo|); O(1) acceptance state beyond the domain trajectory workspace",
+                           "applicability":  "Any solution representation admitting a stochastic neighborhood and reversible move operator; exact delta evaluation is optional",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/TA/ThresholdAcceptingOptimizer.cs",
+                           "publication":  "Dueck \u0026 Scheuer (1990), Threshold accepting: A general purpose optimization algorithm appearing superior to simulated annealing, Journal of Computational Physics 90(1), 161-175",
+                           "doi":  "10.1016/0021-9991(90)90201-B",
+                           "implementation":  "Deterministic sense-aware threshold acceptance over the generic reversible trajectory executor, exact-delta fast path, three built-in monotone threshold schedules and common OptimizationContext lifecycle.",
+                           "page":  "docs/pages/algorithms/threshold-accepting-dueck-scheuer-1990.md",
+                           "problem":  "\\min_{x\\in\\mathcal X}f(x)\\quad\\text{or}\\quad\\max_{x\\in\\mathcal X}f(x)",
+                           "update":  "\\begin{aligned}\nd_k\u0026=\\operatorname{degr}(f(x_k),f(x\u0027)),\\\\\nx_{k+1}\u0026=\\begin{cases}x\u0027,\u0026d_k\\le\\tau_\\ell,\\\\x_k,\u0026d_k\u003e\\tau_\\ell,\\end{cases}\\\\\n\\tau_{\\ell+1}\u0026\\le\\tau_\\ell\n\\end{aligned}",
+                           "assumptions":  "Candidate objective values are finite; reversible moves and optional delta evaluations are exact; built-in threshold schedules are non-negative and non-increasing.",
+                           "convergence":  "Finite termination follows from an active finite generic stopping criterion, neighborhood exhaustion, or a schedule reaching the configured minimum when threshold stopping is enabled. No unconditional finite-time global-optimality guarantee is claimed.",
+                           "factoryMode":  "composition"
                        }
                    ]
 }

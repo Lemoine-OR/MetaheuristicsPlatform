@@ -85,25 +85,11 @@ public sealed class MetropolisAcceptancePolicy :
         double currentObjective,
         double candidateObjective)
     {
-        double degradation =
-            sense switch
-            {
-                OptimizationSense.Minimize =>
-                    candidateObjective -
-                    currentObjective,
-
-                OptimizationSense.Maximize =>
-                    currentObjective -
-                    candidateObjective,
-
-                _ =>
-                    throw new ArgumentOutOfRangeException(
-                        nameof(sense))
-            };
-
-        return Math.Max(
-            0.0,
-            degradation);
+        return
+            TrajectoryObjectiveComparison.ComputeDegradation(
+                sense,
+                currentObjective,
+                candidateObjective);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]

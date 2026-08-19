@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "release": "0.33.0",
+  "component": "Threshold Accepting schedules and acceptance controls",
+  "implementedCount": 3,
+  "reviewedDeferredCount": 1,
+  "entries": [
+    {
+      "id": "ta.threshold.linear",
+      "name": "Linear threshold reduction",
+      "kind": "threshold-schedule",
+      "formulaMode": "math",
+      "formula": "\\tau_{k+1}=\\max\\{\\tau_{\\min},\\tau_k-\\delta\\},\\quad\\delta>0",
+      "status": "implemented",
+      "publication": "Dueck & Scheuer (1990) monotone threshold-sequence foundation",
+      "doi": "10.1016/0021-9991(90)90201-B"
+    },
+    {
+      "id": "ta.threshold.geometric",
+      "name": "Geometric threshold reduction",
+      "kind": "threshold-schedule",
+      "formulaMode": "math",
+      "formula": "\\tau_{k+1}=\\max\\{\\tau_{\\min},\\alpha\\tau_k\\},\\quad0<\\alpha<1",
+      "status": "implemented",
+      "publication": "Generic monotone schedule under the Dueck-Scheuer threshold-sequence contract",
+      "doi": "10.1016/0021-9991(90)90201-B"
+    },
+    {
+      "id": "ta.threshold.explicit",
+      "name": "Explicit non-increasing threshold sequence",
+      "kind": "threshold-schedule",
+      "formulaMode": "math",
+      "formula": "\\tau_0\\ge\\tau_1\\ge\\cdots\\ge\\tau_K\\ge0",
+      "status": "implemented",
+      "publication": "Dueck & Scheuer (1990), canonical threshold-sequence formulation",
+      "doi": "10.1016/0021-9991(90)90201-B"
+    },
+    {
+      "id": "ta.acceptance.old-bachelor",
+      "name": "Old Bachelor Acceptance",
+      "kind": "non-monotone-self-tuning-acceptance",
+      "formulaMode": "prose",
+      "formula": "Self-tuning non-monotone threshold acceptance, including thresholds that may become negative; scientifically distinct from the monotone v0.33 Threshold Accepting schedule contract.",
+      "status": "reviewed-deferred",
+      "publication": "Hu, Kahng & Tsao (1995), Old Bachelor Acceptance",
+      "doi": "10.1287/ijoc.7.4.417"
+    }
+  ],
+  "references": [
+    {
+      "publication": "Dueck & Scheuer (1990), Threshold accepting: A general purpose optimization algorithm appearing superior to simulated annealing",
+      "doi": "10.1016/0021-9991(90)90201-B"
+    },
+    {
+      "publication": "Winker & Fang (1997), Application of Threshold-Accepting to the Evaluation of the Discrepancy of a Set of Points",
+      "doi": "10.1137/S0036142995286076"
+    },
+    {
+      "publication": "Hu, Kahng & Tsao (1995), Old Bachelor Acceptance: A New Class of Non-Monotone Threshold Accepting Methods",
+      "doi": "10.1287/ijoc.7.4.417"
+    }
+  ]
+}
