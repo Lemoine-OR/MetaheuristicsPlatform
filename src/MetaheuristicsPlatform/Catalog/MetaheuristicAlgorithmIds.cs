@@ -20,6 +20,8 @@ public static class MetaheuristicAlgorithmIds
         "record-to-record-travel-dueck-1993";
     public const string LateAcceptanceHillClimbing =
         "late-acceptance-hill-climbing-burke-bykov-2017";
+    public const string DemonBasedAcceptance =
+        "demon-based-acceptance-talbi-2009";
     public const string TabuSearch = "tabu-search-glover";
     public const string ReactiveTabuSearch =
         "reactive-tabu-search-battiti-tecchiolli-1994";

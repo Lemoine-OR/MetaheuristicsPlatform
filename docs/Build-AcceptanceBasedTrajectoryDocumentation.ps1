@@ -43,7 +43,7 @@ $page=@"
 <body><header><div class="wrap"><div class="brand"><a href="../index.html"><img src="../assets/metaheuristicsplatform-logo.svg" alt="MetaheuristicsPlatform"></a></div>
 <nav><a href="../index.html">Home</a><a href="../index.html#algorithms">Algorithms</a><a href="../index.html#families">Families</a><a href="../api/index.html">API</a><a href="https://github.com/Lemoine-OR/MetaheuristicsPlatform">GitHub</a></nav></div></header>
 <main class="wrap"><h1>Acceptance-Based Trajectory Methods</h1>
-<p>Great Deluge, Record-to-Record Travel and final-form Late Acceptance Hill Climbing are executable. Extended/Flex Deluge and both Demon lineages remain explicitly reviewed/deferred until their own faithful controllers are introduced.</p>
+<p>Great Deluge, Record-to-Record Travel, final-form Late Acceptance Hill Climbing and Demon-Based Acceptance are executable. Extended/Flex Deluge, Demon-like credit-reset ILS and the Zimmermann-Salamon ensemble algorithm remain explicitly reviewed/deferred.</p>
 <div class="grid">$($cards -join "`n")</div>
 <div class="section"><h2>Scientific documentation</h2><p><a href="../api/acceptance_based_trajectory_methods.html"><strong>Open the complete Doxygen page</strong></a></p></div>
 <div class="section"><h2>Machine-readable catalog</h2><p><a href="../acceptance-based-trajectory-catalog.json"><code>acceptance-based-trajectory-catalog.json</code></a></p></div>
@@ -59,7 +59,7 @@ if(-not $homeContent.Contains("components/acceptance-based-trajectory-methods.ht
         $g=$homeContent.IndexOf('<div class="grid">',$homeContent.IndexOf($marker))
         if($g-lt 0){throw "Scientific-components grid missing."}
         $at=$g+'<div class="grid">'.Length
-        $card='<div class="card"><h3><a href="components/acceptance-based-trajectory-methods.html">Acceptance-Based Trajectory Methods</a></h3><div class="meta">GDA + RRT + LAHC executable &middot; Extended/Flex Deluge + Demon lineages reviewed/deferred</div><span class="id">acceptance.*</span></div>'
+        $card='<div class="card"><h3><a href="components/acceptance-based-trajectory-methods.html">Acceptance-Based Trajectory Methods</a></h3><div class="meta">GDA + RRT + LAHC + Demon executable &middot; Extended/Flex Deluge + distinct Demon variants reviewed/deferred</div><span class="id">acceptance.*</span></div>'
         $homeContent=$homeContent.Insert($at,"`n"+$card)
     }else{throw "Scientific components marker missing."}
     Write-Utf8File $homePath $homeContent
@@ -68,7 +68,8 @@ if(-not $homeContent.Contains("components/acceptance-based-trajectory-methods.ht
 foreach($id in @(
     "great-deluge-dueck-1993",
     "record-to-record-travel-dueck-1993",
-    "late-acceptance-hill-climbing-burke-bykov-2017"
+    "late-acceptance-hill-climbing-burke-bykov-2017",
+    "demon-based-acceptance-talbi-2009"
 )){
     $algorithmPath=Join-Path $Site ("algorithms\"+$id+".html")
     $algorithmContent=[System.IO.File]::ReadAllText($algorithmPath,[System.Text.Encoding]::UTF8)

@@ -604,6 +604,28 @@
                            "assumptions":  "History length is positive; candidate objective comparisons are finite; optional exact deltas agree with full evaluation; maximization mirrors the quality ordering.",
                            "convergence":  "No universal finite-time global convergence claim is made. With L=1, acceptance reduces to non-worsening hill climbing; for L\u003e1 the retained history improves monotonically in objective quality.",
                            "factoryMode":  "composition"
+                       },
+                       {
+                           "id":  "demon-based-acceptance-talbi-2009",
+                           "name":  "Demon-Based Acceptance",
+                           "class":  "DemonBasedAcceptanceOptimizer\u003cTSolution,TMove,TUndo\u003e",
+                           "category":  "trajectory-based-methods",
+                           "kind":  "single-solution",
+                           "family":  "Trajectory-based methods",
+                           "time":  "O(C_move + C_eval) per attempted transition; O(C_delta) with an exact move-objective evaluator",
+                           "space":  "O(|solution|) plus O(1) Demon credit state beyond domain move workspace",
+                           "applicability":  "Stochastic reversible neighborhoods over any supported representation; InitialCredit is an absolute objective-scale parameter",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Acceptance/DemonBasedAcceptanceOptimizer.cs",
+                           "publication":  "Talbi (2009), Single-Solution Based Metaheuristics, Metaheuristics: From Design to Implementation, Chapter 2; energy-exchange origin Creutz (1983)",
+                           "doi":  "10.1002/9780470496916.ch2",
+                           "implementation":  "Deterministic conserved-credit Demon acceptance with O(1) state, exact-delta reversible fast path, sense symmetry and visited-state best accounting.",
+                           "page":  "docs/pages/algorithms/demon-based-acceptance-talbi-2009.md",
+                           "problem":  "\\min_{x\\in\\mathcal X} f(x)\\quad\\text{or}\\quad\\max_{x\\in\\mathcal X} f(x)",
+                           "update":  "\\begin{aligned}\\Delta_k\u0026=f(x\u0027_k)-f(x_k),\\\\x_{k+1}\u0026=\\begin{cases}x\u0027_k,\u0026\\Delta_k\\le D_k,\\\\x_k,\u0026\\Delta_k\u003eD_k,\\end{cases}\\\\D_{k+1}\u0026=\\begin{cases}D_k-\\Delta_k,\u0026\\Delta_k\\le D_k,\\\\D_k,\u0026\\Delta_k\u003eD_k\\end{cases}\\quad\\text{(minimization)}\\end{aligned}",
+                           "assumptions":  "InitialCredit is finite and non-negative; objective values are finite; exact deltas agree with full evaluation; maximization mirrors the energy orientation.",
+                           "convergence":  "No universal finite-time global convergence claim is made. Accepted minimization moves preserve f(x)+D in exact arithmetic; rejected moves preserve both x and D.",
+                           "factoryMode":  "composition"
                        }
                    ]
 }

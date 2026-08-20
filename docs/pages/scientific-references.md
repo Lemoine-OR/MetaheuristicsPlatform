@@ -34,3 +34,11 @@ authoritative location for method-specific provenance.
 - Zimmermann, T.; Salamon, P. (1992), *The demon algorithm*,
   International Journal of Computer Mathematics 42(1-2), 21-31.
   DOI `10.1080/00207169208804047`.
+
+## Demon-based acceptance
+
+- Creutz, M. (1983), *Microcanonical Monte Carlo Simulation*, Physical Review Letters 50(19), 1411-1414. DOI `10.1103/PhysRevLett.50.1411`.
+- Talbi, E.-G. (2009), *Single-Solution Based Metaheuristics*, in *Metaheuristics: From Design to Implementation*, Chapter 2. DOI `10.1002/9780470496916.ch2`.
+- Wood, I. A.; Downs, T. (1998), *Demon algorithms and their application to optimization problems*, IEEE WCCI / IJCNN, 1661-1666.
+
+The v0.36.0 implementation is the one-point conserved credit/energy controller. The Zimmermann-Salamon (1992) ensemble Demon Algorithm and later ILS credit-reset Demon-like criteria remain scientifically distinct.

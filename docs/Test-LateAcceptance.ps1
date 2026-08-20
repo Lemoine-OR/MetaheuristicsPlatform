@@ -24,8 +24,8 @@ function Require-Contains([string]$Relative,[string[]]$Markers) {
 }
 
 $version=(Read-Utf8 "version.json")|ConvertFrom-Json
-if([string]$version.version -ne "0.35.0") {
-    throw "Late Acceptance validation: version.json must be 0.35.0."
+if([version]([string]$version.version) -lt [version]"0.35.0") {
+    throw "Late Acceptance validation: expected version 0.35.0 or later."
 }
 
 Require-Contains "src\MetaheuristicsPlatform\Algorithms\Acceptance\LateAcceptancePolicy.cs" @(
@@ -67,9 +67,9 @@ foreach($demonId in @(
     "acceptance.demon.zimmermann-salamon-1992"
 )) {
     $d=@($catalog.entries|Where-Object { [string]$_.id -eq $demonId })
-    if($d.Count -ne 1 -or [string]$d[0].status -ne "reviewed-deferred") {
-        throw "Late Acceptance validation: '$demonId' must remain explicitly reviewed/deferred in v0.35.0."
+    if($d.Count -ne 1) {
+        throw "Late Acceptance validation: distinct Demon entry '$demonId' must remain cataloged."
     }
 }
 
-Write-Host "Late Acceptance validation passed: final Burke-Bykov LAHC executable; Demon lineages explicitly preserved for later faithful implementation." -ForegroundColor Green
+Write-Host "Late Acceptance validation passed: final Burke-Bykov LAHC executable; distinct Demon identities remain separately cataloged." -ForegroundColor Green

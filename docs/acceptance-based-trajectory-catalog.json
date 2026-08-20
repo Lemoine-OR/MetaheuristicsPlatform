@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "release": "0.35.0",
+  "release": "0.36.0",
   "component": "Acceptance-based trajectory methods",
-  "implementedCount": 3,
+  "implementedCount": 4,
   "reviewedDeferredCount": 4,
   "entries": [
     {
@@ -57,13 +57,23 @@
     },
     {
       "id": "acceptance.demon.budget",
-      "name": "Demon-based budget acceptance",
-      "kind": "credit-budget acceptance",
+      "name": "Demon-based credit/energy acceptance",
+      "kind": "conserved credit-budget acceptance",
+      "formulaMode": "math",
+      "formula": "\\begin{aligned}\\Delta_k&=f(x'_k)-f(x_k),\\\\x_{k+1}&=\\begin{cases}x'_k,&\\Delta_k\\le D_k,\\\\x_k,&\\Delta_k>D_k,\\end{cases}\\\\D_{k+1}&=\\begin{cases}D_k-\\Delta_k,&\\Delta_k\\le D_k,\\\\D_k,&\\Delta_k>D_k,\\end{cases}\\quad D_0\\ge0\\end{aligned}",
+      "status": "implemented",
+      "publication": "Talbi (2009), Single-Solution Based Metaheuristics; energy-exchange origin in Creutz (1983)",
+      "doi": "10.1002/9780470496916.ch2"
+    },
+    {
+      "id": "acceptance.demon.credit-reset-ils",
+      "name": "Demon-like last-improvement credit reset",
+      "kind": "ILS base-solution credit-reset acceptance",
       "formulaMode": "prose",
-      "formula": "Maintain a non-negative acceptance credit: improving moves replenish credit and a worsening move may spend available credit. This controller is reserved for v0.36.0 so its exact credit semantics are not conflated with Threshold Accepting or Late Acceptance.",
+      "formula": "A distinct ILS-oriented Demon-like rule stores the gain from the latest improving base-solution replacement as credit; an admissible worsening replacement consumes that credit and resets it. It is not the conserved-energy Demon controller implemented in v0.36.0.",
       "status": "reviewed-deferred",
-      "publication": "Talbi (2009), Metaheuristics: From Design to Implementation, Demon algorithm / acceptance discussion",
-      "doi": "10.1002/9780470496916"
+      "publication": "Applied ILS / simheuristic literature using Demon-like credit reset; kept separate from the Creutz/Talbi conserved-credit controller",
+      "doi": "10.1002/9780470496916.ch2"
     },
     {
       "id": "acceptance.demon.zimmermann-salamon-1992",

@@ -4,6 +4,31 @@ All notable changes to MetaheuristicsPlatform will be documented in this file.
 
 ## [Unreleased]
 
+## [0.36.0]
+
+### Added
+- Add Demon-Based Acceptance as `demon-based-acceptance-talbi-2009`.
+- Add deterministic conserved credit/energy acceptance with minimization/maximization symmetry.
+- Add exact-delta reversible fast path, observable Demon credit state and focused energy-invariant tests.
+- Promote `acceptance.demon.budget` from reviewed/deferred to implemented in the acceptance trajectory catalog.
+- Add `acceptance.demon.credit-reset-ils` as a separately reviewed/deferred ILS-oriented lineage.
+- Review and document the Wood-Downs (1998) BD, RBD, AD and RAD optimization variants separately without collapsing them into flags; no unverified DOI is inserted into the machine-readable catalog.
+
+### Architecture
+- Reuse `IAcceptanceTrajectoryInitialSolutionGenerator`, `ReversibleTrajectoryStepExecutor` and `TrajectoryStepEvaluationAccounting` without introducing a parallel trajectory engine.
+- Demon acceptance consumes no acceptance RNG draw and stores O(1) scalar state.
+- Preserve the Zimmermann-Salamon ensemble Demon Algorithm as a distinct reviewed/deferred method rather than reducing it to a one-point credit rule.
+
+### Scientific basis
+- Creutz (1983), DOI `10.1103/PhysRevLett.50.1411`, origin of Demon energy exchange.
+- Talbi (2009), Chapter 2, DOI `10.1002/9780470496916.ch2`, generic single-solution metaheuristic presentation.
+- Wood & Downs (1998), Demon algorithms for optimization: Bounded, Randomized Bounded, Annealed and Randomized Annealed variants reviewed/deferred separately.
+- Zimmermann & Salamon (1992), DOI `10.1080/00207169208804047`, explicitly distinct ensemble Demon Algorithm.
+
+### Performance
+- O(1) deterministic acceptance and update: oriented subtraction/comparison plus one subtraction on acceptance.
+- Exact-delta rejection never applies a move; no exponential and no acceptance random draw.
+
 ## [0.35.0]
 
 ### Added

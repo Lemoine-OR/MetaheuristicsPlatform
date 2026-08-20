@@ -13,8 +13,8 @@ candidate:
 - Record-to-Record Travel: deviation from the best accepted record.
 - Late Acceptance Hill Climbing: circular history reference plus non-worsening
   hill-climbing safeguard.
-- Demon-based methods: explicit credit/energy state; reviewed separately because their
-  semantics are not a threshold schedule.
+- Demon-based acceptance: explicit non-negative credit/energy state with accepted-move
+  energy balance; deterministic and not a threshold schedule.
 
 ## Classical Great Deluge
 
@@ -60,13 +60,13 @@ written back into a history slot in the final formulation.
 
 ## Performance architecture
 
-GDA, RRT and LAHC reuse `ReversibleTrajectoryStepExecutor`,
+GDA, RRT, LAHC and Demon-Based Acceptance reuse `ReversibleTrajectoryStepExecutor`,
 `ITrajectoryAcceptancePolicy`, optional exact move-objective deltas, common callbacks,
 stopping, cancellation and deterministic seeded neighborhood randomness.
 
 `TrajectoryStepEvaluationAccounting` centralizes probe-versus-visited accounting for
-SA, TA, GDA, RRT and LAHC. LAHC adds O(L) scalar history memory and O(1) work per
-acceptance decision.
+SA, TA, GDA, RRT, LAHC and Demon-Based Acceptance. LAHC adds O(L) scalar history memory;
+the Demon controller adds only O(1) scalar credit state and O(1) acceptance/update work.
 
 ## Extended Great Deluge — reviewed / deferred
 
@@ -79,12 +79,33 @@ semantics.
 Burke and Bykov (2016) introduce a flexible acceptance condition and run-time adaptation.
 It is not merely another linear level schedule.
 
-## Demon-based budget acceptance — reviewed / deferred for v0.36.0
+## Demon-based credit/energy acceptance
 
-The one-point Demon-like controller uses an explicit non-negative credit or budget:
-improvements replenish credit and admissible worsening moves spend it. It will be
-implemented as its own stateful acceptance controller in v0.36.0 rather than disguised as
-Threshold Accepting.
+The executable v0.36.0 controller follows the one-point Demon energy exchange used in the
+single-solution metaheuristic literature. For minimization, define
+\f[
+\Delta_k=f(x'_k)-f(x_k).
+\f]
+The candidate is accepted iff \f$\Delta_k\le D_k\f$, and an accepted move updates
+\f$D_{k+1}=D_k-\Delta_k\f$. Hence an improvement (negative \f$\Delta_k\f$) replenishes
+the Demon while a worsening accepted move spends credit. Rejected moves leave the credit
+unchanged. In exact arithmetic, accepted minimization moves preserve \f$f(x_k)+D_k\f$.
+
+## Demon-like last-improvement credit reset — reviewed / deferred
+
+Some ILS/simheuristic papers use a different rule: the last improving base-solution gain is
+stored as credit, and a later admissible deterioration consumes/reset that credit. This is
+not the conserved-energy controller implemented here and remains separately cataloged.
+
+## Wood-Downs optimization variants — reviewed / deferred
+
+Wood and Downs (1998) introduced four optimization-oriented variants that modify the raw
+Demon dynamics to encourage minimization: **Bounded Demon (BD)**, **Randomized Bounded
+Demon (RBD)**, **Annealed Demon (AD)** and **Randomized Annealed Demon (RAD)**. Their
+bound, annealing and Gaussian-control semantics are algorithmically material, so the
+platform documents them separately instead of collapsing them into boolean flags on the
+conserved-credit controller. They remain deferred until each generic schedule/state contract
+is implemented from the primary formulation.
 
 ## Zimmermann-Salamon Demon Algorithm — reviewed / deferred separately
 
@@ -107,7 +128,8 @@ keeps the two identities separate.
 - Burke, E. K.; Bykov, Y. (2016),
   *An Adaptive Flex-Deluge Approach to University Exam Timetabling*.
   DOI `10.1287/ijoc.2015.0680`.
+- Creutz, M. (1983), *Microcanonical Monte Carlo Simulation*. DOI `10.1103/PhysRevLett.50.1411`.
+- Talbi, E.-G. (2009), *Single-Solution Based Metaheuristics*, Chapter 2. DOI `10.1002/9780470496916.ch2`.
+- Wood, I. A.; Downs, T. (1998), *Demon algorithms and their application to optimization problems*, IEEE World Congress on Computational Intelligence / IJCNN, 1661-1666.
 - Zimmermann, T.; Salamon, P. (1992), *The demon algorithm*.
   DOI `10.1080/00207169208804047`.
-- Talbi, E.-G. (2009), *Metaheuristics: From Design to Implementation*.
-  DOI `10.1002/9780470496916`.
