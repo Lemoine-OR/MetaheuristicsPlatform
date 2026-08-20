@@ -13,6 +13,7 @@ contracts:
 - public Record-to-Record Travel ID (`record-to-record-travel-dueck-1993`) introduced in v0.34.0;
 - public Late Acceptance Hill Climbing ID (`late-acceptance-hill-climbing-burke-bykov-2017`) introduced in v0.35.0;
 - public Demon-Based Acceptance ID (`demon-based-acceptance-talbi-2009`) introduced in v0.36.0;
+- public Iterated Greedy ID (`iterated-greedy-ruiz-stutzle-2007`) introduced in v0.37.0;
 - public Tabu Search stable ID (`tabu-search-glover`);
 - public Reactive Tabu Search stable ID (`reactive-tabu-search-battiti-tecchiolli-1994`);
 - public Tabu Search component IDs (`ts.*`);

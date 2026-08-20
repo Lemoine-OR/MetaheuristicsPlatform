@@ -20,8 +20,8 @@ $catalog =
 $algorithms = @($catalog.algorithms)
 $families = @($catalog.families)
 
-if ($algorithms.Count -lt 27) {
-    throw "Documentation parity: expected at least the twenty-seven currently public algorithms."
+if ($algorithms.Count -lt 28) {
+    throw "Documentation parity: expected at least the twenty-eight currently public algorithms."
 }
 
 $requiredFields = @(
@@ -130,6 +130,8 @@ $requiredRepoFiles = @(
     "docs\pages\algorithms\late-acceptance-hill-climbing-burke-bykov-2017.md",
     "docs\Test-LateAcceptance.ps1",
     "docs\Test-DemonBasedAcceptance.ps1",
+    "docs\Test-IteratedGreedy.ps1",
+    "docs\pages\algorithms\iterated-greedy-ruiz-stutzle-2007.md",
     "docs\pages\algorithms\demon-based-acceptance-talbi-2009.md",
     "docs\pages\algorithms\tabu-search-glover.md",
     "docs\Test-TabuSearchFoundation.ps1",
@@ -221,8 +223,8 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.36.0") {
-    throw "Documentation parity: version.json must be 0.36.0 for this release."
+if ([string]$version.version -ne "0.37.0") {
+    throw "Documentation parity: version.json must be 0.37.0 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root
@@ -231,6 +233,7 @@ if ([string]$version.version -ne "0.36.0") {
 & (Join-Path $Root "docs\Test-DueckAcceptanceMethods.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-LateAcceptance.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-DemonBasedAcceptance.ps1") -Root $Root
+& (Join-Path $Root "docs\Test-IteratedGreedy.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-TabuSearchFoundation.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-TabuSearchAdvancedMemory.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-LocalSearchFoundation.ps1") -Root $Root

@@ -24,8 +24,8 @@ function Require-Contains([string]$Relative,[string[]]$Markers) {
 }
 
 $version=(Read-Utf8 "version.json")|ConvertFrom-Json
-if([string]$version.version -ne "0.36.0") {
-    throw "Demon-Based Acceptance validation: version.json must be 0.36.0."
+if([version]([string]$version.version) -lt [version]"0.36.0") {
+    throw "Demon-Based Acceptance validation: expected version 0.36.0 or later."
 }
 
 Require-Contains "src\MetaheuristicsPlatform\Algorithms\Acceptance\DemonAcceptanceReferences.cs" @(

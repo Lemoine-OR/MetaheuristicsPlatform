@@ -4,6 +4,32 @@ All notable changes to MetaheuristicsPlatform will be documented in this file.
 
 ## [Unreleased]
 
+## [0.37.0]
+
+### Added
+- Add canonical Iterated Greedy as `iterated-greedy-ruiz-stutzle-2007`.
+- Add typed generic destruction and reconstruction contracts with delegate adapters.
+- Add strict-improvement and constant-temperature Metropolis IG acceptance policies.
+- Reuse the existing `ILocalSearchProcedure<TSolution>` as an optional initial and post-reconstruction improvement phase.
+- Add focused tests proving destruction-before-reconstruction order and that partial solutions are never objective-evaluated.
+- Add current Handbook provenance alongside the canonical Ruiz-Stutzle 2007 article.
+- Review advanced two-stage, reference-based and adaptive-destruction IG lineages for v0.38.0 without reducing them to configuration flags.
+
+### Architecture
+- Candidate solutions are owned clones of the incumbent.
+- Destruction may leave the candidate temporarily incomplete; the common objective evaluator is called only after reconstruction.
+- Best-so-far ownership remains independent of incumbent acceptance, matching the canonical IG search pattern.
+- The generic core does not hard-code NEH, flowshop job representations or processing-time temperature normalization.
+
+### Scientific basis
+- Ruiz & Stutzle (2007), DOI `10.1016/j.ejor.2005.12.009`.
+- Stutzle & Ruiz (2025), DOI `10.1007/978-3-032-00385-0_10`.
+- Advanced lineages reviewed for v0.38.0: DOI `10.1016/j.omega.2018.03.004`, DOI `10.1016/j.cie.2017.06.025`, DOI `10.1016/j.asoc.2020.106629`.
+
+### Performance
+- O(1) framework bookkeeping per cycle outside domain destruction, reconstruction, objective evaluation and optional local search.
+- No evaluation or cloning of the temporary partial representation beyond the single owned candidate clone.
+
 ## [0.36.0]
 
 ### Added

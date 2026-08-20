@@ -60,6 +60,6 @@ C $p @("## General description","## Technical specifications","## Complexity","#
 "### Update equations / iterations","### Assumptions","### Convergence conditions","### Scientific references",
 "@subpage acceptance_based_trajectory_methods","10.1006/jcph.1993.1010")
 }
-C "README.md" @("27 public algorithms","18 trajectory methods","great-deluge-dueck-1993","record-to-record-travel-dueck-1993","components/acceptance-based-trajectory-methods.html")
+C "README.md" @("28 public algorithms","19 trajectory methods","great-deluge-dueck-1993","record-to-record-travel-dueck-1993","components/acceptance-based-trajectory-methods.html")
 
 Write-Host "Dueck acceptance validation passed: classical Great Deluge + Record-to-Record Travel executable; Extended GDA + Adaptive Flex-Deluge reviewed/deferred; visited-candidate accounting shared." -ForegroundColor Green

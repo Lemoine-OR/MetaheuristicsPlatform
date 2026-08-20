@@ -626,6 +626,28 @@
                            "assumptions":  "InitialCredit is finite and non-negative; objective values are finite; exact deltas agree with full evaluation; maximization mirrors the energy orientation.",
                            "convergence":  "No universal finite-time global convergence claim is made. Accepted minimization moves preserve f(x)+D in exact arithmetic; rejected moves preserve both x and D.",
                            "factoryMode":  "composition"
+                       },
+                       {
+                           "id":  "iterated-greedy-ruiz-stutzle-2007",
+                           "name":  "Iterated Greedy - Ruiz-Stützle",
+                           "class":  "IteratedGreedyOptimizer\u003cTSolution,TRemoved\u003e",
+                           "category":  "trajectory-based-methods",
+                           "kind":  "single-solution",
+                           "family":  "Trajectory-based methods",
+                           "time":  "O(C_D(d) + C_C(d) + C_eval + C_LS) per destroy-reconstruct cycle",
+                           "space":  "O(|solution| + |removed| + local-search workspace); O(1) core scalar state",
+                           "applicability":  "Component-decomposable combinatorial solutions with a valid destruction/reconstruction pair; local search optional",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/IteratedGreedy/IteratedGreedyOptimizer.cs",
+                           "publication":  "Ruiz \u0026 Stützle (2007), A simple and effective iterated greedy algorithm for the permutation flowshop scheduling problem, European Journal of Operational Research 177(3), 2033-2049; Stützle \u0026 Ruiz (2025), Iterated Greedy, Handbook of Heuristics",
+                           "doi":  "10.1016/j.ejor.2005.12.009",
+                           "implementation":  "Generic partial-destruction / complete-reconstruction cycle, optional reusable local improvement, strict or constant-temperature Metropolis acceptance, and independent best-so-far ownership.",
+                           "page":  "docs/pages/algorithms/iterated-greedy-ruiz-stutzle-2007.md",
+                           "problem":  "\\min_{x\\in\\mathcal X} f(x)\\quad\\text{or}\\quad\\max_{x\\in\\mathcal X} f(x)",
+                           "update":  "\\begin{aligned}p_k\u0026=D_d(x_k),\\\\y_k\u0026=C(p_k),\\\\z_k\u0026=L(y_k),\\\\x_{k+1}\u0026=\\begin{cases}z_k,\u0026A(x_k,z_k)=1,\\\\x_k,\u0026\\text{otherwise}\\end{cases}\\end{aligned}",
+                           "assumptions":  "Destruction operates on an owned clone; reconstruction restores a complete valid solution before evaluation; composed acceptance/local search respect the common lifecycle.",
+                           "convergence":  "No universal finite-time global convergence claim is made; strict acceptance is monotone but can trap, while stochastic destruction and Metropolis acceptance require additional irreducibility/recurrence assumptions for asymptotic global guarantees.",
+                           "factoryMode":  "composition"
                        }
                    ]
 }

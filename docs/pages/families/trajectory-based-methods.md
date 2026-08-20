@@ -21,6 +21,8 @@ memory and state-transition policies.
   `late-acceptance-hill-climbing-burke-bykov-2017` — final Burke-Bykov circular-history acceptance.
 - **[Demon-Based Acceptance](../algorithms/demon-based-acceptance-talbi-2009.md)** —
   `demon-based-acceptance-talbi-2009` — conserved non-negative credit/energy acceptance.
+- **[Iterated Greedy](../algorithms/iterated-greedy-ruiz-stutzle-2007.md)** —
+  `iterated-greedy-ruiz-stutzle-2007` — generic destruction/reconstruction with optional local improvement and pluggable acceptance.
 - **[Tabu Search](../algorithms/tabu-search-glover.md)** — `tabu-search-glover` —
   best-admissible neighborhood search with short-term memory and aspiration.
 - **[Reactive Tabu Search](../algorithms/reactive-tabu-search-battiti-tecchiolli-1994.md)** —
