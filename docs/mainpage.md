@@ -45,3 +45,5 @@ Source repository: `Lemoine-OR/MetaheuristicsPlatform`.
 
 
 @subpage threshold_accepting_schedules
+
+@subpage acceptance_based_trajectory_methods

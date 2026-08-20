@@ -350,6 +350,7 @@ else {
 
 & (Join-Path $Root "docs\Build-SimulatedAnnealingCoolingDocumentation.ps1") -Root $Root -Site $site
 & (Join-Path $Root "docs\Build-ThresholdAcceptingScheduleDocumentation.ps1") -Root $Root -Site $site
+& (Join-Path $Root "docs\Build-AcceptanceBasedTrajectoryDocumentation.ps1") -Root $Root -Site $site
 & (Join-Path $Root "docs\Build-TabuSearchAdvancedDocumentation.ps1") -Root $Root -Site $site
 & (Join-Path $Root "docs\Build-PsoTopologyDocumentation.ps1") -Root $Root -Site $site
 & (Join-Path $Root "docs\Build-AdvancedVariableNeighborhoodDocumentation.ps1") -Root $Root -Site $site

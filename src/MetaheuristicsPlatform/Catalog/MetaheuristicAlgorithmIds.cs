@@ -14,6 +14,10 @@ public static class MetaheuristicAlgorithmIds
     public const string SimulatedAnnealing = "simulated-annealing-metropolis";
     public const string ThresholdAccepting =
         "threshold-accepting-dueck-scheuer-1990";
+    public const string GreatDeluge =
+        "great-deluge-dueck-1993";
+    public const string RecordToRecordTravel =
+        "record-to-record-travel-dueck-1993";
     public const string TabuSearch = "tabu-search-glover";
     public const string ReactiveTabuSearch =
         "reactive-tabu-search-battiti-tecchiolli-1994";

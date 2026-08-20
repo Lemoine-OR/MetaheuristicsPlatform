@@ -62,12 +62,19 @@ Require-Contains `
         'Id =',
         '"threshold-accepting-dueck-scheuer-1990"',
         "ReversibleTrajectoryStepExecutor",
-        "RegisterOwnedExternalEvaluationSnapshot",
+        "TrajectoryStepEvaluationAccounting.RegisterVisitedStep",
         "TransitionsPerThresholdLevel",
         "MinimumThreshold",
         "10.1016/0021-9991(90)90201-B"
     )
 
+Require-Contains `
+    "src\MetaheuristicsPlatform\Trajectory\TrajectoryStepEvaluationAccounting.cs" @(
+        "RegisterExternalProbeEvaluation",
+        "step.Accepted",
+        "WouldImprove",
+        "PromoteOwnedExternalProbeSnapshot"
+    )
 Require-Contains `
     "src\MetaheuristicsPlatform\Trajectory\TrajectoryObjectiveComparison.cs" @(
         "ComputeDegradation",
@@ -176,12 +183,10 @@ Require-Contains `
 
 Require-Contains `
     "README.md" @(
-        "23 public algorithms",
-        "14 trajectory methods",
         "threshold-accepting-dueck-scheuer-1990",
         "components/threshold-accepting-schedules.html"
     )
 
 Write-Host `
-    "Threshold Accepting validation passed: canonical deterministic acceptance + 3 executable monotone threshold schedules + Old Bachelor Acceptance reviewed/deferred." `
+    "Threshold Accepting validation passed: canonical deterministic acceptance + 3 executable monotone threshold schedules + Old Bachelor Acceptance reviewed/deferred + shared visited-candidate accounting." `
     -ForegroundColor Green

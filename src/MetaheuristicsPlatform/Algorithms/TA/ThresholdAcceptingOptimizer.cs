@@ -311,7 +311,7 @@ public sealed class ThresholdAcceptingOptimizer<
                     context.Random,
                     cancellationToken);
 
-            RegisterCandidateEvaluation(
+            TrajectoryStepEvaluationAccounting.RegisterVisitedStep(
                 context,
                 solutionCloner,
                 in solution,
@@ -405,38 +405,6 @@ public sealed class ThresholdAcceptingOptimizer<
                         stop,
                         state);
             }
-        }
-    }
-
-    private static void RegisterCandidateEvaluation(
-        OptimizationContext<TSolution> context,
-        ISolutionCloner<TSolution> solutionCloner,
-        in TSolution currentSolution,
-        in TrajectoryStepResult step)
-    {
-        if (context.WouldImprove(
-                step.CandidateObjective))
-        {
-            if (!step.Accepted)
-            {
-                throw new InvalidOperationException(
-                    "A candidate that improves the global best must be accepted by the Threshold Accepting rule.");
-            }
-
-            TSolution ownedSnapshot =
-                solutionCloner.Clone(
-                    currentSolution);
-
-            context.RegisterOwnedExternalEvaluationSnapshot(
-                ownedSnapshot,
-                step.CandidateObjective,
-                step);
-        }
-        else
-        {
-            context.RegisterExternalEvaluation(
-                step.CandidateObjective,
-                step);
         }
     }
 

@@ -17,3 +17,11 @@ authoritative location for method-specific provenance.
 - Hu, T. C.; Kahng, A. B.; Tsao, C.-W. A. (1995). *Old Bachelor Acceptance: A New Class
   of Non-Monotone Threshold Accepting Methods*. ORSA Journal on Computing 7(4), 417-425.
   DOI: `10.1287/ijoc.7.4.417`.
+## Great Deluge and Record-to-Record Travel
+
+- Dueck, G. (1993). *New Optimization Heuristics: The Great Deluge Algorithm and the Record-to-Record Travel*.
+  DOI: `10.1006/jcph.1993.1010`.
+- Burke, E.; Bykov, Y.; Newall, J.; Petrovic, S. (2003). *A Time-Predefined Approach to Course Timetabling*.
+  DOI: `10.2298/YJOR0302139B`.
+- Burke, E. K.; Bykov, Y. (2016). *An Adaptive Flex-Deluge Approach to University Exam Timetabling*.
+  DOI: `10.1287/ijoc.2015.0680`.

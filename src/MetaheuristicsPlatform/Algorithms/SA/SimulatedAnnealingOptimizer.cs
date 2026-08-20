@@ -319,7 +319,7 @@ public sealed class SimulatedAnnealingOptimizer<
                     context.Random,
                     cancellationToken);
 
-            RegisterCandidateEvaluation(
+            TrajectoryStepEvaluationAccounting.RegisterVisitedStep(
                 context,
                 solutionCloner,
                 in solution,
@@ -438,38 +438,6 @@ public sealed class SimulatedAnnealingOptimizer<
                         stop,
                         state);
             }
-        }
-    }
-
-    private static void RegisterCandidateEvaluation(
-        OptimizationContext<TSolution> context,
-        ISolutionCloner<TSolution> solutionCloner,
-        in TSolution currentSolution,
-        in TrajectoryStepResult step)
-    {
-        if (context.WouldImprove(
-                step.CandidateObjective))
-        {
-            if (!step.Accepted)
-            {
-                throw new InvalidOperationException(
-                    "A candidate that improves the global best must be accepted by the Metropolis rule.");
-            }
-
-            TSolution ownedSnapshot =
-                solutionCloner.Clone(
-                    currentSolution);
-
-            context.RegisterOwnedExternalEvaluationSnapshot(
-                ownedSnapshot,
-                step.CandidateObjective,
-                step);
-        }
-        else
-        {
-            context.RegisterExternalEvaluation(
-                step.CandidateObjective,
-                step);
         }
     }
 

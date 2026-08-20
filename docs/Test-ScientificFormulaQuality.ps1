@@ -114,8 +114,8 @@ $catalog =
 
 $algorithms = @($catalog.algorithms)
 
-if ($algorithms.Count -lt 23) {
-    throw "Scientific formula quality: expected at least 23 public algorithms."
+if ($algorithms.Count -lt 25) {
+    throw "Scientific formula quality: expected at least 25 public algorithms."
 }
 
 foreach ($algorithm in $algorithms) {
@@ -146,6 +146,7 @@ $componentProseCount = 0
 foreach ($catalogRelative in @(
     "docs\sa-cooling-catalog.json",
     "docs\threshold-accepting-schedule-catalog.json",
+    "docs\acceptance-based-trajectory-catalog.json",
     "docs\ts-memory-control-catalog.json"
 )) {
     $componentCatalog =
@@ -261,6 +262,7 @@ if ($implementationCount -ne 1) {
 foreach ($specialBuilder in @(
     "docs\Build-SimulatedAnnealingCoolingDocumentation.ps1",
     "docs\Build-ThresholdAcceptingScheduleDocumentation.ps1",
+    "docs\Build-AcceptanceBasedTrajectoryDocumentation.ps1",
     "docs\Build-TabuSearchAdvancedDocumentation.ps1",
     "docs\Build-PathRelinkingStrategyDocumentation.ps1"
 )) {

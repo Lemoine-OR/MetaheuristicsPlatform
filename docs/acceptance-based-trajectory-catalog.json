@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "release": "0.34.0",
+  "component": "Acceptance-based trajectory methods",
+  "implementedCount": 2,
+  "reviewedDeferredCount": 2,
+  "entries": [
+    {
+      "id": "acceptance.gda.dueck-1993",
+      "name": "Classical Great Deluge",
+      "kind": "absolute-boundary acceptance",
+      "formulaMode": "math",
+      "formula": "\\begin{aligned}B_0&=f(x_0),\\\\x_{k+1}&=\\begin{cases}x'_k,&f(x'_k)\\le B_k,\\\\x_k,&f(x'_k)>B_k,\\end{cases}\\\\B_{k+1}&=B_k-\\delta_B,\\quad\\delta_B>0\\end{aligned}",
+      "status": "implemented",
+      "publication": "Dueck (1993), New Optimization Heuristics: The Great Deluge Algorithm and the Record-to-Record Travel",
+      "doi": "10.1006/jcph.1993.1010"
+    },
+    {
+      "id": "acceptance.rrt.dueck-1993",
+      "name": "Classical Record-to-Record Travel",
+      "kind": "best-record deviation acceptance",
+      "formulaMode": "math",
+      "formula": "\\begin{aligned}r_k&=\\min_{0\\le j\\le k}f(x_j),\\\\x_{k+1}&=\\begin{cases}x'_k,&f(x'_k)-r_k\\le D,\\\\x_k,&f(x'_k)-r_k>D,\\end{cases}\\quad D\\ge0\\end{aligned}",
+      "status": "implemented",
+      "publication": "Dueck (1993), New Optimization Heuristics: The Great Deluge Algorithm and the Record-to-Record Travel",
+      "doi": "10.1006/jcph.1993.1010"
+    },
+    {
+      "id": "acceptance.gda.extended-2003",
+      "name": "Extended Great Deluge",
+      "kind": "improving-or-boundary acceptance",
+      "formulaMode": "prose",
+      "formula": "Accept every improving candidate in addition to candidates satisfying the water-level bound; the time-predefined formulation interprets its controls through search time and expected final quality.",
+      "status": "reviewed-deferred",
+      "publication": "Burke, Bykov, Newall & Petrovic (2003), A Time-Predefined Approach to Course Timetabling",
+      "doi": "10.2298/YJOR0302139B"
+    },
+    {
+      "id": "acceptance.gda.flex-deluge-2016",
+      "name": "Adaptive Flex-Deluge",
+      "kind": "adaptive flexible acceptance",
+      "formulaMode": "prose",
+      "formula": "Flexible Great-Deluge acceptance with run-time adaptation of the acceptance condition, scientifically distinct from the classical one-parameter Dueck water-level controller.",
+      "status": "reviewed-deferred",
+      "publication": "Burke & Bykov (2016), An Adaptive Flex-Deluge Approach to University Exam Timetabling",
+      "doi": "10.1287/ijoc.2015.0680"
+    }
+  ]
+}

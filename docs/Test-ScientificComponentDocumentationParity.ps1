@@ -186,6 +186,15 @@ Require-Contains `
     )
 
 Require-Contains `
+    "docs\Build-AcceptanceBasedTrajectoryDocumentation.ps1" @(
+        "Acceptance-Based Trajectory Methods",
+        "acceptance-based-trajectory-methods.html",
+        "acceptance-based-trajectory-catalog.json",
+        "formula-note",
+        "mathjax@3.2.2/es5/tex-chtml.js"
+    )
+
+Require-Contains `
     "docs\Build-PathRelinkingStrategyDocumentation.ps1" @(
         "Advanced Path Relinking Strategies",
         "path-relinking-strategies.html",
@@ -199,6 +208,7 @@ Require-Contains `
         "Build-PsoTopologyDocumentation.ps1",
         "Build-AdvancedVariableNeighborhoodDocumentation.ps1",
         "Build-ThresholdAcceptingScheduleDocumentation.ps1",
+        "Build-AcceptanceBasedTrajectoryDocumentation.ps1",
         "Build-PathRelinkingStrategyDocumentation.ps1"
     )
 
@@ -207,6 +217,7 @@ Require-Contains `
         "@subpage pso_communication_topologies",
         "@subpage advanced_variable_neighborhood_search_variants",
         "@subpage threshold_accepting_schedules",
+        "@subpage acceptance_based_trajectory_methods",
         "@subpage path_relinking_strategies"
     )
 
@@ -229,6 +240,7 @@ foreach ($marker in @(
     "components/pso-communication-topologies.html",
     "components/simulated-annealing-cooling-schedules.html",
     "components/threshold-accepting-schedules.html",
+    "components/acceptance-based-trajectory-methods.html",
     "components/tabu-search-memory-control-strategies.html",
     "components/advanced-variable-neighborhood-search-variants.html",
     "components/path-relinking-strategies.html"
@@ -255,5 +267,5 @@ foreach ($heading in @(
 }
 
 Write-Host `
-    "Scientific component documentation parity passed: 10 PSO topologies, 4 README family headings, PSO/VNS/Threshold-Accepting/Path-Relinking component builders wired." `
+    "Scientific component documentation parity passed: 10 PSO topologies, 4 README family headings, PSO/VNS/Threshold-Accepting/Dueck-Acceptance/Path-Relinking component builders wired." `
     -ForegroundColor Green

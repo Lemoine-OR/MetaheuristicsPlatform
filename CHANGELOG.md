@@ -4,6 +4,32 @@ All notable changes to MetaheuristicsPlatform will be documented in this file.
 
 ## [Unreleased]
 
+## [0.34.0]
+
+### Added
+- Add classical Great Deluge as `great-deluge-dueck-1993`.
+- Add classical Record-to-Record Travel as `record-to-record-travel-dueck-1993`.
+- Add shared acceptance-trajectory initial-solution composition and visited-candidate evaluation accounting.
+- Add exact-delta reversible fast paths, observable states, parameters and DOI-backed descriptors for both methods.
+- Add the Acceptance-Based Trajectory Methods scientific catalog and generated portal component.
+- Review Extended Great Deluge and Adaptive Flex-Deluge separately from the Dueck canonical rules.
+- Add focused tests for sense symmetry, absolute-level semantics, record semantics, exact-delta rejection and probe-versus-visited best accounting.
+
+### Architecture
+- `TrajectoryStepEvaluationAccounting` counts every candidate as a probe and promotes best-so-far only for accepted visited states.
+- Simulated Annealing and Threshold Accepting now reuse that accounting path without changing their acceptance semantics.
+- The acceptance-policy foundation is ready for Late Acceptance and Demon-based methods.
+
+### Scientific basis
+- Dueck (1993), DOI `10.1006/jcph.1993.1010`.
+- Burke, Bykov, Newall & Petrovic (2003), DOI `10.2298/YJOR0302139B`, Extended Great Deluge reviewed/deferred.
+- Burke & Bykov (2016), DOI `10.1287/ijoc.2015.0680`, Adaptive Flex-Deluge reviewed/deferred.
+
+### Performance
+- GDA and RRT acceptance are deterministic O(1) comparisons with no acceptance random draw or transcendental function.
+- Exact-delta rejection never applies a move; accepted moves are applied exactly once.
+- Both acceptance controllers use O(1) state.
+
 ## [0.33.0]
 
 ### Added

@@ -20,8 +20,8 @@ $catalog =
 $algorithms = @($catalog.algorithms)
 $families = @($catalog.families)
 
-if ($algorithms.Count -lt 23) {
-    throw "Documentation parity: expected at least the twenty-three currently public algorithms."
+if ($algorithms.Count -lt 25) {
+    throw "Documentation parity: expected at least the twenty-five currently public algorithms."
 }
 
 $requiredFields = @(
@@ -121,6 +121,12 @@ $requiredRepoFiles = @(
     "docs\Build-ThresholdAcceptingScheduleDocumentation.ps1",
     "docs\pages\components\threshold-accepting-schedules.md",
     "docs\pages\algorithms\threshold-accepting-dueck-scheuer-1990.md",
+    "docs\Test-DueckAcceptanceMethods.ps1",
+    "docs\acceptance-based-trajectory-catalog.json",
+    "docs\Build-AcceptanceBasedTrajectoryDocumentation.ps1",
+    "docs\pages\components\acceptance-based-trajectory-methods.md",
+    "docs\pages\algorithms\great-deluge-dueck-1993.md",
+    "docs\pages\algorithms\record-to-record-travel-dueck-1993.md",
     "docs\pages\algorithms\tabu-search-glover.md",
     "docs\Test-TabuSearchFoundation.ps1",
     "docs\Test-TabuSearchAdvancedMemory.ps1",
@@ -211,13 +217,14 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.33.0") {
-    throw "Documentation parity: version.json must be 0.33.0 for this release."
+if ([string]$version.version -ne "0.34.0") {
+    throw "Documentation parity: version.json must be 0.34.0 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-SimulatedAnnealingCoolingCatalog.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-ThresholdAccepting.ps1") -Root $Root
+& (Join-Path $Root "docs\Test-DueckAcceptanceMethods.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-TabuSearchFoundation.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-TabuSearchAdvancedMemory.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-LocalSearchFoundation.ps1") -Root $Root

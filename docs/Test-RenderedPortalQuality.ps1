@@ -172,6 +172,9 @@ $componentChecks = @(
         catalog = "docs\threshold-accepting-schedule-catalog.json"
         page = "components\threshold-accepting-schedules.html"
     },    @{
+        catalog = "docs\acceptance-based-trajectory-catalog.json"
+        page = "components\acceptance-based-trajectory-methods.html"
+    },    @{
         catalog = "docs\ts-memory-control-catalog.json"
         page = "components\tabu-search-memory-control-strategies.html"
     }
@@ -248,6 +251,25 @@ $thresholdAcceptingDoxygen =
 
 if (-not (Test-Path -LiteralPath $thresholdAcceptingDoxygen)) {
     throw "Rendered portal quality: canonical Threshold Accepting schedule Doxygen page is missing."
+}
+foreach ($dueckAlgorithm in @(
+    "great-deluge-dueck-1993",
+    "record-to-record-travel-dueck-1993"
+)) {
+    $dueckPortal =
+        Read-Utf8Path (Join-Path $Site ("algorithms\" + $dueckAlgorithm + ".html"))
+
+    if (-not $dueckPortal.Contains(
+        '../components/acceptance-based-trajectory-methods.html')) {
+        throw "Rendered portal quality: '$dueckAlgorithm' is missing its acceptance-family link."
+    }
+}
+
+$acceptanceDoxygen =
+    Join-Path $Site "api\acceptance_based_trajectory_methods.html"
+
+if (-not (Test-Path -LiteralPath $acceptanceDoxygen)) {
+    throw "Rendered portal quality: canonical acceptance-based trajectory Doxygen page is missing."
 }
 $pathRelinkingCatalog =
     (Read-Utf8Path (Join-Path $Root "docs\path-relinking-strategy-catalog.json")) |
