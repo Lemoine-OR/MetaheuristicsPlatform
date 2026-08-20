@@ -25,3 +25,12 @@ authoritative location for method-specific provenance.
   DOI: `10.2298/YJOR0302139B`.
 - Burke, E. K.; Bykov, Y. (2016). *An Adaptive Flex-Deluge Approach to University Exam Timetabling*.
   DOI: `10.1287/ijoc.2015.0680`.
+
+## Late Acceptance and Demon references
+
+- Burke, E. K.; Bykov, Y. (2017), *The late acceptance Hill-Climbing heuristic*,
+  European Journal of Operational Research 258(1), 70-78.
+  DOI `10.1016/j.ejor.2016.07.012`.
+- Zimmermann, T.; Salamon, P. (1992), *The demon algorithm*,
+  International Journal of Computer Mathematics 42(1-2), 21-31.
+  DOI `10.1080/00207169208804047`.

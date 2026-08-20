@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "release": "0.34.0",
+  "release": "0.35.0",
   "component": "Acceptance-based trajectory methods",
-  "implementedCount": 2,
-  "reviewedDeferredCount": 2,
+  "implementedCount": 3,
+  "reviewedDeferredCount": 4,
   "entries": [
     {
       "id": "acceptance.gda.dueck-1993",
@@ -26,6 +26,16 @@
       "doi": "10.1006/jcph.1993.1010"
     },
     {
+      "id": "acceptance.lahc.burke-bykov-2017",
+      "name": "Late Acceptance Hill Climbing",
+      "kind": "history-reference acceptance",
+      "formulaMode": "math",
+      "formula": "\\begin{aligned}v_k&=k\\bmod L,\\\\x_{k+1}&=\\begin{cases}x'_k,&f(x'_k)<H_{v_k}\\ \\lor\\ f(x'_k)\\le f(x_k),\\\\x_k,&\\text{otherwise},\\end{cases}\\\\H_{v_k}&\\leftarrow\\min\\{H_{v_k},f(x_{k+1})\\}\\end{aligned}",
+      "status": "implemented",
+      "publication": "Burke & Bykov (2017), The late acceptance Hill-Climbing heuristic",
+      "doi": "10.1016/j.ejor.2016.07.012"
+    },
+    {
       "id": "acceptance.gda.extended-2003",
       "name": "Extended Great Deluge",
       "kind": "improving-or-boundary acceptance",
@@ -44,6 +54,26 @@
       "status": "reviewed-deferred",
       "publication": "Burke & Bykov (2016), An Adaptive Flex-Deluge Approach to University Exam Timetabling",
       "doi": "10.1287/ijoc.2015.0680"
+    },
+    {
+      "id": "acceptance.demon.budget",
+      "name": "Demon-based budget acceptance",
+      "kind": "credit-budget acceptance",
+      "formulaMode": "prose",
+      "formula": "Maintain a non-negative acceptance credit: improving moves replenish credit and a worsening move may spend available credit. This controller is reserved for v0.36.0 so its exact credit semantics are not conflated with Threshold Accepting or Late Acceptance.",
+      "status": "reviewed-deferred",
+      "publication": "Talbi (2009), Metaheuristics: From Design to Implementation, Demon algorithm / acceptance discussion",
+      "doi": "10.1002/9780470496916"
+    },
+    {
+      "id": "acceptance.demon.zimmermann-salamon-1992",
+      "name": "Zimmermann-Salamon Demon Algorithm",
+      "kind": "ensemble generalized simulated annealing",
+      "formulaMode": "prose",
+      "formula": "The original Demon Algorithm evolves an ensemble of systems through target distributions and collective moves; it is scientifically distinct from the later one-point Demon-like credit acceptance used in local-search hybrids.",
+      "status": "reviewed-deferred",
+      "publication": "Zimmermann & Salamon (1992), The demon algorithm",
+      "doi": "10.1080/00207169208804047"
     }
   ]
 }

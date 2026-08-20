@@ -37,13 +37,13 @@ stable catalog IDs.
 <tr>
 <td width="20%"><strong>1 swarm method</strong><br><sub>PSO with topology/social/dynamics specializations.</sub></td>
 <td width="20%"><strong>5 DE methods</strong><br><sub>DE, jDE, JADE, SHADE and L-SHADE.</sub></td>
-<td width="20%"><strong>16 trajectory methods</strong><br><sub>SA, Threshold Accepting, Great Deluge, Record-to-Record Travel, Tabu Search, Local Search, ILS, VNS variants and GLS.</sub></td>
+<td width="20%"><strong>17 trajectory methods</strong><br><sub>SA, Threshold Accepting, Great Deluge, Record-to-Record Travel, Late Acceptance, Tabu Search, Local Search, ILS, VNS variants and GLS.</sub></td>
 <td width="20%"><strong>3 constructive methods</strong><br><sub>Canonical GRASP, Reactive GRASP and elite-memory Path Relinking with advanced trajectory and evolutionary elite-population policies.</sub></td>
 <td width="20%"><strong>Generic foundations</strong><br><sub>Evaluation pipelines, neighborhoods, reversible moves and hybrid composition.</sub></td>
 </tr>
 </table>
 
-<p align="center"><strong>25 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>26 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -119,7 +119,7 @@ stable ID used by the canonical catalog/factory.
 <table>
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/simulated-annealing-metropolis.html"><strong>Simulated Annealing</strong></a><br><code>simulated-annealing-metropolis</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/threshold-accepting-dueck-scheuer-1990.html"><strong>Threshold Accepting</strong></a><br><code>threshold-accepting-dueck-scheuer-1990</code></td></tr>
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/great-deluge-dueck-1993.html"><strong>Great Deluge Algorithm</strong></a><br><code>great-deluge-dueck-1993</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/record-to-record-travel-dueck-1993.html"><strong>Record-to-Record Travel</strong></a><br><code>record-to-record-travel-dueck-1993</code></td></tr>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/tabu-search-glover.html"><strong>Tabu Search</strong></a><br><code>tabu-search-glover</code></td><td width="50%"></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/late-acceptance-hill-climbing-burke-bykov-2017.html"><strong>Late Acceptance Hill Climbing</strong></a><br><code>late-acceptance-hill-climbing-burke-bykov-2017</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/tabu-search-glover.html"><strong>Tabu Search</strong></a><br><code>tabu-search-glover</code></td></tr>
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/reactive-tabu-search-battiti-tecchiolli-1994.html"><strong>Reactive Tabu Search</strong></a><br><code>reactive-tabu-search-battiti-tecchiolli-1994</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/local-search-best-improvement.html"><strong>Local Search - Best Improvement</strong></a><br><code>local-search-best-improvement</code></td></tr>
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/local-search-first-improvement.html"><strong>Local Search - First Improvement</strong></a><br><code>local-search-first-improvement</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/multi-start-local-search.html"><strong>Multi-Start Local Search</strong></a><br><code>multi-start-local-search</code></td></tr>
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/iterated-local-search-lourenco-martin-stutzle.html"><strong>Iterated Local Search</strong></a><br><code>iterated-local-search-lourenco-martin-stutzle</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/variable-neighborhood-descent.html"><strong>Variable Neighborhood Descent</strong></a><br><code>variable-neighborhood-descent</code></td></tr>
@@ -160,7 +160,7 @@ stable ID used by the canonical catalog/factory.
 <td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/threshold-accepting-schedules.html"><strong>Threshold Accepting Schedule Catalog</strong></a><br><sub>3 executable monotone threshold schedules &middot; deterministic Dueck-Scheuer acceptance &middot; Old Bachelor Acceptance reviewed/deferred</sub><br><code>ta.threshold.*</code></td>
 <td width="50%"></td>
 </tr><tr>
-<td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/acceptance-based-trajectory-methods.html"><strong>Acceptance-Based Trajectory Methods</strong></a><br><sub>Great Deluge + Record-to-Record Travel executable &middot; Extended GDA + Adaptive Flex-Deluge reviewed/deferred</sub><br><code>acceptance.*</code></td>
+<td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/acceptance-based-trajectory-methods.html"><strong>Acceptance-Based Trajectory Methods</strong></a><br><sub>Great Deluge + Record-to-Record Travel + Late Acceptance executable &middot; Extended/Flex Deluge + Demon lineages reviewed/deferred</sub><br><code>acceptance.*</code></td>
 <td width="50%"></td>
 </tr></table>
 

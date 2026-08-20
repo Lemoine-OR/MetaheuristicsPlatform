@@ -18,6 +18,8 @@ public static class MetaheuristicAlgorithmIds
         "great-deluge-dueck-1993";
     public const string RecordToRecordTravel =
         "record-to-record-travel-dueck-1993";
+    public const string LateAcceptanceHillClimbing =
+        "late-acceptance-hill-climbing-burke-bykov-2017";
     public const string TabuSearch = "tabu-search-glover";
     public const string ReactiveTabuSearch =
         "reactive-tabu-search-battiti-tecchiolli-1994";

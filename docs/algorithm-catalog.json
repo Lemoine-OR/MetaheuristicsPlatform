@@ -582,6 +582,28 @@
                            "assumptions":  "Candidate and record objectives are finite; deviation is non-negative and expressed in objective units; record updates come only from accepted visited states.",
                            "convergence":  "With positive fixed deviation RRT may continue inside the record band indefinitely. No universal finite-time global convergence claim is made; termination uses the common stopping contract.",
                            "factoryMode":  "composition"
+                       },
+                       {
+                           "id":  "late-acceptance-hill-climbing-burke-bykov-2017",
+                           "name":  "Late Acceptance Hill Climbing",
+                           "class":  "LateAcceptanceHillClimbingOptimizer\u003cTSolution,TMove,TUndo\u003e",
+                           "category":  "trajectory-based-methods",
+                           "kind":  "single-solution",
+                           "family":  "Trajectory-based methods",
+                           "time":  "O(C_move + C_eval) per attempted transition; O(C_delta) with an exact move-objective evaluator",
+                           "space":  "O(|solution| + L) for a circular objective-history buffer of length L",
+                           "applicability":  "Stochastic reversible neighborhoods over any supported representation; exact candidate-objective deltas optional",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Acceptance/LateAcceptanceHillClimbingOptimizer.cs",
+                           "publication":  "Burke \u0026 Bykov (2017), The late acceptance Hill-Climbing heuristic, European Journal of Operational Research 258(1), 70-78",
+                           "doi":  "10.1016/j.ejor.2016.07.012",
+                           "implementation":  "Final Burke-Bykov history-reference acceptance, non-worsening hill-climbing safeguard, monotone-quality circular history, exact-delta fast path and visited-state best accounting.",
+                           "page":  "docs/pages/algorithms/late-acceptance-hill-climbing-burke-bykov-2017.md",
+                           "problem":  "\\min_{x\\in\\mathcal X} f(x)\\quad\\text{or}\\quad\\max_{x\\in\\mathcal X} f(x)",
+                           "update":  "\\begin{aligned}v_k\u0026=k\\bmod L,\\\\x_{k+1}\u0026=\\begin{cases}x\u0027_k,\u0026f(x\u0027_k)\u003cH_{v_k}\\ \\lor\\ f(x\u0027_k)\\le f(x_k),\\\\x_k,\u0026\\text{otherwise},\\end{cases}\\\\H_{v_k}\u0026\\leftarrow\\min\\{H_{v_k},f(x_{k+1})\\}\\quad\\text{(minimization)}\\end{aligned}",
+                           "assumptions":  "History length is positive; candidate objective comparisons are finite; optional exact deltas agree with full evaluation; maximization mirrors the quality ordering.",
+                           "convergence":  "No universal finite-time global convergence claim is made. With L=1, acceptance reduces to non-worsening hill climbing; for L\u003e1 the retained history improves monotonically in objective quality.",
+                           "factoryMode":  "composition"
                        }
                    ]
 }

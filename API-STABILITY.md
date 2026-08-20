@@ -8,6 +8,10 @@ Even during the 0.x development line, the following are treated as compatibility
 contracts:
 - public algorithm catalog IDs;
 - public Simulated Annealing cooling-schedule IDs (`sa.cooling.*`);
+- public Threshold Accepting ID (`threshold-accepting-dueck-scheuer-1990`) introduced in v0.33.0;
+- public Great Deluge ID (`great-deluge-dueck-1993`) introduced in v0.34.0;
+- public Record-to-Record Travel ID (`record-to-record-travel-dueck-1993`) introduced in v0.34.0;
+- public Late Acceptance Hill Climbing ID (`late-acceptance-hill-climbing-burke-bykov-2017`) introduced in v0.35.0;
 - public Tabu Search stable ID (`tabu-search-glover`);
 - public Reactive Tabu Search stable ID (`reactive-tabu-search-battiti-tecchiolli-1994`);
 - public Tabu Search component IDs (`ts.*`);

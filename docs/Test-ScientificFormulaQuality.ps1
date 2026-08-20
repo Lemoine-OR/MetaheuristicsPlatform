@@ -114,8 +114,8 @@ $catalog =
 
 $algorithms = @($catalog.algorithms)
 
-if ($algorithms.Count -lt 25) {
-    throw "Scientific formula quality: expected at least 25 public algorithms."
+if ($algorithms.Count -lt 26) {
+    throw "Scientific formula quality: expected at least 26 public algorithms."
 }
 
 foreach ($algorithm in $algorithms) {

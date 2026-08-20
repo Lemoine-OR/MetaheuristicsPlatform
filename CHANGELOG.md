@@ -4,6 +4,27 @@ All notable changes to MetaheuristicsPlatform will be documented in this file.
 
 ## [Unreleased]
 
+## [0.35.0]
+
+### Added
+- Add final-form Late Acceptance Hill Climbing as `late-acceptance-hill-climbing-burke-bykov-2017`.
+- Add a circular O(L) objective-history controller implementing the Burke-Bykov 2017 acceptance and monotone-quality history-update rules.
+- Reuse the reversible trajectory executor, exact-delta fast path, visited-state evaluation accounting, callbacks, stopping and deterministic seeded neighborhood infrastructure.
+- Add observable LAHC state, focused xUnit tests, a dedicated scientific page and documentation-parity validation.
+- Promote LAHC to executable in the Acceptance-Based Trajectory Methods catalog.
+- Preserve Demon-based budget acceptance and the distinct Zimmermann-Salamon ensemble Demon Algorithm as separate reviewed/deferred identities for future faithful implementation.
+
+### Scientific basis
+- Burke & Bykov (2008), *A Late Acceptance Strategy in Hill-Climbing for Exam Timetabling Problems*.
+- Burke & Bykov (2017), *The late acceptance Hill-Climbing heuristic*, DOI `10.1016/j.ejor.2016.07.012`.
+- Zimmermann & Salamon (1992), *The demon algorithm*, DOI `10.1080/00207169208804047`, reviewed/deferred and explicitly distinguished from one-point Demon-like credit acceptance.
+
+### Performance
+- Acceptance and circular-history update are O(1) per attempted transition.
+- LAHC-specific state is O(L) scalar objective values and stores no solution snapshots.
+- Exact-delta rejection does not apply a move; accepted moves are applied exactly once.
+- Acceptance itself consumes no random draw; stochasticity comes from the configured neighborhood.
+
 ## [0.34.0]
 
 ### Added

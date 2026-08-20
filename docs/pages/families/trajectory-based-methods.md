@@ -17,6 +17,8 @@ memory and state-transition policies.
   `great-deluge-dueck-1993` — classical Dueck absolute water-level acceptance.
 - **[Record-to-Record Travel](../algorithms/record-to-record-travel-dueck-1993.md)** —
   `record-to-record-travel-dueck-1993` — deviation around the best accepted record.
+- **[Late Acceptance Hill Climbing](../algorithms/late-acceptance-hill-climbing-burke-bykov-2017.md)** —
+  `late-acceptance-hill-climbing-burke-bykov-2017` — final Burke-Bykov circular-history acceptance.
 - **[Tabu Search](../algorithms/tabu-search-glover.md)** — `tabu-search-glover` —
   best-admissible neighborhood search with short-term memory and aspiration.
 - **[Reactive Tabu Search](../algorithms/reactive-tabu-search-battiti-tecchiolli-1994.md)** —

@@ -20,6 +20,9 @@ $componentDirectory=Join-Path $Site "components"
 New-Item -ItemType Directory -Force -Path $componentDirectory|Out-Null
 Copy-Item $catalogPath (Join-Path $Site "acceptance-based-trajectory-catalog.json") -Force
 
+$implementedCount=@($catalog.entries|Where-Object { [string]$_.status -eq "implemented" }).Count
+$deferredCount=@($catalog.entries|Where-Object { [string]$_.status -ne "implemented" }).Count
+
 $cards=New-Object System.Collections.Generic.List[string]
 foreach($entry in @($catalog.entries)){
     $f=Html([string]$entry.formula)
@@ -40,7 +43,7 @@ $page=@"
 <body><header><div class="wrap"><div class="brand"><a href="../index.html"><img src="../assets/metaheuristicsplatform-logo.svg" alt="MetaheuristicsPlatform"></a></div>
 <nav><a href="../index.html">Home</a><a href="../index.html#algorithms">Algorithms</a><a href="../index.html#families">Families</a><a href="../api/index.html">API</a><a href="https://github.com/Lemoine-OR/MetaheuristicsPlatform">GitHub</a></nav></div></header>
 <main class="wrap"><h1>Acceptance-Based Trajectory Methods</h1>
-<p>Classical Great Deluge and Record-to-Record Travel are executable. Extended Great Deluge and Adaptive Flex-Deluge are reviewed separately because they change the Dueck acceptance semantics.</p>
+<p>Great Deluge, Record-to-Record Travel and final-form Late Acceptance Hill Climbing are executable. Extended/Flex Deluge and both Demon lineages remain explicitly reviewed/deferred until their own faithful controllers are introduced.</p>
 <div class="grid">$($cards -join "`n")</div>
 <div class="section"><h2>Scientific documentation</h2><p><a href="../api/acceptance_based_trajectory_methods.html"><strong>Open the complete Doxygen page</strong></a></p></div>
 <div class="section"><h2>Machine-readable catalog</h2><p><a href="../acceptance-based-trajectory-catalog.json"><code>acceptance-based-trajectory-catalog.json</code></a></p></div>
@@ -56,13 +59,17 @@ if(-not $homeContent.Contains("components/acceptance-based-trajectory-methods.ht
         $g=$homeContent.IndexOf('<div class="grid">',$homeContent.IndexOf($marker))
         if($g-lt 0){throw "Scientific-components grid missing."}
         $at=$g+'<div class="grid">'.Length
-        $card='<div class="card"><h3><a href="components/acceptance-based-trajectory-methods.html">Acceptance-Based Trajectory Methods</a></h3><div class="meta">GDA + RRT executable &middot; Extended GDA + Adaptive Flex-Deluge reviewed/deferred</div><span class="id">acceptance.*</span></div>'
+        $card='<div class="card"><h3><a href="components/acceptance-based-trajectory-methods.html">Acceptance-Based Trajectory Methods</a></h3><div class="meta">GDA + RRT + LAHC executable &middot; Extended/Flex Deluge + Demon lineages reviewed/deferred</div><span class="id">acceptance.*</span></div>'
         $homeContent=$homeContent.Insert($at,"`n"+$card)
     }else{throw "Scientific components marker missing."}
     Write-Utf8File $homePath $homeContent
 }
 
-foreach($id in @("great-deluge-dueck-1993","record-to-record-travel-dueck-1993")){
+foreach($id in @(
+    "great-deluge-dueck-1993",
+    "record-to-record-travel-dueck-1993",
+    "late-acceptance-hill-climbing-burke-bykov-2017"
+)){
     $algorithmPath=Join-Path $Site ("algorithms\"+$id+".html")
     $algorithmContent=[System.IO.File]::ReadAllText($algorithmPath,[System.Text.Encoding]::UTF8)
     if(-not $algorithmContent.Contains("components/acceptance-based-trajectory-methods.html")){
@@ -71,4 +78,5 @@ foreach($id in @("great-deluge-dueck-1993","record-to-record-travel-dueck-1993")
         Write-Utf8File $algorithmPath $algorithmContent
     }
 }
-Write-Host "Acceptance-based trajectory component documentation generated: 2 implemented, 2 reviewed/deferred." -ForegroundColor Green
+
+Write-Host "Acceptance-based trajectory component documentation generated: $implementedCount implemented, $deferredCount reviewed/deferred." -ForegroundColor Green

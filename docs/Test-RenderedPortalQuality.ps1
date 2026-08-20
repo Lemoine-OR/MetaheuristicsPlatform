@@ -254,7 +254,8 @@ if (-not (Test-Path -LiteralPath $thresholdAcceptingDoxygen)) {
 }
 foreach ($dueckAlgorithm in @(
     "great-deluge-dueck-1993",
-    "record-to-record-travel-dueck-1993"
+    "record-to-record-travel-dueck-1993",
+    "late-acceptance-hill-climbing-burke-bykov-2017"
 )) {
     $dueckPortal =
         Read-Utf8Path (Join-Path $Site ("algorithms\" + $dueckAlgorithm + ".html"))

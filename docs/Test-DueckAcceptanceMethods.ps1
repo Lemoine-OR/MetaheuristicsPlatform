@@ -44,8 +44,8 @@ C "src\MetaheuristicsPlatform\Catalog\MetaheuristicAlgorithmIds.cs" @(
 )
 
 $c=(Read-Utf8 "docs\acceptance-based-trajectory-catalog.json")|ConvertFrom-Json
-if(@($c.entries|Where-Object status -eq "implemented").Count-ne2){throw "Dueck acceptance validation: expected 2 implemented entries."}
-if(@($c.entries|Where-Object status -eq "reviewed-deferred").Count-ne2){throw "Dueck acceptance validation: expected 2 deferred extensions."}
+if(@($c.entries|Where-Object status -eq "implemented").Count-lt2){throw "Dueck acceptance validation: expected at least the two Dueck implemented entries."}
+if(@($c.entries|Where-Object status -eq "reviewed-deferred").Count-lt2){throw "Dueck acceptance validation: expected at least the two Dueck deferred extensions."}
 
 C "docs\pages\components\acceptance-based-trajectory-methods.md" @(
 "@page acceptance_based_trajectory_methods","## Classical Great Deluge","## Classical Record-to-Record Travel",
@@ -60,6 +60,6 @@ C $p @("## General description","## Technical specifications","## Complexity","#
 "### Update equations / iterations","### Assumptions","### Convergence conditions","### Scientific references",
 "@subpage acceptance_based_trajectory_methods","10.1006/jcph.1993.1010")
 }
-C "README.md" @("25 public algorithms","16 trajectory methods","great-deluge-dueck-1993","record-to-record-travel-dueck-1993","components/acceptance-based-trajectory-methods.html")
+C "README.md" @("26 public algorithms","17 trajectory methods","great-deluge-dueck-1993","record-to-record-travel-dueck-1993","components/acceptance-based-trajectory-methods.html")
 
 Write-Host "Dueck acceptance validation passed: classical Great Deluge + Record-to-Record Travel executable; Extended GDA + Adaptive Flex-Deluge reviewed/deferred; visited-candidate accounting shared." -ForegroundColor Green
