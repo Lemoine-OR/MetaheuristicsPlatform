@@ -61,3 +61,8 @@ v0.37.0 implements the generic destruction/reconstruction core with optional loc
 - Fernandez-Viagas, V.; Framinan, J. M. (2019), *A best-of-breed iterated greedy for the permutation flowshop scheduling problem with makespan objective*. DOI `10.1016/j.cor.2019.104767`.
 - Li, Y.-Z.; Pan, Q.-K.; Li, J.-Q.; Gao, L.; Tasgetiren, M. F. (2021), *An Adaptive Iterated Greedy algorithm for distributed mixed no-idle permutation flowshop scheduling problems*. DOI `10.1016/j.swevo.2021.100874`.
 - Zhang, S.; Qian, B.; Hu, R.; Li, K.; Yang, J.-B. (2026), *A two-stage iterated greedy algorithm for distributed blocking flowshop scheduling problem*. DOI `10.1016/j.eswa.2025.130422`.
+### Scatter Search
+
+- Martí, R.; Laguna, M.; Glover, F. (2006), *Principles of scatter search*, European Journal of Operational Research 169(2), 359-372. DOI `10.1016/j.ejor.2004.08.004`.
+- Laguna, M.; Martí, R. (2003), *Scatter Search: Methodology and Implementations in C*. DOI `10.1007/978-1-4615-0337-8`.
+- Glover, F.; Laguna, M.; Martí, R. (2004), *Scatter Search and Path Relinking: Foundations and Advanced Designs*. DOI `10.1007/978-3-540-39930-8_4`.

@@ -4,6 +4,29 @@ All notable changes to MetaheuristicsPlatform will be documented in this file.
 
 ## [Unreleased]
 
+## [0.39.0]
+
+### Added
+- Add canonical generic Scatter Search foundation under stable ID `scatter-search-marti-laguna-glover-2006`.
+- Add explicit contracts for the five classical Scatter Search methods: diversification generation, improvement, reference-set update, subset generation and solution combination.
+- Add `ClassicalScatterSearchReferenceSetUpdateMethod<TSolution>` with initial quality + max-min diversity construction and strict distinct quality replacement.
+- Add `PairwiseNewScatterSearchSubsetGenerationMethod<TSolution>` generating all unordered RefSet pairs containing at least one newly admitted reference solution.
+- Add objective-sense symmetric RefSet logic for minimization and maximization.
+- Add complete ULSAlgorithms-parity documentation, mathematical model, DOI provenance and dedicated validation.
+
+### Scientific basis
+- Martí, Laguna & Glover (2006), *Principles of scatter search*, DOI `10.1016/j.ejor.2004.08.004`.
+- Laguna & Martí (2003), *Scatter Search: Methodology and Implementations in C*, DOI `10.1007/978-1-4615-0337-8`.
+- Glover, Laguna & Martí (2004), *Scatter Search and Path Relinking: Foundations and Advanced Designs*, DOI `10.1007/978-3-540-39930-8_4`.
+
+### Scope boundary
+- v0.39.0 implements the scientifically canonical foundation.
+- Dynamic RefSet updates, rebuilding, 2-tier/3-tier RefSets, advanced diversity controls, advanced subset families and specialized combination/memory designs are reserved for v0.40.0.
+
+### Compatibility
+- Public algorithm count: 29.
+- Evolutionary-method count: 6.
+- Existing v0.38.0 public IDs and runtime APIs remain unchanged.
 ## [0.38.0]
 
 ### Added

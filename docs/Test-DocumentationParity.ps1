@@ -20,8 +20,8 @@ $catalog =
 $algorithms = @($catalog.algorithms)
 $families = @($catalog.families)
 
-if ($algorithms.Count -lt 28) {
-    throw "Documentation parity: expected at least the twenty-eight currently public algorithms."
+if ($algorithms.Count -lt 29) {
+    throw "Documentation parity: expected at least the twenty-nine currently public algorithms."
 }
 
 $requiredFields = @(
@@ -132,6 +132,8 @@ $requiredRepoFiles = @(
     "docs\Test-DemonBasedAcceptance.ps1",
     "docs\Test-IteratedGreedy.ps1",
     "docs\Test-AdvancedIteratedGreedy.ps1",
+    "docs\Test-ScatterSearch.ps1",
+    "docs\pages\algorithms\scatter-search-marti-laguna-glover-2006.md",
     "docs\advanced-iterated-greedy-catalog.json",
     "docs\Build-AdvancedIteratedGreedyDocumentation.ps1",
     "docs\pages\components\advanced-iterated-greedy-strategies.md",
@@ -227,8 +229,8 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.38.0") {
-    throw "Documentation parity: version.json must be 0.38.0 for this release."
+if ([string]$version.version -ne "0.39.0") {
+    throw "Documentation parity: version.json must be 0.39.0 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root
@@ -239,6 +241,7 @@ if ([string]$version.version -ne "0.38.0") {
 & (Join-Path $Root "docs\Test-DemonBasedAcceptance.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-IteratedGreedy.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-AdvancedIteratedGreedy.ps1") -Root $Root
+& (Join-Path $Root "docs\Test-ScatterSearch.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-TabuSearchFoundation.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-TabuSearchAdvancedMemory.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-LocalSearchFoundation.ps1") -Root $Root

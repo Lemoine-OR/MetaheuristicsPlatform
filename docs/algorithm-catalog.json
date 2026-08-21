@@ -11,7 +11,7 @@
                      {
                          "id":  "evolutionary-methods",
                          "name":  "Evolutionary methods",
-                         "description":  "Population methods based on stochastic variation, recombination, selection and adaptive control parameters."
+                         "description":  "Population methods based on structured variation or combination, selection, reference-set learning and adaptive control."
                      },
                      {
                          "id":  "trajectory-based-methods",
@@ -163,6 +163,27 @@
                            "factoryMode":  "direct"
                        },
                        {
+                           "id":  "scatter-search-marti-laguna-glover-2006",
+                           "name":  "Scatter Search",
+                           "class":  "ScatterSearchOptimizer<TSolution>",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "O(P(C_f+C_I)+P b C_d+P log P) initialization; up to O(b^2(C_C+C_I+C_f+b C_d)) per simple pairwise round",
+                           "space":  "O(P + b) owned solution snapshots plus domain combination/improvement workspace",
+                           "applicability":  "Any complete-solution representation with domain diversification, distance and combination methods; improvement is optional",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/ScatterSearch/ScatterSearchOptimizer.cs",
+                           "publication":  "Marti, Laguna & Glover (2006), Principles of scatter search, European Journal of Operational Research 169(2), 359-372; Laguna & Marti (2003), Scatter Search: Methodology and Implementations in C",
+                           "doi":  "10.1016/j.ejor.2004.08.004",
+                           "implementation":  "Five-method generic Scatter Search template with quality/diversity RefSet construction, pairwise-new subset generation, strict distinct quality replacement and objective-sense symmetry.",
+                           "page":  "docs/pages/algorithms/scatter-search-marti-laguna-glover-2006.md",
+                           "problem":  "\\min_{x\\in\\mathcal X} f(x)\\quad\\text{or}\\quad\\max_{x\\in\\mathcal X} f(x)",
+                           "update":  "\\begin{aligned}\nP_0&\\leftarrow\\{I(D_1),\\ldots,I(D_P)\\},\\\\\nR_0&\\leftarrow\\operatorname{RefSet}_{b_1,b}(P_0;f,d),\\\\\n\\mathcal S_k&\\leftarrow\\operatorname{Subsets}(R_k),\\\\\nY_k&\\leftarrow\\bigcup_{S\\in\\mathcal S_k}I(\\mathcal C(S)),\\\\\nR_{k+1}&\\leftarrow\\operatorname{Update}(R_k,Y_k;f,d)\n\\end{aligned}",
+                           "assumptions":  "The common evaluator receives complete feasible candidates. Distance and combination semantics are representation-specific; distance must be finite and non-negative.",
+                           "convergence":  "No universal global convergence guarantee is claimed. The strict RefSet replacement rule plus explicit stopping bounds ensures termination of the implemented run; global optimality requires additional exploration assumptions.",
+                           "factoryMode":  "registration"
+                       },                       {
                            "id":  "simulated-annealing-metropolis",
                            "name":  "Simulated Annealing",
                            "class":  "SimulatedAnnealingOptimizer\u003cTSolution,TMove,TUndo\u003e",

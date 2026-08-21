@@ -30,8 +30,8 @@ $version =
     (Read-Utf8 "version.json") |
     ConvertFrom-Json
 
-if([string]$version.version -ne "0.38.0") {
-    throw "Advanced Iterated Greedy validation: version.json must be 0.38.0."
+if([version]([string]$version.version) -lt [version]"0.38.0") {
+    throw "Advanced Iterated Greedy validation: expected version 0.38.0 or later."
 }
 
 Require-Contains `

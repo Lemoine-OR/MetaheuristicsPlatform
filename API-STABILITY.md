@@ -44,3 +44,10 @@ stable ID for a different scientific method.
 
 The 1.x line will freeze the public common lifecycle and factory/catalog conventions in
 the same spirit as ULSAlgorithms.
+
+### v0.39.0
+
+- public Scatter Search ID (`scatter-search-marti-laguna-glover-2006`);
+- generic five-method contracts for diversification, improvement, RefSet update, subset generation and solution combination;
+- `ClassicalScatterSearchReferenceSetUpdateMethod<TSolution>` quality/diversity RefSet semantics;
+- `PairwiseNewScatterSearchSubsetGenerationMethod<TSolution>` canonical simple subset policy.
