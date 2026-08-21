@@ -145,8 +145,22 @@ Require-Contains `
         "advanced-iterated-greedy-strategies.html",
         "formulaMode",
         "formula-note",
-        "mathjax@3.2.2/es5/tex-chtml.js"
+        "mathjax@3.2.2/es5/tex-chtml.js",
+        "headingMarker",
+        "sectionMarker",
+        "LastIndexOf",
+        "Insert("
     )
+
+$documentationBuilder =
+    Read-Utf8 "docs\Build-AdvancedIteratedGreedyDocumentation.ps1"
+
+$legacyRenderedMarker =
+    '<div class="section"><h2>Mathematical details</h2>'
+
+if($documentationBuilder.Contains($legacyRenderedMarker)) {
+    throw "Advanced Iterated Greedy validation: legacy one-line mathematical-details marker remains in the rendered-portal builder."
+}
 
 Require-Contains `
     "docs\pages\algorithms\iterated-greedy-ruiz-stutzle-2007.md" @(

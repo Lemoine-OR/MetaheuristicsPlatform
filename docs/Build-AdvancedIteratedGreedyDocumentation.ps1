@@ -216,11 +216,26 @@ $algorithmHtml =
 if(-not $algorithmHtml.Contains(
     "../components/advanced-iterated-greedy-strategies.html")) {
 
-    $needle =
-        '<div class="section"><h2>Mathematical details</h2>'
+    $headingMarker =
+        '<h2>Mathematical details</h2>'
 
-    if(-not $algorithmHtml.Contains($needle)) {
-        throw "Advanced Iterated Greedy documentation: IG mathematical-details marker missing."
+    $headingIndex =
+        $algorithmHtml.IndexOf($headingMarker)
+
+    if($headingIndex -lt 0) {
+        throw "Advanced Iterated Greedy documentation: IG mathematical-details heading missing."
+    }
+
+    $sectionMarker =
+        '<div class="section">'
+
+    $sectionIndex =
+        $algorithmHtml.LastIndexOf(
+            $sectionMarker,
+            $headingIndex)
+
+    if($sectionIndex -lt 0) {
+        throw "Advanced Iterated Greedy documentation: IG mathematical-details section missing."
     }
 
     $linkBlock =
@@ -229,9 +244,9 @@ if(-not $algorithmHtml.Contains(
         '<strong>Open the advanced Iterated Greedy strategy catalog</strong></a></p></div>'
 
     $algorithmHtml =
-        $algorithmHtml.Replace(
-            $needle,
-            $linkBlock + "`n" + $needle)
+        $algorithmHtml.Insert(
+            $sectionIndex,
+            $linkBlock + "`n")
 }
 
 Write-Utf8 $algorithmPath $algorithmHtml
