@@ -48,7 +48,16 @@ The v0.36.0 implementation is the one-point conserved credit/energy controller. 
 - Ruiz, R.; Stützle, T. (2007), *A simple and effective iterated greedy algorithm for the permutation flowshop scheduling problem*, European Journal of Operational Research 177(3), 2033-2049. DOI `10.1016/j.ejor.2005.12.009`.
 - Stützle, T.; Ruiz, R. (2025), *Iterated Greedy*, in *Handbook of Heuristics*, 745-777. DOI `10.1007/978-3-032-00385-0_10`.
 - Ruiz, R.; Pan, Q.-K.; Naderi, B. (2019), *Iterated Greedy methods for the distributed permutation flowshop scheduling problem*, Omega 83, 213-222. DOI `10.1016/j.omega.2018.03.004`.
-- *Iterated reference greedy algorithm for solving distributed no-idle permutation flowshop scheduling problems* (2017), Computers & Industrial Engineering 110, 413-423. DOI `10.1016/j.cie.2017.06.025`.
-- *An effective Iterated Greedy algorithm for the distributed permutation flowshop scheduling with due windows* (2020), Applied Soft Computing 96, 106629. DOI `10.1016/j.asoc.2020.106629`.
+- Ying, K.-C.; Lin, S.-W.; Cheng, C.-Y.; He, C.-D. (2017), *Iterated reference greedy algorithm for solving distributed no-idle permutation flowshop scheduling problems*, Computers & Industrial Engineering 110, 413-423. DOI `10.1016/j.cie.2017.06.025`.
+- Jing, X.-L.; Pan, Q.-K.; Gao, L.; Wang, Y.-L. (2020), *An effective Iterated Greedy algorithm for the distributed permutation flowshop scheduling with due windows*, Applied Soft Computing 96, 106629. DOI `10.1016/j.asoc.2020.106629`.
 
 v0.37.0 implements the generic destruction/reconstruction core with optional local search and pluggable acceptance. Advanced two-stage, reference-based and adaptive-destruction variants are reserved for the reviewed v0.38.0 line.
+
+### Advanced Iterated Greedy additions in v0.38.0
+
+- Fernandez-Viagas, V.; Framinan, J. M. (2015), *A bounded-search iterated greedy algorithm for the distributed permutation flowshop scheduling problem*. DOI `10.1080/00207543.2014.948578`.
+- Ding, J.-Y.; Song, S.; Gupta, J. N. D.; Zhang, R.; Chiong, R.; Wu, C. (2015), *An improved iterated greedy algorithm with a Tabu-based reconstruction strategy for the no-wait flowshop scheduling problem*. DOI `10.1016/j.asoc.2015.02.006`.
+- Dubois-Lacoste, J.; Pagnozzi, F.; Stützle, T. (2017), *An iterated greedy algorithm with optimization of partial solutions for the makespan permutation flowshop problem*. DOI `10.1016/j.cor.2016.12.021`.
+- Fernandez-Viagas, V.; Framinan, J. M. (2019), *A best-of-breed iterated greedy for the permutation flowshop scheduling problem with makespan objective*. DOI `10.1016/j.cor.2019.104767`.
+- Li, Y.-Z.; Pan, Q.-K.; Li, J.-Q.; Gao, L.; Tasgetiren, M. F. (2021), *An Adaptive Iterated Greedy algorithm for distributed mixed no-idle permutation flowshop scheduling problems*. DOI `10.1016/j.swevo.2021.100874`.
+- Zhang, S.; Qian, B.; Hu, R.; Li, K.; Yang, J.-B. (2026), *A two-stage iterated greedy algorithm for distributed blocking flowshop scheduling problem*. DOI `10.1016/j.eswa.2025.130422`.

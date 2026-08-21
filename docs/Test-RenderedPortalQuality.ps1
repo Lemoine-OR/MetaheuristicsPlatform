@@ -177,6 +177,10 @@ $componentChecks = @(
     },    @{
         catalog = "docs\ts-memory-control-catalog.json"
         page = "components\tabu-search-memory-control-strategies.html"
+    },
+    @{
+        catalog = "docs\advanced-iterated-greedy-catalog.json"
+        page = "components\advanced-iterated-greedy-strategies.html"
     }
 )
 

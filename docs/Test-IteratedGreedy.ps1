@@ -27,8 +27,8 @@ function Require-Contains([string]$Relative,[string[]]$Markers) {
 }
 
 $version = (Read-Utf8 "version.json") | ConvertFrom-Json
-if([string]$version.version -ne "0.37.0") {
-    throw "Iterated Greedy validation: version.json must be 0.37.0."
+if([version]([string]$version.version) -lt [version]"0.37.0") {
+    throw "Iterated Greedy validation: expected version 0.37.0 or later."
 }
 
 Require-Contains `
@@ -55,7 +55,8 @@ Require-Contains `
         "ILocalSearchProcedure",
         "_destruction.Destroy",
         "_construction.Reconstruct",
-        "context.Evaluate(candidate",
+        "context.Evaluate(",
+        "candidate,",
         "_acceptance.ShouldAccept",
         "IteratedGreedyReferences.RuizStutzle2007",
         "IteratedGreedyReferences.StutzleRuiz2025"
@@ -122,4 +123,4 @@ Require-Contains "README.md" @(
     "iterated-greedy-ruiz-stutzle-2007"
 )
 
-Write-Host "Iterated Greedy validation passed: generic Ruiz-Stutzle destruction/reconstruction core executable; optional local search and constant-temperature acceptance supported; advanced IG lineages remain explicitly reserved for v0.38.0." -ForegroundColor Green
+Write-Host "Iterated Greedy validation passed: generic Ruiz-Stutzle destruction/reconstruction core executable; optional local search and constant-temperature acceptance supported; advanced components may be layered by later releases." -ForegroundColor Green

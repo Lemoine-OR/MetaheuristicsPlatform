@@ -4,6 +4,41 @@ All notable changes to MetaheuristicsPlatform will be documented in this file.
 
 ## [Unreleased]
 
+## [0.38.0]
+
+### Added
+- Add Advanced Iterated Greedy scientific component catalog under stable component IDs `ig.*`.
+- Add generic stagnation-escalating destruction-size control while preserving the canonical fixed-size behavior.
+- Add a typed partial-solution improvement hook executed strictly between destruction and reconstruction.
+- Add generated portal/Doxygen component documentation for 5 executable generic controls and 9 reviewed complete variants.
+- Review bounded-search IG, Tabu-reconstruction IG, partial-solution optimization, Iterated Reference Greedy, distributed IG, best-of-breed IG, due-window IG, Adaptive IG and the 2026 two-stage distributed blocking-flowshop IG.
+
+### Audit fixes
+- Replace placeholder bibliographic author strings left in the v0.37 advanced-reference placeholders with exact authors.
+- Refresh the Iterated Greedy algorithm state after complete-candidate evaluation so algorithm-specific stopping criteria receive a finite `LastCandidateObjective`.
+
+### Architecture
+- Keep `iterated-greedy-ruiz-stutzle-2007` as the unique public canonical IG algorithm ID.
+- Preserve the original v0.37 constructor and fixed-destruction behavior.
+- Expose representation-independent advanced mechanisms as components instead of manufacturing paper-inaccurate top-level algorithms.
+- Keep problem-specific complete variants reviewed/deferred until every required domain abstraction exists.
+
+### Scientific basis
+- Fernandez-Viagas & Framinan (2015), DOI `10.1080/00207543.2014.948578`.
+- Ding et al. (2015), DOI `10.1016/j.asoc.2015.02.006`.
+- Dubois-Lacoste, Pagnozzi & Stützle (2017), DOI `10.1016/j.cor.2016.12.021`.
+- Ying, Lin, Cheng & He (2017), DOI `10.1016/j.cie.2017.06.025`.
+- Ruiz, Pan & Naderi (2019), DOI `10.1016/j.omega.2018.03.004`.
+- Fernandez-Viagas & Framinan (2019), DOI `10.1016/j.cor.2019.104767`.
+- Jing, Pan, Gao & Wang (2020), DOI `10.1016/j.asoc.2020.106629`.
+- Li, Pan, Li, Gao & Tasgetiren (2021), DOI `10.1016/j.swevo.2021.100874`.
+- Zhang, Qian, Hu, Li & Yang (2026), DOI `10.1016/j.eswa.2025.130422`.
+
+### Compatibility
+- Public algorithm count remains 28.
+- Trajectory-method count remains 19.
+- Existing v0.37 Iterated Greedy construction remains source compatible.
+
 ## [0.37.0]
 
 ### Added

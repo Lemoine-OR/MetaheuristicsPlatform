@@ -28,6 +28,7 @@ use, start from the project portal and the short guides below.
 - @subpage tabu_search_memory_control_strategies - Tabu Search memory and reactive-control components.
 - @subpage advanced_variable_neighborhood_search_variants - executable and reviewed/deferred VNS variants.
 - @subpage path_relinking_strategies - forward/backward/mixed direction policies, truncation and greedy-randomized path construction.
+- @subpage advanced_iterated_greedy_strategies - generic IG controls and reviewed complete advanced variants.
 ## Validation and reproducibility
 
 - @subpage complexity_applicability

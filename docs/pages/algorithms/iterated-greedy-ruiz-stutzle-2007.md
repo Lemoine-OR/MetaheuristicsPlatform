@@ -122,6 +122,10 @@ Because the optimizer requires domain-defined destruction and reconstruction, th
 ID identifies the scientific method in the catalog/factory but typed composition must be
 registered by the application.
 
+## Advanced Iterated Greedy catalog
+
+See @subpage advanced_iterated_greedy_strategies "Advanced Iterated Greedy Strategies"
+for executable generic controls and the separately reviewed complete literature variants.
 ## Mathematical details
 
 ### Problem formulation

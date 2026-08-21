@@ -164,6 +164,10 @@ stable ID used by the canonical catalog/factory.
 </tr><tr>
 <td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/acceptance-based-trajectory-methods.html"><strong>Acceptance-Based Trajectory Methods</strong></a><br><sub>Great Deluge + Record-to-Record Travel + Late Acceptance + Demon executable &middot; Extended/Flex Deluge + distinct Demon variants reviewed/deferred</sub><br><code>acceptance.*</code></td>
 <td width="50%"></td>
+</tr>
+<tr>
+<td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/advanced-iterated-greedy-strategies.html"><strong>Advanced Iterated Greedy Strategies</strong></a><br><sub>5 executable generic controls &middot; 9 complete published variants reviewed separately &middot; exact provenance through 2026</sub><br><code>ig.*</code></td>
+<td width="50%"></td>
 </tr></table>
 
 

@@ -355,6 +355,7 @@ else {
 & (Join-Path $Root "docs\Build-PsoTopologyDocumentation.ps1") -Root $Root -Site $site
 & (Join-Path $Root "docs\Build-AdvancedVariableNeighborhoodDocumentation.ps1") -Root $Root -Site $site
 & (Join-Path $Root "docs\Build-PathRelinkingStrategyDocumentation.ps1") -Root $Root -Site $site
+& (Join-Path $Root "docs\Build-AdvancedIteratedGreedyDocumentation.ps1") -Root $Root -Site $site
 # Inject the project favicon into every generated HTML page, including Doxygen output.
 $allHtmlPages = Get-ChildItem -LiteralPath $site -Recurse -Filter "*.html" -File
 foreach ($htmlPage in $allHtmlPages) {

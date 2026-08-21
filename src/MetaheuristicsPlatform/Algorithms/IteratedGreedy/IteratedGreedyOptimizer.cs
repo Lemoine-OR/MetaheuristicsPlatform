@@ -9,6 +9,8 @@ namespace MetaheuristicsPlatform.Algorithms.IteratedGreedy;
 /// <summary>
 /// Generic Iterated Greedy optimizer following the destruction-reconstruction framework of
 /// Ruiz and Stützle, with optional reusable local improvement and pluggable acceptance.
+/// v0.38.0 adds optional destruction-size control and partial-solution improvement without
+/// changing the canonical stable algorithm identity.
 /// </summary>
 public sealed class IteratedGreedyOptimizer<TSolution,TRemoved> :
     IMetaheuristic<TSolution,IteratedGreedyParameters>
@@ -17,6 +19,8 @@ public sealed class IteratedGreedyOptimizer<TSolution,TRemoved> :
     private readonly IIteratedGreedyDestruction<TSolution,TRemoved> _destruction;
     private readonly IIteratedGreedyConstruction<TSolution,TRemoved> _construction;
     private readonly IIteratedGreedyAcceptancePolicy _acceptance;
+    private readonly IIteratedGreedyDestructionSizePolicy _destructionSizePolicy;
+    private readonly IIteratedGreedyPartialSolutionImprovement<TSolution,TRemoved>? _partialSolutionImprovement;
     private readonly ILocalSearchProcedure<TSolution>? _localSearch;
 
     public IteratedGreedyOptimizer(
@@ -25,12 +29,54 @@ public sealed class IteratedGreedyOptimizer<TSolution,TRemoved> :
         IIteratedGreedyConstruction<TSolution,TRemoved> construction,
         IIteratedGreedyAcceptancePolicy acceptance,
         ILocalSearchProcedure<TSolution>? localSearch = null)
+        : this(
+            initialSolutionGenerator,
+            destruction,
+            construction,
+            acceptance,
+            FixedIteratedGreedyDestructionSizePolicy.Instance,
+            partialSolutionImprovement: null,
+            localSearch: localSearch)
     {
-        _initial = initialSolutionGenerator ?? throw new ArgumentNullException(nameof(initialSolutionGenerator));
-        _destruction = destruction ?? throw new ArgumentNullException(nameof(destruction));
-        _construction = construction ?? throw new ArgumentNullException(nameof(construction));
-        _acceptance = acceptance ?? throw new ArgumentNullException(nameof(acceptance));
-        _localSearch = localSearch;
+    }
+
+    /// <summary>
+    /// Advanced composition constructor. The original constructor remains source compatible.
+    /// </summary>
+    public IteratedGreedyOptimizer(
+        INeighborhoodSearchInitialSolutionGenerator<TSolution> initialSolutionGenerator,
+        IIteratedGreedyDestruction<TSolution,TRemoved> destruction,
+        IIteratedGreedyConstruction<TSolution,TRemoved> construction,
+        IIteratedGreedyAcceptancePolicy acceptance,
+        IIteratedGreedyDestructionSizePolicy destructionSizePolicy,
+        IIteratedGreedyPartialSolutionImprovement<TSolution,TRemoved>? partialSolutionImprovement = null,
+        ILocalSearchProcedure<TSolution>? localSearch = null)
+    {
+        _initial =
+            initialSolutionGenerator ??
+            throw new ArgumentNullException(nameof(initialSolutionGenerator));
+
+        _destruction =
+            destruction ??
+            throw new ArgumentNullException(nameof(destruction));
+
+        _construction =
+            construction ??
+            throw new ArgumentNullException(nameof(construction));
+
+        _acceptance =
+            acceptance ??
+            throw new ArgumentNullException(nameof(acceptance));
+
+        _destructionSizePolicy =
+            destructionSizePolicy ??
+            throw new ArgumentNullException(nameof(destructionSizePolicy));
+
+        _partialSolutionImprovement =
+            partialSolutionImprovement;
+
+        _localSearch =
+            localSearch;
     }
 
     public MetaheuristicDescriptor Descriptor { get; } = new()
@@ -82,6 +128,7 @@ public sealed class IteratedGreedyOptimizer<TSolution,TRemoved> :
         long rejectedCandidates = 0;
         long localSearchInvocations = 0;
         long acceptedLocalSearchMoves = 0;
+        int consecutiveNonImprovingIterations = 0;
 
         var initialState = new IteratedGreedyState(
             0,
@@ -93,8 +140,15 @@ public sealed class IteratedGreedyOptimizer<TSolution,TRemoved> :
 
         context.Start(initialState);
 
-        TSolution current = _initial.Create(problem, context.Random);
-        double currentObjective = context.Evaluate(current, initialState);
+        TSolution current =
+            _initial.Create(
+                problem,
+                context.Random);
+
+        double currentObjective =
+            context.Evaluate(
+                current,
+                initialState);
 
         if (_localSearch is not null)
         {
@@ -107,8 +161,11 @@ public sealed class IteratedGreedyOptimizer<TSolution,TRemoved> :
                     cancellationToken);
 
             localSearchInvocations++;
-            acceptedLocalSearchMoves += initialImprovement.AcceptedMoves;
-            currentObjective = initialImprovement.Fitness;
+            acceptedLocalSearchMoves +=
+                initialImprovement.AcceptedMoves;
+
+            currentObjective =
+                initialImprovement.Fitness;
 
             if (initialImprovement.StoppingDecision.ShouldStop)
             {
@@ -127,18 +184,21 @@ public sealed class IteratedGreedyOptimizer<TSolution,TRemoved> :
             }
         }
 
-        IteratedGreedyState state = CreateState(
-            0,
-            currentObjective,
-            context.State.BestFitness,
-            currentObjective,
-            parameters.DestructionSize,
-            acceptedCandidates,
-            rejectedCandidates,
-            localSearchInvocations,
-            acceptedLocalSearchMoves);
+        IteratedGreedyState state =
+            CreateState(
+                0,
+                currentObjective,
+                context.State.BestFitness,
+                currentObjective,
+                parameters.DestructionSize,
+                acceptedCandidates,
+                rejectedCandidates,
+                localSearchInvocations,
+                acceptedLocalSearchMoves);
 
-        StoppingDecision stop = context.EvaluateStopping(state);
+        StoppingDecision stop =
+            context.EvaluateStopping(state);
+
         if (stop.ShouldStop)
             return context.Complete(stop, state);
 
@@ -146,14 +206,44 @@ public sealed class IteratedGreedyOptimizer<TSolution,TRemoved> :
         {
             cancellationToken.ThrowIfCancellationRequested();
 
-            TSolution candidate = solutionCloner.Clone(current);
+            long improvementCountBeforeIteration =
+                context.State.ImprovementCount;
+
+            var sizeContext =
+                new IteratedGreedyDestructionSizeContext(
+                    problem.Sense,
+                    iteration,
+                    parameters.DestructionSize,
+                    consecutiveNonImprovingIterations,
+                    currentObjective,
+                    context.State.BestFitness);
+
+            int destructionSize =
+                _destructionSizePolicy.SelectDestructionSize(
+                    in sizeContext);
+
+            if (destructionSize <= 0)
+            {
+                throw new InvalidOperationException(
+                    "The Iterated Greedy destruction-size policy returned a non-positive size.");
+            }
+
+            TSolution candidate =
+                solutionCloner.Clone(current);
 
             TRemoved removed =
                 _destruction.Destroy(
                     ref candidate,
-                    parameters.DestructionSize,
+                    destructionSize,
                     problem,
                     context.Random);
+
+            _partialSolutionImprovement?.Improve(
+                ref candidate,
+                in removed,
+                problem,
+                context.Random,
+                cancellationToken);
 
             _construction.Reconstruct(
                 ref candidate,
@@ -161,21 +251,40 @@ public sealed class IteratedGreedyOptimizer<TSolution,TRemoved> :
                 problem,
                 context.Random);
 
-            state = CreateState(
-                iteration - 1,
-                currentObjective,
-                context.State.BestFitness,
-                double.NaN,
-                parameters.DestructionSize,
-                acceptedCandidates,
-                rejectedCandidates,
-                localSearchInvocations,
-                acceptedLocalSearchMoves);
+            state =
+                CreateState(
+                    iteration - 1,
+                    currentObjective,
+                    context.State.BestFitness,
+                    double.NaN,
+                    destructionSize,
+                    acceptedCandidates,
+                    rejectedCandidates,
+                    localSearchInvocations,
+                    acceptedLocalSearchMoves);
 
             double candidateObjective =
-                context.Evaluate(candidate, state);
+                context.Evaluate(
+                    candidate,
+                    state);
 
-            stop = context.EvaluateStopping(state);
+            // Audit fix v0.38.0: stopping criteria now receive the objective of the
+            // complete reconstructed candidate that has just been evaluated.
+            state =
+                CreateState(
+                    iteration - 1,
+                    currentObjective,
+                    context.State.BestFitness,
+                    candidateObjective,
+                    destructionSize,
+                    acceptedCandidates,
+                    rejectedCandidates,
+                    localSearchInvocations,
+                    acceptedLocalSearchMoves);
+
+            stop =
+                context.EvaluateStopping(state);
+
             if (stop.ShouldStop)
                 return context.Complete(stop, state);
 
@@ -190,8 +299,11 @@ public sealed class IteratedGreedyOptimizer<TSolution,TRemoved> :
                         cancellationToken);
 
                 localSearchInvocations++;
-                acceptedLocalSearchMoves += localResult.AcceptedMoves;
-                candidateObjective = localResult.Fitness;
+                acceptedLocalSearchMoves +=
+                    localResult.AcceptedMoves;
+
+                candidateObjective =
+                    localResult.Fitness;
 
                 if (localResult.StoppingDecision.ShouldStop)
                 {
@@ -202,7 +314,7 @@ public sealed class IteratedGreedyOptimizer<TSolution,TRemoved> :
                             currentObjective,
                             context.State.BestFitness,
                             candidateObjective,
-                            parameters.DestructionSize,
+                            destructionSize,
                             acceptedCandidates,
                             rejectedCandidates,
                             localSearchInvocations,
@@ -218,10 +330,16 @@ public sealed class IteratedGreedyOptimizer<TSolution,TRemoved> :
                     candidateObjective,
                     context.State.BestFitness);
 
-            if (_acceptance.ShouldAccept(in acceptanceContext, context.Random))
+            if (_acceptance.ShouldAccept(
+                    in acceptanceContext,
+                    context.Random))
             {
-                current = candidate;
-                currentObjective = candidateObjective;
+                current =
+                    candidate;
+
+                currentObjective =
+                    candidateObjective;
+
                 acceptedCandidates++;
             }
             else
@@ -229,34 +347,53 @@ public sealed class IteratedGreedyOptimizer<TSolution,TRemoved> :
                 rejectedCandidates++;
             }
 
-            state = CreateState(
-                iteration,
+            if (context.State.ImprovementCount >
+                improvementCountBeforeIteration)
+            {
+                consecutiveNonImprovingIterations = 0;
+            }
+            else
+            {
+                consecutiveNonImprovingIterations =
+                    checked(
+                        consecutiveNonImprovingIterations +
+                        1);
+            }
+
+            state =
+                CreateState(
+                    iteration,
+                    currentObjective,
+                    context.State.BestFitness,
+                    candidateObjective,
+                    destructionSize,
+                    acceptedCandidates,
+                    rejectedCandidates,
+                    localSearchInvocations,
+                    acceptedLocalSearchMoves);
+
+            context.CompleteIteration(
+                currentObjective,
+                state);
+
+            stop =
+                context.EvaluateStopping(state);
+
+            if (stop.ShouldStop)
+                return context.Complete(stop, state);
+        }
+
+        state =
+            CreateState(
+                parameters.MaximumIterations,
                 currentObjective,
                 context.State.BestFitness,
-                candidateObjective,
+                currentObjective,
                 parameters.DestructionSize,
                 acceptedCandidates,
                 rejectedCandidates,
                 localSearchInvocations,
                 acceptedLocalSearchMoves);
-
-            context.CompleteIteration(currentObjective, state);
-
-            stop = context.EvaluateStopping(state);
-            if (stop.ShouldStop)
-                return context.Complete(stop, state);
-        }
-
-        state = CreateState(
-            parameters.MaximumIterations,
-            currentObjective,
-            context.State.BestFitness,
-            currentObjective,
-            parameters.DestructionSize,
-            acceptedCandidates,
-            rejectedCandidates,
-            localSearchInvocations,
-            acceptedLocalSearchMoves);
 
         return context.Complete(
             StoppingDecision.Stop(

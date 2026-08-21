@@ -147,7 +147,8 @@ foreach ($catalogRelative in @(
     "docs\sa-cooling-catalog.json",
     "docs\threshold-accepting-schedule-catalog.json",
     "docs\acceptance-based-trajectory-catalog.json",
-    "docs\ts-memory-control-catalog.json"
+    "docs\ts-memory-control-catalog.json",
+    "docs\advanced-iterated-greedy-catalog.json"
 )) {
     $componentCatalog =
         (Read-Utf8 $catalogRelative) |
@@ -264,7 +265,8 @@ foreach ($specialBuilder in @(
     "docs\Build-ThresholdAcceptingScheduleDocumentation.ps1",
     "docs\Build-AcceptanceBasedTrajectoryDocumentation.ps1",
     "docs\Build-TabuSearchAdvancedDocumentation.ps1",
-    "docs\Build-PathRelinkingStrategyDocumentation.ps1"
+    "docs\Build-PathRelinkingStrategyDocumentation.ps1",
+    "docs\Build-AdvancedIteratedGreedyDocumentation.ps1"
 )) {
     $specialSource = Read-Utf8 $specialBuilder
 

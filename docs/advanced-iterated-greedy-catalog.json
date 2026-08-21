@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "release": "0.38.0",
+  "family": "Advanced Iterated Greedy",
+  "implementedCount": 5,
+  "reviewedDeferredCount": 9,
+  "entries": [
+    {
+      "id": "ig.destruction.fixed",
+      "name": "Fixed destruction size",
+      "status": "implemented",
+      "scope": "generic",
+      "description": "Canonical fixed destruction size supplied by IteratedGreedyParameters.",
+      "formulaMode": "math",
+      "formula": "d_k=d_0",
+      "publication": "Ruiz & Stützle (2007)",
+      "doi": "10.1016/j.ejor.2005.12.009"
+    },
+    {
+      "id": "ig.destruction.stagnation-escalating",
+      "name": "Stagnation-escalating destruction size",
+      "status": "implemented",
+      "scope": "generic-platform-control",
+      "description": "Generic size escalation with a configurable stagnation window and cap. Inspired by adaptive-destruction IG research but not presented as an exact reproduction of a problem-specific AIG controller.",
+      "formulaMode": "math",
+      "formula": "d_k=\\min\\!\\left\\{d_{\\max},d_{\\min}+\\left\\lfloor\\frac{s_k}{q}\\right\\rfloor\\delta_d\\right\\}",
+      "publication": "Adaptive-destruction design informed by Li et al. (2021)",
+      "doi": "10.1016/j.swevo.2021.100874"
+    },
+    {
+      "id": "ig.partial-improvement.hook",
+      "name": "Partial-solution improvement hook",
+      "status": "implemented",
+      "scope": "generic-composition",
+      "description": "Domain-defined improvement executed after destruction and before reconstruction. The common full-solution evaluator is deliberately not exposed.",
+      "formulaMode": "prose",
+      "formula": "A domain-defined operator improves the partial representation between destruction and reconstruction; partial objective semantics remain owned by the problem domain.",
+      "publication": "Dubois-Lacoste, Pagnozzi & Stützle (2017)",
+      "doi": "10.1016/j.cor.2016.12.021"
+    },
+    {
+      "id": "ig.acceptance.improving-only",
+      "name": "Strict-improvement acceptance",
+      "status": "implemented",
+      "scope": "generic",
+      "description": "Accept only a strict improvement over the incumbent.",
+      "formulaMode": "math",
+      "formula": "A_k=\\mathbf 1\\!\\left[\\Delta_k<0\\right]",
+      "publication": "Canonical deterministic IG-compatible acceptance",
+      "doi": "10.1016/j.ejor.2005.12.009"
+    },
+    {
+      "id": "ig.acceptance.constant-temperature",
+      "name": "Constant-temperature Metropolis acceptance",
+      "status": "implemented",
+      "scope": "generic",
+      "description": "Objective-scale Metropolis acceptance; problem-specific temperature normalization remains outside the generic core.",
+      "formulaMode": "math",
+      "formula": "P(A_k=1)=\\begin{cases}1,&\\Delta_k\\le0,\\\\\\exp(-\\Delta_k/\\tau),&\\Delta_k>0.\\end{cases}",
+      "publication": "Ruiz & Stützle (2007)",
+      "doi": "10.1016/j.ejor.2005.12.009"
+    },
+    {
+      "id": "ig.bounded-search.fernandez-viagas-framinan-2015",
+      "name": "Bounded-search Iterated Greedy",
+      "status": "reviewed-deferred",
+      "scope": "distributed-permutation-flowshop",
+      "description": "Problem-structure-specific bounded search and multi-phase local improvement; not reducible to a generic destruction-size flag.",
+      "formulaMode": "prose",
+      "formula": "Distributed-flowshop-specific bounded search combines assignment/scheduling structure with dedicated local-search phases.",
+      "publication": "Fernandez-Viagas & Framinan (2015)",
+      "doi": "10.1080/00207543.2014.948578"
+    },
+    {
+      "id": "ig.tabu-reconstruction.ding-et-al-2015",
+      "name": "Tabu-based reconstruction IG",
+      "status": "reviewed-deferred",
+      "scope": "no-wait-flowshop",
+      "description": "Tabu-based reconstruction plus dedicated insert/swap/double-insert local search.",
+      "formulaMode": "prose",
+      "formula": "The reconstruction phase uses Tabu memory and no-wait-flowshop-specific neighborhoods; an exact implementation requires dedicated reconstruction-memory semantics.",
+      "publication": "Ding et al. (2015)",
+      "doi": "10.1016/j.asoc.2015.02.006"
+    },
+    {
+      "id": "ig.partial-optimization.dubois-lacoste-pagnozzi-stutzle-2017",
+      "name": "IG with optimization of partial solutions",
+      "status": "reviewed-deferred",
+      "scope": "permutation-flowshop",
+      "description": "The v0.38 partial-improvement hook supports faithful domain composition, but the exact PFSP partial local search remains problem-specific.",
+      "formulaMode": "prose",
+      "formula": "After destruction, a valid problem-specific partial objective is locally optimized before the removed components are reconstructed.",
+      "publication": "Dubois-Lacoste, Pagnozzi & Stützle (2017)",
+      "doi": "10.1016/j.cor.2016.12.021"
+    },
+    {
+      "id": "ig.reference-greedy.ying-lin-cheng-he-2017",
+      "name": "Iterated Reference Greedy",
+      "status": "reviewed-deferred",
+      "scope": "distributed-no-idle-permutation-flowshop",
+      "description": "Reference-guided distributed no-idle mechanism requiring a first-class reference-solution contract.",
+      "formulaMode": "prose",
+      "formula": "A reference-guided greedy cycle uses problem-specific distributed no-idle structure; it is not equivalent to ordinary IG with a scalar parameter.",
+      "publication": "Ying, Lin, Cheng & He (2017)",
+      "doi": "10.1016/j.cie.2017.06.025"
+    },
+    {
+      "id": "ig.distributed.ruiz-pan-naderi-2019",
+      "name": "Distributed PFSP Iterated Greedy methods",
+      "status": "reviewed-deferred",
+      "scope": "distributed-permutation-flowshop",
+      "description": "Improved initialization, construction, destruction and strong intensification for distributed PFSP.",
+      "formulaMode": "prose",
+      "formula": "The published method couples factory assignment, specialized construction/destruction and distributed-flowshop local intensification.",
+      "publication": "Ruiz, Pan & Naderi (2019)",
+      "doi": "10.1016/j.omega.2018.03.004"
+    },
+    {
+      "id": "ig.best-of-breed.fernandez-viagas-framinan-2019",
+      "name": "Best-of-breed Iterated Greedy",
+      "status": "reviewed-deferred",
+      "scope": "permutation-flowshop-makespan",
+      "description": "Combined state-of-the-art PFSP mechanisms including FF insertion tie-breaking.",
+      "formulaMode": "prose",
+      "formula": "A specialized best-of-breed combination integrates PFSP acceleration and tie-breaking mechanisms rather than one generic control equation.",
+      "publication": "Fernandez-Viagas & Framinan (2019)",
+      "doi": "10.1016/j.cor.2019.104767"
+    },
+    {
+      "id": "ig.due-windows.jing-pan-gao-wang-2020",
+      "name": "Distributed PFSP due-windows Iterated Greedy",
+      "status": "reviewed-deferred",
+      "scope": "distributed-permutation-flowshop-due-windows",
+      "description": "TWET/due-window-specific distributed IG.",
+      "formulaMode": "prose",
+      "formula": "The method embeds distributed-flowshop due-window objective structure and dedicated operators that are not representation-independent.",
+      "publication": "Jing, Pan, Gao & Wang (2020)",
+      "doi": "10.1016/j.asoc.2020.106629"
+    },
+    {
+      "id": "ig.adaptive.li-pan-li-gao-tasgetiren-2021",
+      "name": "Adaptive Iterated Greedy",
+      "status": "reviewed-deferred",
+      "scope": "distributed-mixed-no-idle-permutation-flowshop",
+      "description": "Adaptive destruction sample length, restart, influence-based removal and problem-specific accelerations.",
+      "formulaMode": "prose",
+      "formula": "The exact AIG combines adaptive sample length, restart, influence-based removal, referenced local search and mixed-no-idle accelerations; v0.38 implements only representation-independent primitives.",
+      "publication": "Li, Pan, Li, Gao & Tasgetiren (2021)",
+      "doi": "10.1016/j.swevo.2021.100874"
+    },
+    {
+      "id": "ig.two-stage.zhang-qian-hu-li-yang-2026",
+      "name": "Two-stage Iterated Greedy",
+      "status": "reviewed-deferred",
+      "scope": "distributed-blocking-flowshop",
+      "description": "Recent two-stage IG for distributed blocking flowshops.",
+      "formulaMode": "prose",
+      "formula": "The two-stage search is tied to blocking-flowshop structure and dedicated stage operators; it remains separately reviewed rather than being represented by a generic Boolean option.",
+      "publication": "Zhang, Qian, Hu, Li & Yang (2026)",
+      "doi": "10.1016/j.eswa.2025.130422"
+    }
+  ],
+  "references": [
+    {
+      "publication": "Ruiz & Stützle (2007), canonical Iterated Greedy",
+      "doi": "10.1016/j.ejor.2005.12.009"
+    },
+    {
+      "publication": "Fernandez-Viagas & Framinan (2015), bounded-search IG",
+      "doi": "10.1080/00207543.2014.948578"
+    },
+    {
+      "publication": "Ding et al. (2015), Tabu-based reconstruction IG",
+      "doi": "10.1016/j.asoc.2015.02.006"
+    },
+    {
+      "publication": "Dubois-Lacoste, Pagnozzi & Stützle (2017), partial-solution optimization",
+      "doi": "10.1016/j.cor.2016.12.021"
+    },
+    {
+      "publication": "Ying, Lin, Cheng & He (2017), Iterated Reference Greedy",
+      "doi": "10.1016/j.cie.2017.06.025"
+    },
+    {
+      "publication": "Ruiz, Pan & Naderi (2019), distributed PFSP IG",
+      "doi": "10.1016/j.omega.2018.03.004"
+    },
+    {
+      "publication": "Fernandez-Viagas & Framinan (2019), best-of-breed IG",
+      "doi": "10.1016/j.cor.2019.104767"
+    },
+    {
+      "publication": "Jing, Pan, Gao & Wang (2020), due-windows IG",
+      "doi": "10.1016/j.asoc.2020.106629"
+    },
+    {
+      "publication": "Li, Pan, Li, Gao & Tasgetiren (2021), Adaptive IG",
+      "doi": "10.1016/j.swevo.2021.100874"
+    },
+    {
+      "publication": "Zhang, Qian, Hu, Li & Yang (2026), two-stage IG",
+      "doi": "10.1016/j.eswa.2025.130422"
+    }
+  ]
+}

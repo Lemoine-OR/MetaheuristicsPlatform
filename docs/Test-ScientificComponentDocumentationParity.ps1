@@ -209,7 +209,8 @@ Require-Contains `
         "Build-AdvancedVariableNeighborhoodDocumentation.ps1",
         "Build-ThresholdAcceptingScheduleDocumentation.ps1",
         "Build-AcceptanceBasedTrajectoryDocumentation.ps1",
-        "Build-PathRelinkingStrategyDocumentation.ps1"
+        "Build-PathRelinkingStrategyDocumentation.ps1",
+        "Build-AdvancedIteratedGreedyDocumentation.ps1"
     )
 
 Require-Contains `
@@ -218,7 +219,8 @@ Require-Contains `
         "@subpage advanced_variable_neighborhood_search_variants",
         "@subpage threshold_accepting_schedules",
         "@subpage acceptance_based_trajectory_methods",
-        "@subpage path_relinking_strategies"
+        "@subpage path_relinking_strategies",
+        "@subpage advanced_iterated_greedy_strategies"
     )
 
 Require-Contains `
@@ -232,6 +234,14 @@ Require-Contains `
         "@page advanced_variable_neighborhood_search_variants"
     )
 
+Require-Contains `
+    "docs\Build-AdvancedIteratedGreedyDocumentation.ps1" @(
+        "Advanced Iterated Greedy Strategies",
+        "advanced-iterated-greedy-strategies.html",
+        "advanced-iterated-greedy-catalog.json",
+        "formula-note",
+        "mathjax@3.2.2/es5/tex-chtml.js"
+    )
 $readme = Read-Utf8 "README.md"
 
 foreach ($marker in @(
@@ -243,7 +253,8 @@ foreach ($marker in @(
     "components/acceptance-based-trajectory-methods.html",
     "components/tabu-search-memory-control-strategies.html",
     "components/advanced-variable-neighborhood-search-variants.html",
-    "components/path-relinking-strategies.html"
+    "components/path-relinking-strategies.html",
+    "components/advanced-iterated-greedy-strategies.html"
 )) {
     if (-not $readme.Contains($marker)) {
         throw "README documentation parity: missing '$marker'."
@@ -267,5 +278,5 @@ foreach ($heading in @(
 }
 
 Write-Host `
-    "Scientific component documentation parity passed: 10 PSO topologies, 4 README family headings, PSO/VNS/Threshold-Accepting/Dueck-Acceptance/Path-Relinking component builders wired." `
+    "Scientific component documentation parity passed: PSO/VNS/Threshold-Accepting/Dueck-Acceptance/Path-Relinking/Advanced-IG component builders wired." `
     -ForegroundColor Green
