@@ -38,12 +38,49 @@ foreach ($marker in @(
     'WARN_LOGFILE',
     'MATHJAX_FORMAT',
     'MATHJAX_RELPATH',
-    'mathjax@3.2.2'
+    'mathjax@3.2.2',
+    'NUM_PROC_THREADS',
+    'CLASS_GRAPH',
+    'COLLABORATION_GRAPH',
+    'GROUP_GRAPHS',
+    'INCLUDE_GRAPH',
+    'INCLUDED_BY_GRAPH',
+    'DIRECTORY_GRAPH',
+    'GRAPHICAL_HIERARCHY',
+    'DOT_GRAPH_MAX_NODES',
+    'MAX_DOT_GRAPH_DEPTH'
 )) {
     if (-not $doxyfile.Contains($marker)) {
         throw "Doxygen quality validation: Doxyfile is missing '$marker'."
     }
 }
+
+foreach ($graphPolicyMarker in @(
+    'CLASS_GRAPH            = BUILTIN',
+    'COLLABORATION_GRAPH    = NO',
+    'GROUP_GRAPHS           = NO',
+    'INCLUDE_GRAPH          = NO',
+    'INCLUDED_BY_GRAPH      = NO',
+    'DIRECTORY_GRAPH        = NO',
+    'GRAPHICAL_HIERARCHY    = NO',
+    'CALL_GRAPH             = NO',
+    'CALLER_GRAPH           = NO',
+    'DOT_GRAPH_MAX_NODES    = 40',
+    'MAX_DOT_GRAPH_DEPTH    = 2'
+)) {
+    if (-not $doxyfile.Contains($graphPolicyMarker)) {
+        throw "Doxygen quality validation: scalable graph policy is missing '$graphPolicyMarker'."
+    }
+}
+if (-not $doxyfile.Contains('NUM_PROC_THREADS       = 0')) {
+
+    throw "Doxygen quality validation: parallel input processing policy is missing 'NUM_PROC_THREADS       = 0'."
+
+}
+
+
+
+# parallel input processing policy
 
 $filter =
     Read-Utf8 "docs\Doxygen-CSharpCompatibilityFilter.ps1"
