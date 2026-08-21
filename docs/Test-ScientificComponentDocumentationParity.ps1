@@ -210,7 +210,8 @@ Require-Contains `
         "Build-ThresholdAcceptingScheduleDocumentation.ps1",
         "Build-AcceptanceBasedTrajectoryDocumentation.ps1",
         "Build-PathRelinkingStrategyDocumentation.ps1",
-        "Build-AdvancedIteratedGreedyDocumentation.ps1"
+        "Build-AdvancedIteratedGreedyDocumentation.ps1",
+        "Build-AdvancedScatterSearchDocumentation.ps1"
     )
 
 Require-Contains `
@@ -220,7 +221,8 @@ Require-Contains `
         "@subpage threshold_accepting_schedules",
         "@subpage acceptance_based_trajectory_methods",
         "@subpage path_relinking_strategies",
-        "@subpage advanced_iterated_greedy_strategies"
+        "@subpage advanced_iterated_greedy_strategies",
+        "@subpage advanced_scatter_search_strategies"
     )
 
 Require-Contains `
@@ -242,6 +244,23 @@ Require-Contains `
         "formula-note",
         "mathjax@3.2.2/es5/tex-chtml.js"
     )
+Require-Contains `
+    "docs\Build-AdvancedScatterSearchDocumentation.ps1" @(
+        "Advanced Scatter Search Strategies",
+        "advanced-scatter-search-strategies.html",
+        "advanced-scatter-search-catalog.json",
+        "formula-note",
+        "mathjax@3.2.2/es5/tex-chtml.js"
+    )
+
+Require-Contains `
+    "docs\pages\components\advanced-scatter-search-strategies.md" @(
+        "@page advanced_scatter_search_strategies",
+        "ss.refset.update.dynamic-refresh",
+        "ss.refset.update.two-tier",
+        "ss.refset.rebuild.max-min",
+        "ss.subsets.glover-types-1-4"
+    )
 $readme = Read-Utf8 "README.md"
 
 foreach ($marker in @(
@@ -254,7 +273,8 @@ foreach ($marker in @(
     "components/tabu-search-memory-control-strategies.html",
     "components/advanced-variable-neighborhood-search-variants.html",
     "components/path-relinking-strategies.html",
-    "components/advanced-iterated-greedy-strategies.html"
+    "components/advanced-iterated-greedy-strategies.html",
+    "components/advanced-scatter-search-strategies.html"
 )) {
     if (-not $readme.Contains($marker)) {
         throw "README documentation parity: missing '$marker'."
@@ -278,5 +298,5 @@ foreach ($heading in @(
 }
 
 Write-Host `
-    "Scientific component documentation parity passed: PSO/VNS/Threshold-Accepting/Dueck-Acceptance/Path-Relinking/Advanced-IG component builders wired." `
+    "Scientific component documentation parity passed: PSO/VNS/Threshold-Accepting/Dueck-Acceptance/Path-Relinking/Advanced-IG/Advanced-SS component builders wired." `
     -ForegroundColor Green

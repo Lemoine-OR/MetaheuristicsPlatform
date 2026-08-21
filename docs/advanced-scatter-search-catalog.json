@@ -1,0 +1,119 @@
+{
+  "version": "0.40.0",
+  "algorithmId": "scatter-search-marti-laguna-glover-2006",
+  "entries": [
+    {
+      "id": "ss.refset.update.dynamic-refresh",
+      "name": "Dynamic RefSet refresh",
+      "status": "implemented",
+      "description": "After an accepted RefSet update, stop the stale subset schedule so the next combination round is generated from the updated RefSet.",
+      "formulaMode": "math",
+      "formula": "y\\in\\operatorname{Admit}(R_k)\\Longrightarrow R_{k+1}\\leftarrow\\operatorname{Update}(R_k,y),\\quad \\mathcal S_{k+1}\\leftarrow\\operatorname{Subsets}(R_{k+1})",
+      "doi": "10.1016/j.ejor.2004.08.004"
+    },
+    {
+      "id": "ss.refset.update.two-tier",
+      "name": "Two-tier quality/diversity RefSet",
+      "status": "implemented",
+      "description": "Maintain b1 high-quality solutions and b2 diversity-oriented solutions with separate admission criteria.",
+      "formulaMode": "math",
+      "formula": "\\begin{aligned}R&=R^{Q}\\cup R^{D},\\quad |R^{Q}|=b_1,\\quad |R^{D}|=b_2,\\\\R^{Q}&\\leftarrow\\operatorname{ImproveQuality}(R^{Q},y),\\\\R^{D}&\\leftarrow\\operatorname{ImproveMaxMinDiversity}(R^{D},y)\\end{aligned}",
+      "doi": "10.1007/978-1-4615-0337-8"
+    },
+    {
+      "id": "ss.refset.rebuild.max-min",
+      "name": "Partial max-min RefSet rebuilding",
+      "status": "implemented",
+      "description": "At stagnation, retain the quality tier and refill the diversity tier from a fresh diversified population by sequential max-min selection.",
+      "formulaMode": "math",
+      "formula": "x^\\star\\in\\operatorname*{arg\\,max}_{x\\in P_{\\mathrm{new}}\\setminus R}\\min_{r\\in R}d(x,r)",
+      "doi": "10.1016/j.ejor.2004.08.004"
+    },
+    {
+      "id": "ss.diversity.minimum-distance",
+      "name": "Minimum diversity threshold",
+      "status": "implemented",
+      "description": "Require a candidate for the quality tier to remain at least th_dist away from the already retained quality representatives.",
+      "formulaMode": "math",
+      "formula": "d_{\\min}(x)=\\min_{r\\in R^{Q}}d(x,r)\\ge \\operatorname{th}_{\\mathrm{dist}}",
+      "doi": "10.1016/j.ejor.2004.08.004"
+    },
+    {
+      "id": "ss.subsets.glover-types-1-4",
+      "name": "Representative Subset Types 1-4",
+      "status": "implemented",
+      "description": "Generate all pairs, representative augmented triples and quadruples, then nested best-i subsets for i=5..b, while avoiding repeated subsets.",
+      "formulaMode": "math",
+      "formula": "\\begin{aligned}\\mathcal S_1&=\\{S\\subseteq R:|S|=2\\},\\\\\\mathcal S_2&=\\{\\operatorname{AugmentBest}(S):S\\in\\mathcal S_1\\},\\\\\\mathcal S_3&=\\{\\operatorname{AugmentBest}(S):S\\in\\mathcal S_2\\},\\\\\\mathcal S_4&=\\{\\{r_1,\\ldots,r_i\\}:5\\le i\\le b\\}\\end{aligned}",
+      "doi": "10.1016/j.ejor.2004.08.004"
+    },
+    {
+      "id": "ss.refset.update.three-tier-good-generators",
+      "name": "Three-tier good-generator RefSet",
+      "status": "reviewed/deferred",
+      "description": "Requires g(x), the best offspring quality historically generated with each reference solution, and therefore a generator-performance memory contract not present in the generic five-method API.",
+      "formulaMode": "prose",
+      "formula": "Reviewed faithfully as a three-tier generator-performance design; deferred until per-reference offspring-performance memory is represented explicitly.",
+      "doi": "10.1007/978-1-4615-0337-8"
+    },
+    {
+      "id": "ss.diversity.hashing",
+      "name": "Hash-assisted duplication control",
+      "status": "reviewed/deferred",
+      "description": "The literature gives representation-specific hashing, including a permutation hash; a universal hash with correct equality semantics cannot be manufactured generically.",
+      "formulaMode": "prose",
+      "formula": "Reviewed as a representation-specific acceleration of duplicate checks; deferred rather than pretending that one generic hash is collision-safe and semantically complete.",
+      "doi": "10.1007/978-1-4615-0337-8"
+    },
+    {
+      "id": "ss.combination.variable-cardinality",
+      "name": "Variable-cardinality specialized combination",
+      "status": "reviewed/deferred",
+      "description": "Advanced combination methods depend on representation and problem structure rather than one universal operator.",
+      "formulaMode": "prose",
+      "formula": "Reviewed from the advanced-design literature and deferred to representation-specific composition contracts.",
+      "doi": "10.1007/978-1-4615-0337-8"
+    },
+    {
+      "id": "ss.combination.binary",
+      "name": "Binary-variable specialized combination",
+      "status": "reviewed/deferred",
+      "description": "Binary combination semantics require a binary decision representation and cannot be imposed on continuous, permutation and mixed solutions.",
+      "formulaMode": "prose",
+      "formula": "Reviewed as a specialized binary combination family and deferred to a binary representation contract.",
+      "doi": "10.1007/978-1-4615-0337-8"
+    },
+    {
+      "id": "ss.memory.explicit-evaluated-solutions",
+      "name": "Explicit evaluated-solution memory",
+      "status": "reviewed/deferred",
+      "description": "Useful when objective evaluations are expensive; requires stable solution identity or representation-specific hashing and a bounded memory policy.",
+      "formulaMode": "prose",
+      "formula": "Reviewed as explicit memory for avoiding repeated expensive evaluations; deferred until solution identity and memory-bounding semantics are explicit.",
+      "doi": "10.1016/j.ejor.2004.08.004"
+    },
+    {
+      "id": "ss.path-relinking.deep-integration",
+      "name": "Deep Scatter Search / Path Relinking integration",
+      "status": "reviewed/deferred",
+      "description": "Path Relinking can serve as a combination/intensification mechanism, but a faithful generic integration must connect the existing PR trajectory contracts to Scatter Search subset semantics.",
+      "formulaMode": "prose",
+      "formula": "Reviewed as a pool-oriented Scatter Search and Path Relinking integration; deferred to a dedicated typed bridge rather than reduced to a boolean flag.",
+      "doi": "10.1007/978-3-540-39930-8_4"
+    }
+  ],
+  "references": [
+    {
+      "publication": "Martí, Laguna & Glover (2006), Principles of scatter search, European Journal of Operational Research 169(2), 359-372",
+      "doi": "10.1016/j.ejor.2004.08.004"
+    },
+    {
+      "publication": "Laguna & Martí (2003), Scatter Search: Methodology and Implementations in C",
+      "doi": "10.1007/978-1-4615-0337-8"
+    },
+    {
+      "publication": "Glover, Laguna & Martí (2004), Scatter Search and Path Relinking: Foundations and Advanced Designs",
+      "doi": "10.1007/978-3-540-39930-8_4"
+    }
+  ]
+}

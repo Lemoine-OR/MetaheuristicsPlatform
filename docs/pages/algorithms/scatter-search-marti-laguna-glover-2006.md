@@ -10,7 +10,7 @@ combination. Unlike a classical genetic algorithm, the canonical methodology doe
 require randomized selection or randomized recombination: the defining principle is to
 exploit information contained in strategically chosen reference solutions.
 
-The v0.39.0 implementation exposes the five-method template explicitly:
+The v0.40.0 implementation preserves the five-method template explicitly:
 
 1. Diversification Generation Method;
 2. Improvement Method (optional but first-class);
@@ -270,18 +270,26 @@ exploration assumptions that the generic library does not claim.
 - Glover (1977) introduced the Scatter Search idea for integer programming; the v0.39
   stable ID is anchored to the later explicit principles/template reference above.
 
-## Scope boundary for v0.40
+## Advanced Scatter Search in v0.40.0
 
-v0.39 intentionally does **not** collapse advanced Scatter Search designs into flags.
-The following are reserved for **v0.40.0 — Advanced Scatter Search**:
+v0.40.0 keeps the same canonical public algorithm ID and layers scientifically explicit
+components over the five-method foundation:
 
-- dynamic RefSet updating;
-- RefSet rebuilding;
-- 2-tier and 3-tier reference sets;
-- explicit minimum-diversity / hashing controls;
-- advanced subset families;
-- specialized combination methods;
-- additional memory designs and Scatter Search / Path Relinking integration.
+- dynamic RefSet refresh after an accepted admission;
+- a two-tier quality/diversity RefSet updater;
+- optional partial max-min RefSet rebuilding after stable rounds;
+- an explicit minimum-diversity threshold for quality-tier construction;
+- representative Glover/Martí/Laguna Subset Types 1–4.
 
-This preserves the scientific identity of the canonical foundation before advanced
-designs are layered on top.
+See @subpage advanced_scatter_search_strategies "Advanced Scatter Search strategies"
+for the executable `ss.*` component catalog and the designs that remain
+reviewed/deferred.
+
+Compatibility defaults preserve v0.39.0 behavior:
+`ReferenceSetRefreshMode = RoundSnapshot` and
+`MaximumReferenceSetRebuilds = 0`.
+
+The three-tier good-generator design is not approximated: it requires historical
+generator performance \f$g(x)\f$. Hash-assisted duplicate control is likewise kept
+reviewed/deferred until a representation-specific stable identity/hash contract can be
+provided without treating collisions as semantic equality.

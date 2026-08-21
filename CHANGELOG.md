@@ -4,6 +4,34 @@ All notable changes to MetaheuristicsPlatform will be documented in this file.
 
 ## [Unreleased]
 
+## [0.40.0]
+
+### Added
+- Add Advanced Scatter Search scientific components under stable `ss.*` component IDs while preserving the canonical public algorithm ID `scatter-search-marti-laguna-glover-2006`.
+- Add `ScatterSearchReferenceSetRefreshMode.DynamicImmediate`, which refreshes the subset schedule after an accepted RefSet admission so the new reference solution participates in the next combination round.
+- Add `TwoTierScatterSearchReferenceSetUpdateMethod<TSolution>` with separate quality and max-min diversity admission criteria.
+- Add an explicit minimum-diversity threshold for quality-tier construction and replacement.
+- Add `MaxMinScatterSearchReferenceSetRebuildingMethod<TSolution>` and opt-in stagnation-triggered partial rebuilding.
+- Add `GloverScatterSearchSubsetGenerationMethod<TSolution>` implementing representative Subset Types 1-4.
+- Add complete scientific component catalog, portal/Doxygen page and dedicated validation.
+
+### Reviewed / deferred
+- Keep the 3-tier good-generator RefSet design separate because faithful implementation requires historical generator performance g(x).
+- Keep hash-assisted duplication control representation-specific rather than manufacturing a universal collision-safe hash.
+- Keep variable-cardinality and binary specialized combination methods deferred to representation-specific contracts.
+- Keep explicit evaluated-solution memory and deeper Scatter Search / Path Relinking integration deferred until their identity/memory/trajectory contracts are explicit.
+
+### Scientific basis
+- Martí, Laguna & Glover (2006), *Principles of scatter search*, DOI `10.1016/j.ejor.2004.08.004`.
+- Laguna & Martí (2003), *Scatter Search: Methodology and Implementations in C*, DOI `10.1007/978-1-4615-0337-8`.
+- Glover, Laguna & Martí (2004), *Scatter Search and Path Relinking: Foundations and Advanced Designs*, DOI `10.1007/978-3-540-39930-8_4`.
+
+### Compatibility
+- Public algorithm count remains 29.
+- Evolutionary-method count remains 6.
+- Existing v0.39.0 Scatter Search constructors remain source compatible.
+- `ReferenceSetRefreshMode = RoundSnapshot` and `MaximumReferenceSetRebuilds = 0` preserve the v0.39.0 lifecycle by default.
+
 ## [0.39.0]
 
 ### Added

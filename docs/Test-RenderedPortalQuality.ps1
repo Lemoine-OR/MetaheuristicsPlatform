@@ -181,6 +181,10 @@ $componentChecks = @(
     @{
         catalog = "docs\advanced-iterated-greedy-catalog.json"
         page = "components\advanced-iterated-greedy-strategies.html"
+    },
+    @{
+        catalog = "docs\advanced-scatter-search-catalog.json"
+        page = "components\advanced-scatter-search-strategies.html"
     }
 )
 

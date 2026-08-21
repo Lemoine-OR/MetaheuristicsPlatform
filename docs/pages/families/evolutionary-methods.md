@@ -11,7 +11,7 @@ Population methods based on structured variation or combination, selection, refe
 - **[JADE](../algorithms/jade-2009.md)** — `jade-2009` — O(ND + N log N) per generation plus objective-evaluation cost
 - **[SHADE](../algorithms/shade-2013.md)** — `shade-2013` — O(ND + N log N) per generation plus objective-evaluation cost
 - **[L-SHADE](../algorithms/lshade-2014.md)** — `lshade-2014` — O(N_kD + N_k log N_k) at generation k plus objective-evaluation cost
-- **[Scatter Search](../algorithms/scatter-search-marti-laguna-glover-2006.md)** — `scatter-search-marti-laguna-glover-2006` — five-method quality/diversity RefSet search
+- **[Scatter Search](../algorithms/scatter-search-marti-laguna-glover-2006.md)** — `scatter-search-marti-laguna-glover-2006` — five-method RefSet search with advanced dynamic/tiered update, rebuilding and representative subset components
 
 ## Navigation
 

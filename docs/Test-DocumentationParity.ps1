@@ -133,6 +133,10 @@ $requiredRepoFiles = @(
     "docs\Test-IteratedGreedy.ps1",
     "docs\Test-AdvancedIteratedGreedy.ps1",
     "docs\Test-ScatterSearch.ps1",
+    "docs\Test-AdvancedScatterSearch.ps1",
+    "docs\advanced-scatter-search-catalog.json",
+    "docs\Build-AdvancedScatterSearchDocumentation.ps1",
+    "docs\pages\components\advanced-scatter-search-strategies.md",
     "docs\pages\algorithms\scatter-search-marti-laguna-glover-2006.md",
     "docs\advanced-iterated-greedy-catalog.json",
     "docs\Build-AdvancedIteratedGreedyDocumentation.ps1",
@@ -229,8 +233,8 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.39.0") {
-    throw "Documentation parity: version.json must be 0.39.0 for this release."
+if ([string]$version.version -ne "0.40.0") {
+    throw "Documentation parity: version.json must be 0.40.0 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root
@@ -242,6 +246,7 @@ if ([string]$version.version -ne "0.39.0") {
 & (Join-Path $Root "docs\Test-IteratedGreedy.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-AdvancedIteratedGreedy.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-ScatterSearch.ps1") -Root $Root
+& (Join-Path $Root "docs\Test-AdvancedScatterSearch.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-TabuSearchFoundation.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-TabuSearchAdvancedMemory.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-LocalSearchFoundation.ps1") -Root $Root

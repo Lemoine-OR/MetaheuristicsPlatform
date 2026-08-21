@@ -29,6 +29,7 @@ use, start from the project portal and the short guides below.
 - @subpage advanced_variable_neighborhood_search_variants - executable and reviewed/deferred VNS variants.
 - @subpage path_relinking_strategies - forward/backward/mixed direction policies, truncation and greedy-randomized path construction.
 - @subpage advanced_iterated_greedy_strategies - generic IG controls and reviewed complete advanced variants.
+- @subpage advanced_scatter_search_strategies - dynamic/tiered RefSet control, rebuilding, diversity and representative subset families.
 ## Validation and reproducibility
 
 - @subpage complexity_applicability

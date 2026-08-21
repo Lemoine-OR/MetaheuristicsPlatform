@@ -51,3 +51,13 @@ the same spirit as ULSAlgorithms.
 - generic five-method contracts for diversification, improvement, RefSet update, subset generation and solution combination;
 - `ClassicalScatterSearchReferenceSetUpdateMethod<TSolution>` quality/diversity RefSet semantics;
 - `PairwiseNewScatterSearchSubsetGenerationMethod<TSolution>` canonical simple subset policy.
+
+### v0.40.0
+
+- canonical public Scatter Search ID remains `scatter-search-marti-laguna-glover-2006`;
+- stable Advanced Scatter Search component IDs use the `ss.*` namespace;
+- `RoundSnapshot` remains the compatibility default for subset refresh;
+- RefSet rebuilding is opt-in and disabled by default;
+- three-tier good-generator, hash-assisted duplicate control and specialized
+  combination designs remain reviewed/deferred until their required typed
+  semantics exist.

@@ -19,6 +19,7 @@ public sealed class ScatterSearchOptimizer<TSolution> :
     private readonly IScatterSearchSubsetGenerationMethod<TSolution> _subsetGeneration;
     private readonly IScatterSearchSolutionCombinationMethod<TSolution> _combination;
     private readonly IScatterSearchDistance<TSolution> _distance;
+    private readonly IScatterSearchReferenceSetRebuildingMethod<TSolution>? _referenceSetRebuilding;
 
     public ScatterSearchOptimizer(
         IScatterSearchDiversificationGenerationMethod<TSolution> diversification,
@@ -42,6 +43,25 @@ public sealed class ScatterSearchOptimizer<TSolution> :
         IScatterSearchSubsetGenerationMethod<TSolution> subsetGeneration,
         IScatterSearchSolutionCombinationMethod<TSolution> combination,
         IScatterSearchDistance<TSolution> distance)
+        : this(
+            diversification,
+            improvement,
+            referenceSetUpdate,
+            subsetGeneration,
+            combination,
+            distance,
+            referenceSetRebuilding: null)
+    {
+    }
+
+    public ScatterSearchOptimizer(
+        IScatterSearchDiversificationGenerationMethod<TSolution> diversification,
+        IScatterSearchImprovementMethod<TSolution>? improvement,
+        IScatterSearchReferenceSetUpdateMethod<TSolution> referenceSetUpdate,
+        IScatterSearchSubsetGenerationMethod<TSolution> subsetGeneration,
+        IScatterSearchSolutionCombinationMethod<TSolution> combination,
+        IScatterSearchDistance<TSolution> distance,
+        IScatterSearchReferenceSetRebuildingMethod<TSolution>? referenceSetRebuilding)
     {
         _diversification =
             diversification ??
@@ -65,6 +85,9 @@ public sealed class ScatterSearchOptimizer<TSolution> :
         _distance =
             distance ??
             throw new ArgumentNullException(nameof(distance));
+
+        _referenceSetRebuilding =
+            referenceSetRebuilding;
     }
 
     public MetaheuristicDescriptor Descriptor { get; } = new()
@@ -127,6 +150,7 @@ public sealed class ScatterSearchOptimizer<TSolution> :
         long combinedEvaluated = 0;
         long referenceSetUpdates = 0;
         long improvementInvocations = 0;
+        int referenceSetRebuilds = 0;
 
         var state =
             new ScatterSearchState(
@@ -262,6 +286,8 @@ public sealed class ScatterSearchOptimizer<TSolution> :
             long updatesBeforeIteration =
                 referenceSetUpdates;
 
+            bool refreshImmediately = false;
+
             foreach (ScatterSearchSubset<TSolution> subset in subsets)
             {
                 IEnumerable<TSolution> combined =
@@ -324,6 +350,12 @@ public sealed class ScatterSearchOptimizer<TSolution> :
                             solutionCloner))
                     {
                         referenceSetUpdates++;
+
+                        if (parameters.ReferenceSetRefreshMode ==
+                            ScatterSearchReferenceSetRefreshMode.DynamicImmediate)
+                        {
+                            refreshImmediately = true;
+                        }
                     }
 
                     state =
@@ -341,7 +373,13 @@ public sealed class ScatterSearchOptimizer<TSolution> :
 
                     if (stop.ShouldStop)
                         return context.Complete(stop, state);
+
+                    if (refreshImmediately)
+                        break;
                 }
+
+                if (refreshImmediately)
+                    break;
             }
 
             state =
@@ -364,12 +402,87 @@ public sealed class ScatterSearchOptimizer<TSolution> :
             if (stop.ShouldStop)
                 return context.Complete(stop, state);
 
+            if (refreshImmediately)
+                continue;
+
             if (referenceSetUpdates == updatesBeforeIteration)
             {
+                if (_referenceSetRebuilding is not null &&
+                    referenceSetRebuilds < parameters.MaximumReferenceSetRebuilds)
+                {
+                    var rebuildPopulation =
+                        new List<ScatterSearchReferencePoint<TSolution>>(
+                            parameters.RebuildDiversificationPopulationSize);
+
+                    for (int rebuildIndex = 0;
+                         rebuildIndex < parameters.RebuildDiversificationPopulationSize;
+                         rebuildIndex++)
+                    {
+                        cancellationToken.ThrowIfCancellationRequested();
+
+                        TSolution rebuildSolution =
+                            _diversification.Generate(
+                                problem,
+                                context.Random);
+
+                        if (_improvement is not null)
+                        {
+                            _improvement.Improve(
+                                ref rebuildSolution,
+                                problem,
+                                context.Random,
+                                cancellationToken);
+
+                            improvementInvocations++;
+                        }
+
+                        double rebuildObjective =
+                            context.Evaluate(
+                                rebuildSolution,
+                                state);
+
+                        diversificationEvaluated++;
+
+                        rebuildPopulation.Add(
+                            new ScatterSearchReferencePoint<TSolution>(
+                                solutionCloner.Clone(rebuildSolution),
+                                rebuildObjective,
+                                isNew: true));
+
+                        state =
+                            CreateState(
+                                iteration,
+                                diversificationEvaluated,
+                                referenceSet,
+                                subsetsGenerated,
+                                combinedEvaluated,
+                                referenceSetUpdates,
+                                improvementInvocations);
+
+                        StoppingDecision rebuildStop =
+                            context.EvaluateStopping(state);
+
+                        if (rebuildStop.ShouldStop)
+                            return context.Complete(rebuildStop, state);
+                    }
+
+                    if (_referenceSetRebuilding.TryRebuild(
+                            referenceSet,
+                            rebuildPopulation,
+                            parameters.QualityReferenceSetSize,
+                            _distance,
+                            problem.Sense,
+                            solutionCloner))
+                    {
+                        referenceSetRebuilds++;
+                        continue;
+                    }
+                }
+
                 return context.Complete(
                     StoppingDecision.Stop(
                         "ReferenceSetStable",
-                        "The complete Scatter Search round produced no accepted RefSet update."),
+                        "The complete Scatter Search round produced no accepted RefSet update and no enabled RefSet rebuild refreshed the search."),
                     state);
             }
         }

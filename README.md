@@ -168,6 +168,9 @@ stable ID used by the canonical catalog/factory.
 <tr>
 <td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/advanced-iterated-greedy-strategies.html"><strong>Advanced Iterated Greedy Strategies</strong></a><br><sub>5 executable generic controls &middot; 9 complete published variants reviewed separately &middot; exact provenance through 2026</sub><br><code>ig.*</code></td>
 <td width="50%"></td>
+</tr><tr>
+<td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/advanced-scatter-search-strategies.html"><strong>Advanced Scatter Search Strategies</strong></a><br><sub>5 executable generic components &middot; dynamic/tiered RefSet control &middot; max-min rebuilding &middot; minimum diversity &middot; representative Subset Types 1-4</sub><br><code>ss.*</code></td>
+<td width="50%"></td>
 </tr></table>
 
 
