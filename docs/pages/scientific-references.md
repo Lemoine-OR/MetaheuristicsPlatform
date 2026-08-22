@@ -66,3 +66,10 @@ v0.37.0 implements the generic destruction/reconstruction core with optional loc
 - Martí, R.; Laguna, M.; Glover, F. (2006), *Principles of scatter search*, European Journal of Operational Research 169(2), 359-372. DOI `10.1016/j.ejor.2004.08.004`.
 - Laguna, M.; Martí, R. (2003), *Scatter Search: Methodology and Implementations in C*. DOI `10.1007/978-1-4615-0337-8`.
 - Glover, F.; Laguna, M.; Martí, R. (2004), *Scatter Search and Path Relinking: Foundations and Advanced Designs*. DOI `10.1007/978-3-540-39930-8_4`.
+## Genetic Algorithm
+
+- Eiben, A. E.; Smith, J. E. (2003), *Genetic Algorithms*, in *Introduction to Evolutionary Computing*, 37-69. DOI `10.1007/978-3-662-05094-1_3`.
+- Whitley, D. (1994), *A genetic algorithm tutorial*, *Statistics and Computing* 4(2), 65-85. DOI `10.1007/BF00175354`.
+- Blickle, T.; Thiele, L. (1996), *A Comparison of Selection Schemes used in Evolutionary Algorithms*, *Evolutionary Computation* 4(4), 361-394. DOI `10.1162/EVCO.1996.4.4.361`.
+
+v0.41.0 implements a representation-independent fixed-size generational GA foundation. Representation-specific crossover/mutation catalogs and alternative selection/replacement families are reserved for the advanced GA line.

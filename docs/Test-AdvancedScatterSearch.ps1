@@ -32,8 +32,8 @@ $version =
     (Read-Utf8 "version.json") |
     ConvertFrom-Json
 
-if([string]$version.version -ne "0.40.0") {
-    throw "Advanced Scatter Search validation: version.json must be 0.40.0."
+if([version]([string]$version.version) -lt [version]"0.40.0") {
+    throw "Advanced Scatter Search validation: expected version 0.40.0 or later."
 }
 
 Require-Contains `

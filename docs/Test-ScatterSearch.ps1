@@ -125,8 +125,7 @@ Require-Contains `
 Require-Contains `
     "README.md" @(
         "Scatter Search",
-        "scatter-search-marti-laguna-glover-2006",
-        "29 public algorithms"
+        "scatter-search-marti-laguna-glover-2006"
     )
 
 $catalog =

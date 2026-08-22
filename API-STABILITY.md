@@ -61,3 +61,11 @@ the same spirit as ULSAlgorithms.
 - three-tier good-generator, hash-assisted duplicate control and specialized
   combination designs remain reviewed/deferred until their required typed
   semantics exist.
+### v0.41.0
+
+- public Generational Genetic Algorithm ID: `genetic-algorithm-generational`;
+- stable generic contracts for population initialization, parent selection, crossover and mutation;
+- `TournamentGeneticParentSelectionMethod<TSolution>` is the canonical foundation selector;
+- `GeneticAlgorithmParameters` defines population size, generation bound, crossover/mutation invocation probabilities and optional elitism;
+- composed GA construction uses typed `MetaheuristicFactory.Register(...)`;
+- no representation-specific crossover/mutation identity is claimed by the v0.41 foundation.

@@ -163,6 +163,28 @@
                            "factoryMode":  "direct"
                        },
                        {
+                           "id":  "genetic-algorithm-generational",
+                           "name":  "Generational Genetic Algorithm",
+                           "class":  "GenerationalGeneticAlgorithmOptimizer<TSolution>",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "O(N(C_S+C_X+C_M+C_f)) per generation without elitism sorting; O(N log N + N(C_S+C_X+C_M+C_f)) with elitism",
+                           "space":  "O(N * |solution|) for owned current/next populations plus representation-specific operator workspace",
+                           "applicability":  "Any complete-solution representation with compatible initialization, crossover, mutation and cloning",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/GeneticAlgorithm/GenerationalGeneticAlgorithmOptimizer.cs",
+                           "publication":  "Eiben \u0026 Smith (2003), Genetic Algorithms, Introduction to Evolutionary Computing, 37-69; Whitley (1994), A genetic algorithm tutorial; Blickle \u0026 Thiele (1996), A Comparison of Selection Schemes used in Evolutionary Algorithms",
+                           "doi":  "10.1007/978-3-662-05094-1_3",
+                           "implementation":  "Generic fixed-size generational replacement with objective-sense symmetric tournament selection, representation-specific crossover/mutation, optional non-reevaluated elitism, strict solution ownership and common OptimizationContext lifecycle.",
+                           "page":  "docs/pages/algorithms/genetic-algorithm-generational.md",
+                           "problem":  "\\min_{x\\in\\mathcal X} f(x)\\quad\\text{or}\\quad\\max_{x\\in\\mathcal X} f(x)",
+                           "update":  "\\begin{aligned}\nP_0&=\\{x_1,\\ldots,x_N\\},\\\\\n(i,j)&\\sim S(P_t;f),\\\\\n(y_1,y_2)&\\leftarrow X(x_i^t,x_j^t),\\\\\ny_k&\\leftarrow M(y_k),\\quad k\\in\\{1,2\\},\\\\\nP_{t+1}&\\leftarrow E_t\\cup O_t,\\quad |P_{t+1}|=N\n\\end{aligned}",
+                           "assumptions":  "The common evaluator receives complete candidates. Crossover and mutation semantics are representation-specific; the cloner must provide independent owned snapshots for mutable solutions.",
+                           "convergence":  "No universal finite-time global convergence guarantee is claimed. Asymptotic results require additional assumptions on mutation reachability, selection, replacement and elitism that depend on the configured representation and operators.",
+                           "factoryMode":  "registration"
+                       },
+                       {
                            "id":  "scatter-search-marti-laguna-glover-2006",
                            "name":  "Scatter Search",
                            "class":  "ScatterSearchOptimizer<TSolution>",

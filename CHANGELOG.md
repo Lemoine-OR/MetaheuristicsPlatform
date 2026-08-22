@@ -4,6 +4,31 @@ All notable changes to MetaheuristicsPlatform will be documented in this file.
 
 ## [Unreleased]
 
+## [0.41.0]
+
+### Added
+- Add the public `genetic-algorithm-generational` Genetic Algorithm foundation.
+- Add generic complete-solution population initialization, parent-selection, crossover and mutation contracts with delegate-backed adapters.
+- Add objective-sense symmetric tournament parent selection with sampling with replacement.
+- Add fixed-size generational replacement with configurable crossover/mutation invocation probabilities and optional non-reevaluated elitism.
+- Add strict solution-cloning boundaries for initial population members, parent snapshots, offspring and elites.
+- Add 15 focused GA tests covering minimization/maximization selection symmetry, exact evaluation accounting, odd population sizes, variation probabilities, elitism, reproducibility, ownership and typed factory registration.
+- Add complete ULSAlgorithms-style mathematical/scientific documentation and a dedicated GA validator.
+
+### Scientific basis
+- Eiben & Smith (2003), *Genetic Algorithms*, DOI `10.1007/978-3-662-05094-1_3`.
+- Whitley (1994), *A genetic algorithm tutorial*, DOI `10.1007/BF00175354`.
+- Blickle & Thiele (1996), *A Comparison of Selection Schemes used in Evolutionary Algorithms*, DOI `10.1162/EVCO.1996.4.4.361`.
+
+### Scope
+- v0.41.0 intentionally keeps representation-specific crossover/mutation catalogs, alternative selection schemes and alternative replacement policies for the advanced GA release instead of attaching unsupported operators to the generic foundation.
+
+### Compatibility
+- Public algorithm count increases from 29 to 30.
+- Evolutionary-method count increases from 6 to 7.
+- Existing algorithms and stable IDs are unchanged.
+- GA construction uses typed `MetaheuristicFactory.Register(...)` because representation-specific evolutionary operators are required.
+
 ## [0.40.0]
 
 ### Added

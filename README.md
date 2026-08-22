@@ -36,14 +36,14 @@ stable catalog IDs.
 <table>
 <tr>
 <td width="20%"><strong>1 swarm method</strong><br><sub>PSO with topology/social/dynamics specializations.</sub></td>
-<td width="20%"><strong>6 evolutionary methods</strong><br><sub>DE, jDE, JADE, SHADE, L-SHADE and canonical Scatter Search.</sub></td>
+<td width="20%"><strong>7 evolutionary methods</strong><br><sub>Generational GA, DE, jDE, JADE, SHADE, L-SHADE and canonical Scatter Search.</sub></td>
 <td width="20%"><strong>19 trajectory methods</strong><br><sub>SA, Threshold Accepting, Great Deluge, Record-to-Record Travel, Late Acceptance, Demon-Based Acceptance, Tabu Search, Local Search, ILS, Iterated Greedy, VNS variants and GLS.</sub></td>
 <td width="20%"><strong>3 constructive methods</strong><br><sub>Canonical GRASP, Reactive GRASP and elite-memory Path Relinking with advanced trajectory and evolutionary elite-population policies.</sub></td>
 <td width="20%"><strong>Generic foundations</strong><br><sub>Evaluation pipelines, neighborhoods, reversible moves and hybrid composition.</sub></td>
 </tr>
 </table>
 
-<p align="center"><strong>29 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>30 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -112,6 +112,7 @@ stable ID used by the canonical catalog/factory.
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/differential-evolution.html"><strong>Differential Evolution</strong></a><br><sub>Evolutionary methods · O(ND) per generation for classical mutation/crossover, plus objective-evaluation cost</sub><br><code>differential-evolution</code><br><sub><code>DifferentialEvolutionOptimizer</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/jde-brest-2006.html"><strong>jDE — Self-Adaptive Differential Evolution</strong></a><br><sub>Evolutionary methods · O(ND) per generation plus objective-evaluation cost</sub><br><code>jde-brest-2006</code><br><sub><code>SelfAdaptiveDifferentialEvolutionOptimizer</code></sub></td></tr>
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/jade-2009.html"><strong>JADE</strong></a><br><sub>Evolutionary methods · O(ND + N log N) per generation plus objective-evaluation cost</sub><br><code>jade-2009</code><br><sub><code>JadeOptimizer</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/shade-2013.html"><strong>SHADE</strong></a><br><sub>Evolutionary methods · O(ND + N log N) per generation plus objective-evaluation cost</sub><br><code>shade-2013</code><br><sub><code>ShadeOptimizer</code></sub></td></tr>
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/lshade-2014.html"><strong>L-SHADE</strong></a><br><sub>Evolutionary methods · O(N_kD + N_k log N_k) at generation k plus objective-evaluation cost</sub><br><code>lshade-2014</code><br><sub><code>LShadeOptimizer</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/scatter-search-marti-laguna-glover-2006.html"><strong>Scatter Search</strong></a><br><sub>Five-method reference-set evolutionary search with explicit quality/diversity control.</sub><br><code>scatter-search-marti-laguna-glover-2006</code><br><sub><code>ScatterSearchOptimizer&lt;TSolution&gt;</code></sub></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/genetic-algorithm-generational.html"><strong>Generational Genetic Algorithm</strong></a><br><sub>Generic fixed-size population evolution with tournament selection, representation-specific crossover/mutation and optional elitism.</sub><br><code>genetic-algorithm-generational</code><br><sub><code>GenerationalGeneticAlgorithmOptimizer&lt;TSolution&gt;</code></sub></td><td width="50%"></td></tr>
 </table>
 
 ### Trajectory-based methods
