@@ -139,24 +139,24 @@ Write-Utf8 `
 $homePath =
     Join-Path $Site "index.html"
 
-$home =
+$homeHtml =
     Read-Utf8 $homePath
 
-if (-not $home.Contains(
+if (-not $homeHtml.Contains(
     "components/memetic-algorithm-components.html")) {
 
     $marker =
         '<h2 id="components">Scientific components</h2>'
 
     $markerIndex =
-        $home.IndexOf($marker)
+        $homeHtml.IndexOf($marker)
 
     if ($markerIndex -lt 0) {
         throw "Memetic documentation: Scientific components marker is missing."
     }
 
     $gridStart =
-        $home.IndexOf(
+        $homeHtml.IndexOf(
             '<div class="grid">',
             $markerIndex)
 
@@ -169,15 +169,15 @@ if (-not $home.Contains(
         '<div class="grid">'.Length
 
     $card = @'
-<div class="card"><h3><a href="components/memetic-algorithm-components.html">Memetic Algorithm Components</a></h3><div class="meta">5 local-improvement policies · Lamarckian / Baldwinian learning · adaptive stagnation control</div><span class="id">ma.*</span></div>
+<div class="card"><h3><a href="components/memetic-algorithm-components.html">Memetic Algorithm Components</a></h3><div class="meta">5 local-improvement policies &middot; Lamarckian / Baldwinian learning &middot; adaptive stagnation control</div><span class="id">ma.*</span></div>
 '@
 
-    $home =
-        $home.Insert(
+    $homeHtml =
+        $homeHtml.Insert(
             $insertAt,
             "`n" + $card)
 
-    Write-Utf8 $homePath $home
+    Write-Utf8 $homePath $homeHtml
 }
 
 $algorithmPath =

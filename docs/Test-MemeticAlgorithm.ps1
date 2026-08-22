@@ -209,6 +209,21 @@ Require-Contains `
         "components/memetic-algorithm-components.html"
     )
 
+# Memetic builder PowerShell-5.1 safety
+$memeticBuilderSafety =
+    Read-Utf8 "docs\Build-MemeticAlgorithmDocumentation.ps1"
+
+if ([regex]::IsMatch(
+        $memeticBuilderSafety,
+        '(?<![A-Za-z0-9_])\$home(?![A-Za-z0-9_])')) {
+    throw "Memetic Algorithm validation: builder must not use automatic `$HOME through `$home."
+}
+
+foreach ($character in $memeticBuilderSafety.ToCharArray()) {
+    if ([int]$character -gt 127) {
+        throw "Memetic Algorithm validation: builder source must remain ASCII-only for Windows PowerShell 5.1."
+    }
+}
 Write-Host `
     "Memetic Algorithm validation passed: shared GA engine + 5 local-improvement policies + Lamarckian/Baldwinian learning + exact common evaluation accounting." `
     -ForegroundColor Green
