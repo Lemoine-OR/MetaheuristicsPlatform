@@ -114,8 +114,8 @@ $catalog =
 
 $algorithms = @($catalog.algorithms)
 
-if ($algorithms.Count -lt 32) {
-    throw "Scientific formula quality: expected at least 32 public algorithms."
+if ($algorithms.Count -lt 34) {
+    throw "Scientific formula quality: expected at least 34 public algorithms."
 }
 
 foreach ($algorithm in $algorithms) {
@@ -151,7 +151,8 @@ foreach ($catalogRelative in @(
     "docs\advanced-iterated-greedy-catalog.json",
     "docs\advanced-scatter-search-catalog.json",
     "docs\advanced-genetic-algorithm-catalog.json",
-    "docs\memetic-algorithm-catalog.json"
+    "docs\memetic-algorithm-catalog.json",
+    "docs\advanced-ant-colony-optimization-catalog.json"
 )) {
     $componentCatalog =
         (Read-Utf8 $catalogRelative) |
@@ -272,7 +273,8 @@ foreach ($specialBuilder in @(
     "docs\Build-AdvancedIteratedGreedyDocumentation.ps1",
     "docs\Build-AdvancedScatterSearchDocumentation.ps1",
     "docs\Build-AdvancedGeneticAlgorithmDocumentation.ps1",
-    "docs\Build-MemeticAlgorithmDocumentation.ps1"
+    "docs\Build-MemeticAlgorithmDocumentation.ps1",
+    "docs\Build-AdvancedAntColonyDocumentation.ps1"
 )) {
     $specialSource = Read-Utf8 $specialBuilder
 

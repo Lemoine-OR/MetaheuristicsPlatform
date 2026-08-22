@@ -123,18 +123,21 @@ $catalog =
 
 $entries = @($catalog.entries)
 
-if ($entries.Count -ne 6) {
-    throw "Ant System validation: expected exactly six ACO catalog entries."
-}
+# Historical validators validate their own foundation identities only.
+# They must not freeze future family-wide entry counts or statuses.
+foreach ($foundationId in @(
+    "aco.transition.ant-system-proportional",
+    "aco.update.all-ants",
+    "aco.deposit.constant",
+    "aco.deposit.inverse-positive-objective"
+)) {
+    $foundation =
+        @($entries | Where-Object { [string]$_.id -eq $foundationId })
 
-$implemented =
-    @($entries | Where-Object { [string]$_.status -eq "implemented" })
-
-$deferred =
-    @($entries | Where-Object { [string]$_.status -eq "reviewed-deferred" })
-
-if ($implemented.Count -ne 4 -or $deferred.Count -ne 2) {
-    throw "Ant System validation: expected four implemented and two reviewed/deferred entries."
+    if ($foundation.Count -ne 1 -or
+        [string]$foundation[0].status -ne "implemented") {
+        throw "Ant System validation: foundation identity '$foundationId' is missing, duplicated or not implemented."
+    }
 }
 
 foreach ($id in @(
@@ -196,5 +199,5 @@ if ([regex]::IsMatch(
 }
 
 Write-Host `
-    "Ant System validation passed: generic proportional construction + lazy exact evaporation + all-ant reinforcement + 4 implemented ACO components + ACS/MMAS reviewed/deferred." `
+    "Ant System validation passed: generic proportional construction + lazy exact evaporation + all-ant reinforcement + stable v0.44 foundation identities." `
     -ForegroundColor Green

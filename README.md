@@ -35,7 +35,7 @@ stable catalog IDs.
 
 <table>
 <tr>
-<td width="20%"><strong>2 swarm methods</strong><br><sub>PSO plus generic pheromone-guided Ant System construction.</sub></td>
+<td width="20%"><strong>4 swarm methods</strong><br><sub>PSO plus Ant System, ACS and MAX-MIN Ant System.</sub></td>
 <td width="20%"><strong>7 evolutionary methods</strong><br><sub>Generational GA, DE, jDE, JADE, SHADE, L-SHADE and canonical Scatter Search.</sub></td>
 <td width="20%"><strong>19 trajectory methods</strong><br><sub>SA, Threshold Accepting, Great Deluge, Record-to-Record Travel, Late Acceptance, Demon-Based Acceptance, Tabu Search, Local Search, ILS, Iterated Greedy, VNS variants and GLS.</sub></td>
 <td width="20%"><strong>3 constructive methods</strong><br><sub>Canonical GRASP, Reactive GRASP and elite-memory Path Relinking with advanced trajectory and evolutionary elite-population policies.</sub></td>
@@ -43,7 +43,7 @@ stable catalog IDs.
 </tr>
 </table>
 
-<p align="center"><strong>32 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>34 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -104,7 +104,8 @@ stable ID used by the canonical catalog/factory.
 
 <table>
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/particle-swarm.html"><strong>Particle Swarm Optimization</strong></a><br><sub>Swarm intelligence · O(ND) per iteration for the canonical graphless fast path; topology/social policies may add overhead</sub><br><code>particle-swarm</code><br><sub><code>ParticleSwarmOptimizer</code></sub></td><td width="50%"></td></tr>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/ant-system-dorigo-maniezzo-colorni-1996.html"><strong>Ant System - Dorigo-Maniezzo-Colorni</strong></a><br><sub>Generic pheromone/heuristic constructive colony search with all-ant global reinforcement.</sub><br><code>ant-system-dorigo-maniezzo-colorni-1996</code><br><sub><code>AntSystemOptimizer&lt;TSolution,TComponent,TPheromoneKey,TEnumerator&gt;</code></sub></td><td width="50%"></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/ant-system-dorigo-maniezzo-colorni-1996.html"><strong>Ant System - Dorigo-Maniezzo-Colorni</strong></a><br><sub>Generic pheromone/heuristic constructive colony search with all-ant global reinforcement.</sub><br><code>ant-system-dorigo-maniezzo-colorni-1996</code><br><sub><code>AntSystemOptimizer&lt;TSolution,TComponent,TPheromoneKey,TEnumerator&gt;</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/ant-colony-system-dorigo-gambardella-1997.html"><strong>Ant Colony System - Dorigo-Gambardella</strong></a><br><sub>ACS pseudo-random proportional construction, local pheromone update and best-so-far reinforcement.</sub><br><code>ant-colony-system-dorigo-gambardella-1997</code><br><sub><code>AntColonySystemOptimizer&lt;TSolution,TComponent,TPheromoneKey,TEnumerator&gt;</code></sub></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/max-min-ant-system-stutzle-hoos-2000.html"><strong>MAX-MIN Ant System - Stutzle-Hoos</strong></a><br><sub>Bounded pheromone trails with best-only reinforcement and optional stagnation restart.</sub><br><code>max-min-ant-system-stutzle-hoos-2000</code><br><sub><code>MaxMinAntSystemOptimizer&lt;TSolution,TComponent,TPheromoneKey,TEnumerator&gt;</code></sub></td><td width="50%"></td></tr>
 </table>
 
 ### Evolutionary methods
@@ -146,6 +147,8 @@ stable ID used by the canonical catalog/factory.
 </table>
 
 ## Scientific components
+<p><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/advanced-ant-colony-optimization.html"><strong>Advanced Ant Colony Optimization</strong></a> &middot; <code>aco.*</code> &middot; ACS + MMAS executable scientific components.</p>
+
 <p><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/memetic-algorithm-components.html"><strong>Memetic Algorithm Components</strong></a> &middot; <code>ma.*</code> &middot; 5 local-improvement policies + Lamarckian/Baldwinian learning.</p>
 
 <table>

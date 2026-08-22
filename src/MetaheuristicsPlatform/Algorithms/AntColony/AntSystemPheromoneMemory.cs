@@ -1,9 +1,8 @@
 namespace MetaheuristicsPlatform.Algorithms.AntColony;
 
 /// <summary>
-/// Lazy Ant System pheromone memory. Global evaporation is represented by a generation
-/// counter, so evaporation is O(1) and an unseen key still receives exactly the decay
-/// that tau_0 would have accumulated since iteration zero.
+/// Sparse lazy pheromone memory shared by Ant System descendants.
+/// Optional lower/upper bounds make the same storage usable by MMAS.
 /// </summary>
 internal sealed class AntSystemPheromoneMemory<TKey>
     where TKey : notnull
@@ -11,16 +10,47 @@ internal sealed class AntSystemPheromoneMemory<TKey>
     private readonly Dictionary<TKey, Entry> _entries;
     private readonly double _initialPheromone;
     private readonly double _retention;
+    private readonly double _minimum;
+    private readonly double _maximum;
 
     private int _evaporationRounds;
 
     public AntSystemPheromoneMemory(
         double initialPheromone,
         double evaporationRate,
-        IEqualityComparer<TKey>? comparer = null)
+        IEqualityComparer<TKey>? comparer = null,
+        double minimum = double.Epsilon,
+        double maximum = double.PositiveInfinity)
     {
-        _initialPheromone = initialPheromone;
+        if (!double.IsFinite(initialPheromone) ||
+            initialPheromone <= 0.0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(initialPheromone));
+        }
+
+        if (!double.IsFinite(evaporationRate) ||
+            evaporationRate < 0.0 ||
+            evaporationRate >= 1.0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(evaporationRate));
+        }
+
+        if (!double.IsFinite(minimum) ||
+            minimum <= 0.0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(minimum));
+        }
+
+        if (double.IsNaN(maximum) ||
+            maximum < minimum)
+        {
+            throw new ArgumentOutOfRangeException(nameof(maximum));
+        }
+
+        _initialPheromone = Clamp(initialPheromone, minimum, maximum);
         _retention = 1.0 - evaporationRate;
+        _minimum = minimum;
+        _maximum = maximum;
         _entries = new Dictionary<TKey, Entry>(comparer);
     }
 
@@ -37,36 +67,55 @@ internal sealed class AntSystemPheromoneMemory<TKey>
             return entry.Value;
         }
 
-        double value = Decay(_initialPheromone, _evaporationRounds);
-        _entries.Add(key, new Entry(value, _evaporationRounds));
+        double value =
+            Bound(Decay(_initialPheromone, _evaporationRounds));
+
+        _entries.Add(
+            key,
+            new Entry(value, _evaporationRounds));
+
         return value;
     }
 
-    public void Evaporate() => _evaporationRounds++;
+    public void Evaporate() =>
+        _evaporationRounds++;
 
     public void Deposit(TKey key, double amount)
     {
-        if (amount == 0.0)
+        if (!double.IsFinite(amount) || amount < 0.0)
         {
-            _ = Get(key);
-            return;
+            throw new ArgumentOutOfRangeException(nameof(amount));
         }
 
         double current = Get(key);
-        double updated = current + amount;
+        Set(key, current + amount);
+    }
 
-        if (!double.IsFinite(updated) || updated <= 0.0)
+    public void Set(TKey key, double value)
+    {
+        if (!double.IsFinite(value) || value <= 0.0)
         {
             throw new InvalidOperationException(
                 "Pheromone update produced a non-finite or non-positive value.");
         }
 
-        _entries[key] = new Entry(updated, _evaporationRounds);
+        _entries[key] =
+            new Entry(
+                Bound(value),
+                _evaporationRounds);
+    }
+
+    public void Reset()
+    {
+        _entries.Clear();
+        _evaporationRounds = 0;
     }
 
     private Entry Materialize(Entry entry)
     {
-        int rounds = _evaporationRounds - entry.LastEvaporationRound;
+        int rounds =
+            _evaporationRounds -
+            entry.LastEvaporationRound;
 
         if (rounds <= 0)
         {
@@ -74,7 +123,7 @@ internal sealed class AntSystemPheromoneMemory<TKey>
         }
 
         return new Entry(
-            Decay(entry.Value, rounds),
+            Bound(Decay(entry.Value, rounds)),
             _evaporationRounds);
     }
 
@@ -85,13 +134,23 @@ internal sealed class AntSystemPheromoneMemory<TKey>
             return value;
         }
 
-        double decayed =
-            value * Math.Pow(_retention, rounds);
-
-        // Numerical floor only: mathematically the classical trail remains positive
-        // for 0 < rho < 1, but IEEE-754 underflow must not create log(0).
-        return Math.Max(double.Epsilon, decayed);
+        return value *
+            Math.Pow(_retention, rounds);
     }
+
+    private double Bound(double value) =>
+        Clamp(
+            Math.Max(double.Epsilon, value),
+            _minimum,
+            _maximum);
+
+    private static double Clamp(
+        double value,
+        double minimum,
+        double maximum) =>
+        Math.Min(
+            maximum,
+            Math.Max(minimum, value));
 
     private readonly record struct Entry(
         double Value,

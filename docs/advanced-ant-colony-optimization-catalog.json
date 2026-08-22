@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "release": "0.45.0",
+  "family": "Advanced Ant Colony Optimization",
+  "canonicalAlgorithms": [
+    "ant-colony-system-dorigo-gambardella-1997",
+    "max-min-ant-system-stutzle-hoos-2000"
+  ],
+  "entries": [
+    {
+      "id": "aco.transition.acs-pseudo-random-proportional",
+      "name": "ACS pseudo-random proportional transition",
+      "status": "implemented",
+      "reference": "Dorigo & Gambardella (1997)",
+      "doi": "10.1109/4235.585892",
+      "formulaMode": "math",
+      "formula": "j=\\begin{cases}\\arg\\max_{u\\in\\mathcal N(s)}\\tau_u\\eta_u^\\beta,&q\\le q_0,\\\\J,&q>q_0,\\end{cases}\\quad \\Pr(J=u)=\\frac{\\tau_u\\eta_u^\\beta}{\\sum_v\\tau_v\\eta_v^\\beta}"
+    },
+    {
+      "id": "aco.update.acs-local",
+      "name": "ACS local pheromone update",
+      "status": "implemented",
+      "reference": "Dorigo & Gambardella (1997)",
+      "doi": "10.1109/4235.585892",
+      "formulaMode": "math",
+      "formula": "\\tau_e\\leftarrow(1-\\xi)\\tau_e+\\xi\\tau_0"
+    },
+    {
+      "id": "aco.update.acs-best-so-far",
+      "name": "ACS best-so-far global update",
+      "status": "implemented",
+      "reference": "Dorigo & Gambardella (1997)",
+      "doi": "10.1109/4235.585892",
+      "formulaMode": "math",
+      "formula": "\\tau_e\\leftarrow(1-\\rho)\\tau_e+\\rho\\Delta\\tau_e^{gb},\\qquad e\\in s^{gb}"
+    },
+    {
+      "id": "aco.update.mmas-best-only",
+      "name": "MMAS selective best-only reinforcement",
+      "status": "implemented",
+      "reference": "Stutzle & Hoos (2000)",
+      "doi": "10.1016/S0167-739X(00)00043-1",
+      "formulaMode": "math",
+      "formula": "\\tau_e\\leftarrow(1-\\rho)\\tau_e+\\Delta\\tau_e^{best}"
+    },
+    {
+      "id": "aco.memory.mmas-bounds",
+      "name": "MMAS pheromone lower/upper bounds",
+      "status": "implemented",
+      "reference": "Stutzle & Hoos (2000)",
+      "doi": "10.1016/S0167-739X(00)00043-1",
+      "formulaMode": "math",
+      "formula": "\\tau_e\\leftarrow\\min\\{\\tau_{\\max},\\max\\{\\tau_{\\min},\\tau_e\\}\\}"
+    },
+    {
+      "id": "aco.reinforcement.mmas-iteration-best",
+      "name": "MMAS iteration-best reinforcement source",
+      "status": "implemented",
+      "reference": "Stutzle & Hoos (2000)",
+      "doi": "10.1016/S0167-739X(00)00043-1",
+      "formulaMode": "math",
+      "formula": "s^{best}=s_t^{ib}"
+    },
+    {
+      "id": "aco.reinforcement.mmas-best-so-far",
+      "name": "MMAS best-so-far reinforcement source",
+      "status": "implemented",
+      "reference": "Stutzle & Hoos (2000)",
+      "doi": "10.1016/S0167-739X(00)00043-1",
+      "formulaMode": "math",
+      "formula": "s^{best}=s^{gb}"
+    },
+    {
+      "id": "aco.restart.mmas-stagnation",
+      "name": "Optional MMAS stagnation restart",
+      "status": "implemented",
+      "reference": "Stutzle & Hoos (2000), restart/stagnation-control lineage",
+      "doi": "10.1016/S0167-739X(00)00043-1",
+      "formulaMode": "math",
+      "formula": "c_t\\ge W\\Longrightarrow \\tau_e\\leftarrow\\tau_0,\\quad c_t\\leftarrow0"
+    },
+    {
+      "id": "aco.variant.elitist-ant-system",
+      "name": "Elitist Ant System",
+      "status": "reviewed-deferred",
+      "reference": "Dorigo et al. ACO lineage",
+      "doi": "",
+      "formulaMode": "prose",
+      "formula": "Additional elitist reinforcement is scientifically reviewed but deferred until the shared colony-update abstraction exposes weighted multi-source deposits without special cases."
+    },
+    {
+      "id": "aco.variant.rank-based-ant-system",
+      "name": "Rank-Based Ant System",
+      "status": "reviewed-deferred",
+      "reference": "Bullnheimer, Hartl & Strauss lineage",
+      "doi": "",
+      "formulaMode": "prose",
+      "formula": "Rank-weighted colony reinforcement is reviewed/deferred until a reusable weighted-ranking update policy is introduced."
+    }
+  ]
+}

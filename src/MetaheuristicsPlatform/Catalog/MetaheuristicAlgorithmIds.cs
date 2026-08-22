@@ -8,6 +8,10 @@ public static class MetaheuristicAlgorithmIds
     public const string ParticleSwarm = "particle-swarm";
     public const string AntSystem =
         "ant-system-dorigo-maniezzo-colorni-1996";
+    public const string AntColonySystem =
+        "ant-colony-system-dorigo-gambardella-1997";
+    public const string MaxMinAntSystem =
+        "max-min-ant-system-stutzle-hoos-2000";
     public const string DifferentialEvolution = "differential-evolution";
     public const string Jde = "jde-brest-2006";
     public const string Jade = "jade-2009";

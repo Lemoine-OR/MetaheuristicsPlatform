@@ -96,3 +96,13 @@ the same spirit as ULSAlgorithms.
 - The v0.44 identity is canonical Ant System with proportional transition, global evaporation and all-ant reinforcement.
 - Ant Colony System and MAX-MIN Ant System remain separate reviewed/deferred identities; their local-update, exploitation and pheromone-bound semantics are not silently folded into Ant System.
 - Generic ACO construction is discrete/constructive in v0.44; continuous-domain ACO requires a distinct future sampling contract.
+
+
+## v0.45.0 Advanced Ant Colony Optimization
+
+Stable public IDs introduced:
+
+- `ant-colony-system-dorigo-gambardella-1997`
+- `max-min-ant-system-stutzle-hoos-2000`
+
+The v0.44 Ant System ID and public contracts remain stable. ACS and MMAS reuse the same typed construction model and deposit-policy contracts.

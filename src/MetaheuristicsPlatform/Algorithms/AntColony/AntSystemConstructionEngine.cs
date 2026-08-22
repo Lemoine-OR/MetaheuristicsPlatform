@@ -4,10 +4,9 @@ using MetaheuristicsPlatform.Random;
 namespace MetaheuristicsPlatform.Algorithms.AntColony;
 
 /// <summary>
-/// Canonical Ant System constructive transition engine.
-/// Categorical sampling is performed with the Gumbel-max identity in log space,
-/// which is exactly equivalent to pheromone/heuristic proportional sampling while
-/// avoiding overflow in tau^alpha eta^beta.
+/// Shared constructive transition engine for Ant System descendants.
+/// Canonical Ant System uses q0=0 and therefore keeps pure proportional
+/// selection. ACS uses the pseudo-random proportional rule with q0>0.
 /// </summary>
 internal sealed class AntSystemConstructionEngine<
     TSolution,
@@ -40,8 +39,17 @@ internal sealed class AntSystemConstructionEngine<
         double alpha,
         double beta,
         int maximumConstructionSteps,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken,
+        double exploitationProbability = 0.0,
+        Action<TPheromoneKey>? selectedKeyUpdate = null)
     {
+        if (!double.IsFinite(exploitationProbability) ||
+            exploitationProbability < 0.0 ||
+            exploitationProbability > 1.0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(exploitationProbability));
+        }
+
         TSolution solution =
             _model.CreateInitialSolution(problem, random);
 
@@ -64,10 +72,9 @@ internal sealed class AntSystemConstructionEngine<
             TEnumerator enumerator =
                 _model.GetCandidateEnumerator(in solution, problem);
 
-            bool found = false;
-            TComponent selectedComponent = default!;
-            TPheromoneKey selectedKey = default!;
-            double selectedScore = double.NegativeInfinity;
+            var components = new List<TComponent>();
+            var keys = new List<TPheromoneKey>();
+            var logWeights = new List<double>();
 
             while (enumerator.MoveNext(out TComponent component))
             {
@@ -85,7 +92,7 @@ internal sealed class AntSystemConstructionEngine<
                 if (!double.IsFinite(tau) || tau <= 0.0)
                 {
                     throw new InvalidOperationException(
-                        "Ant System requires finite strictly-positive pheromone values.");
+                        "Ant Colony Optimization requires finite strictly-positive pheromone values.");
                 }
 
                 double logWeight =
@@ -104,45 +111,78 @@ internal sealed class AntSystemConstructionEngine<
                     if (!double.IsFinite(eta) || eta <= 0.0)
                     {
                         throw new InvalidOperationException(
-                            "Ant System requires finite strictly-positive heuristic information when Beta is positive.");
+                            "Ant Colony Optimization requires finite strictly-positive heuristic information when Beta is positive.");
                     }
 
                     logWeight +=
                         beta * Math.Log(eta);
                 }
 
-                double u = random.NextDouble();
-
-                if (!double.IsFinite(u) || u < 0.0 || u >= 1.0)
-                {
-                    throw new InvalidOperationException(
-                        "The random source returned a value outside [0,1).");
-                }
-
-                u = Math.Max(double.Epsilon, u);
-
-                double gumbel =
-                    -Math.Log(-Math.Log(u));
-
-                double score =
-                    logWeight + gumbel;
-
+                components.Add(component);
+                keys.Add(key);
+                logWeights.Add(logWeight);
                 transitionEvaluations++;
-
-                if (!found || score > selectedScore)
-                {
-                    found = true;
-                    selectedScore = score;
-                    selectedComponent = component;
-                    selectedKey = key;
-                }
             }
 
-            if (!found)
+            if (components.Count == 0)
             {
                 throw new InvalidOperationException(
                     "Ant construction reached an incomplete solution with no feasible candidate.");
             }
+
+            int selectedIndex;
+
+            if (exploitationProbability > 0.0 &&
+                random.NextDouble() < exploitationProbability)
+            {
+                selectedIndex = 0;
+
+                for (int i = 1; i < logWeights.Count; i++)
+                {
+                    if (logWeights[i] > logWeights[selectedIndex])
+                    {
+                        selectedIndex = i;
+                    }
+                }
+            }
+            else
+            {
+                // Gumbel-max is exactly equivalent to proportional categorical
+                // sampling while remaining numerically stable in log space.
+                selectedIndex = 0;
+                double selectedScore = double.NegativeInfinity;
+
+                for (int i = 0; i < logWeights.Count; i++)
+                {
+                    double u = random.NextDouble();
+
+                    if (!double.IsFinite(u) || u < 0.0 || u >= 1.0)
+                    {
+                        throw new InvalidOperationException(
+                            "The random source returned a value outside [0,1).");
+                    }
+
+                    u = Math.Max(double.Epsilon, u);
+
+                    double gumbel =
+                        -Math.Log(-Math.Log(u));
+
+                    double score =
+                        logWeights[i] + gumbel;
+
+                    if (score > selectedScore)
+                    {
+                        selectedScore = score;
+                        selectedIndex = i;
+                    }
+                }
+            }
+
+            TComponent selectedComponent =
+                components[selectedIndex];
+
+            TPheromoneKey selectedKey =
+                keys[selectedIndex];
 
             _model.ApplyComponent(
                 ref solution,
@@ -150,6 +190,7 @@ internal sealed class AntSystemConstructionEngine<
                 problem);
 
             path.Add(selectedKey);
+            selectedKeyUpdate?.Invoke(selectedKey);
             steps++;
         }
 

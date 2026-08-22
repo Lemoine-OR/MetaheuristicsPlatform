@@ -2,6 +2,15 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.45.0] - 2026-08-22
+
+### Added
+
+- Public Ant Colony System (ACS) with pseudo-random proportional transition, local trail update and best-so-far global reinforcement.
+- Public MAX-MIN Ant System (MMAS) with bounded pheromone trails, best-only reinforcement and optional stagnation restart.
+- Advanced ACO scientific component catalog, documentation, tests and benchmarks.
+- Automation v5 release closure: after exact-SHA Build and Test + Build Documentation success, the Create Release workflow publishes the matching GitHub Release automatically.
+
 ## [Unreleased]
 
 ## [0.44.0]

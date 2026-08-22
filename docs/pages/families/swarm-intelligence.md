@@ -10,6 +10,10 @@ Population methods driven by distributed social information and collective motio
 
 - **[Ant System - Dorigo-Maniezzo-Colorni](../algorithms/ant-system-dorigo-maniezzo-colorni-1996.md)** — `ant-system-dorigo-maniezzo-colorni-1996` — generic pheromone-guided constructive colony search.
 
+- **[Ant Colony System - Dorigo-Gambardella](../algorithms/ant-colony-system-dorigo-gambardella-1997.md)** — nt-colony-system-dorigo-gambardella-1997 — pseudo-random proportional construction with local and best-so-far pheromone updates.
+
+- **[MAX-MIN Ant System - Stutzle-Hoos](../algorithms/max-min-ant-system-stutzle-hoos-2000.md)** — max-min-ant-system-stutzle-hoos-2000 — bounded pheromone memory with selective best reinforcement.
+
 ## Navigation
 
 Return to @ref method_families "method families".

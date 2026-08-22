@@ -213,7 +213,8 @@ Require-Contains `
         "Build-AdvancedIteratedGreedyDocumentation.ps1",
         "Build-AdvancedScatterSearchDocumentation.ps1",
         "Build-AdvancedGeneticAlgorithmDocumentation.ps1",
-        "Build-MemeticAlgorithmDocumentation.ps1"
+        "Build-MemeticAlgorithmDocumentation.ps1",
+        "Build-AdvancedAntColonyDocumentation.ps1"
     )
 
 Require-Contains `
@@ -226,7 +227,8 @@ Require-Contains `
         "@subpage advanced_iterated_greedy_strategies",
         "@subpage advanced_scatter_search_strategies",
         "@subpage advanced_genetic_algorithm_operators",
-        "@subpage memetic_algorithm_components"
+        "@subpage memetic_algorithm_components",
+        "@subpage advanced_ant_colony_optimization"
     )
 
 Require-Contains `
@@ -302,6 +304,24 @@ Require-Contains `
         "ma.learning.baldwinian",
         "10.1109/TEVC.2005.850260"
     )
+Require-Contains `
+    "docs\Build-AdvancedAntColonyDocumentation.ps1" @(
+        "Advanced Ant Colony Optimization",
+        "advanced-ant-colony-optimization.html",
+        "advanced-ant-colony-optimization-catalog.json",
+        "formula-note",
+        "mathjax@3.2.2/es5/tex-chtml.js"
+    )
+
+Require-Contains `
+    "docs\pages\components\advanced-ant-colony-optimization.md" @(
+        "@page advanced_ant_colony_optimization",
+        "aco.transition.acs-pseudo-random-proportional",
+        "aco.update.acs-local",
+        "aco.memory.mmas-bounds",
+        "10.1109/4235.585892",
+        "10.1016/S0167-739X(00)00043-1"
+    )
 $readme = Read-Utf8 "README.md"
 
 foreach ($marker in @(
@@ -317,7 +337,8 @@ foreach ($marker in @(
     "components/advanced-iterated-greedy-strategies.html",
     "components/advanced-scatter-search-strategies.html",
     "components/advanced-genetic-algorithm-operators.html",
-    "components/memetic-algorithm-components.html"
+    "components/memetic-algorithm-components.html",
+    "components/advanced-ant-colony-optimization.html"
 )) {
     if (-not $readme.Contains($marker)) {
         throw "README documentation parity: missing '$marker'."
@@ -341,5 +362,5 @@ foreach ($heading in @(
 }
 
 Write-Host `
-    "Scientific component documentation parity passed: PSO/VNS/Threshold-Accepting/Dueck-Acceptance/Path-Relinking/Advanced-IG/Advanced-SS/Advanced-GA/Memetic component builders wired." `
+    "Scientific component documentation parity passed: PSO/VNS/Threshold-Accepting/Dueck-Acceptance/Path-Relinking/Advanced-IG/Advanced-SS/Advanced-GA/Memetic/Advanced-ACO component builders wired." `
     -ForegroundColor Green
