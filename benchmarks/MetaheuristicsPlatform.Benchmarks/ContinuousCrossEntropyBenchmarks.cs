@@ -1,0 +1,56 @@
+using BenchmarkDotNet.Attributes;
+using MetaheuristicsPlatform.Algorithms.CrossEntropy;
+using MetaheuristicsPlatform.Core;
+using MetaheuristicsPlatform.SearchSpaces.Continuous;
+using MetaheuristicsPlatform.Stopping;
+
+namespace MetaheuristicsPlatform.Benchmarks;
+
+[MemoryDiagnoser]
+public class ContinuousCrossEntropyBenchmarks
+{
+    private readonly ContinuousOptimizationProblem _problem =
+        new(
+            BoundedContinuousSearchSpace.Uniform(
+                30,
+                -5.0,
+                5.0),
+            OptimizationSense.Minimize,
+            Sphere);
+
+    private readonly ArraySolutionCloner<double> _cloner =
+        new();
+
+    private readonly ContinuousCrossEntropyParameters _parameters =
+        new()
+        {
+            SampleCount = 100,
+            EliteFraction = 0.10,
+            MaximumIterations = 10,
+            MinimumStandardDeviation = 1e-14
+        };
+
+    [Benchmark]
+    public double ContinuousCrossEntropy() =>
+        new ContinuousCrossEntropyOptimizer().Optimize(
+            _problem,
+            _parameters,
+            _cloner,
+            new MaxEvaluationsStoppingCriterion(1000),
+            new OptimizationOptions { Seed = 123456UL }).BestFitness;
+
+    private static double Sphere(
+        ReadOnlySpan<double> x)
+    {
+        double sum = 0.0;
+
+        for (int i = 0; i < x.Length; i++)
+        {
+            sum +=
+                x[i] *
+                x[i];
+        }
+
+        return sum;
+    }
+}

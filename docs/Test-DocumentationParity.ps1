@@ -20,8 +20,8 @@ $catalog =
 $algorithms = @($catalog.algorithms)
 $families = @($catalog.families)
 
-if ($algorithms.Count -lt 40) {
-    throw "Documentation parity: expected at least the forty currently public algorithms."
+if ($algorithms.Count -lt 41) {
+    throw "Documentation parity: expected at least the forty-one currently public algorithms."
 }
 
 $requiredFields = @(
@@ -140,9 +140,11 @@ $requiredRepoFiles = @(
     "docs\Test-AntSystem.ps1",
     "docs\Test-AdvancedAntColony.ps1",
     "docs\Test-ArtificialBeeColony.ps1",
+    "docs\Test-ContinuousCrossEntropy.ps1",
     "docs\Test-ReadmeQuality.ps1",
     "docs\Test-ReadmeHistoricalCompatibility.ps1",
     "docs\pages\algorithms\artificial-bee-colony-karaboga-basturk-2007.md",
+    "docs\pages\algorithms\cross-entropy-continuous-kroese-porotsky-rubinstein-2006.md",
     "docs\Test-CmaEs.ps1",
     "docs\Test-AdvancedCmaEs.ps1",
     "docs\Test-RestartCmaEs.ps1",
@@ -228,6 +230,7 @@ $requiredRepoFiles = @(
     "build\Get-ReleaseNotes.ps1",
     "tools\Test-PowerShellSyntax.ps1",
     "tools\Test-Automation.ps1",
+    "tools\Test-ReleaseWorkflowTopology.ps1",
     "tools\Configure-GitHubRepository.ps1",
     "tools\Get-BuildTarget.ps1"
 )
@@ -268,8 +271,8 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.49.0") {
-    throw "Documentation parity: version.json must be 0.49.0 for this release."
+if ([string]$version.version -ne "0.50.0") {
+    throw "Documentation parity: version.json must be 0.50.0 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root
@@ -288,6 +291,8 @@ if ([string]$version.version -ne "0.49.0") {
 & (Join-Path $Root "docs\Test-AntSystem.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-AdvancedAntColony.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-ArtificialBeeColony.ps1") -Root $Root
+& (Join-Path $Root "docs\Test-ContinuousCrossEntropy.ps1") -Root $Root
+& (Join-Path $Root "tools\Test-ReleaseWorkflowTopology.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-ReadmeQuality.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-ReadmeHistoricalCompatibility.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-CmaEs.ps1") -Root $Root

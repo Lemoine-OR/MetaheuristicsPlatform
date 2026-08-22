@@ -2,6 +2,21 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.50.0] - 2026-08-22
+
+### Added
+
+- Continuous Cross-Entropy Method with diagonal normal sampling, elite maximum-likelihood updates and dynamic standard-deviation smoothing.
+- Stable ID `cross-entropy-continuous-kroese-porotsky-rubinstein-2006` with Rubinstein/de Boer/Kroese scientific provenance.
+- Exact partial-iteration evaluation-budget semantics, deterministic tests and benchmark coverage.
+- Permanent release-workflow topology validation.
+
+### Changed
+
+- Serialize the automatic CI/release path as Build and Test -> Build Documentation -> Create Release.
+- Remove the redundant direct Create Release trigger from Build and Test while preserving exact-SHA/idempotent release gates.
+- Make README public/evolutionary counts dynamic in the quality validator.
+
 ## [0.49.0] - 2026-08-22
 
 ### Added

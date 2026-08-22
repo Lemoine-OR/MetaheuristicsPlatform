@@ -150,3 +150,15 @@ Stable public ID introduced:
 `ArtificialBeeColonyState`, `ArtificialBeeColonyPhase` and
 `ArtificialBeeColonyReferences` are public API. The implementation uses the existing
 bounded continuous problem/search-space contracts and the common `OptimizationContext`.
+
+## v0.50.0 Continuous Cross-Entropy Method
+
+Stable public ID introduced:
+
+- `cross-entropy-continuous-kroese-porotsky-rubinstein-2006`
+
+`ContinuousCrossEntropyOptimizer`, `ContinuousCrossEntropyParameters`,
+`ContinuousCrossEntropyState`, `CrossEntropyPhase` and `CrossEntropyReferences`
+are public API. The algorithm uses the existing bounded continuous contracts and the
+common `OptimizationContext`; the public identity denotes the diagonal-normal continuous
+CE model with elite updating and dynamic standard-deviation smoothing.

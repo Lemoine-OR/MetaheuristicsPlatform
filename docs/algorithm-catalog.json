@@ -75,6 +75,28 @@
                            "factoryMode":  "direct"
                        },
                        {
+                           "id":  "cross-entropy-continuous-kroese-porotsky-rubinstein-2006",
+                           "name":  "Cross-Entropy Method - Continuous Optimization",
+                           "class":  "ContinuousCrossEntropyOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "O(N D + N log N) per complete iteration plus objective-evaluation cost",
+                           "space":  "O(N D + N)",
+                           "applicability":  "Bounded continuous derivative-free multi-extremal optimization using an adaptive diagonal normal sampling model",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/CrossEntropy/ContinuousCrossEntropyOptimizer.cs",
+                           "publication":  "Kroese, Porotsky \u0026 Rubinstein (2006), The Cross-Entropy Method for Continuous Multi-Extremal Optimization, Methodology and Computing in Applied Probability 8(3), 383-407",
+                           "doi":  "10.1007/s11009-006-9753-0",
+                           "implementation":  "Independent normal sampling, elite maximum-likelihood coordinate statistics, fixed mean smoothing, dynamic standard-deviation smoothing and exact partial-iteration OptimizationContext accounting.",
+                           "page":  "docs/pages/algorithms/cross-entropy-continuous-kroese-porotsky-rubinstein-2006.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}X_i^{(t)}\u0026\\sim\\mathcal N\\!\\left(\\widehat\\mu_{t-1},\\operatorname{diag}(\\widehat\\sigma_{t-1}^{2})\\right),\\\\\\widetilde\\mu_{t,j}\u0026=\\frac1{N_e}\\sum_{i\\in I_t}X_{i,j}^{(t)},\\\\\\widetilde\\sigma_{t,j}^{2}\u0026=\\frac1{N_e}\\sum_{i\\in I_t}(X_{i,j}^{(t)}-\\widetilde\\mu_{t,j})^2,\\\\\\widehat\\mu_t\u0026=\\alpha\\widetilde\\mu_t+(1-\\alpha)\\widehat\\mu_{t-1},\\\\\\beta_t\u0026=\\beta-\\beta\\left(1-\\frac1t\\right)^q,\\\\\\widehat\\sigma_t\u0026=\\beta_t\\widetilde\\sigma_t+(1-\\beta_t)\\widehat\\sigma_{t-1}\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous box; finite objective values; independent-coordinate normal model; component-wise clamping is an explicit boundary policy.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; CE convergence requires additional stochastic/model assumptions and practical behavior depends on elite fraction, smoothing and evaluation budget.",
+                           "factoryMode":  "direct"
+                       },
+                       {
                            "id":  "differential-evolution",
                            "name":  "Differential Evolution",
                            "class":  "DifferentialEvolutionOptimizer",

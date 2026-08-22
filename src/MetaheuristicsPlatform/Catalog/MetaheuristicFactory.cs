@@ -48,6 +48,10 @@ public static class MetaheuristicFactory
             "MetaheuristicsPlatform.Algorithms.CMAES.BipopCmaEsOptimizer");
 
         RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.ContinuousCrossEntropy,
+            "MetaheuristicsPlatform.Algorithms.CrossEntropy.ContinuousCrossEntropyOptimizer");
+
+        RegisterAssemblyType(
             MetaheuristicAlgorithmIds.DifferentialEvolution,
             "MetaheuristicsPlatform.Algorithms.DE.DifferentialEvolutionOptimizer");
 

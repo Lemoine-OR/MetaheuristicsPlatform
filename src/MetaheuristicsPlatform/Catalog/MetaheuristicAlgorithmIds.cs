@@ -24,6 +24,8 @@ public static class MetaheuristicAlgorithmIds
         "ipop-cma-es-auger-hansen-2005";
     public const string BipopCmaEs =
         "bipop-cma-es-hansen-2009";
+    public const string ContinuousCrossEntropy =
+        "cross-entropy-continuous-kroese-porotsky-rubinstein-2006";
     public const string DifferentialEvolution = "differential-evolution";
     public const string Jde = "jde-brest-2006";
     public const string Jade = "jade-2009";

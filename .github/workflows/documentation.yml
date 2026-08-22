@@ -1,13 +1,19 @@
 name: Build Documentation
 
+run-name: Documentation for ${{ github.event.workflow_run.head_sha || github.sha }}
+
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
   workflow_dispatch:
+  workflow_run:
+    workflows:
+      - Build and Test
+    types:
+      - completed
+    branches:
+      - main
 
 permissions:
   contents: read
@@ -21,13 +27,25 @@ concurrency:
 jobs:
   documentation:
     name: Build versioned and validated Doxygen documentation
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: windows-latest
+    env:
+      TARGET_SHA: ${{ github.event.workflow_run.head_sha || github.sha }}
 
     steps:
-      - name: Checkout full Git history
+      - name: Checkout exact documentation commit
         uses: actions/checkout@v6
         with:
+          ref: ${{ env.TARGET_SHA }}
           fetch-depth: 0
+
+      - name: Verify checked-out SHA
+        shell: pwsh
+        run: |
+          $head = (& git rev-parse HEAD).Trim()
+          if ($head -ne $env:TARGET_SHA) {
+              throw "Documentation checkout SHA mismatch."
+          }
 
       - name: Setup .NET 10
         uses: actions/setup-dotnet@v6
@@ -142,7 +160,7 @@ jobs:
 
   deploy:
     name: Deploy documentation to GitHub Pages
-    if: github.event_name != 'pull_request'
+    if: needs.documentation.result == 'success' && github.event_name != 'pull_request'
     needs:
       - documentation
     runs-on: ubuntu-latest

@@ -130,7 +130,6 @@ foreach ($linkedTitle in @(
 
 foreach ($marker in @(
     "5 swarm methods",
-    "40 public algorithms",
     "artificial-bee-colony-karaboga-basturk-2007"
 )) {
     if (-not $readme.Contains($marker)) {
@@ -144,7 +143,32 @@ $catalog =
         [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-foreach ($algorithm in @($catalog.algorithms)) {
+$algorithms =
+    @($catalog.algorithms)
+
+$publicCountMarker =
+    "$($algorithms.Count) public algorithms"
+
+if (-not $readme.Contains($publicCountMarker)) {
+    throw "README quality: dynamic public-algorithm count marker '$publicCountMarker' is missing."
+}
+
+$evolutionaryCount =
+    @(
+        $algorithms |
+        Where-Object {
+            [string]$_.category -eq "evolutionary-methods"
+        }
+    ).Count
+
+$evolutionaryCountMarker =
+    "$evolutionaryCount evolutionary methods"
+
+if (-not $readme.Contains($evolutionaryCountMarker)) {
+    throw "README quality: dynamic evolutionary count marker '$evolutionaryCountMarker' is missing."
+}
+
+foreach ($algorithm in $algorithms) {
     $id =
         [string]$algorithm.id
 

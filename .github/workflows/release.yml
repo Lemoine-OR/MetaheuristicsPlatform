@@ -6,10 +6,11 @@ on:
   workflow_dispatch:
   workflow_run:
     workflows:
-      - Build and Test
       - Build Documentation
     types:
       - completed
+    branches:
+      - main
 
 permissions:
   contents: write
@@ -26,6 +27,7 @@ jobs:
     outputs:
       ready: ${{ steps.gate.outputs.ready }}
       target_sha: ${{ steps.gate.outputs.target_sha }}
+
     steps:
       - id: gate
         name: Require main HEAD and both prerequisite workflows
@@ -35,13 +37,22 @@ jobs:
           EVENT_NAME: ${{ github.event_name }}
           WORKFLOW_SHA: ${{ github.event.workflow_run.head_sha }}
           WORKFLOW_BRANCH: ${{ github.event.workflow_run.head_branch }}
+          WORKFLOW_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
           DISPATCH_SHA: ${{ github.sha }}
         run: |
           set -euo pipefail
 
           if [[ "$EVENT_NAME" == "workflow_run" ]]; then
             target_sha="$WORKFLOW_SHA"
+
             if [[ "$WORKFLOW_BRANCH" != "main" ]]; then
+              echo "ready=false" >> "$GITHUB_OUTPUT"
+              echo "target_sha=$target_sha" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+
+            if [[ "$WORKFLOW_CONCLUSION" != "success" ]]; then
+              echo "Release trigger workflow did not succeed; release skipped."
               echo "ready=false" >> "$GITHUB_OUTPUT"
               echo "target_sha=$target_sha" >> "$GITHUB_OUTPUT"
               exit 0
@@ -53,6 +64,7 @@ jobs:
           echo "target_sha=$target_sha" >> "$GITHUB_OUTPUT"
 
           main_sha="$(gh api "repos/$GITHUB_REPOSITORY/branches/main" --jq '.commit.sha')"
+
           if [[ "$target_sha" != "$main_sha" ]]; then
             echo "Target SHA is not current main HEAD; release skipped."
             echo "ready=false" >> "$GITHUB_OUTPUT"
@@ -86,7 +98,7 @@ jobs:
 
           if [[ "$build_conclusion" != "success" ||
                 "$docs_conclusion" != "success" ]]; then
-            echo "Both prerequisite workflows are not green yet."
+            echo "Both prerequisite workflows are not green."
             echo "ready=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
@@ -135,6 +147,7 @@ jobs:
         shell: pwsh
         run: |
           $head = (& git rev-parse HEAD).Trim()
+
           if ($head -ne $env:TARGET_SHA) {
               throw "Release checkout SHA mismatch."
           }
@@ -148,6 +161,7 @@ jobs:
         shell: pwsh
         run: |
           $ErrorActionPreference = "Stop"
+
           $version = "15.1.1"
           $packageBase = "https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/$version"
           $archiveName = "windows_10_cmake_Release_Graphviz-$version-win64.zip"
@@ -160,17 +174,31 @@ jobs:
 
           $checksumText = [System.IO.File]::ReadAllText($checksumFile)
           $match = [regex]::Match($checksumText, '(?i)\b[0-9a-f]{64}\b')
-          if (-not $match.Success) { throw "Unable to read Graphviz SHA-256 checksum." }
+
+          if (-not $match.Success) {
+              throw "Unable to read Graphviz SHA-256 checksum."
+          }
 
           $expectedHash = $match.Value.ToUpperInvariant()
           $actualHash = (Get-FileHash $archive -Algorithm SHA256).Hash.ToUpperInvariant()
-          if ($actualHash -ne $expectedHash) { throw "Graphviz SHA-256 verification failed." }
+
+          if ($actualHash -ne $expectedHash) {
+              throw "Graphviz SHA-256 verification failed."
+          }
 
           Remove-Item $destination -Recurse -Force -ErrorAction SilentlyContinue
           Expand-Archive -Path $archive -DestinationPath $destination -Force
-          $dot = Get-ChildItem -Path $destination -Recurse -File -Filter "dot.exe" | Select-Object -First 1
-          if ($null -eq $dot) { throw "dot.exe not found." }
-          $dot.Directory.FullName | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+
+          $dot =
+              Get-ChildItem -Path $destination -Recurse -File -Filter "dot.exe" |
+              Select-Object -First 1
+
+          if ($null -eq $dot) {
+              throw "dot.exe not found."
+          }
+
+          $dot.Directory.FullName |
+              Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
 
       - name: Install Doxygen
         shell: pwsh
@@ -189,9 +217,15 @@ jobs:
         shell: pwsh
         run: |
           $release = ./build/Prepare-ReleaseAssets.ps1
-          "version=$($release.ReleaseVersion)" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
-          "tag=$($release.Tag)" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
-          "prerelease=$($release.Prerelease.ToString().ToLowerInvariant())" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+
+          "version=$($release.ReleaseVersion)" |
+              Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+
+          "tag=$($release.Tag)" |
+              Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+
+          "prerelease=$($release.Prerelease.ToString().ToLowerInvariant())" |
+              Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
 
       - name: Upload release bundle as workflow artifact
         uses: actions/upload-artifact@v7
@@ -209,25 +243,46 @@ jobs:
           RELEASE_VERSION: ${{ steps.release_info.outputs.version }}
           RELEASE_PRERELEASE: ${{ steps.release_info.outputs.prerelease }}
         run: |
-          $assets = @(
-              Get-ChildItem -LiteralPath "Documentation\release" -File |
-              Sort-Object Name |
-              ForEach-Object { $_.FullName }
-          )
+          $assets =
+              @(
+                  Get-ChildItem -LiteralPath "Documentation\release" -File |
+                  Sort-Object Name |
+                  ForEach-Object { $_.FullName }
+              )
 
-          if ($assets.Count -eq 0) { throw "No release assets were prepared." }
+          if ($assets.Count -eq 0) {
+              throw "No release assets were prepared."
+          }
 
-          $notesPath = Join-Path $env:RUNNER_TEMP "MetaheuristicsPlatform-release-notes.md"
-          ./build/Get-ReleaseNotes.ps1 -Root (Get-Location).Path -Version $env:RELEASE_VERSION -OutputPath $notesPath
+          $notesPath =
+              Join-Path $env:RUNNER_TEMP "MetaheuristicsPlatform-release-notes.md"
 
-          $arguments = @("release","create",$env:RELEASE_TAG)
-          $arguments += $assets
-          $arguments += @(
-              "--repo",$env:GITHUB_REPOSITORY,
-              "--target",$env:TARGET_SHA,
-              "--title","MetaheuristicsPlatform $env:RELEASE_VERSION",
-              "--notes-file",$notesPath
-          )
+          ./build/Get-ReleaseNotes.ps1 `
+              -Root (Get-Location).Path `
+              -Version $env:RELEASE_VERSION `
+              -OutputPath $notesPath
+
+          $arguments =
+              @(
+                  "release",
+                  "create",
+                  $env:RELEASE_TAG
+              )
+
+          $arguments +=
+              $assets
+
+          $arguments +=
+              @(
+                  "--repo",
+                  $env:GITHUB_REPOSITORY,
+                  "--target",
+                  $env:TARGET_SHA,
+                  "--title",
+                  "MetaheuristicsPlatform $env:RELEASE_VERSION",
+                  "--notes-file",
+                  $notesPath
+              )
 
           if ($env:RELEASE_PRERELEASE -eq "true") {
               $arguments += "--prerelease"
@@ -235,4 +290,7 @@ jobs:
           }
 
           & gh @arguments
-          if ($LASTEXITCODE -ne 0) { throw "GitHub Release publication failed." }
+
+          if ($LASTEXITCODE -ne 0) {
+              throw "GitHub Release publication failed."
+          }

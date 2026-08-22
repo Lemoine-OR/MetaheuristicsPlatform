@@ -13,6 +13,7 @@ Population methods based on structured variation or combination, selection, refe
 - **[L-SHADE](../algorithms/lshade-2014.md)** — `lshade-2014` — O(N_kD + N_k log N_k) at generation k plus objective-evaluation cost
 - **[Generational Genetic Algorithm](../algorithms/genetic-algorithm-generational.md)** — `genetic-algorithm-generational` — fixed-size generational selection/crossover/mutation with optional elitism — @subpage advanced_genetic_algorithm_operators
 - **[Scatter Search](../algorithms/scatter-search-marti-laguna-glover-2006.md)** — `scatter-search-marti-laguna-glover-2006` — five-method RefSet search with advanced dynamic/tiered update, rebuilding and representative subset components
+- **[Cross-Entropy Method - Continuous Optimization](../algorithms/cross-entropy-continuous-kroese-porotsky-rubinstein-2006.md)** — `cross-entropy-continuous-kroese-porotsky-rubinstein-2006` — diagonal normal elite-distribution learning with dynamic sigma smoothing.
 
 - **[Covariance Matrix Adaptation Evolution Strategy](../algorithms/cma-es-hansen-ostermeier-2001.md)** — cma-es-hansen-ostermeier-2001 — canonical full-covariance adaptation with CSA and rank-one/rank-mu updates.
 - **[Active CMA-ES](../algorithms/active-cma-es-hansen-ros-2010.md)** — `active-cma-es-hansen-ros-2010` — weighted negative covariance adaptation using unsuccessful ranked directions.
