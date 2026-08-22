@@ -4,6 +4,30 @@ All notable changes to MetaheuristicsPlatform will be documented in this file.
 
 ## [Unreleased]
 
+## [0.44.0]
+
+### Added
+- Add the public generic `ant-system-dorigo-maniezzo-colorni-1996` Ant System foundation.
+- Add typed constructive feasibility, heuristic-information and pheromone-key contracts instead of a TSP-specific public model.
+- Add canonical pheromone/heuristic proportional transition sampling implemented through the exactly equivalent log-space Gumbel-max identity.
+- Add sparse lazy pheromone memory: global evaporation is O(1), while newly encountered keys receive the exact accumulated decay of the initial trail.
+- Add classical all-ant global reinforcement and explicit deposit-policy composition.
+- Add a positive-minimization `Q/L` deposit with strict domain guards plus a representation-independent constant deposit policy.
+- Add focused tests for exact evaluation accounting, mid-colony stopping, deterministic seeds, invalid heuristics/objective scales and typed factory registration.
+- Add Ant System benchmark coverage, scientific page and a six-entry ACO review catalog.
+- Upgrade pack automation to v4: version-aware resume, full documentation/build validation, exact Git scope validation, commit/push, CI monitoring and automatic diagnostics.
+
+### Scientific basis
+- Dorigo, Maniezzo & Colorni (1996), *Ant System: Optimization by a Colony of Cooperating Agents*. DOI `10.1109/3477.484436`.
+- Dorigo & Gambardella (1997), *Ant Colony System: A Cooperative Learning Approach to the Traveling Salesman Problem*. DOI `10.1109/4235.585892` — reviewed/deferred.
+- Stützle & Hoos (2000), *MAX-MIN Ant System*. DOI `10.1016/S0167-739X(00)00043-1` — reviewed/deferred.
+
+### Scope and compatibility
+- Public algorithm count increases from 31 to 32; swarm-intelligence count increases from 1 to 2.
+- Existing public algorithms and stable IDs are unchanged.
+- Continuous-domain ACO, ACS local updates and MAX-MIN pheromone bounds are not approximated under the Ant System identity.
+
+
 ## [0.43.0]
 
 ### Added

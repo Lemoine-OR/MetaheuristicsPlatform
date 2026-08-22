@@ -89,3 +89,11 @@ v0.41.0 implements a representation-independent fixed-size generational GA found
 
 - Moscato, P. (1989). *On Evolution, Search, Optimization, Genetic Algorithms and Martial Arts: Towards Memetic Algorithms*. Caltech Concurrent Computation Program Report 826.
 - Krasnogor, N.; Smith, J. E. (2005). *A Tutorial for Competent Memetic Algorithms: Model, Taxonomy, and Design Issues*. IEEE Transactions on Evolutionary Computation, 9(5), 474-488. DOI: `10.1109/TEVC.2005.850260`.
+
+## Ant Colony Optimization
+
+- Dorigo, M.; Maniezzo, V.; Colorni, A. (1996). *Ant System: Optimization by a Colony of Cooperating Agents*. IEEE Transactions on Systems, Man, and Cybernetics, Part B 26(1), 29-41. DOI `10.1109/3477.484436`.
+- Dorigo, M.; Gambardella, L. M. (1997). *Ant Colony System: A Cooperative Learning Approach to the Traveling Salesman Problem*. IEEE Transactions on Evolutionary Computation 1(1), 53-66. DOI `10.1109/4235.585892`.
+- Stützle, T.; Hoos, H. H. (2000). *MAX-MIN Ant System*. Future Generation Computer Systems 16(8), 889-914. DOI `10.1016/S0167-739X(00)00043-1`.
+
+v0.44.0 implements the canonical Ant System foundation. ACS and MAX-MIN Ant System remain scientifically distinct reviewed/deferred variants for the next ACO layer.

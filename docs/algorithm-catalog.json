@@ -6,7 +6,7 @@
                      {
                          "id":  "swarm-intelligence",
                          "name":  "Swarm intelligence",
-                         "description":  "Population methods driven by distributed social information and collective motion."
+                         "description":  "Population and colony methods driven by distributed social information, collective motion or shared pheromone memory."
                      },
                      {
                          "id":  "evolutionary-methods",
@@ -714,6 +714,28 @@
                            "assumptions":  "Finite population; compatible complete-solution genetic operators; owned cloning; local improvement never returns a solution worse than its starting objective; common stopping and evaluation accounting remain authoritative.",
                            "convergence":  "No unconditional global-optimum guarantee is claimed. The implementation preserves the stochastic GA lifecycle while local-search pressure changes exploitation; finite evaluation/generation/cancellation limits still terminate execution.",
                            "factoryMode":  "composition"
+                       },
+                       {
+                           "id":  "ant-system-dorigo-maniezzo-colorni-1996",
+                           "name":  "Ant System - Dorigo-Maniezzo-Colorni",
+                           "class":  "AntSystemOptimizer\u003cTSolution,TComponent,TPheromoneKey,TEnumerator\u003e",
+                           "category":  "swarm-intelligence",
+                           "kind":  "population",
+                           "family":  "Swarm intelligence",
+                           "time":  "O(sum over ants and construction steps of feasible-candidate scans) per full iteration, plus objective-evaluation cost",
+                           "space":  "O(|P| + colony solution/key-path storage); lazy global evaporation is O(1)",
+                           "applicability":  "Finite constructive binary, integer, permutation, combinatorial and mixed discrete search spaces with typed feasibility, heuristic-information and pheromone-key contracts",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/AntColony/AntSystemOptimizer.cs",
+                           "publication":  "Dorigo, Maniezzo \u0026 Colorni (1996), Ant System: Optimization by a Colony of Cooperating Agents, IEEE Transactions on Systems, Man, and Cybernetics, Part B 26(1), 29-41",
+                           "doi":  "10.1109/3477.484436",
+                           "implementation":  "Generic proportional pheromone/heuristic construction with log-space Gumbel-max sampling, sparse lazy exact evaporation, all-ant global reinforcement, explicit deposit policies and common OptimizationContext accounting.",
+                           "page":  "docs/pages/algorithms/ant-system-dorigo-maniezzo-colorni-1996.md",
+                           "problem":  "\\min_{x\\in\\mathcal X} f(x)",
+                           "update":  "\\begin{aligned}p(c\\mid s,t)\u0026=\\frac{\\tau_c(t)^{\\alpha}\\eta_c(s)^{\\beta}}{\\sum_{u\\in\\mathcal F(s)}\\tau_u(t)^{\\alpha}\\eta_u(s)^{\\beta}},\\\\\\tau_e(t+1)\u0026=(1-\\rho)\\tau_e(t)+\\sum_{k=1}^{m}\\Delta\\tau_e^{(k)}\\end{aligned}",
+                           "assumptions":  "Finite constructive feasibility; strictly positive finite pheromone; strictly positive finite heuristic information when beta\u003e0; finite non-negative domain-appropriate deposits.",
+                           "convergence":  "No universal finite-time global-convergence claim is made for generic Ant System. Later bounded or convergence-oriented ACO variants have distinct assumptions and identities.",
+                           "factoryMode":  "registered"
                        }
                    ]
 }

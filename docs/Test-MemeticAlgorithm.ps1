@@ -203,7 +203,6 @@ Require-Contains `
 
 Require-Contains `
     "README.md" @(
-        "31 public algorithms",
         "Memetic Algorithm - Moscato",
         "memetic-algorithm-moscato-1989",
         "components/memetic-algorithm-components.html"

@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "release": "0.44.0",
+  "family": "Ant Colony Optimization",
+  "canonicalAlgorithmId": "ant-system-dorigo-maniezzo-colorni-1996",
+  "entries": [
+    {
+      "id": "aco.transition.ant-system-proportional",
+      "name": "Ant System proportional transition",
+      "status": "implemented",
+      "reference": "Dorigo, Maniezzo & Colorni (1996)",
+      "doi": "10.1109/3477.484436",
+      "notes": "Generic pheromone/heuristic categorical transition; sampled by the equivalent log-space Gumbel-max identity."
+    },
+    {
+      "id": "aco.update.all-ants",
+      "name": "Classical all-ant global pheromone update",
+      "status": "implemented",
+      "reference": "Dorigo, Maniezzo & Colorni (1996)",
+      "doi": "10.1109/3477.484436",
+      "notes": "O(1) lazy global evaporation followed by reinforcement from every completed ant."
+    },
+    {
+      "id": "aco.deposit.constant",
+      "name": "Constant domain-neutral deposit",
+      "status": "implemented",
+      "reference": "Platform composition policy",
+      "doi": "",
+      "notes": "Representation-independent non-negative deposit for objective scales where Q/L is not meaningful."
+    },
+    {
+      "id": "aco.deposit.inverse-positive-objective",
+      "name": "Positive-minimization Q/L deposit",
+      "status": "implemented",
+      "reference": "Dorigo, Maniezzo & Colorni (1996)",
+      "doi": "10.1109/3477.484436",
+      "notes": "Explicitly restricted to finite strictly-positive minimization objectives."
+    },
+    {
+      "id": "aco.variant.ant-colony-system",
+      "name": "Ant Colony System",
+      "status": "reviewed-deferred",
+      "reference": "Dorigo & Gambardella (1997)",
+      "doi": "10.1109/4235.585892",
+      "notes": "Requires ACS pseudo-random proportional choice, local pheromone update and distinct global-update semantics."
+    },
+    {
+      "id": "aco.variant.max-min-ant-system",
+      "name": "MAX-MIN Ant System",
+      "status": "reviewed-deferred",
+      "reference": "Stutzle & Hoos (2000)",
+      "doi": "10.1016/S0167-739X(00)00043-1",
+      "notes": "Requires bounded pheromone trails and selective best-solution reinforcement; reserved for the advanced ACO layer."
+    }
+  ]
+}

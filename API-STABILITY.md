@@ -30,6 +30,7 @@ contracts:
 - public canonical GRASP ID (`grasp-feo-resende-1995`) introduced in v0.28.0;
 - public Reactive GRASP ID (`reactive-grasp-prais-ribeiro-2000`) introduced in v0.29.0;
 - public GRASP with Path Relinking ID (`grasp-path-relinking`) introduced in v0.30.0;
+- public Ant System stable ID (`ant-system-dorigo-maniezzo-colorni-1996`) introduced in v0.44.0;
 - scientific method identity;
 - serialized/reproducibility-facing identifiers;
 - documentation URLs generated from stable IDs.
@@ -86,3 +87,12 @@ the same spirit as ULSAlgorithms.
 - Public policy contracts: `IMemeticLocalSearchPolicy` and `IMemeticLearningPolicy`.
 - Executable component IDs: `ma.local-search.every-offspring`, `ma.local-search.periodic`, `ma.local-search.probabilistic`, `ma.local-search.top-fraction`, `ma.local-search.adaptive-stagnation`, `ma.learning.lamarckian`, `ma.learning.baldwinian`.
 - The generation-extension hook added to `GenerationalGeneticAlgorithmOptimizer<TSolution>` is internal; existing public GA construction, ID and parameter contracts remain source-compatible.
+
+### v0.44.0
+
+- Stable public Ant System ID: `ant-system-dorigo-maniezzo-colorni-1996`.
+- Public composition contracts: `IAntColonyConstructionModel<...>`, `IAntColonyCandidateEnumerator<TComponent>` and `IAntSystemDepositPolicy<TSolution>`.
+- Stable ACO component IDs use the `aco.*` namespace.
+- The v0.44 identity is canonical Ant System with proportional transition, global evaporation and all-ant reinforcement.
+- Ant Colony System and MAX-MIN Ant System remain separate reviewed/deferred identities; their local-update, exploitation and pheromone-bound semantics are not silently folded into Ant System.
+- Generic ACO construction is discrete/constructive in v0.44; continuous-domain ACO requires a distinct future sampling contract.
