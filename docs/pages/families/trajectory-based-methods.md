@@ -23,6 +23,8 @@ memory and state-transition policies.
   `demon-based-acceptance-talbi-2009` — conserved non-negative credit/energy acceptance.
 - **[Iterated Greedy](../algorithms/iterated-greedy-ruiz-stutzle-2007.md)** —
   `iterated-greedy-ruiz-stutzle-2007` — generic destruction/reconstruction with optional local improvement and pluggable acceptance.
+- **[Large Neighborhood Search](../algorithms/large-neighborhood-search-shaw-1998.md)** —
+  `large-neighborhood-search-shaw-1998` — generic owned-clone destroy/repair large-neighborhood trajectory with explicit acceptance.
 - **[Tabu Search](../algorithms/tabu-search-glover.md)** — `tabu-search-glover` —
   best-admissible neighborhood search with short-term memory and aspiration.
 - **[Reactive Tabu Search](../algorithms/reactive-tabu-search-battiti-tecchiolli-1994.md)** —
@@ -35,6 +37,7 @@ memory and state-transition policies.
 - @ref threshold_accepting_schedules "Threshold Accepting Schedule Catalog".
 - @ref acceptance_based_trajectory_methods "Acceptance-Based Trajectory Methods".
 - @ref tabu_search_memory_control_strategies "Tabu Search Memory and Reactive Control Catalog".
+- @ref large_neighborhood_search_components "Large Neighborhood Search Components".
 
 ## v0.23.0 Local Search Core
 

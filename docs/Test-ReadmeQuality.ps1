@@ -182,6 +182,21 @@ if (-not $readme.Contains($evolutionaryCountMarker)) {
     throw "README quality: dynamic evolutionary count marker '$evolutionaryCountMarker' is missing."
 }
 
+$trajectoryCount =
+    @(
+        $algorithms |
+        Where-Object {
+            [string]$_.category -eq "trajectory-based-methods"
+        }
+    ).Count
+
+$trajectoryCountMarker =
+    "$trajectoryCount trajectory methods"
+
+if (-not $readme.Contains($trajectoryCountMarker)) {
+    throw "README quality: dynamic trajectory count marker '$trajectoryCountMarker' is missing."
+}
+
 foreach ($algorithm in $algorithms) {
     $id =
         [string]$algorithm.id

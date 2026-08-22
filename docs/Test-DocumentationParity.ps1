@@ -20,8 +20,8 @@ $catalog =
 $algorithms = @($catalog.algorithms)
 $families = @($catalog.families)
 
-if ($algorithms.Count -lt 42) {
-    throw "Documentation parity: expected at least the forty-two currently public algorithms."
+if ($algorithms.Count -lt 43) {
+    throw "Documentation parity: expected at least the forty-three currently public algorithms."
 }
 
 $requiredFields = @(
@@ -142,8 +142,13 @@ $requiredRepoFiles = @(
     "docs\Test-ArtificialBeeColony.ps1",
     "docs\Test-FireflyAlgorithm.ps1",
     "docs\Test-ContinuousCrossEntropy.ps1",
+    "docs\Test-LargeNeighborhoodSearch.ps1",
     "docs\Test-ReadmeQuality.ps1",
     "docs\Test-ReadmeHistoricalCompatibility.ps1",
+    "docs\large-neighborhood-search-component-catalog.json",
+    "docs\Build-LargeNeighborhoodSearchDocumentation.ps1",
+    "docs\pages\components\large-neighborhood-search-components.md",
+    "docs\pages\algorithms\large-neighborhood-search-shaw-1998.md",
     "docs\pages\algorithms\artificial-bee-colony-karaboga-basturk-2007.md",
     "docs\pages\algorithms\firefly-algorithm-yang-2009.md",
     "docs\pages\algorithms\cross-entropy-continuous-kroese-porotsky-rubinstein-2006.md",
@@ -273,8 +278,8 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.51.0") {
-    throw "Documentation parity: version.json must be 0.51.0 for this release."
+if ([string]$version.version -ne "0.52.0") {
+    throw "Documentation parity: version.json must be 0.52.0 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root
@@ -295,6 +300,7 @@ if ([string]$version.version -ne "0.51.0") {
 & (Join-Path $Root "docs\Test-ArtificialBeeColony.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-FireflyAlgorithm.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-ContinuousCrossEntropy.ps1") -Root $Root
+& (Join-Path $Root "docs\Test-LargeNeighborhoodSearch.ps1") -Root $Root
 & (Join-Path $Root "tools\Test-ReleaseWorkflowTopology.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-ReadmeQuality.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-ReadmeHistoricalCompatibility.ps1") -Root $Root

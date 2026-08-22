@@ -173,3 +173,19 @@ Stable public ID introduced:
 `FireflyReferences` are public API. The canonical public identity uses bounded continuous
 pairwise attraction with `beta(r)=beta0*exp(-gamma*r^2)` and additive
 `alpha*(U(0,1)-1/2)` randomization under the common `OptimizationContext`.
+
+## v0.52.0 Large Neighborhood Search
+
+Stable public ID introduced:
+
+- `large-neighborhood-search-shaw-1998`
+
+`LargeNeighborhoodSearchOptimizer<TSolution,TRemoved>`,
+`LargeNeighborhoodSearchParameters`, `LargeNeighborhoodSearchState`,
+`ILargeNeighborhoodDestroyOperator<TSolution,TRemoved>`,
+`ILargeNeighborhoodRepairOperator<TSolution,TRemoved>` and
+`ILargeNeighborhoodAcceptancePolicy` are public API.
+
+The stable identity denotes the generic Shaw destroy/repair large-neighborhood lifecycle.
+Problem-specific Shaw relatedness and constraint-search reinsertion remain domain composition;
+adaptive multi-operator weighting is reserved for the separate ALNS identity.

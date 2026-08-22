@@ -1,4 +1,4 @@
-[CmdletBinding()]
+﻿[CmdletBinding()]
 param(
     [string]$Root = (Split-Path -Parent $PSScriptRoot)
 )
@@ -118,8 +118,6 @@ if(-not [bool]$entry[0].requiresComposition) {
 }
 
 Require-Contains "README.md" @(
-
-    "19 trajectory methods",
     "iterated-greedy-ruiz-stutzle-2007"
 )
 

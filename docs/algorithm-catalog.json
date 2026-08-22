@@ -760,6 +760,28 @@
                            "factoryMode":  "composition"
                        },
                        {
+                           "id":  "large-neighborhood-search-shaw-1998",
+                           "name":  "Large Neighborhood Search - Shaw",
+                           "class":  "LargeNeighborhoodSearchOptimizer\u003cTSolution,TRemoved\u003e",
+                           "category":  "trajectory-based-methods",
+                           "kind":  "single-solution",
+                           "family":  "Trajectory-based methods",
+                           "time":  "O(C_D(q)+C_R(q)+C_f+C_A) per complete destroy-repair-accept cycle",
+                           "space":  "O(|solution|+|removed|) plus domain destroy/repair workspace",
+                           "applicability":  "Structured discrete or mixed problems admitting a meaningful partial destruction and complete repair pair",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/LargeNeighborhoodSearch/LargeNeighborhoodSearchOptimizer.cs",
+                           "publication":  "Shaw (1998), Using Constraint Programming and Local Search Methods to Solve Vehicle Routing Problems, CP98, LNCS 1520, 417-431; Pisinger \u0026 Ropke (2010), Large Neighborhood Search, Handbook of Metaheuristics",
+                           "doi":  "10.1007/3-540-49481-2_30",
+                           "implementation":  "Generic owned-clone destroy/repair trajectory with complete-candidate-only evaluation, strict-improvement default acceptance, pluggable acceptance and exact incomplete-cycle OptimizationContext accounting.",
+                           "page":  "docs/pages/algorithms/large-neighborhood-search-shaw-1998.md",
+                           "problem":  "\\operatorname*{opt}_{x\\in\\mathcal X} f(x)",
+                           "update":  "\\begin{aligned}(p_k,\\rho_k)\u0026=D_q(x_k),\\\\y_k\u0026=R(p_k,\\rho_k),\\\\x_{k+1}\u0026=\\begin{cases}y_k,\u0026A(x_k,y_k)=1,\\\\x_k,\u0026\\text{otherwise}\\end{cases}\\end{aligned}",
+                           "assumptions":  "Destroy operates on an owned clone; repair restores a complete evaluable solution; objective values are finite; cloning preserves independent ownership.",
+                           "convergence":  "No universal finite-time global-optimum guarantee is claimed. Strict acceptance gives monotone accepted objective values on finite spaces; global reachability depends on domain destroy/repair coverage.",
+                           "factoryMode":  "composition"
+                       },
+                       {
                            "id":  "memetic-algorithm-moscato-1989",
                            "name":  "Memetic Algorithm - Moscato",
                            "class":  "MemeticAlgorithmOptimizer\u003cTSolution\u003e",

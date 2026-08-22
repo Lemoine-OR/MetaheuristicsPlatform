@@ -211,6 +211,7 @@ Require-Contains `
         "Build-AcceptanceBasedTrajectoryDocumentation.ps1",
         "Build-PathRelinkingStrategyDocumentation.ps1",
         "Build-AdvancedIteratedGreedyDocumentation.ps1",
+        "Build-LargeNeighborhoodSearchDocumentation.ps1",
         "Build-AdvancedScatterSearchDocumentation.ps1",
         "Build-AdvancedGeneticAlgorithmDocumentation.ps1",
         "Build-MemeticAlgorithmDocumentation.ps1",
@@ -226,6 +227,7 @@ Require-Contains `
         "@subpage acceptance_based_trajectory_methods",
         "@subpage path_relinking_strategies",
         "@subpage advanced_iterated_greedy_strategies",
+        "@subpage large_neighborhood_search_components",
         "@subpage advanced_scatter_search_strategies",
         "@subpage advanced_genetic_algorithm_operators",
         "@subpage memetic_algorithm_components",
@@ -252,6 +254,26 @@ Require-Contains `
         "formula-note",
         "mathjax@3.2.2/es5/tex-chtml.js"
     )
+
+Require-Contains `
+    "docs\Build-LargeNeighborhoodSearchDocumentation.ps1" @(
+        "Large Neighborhood Search Components",
+        "large-neighborhood-search-components.html",
+        "large-neighborhood-search-component-catalog.json",
+        "formula-note",
+        "mathjax@3.2.2/es5/tex-chtml.js"
+    )
+
+Require-Contains `
+    "docs\pages\components\large-neighborhood-search-components.md" @(
+        "@page large_neighborhood_search_components",
+        "lns.destroy.operator",
+        "lns.repair.operator",
+        "lns.acceptance.improving-only",
+        "10.1007/3-540-49481-2_30",
+        "10.1287/trsc.1050.0135"
+    )
+
 Require-Contains `
     "docs\Build-AdvancedScatterSearchDocumentation.ps1" @(
         "Advanced Scatter Search Strategies",

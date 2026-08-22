@@ -356,6 +356,7 @@ else {
 & (Join-Path $Root "docs\Build-AdvancedVariableNeighborhoodDocumentation.ps1") -Root $Root -Site $site
 & (Join-Path $Root "docs\Build-PathRelinkingStrategyDocumentation.ps1") -Root $Root -Site $site
 & (Join-Path $Root "docs\Build-AdvancedIteratedGreedyDocumentation.ps1") -Root $Root -Site $site
+& (Join-Path $Root "docs\Build-LargeNeighborhoodSearchDocumentation.ps1") -Root $Root -Site $site
 & (Join-Path $Root "docs\Build-AdvancedScatterSearchDocumentation.ps1") -Root $Root -Site $site
 & (Join-Path $Root "docs\Build-AdvancedGeneticAlgorithmDocumentation.ps1") -Root $Root -Site $site
 & (Join-Path $Root "docs\Build-MemeticAlgorithmDocumentation.ps1") -Root $Root -Site $site

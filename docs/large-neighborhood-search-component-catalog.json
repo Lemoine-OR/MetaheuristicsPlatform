@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "release": "0.52.0",
+  "family": "Large Neighborhood Search Components",
+  "implementedCount": 3,
+  "reviewedDeferredCount": 3,
+  "entries": [
+    {
+      "id": "lns.destroy.operator",
+      "name": "Generic destroy operator contract",
+      "status": "implemented",
+      "scope": "generic-composition",
+      "description": "Domain-defined partial destruction over an owned incumbent clone with explicit destruction-size input.",
+      "formulaMode": "prose",
+      "formula": "The destroy operator maps a complete incumbent clone to a domain-owned partial representation and removed-component token; no partial objective is evaluated.",
+      "publication": "Shaw (1998); Pisinger & Ropke (2010)",
+      "doi": "10.1007/3-540-49481-2_30"
+    },
+    {
+      "id": "lns.repair.operator",
+      "name": "Generic repair operator contract",
+      "status": "implemented",
+      "scope": "generic-composition",
+      "description": "Domain-defined reconstruction that restores a complete evaluable candidate.",
+      "formulaMode": "prose",
+      "formula": "The repair operator consumes the partial representation and removed-component token and must restore a complete candidate before common objective evaluation.",
+      "publication": "Shaw (1998); Pisinger & Ropke (2010)",
+      "doi": "10.1007/3-540-49481-2_30"
+    },
+    {
+      "id": "lns.acceptance.improving-only",
+      "name": "Strict-improvement incumbent acceptance",
+      "status": "implemented",
+      "scope": "generic",
+      "description": "Canonical local-search acceptance that replaces the incumbent only on strict objective improvement.",
+      "formulaMode": "math",
+      "formula": "A(x,y)=\\mathbf 1[y\\prec_f x]",
+      "publication": "Canonical LNS local-search interpretation",
+      "doi": "10.1007/3-540-49481-2_30"
+    },
+    {
+      "id": "lns.destroy.shaw-related-removal",
+      "name": "Shaw related-customer removal",
+      "status": "reviewed-deferred",
+      "scope": "vehicle-routing",
+      "description": "Routing-specific relatedness combines structural proximity information and belongs to the domain model.",
+      "formulaMode": "prose",
+      "formula": "The exact relatedness metric depends on routing-specific distance, timing and request attributes and is therefore not universalized by the generic core.",
+      "publication": "Shaw (1998)",
+      "doi": "10.1007/3-540-49481-2_30"
+    },
+    {
+      "id": "lns.repair.constraint-lds",
+      "name": "Constraint-based reinsertion with Limited Discrepancy Search",
+      "status": "reviewed-deferred",
+      "scope": "constraint-programming-routing",
+      "description": "Original Shaw reconstruction uses constraint-based tree search with Limited Discrepancy Search.",
+      "formulaMode": "prose",
+      "formula": "Faithful implementation requires a first-class constraint-search model and discrepancy semantics rather than a generic repair flag.",
+      "publication": "Shaw (1998)",
+      "doi": "10.1007/3-540-49481-2_30"
+    },
+    {
+      "id": "lns.adaptive.operator-selection",
+      "name": "Adaptive destroy/repair operator selection",
+      "status": "reviewed-deferred",
+      "scope": "future-alns",
+      "description": "Competing destroy and repair subheuristics are selected with frequencies driven by their historical performance.",
+      "formulaMode": "prose",
+      "formula": "This performance-weighted multi-operator controller is reserved for the distinct Adaptive Large Neighborhood Search release.",
+      "publication": "Ropke & Pisinger (2006)",
+      "doi": "10.1287/trsc.1050.0135"
+    }
+  ],
+  "references": [
+    {
+      "publication": "Shaw (1998), canonical Large Neighborhood Search",
+      "doi": "10.1007/3-540-49481-2_30"
+    },
+    {
+      "publication": "Pisinger & Ropke (2010), Large Neighborhood Search overview",
+      "doi": "10.1007/978-1-4419-1665-5_13"
+    },
+    {
+      "publication": "Ropke & Pisinger (2006), Adaptive Large Neighborhood Search",
+      "doi": "10.1287/trsc.1050.0135"
+    }
+  ]
+}

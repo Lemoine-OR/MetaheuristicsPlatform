@@ -2,6 +2,24 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.52.0] - 2026-08-22
+
+### Added
+
+- Generic Large Neighborhood Search foundation following Shaw's destroy-and-repair large-neighborhood principle.
+- Stable ID `large-neighborhood-search-shaw-1998` with primary DOI `10.1007/3-540-49481-2_30`.
+- Public destroy, repair and acceptance contracts plus delegate-backed composition adapters.
+- Strict-improvement default acceptance, complete-candidate-only evaluation and exact incomplete-cycle budget accounting.
+- LNS scientific component catalog separating generic executable contracts from Shaw-specific routing operators and future ALNS adaptation.
+- Focused tests, benchmark coverage and full mathematical documentation.
+
+### Changed
+
+- Public algorithm count increases from 42 to 43; trajectory-based count increases from 19 to 20.
+- README trajectory count is now validated dynamically from the canonical algorithm catalog.
+- Historical README compatibility no longer freezes aggregate algorithm-family counts.
+- Pack automation advances to v5.9: CI monitoring identifies workflows by stable path and treats an already-published exact-version release as terminal success.
+
 ## [0.51.0] - 2026-08-22
 
 ### Added

@@ -460,7 +460,22 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/IteratedGreedy/IteratedGreedyOptimizer.cs",
             "Ruiz & Stützle (2007), A simple and effective iterated greedy algorithm for the permutation flowshop scheduling problem, EJOR 177(3), 2033-2049; Stützle & Ruiz (2025), Iterated Greedy, Handbook of Heuristics",
             "10.1016/j.ejor.2005.12.009",
-            "Generic destruction-reconstruction trajectory with optional reusable local search, strict-improvement or constant-temperature Metropolis acceptance, complete-solution-only evaluation and common OptimizationContext lifecycle."),        new(
+            "Generic destruction-reconstruction trajectory with optional reusable local search, strict-improvement or constant-temperature Metropolis acceptance, complete-solution-only evaluation and common OptimizationContext lifecycle."),
+        new(
+            "large-neighborhood-search-shaw-1998",
+            "Large Neighborhood Search - Shaw",
+            "LargeNeighborhoodSearchOptimizer<TSolution,TRemoved>",
+            "trajectory-based-methods",
+            "Trajectory-based methods",
+            "O(C_D(q)+C_R(q)+C_f+C_A) per complete destroy-repair-accept cycle",
+            "O(|solution|+|removed|) plus domain destroy/repair workspace",
+            "Structured discrete or mixed problems admitting a meaningful partial destruction and complete repair pair",
+            true,
+            "src/MetaheuristicsPlatform/Algorithms/LargeNeighborhoodSearch/LargeNeighborhoodSearchOptimizer.cs",
+            "Shaw (1998), Using Constraint Programming and Local Search Methods to Solve Vehicle Routing Problems, CP98, LNCS 1520, 417-431; Pisinger & Ropke (2010), Large Neighborhood Search, Handbook of Metaheuristics",
+            "10.1007/3-540-49481-2_30",
+            "Generic owned-clone destroy/repair trajectory with complete-candidate-only evaluation, strict-improvement default acceptance, pluggable acceptance and exact incomplete-cycle OptimizationContext accounting."),
+        new(
             "variable-neighborhood-descent",
             "Variable Neighborhood Descent",
             "VariableNeighborhoodDescentOptimizer<TSolution>",

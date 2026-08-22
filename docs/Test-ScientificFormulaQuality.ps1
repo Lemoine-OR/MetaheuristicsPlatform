@@ -114,8 +114,8 @@ $catalog =
 
 $algorithms = @($catalog.algorithms)
 
-if ($algorithms.Count -lt 42) {
-    throw "Scientific formula quality: expected at least 42 public algorithms."
+if ($algorithms.Count -lt 43) {
+    throw "Scientific formula quality: expected at least 43 public algorithms."
 }
 
 foreach ($algorithm in $algorithms) {
@@ -153,7 +153,8 @@ foreach ($catalogRelative in @(
     "docs\advanced-genetic-algorithm-catalog.json",
     "docs\memetic-algorithm-catalog.json",
     "docs\advanced-ant-colony-optimization-catalog.json",
-    "docs\cma-es-component-catalog.json"
+    "docs\cma-es-component-catalog.json",
+    "docs\large-neighborhood-search-component-catalog.json"
 )) {
     $componentCatalog =
         (Read-Utf8 $catalogRelative) |

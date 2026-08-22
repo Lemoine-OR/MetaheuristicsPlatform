@@ -58,6 +58,8 @@ public static class MetaheuristicAlgorithmIds
     public const string MultiStartLocalSearch = "multi-start-local-search";
     public const string IteratedLocalSearch = "iterated-local-search-lourenco-martin-stutzle";
     public const string IteratedGreedy = "iterated-greedy-ruiz-stutzle-2007";
+    public const string LargeNeighborhoodSearch =
+        "large-neighborhood-search-shaw-1998";
     public const string VariableNeighborhoodDescent = "variable-neighborhood-descent";
     public const string VariableNeighborhoodSearch = "variable-neighborhood-search-mladenovic-hansen";
     public const string GuidedLocalSearch = "guided-local-search-voudouris-tsang-1999";
