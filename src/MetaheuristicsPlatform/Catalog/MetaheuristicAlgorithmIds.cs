@@ -8,6 +8,8 @@ public static class MetaheuristicAlgorithmIds
     public const string ParticleSwarm = "particle-swarm";
     public const string ArtificialBeeColony =
         "artificial-bee-colony-karaboga-basturk-2007";
+    public const string Firefly =
+        "firefly-algorithm-yang-2009";
     public const string AntSystem =
         "ant-system-dorigo-maniezzo-colorni-1996";
     public const string AntColonySystem =

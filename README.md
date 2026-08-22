@@ -35,7 +35,7 @@ catalog IDs and literature-backed documentation.
 
 <table>
 <tr>
-<td width="20%"><strong>5 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Ant System, ACS and MAX-MIN Ant System.</sub></td>
+<td width="20%"><strong>6 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Firefly, Ant System, ACS and MAX-MIN Ant System.</sub></td>
 <td width="20%"><strong>13 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
 <td width="20%"><strong>19 trajectory methods</strong><br><sub>Acceptance methods, Tabu, local search, ILS, Iterated Greedy, VNS and GLS.</sub></td>
 <td width="20%"><strong>3 constructive methods</strong><br><sub>GRASP, Reactive GRASP and GRASP with Path Relinking.</sub></td>
@@ -43,7 +43,7 @@ catalog IDs and literature-backed documentation.
 </tr>
 </table>
 
-<p align="center"><strong>41 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>42 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -104,7 +104,7 @@ Each card also exposes the stable catalog/factory ID.
 <table>
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/particle-swarm.html"><strong>Particle Swarm Optimization</strong></a><br><sub>Continuous swarm motion with deterministic RNG streams and configurable social topology.</sub><br><code>particle-swarm</code><br><sub><code>ParticleSwarmOptimizer</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/artificial-bee-colony-karaboga-basturk-2007.html"><strong>Artificial Bee Colony</strong></a><br><sub>Canonical employed/onlooker/scout food-source search for bounded continuous optimization.</sub><br><code>artificial-bee-colony-karaboga-basturk-2007</code><br><sub><code>ArtificialBeeColonyOptimizer</code></sub></td></tr>
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/ant-system-dorigo-maniezzo-colorni-1996.html"><strong>Ant System - Dorigo-Maniezzo-Colorni</strong></a><br><sub>Generic pheromone/heuristic constructive colony search with all-ant reinforcement.</sub><br><code>ant-system-dorigo-maniezzo-colorni-1996</code><br><sub><code>AntSystemOptimizer&lt;TSolution,TComponent,TPheromoneKey,TEnumerator&gt;</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/ant-colony-system-dorigo-gambardella-1997.html"><strong>Ant Colony System - Dorigo-Gambardella</strong></a><br><sub>Pseudo-random proportional construction, local pheromone update and best-so-far reinforcement.</sub><br><code>ant-colony-system-dorigo-gambardella-1997</code><br><sub><code>AntColonySystemOptimizer&lt;TSolution,TComponent,TPheromoneKey,TEnumerator&gt;</code></sub></td></tr>
-<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/max-min-ant-system-stutzle-hoos-2000.html"><strong>MAX-MIN Ant System - Stutzle-Hoos</strong></a><br><sub>Bounded pheromone trails with best-only reinforcement and optional stagnation restart.</sub><br><code>max-min-ant-system-stutzle-hoos-2000</code><br><sub><code>MaxMinAntSystemOptimizer&lt;TSolution,TComponent,TPheromoneKey,TEnumerator&gt;</code></sub></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/max-min-ant-system-stutzle-hoos-2000.html"><strong>MAX-MIN Ant System - Stutzle-Hoos</strong></a><br><sub>Bounded pheromone trails with best-only reinforcement and optional stagnation restart.</sub><br><code>max-min-ant-system-stutzle-hoos-2000</code><br><sub><code>MaxMinAntSystemOptimizer&lt;TSolution,TComponent,TPheromoneKey,TEnumerator&gt;</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/firefly-algorithm-yang-2009.html"><strong>Firefly Algorithm</strong></a><br><sub>Distance-decaying attraction toward brighter solutions with additive stochastic exploration.</sub><br><code>firefly-algorithm-yang-2009</code><br><sub><code>FireflyOptimizer</code></sub></td></tr>
 </table>
 
 ### Evolutionary methods

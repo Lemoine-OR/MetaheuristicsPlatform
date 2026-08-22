@@ -75,6 +75,28 @@
                            "factoryMode":  "direct"
                        },
                        {
+                           "id":  "firefly-algorithm-yang-2009",
+                           "name":  "Firefly Algorithm",
+                           "class":  "FireflyOptimizer",
+                           "category":  "swarm-intelligence",
+                           "kind":  "population",
+                           "family":  "Swarm intelligence",
+                           "time":  "O(N^2 D) pairwise movement work per complete iteration plus up to O(N^2) objective evaluations",
+                           "space":  "O(N D)",
+                           "applicability":  "Bounded continuous derivative-free multimodal optimization with distance-dependent attraction",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Firefly/FireflyOptimizer.cs",
+                           "publication":  "Yang (2009), Firefly Algorithms for Multimodal Optimization, Stochastic Algorithms: Foundations and Applications, LNCS 5792, 169-178",
+                           "doi":  "10.1007/978-3-642-04944-6_14",
+                           "implementation":  "Sequential objective-sense-symmetric pairwise attraction with distance-decaying beta, additive uniform randomization, bounded repair and exact partial-sweep OptimizationContext accounting.",
+                           "page":  "docs/pages/algorithms/firefly-algorithm-yang-2009.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}r_{ij}^{2}\u0026=\\sum_{d=1}^{D}(x_{i,d}-x_{j,d})^2,\\\\\\beta(r_{ij})\u0026=\\beta_0\\exp(-\\gamma r_{ij}^{2}),\\\\\\x_{i,d}^{+}\u0026=x_{i,d}+\\beta(r_{ij})(x_{j,d}-x_{i,d})+\\alpha(U_{i,d}-\\tfrac12),\\quad U_{i,d}\\sim\\mathcal U(0,1)\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous box; finite objective values and pairwise squared distances; brightness ordering equals objective ordering under the configured optimization sense.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; practical behavior depends on beta0, gamma, alpha, population size, coordinate scaling and evaluation budget.",
+                           "factoryMode":  "direct"
+                       },
+                       {
                            "id":  "cross-entropy-continuous-kroese-porotsky-rubinstein-2006",
                            "name":  "Cross-Entropy Method - Continuous Optimization",
                            "class":  "ContinuousCrossEntropyOptimizer",

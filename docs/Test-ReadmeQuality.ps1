@@ -129,7 +129,6 @@ foreach ($linkedTitle in @(
 }
 
 foreach ($marker in @(
-    "5 swarm methods",
     "artificial-bee-colony-karaboga-basturk-2007"
 )) {
     if (-not $readme.Contains($marker)) {
@@ -151,6 +150,21 @@ $publicCountMarker =
 
 if (-not $readme.Contains($publicCountMarker)) {
     throw "README quality: dynamic public-algorithm count marker '$publicCountMarker' is missing."
+}
+
+$swarmCount =
+    @(
+        $algorithms |
+        Where-Object {
+            [string]$_.category -eq "swarm-intelligence"
+        }
+    ).Count
+
+$swarmCountMarker =
+    "$swarmCount swarm methods"
+
+if (-not $readme.Contains($swarmCountMarker)) {
+    throw "README quality: dynamic swarm count marker '$swarmCountMarker' is missing."
 }
 
 $evolutionaryCount =

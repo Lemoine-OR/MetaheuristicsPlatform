@@ -28,6 +28,10 @@ public static class MetaheuristicFactory
             "MetaheuristicsPlatform.Algorithms.ArtificialBeeColony.ArtificialBeeColonyOptimizer");
 
         RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.Firefly,
+            "MetaheuristicsPlatform.Algorithms.Firefly.FireflyOptimizer");
+
+        RegisterAssemblyType(
             MetaheuristicAlgorithmIds.CmaEs,
             "MetaheuristicsPlatform.Algorithms.CMAES.CmaEsOptimizer");
 

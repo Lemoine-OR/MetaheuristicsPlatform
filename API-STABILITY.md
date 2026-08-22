@@ -162,3 +162,14 @@ Stable public ID introduced:
 are public API. The algorithm uses the existing bounded continuous contracts and the
 common `OptimizationContext`; the public identity denotes the diagonal-normal continuous
 CE model with elite updating and dynamic standard-deviation smoothing.
+
+## v0.51.0 Firefly Algorithm
+
+Stable public ID introduced:
+
+- `firefly-algorithm-yang-2009`
+
+`FireflyOptimizer`, `FireflyParameters`, `FireflyState`, `FireflyPhase` and
+`FireflyReferences` are public API. The canonical public identity uses bounded continuous
+pairwise attraction with `beta(r)=beta0*exp(-gamma*r^2)` and additive
+`alpha*(U(0,1)-1/2)` randomization under the common `OptimizationContext`.

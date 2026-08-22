@@ -2,6 +2,21 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.51.0] - 2026-08-22
+
+### Added
+
+- Canonical bounded-continuous Firefly Algorithm with distance-decaying attractiveness and additive stochastic exploration.
+- Stable ID `firefly-algorithm-yang-2009` with Yang 2009/2010 DOI provenance.
+- Objective-sense symmetric sequential pairwise attraction, exact partial-sweep budget handling, determinism tests and benchmark coverage.
+- Dedicated Firefly scientific validator and mathematical documentation.
+
+### Changed
+
+- Public algorithm count increases from 41 to 42; swarm-intelligence count increases from 5 to 6.
+- README swarm count validation is now derived dynamically from the algorithm catalog.
+- v0.50 release-gate hotfix is the mandatory base: workflow runs are identified by stable workflow paths rather than display/run names.
+
 ## [0.50.0] - 2026-08-22
 
 ### Added
