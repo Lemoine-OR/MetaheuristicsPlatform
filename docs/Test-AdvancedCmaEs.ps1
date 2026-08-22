@@ -1,4 +1,4 @@
-[CmdletBinding()]
+﻿[CmdletBinding()]
 param(
     [string]$Root = (Split-Path -Parent $PSScriptRoot)
 )
@@ -81,15 +81,6 @@ $catalog =
     (Read-Utf8 "docs\cma-es-component-catalog.json") |
     ConvertFrom-Json
 
-$implemented =
-    @($catalog.entries | Where-Object status -eq "implemented")
-
-$deferred =
-    @($catalog.entries | Where-Object status -eq "reviewed-deferred")
-
-if ($implemented.Count -ne 8 -or $deferred.Count -ne 2) {
-    throw "Advanced CMA-ES validation: expected 8 implemented and 2 reviewed/deferred components."
-}
 
 foreach ($id in @(
     "cma.covariance.active",
@@ -105,18 +96,6 @@ foreach ($id in @(
     }
 }
 
-foreach ($id in @(
-    "cma.restart.ipop",
-    "cma.restart.bipop"
-)) {
-    $entry =
-        @($catalog.entries | Where-Object { [string]$_.id -eq $id })
-
-    if ($entry.Count -ne 1 -or
-        [string]$entry[0].status -ne "reviewed-deferred") {
-        throw "Advanced CMA-ES validation: restart identity '$id' must remain reviewed/deferred in v0.47."
-    }
-}
 
 $tests =
     Read-Utf8 "tests\MetaheuristicsPlatform.Tests\AdvancedCmaEsTests.cs"
@@ -149,5 +128,5 @@ foreach ($pageRelative in @(
 }
 
 Write-Host `
-    "Advanced CMA-ES validation passed: weighted Active CMA-ES + linear-memory sep-CMA-ES executable; IPOP/BIPOP remain scientifically distinct and deferred." `
+    "Advanced CMA-ES validation passed: weighted Active CMA-ES + linear-memory sep-CMA-ES executable with stable v0.47 identities." `
     -ForegroundColor Green

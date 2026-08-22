@@ -343,10 +343,14 @@ Require-Contains `
         "cma.covariance.rank-mu",
         "cma.covariance.active",
         "cma.variant.separable",
+        "cma.restart.ipop",
+        "cma.restart.bipop",
         "10.1162/106365601750190398",
         "10.1162/106365603321828970",
         "10.1145/1830761.1830788",
-        "10.1007/978-3-540-87700-4_30"
+        "10.1007/978-3-540-87700-4_30",
+        "10.1109/CEC.2005.1554902",
+        "10.1145/1570256.1570333"
     )
 
 $readme = Read-Utf8 "README.md"

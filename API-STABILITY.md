@@ -127,3 +127,15 @@ The existing `CmaEsParameters` contract is reused. Stable component IDs
 `cma.covariance.active` and `cma.variant.separable` become executable.
 IPOP/BIPOP restart IDs remain reviewed/deferred until restart orchestration
 can preserve one exact global evaluation lifecycle.
+
+## v0.48.0 Restart CMA-ES
+
+Stable public IDs introduced:
+
+- `ipop-cma-es-auger-hansen-2005`
+- `bipop-cma-es-hansen-2009`
+
+`RestartCmaEsParameters`, `RestartCmaEsState`, `RestartCmaEsRegime`,
+`IpopCmaEsOptimizer` and `BipopCmaEsOptimizer` are public API.
+Component IDs `cma.restart.ipop` and `cma.restart.bipop` become executable.
+Both algorithms own exactly one common `OptimizationContext` across all restarts.

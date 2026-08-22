@@ -36,6 +36,14 @@ public static class MetaheuristicFactory
             "MetaheuristicsPlatform.Algorithms.CMAES.SeparableCmaEsOptimizer");
 
         RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.IpopCmaEs,
+            "MetaheuristicsPlatform.Algorithms.CMAES.IpopCmaEsOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.BipopCmaEs,
+            "MetaheuristicsPlatform.Algorithms.CMAES.BipopCmaEsOptimizer");
+
+        RegisterAssemblyType(
             MetaheuristicAlgorithmIds.DifferentialEvolution,
             "MetaheuristicsPlatform.Algorithms.DE.DifferentialEvolutionOptimizer");
 

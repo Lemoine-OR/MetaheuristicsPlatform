@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "release": "0.47.0",
+  "release": "0.48.0",
   "family": "CMA-ES",
   "canonicalAlgorithmId": "cma-es-hansen-ostermeier-2001",
   "entries": [
@@ -79,20 +79,20 @@
     {
       "id": "cma.restart.ipop",
       "name": "IPOP-CMA-ES restart strategy",
-      "status": "reviewed-deferred",
+      "status": "implemented",
       "reference": "Auger & Hansen (2005)",
       "doi": "10.1109/CEC.2005.1554902",
-      "formulaMode": "prose",
-      "formula": "Increasing-population restart CMA-ES remains deferred until one common OptimizationContext can account across every restart without nested lifecycle resets."
+      "formulaMode": "math",
+      "formula": "\\lambda_r=\\rho_{\\mathrm{inc}}^r\\lambda_0,\\qquad \\rho_{\\mathrm{inc}}=2\\ \\mathrm{canonically}"
     },
     {
       "id": "cma.restart.bipop",
       "name": "BIPOP-CMA-ES restart strategy",
-      "status": "reviewed-deferred",
+      "status": "implemented",
       "reference": "Hansen (2009)",
       "doi": "10.1145/1570256.1570333",
-      "formulaMode": "prose",
-      "formula": "Bi-population restart scheduling remains deferred to the restart-CMA release so its two interlaced budget regimes share one exact global evaluation lifecycle."
+      "formulaMode": "math",
+      "formula": "\\lambda_{\\mathrm{small}}=\\left\\lfloor\\lambda_0\\left(\\frac12\\frac{\\lambda_{\\mathrm{large}}}{\\lambda_0}\\right)^{U_1^2}\\right\\rfloor,\\qquad \\sigma_{\\mathrm{small}}^0=\\sigma_0 10^{-2U_2}"
     }
   ]
 }

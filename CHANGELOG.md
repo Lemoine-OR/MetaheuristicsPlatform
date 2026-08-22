@@ -2,6 +2,16 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.48.0] - 2026-08-22
+
+### Added
+
+- Public IPOP-CMA-ES with canonical geometrically increasing population restarts.
+- Public BIPOP-CMA-ES with evaluation-budget-balanced large and randomized small population regimes.
+- A single global `OptimizationContext` across every restart, preserving exact evaluations, best-so-far, callbacks, stopping and seed ownership.
+- Restart CMA-ES parameters/state, focused tests, benchmarks and mathematical documentation.
+- Historical Advanced CMA validator decoupled from future restart-component statuses.
+
 ## [0.47.0] - 2026-08-22
 
 ### Added

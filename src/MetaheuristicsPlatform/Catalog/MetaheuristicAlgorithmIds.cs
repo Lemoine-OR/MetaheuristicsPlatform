@@ -18,6 +18,10 @@ public static class MetaheuristicAlgorithmIds
         "active-cma-es-hansen-ros-2010";
     public const string SeparableCmaEs =
         "separable-cma-es-ros-hansen-2008";
+    public const string IpopCmaEs =
+        "ipop-cma-es-auger-hansen-2005";
+    public const string BipopCmaEs =
+        "bipop-cma-es-hansen-2009";
     public const string DifferentialEvolution = "differential-evolution";
     public const string Jde = "jde-brest-2006";
     public const string Jade = "jade-2009";

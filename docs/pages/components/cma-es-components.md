@@ -2,7 +2,7 @@
 
 # CMA-ES Components
 
-Version 0.47.0 extends the canonical full-covariance foundation with executable Active CMA-ES and sep-CMA-ES.
+Version 0.48.0 completes the CMA-ES family layer with executable Active CMA-ES, sep-CMA-ES, IPOP-CMA-ES and BIPOP-CMA-ES.
 
 ## Implemented components
 
@@ -14,6 +14,8 @@ Version 0.47.0 extends the canonical full-covariance foundation with executable 
 - `cma.covariance.rank-mu`
 - `cma.covariance.active`
 - `cma.variant.separable`
+- `cma.restart.ipop`
+- `cma.restart.bipop`
 
 The sampling distribution is
 
@@ -81,10 +83,30 @@ c_{\mathrm{cov}}
 sep-CMA-ES stores only coordinate-wise variances and increases the covariance learning rate
 by the Ros-Hansen factor \f$(n+2)/3\f$.
 
-## Reviewed / deferred
+## IPOP restart schedule
 
-- `cma.restart.ipop` — Auger & Hansen (2005), DOI `10.1109/CEC.2005.1554902`
-- `cma.restart.bipop` — Hansen (2009), DOI `10.1145/1570256.1570333`
+\f[
+\lambda_r=2^r\lambda_0.
+\f]
+
+The complete multistart execution shares one common evaluation budget and best-so-far state.
+
+## BIPOP restart schedule
+
+\f[
+\lambda_{\mathrm{small}}
+=
+\left\lfloor
+\lambda_0
+\left(
+\frac12\frac{\lambda_{\mathrm{large}}}{\lambda_0}
+\right)^{U_1^2}
+\right\rfloor,
+\qquad
+\sigma_{\mathrm{small}}^0=\sigma_0\,10^{-2U_2}.
+\f]
+
+Large and small regimes are selected by their cumulative objective-evaluation budgets.
 
 ## Scientific references
 
@@ -95,3 +117,6 @@ by the Ros-Hansen factor \f$(n+2)/3\f$.
 - Ros & Hansen (2008), *A Simple Modification in CMA-ES Achieving Linear Time and Space Complexity*. DOI: `10.1007/978-3-540-87700-4_30`.
 - Jastrebski & Arnold (2006), *Improving Evolution Strategies through Active Covariance Matrix Adaptation*. DOI: `10.1109/CEC.2006.1688662`.
 - Hansen & Ros (2010), *Benchmarking a Weighted Negative Covariance Matrix Update on the BBOB-2010 Noiseless Testbed*. DOI: `10.1145/1830761.1830788`.
+
+- Auger & Hansen (2005), *A Restart CMA Evolution Strategy with Increasing Population Size*. DOI: `10.1109/CEC.2005.1554902`.
+- Hansen (2009), *Benchmarking a BI-Population CMA-ES on the BBOB-2009 Function Testbed*. DOI: `10.1145/1570256.1570333`.

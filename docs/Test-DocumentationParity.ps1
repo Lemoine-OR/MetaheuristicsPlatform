@@ -20,8 +20,8 @@ $catalog =
 $algorithms = @($catalog.algorithms)
 $families = @($catalog.families)
 
-if ($algorithms.Count -lt 37) {
-    throw "Documentation parity: expected at least the thirty-seven currently public algorithms."
+if ($algorithms.Count -lt 39) {
+    throw "Documentation parity: expected at least the thirty-nine currently public algorithms."
 }
 
 $requiredFields = @(
@@ -141,12 +141,15 @@ $requiredRepoFiles = @(
     "docs\Test-AdvancedAntColony.ps1",
     "docs\Test-CmaEs.ps1",
     "docs\Test-AdvancedCmaEs.ps1",
+    "docs\Test-RestartCmaEs.ps1",
     "docs\cma-es-component-catalog.json",
     "docs\Build-CmaEsDocumentation.ps1",
     "docs\pages\components\cma-es-components.md",
     "docs\pages\algorithms\cma-es-hansen-ostermeier-2001.md",
     "docs\pages\algorithms\active-cma-es-hansen-ros-2010.md",
     "docs\pages\algorithms\separable-cma-es-ros-hansen-2008.md",
+    "docs\pages\algorithms\ipop-cma-es-auger-hansen-2005.md",
+    "docs\pages\algorithms\bipop-cma-es-hansen-2009.md",
     "docs\advanced-ant-colony-optimization-catalog.json",
     "docs\Build-AdvancedAntColonyDocumentation.ps1",
     "docs\pages\components\advanced-ant-colony-optimization.md",
@@ -261,8 +264,8 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.47.0") {
-    throw "Documentation parity: version.json must be 0.47.0 for this release."
+if ([string]$version.version -ne "0.48.0") {
+    throw "Documentation parity: version.json must be 0.48.0 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root
@@ -282,6 +285,7 @@ if ([string]$version.version -ne "0.47.0") {
 & (Join-Path $Root "docs\Test-AdvancedAntColony.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-CmaEs.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-AdvancedCmaEs.ps1") -Root $Root
+& (Join-Path $Root "docs\Test-RestartCmaEs.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-TabuSearchFoundation.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-TabuSearchAdvancedMemory.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-LocalSearchFoundation.ps1") -Root $Root
