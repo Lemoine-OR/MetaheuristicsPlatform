@@ -115,3 +115,15 @@ Stable public ID introduced:
 - `cma-es-hansen-ostermeier-2001`
 
 `CmaEsOptimizer`, `CmaEsParameters`, `CmaEsState`, component IDs and scientific references are public API. The algorithm uses the existing bounded continuous problem/search-space contracts.
+
+## v0.47.0 Advanced CMA-ES
+
+Stable public IDs introduced:
+
+- `active-cma-es-hansen-ros-2010`
+- `separable-cma-es-ros-hansen-2008`
+
+The existing `CmaEsParameters` contract is reused. Stable component IDs
+`cma.covariance.active` and `cma.variant.separable` become executable.
+IPOP/BIPOP restart IDs remain reviewed/deferred until restart orchestration
+can preserve one exact global evaluation lifecycle.

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "release": "0.46.0",
+  "release": "0.47.0",
   "family": "CMA-ES",
   "canonicalAlgorithmId": "cma-es-hansen-ostermeier-2001",
   "entries": [
@@ -61,38 +61,38 @@
     {
       "id": "cma.covariance.active",
       "name": "Active covariance adaptation",
-      "status": "reviewed-deferred",
-      "reference": "Active CMA lineage",
-      "doi": "",
-      "formulaMode": "prose",
-      "formula": "Negative covariance updates from unsuccessful directions are reviewed but deferred to the advanced CMA-ES release."
+      "status": "implemented",
+      "reference": "Hansen & Ros (2010); Jastrebski & Arnold (2006)",
+      "doi": "10.1145/1830761.1830788",
+      "formulaMode": "math",
+      "formula": "C^+=\\left(1-c_1-c_{\\mu}\\sum_iw_i\\right)C+c_1p_cp_c^{\\mathsf T}+c_{\\mu}\\sum_iw_i^{\\circ}y_i y_i^{\\mathsf T}"
     },
     {
       "id": "cma.variant.separable",
       "name": "Separable CMA-ES",
-      "status": "reviewed-deferred",
-      "reference": "Separable CMA-ES lineage",
-      "doi": "",
-      "formulaMode": "prose",
-      "formula": "Diagonal covariance adaptation reducing quadratic storage and cubic decomposition cost is reviewed but deferred."
+      "status": "implemented",
+      "reference": "Ros & Hansen (2008)",
+      "doi": "10.1007/978-3-540-87700-4_30",
+      "formulaMode": "math",
+      "formula": "c_{jj}^+=\\left[1-c_{\\mathrm{cov}}+(1-h_{\\sigma})\\frac{c_{\\mathrm{cov}}}{\\mu_{\\mathrm{cov}}}c_c(2-c_c)\\right]c_{jj}+\\frac{c_{\\mathrm{cov}}}{\\mu_{\\mathrm{cov}}}(p_c)_j^2+c_{\\mathrm{cov}}\\left(1-\\frac{1}{\\mu_{\\mathrm{cov}}}\\right)\\sum_iw_i y_{i,j}^2"
     },
     {
       "id": "cma.restart.ipop",
       "name": "IPOP-CMA-ES restart strategy",
       "status": "reviewed-deferred",
-      "reference": "Auger & Hansen restart lineage",
-      "doi": "",
+      "reference": "Auger & Hansen (2005)",
+      "doi": "10.1109/CEC.2005.1554902",
       "formulaMode": "prose",
-      "formula": "Increasing-population restart CMA-ES is reviewed but deferred until restart orchestration is shared across continuous population methods."
+      "formula": "Increasing-population restart CMA-ES remains deferred until one common OptimizationContext can account across every restart without nested lifecycle resets."
     },
     {
       "id": "cma.restart.bipop",
       "name": "BIPOP-CMA-ES restart strategy",
       "status": "reviewed-deferred",
-      "reference": "Hansen restart lineage",
-      "doi": "",
+      "reference": "Hansen (2009)",
+      "doi": "10.1145/1570256.1570333",
       "formulaMode": "prose",
-      "formula": "Bi-population restart scheduling is reviewed but deferred to the advanced CMA-ES release."
+      "formula": "Bi-population restart scheduling remains deferred to the restart-CMA release so its two interlaced budget regimes share one exact global evaluation lifecycle."
     }
   ]
 }

@@ -36,14 +36,14 @@ stable catalog IDs.
 <table>
 <tr>
 <td width="20%"><strong>4 swarm methods</strong><br><sub>PSO plus Ant System, ACS and MAX-MIN Ant System.</sub></td>
-<td width="20%"><strong>8 evolutionary methods</strong><br><sub>Generational GA, CMA-ES, DE, jDE, JADE, SHADE, L-SHADE and canonical Scatter Search.</sub></td>
+<td width="20%"><strong>10 evolutionary methods</strong><br><sub>Generational GA, CMA-ES, Active CMA-ES, sep-CMA-ES, DE, jDE, JADE, SHADE, L-SHADE and canonical Scatter Search.</sub></td>
 <td width="20%"><strong>19 trajectory methods</strong><br><sub>SA, Threshold Accepting, Great Deluge, Record-to-Record Travel, Late Acceptance, Demon-Based Acceptance, Tabu Search, Local Search, ILS, Iterated Greedy, VNS variants and GLS.</sub></td>
 <td width="20%"><strong>3 constructive methods</strong><br><sub>Canonical GRASP, Reactive GRASP and elite-memory Path Relinking with advanced trajectory and evolutionary elite-population policies.</sub></td>
 <td width="20%"><strong>1 hybrid / memetic method</strong><br><sub>Moscato MA with adaptive local improvement and Lamarckian/Baldwinian learning.</sub></td>
 </tr>
 </table>
 
-<p align="center"><strong>35 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>37 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -116,6 +116,7 @@ stable ID used by the canonical catalog/factory.
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/lshade-2014.html"><strong>L-SHADE</strong></a><br><sub>Evolutionary methods · O(N_kD + N_k log N_k) at generation k plus objective-evaluation cost</sub><br><code>lshade-2014</code><br><sub><code>LShadeOptimizer</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/scatter-search-marti-laguna-glover-2006.html"><strong>Scatter Search</strong></a><br><sub>Five-method reference-set evolutionary search with explicit quality/diversity control.</sub><br><code>scatter-search-marti-laguna-glover-2006</code><br><sub><code>ScatterSearchOptimizer&lt;TSolution&gt;</code></sub></td></tr>
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/genetic-algorithm-generational.html"><strong>Generational Genetic Algorithm</strong></a><br><sub>Generic fixed-size population evolution with tournament selection, representation-specific crossover/mutation and optional elitism.</sub><br><code>genetic-algorithm-generational</code><br><sub><code>GenerationalGeneticAlgorithmOptimizer&lt;TSolution&gt;</code></sub></td><td width="50%"></td></tr>
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/cma-es-hansen-ostermeier-2001.html"><strong>Covariance Matrix Adaptation Evolution Strategy</strong></a><br><sub>Canonical full-covariance CMA-ES with evolution paths, CSA and rank-one/rank-mu covariance adaptation.</sub><br><code>cma-es-hansen-ostermeier-2001</code><br><sub><code>CmaEsOptimizer</code></sub></td><td width="50%"></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/active-cma-es-hansen-ros-2010.html"><strong>Active CMA-ES</strong></a><br><sub>Weighted negative covariance adaptation with normalized unsuccessful directions.</sub><br><code>active-cma-es-hansen-ros-2010</code><br><sub><code>ActiveCmaEsOptimizer</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/separable-cma-es-ros-hansen-2008.html"><strong>Separable CMA-ES</strong></a><br><sub>Diagonal covariance adaptation with linear internal time and memory.</sub><br><code>separable-cma-es-ros-hansen-2008</code><br><sub><code>SeparableCmaEsOptimizer</code></sub></td></tr>
 </table>
 
 ### Trajectory-based methods

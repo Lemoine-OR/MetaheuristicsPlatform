@@ -15,6 +15,8 @@ Population methods based on structured variation or combination, selection, refe
 - **[Scatter Search](../algorithms/scatter-search-marti-laguna-glover-2006.md)** — `scatter-search-marti-laguna-glover-2006` — five-method RefSet search with advanced dynamic/tiered update, rebuilding and representative subset components
 
 - **[Covariance Matrix Adaptation Evolution Strategy](../algorithms/cma-es-hansen-ostermeier-2001.md)** — cma-es-hansen-ostermeier-2001 — canonical full-covariance adaptation with CSA and rank-one/rank-mu updates.
+- **[Active CMA-ES](../algorithms/active-cma-es-hansen-ros-2010.md)** — `active-cma-es-hansen-ros-2010` — weighted negative covariance adaptation using unsuccessful ranked directions.
+- **[Separable CMA-ES](../algorithms/separable-cma-es-ros-hansen-2008.md)** — `separable-cma-es-ros-hansen-2008` — diagonal covariance adaptation with linear internal time and memory.
 
 ## Navigation
 

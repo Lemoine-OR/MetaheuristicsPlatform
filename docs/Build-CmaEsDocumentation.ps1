@@ -102,7 +102,7 @@ window.MathJax = { tex: { inlineMath: [["\\(","\\)"]], displayMath: [["\\[","\\]
 </div></header>
 <main class="wrap">
 <h1>CMA-ES Components</h1>
-<p>Canonical full-covariance CMA-ES components in v0.46.0; active covariance, separable CMA and restart families remain reviewed/deferred.</p>
+<p>CMA-ES components in v0.47.0: canonical full covariance, weighted Active CMA-ES and sep-CMA-ES are executable; IPOP/BIPOP remain reviewed/deferred.</p>
 <div class="grid">' +
 ($cards -join [Environment]::NewLine) +
 '</div>
@@ -156,7 +156,7 @@ if (-not $homeHtml.Contains(
         '<div class="grid">'.Length
 
     $card =
-        '<div class="card"><h3><a href="components/cma-es-components.html">CMA-ES Components</a></h3><div class="meta">Gaussian sampling &middot; evolution paths &middot; CSA &middot; rank-one/rank-mu covariance adaptation</div><span class="id">cma.*</span></div>'
+        '<div class="card"><h3><a href="components/cma-es-components.html">CMA-ES Components</a></h3><div class="meta">Gaussian sampling &middot; CSA &middot; rank-one/rank-mu &middot; active negative update &middot; separable covariance</div><span class="id">cma.*</span></div>'
 
     $homeHtml =
         $homeHtml.Insert(

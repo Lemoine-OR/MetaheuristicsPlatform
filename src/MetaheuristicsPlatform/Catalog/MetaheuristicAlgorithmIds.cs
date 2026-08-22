@@ -14,6 +14,10 @@ public static class MetaheuristicAlgorithmIds
         "max-min-ant-system-stutzle-hoos-2000";
     public const string CmaEs =
         "cma-es-hansen-ostermeier-2001";
+    public const string ActiveCmaEs =
+        "active-cma-es-hansen-ros-2010";
+    public const string SeparableCmaEs =
+        "separable-cma-es-ros-hansen-2008";
     public const string DifferentialEvolution = "differential-evolution";
     public const string Jde = "jde-brest-2006";
     public const string Jade = "jade-2009";

@@ -106,11 +106,22 @@ $catalog =
     ConvertFrom-Json
 
 $entries = @($catalog.entries)
-$implemented = @($entries | Where-Object status -eq "implemented")
-$deferred = @($entries | Where-Object status -eq "reviewed-deferred")
 
-if ($implemented.Count -ne 6 -or $deferred.Count -ne 4) {
-    throw "CMA-ES validation: expected six implemented and four reviewed/deferred components."
+foreach ($foundationId in @(
+    "cma.sampling.multivariate-normal",
+    "cma.recombination.logarithmic-positive",
+    "cma.path.cumulation",
+    "cma.step-size.csa",
+    "cma.covariance.rank-one",
+    "cma.covariance.rank-mu"
+)) {
+    $foundation =
+        @($entries | Where-Object { [string]$_.id -eq $foundationId })
+
+    if ($foundation.Count -ne 1 -or
+        [string]$foundation[0].status -ne "implemented") {
+        throw "CMA-ES validation: foundation identity '$foundationId' is missing, duplicated or not implemented."
+    }
 }
 
 foreach ($id in @(
@@ -173,5 +184,5 @@ foreach ($pageRelative in @(
 }
 
 Write-Host `
-    "CMA-ES validation passed: canonical full covariance + positive logarithmic recombination + CSA + rank-one/rank-mu adaptation + 6 implemented components + 4 reviewed/deferred variants." `
+    "CMA-ES validation passed: canonical full covariance + positive logarithmic recombination + CSA + rank-one/rank-mu adaptation + stable v0.46 foundation identities." `
     -ForegroundColor Green

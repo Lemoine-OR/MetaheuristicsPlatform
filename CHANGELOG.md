@@ -2,6 +2,16 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.47.0] - 2026-08-22
+
+### Added
+
+- Public weighted Active CMA-ES with negative covariance information from unsuccessful ranked offspring.
+- Public sep-CMA-ES with diagonal covariance, accelerated Ros-Hansen covariance learning and linear internal time/space complexity.
+- Exact DOI provenance for Active CMA, sep-CMA, IPOP-CMA-ES and BIPOP-CMA-ES.
+- Advanced CMA-ES focused tests, benchmarks and scientific documentation.
+- Immutable-patch release packaging with `git apply --check` before mutation and disposable-worktree transaction validation.
+
 ## [0.46.0] - 2026-08-22
 
 ### Added
