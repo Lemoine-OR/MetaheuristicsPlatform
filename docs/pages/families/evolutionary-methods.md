@@ -14,6 +14,8 @@ Population methods based on structured variation or combination, selection, refe
 - **[Generational Genetic Algorithm](../algorithms/genetic-algorithm-generational.md)** — `genetic-algorithm-generational` — fixed-size generational selection/crossover/mutation with optional elitism — @subpage advanced_genetic_algorithm_operators
 - **[Scatter Search](../algorithms/scatter-search-marti-laguna-glover-2006.md)** — `scatter-search-marti-laguna-glover-2006` — five-method RefSet search with advanced dynamic/tiered update, rebuilding and representative subset components
 
+- **[Covariance Matrix Adaptation Evolution Strategy](../algorithms/cma-es-hansen-ostermeier-2001.md)** — cma-es-hansen-ostermeier-2001 — canonical full-covariance adaptation with CSA and rank-one/rank-mu updates.
+
 ## Navigation
 
 Return to @ref method_families "method families".

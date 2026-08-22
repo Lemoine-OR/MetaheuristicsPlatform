@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "release": "0.46.0",
+  "family": "CMA-ES",
+  "canonicalAlgorithmId": "cma-es-hansen-ostermeier-2001",
+  "entries": [
+    {
+      "id": "cma.sampling.multivariate-normal",
+      "name": "Multivariate normal offspring sampling",
+      "status": "implemented",
+      "reference": "Hansen & Ostermeier (2001)",
+      "doi": "10.1162/106365601750190398",
+      "formulaMode": "math",
+      "formula": "x_k=m+\\sigma B D z_k,\\qquad z_k\\sim\\mathcal N(0,I)"
+    },
+    {
+      "id": "cma.recombination.logarithmic-positive",
+      "name": "Positive logarithmic recombination",
+      "status": "implemented",
+      "reference": "Hansen CMA-ES canonical defaults",
+      "doi": "10.1162/106365601750190398",
+      "formulaMode": "math",
+      "formula": "w_i=\\frac{\\ln(\\mu+\\frac12)-\\ln i}{\\sum_{j=1}^{\\mu}(\\ln(\\mu+\\frac12)-\\ln j)},\\qquad \\mu_{\\mathrm{eff}}=\\frac{1}{\\sum_i w_i^2}"
+    },
+    {
+      "id": "cma.path.cumulation",
+      "name": "Evolution-path cumulation",
+      "status": "implemented",
+      "reference": "Hansen & Ostermeier (2001)",
+      "doi": "10.1162/106365601750190398",
+      "formulaMode": "math",
+      "formula": "p_{\\sigma}\\leftarrow(1-c_{\\sigma})p_{\\sigma}+\\sqrt{c_{\\sigma}(2-c_{\\sigma})\\mu_{\\mathrm{eff}}}\\,C^{-1/2}\\frac{m^{+}-m}{\\sigma}"
+    },
+    {
+      "id": "cma.step-size.csa",
+      "name": "Cumulative step-size adaptation",
+      "status": "implemented",
+      "reference": "Hansen & Ostermeier (2001)",
+      "doi": "10.1162/106365601750190398",
+      "formulaMode": "math",
+      "formula": "\\sigma\\leftarrow\\sigma\\exp\\!\\left(\\frac{c_{\\sigma}}{d_{\\sigma}}\\left(\\frac{\\lVert p_{\\sigma}\\rVert}{\\chi_n}-1\\right)\\right)"
+    },
+    {
+      "id": "cma.covariance.rank-one",
+      "name": "Rank-one covariance adaptation",
+      "status": "implemented",
+      "reference": "Hansen & Ostermeier (2001)",
+      "doi": "10.1162/106365601750190398",
+      "formulaMode": "math",
+      "formula": "C\\leftarrow(1-c_1)C+c_1p_cp_c^{\\mathsf T}"
+    },
+    {
+      "id": "cma.covariance.rank-mu",
+      "name": "Rank-mu covariance adaptation",
+      "status": "implemented",
+      "reference": "Hansen, Muller & Koumoutsakos (2003)",
+      "doi": "10.1162/106365603321828970",
+      "formulaMode": "math",
+      "formula": "C\\leftarrow C+c_{\\mu}\\sum_{i=1}^{\\mu}w_i y_{i:\\lambda}y_{i:\\lambda}^{\\mathsf T}"
+    },
+    {
+      "id": "cma.covariance.active",
+      "name": "Active covariance adaptation",
+      "status": "reviewed-deferred",
+      "reference": "Active CMA lineage",
+      "doi": "",
+      "formulaMode": "prose",
+      "formula": "Negative covariance updates from unsuccessful directions are reviewed but deferred to the advanced CMA-ES release."
+    },
+    {
+      "id": "cma.variant.separable",
+      "name": "Separable CMA-ES",
+      "status": "reviewed-deferred",
+      "reference": "Separable CMA-ES lineage",
+      "doi": "",
+      "formulaMode": "prose",
+      "formula": "Diagonal covariance adaptation reducing quadratic storage and cubic decomposition cost is reviewed but deferred."
+    },
+    {
+      "id": "cma.restart.ipop",
+      "name": "IPOP-CMA-ES restart strategy",
+      "status": "reviewed-deferred",
+      "reference": "Auger & Hansen restart lineage",
+      "doi": "",
+      "formulaMode": "prose",
+      "formula": "Increasing-population restart CMA-ES is reviewed but deferred until restart orchestration is shared across continuous population methods."
+    },
+    {
+      "id": "cma.restart.bipop",
+      "name": "BIPOP-CMA-ES restart strategy",
+      "status": "reviewed-deferred",
+      "reference": "Hansen restart lineage",
+      "doi": "",
+      "formulaMode": "prose",
+      "formula": "Bi-population restart scheduling is reviewed but deferred to the advanced CMA-ES release."
+    }
+  ]
+}

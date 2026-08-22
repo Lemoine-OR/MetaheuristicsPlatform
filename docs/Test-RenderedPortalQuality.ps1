@@ -193,6 +193,14 @@ $componentChecks = @(
     @{
         catalog = "docs\memetic-algorithm-catalog.json"
         page = "components\memetic-algorithm-components.html"
+    },
+    @{
+        catalog = "docs\advanced-ant-colony-optimization-catalog.json"
+        page = "components\advanced-ant-colony-optimization.html"
+    },
+    @{
+        catalog = "docs\cma-es-component-catalog.json"
+        page = "components\cma-es-components.html"
     }
 )
 

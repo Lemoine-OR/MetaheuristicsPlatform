@@ -214,7 +214,8 @@ Require-Contains `
         "Build-AdvancedScatterSearchDocumentation.ps1",
         "Build-AdvancedGeneticAlgorithmDocumentation.ps1",
         "Build-MemeticAlgorithmDocumentation.ps1",
-        "Build-AdvancedAntColonyDocumentation.ps1"
+        "Build-AdvancedAntColonyDocumentation.ps1",
+        "Build-CmaEsDocumentation.ps1"
     )
 
 Require-Contains `
@@ -228,7 +229,8 @@ Require-Contains `
         "@subpage advanced_scatter_search_strategies",
         "@subpage advanced_genetic_algorithm_operators",
         "@subpage memetic_algorithm_components",
-        "@subpage advanced_ant_colony_optimization"
+        "@subpage advanced_ant_colony_optimization",
+        "@subpage cma_es_components"
     )
 
 Require-Contains `
@@ -322,6 +324,27 @@ Require-Contains `
         "10.1109/4235.585892",
         "10.1016/S0167-739X(00)00043-1"
     )
+Require-Contains `
+    "docs\Build-CmaEsDocumentation.ps1" @(
+        "CMA-ES Components",
+        "cma-es-components.html",
+        "cma-es-component-catalog.json",
+        "formulaMode",
+        "formula-note",
+        "mathjax@3.2.2/es5/tex-chtml.js"
+    )
+
+Require-Contains `
+    "docs\pages\components\cma-es-components.md" @(
+        "@page cma_es_components",
+        "cma.sampling.multivariate-normal",
+        "cma.step-size.csa",
+        "cma.covariance.rank-one",
+        "cma.covariance.rank-mu",
+        "10.1162/106365601750190398",
+        "10.1162/106365603321828970"
+    )
+
 $readme = Read-Utf8 "README.md"
 
 foreach ($marker in @(
@@ -338,7 +361,8 @@ foreach ($marker in @(
     "components/advanced-scatter-search-strategies.html",
     "components/advanced-genetic-algorithm-operators.html",
     "components/memetic-algorithm-components.html",
-    "components/advanced-ant-colony-optimization.html"
+    "components/advanced-ant-colony-optimization.html",
+    "components/cma-es-components.html"
 )) {
     if (-not $readme.Contains($marker)) {
         throw "README documentation parity: missing '$marker'."
@@ -362,5 +386,5 @@ foreach ($heading in @(
 }
 
 Write-Host `
-    "Scientific component documentation parity passed: PSO/VNS/Threshold-Accepting/Dueck-Acceptance/Path-Relinking/Advanced-IG/Advanced-SS/Advanced-GA/Memetic/Advanced-ACO component builders wired." `
+    "Scientific component documentation parity passed: PSO/VNS/Threshold-Accepting/Dueck-Acceptance/Path-Relinking/Advanced-IG/Advanced-SS/Advanced-GA/Memetic/Advanced-ACO/CMA-ES component builders wired." `
     -ForegroundColor Green

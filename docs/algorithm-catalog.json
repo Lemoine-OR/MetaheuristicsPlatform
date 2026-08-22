@@ -780,6 +780,28 @@
                            "assumptions":  "Finite feasible construction; nonnegative finite deposit; initial pheromone inside the configured bounds.",
                            "convergence":  "Pheromone bounds preserve positive sampling support; no universal finite-time global optimum guarantee is asserted.",
                            "factoryMode":  "composition"
+                       },
+                       {
+                           "id":  "cma-es-hansen-ostermeier-2001",
+                           "name":  "Covariance Matrix Adaptation Evolution Strategy",
+                           "class":  "CmaEsOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "O(lambda n^2 + n^3) per complete generation plus objective-evaluation cost",
+                           "space":  "O(lambda n + n^2)",
+                           "applicability":  "Bounded continuous derivative-free optimization; especially non-separable and ill-conditioned objectives",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/CMAES/CmaEsOptimizer.cs",
+                           "publication":  "Hansen \u0026 Ostermeier (2001), Completely Derandomized Self-Adaptation in Evolution Strategies, Evolutionary Computation 9(2), 159-195",
+                           "doi":  "10.1162/106365601750190398",
+                           "implementation":  "Canonical full-covariance CMA-ES with positive logarithmic recombination, evolution-path cumulation, cumulative step-size adaptation, rank-one/rank-mu covariance updates and dependency-free symmetric eigendecomposition.",
+                           "page":  "docs/pages/algorithms/cma-es-hansen-ostermeier-2001.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^n} f(x)",
+                           "update":  "\\begin{aligned}x_k\u0026=m+\\sigma BDz_k,\\quad z_k\\sim\\mathcal N(0,I),\\\\m^+\u0026=\\sum_{i=1}^{\\mu}w_i x_{i:\\lambda},\\\\\\sigma^+\u0026=\\sigma\\exp\\left(\\frac{c_{\\sigma}}{d_{\\sigma}}\\left(\\frac{\\lVert p_{\\sigma}\\rVert}{\\chi_n}-1\\right)\\right),\\\\C^+\u0026=(1-c_1-c_{\\mu})C+c_1p_cp_c^{\\mathsf T}+c_{\\mu}\\sum_{i=1}^{\\mu}w_i y_i y_i^{\\mathsf T}\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous domain; finite objective values; symmetric positive-definite covariance up to the numerical eigenvalue floor.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; behavior depends on objective structure, persistent stochastic sampling, adaptation parameters and boundary handling.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

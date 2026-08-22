@@ -106,3 +106,12 @@ Stable public IDs introduced:
 - `max-min-ant-system-stutzle-hoos-2000`
 
 The v0.44 Ant System ID and public contracts remain stable. ACS and MMAS reuse the same typed construction model and deposit-policy contracts.
+
+
+## v0.46.0 CMA-ES
+
+Stable public ID introduced:
+
+- `cma-es-hansen-ostermeier-2001`
+
+`CmaEsOptimizer`, `CmaEsParameters`, `CmaEsState`, component IDs and scientific references are public API. The algorithm uses the existing bounded continuous problem/search-space contracts.

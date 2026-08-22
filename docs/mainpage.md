@@ -32,7 +32,8 @@ use, start from the project portal and the short guides below.
 - @subpage advanced_scatter_search_strategies - dynamic/tiered RefSet control, rebuilding, diversity and representative subset families.
 - @subpage advanced_genetic_algorithm_operators - selection, crossover, mutation and replacement component catalog.
 - @subpage memetic_algorithm_components
-- @subpage advanced_ant_colony_optimization - local-improvement and learning policies for v0.43.0.
+- @subpage advanced_ant_colony_optimization
+- @subpage cma_es_components - local-improvement and learning policies for v0.43.0.
 ## Validation and reproducibility
 
 - @subpage complexity_applicability

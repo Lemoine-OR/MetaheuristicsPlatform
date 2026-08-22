@@ -2,6 +2,15 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.46.0] - 2026-08-22
+
+### Added
+
+- Canonical full-covariance CMA-ES with positive logarithmic recombination, evolution-path cumulation, cumulative step-size adaptation, and rank-one/rank-mu covariance updates.
+- Dependency-free deterministic standard-normal sampling and symmetric Jacobi eigendecomposition.
+- CMA-ES scientific component catalog with six executable components and active/separable/restart variants explicitly reviewed/deferred.
+- Focused evaluation-budget, determinism, stable-ID/factory and parameter tests plus a continuous benchmark.
+
 ## [0.45.0] - 2026-08-22
 
 ### Added

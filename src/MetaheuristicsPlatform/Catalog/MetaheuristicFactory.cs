@@ -24,6 +24,10 @@ public static class MetaheuristicFactory
             "MetaheuristicsPlatform.Algorithms.PSO.ParticleSwarmOptimizer");
 
         RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.CmaEs,
+            "MetaheuristicsPlatform.Algorithms.CMAES.CmaEsOptimizer");
+
+        RegisterAssemblyType(
             MetaheuristicAlgorithmIds.DifferentialEvolution,
             "MetaheuristicsPlatform.Algorithms.DE.DifferentialEvolutionOptimizer");
 
