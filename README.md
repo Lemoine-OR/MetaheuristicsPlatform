@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <strong>Fast, scientific and reusable C# / .NET metaheuristics with a common high-performance architecture.</strong>
+  <strong>Fast, scientific and reusable C# / .NET metaheuristics with one common high-performance architecture.</strong>
 </p>
 
 <p align="center">
@@ -29,37 +29,36 @@
 
 ---
 
-MetaheuristicsPlatform is a research-grade high-performance library for reusable
-metaheuristics. Public methods share a common optimization lifecycle and are indexed by
-stable catalog IDs.
+MetaheuristicsPlatform is a research-grade library for reusable metaheuristics. Public
+methods share a common optimization lifecycle, deterministic seed ownership, stable
+catalog IDs and literature-backed documentation.
 
 <table>
 <tr>
-<td width="20%"><strong>4 swarm methods</strong><br><sub>PSO plus Ant System, ACS and MAX-MIN Ant System.</sub></td>
-<td width="20%"><strong>12 evolutionary methods</strong><br><sub>Generational GA, CMA-ES, Active CMA-ES, sep-CMA-ES, IPOP-CMA-ES, BIPOP-CMA-ES, DE, jDE, JADE, SHADE, L-SHADE and canonical Scatter Search.</sub></td>
-<td width="20%"><strong>19 trajectory methods</strong><br><sub>SA, Threshold Accepting, Great Deluge, Record-to-Record Travel, Late Acceptance, Demon-Based Acceptance, Tabu Search, Local Search, ILS, Iterated Greedy, VNS variants and GLS.</sub></td>
-<td width="20%"><strong>3 constructive methods</strong><br><sub>Canonical GRASP, Reactive GRASP and elite-memory Path Relinking with advanced trajectory and evolutionary elite-population policies.</sub></td>
-<td width="20%"><strong>1 hybrid / memetic method</strong><br><sub>Moscato MA with adaptive local improvement and Lamarckian/Baldwinian learning.</sub></td>
+<td width="20%"><strong>5 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Ant System, ACS and MAX-MIN Ant System.</sub></td>
+<td width="20%"><strong>12 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family and Scatter Search.</sub></td>
+<td width="20%"><strong>19 trajectory methods</strong><br><sub>Acceptance methods, Tabu, local search, ILS, Iterated Greedy, VNS and GLS.</sub></td>
+<td width="20%"><strong>3 constructive methods</strong><br><sub>GRASP, Reactive GRASP and GRASP with Path Relinking.</sub></td>
+<td width="20%"><strong>1 hybrid / memetic method</strong><br><sub>Moscato-style memetic evolution with local improvement.</sub></td>
 </tr>
 </table>
 
-<p align="center"><strong>39 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>40 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
-For a parameterless built-in method, use the stable factory ID:
+For a parameterless built-in method, use its stable factory ID:
 
 ```csharp
+using MetaheuristicsPlatform.Algorithms.ArtificialBeeColony;
 using MetaheuristicsPlatform.Catalog;
-using MetaheuristicsPlatform.Algorithms.DE;
 
-DifferentialEvolutionOptimizer algorithm =
-    MetaheuristicFactory.Create<DifferentialEvolutionOptimizer>(
-        MetaheuristicAlgorithmIds.DifferentialEvolution);
+ArtificialBeeColonyOptimizer algorithm =
+    MetaheuristicFactory.Create<ArtificialBeeColonyOptimizer>(
+        MetaheuristicAlgorithmIds.ArtificialBeeColony);
 ```
 
-For a composed generic algorithm, keep the same stable ID and register the typed
-composition once:
+For a composed generic method, register the typed composition once under its stable ID:
 
 ```csharp
 MetaheuristicFactory.Register(
@@ -69,17 +68,17 @@ MetaheuristicFactory.Register(
 ```
 
 > **New to the library?** Open the [Getting Started guide](https://lemoine-or.github.io/MetaheuristicsPlatform/api/getting_started.html).
-> **Looking for a method?** Browse the panels below or the [project documentation](https://lemoine-or.github.io/MetaheuristicsPlatform/).
-> **Need reproducibility?** Use stable algorithm IDs, deterministic seeds and versioned releases.
+> **Looking for a method?** Browse the complete linked catalog below.
+> **Need reproducibility?** Use stable IDs, deterministic seeds and versioned releases.
 
 ## Why MetaheuristicsPlatform?
 
 <table>
 <tr>
-<td width="25%"><strong>Fast</strong><br><sub>Flat memory, deterministic RNG streams, calibrated coarse parallelism and fused built-in fast paths.</sub></td>
-<td width="25%"><strong>Scientific</strong><br><sub>Explicit provenance, mathematical details, applicability and DOI metadata.</sub></td>
+<td width="25%"><strong>Fast</strong><br><sub>Flat memory, deterministic RNG streams, calibrated coarse parallelism and specialized fast paths.</sub></td>
+<td width="25%"><strong>Scientific</strong><br><sub>Explicit provenance, equations, assumptions, applicability and DOI metadata.</sub></td>
 <td width="25%"><strong>Uniform</strong><br><sub>Common lifecycle, stable IDs, canonical catalog and typed factory.</sub></td>
-<td width="25%"><strong>Extensible</strong><br><sub>Generic evaluation pipelines, neighborhoods, reversible moves, subsolvers and hybrid composition.</sub></td>
+<td width="25%"><strong>Extensible</strong><br><sub>Generic neighborhoods, operators, decoders, construction engines and hybrid composition.</sub></td>
 </tr>
 </table>
 
@@ -87,117 +86,77 @@ MetaheuristicFactory.Register(
 
 <table>
 <tr>
-<td width="20%"><strong>Swarm intelligence</strong><br><sub>Collective motion and social information.</sub></td>
-<td width="20%"><strong>Evolutionary methods</strong><br><sub>Population variation, reference sets, strategic combination and adaptive control.</sub></td>
-<td width="20%"><strong>Trajectory-based</strong><br><sub>Single-solution neighborhood trajectories.</sub></td>
+<td width="20%"><strong>Swarm intelligence</strong><br><sub>Collective motion, recruitment and colony memory.</sub></td>
+<td width="20%"><strong>Evolutionary methods</strong><br><sub>Population variation, covariance learning, reference sets and adaptive control.</sub></td>
+<td width="20%"><strong>Trajectory-based</strong><br><sub>Single-solution neighborhood trajectories and acceptance policies.</sub></td>
 <td width="20%"><strong>Constructive methods</strong><br><sub>Adaptive randomized construction followed by improvement.</sub></td>
-<td width="20%"><strong>Hybrid / memetic</strong><br><sub>Compositions with local search, decoders and subsolvers.</sub></td>
+<td width="20%"><strong>Hybrid / memetic</strong><br><sub>Population methods coupled with local improvement and learning.</sub></td>
 </tr>
 </table>
 
 ## All algorithms
 
-Click a method name to open its dedicated documentation page. Every panel shows the
-stable ID used by the canonical catalog/factory.
+Every method title below is clickable and opens its dedicated scientific documentation.
+Each card also exposes the stable catalog/factory ID.
 
 ### Swarm intelligence
 
 <table>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/particle-swarm.html"><strong>Particle Swarm Optimization</strong></a><br><sub>Swarm intelligence · O(ND) per iteration for the canonical graphless fast path; topology/social policies may add overhead</sub><br><code>particle-swarm</code><br><sub><code>ParticleSwarmOptimizer</code></sub></td><td width="50%"></td></tr>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/ant-system-dorigo-maniezzo-colorni-1996.html"><strong>Ant System - Dorigo-Maniezzo-Colorni</strong></a><br><sub>Generic pheromone/heuristic constructive colony search with all-ant global reinforcement.</sub><br><code>ant-system-dorigo-maniezzo-colorni-1996</code><br><sub><code>AntSystemOptimizer&lt;TSolution,TComponent,TPheromoneKey,TEnumerator&gt;</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/ant-colony-system-dorigo-gambardella-1997.html"><strong>Ant Colony System - Dorigo-Gambardella</strong></a><br><sub>ACS pseudo-random proportional construction, local pheromone update and best-so-far reinforcement.</sub><br><code>ant-colony-system-dorigo-gambardella-1997</code><br><sub><code>AntColonySystemOptimizer&lt;TSolution,TComponent,TPheromoneKey,TEnumerator&gt;</code></sub></td></tr>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/max-min-ant-system-stutzle-hoos-2000.html"><strong>MAX-MIN Ant System - Stutzle-Hoos</strong></a><br><sub>Bounded pheromone trails with best-only reinforcement and optional stagnation restart.</sub><br><code>max-min-ant-system-stutzle-hoos-2000</code><br><sub><code>MaxMinAntSystemOptimizer&lt;TSolution,TComponent,TPheromoneKey,TEnumerator&gt;</code></sub></td><td width="50%"></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/particle-swarm.html"><strong>Particle Swarm Optimization</strong></a><br><sub>Continuous swarm motion with deterministic RNG streams and configurable social topology.</sub><br><code>particle-swarm</code><br><sub><code>ParticleSwarmOptimizer</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/artificial-bee-colony-karaboga-basturk-2007.html"><strong>Artificial Bee Colony</strong></a><br><sub>Canonical employed/onlooker/scout food-source search for bounded continuous optimization.</sub><br><code>artificial-bee-colony-karaboga-basturk-2007</code><br><sub><code>ArtificialBeeColonyOptimizer</code></sub></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/ant-system-dorigo-maniezzo-colorni-1996.html"><strong>Ant System - Dorigo-Maniezzo-Colorni</strong></a><br><sub>Generic pheromone/heuristic constructive colony search with all-ant reinforcement.</sub><br><code>ant-system-dorigo-maniezzo-colorni-1996</code><br><sub><code>AntSystemOptimizer&lt;TSolution,TComponent,TPheromoneKey,TEnumerator&gt;</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/ant-colony-system-dorigo-gambardella-1997.html"><strong>Ant Colony System - Dorigo-Gambardella</strong></a><br><sub>Pseudo-random proportional construction, local pheromone update and best-so-far reinforcement.</sub><br><code>ant-colony-system-dorigo-gambardella-1997</code><br><sub><code>AntColonySystemOptimizer&lt;TSolution,TComponent,TPheromoneKey,TEnumerator&gt;</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/max-min-ant-system-stutzle-hoos-2000.html"><strong>MAX-MIN Ant System - Stutzle-Hoos</strong></a><br><sub>Bounded pheromone trails with best-only reinforcement and optional stagnation restart.</sub><br><code>max-min-ant-system-stutzle-hoos-2000</code><br><sub><code>MaxMinAntSystemOptimizer&lt;TSolution,TComponent,TPheromoneKey,TEnumerator&gt;</code></sub></td></tr>
 </table>
 
 ### Evolutionary methods
 
 <table>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/differential-evolution.html"><strong>Differential Evolution</strong></a><br><sub>Evolutionary methods · O(ND) per generation for classical mutation/crossover, plus objective-evaluation cost</sub><br><code>differential-evolution</code><br><sub><code>DifferentialEvolutionOptimizer</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/jde-brest-2006.html"><strong>jDE — Self-Adaptive Differential Evolution</strong></a><br><sub>Evolutionary methods · O(ND) per generation plus objective-evaluation cost</sub><br><code>jde-brest-2006</code><br><sub><code>SelfAdaptiveDifferentialEvolutionOptimizer</code></sub></td></tr>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/jade-2009.html"><strong>JADE</strong></a><br><sub>Evolutionary methods · O(ND + N log N) per generation plus objective-evaluation cost</sub><br><code>jade-2009</code><br><sub><code>JadeOptimizer</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/shade-2013.html"><strong>SHADE</strong></a><br><sub>Evolutionary methods · O(ND + N log N) per generation plus objective-evaluation cost</sub><br><code>shade-2013</code><br><sub><code>ShadeOptimizer</code></sub></td></tr>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/lshade-2014.html"><strong>L-SHADE</strong></a><br><sub>Evolutionary methods · O(N_kD + N_k log N_k) at generation k plus objective-evaluation cost</sub><br><code>lshade-2014</code><br><sub><code>LShadeOptimizer</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/scatter-search-marti-laguna-glover-2006.html"><strong>Scatter Search</strong></a><br><sub>Five-method reference-set evolutionary search with explicit quality/diversity control.</sub><br><code>scatter-search-marti-laguna-glover-2006</code><br><sub><code>ScatterSearchOptimizer&lt;TSolution&gt;</code></sub></td></tr>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/genetic-algorithm-generational.html"><strong>Generational Genetic Algorithm</strong></a><br><sub>Generic fixed-size population evolution with tournament selection, representation-specific crossover/mutation and optional elitism.</sub><br><code>genetic-algorithm-generational</code><br><sub><code>GenerationalGeneticAlgorithmOptimizer&lt;TSolution&gt;</code></sub></td><td width="50%"></td></tr>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/cma-es-hansen-ostermeier-2001.html"><strong>Covariance Matrix Adaptation Evolution Strategy</strong></a><br><sub>Canonical full-covariance CMA-ES with evolution paths, CSA and rank-one/rank-mu covariance adaptation.</sub><br><code>cma-es-hansen-ostermeier-2001</code><br><sub><code>CmaEsOptimizer</code></sub></td><td width="50%"></td></tr>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/active-cma-es-hansen-ros-2010.html"><strong>Active CMA-ES</strong></a><br><sub>Weighted negative covariance adaptation with normalized unsuccessful directions.</sub><br><code>active-cma-es-hansen-ros-2010</code><br><sub><code>ActiveCmaEsOptimizer</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/separable-cma-es-ros-hansen-2008.html"><strong>Separable CMA-ES</strong></a><br><sub>Diagonal covariance adaptation with linear internal time and memory.</sub><br><code>separable-cma-es-ros-hansen-2008</code><br><sub><code>SeparableCmaEsOptimizer</code></sub></td></tr>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/ipop-cma-es-auger-hansen-2005.html"><strong>IPOP-CMA-ES</strong></a><br><sub>Increasing-population CMA restart strategy with one exact global evaluation lifecycle.</sub><br><code>ipop-cma-es-auger-hansen-2005</code><br><sub><code>IpopCmaEsOptimizer</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/bipop-cma-es-hansen-2009.html"><strong>BIPOP-CMA-ES</strong></a><br><sub>Budget-balanced large/small population CMA restart portfolio.</sub><br><code>bipop-cma-es-hansen-2009</code><br><sub><code>BipopCmaEsOptimizer</code></sub></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/differential-evolution.html"><strong>Differential Evolution</strong></a><br><sub>Classical continuous differential mutation and crossover.</sub><br><code>differential-evolution</code><br><sub><code>DifferentialEvolutionOptimizer</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/jde-brest-2006.html"><strong>jDE — Self-Adaptive Differential Evolution</strong></a><br><sub>Per-individual inherited F/CR adaptation.</sub><br><code>jde-brest-2006</code><br><sub><code>SelfAdaptiveDifferentialEvolutionOptimizer</code></sub></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/jade-2009.html"><strong>JADE</strong></a><br><sub>current-to-pbest/1 with optional archive and success-based parameter adaptation.</sub><br><code>jade-2009</code><br><sub><code>JadeOptimizer</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/shade-2013.html"><strong>SHADE</strong></a><br><sub>Success-history memories for F/CR with optional archive.</sub><br><code>shade-2013</code><br><sub><code>ShadeOptimizer</code></sub></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/lshade-2014.html"><strong>L-SHADE</strong></a><br><sub>SHADE with linear population-size reduction.</sub><br><code>lshade-2014</code><br><sub><code>LShadeOptimizer</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/scatter-search-marti-laguna-glover-2006.html"><strong>Scatter Search</strong></a><br><sub>Reference-set evolutionary search with explicit quality/diversity control.</sub><br><code>scatter-search-marti-laguna-glover-2006</code><br><sub><code>ScatterSearchOptimizer&lt;TSolution&gt;</code></sub></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/genetic-algorithm-generational.html"><strong>Generational Genetic Algorithm</strong></a><br><sub>Generic generational evolution with typed crossover, mutation and elitism.</sub><br><code>genetic-algorithm-generational</code><br><sub><code>GenerationalGeneticAlgorithmOptimizer&lt;TSolution&gt;</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/cma-es-hansen-ostermeier-2001.html"><strong>Covariance Matrix Adaptation Evolution Strategy</strong></a><br><sub>Canonical full-covariance CMA-ES with CSA and rank-one/rank-mu adaptation.</sub><br><code>cma-es-hansen-ostermeier-2001</code><br><sub><code>CmaEsOptimizer</code></sub></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/active-cma-es-hansen-ros-2010.html"><strong>Active CMA-ES</strong></a><br><sub>Weighted negative covariance adaptation from unsuccessful ranked offspring.</sub><br><code>active-cma-es-hansen-ros-2010</code><br><sub><code>ActiveCmaEsOptimizer</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/separable-cma-es-ros-hansen-2008.html"><strong>Separable CMA-ES</strong></a><br><sub>Diagonal covariance adaptation with linear internal time and memory.</sub><br><code>separable-cma-es-ros-hansen-2008</code><br><sub><code>SeparableCmaEsOptimizer</code></sub></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/ipop-cma-es-auger-hansen-2005.html"><strong>IPOP-CMA-ES</strong></a><br><sub>Increasing-population restart CMA-ES under one global evaluation lifecycle.</sub><br><code>ipop-cma-es-auger-hansen-2005</code><br><sub><code>IpopCmaEsOptimizer</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/bipop-cma-es-hansen-2009.html"><strong>BIPOP-CMA-ES</strong></a><br><sub>Budget-balanced large/small population CMA restart portfolio.</sub><br><code>bipop-cma-es-hansen-2009</code><br><sub><code>BipopCmaEsOptimizer</code></sub></td></tr>
 </table>
 
 ### Trajectory-based methods
 
 <table>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/simulated-annealing-metropolis.html"><strong>Simulated Annealing</strong></a><br><code>simulated-annealing-metropolis</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/threshold-accepting-dueck-scheuer-1990.html"><strong>Threshold Accepting</strong></a><br><code>threshold-accepting-dueck-scheuer-1990</code></td></tr>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/great-deluge-dueck-1993.html"><strong>Great Deluge Algorithm</strong></a><br><code>great-deluge-dueck-1993</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/record-to-record-travel-dueck-1993.html"><strong>Record-to-Record Travel</strong></a><br><code>record-to-record-travel-dueck-1993</code></td></tr>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/late-acceptance-hill-climbing-burke-bykov-2017.html"><strong>Late Acceptance Hill Climbing</strong></a><br><code>late-acceptance-hill-climbing-burke-bykov-2017</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/demon-based-acceptance-talbi-2009.html"><strong>Demon-Based Acceptance</strong></a><br><code>demon-based-acceptance-talbi-2009</code></td></tr>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/tabu-search-glover.html"><strong>Tabu Search</strong></a><br><code>tabu-search-glover</code></td><td width="50%"></td></tr>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/reactive-tabu-search-battiti-tecchiolli-1994.html"><strong>Reactive Tabu Search</strong></a><br><code>reactive-tabu-search-battiti-tecchiolli-1994</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/local-search-best-improvement.html"><strong>Local Search - Best Improvement</strong></a><br><code>local-search-best-improvement</code></td></tr>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/local-search-first-improvement.html"><strong>Local Search - First Improvement</strong></a><br><code>local-search-first-improvement</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/multi-start-local-search.html"><strong>Multi-Start Local Search</strong></a><br><code>multi-start-local-search</code></td></tr>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/iterated-local-search-lourenco-martin-stutzle.html"><strong>Iterated Local Search</strong></a><br><code>iterated-local-search-lourenco-martin-stutzle</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/variable-neighborhood-descent.html"><strong>Variable Neighborhood Descent</strong></a><br><code>variable-neighborhood-descent</code></td></tr>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/iterated-greedy-ruiz-stutzle-2007.html"><strong>Iterated Greedy - Ruiz-Stützle</strong></a><br><sub>Generic destruction/reconstruction with optional local search and pluggable acceptance.</sub><br><code>iterated-greedy-ruiz-stutzle-2007</code><br><sub><code>IteratedGreedyOptimizer&lt;TSolution,TRemoved&gt;</code></sub></td><td width="50%"></td></tr>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/variable-neighborhood-search-mladenovic-hansen.html"><strong>Basic Variable Neighborhood Search</strong></a><br><code>variable-neighborhood-search-mladenovic-hansen</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/reduced-variable-neighborhood-search.html"><strong>Reduced Variable Neighborhood Search</strong></a><br><code>reduced-variable-neighborhood-search</code></td></tr>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/general-variable-neighborhood-search.html"><strong>General Variable Neighborhood Search</strong></a><br><code>general-variable-neighborhood-search</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/skewed-variable-neighborhood-search-hansen-mladenovic-2001.html"><strong>Skewed Variable Neighborhood Search</strong></a><br><code>skewed-variable-neighborhood-search-hansen-mladenovic-2001</code></td></tr>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/guided-local-search-voudouris-tsang-1999.html"><strong>Guided Local Search</strong></a><br><code>guided-local-search-voudouris-tsang-1999</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/advanced-variable-neighborhood-search-variants.html"><strong>Advanced VNS catalog</strong></a><br><sub>RVNS / GVNS / SVNS executable; VNDS reviewed/deferred pending a decomposition contract.</sub></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/simulated-annealing-metropolis.html"><strong>Simulated Annealing</strong></a><br><sub>Metropolis acceptance with a scientific cooling-schedule catalog.</sub><br><code>simulated-annealing-metropolis</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/threshold-accepting-dueck-scheuer-1990.html"><strong>Threshold Accepting</strong></a><br><sub>Deterministic threshold-based acceptance.</sub><br><code>threshold-accepting-dueck-scheuer-1990</code></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/great-deluge-dueck-1993.html"><strong>Great Deluge Algorithm</strong></a><br><sub>Level-based deterministic acceptance.</sub><br><code>great-deluge-dueck-1993</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/record-to-record-travel-dueck-1993.html"><strong>Record-to-Record Travel</strong></a><br><sub>Record-deviation acceptance trajectory.</sub><br><code>record-to-record-travel-dueck-1993</code></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/late-acceptance-hill-climbing-burke-bykov-2017.html"><strong>Late Acceptance Hill Climbing</strong></a><br><sub>History-based late acceptance.</sub><br><code>late-acceptance-hill-climbing-burke-bykov-2017</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/demon-based-acceptance-talbi-2009.html"><strong>Demon-Based Acceptance</strong></a><br><sub>Adaptive credit/debit acceptance mechanism.</sub><br><code>demon-based-acceptance-talbi-2009</code></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/tabu-search-glover.html"><strong>Tabu Search</strong></a><br><sub>Short-term memory and aspiration-driven neighborhood trajectory.</sub><br><code>tabu-search-glover</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/reactive-tabu-search-battiti-tecchiolli-1994.html"><strong>Reactive Tabu Search</strong></a><br><sub>Reactive tenure adaptation from recurrence information.</sub><br><code>reactive-tabu-search-battiti-tecchiolli-1994</code></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/local-search-best-improvement.html"><strong>Local Search - Best Improvement</strong></a><br><sub>Best admissible improving neighbor at each step.</sub><br><code>local-search-best-improvement</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/local-search-first-improvement.html"><strong>Local Search - First Improvement</strong></a><br><sub>First admissible improving neighbor at each step.</sub><br><code>local-search-first-improvement</code></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/multi-start-local-search.html"><strong>Multi-Start Local Search</strong></a><br><sub>Independent restart local-search trajectories.</sub><br><code>multi-start-local-search</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/iterated-local-search-lourenco-martin-stutzle.html"><strong>Iterated Local Search</strong></a><br><sub>Perturbation, local improvement and acceptance around local optima.</sub><br><code>iterated-local-search-lourenco-martin-stutzle</code></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/variable-neighborhood-descent.html"><strong>Variable Neighborhood Descent</strong></a><br><sub>Systematic descent through ordered neighborhoods.</sub><br><code>variable-neighborhood-descent</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/iterated-greedy-ruiz-stutzle-2007.html"><strong>Iterated Greedy - Ruiz-Stützle</strong></a><br><sub>Destruction/reconstruction with optional local search and pluggable acceptance.</sub><br><code>iterated-greedy-ruiz-stutzle-2007</code></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/variable-neighborhood-search-mladenovic-hansen.html"><strong>Basic Variable Neighborhood Search</strong></a><br><sub>Canonical shake-and-descent variable-neighborhood search.</sub><br><code>variable-neighborhood-search-mladenovic-hansen</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/reduced-variable-neighborhood-search.html"><strong>Reduced Variable Neighborhood Search</strong></a><br><sub>Shaking-only reduced VNS.</sub><br><code>reduced-variable-neighborhood-search</code></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/general-variable-neighborhood-search.html"><strong>General Variable Neighborhood Search</strong></a><br><sub>Shaking plus variable-neighborhood descent.</sub><br><code>general-variable-neighborhood-search</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/skewed-variable-neighborhood-search-hansen-mladenovic-2001.html"><strong>Skewed Variable Neighborhood Search</strong></a><br><sub>Distance-aware acceptance for diversification.</sub><br><code>skewed-variable-neighborhood-search-hansen-mladenovic-2001</code></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/guided-local-search-voudouris-tsang-1999.html"><strong>Guided Local Search</strong></a><br><sub>Feature penalties reshape the objective to escape local optima.</sub><br><code>guided-local-search-voudouris-tsang-1999</code></td></tr>
 </table>
 
 ### Constructive methods
 
 <table>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/grasp-feo-resende-1995.html"><strong>GRASP - Feo-Resende</strong></a><br><sub>Adaptive randomized greedy threshold-RCL construction + reusable local search; allocation-free RCL selection.</sub><br><code>grasp-feo-resende-1995</code><br><sub><code>GraspOptimizer&lt;TSolution&gt;</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/reactive-grasp-prais-ribeiro-2000.html"><strong>Reactive GRASP - Prais-Ribeiro</strong></a><br><sub>Self-tuning discrete alpha probabilities learned from per-alpha solution quality.</sub><br><code>reactive-grasp-prais-ribeiro-2000</code><br><sub><code>ReactiveGraspOptimizer&lt;TSolution&gt;</code></sub></td></tr>
-<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/grasp-path-relinking.html"><strong>GRASP with Path Relinking</strong></a><br><sub>Quality/diversity elite memory + advanced pairwise path intensification + optional generational Evolutionary Path Relinking.</sub><br><code>grasp-path-relinking</code><br><sub><code>GraspPathRelinkingOptimizer&lt;TSolution&gt;</code></sub></td><td width="50%"></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/grasp-feo-resende-1995.html"><strong>GRASP - Feo-Resende</strong></a><br><sub>Adaptive randomized greedy construction followed by reusable local search.</sub><br><code>grasp-feo-resende-1995</code><br><sub><code>GraspOptimizer&lt;TSolution&gt;</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/reactive-grasp-prais-ribeiro-2000.html"><strong>Reactive GRASP - Prais-Ribeiro</strong></a><br><sub>Self-tuning alpha probabilities learned from solution quality.</sub><br><code>reactive-grasp-prais-ribeiro-2000</code><br><sub><code>ReactiveGraspOptimizer&lt;TSolution&gt;</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/grasp-path-relinking.html"><strong>GRASP with Path Relinking</strong></a><br><sub>Elite-memory GRASP with pairwise path intensification and optional evolutionary path relinking.</sub><br><code>grasp-path-relinking</code><br><sub><code>GraspPathRelinkingOptimizer&lt;TSolution&gt;</code></sub></td></tr>
 </table>
 
 ### Hybrid / memetic methods
 
 <table>
-<tr><td width="50%"><strong>GRASP with Path Relinking</strong><br><sub>The public hybrid composition combines constructive GRASP, local search and elite memory with configurable pairwise path intensification and optional generational Evolutionary Path Relinking.</sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/memetic-algorithm-moscato-1989.html"><strong>Memetic Algorithm - Moscato</strong></a><br><sub>Shared generational evolution + adaptive local improvement + Lamarckian/Baldwinian learning.</sub><br><code>memetic-algorithm-moscato-1989</code><br><sub><code>MemeticAlgorithmOptimizer&lt;TSolution&gt;</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/memetic-algorithm-moscato-1989.html"><strong>Memetic Algorithm - Moscato</strong></a><br><sub>Generational evolution with adaptive local improvement and Lamarckian/Baldwinian learning.</sub><br><code>memetic-algorithm-moscato-1989</code><br><sub><code>MemeticAlgorithmOptimizer&lt;TSolution&gt;</code></sub></td></tr>
 </table>
 
 ## Scientific components
-<p><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/cma-es-components.html"><strong>CMA-ES Components</strong></a> &middot; <code>cma.*</code> &middot; Gaussian sampling + evolution paths + CSA + rank-one/rank-mu covariance adaptation.</p>
 
-<p><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/advanced-ant-colony-optimization.html"><strong>Advanced Ant Colony Optimization</strong></a> &middot; <code>aco.*</code> &middot; ACS + MMAS executable scientific components.</p>
-
-<p><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/memetic-algorithm-components.html"><strong>Memetic Algorithm Components</strong></a> &middot; <code>ma.*</code> &middot; 5 local-improvement policies + Lamarckian/Baldwinian learning.</p>
+Every component catalog is integrated into the same balanced grid; no scientific component
+is left outside the table.
 
 <table>
-<tr>
-<td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/pso-communication-topologies.html"><strong>PSO Communication Topology Catalog</strong></a><br><sub>10 implemented topology classes &middot; exact-vs-generic provenance &middot; static, random-static and dynamic rebuild semantics &middot; exact DCluster documented in detail</sub><br><code>pso.topology.*</code></td>
-<td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/simulated-annealing-cooling-schedules.html"><strong>Simulated Annealing Scientific Cooling Catalog</strong></a><br><sub>10 executable cooling schedules &middot; broader controllers reviewed without false reduction</sub><br><code>sa.cooling.*</code></td>
-</tr>
-<tr>
-<td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/tabu-search-memory-control-strategies.html"><strong>Tabu Search Memory &amp; Reactive Control Catalog</strong></a><br><sub>10 executable components &middot; memory, reactive tenure, intensification and diversification</sub><br><code>ts.*</code></td>
-<td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/advanced-variable-neighborhood-search-variants.html"><strong>Advanced Variable Neighborhood Search Variants</strong></a><br><sub>RVNS / GVNS / SVNS executable &middot; VNDS reviewed/deferred pending a decomposition contract</sub><br><code>vns.variants</code></td>
-</tr>
-<tr>
-<td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/path-relinking-strategies.html"><strong>Advanced Path Relinking Strategies</strong></a><br><sub>7 executable strategies &middot; forward / backward / back-and-forward / mixed &middot; truncation &middot; greedy-randomized RCL &middot; generational EvPR</sub><br><code>pr.*</code></td>
-<td width="50%"><strong>Evolutionary Path Relinking</strong><br><sub>Implemented generational all-pairs elite evolution with quality/diversity replacement and convergence on non-improving generation best.</sub><br><code>pr.evolutionary</code></td>
-</tr>
-<tr>
-<td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/threshold-accepting-schedules.html"><strong>Threshold Accepting Schedule Catalog</strong></a><br><sub>3 executable monotone threshold schedules &middot; deterministic Dueck-Scheuer acceptance &middot; Old Bachelor Acceptance reviewed/deferred</sub><br><code>ta.threshold.*</code></td>
-<td width="50%"></td>
-</tr><tr>
-<td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/acceptance-based-trajectory-methods.html"><strong>Acceptance-Based Trajectory Methods</strong></a><br><sub>Great Deluge + Record-to-Record Travel + Late Acceptance + Demon executable &middot; Extended/Flex Deluge + distinct Demon variants reviewed/deferred</sub><br><code>acceptance.*</code></td>
-<td width="50%"></td>
-</tr>
-<tr>
-<td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/advanced-iterated-greedy-strategies.html"><strong>Advanced Iterated Greedy Strategies</strong></a><br><sub>5 executable generic controls &middot; 9 complete published variants reviewed separately &middot; exact provenance through 2026</sub><br><code>ig.*</code></td>
-<td width="50%"></td>
-</tr><tr>
-<td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/advanced-scatter-search-strategies.html"><strong>Advanced Scatter Search Strategies</strong></a><br><sub>5 executable generic components &middot; dynamic/tiered RefSet control &middot; max-min rebuilding &middot; minimum diversity &middot; representative Subset Types 1-4</sub><br><code>ss.*</code></td>
-<td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/advanced-genetic-algorithm-operators.html"><strong>Advanced Genetic Algorithm Operators</strong></a><br><sub>18 executable ga.* components · selection · sequence/permutation/real crossover · mutation · steady-state reviewed/deferred</sub><br><code>ga.*</code></td>
-</tr></table>
-
-
-## Documentation contract
-
-Every public algorithm page must contain:
-- general description;
-- technical specifications;
-- time and space complexity;
-- applicability;
-- detailed operation;
-- generic and specific parameters;
-- API example;
-- stable factory ID;
-- complete **Mathematical details** with LaTeX problem formulation, update equations,
-  assumptions and convergence conditions;
-- scientific references and DOI.
-
-The documentation build fails when this contract is not satisfied.
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/cma-es-components.html"><strong>CMA-ES Components</strong></a><br><sub>Full/active/separable covariance, CSA, rank-one/rank-mu, IPOP and BIPOP restart components.</sub><br><code>cma.*</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/advanced-ant-colony-optimization.html"><strong>Advanced Ant Colony Optimization</strong></a><br><sub>ACS + MMAS executable scientific components.</sub><br><code>aco.*</code></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/memetic-algorithm-components.html"><strong>Memetic Algorithm Components</strong></a><br><sub>5 local-improvement policies plus Lamarckian/Baldwinian learning.</sub><br><code>ma.*</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/pso-communication-topologies.html"><strong>PSO Communication Topology Catalog</strong></a><br><sub>10 implemented topology classes with exact/generic provenance and rebuild semantics.</sub><br><code>pso.topology.*</code></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/simulated-annealing-cooling-schedules.html"><strong>Simulated Annealing Scientific Cooling Catalog</strong></a><br><sub>10 executable cooling schedules with literature-backed provenance.</sub><br><code>sa.cooling.*</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/tabu-search-memory-control-strategies.html"><strong>Tabu Search Memory & Reactive Control Catalog</strong></a><br><sub>10 executable memory, tenure, intensification and diversification components.</sub><br><code>ts.*</code></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/advanced-variable-neighborhood-search-variants.html"><strong>Advanced Variable Neighborhood Search Variants</strong></a><br><sub>RVNS / GVNS / SVNS executable; VNDS explicitly reviewed/deferred.</sub><br><code>vns.variants</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/path-relinking-strategies.html"><strong>Advanced Path Relinking Strategies</strong></a><br><sub>7 executable direction, truncation and randomized path strategies.</sub><br><code>pr.*</code></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/path-relinking-strategies.html"><strong>Evolutionary Path Relinking</strong></a><br><sub>7 executable strategies including generational Evolutionary Path Relinking, with all-pairs elite evolution and quality/diversity replacement.</sub><br><code>pr.evolutionary</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/threshold-accepting-schedules.html"><strong>Threshold Accepting Schedule Catalog</strong></a><br><sub>3 executable monotone schedules with Dueck-Scheuer acceptance.</sub><br><code>ta.threshold.*</code></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/acceptance-based-trajectory-methods.html"><strong>Acceptance-Based Trajectory Methods</strong></a><br><sub>Great Deluge, RRT, Late Acceptance and Demon families.</sub><br><code>acceptance.*</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/advanced-iterated-greedy-strategies.html"><strong>Advanced Iterated Greedy Strategies</strong></a><br><sub>5 executable generic controls and separately reviewed published variants.</sub><br><code>ig.*</code></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/advanced-scatter-search-strategies.html"><strong>Advanced Scatter Search Strategies</strong></a><br><sub>Dynamic/tiered RefSet, rebuilding, diversity and representative subset components.</sub><br><code>ss.*</code></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/advanced-genetic-algorithm-operators.html"><strong>Advanced Genetic Algorithm Operators</strong></a><br><sub>18 executable selection, crossover and mutation components.</sub><br><code>ga.*</code></td></tr>
+</table>

@@ -2,6 +2,21 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.49.0] - 2026-08-22
+
+### Added
+
+- Canonical continuous Artificial Bee Colony (ABC) with employed, onlooker and scout phases.
+- Stable ID `artificial-bee-colony-karaboga-basturk-2007` with peer-reviewed DOI provenance.
+- Exact partial-cycle evaluation-budget handling, deterministic seeds, scout abandonment tests and benchmark coverage.
+- Repository-level README quality validator.
+
+### Changed
+
+- Rebuilt the GitHub README into balanced, fully clickable algorithm and scientific-component grids.
+- Removed empty table cells and the internal `Documentation contract` section from the public README.
+- Fixed the swarm-family documentation, including the malformed ACS stable-ID text.
+
 ## [0.48.0] - 2026-08-22
 
 ### Added

@@ -53,6 +53,28 @@
                            "factoryMode":  "direct"
                        },
                        {
+                           "id":  "artificial-bee-colony-karaboga-basturk-2007",
+                           "name":  "Artificial Bee Colony",
+                           "class":  "ArtificialBeeColonyOptimizer",
+                           "category":  "swarm-intelligence",
+                           "kind":  "population",
+                           "family":  "Swarm intelligence",
+                           "time":  "O(SD) per complete cycle plus objective-evaluation cost",
+                           "space":  "O(SD + S)",
+                           "applicability":  "Bounded continuous derivative-free optimization with probabilistic recruitment and explicit source abandonment",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/ArtificialBeeColony/ArtificialBeeColonyOptimizer.cs",
+                           "publication":  "Karaboga \u0026 Basturk (2007), A Powerful and Efficient Algorithm for Numerical Function Optimization: Artificial Bee Colony (ABC) Algorithm, Journal of Global Optimization 39(3), 459-471",
+                           "doi":  "10.1007/s10898-007-9149-x",
+                           "implementation":  "Canonical employed/onlooker/scout phases with one-coordinate perturbation, proportional onlooker selection, greedy replacement, abandonment counters and exact OptimizationContext evaluation accounting.",
+                           "page":  "docs/pages/algorithms/artificial-bee-colony-karaboga-basturk-2007.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}\nv_{i,j}\u0026=x_{i,j}+\\phi_{i,j}(x_{i,j}-x_{k,j}),\\quad k\\ne i,\\\\\np_i\u0026=\\frac{\\mathrm{fit}(x_i)}{\\sum_{s=1}^{S}\\mathrm{fit}(x_s)},\\\\\nx_i^+\u0026=\\begin{cases}v_i,\u0026f(v_i)\\prec f(x_i),\\\\x_i,\u0026\\text{otherwise}\\end{cases}\n\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous domain; finite objective values; one-coordinate employed/onlooker perturbation and component-wise boundary clamping.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; ABC is stochastic and its exploration/exploitation balance depends on source count, abandonment limit and evaluation budget.",
+                           "factoryMode":  "direct"
+                       },
+                       {
                            "id":  "differential-evolution",
                            "name":  "Differential Evolution",
                            "class":  "DifferentialEvolutionOptimizer",

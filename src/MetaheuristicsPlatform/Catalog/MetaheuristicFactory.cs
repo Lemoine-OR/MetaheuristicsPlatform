@@ -24,6 +24,10 @@ public static class MetaheuristicFactory
             "MetaheuristicsPlatform.Algorithms.PSO.ParticleSwarmOptimizer");
 
         RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.ArtificialBeeColony,
+            "MetaheuristicsPlatform.Algorithms.ArtificialBeeColony.ArtificialBeeColonyOptimizer");
+
+        RegisterAssemblyType(
             MetaheuristicAlgorithmIds.CmaEs,
             "MetaheuristicsPlatform.Algorithms.CMAES.CmaEsOptimizer");
 

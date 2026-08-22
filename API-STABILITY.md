@@ -139,3 +139,14 @@ Stable public IDs introduced:
 `IpopCmaEsOptimizer` and `BipopCmaEsOptimizer` are public API.
 Component IDs `cma.restart.ipop` and `cma.restart.bipop` become executable.
 Both algorithms own exactly one common `OptimizationContext` across all restarts.
+
+## v0.49.0 Artificial Bee Colony
+
+Stable public ID introduced:
+
+- `artificial-bee-colony-karaboga-basturk-2007`
+
+`ArtificialBeeColonyOptimizer`, `ArtificialBeeColonyParameters`,
+`ArtificialBeeColonyState`, `ArtificialBeeColonyPhase` and
+`ArtificialBeeColonyReferences` are public API. The implementation uses the existing
+bounded continuous problem/search-space contracts and the common `OptimizationContext`.
