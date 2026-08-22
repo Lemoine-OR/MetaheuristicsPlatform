@@ -20,8 +20,8 @@ $catalog =
 $algorithms = @($catalog.algorithms)
 $families = @($catalog.families)
 
-if ($algorithms.Count -lt 30) {
-    throw "Documentation parity: expected at least the thirty currently public algorithms."
+if ($algorithms.Count -lt 31) {
+    throw "Documentation parity: expected at least the thirty-one currently public algorithms."
 }
 
 $requiredFields = @(
@@ -136,6 +136,11 @@ $requiredRepoFiles = @(
     "docs\Test-AdvancedScatterSearch.ps1",
     "docs\Test-GeneticAlgorithm.ps1",
     "docs\Test-AdvancedGeneticAlgorithm.ps1",
+    "docs\Test-MemeticAlgorithm.ps1",
+    "docs\memetic-algorithm-catalog.json",
+    "docs\Build-MemeticAlgorithmDocumentation.ps1",
+    "docs\pages\components\memetic-algorithm-components.md",
+    "docs\pages\algorithms\memetic-algorithm-moscato-1989.md",
     "docs\advanced-genetic-algorithm-catalog.json",
     "docs\Build-AdvancedGeneticAlgorithmDocumentation.ps1",
     "docs\pages\components\advanced-genetic-algorithm-operators.md",
@@ -239,8 +244,8 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.42.0") {
-    throw "Documentation parity: version.json must be 0.42.0 for this release."
+if ([string]$version.version -ne "0.43.0") {
+    throw "Documentation parity: version.json must be 0.43.0 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root
@@ -255,6 +260,7 @@ if ([string]$version.version -ne "0.42.0") {
 & (Join-Path $Root "docs\Test-AdvancedScatterSearch.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-GeneticAlgorithm.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-AdvancedGeneticAlgorithm.ps1") -Root $Root
+& (Join-Path $Root "docs\Test-MemeticAlgorithm.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-TabuSearchFoundation.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-TabuSearchAdvancedMemory.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-LocalSearchFoundation.ps1") -Root $Root

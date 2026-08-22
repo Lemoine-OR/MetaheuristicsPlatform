@@ -31,6 +31,7 @@ use, start from the project portal and the short guides below.
 - @subpage advanced_iterated_greedy_strategies - generic IG controls and reviewed complete advanced variants.
 - @subpage advanced_scatter_search_strategies - dynamic/tiered RefSet control, rebuilding, diversity and representative subset families.
 - @subpage advanced_genetic_algorithm_operators - selection, crossover, mutation and replacement component catalog.
+- @subpage memetic_algorithm_components - local-improvement and learning policies for v0.43.0.
 ## Validation and reproducibility
 
 - @subpage complexity_applicability

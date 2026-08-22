@@ -165,7 +165,7 @@
                        {
                            "id":  "genetic-algorithm-generational",
                            "name":  "Generational Genetic Algorithm",
-                           "class":  "GenerationalGeneticAlgorithmOptimizer<TSolution>",
+                           "class":  "GenerationalGeneticAlgorithmOptimizer\u003cTSolution\u003e",
                            "category":  "evolutionary-methods",
                            "kind":  "population",
                            "family":  "Evolutionary methods",
@@ -179,7 +179,7 @@
                            "implementation":  "Generic fixed-size generational replacement with objective-sense symmetric tournament selection, representation-specific crossover/mutation, optional non-reevaluated elitism, strict solution ownership and common OptimizationContext lifecycle.",
                            "page":  "docs/pages/algorithms/genetic-algorithm-generational.md",
                            "problem":  "\\min_{x\\in\\mathcal X} f(x)\\quad\\text{or}\\quad\\max_{x\\in\\mathcal X} f(x)",
-                           "update":  "\\begin{aligned}\nP_0&=\\{x_1,\\ldots,x_N\\},\\\\\n(i,j)&\\sim S(P_t;f),\\\\\n(y_1,y_2)&\\leftarrow X(x_i^t,x_j^t),\\\\\ny_k&\\leftarrow M(y_k),\\quad k\\in\\{1,2\\},\\\\\nP_{t+1}&\\leftarrow E_t\\cup O_t,\\quad |P_{t+1}|=N\n\\end{aligned}",
+                           "update":  "\\begin{aligned}\nP_0\u0026=\\{x_1,\\ldots,x_N\\},\\\\\n(i,j)\u0026\\sim S(P_t;f),\\\\\n(y_1,y_2)\u0026\\leftarrow X(x_i^t,x_j^t),\\\\\ny_k\u0026\\leftarrow M(y_k),\\quad k\\in\\{1,2\\},\\\\\nP_{t+1}\u0026\\leftarrow E_t\\cup O_t,\\quad |P_{t+1}|=N\n\\end{aligned}",
                            "assumptions":  "The common evaluator receives complete candidates. Crossover and mutation semantics are representation-specific; the cloner must provide independent owned snapshots for mutable solutions.",
                            "convergence":  "No universal finite-time global convergence guarantee is claimed. Asymptotic results require additional assumptions on mutation reachability, selection, replacement and elitism that depend on the configured representation and operators.",
                            "factoryMode":  "registration"
@@ -187,7 +187,7 @@
                        {
                            "id":  "scatter-search-marti-laguna-glover-2006",
                            "name":  "Scatter Search",
-                           "class":  "ScatterSearchOptimizer<TSolution>",
+                           "class":  "ScatterSearchOptimizer\u003cTSolution\u003e",
                            "category":  "evolutionary-methods",
                            "kind":  "population",
                            "family":  "Evolutionary methods",
@@ -196,16 +196,17 @@
                            "applicability":  "Any complete-solution representation with domain diversification, distance and combination methods; improvement is optional",
                            "requiresComposition":  true,
                            "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/ScatterSearch/ScatterSearchOptimizer.cs",
-                           "publication":  "Marti, Laguna & Glover (2006), Principles of scatter search, European Journal of Operational Research 169(2), 359-372; Laguna & Marti (2003), Scatter Search: Methodology and Implementations in C",
+                           "publication":  "Marti, Laguna \u0026 Glover (2006), Principles of scatter search, European Journal of Operational Research 169(2), 359-372; Laguna \u0026 Marti (2003), Scatter Search: Methodology and Implementations in C",
                            "doi":  "10.1016/j.ejor.2004.08.004",
                            "implementation":  "Five-method generic Scatter Search template with quality/diversity RefSet construction, pairwise-new subset generation, strict distinct quality replacement and objective-sense symmetry.",
                            "page":  "docs/pages/algorithms/scatter-search-marti-laguna-glover-2006.md",
                            "problem":  "\\min_{x\\in\\mathcal X} f(x)\\quad\\text{or}\\quad\\max_{x\\in\\mathcal X} f(x)",
-                           "update":  "\\begin{aligned}\nP_0&\\leftarrow\\{I(D_1),\\ldots,I(D_P)\\},\\\\\nR_0&\\leftarrow\\operatorname{RefSet}_{b_1,b}(P_0;f,d),\\\\\n\\mathcal S_k&\\leftarrow\\operatorname{Subsets}(R_k),\\\\\nY_k&\\leftarrow\\bigcup_{S\\in\\mathcal S_k}I(\\mathcal C(S)),\\\\\nR_{k+1}&\\leftarrow\\operatorname{Update}(R_k,Y_k;f,d)\n\\end{aligned}",
+                           "update":  "\\begin{aligned}\nP_0\u0026\\leftarrow\\{I(D_1),\\ldots,I(D_P)\\},\\\\\nR_0\u0026\\leftarrow\\operatorname{RefSet}_{b_1,b}(P_0;f,d),\\\\\n\\mathcal S_k\u0026\\leftarrow\\operatorname{Subsets}(R_k),\\\\\nY_k\u0026\\leftarrow\\bigcup_{S\\in\\mathcal S_k}I(\\mathcal C(S)),\\\\\nR_{k+1}\u0026\\leftarrow\\operatorname{Update}(R_k,Y_k;f,d)\n\\end{aligned}",
                            "assumptions":  "The common evaluator receives complete feasible candidates. Distance and combination semantics are representation-specific; distance must be finite and non-negative.",
                            "convergence":  "No universal global convergence guarantee is claimed. The strict RefSet replacement rule plus explicit stopping bounds ensures termination of the implemented run; global optimality requires additional exploration assumptions.",
                            "factoryMode":  "registration"
-                       },                       {
+                       },
+                       {
                            "id":  "simulated-annealing-metropolis",
                            "name":  "Simulated Annealing",
                            "class":  "SimulatedAnnealingOptimizer\u003cTSolution,TMove,TUndo\u003e",
@@ -690,6 +691,28 @@
                            "update":  "\\begin{aligned}p_k\u0026=D_d(x_k),\\\\y_k\u0026=C(p_k),\\\\z_k\u0026=L(y_k),\\\\x_{k+1}\u0026=\\begin{cases}z_k,\u0026A(x_k,z_k)=1,\\\\x_k,\u0026\\text{otherwise}\\end{cases}\\end{aligned}",
                            "assumptions":  "Destruction operates on an owned clone; reconstruction restores a complete valid solution before evaluation; composed acceptance/local search respect the common lifecycle.",
                            "convergence":  "No universal finite-time global convergence claim is made; strict acceptance is monotone but can trap, while stochastic destruction and Metropolis acceptance require additional irreducibility/recurrence assumptions for asymptotic global guarantees.",
+                           "factoryMode":  "composition"
+                       },
+                       {
+                           "id":  "memetic-algorithm-moscato-1989",
+                           "name":  "Memetic Algorithm - Moscato",
+                           "class":  "MemeticAlgorithmOptimizer\u003cTSolution\u003e",
+                           "category":  "hybrid-methods",
+                           "kind":  "population-hybrid",
+                           "family":  "Hybrid / memetic methods",
+                           "time":  "O(N(C_S+C_X+C_M+C_f)+sum_{x in C_t} C_LS(x)) per generation; ranked policies add O(N log N)",
+                           "space":  "O(N*|solution|) plus one owned local-search phenotype and local-search workspace",
+                           "applicability":  "Any complete-solution representation with compatible genetic initialization/selection/crossover/mutation, cloning and reusable local search",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Memetic/MemeticAlgorithmOptimizer.cs",
+                           "publication":  "Moscato (1989), On Evolution, Search, Optimization, Genetic Algorithms and Martial Arts: Towards Memetic Algorithms; Krasnogor \u0026 Smith (2005), A Tutorial for Competent Memetic Algorithms: Model, Taxonomy, and Design Issues, IEEE TEC 9(5), 474-488",
+                           "doi":  "10.1109/TEVC.2005.850260",
+                           "implementation":  "Shared fixed-size generational GA engine with a generation-level memetic extension; reusable common-context local search; Lamarckian/Baldwinian learning; every-offspring, periodic, probabilistic, top-fraction and stagnation-adaptive application policies.",
+                           "page":  "docs/pages/algorithms/memetic-algorithm-moscato-1989.md",
+                           "problem":  "\\operatorname*{opt}_{x\\in\\mathcal X} f(x)",
+                           "update":  "\\begin{aligned}\nO_t\u0026=E(P_t),\\\\\nx^{LS}\u0026=\\mathcal L(x),\\quad x\\in C_t\\subseteq O_t,\\\\\nP_{t+1}\u0026=\\operatorname{Learn}\\!\\left(O_t,\\{x^{LS}:x\\in C_t\\}\\right)\n\\end{aligned}",
+                           "assumptions":  "Finite population; compatible complete-solution genetic operators; owned cloning; local improvement never returns a solution worse than its starting objective; common stopping and evaluation accounting remain authoritative.",
+                           "convergence":  "No unconditional global-optimum guarantee is claimed. The implementation preserves the stochastic GA lifecycle while local-search pressure changes exploitation; finite evaluation/generation/cancellation limits still terminate execution.",
                            "factoryMode":  "composition"
                        }
                    ]

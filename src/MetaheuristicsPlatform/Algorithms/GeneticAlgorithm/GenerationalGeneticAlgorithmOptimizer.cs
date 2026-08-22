@@ -19,6 +19,8 @@ public sealed class GenerationalGeneticAlgorithmOptimizer<TSolution> :
     private readonly IGeneticParentSelectionMethod<TSolution> _parentSelection;
     private readonly IGeneticCrossoverMethod<TSolution> _crossover;
     private readonly IGeneticMutationMethod<TSolution> _mutation;
+    private readonly MetaheuristicDescriptor _descriptor;
+    private readonly IGeneticAlgorithmExecutionExtension<TSolution>? _executionExtension;
 
     public GenerationalGeneticAlgorithmOptimizer(
         IGeneticPopulationInitializer<TSolution> initializer,
@@ -39,6 +41,23 @@ public sealed class GenerationalGeneticAlgorithmOptimizer<TSolution> :
         IGeneticParentSelectionMethod<TSolution> parentSelection,
         IGeneticCrossoverMethod<TSolution> crossover,
         IGeneticMutationMethod<TSolution> mutation)
+        : this(
+            initializer,
+            parentSelection,
+            crossover,
+            mutation,
+            CreateCanonicalDescriptor(),
+            executionExtension: null)
+    {
+    }
+
+    internal GenerationalGeneticAlgorithmOptimizer(
+        IGeneticPopulationInitializer<TSolution> initializer,
+        IGeneticParentSelectionMethod<TSolution> parentSelection,
+        IGeneticCrossoverMethod<TSolution> crossover,
+        IGeneticMutationMethod<TSolution> mutation,
+        MetaheuristicDescriptor descriptor,
+        IGeneticAlgorithmExecutionExtension<TSolution>? executionExtension)
     {
         _initializer =
             initializer ??
@@ -55,32 +74,16 @@ public sealed class GenerationalGeneticAlgorithmOptimizer<TSolution> :
         _mutation =
             mutation ??
             throw new ArgumentNullException(nameof(mutation));
+
+        _descriptor =
+            descriptor ??
+            throw new ArgumentNullException(nameof(descriptor));
+
+        _executionExtension =
+            executionExtension;
     }
 
-    public MetaheuristicDescriptor Descriptor { get; } = new()
-    {
-        Id = MetaheuristicAlgorithmIds.GeneticAlgorithm,
-        Name = "Generational Genetic Algorithm",
-        Acronym = "GA",
-        SolutionModel = MetaheuristicSolutionModel.Population,
-        Families = MetaheuristicFamily.Evolutionary,
-        Mechanisms =
-            MetaheuristicMechanism.EvolutionaryOperators,
-        SearchSpaces =
-            SearchSpaceKind.Continuous |
-            SearchSpaceKind.Binary |
-            SearchSpaceKind.Integer |
-            SearchSpaceKind.Permutation |
-            SearchSpaceKind.Combinatorial |
-            SearchSpaceKind.Mixed,
-        IsStochastic = true,
-        References =
-        [
-            GeneticAlgorithmReferences.EibenSmith2003,
-            GeneticAlgorithmReferences.Whitley1994,
-            GeneticAlgorithmReferences.BlickleThiele1996
-        ]
-    };
+    public MetaheuristicDescriptor Descriptor => _descriptor;
 
     public GeneticAlgorithmParameters CreateDefaultParameters() => new();
 
@@ -125,7 +128,8 @@ public sealed class GenerationalGeneticAlgorithmOptimizer<TSolution> :
                 mutationEvents,
                 parameters.EliteCount);
 
-        context.Start(state);
+        context.Start(
+            CreateAlgorithmState(state));
 
         var population =
             new List<GeneticPopulationMember<TSolution>>(
@@ -148,7 +152,7 @@ public sealed class GenerationalGeneticAlgorithmOptimizer<TSolution> :
             double objective =
                 context.Evaluate(
                     owned,
-                    state);
+                    CreateAlgorithmState(state));
 
             population.Add(
                 new GeneticPopulationMember<TSolution>(
@@ -165,24 +169,39 @@ public sealed class GenerationalGeneticAlgorithmOptimizer<TSolution> :
                     mutationEvents,
                     parameters.EliteCount);
 
+            object algorithmState =
+                CreateAlgorithmState(state);
+
             StoppingDecision initializationStop =
-                context.EvaluateStopping(state);
+                context.EvaluateStopping(
+                    algorithmState);
 
             if (initializationStop.ShouldStop)
-                return context.Complete(initializationStop, state);
+                return context.Complete(
+                    initializationStop,
+                    algorithmState);
         }
 
+        object completedInitializationState =
+            CreateAlgorithmState(state);
+
         StoppingDecision stop =
-            context.EvaluateStopping(state);
+            context.EvaluateStopping(
+                completedInitializationState);
 
         if (stop.ShouldStop)
-            return context.Complete(stop, state);
+            return context.Complete(
+                stop,
+                completedInitializationState);
 
         for (int generation = 1;
              generation <= parameters.MaximumGenerations;
              generation++)
         {
             cancellationToken.ThrowIfCancellationRequested();
+
+            long improvementsBeforeGeneration =
+                context.State.ImprovementCount;
 
             var nextPopulation =
                 new List<GeneticPopulationMember<TSolution>>(
@@ -264,7 +283,14 @@ public sealed class GenerationalGeneticAlgorithmOptimizer<TSolution> :
                 nextPopulation.Add(firstChild);
 
                 if (stop.ShouldStop)
-                    return context.Complete(stop, state);
+                {
+                    object stoppedState =
+                        CreateAlgorithmState(state);
+
+                    return context.Complete(
+                        stop,
+                        stoppedState);
+                }
 
                 if (nextPopulation.Count >= parameters.PopulationSize)
                     break;
@@ -289,21 +315,59 @@ public sealed class GenerationalGeneticAlgorithmOptimizer<TSolution> :
                 nextPopulation.Add(secondChild);
 
                 if (stop.ShouldStop)
-                    return context.Complete(stop, state);
-            }
+                {
+                    object stoppedState =
+                        CreateAlgorithmState(state);
 
-            population =
-                nextPopulation;
+                    return context.Complete(
+                        stop,
+                        stoppedState);
+                }
+            }
 
             state =
                 new GeneticAlgorithmState(
                     generation,
-                    population.Count,
+                    nextPopulation.Count,
                     offspringEvaluated,
                     parentSelections,
                     crossoverEvents,
                     mutationEvents,
                     parameters.EliteCount);
+
+            if (_executionExtension is not null)
+            {
+                stop =
+                    _executionExtension.ProcessCompletedGeneration(
+                        nextPopulation,
+                        state,
+                        context,
+                        solutionCloner,
+                        cancellationToken);
+
+                if (stop.ShouldStop)
+                {
+                    object stoppedState =
+                        CreateAlgorithmState(state);
+
+                    return context.Complete(
+                        stop,
+                        stoppedState);
+                }
+            }
+
+            population =
+                nextPopulation;
+
+            bool improvedGlobalBest =
+                context.State.ImprovementCount >
+                improvementsBeforeGeneration;
+
+            _executionExtension?.CompleteGeneration(
+                improvedGlobalBest);
+
+            object generationState =
+                CreateAlgorithmState(state);
 
             double generationBest =
                 BestObjective(
@@ -312,27 +376,36 @@ public sealed class GenerationalGeneticAlgorithmOptimizer<TSolution> :
 
             context.CompleteIteration(
                 generationBest,
-                state);
+                generationState);
 
             stop =
-                context.EvaluateStopping(state);
+                context.EvaluateStopping(
+                    generationState);
 
             if (stop.ShouldStop)
-                return context.Complete(stop, state);
+                return context.Complete(
+                    stop,
+                    generationState);
 
             if (generation == parameters.MaximumGenerations)
             {
                 return context.Complete(
                     StoppingDecision.Stop(
                         "MaximumGenerations",
-                        $"The configured maximum of {parameters.MaximumGenerations} GA generations was reached."),
-                    state);
+                        $"The configured maximum of {parameters.MaximumGenerations} generations was reached."),
+                    generationState);
             }
         }
 
         throw new InvalidOperationException(
-            "The GA generation loop terminated unexpectedly.");
+            "The generational evolutionary loop terminated unexpectedly.");
     }
+
+    private object CreateAlgorithmState(
+        in GeneticAlgorithmState state) =>
+        _executionExtension is null
+            ? state
+            : _executionExtension.CreateAlgorithmState(state);
 
     private int SelectParentIndex(
         IReadOnlyList<GeneticPopulationMember<TSolution>> population,
@@ -401,7 +474,8 @@ public sealed class GenerationalGeneticAlgorithmOptimizer<TSolution> :
         double objective =
             context.Evaluate(
                 owned,
-                evaluationState);
+                CreateAlgorithmState(
+                    evaluationState));
 
         state =
             new GeneticAlgorithmState(
@@ -414,7 +488,9 @@ public sealed class GenerationalGeneticAlgorithmOptimizer<TSolution> :
                 parameters.EliteCount);
 
         stop =
-            context.EvaluateStopping(state);
+            context.EvaluateStopping(
+                CreateAlgorithmState(
+                    state));
 
         return new GeneticPopulationMember<TSolution>(
             owned,
@@ -507,4 +583,30 @@ public sealed class GenerationalGeneticAlgorithmOptimizer<TSolution> :
 
         return 0;
     }
+
+    private static MetaheuristicDescriptor CreateCanonicalDescriptor() =>
+        new()
+        {
+            Id = MetaheuristicAlgorithmIds.GeneticAlgorithm,
+            Name = "Generational Genetic Algorithm",
+            Acronym = "GA",
+            SolutionModel = MetaheuristicSolutionModel.Population,
+            Families = MetaheuristicFamily.Evolutionary,
+            Mechanisms =
+                MetaheuristicMechanism.EvolutionaryOperators,
+            SearchSpaces =
+                SearchSpaceKind.Continuous |
+                SearchSpaceKind.Binary |
+                SearchSpaceKind.Integer |
+                SearchSpaceKind.Permutation |
+                SearchSpaceKind.Combinatorial |
+                SearchSpaceKind.Mixed,
+            IsStochastic = true,
+            References =
+            [
+                GeneticAlgorithmReferences.EibenSmith2003,
+                GeneticAlgorithmReferences.Whitley1994,
+                GeneticAlgorithmReferences.BlickleThiele1996
+            ]
+        };
 }

@@ -39,11 +39,11 @@ stable catalog IDs.
 <td width="20%"><strong>7 evolutionary methods</strong><br><sub>Generational GA, DE, jDE, JADE, SHADE, L-SHADE and canonical Scatter Search.</sub></td>
 <td width="20%"><strong>19 trajectory methods</strong><br><sub>SA, Threshold Accepting, Great Deluge, Record-to-Record Travel, Late Acceptance, Demon-Based Acceptance, Tabu Search, Local Search, ILS, Iterated Greedy, VNS variants and GLS.</sub></td>
 <td width="20%"><strong>3 constructive methods</strong><br><sub>Canonical GRASP, Reactive GRASP and elite-memory Path Relinking with advanced trajectory and evolutionary elite-population policies.</sub></td>
-<td width="20%"><strong>Generic foundations</strong><br><sub>Evaluation pipelines, neighborhoods, reversible moves and hybrid composition.</sub></td>
+<td width="20%"><strong>1 hybrid / memetic method</strong><br><sub>Moscato MA with adaptive local improvement and Lamarckian/Baldwinian learning.</sub></td>
 </tr>
 </table>
 
-<p align="center"><strong>30 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>31 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -141,10 +141,11 @@ stable ID used by the canonical catalog/factory.
 ### Hybrid / memetic methods
 
 <table>
-<tr><td><strong>GRASP with Path Relinking</strong><br><sub>The public hybrid composition combines constructive GRASP, local search and elite memory with configurable pairwise path intensification and optional generational Evolutionary Path Relinking.</sub></td></tr>
+<tr><td width="50%"><strong>GRASP with Path Relinking</strong><br><sub>The public hybrid composition combines constructive GRASP, local search and elite memory with configurable pairwise path intensification and optional generational Evolutionary Path Relinking.</sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/memetic-algorithm-moscato-1989.html"><strong>Memetic Algorithm - Moscato</strong></a><br><sub>Shared generational evolution + adaptive local improvement + Lamarckian/Baldwinian learning.</sub><br><code>memetic-algorithm-moscato-1989</code><br><sub><code>MemeticAlgorithmOptimizer&lt;TSolution&gt;</code></sub></td></tr>
 </table>
 
 ## Scientific components
+<p><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/memetic-algorithm-components.html"><strong>Memetic Algorithm Components</strong></a> &middot; <code>ma.*</code> &middot; 5 local-improvement policies + Lamarckian/Baldwinian learning.</p>
 
 <table>
 <tr>

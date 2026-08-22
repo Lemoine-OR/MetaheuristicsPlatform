@@ -4,6 +4,29 @@ All notable changes to MetaheuristicsPlatform will be documented in this file.
 
 ## [Unreleased]
 
+## [0.43.0]
+
+### Added
+- Add `MemeticAlgorithmOptimizer<TSolution>` with stable composition ID `memetic-algorithm-moscato-1989`.
+- Add a non-public generation extension point to the existing generational GA engine so memetic search reuses selection, crossover, mutation, elitism, ownership and the common optimization lifecycle instead of duplicating them.
+- Add five executable local-improvement application policies: every offspring, periodic, probabilistic, objective-ranked top fraction and stagnation-adaptive pressure.
+- Add executable Lamarckian and Baldwinian learning policies.
+- Add `MemeticAlgorithmState` statistics for local-search invocations, successful improvements, accepted local moves, cumulative gain, stagnation and current local-search probability.
+- Add focused ownership, budget, deterministic-seed, periodic/ranked-policy, Lamarckian/Baldwinian and factory-registration tests.
+- Add end-to-end GA / disabled-memetic / active-memetic benchmark coverage.
+- Add the Memetic Algorithm scientific component catalog, Doxygen page, rendered portal builder and dedicated documentation validator.
+
+### Scientific basis
+- Moscato (1989), *On Evolution, Search, Optimization, Genetic Algorithms and Martial Arts: Towards Memetic Algorithms*, Caltech Concurrent Computation Program Report 826.
+- Krasnogor & Smith (2005), *A Tutorial for Competent Memetic Algorithms: Model, Taxonomy, and Design Issues*, IEEE Transactions on Evolutionary Computation 9(5), 474-488. DOI `10.1109/TEVC.2005.850260`.
+
+### Architecture and compatibility
+- The public v0.42 generational GA constructors and stable ID remain unchanged.
+- With a zero-probability local-improvement policy, the memetic layer performs no local-search evaluations and retains GA evaluation accounting.
+- Local search uses the same `OptimizationContext<TSolution>` as the population engine, so objective budgets, callbacks, best-so-far ownership, cancellation and stopping criteria remain globally consistent.
+- Self-adaptive meme choice and additional population-engine adapters are scientifically cataloged as reviewed/deferred rather than approximated in this release.
+
+
 ## [0.42.0]
 
 ### Added

@@ -7,6 +7,7 @@ Compositions of population, trajectory, local-search, decoder and exact/heuristi
 ## Methods
 
 - @subpage grasp_path_relinking - Constructive GRASP + local search + elite memory + path-relinking intensification.
+- @subpage memetic_algorithm_moscato_1989 - GA-backed population search + adaptive local improvement with Lamarckian/Baldwinian learning.
 
 ## Navigation
 

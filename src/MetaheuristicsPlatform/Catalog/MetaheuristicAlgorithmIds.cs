@@ -13,6 +13,8 @@ public static class MetaheuristicAlgorithmIds
     public const string LShade = "lshade-2014";
     public const string GeneticAlgorithm =
         "genetic-algorithm-generational";
+    public const string MemeticAlgorithm =
+        "memetic-algorithm-moscato-1989";
     public const string ScatterSearch =
         "scatter-search-marti-laguna-glover-2006";
     public const string SimulatedAnnealing = "simulated-annealing-metropolis";

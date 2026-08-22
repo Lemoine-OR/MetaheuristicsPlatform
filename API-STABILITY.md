@@ -78,3 +78,11 @@ the same spirit as ULSAlgorithms.
 - bounded SBX/Gaussian/polynomial operators require explicit finite bounds;
 - fitness-proportionate selection requires explicit non-negative user weights; raw objectives are not silently converted;
 - true steady-state replacement remains reviewed/deferred because it requires a different live-population lifecycle.
+
+### v0.43.0
+
+- Stable public algorithm ID: `memetic-algorithm-moscato-1989`.
+- Public composition: `MemeticAlgorithmOptimizer<TSolution>` and `MemeticAlgorithmParameters`.
+- Public policy contracts: `IMemeticLocalSearchPolicy` and `IMemeticLearningPolicy`.
+- Executable component IDs: `ma.local-search.every-offspring`, `ma.local-search.periodic`, `ma.local-search.probabilistic`, `ma.local-search.top-fraction`, `ma.local-search.adaptive-stagnation`, `ma.learning.lamarckian`, `ma.learning.baldwinian`.
+- The generation-extension hook added to `GenerationalGeneticAlgorithmOptimizer<TSolution>` is internal; existing public GA construction, ID and parameter contracts remain source-compatible.

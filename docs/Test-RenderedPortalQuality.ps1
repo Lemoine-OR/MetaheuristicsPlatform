@@ -189,6 +189,10 @@ $componentChecks = @(
     @{
         catalog = "docs\advanced-genetic-algorithm-catalog.json"
         page = "components\advanced-genetic-algorithm-operators.html"
+    },
+    @{
+        catalog = "docs\memetic-algorithm-catalog.json"
+        page = "components\memetic-algorithm-components.html"
     }
 )
 
@@ -356,6 +360,20 @@ if (-not (Test-Path -LiteralPath $advancedGeneticDoxygen)) {
     throw "Rendered portal quality: canonical Advanced Genetic Algorithm Doxygen page is missing."
 }
 
+$memeticAlgorithmPortal =
+    Read-Utf8Path (Join-Path $Site "algorithms\memetic-algorithm-moscato-1989.html")
+
+if (-not $memeticAlgorithmPortal.Contains(
+    '../components/memetic-algorithm-components.html')) {
+    throw "Rendered portal quality: Memetic Algorithm portal page is missing the Memetic components link."
+}
+
+$memeticDoxygen =
+    Join-Path $Site "api\memetic_algorithm_components.html"
+
+if (-not (Test-Path -LiteralPath $memeticDoxygen)) {
+    throw "Rendered portal quality: canonical Memetic Algorithm component Doxygen page is missing."
+}
 $pathRelinkingDoxygen =
     Join-Path $Site "api\path_relinking_strategies.html"
 

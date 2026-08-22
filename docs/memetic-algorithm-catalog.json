@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "release": "0.43.0",
+  "family": "memetic-algorithms",
+  "entries": [
+    {
+      "id": "ma.local-search.every-offspring",
+      "name": "Every-offspring local improvement",
+      "kind": "application-policy",
+      "status": "implemented",
+      "formulaMode": "math",
+      "formula": "C_t=O_t",
+      "implementation": "EveryOffspringMemeticLocalSearchPolicy"
+    },
+    {
+      "id": "ma.local-search.periodic",
+      "name": "Periodic local improvement",
+      "kind": "application-policy",
+      "status": "implemented",
+      "formulaMode": "math",
+      "formula": "C_t=\\begin{cases}O_t,&t\\bmod k=0,\\\\\\varnothing,&\\text{otherwise}\\end{cases}",
+      "implementation": "PeriodicMemeticLocalSearchPolicy"
+    },
+    {
+      "id": "ma.local-search.probabilistic",
+      "name": "Probabilistic local improvement",
+      "kind": "application-policy",
+      "status": "implemented",
+      "formulaMode": "math",
+      "formula": "\\Pr(x\\in C_t)=p_{\\mathrm{LS}}",
+      "implementation": "ProbabilisticMemeticLocalSearchPolicy"
+    },
+    {
+      "id": "ma.local-search.top-fraction",
+      "name": "Top-fraction local improvement",
+      "kind": "candidate-policy",
+      "status": "implemented",
+      "formulaMode": "math",
+      "formula": "x\\in C_t\\Longleftrightarrow r_t(x)<\\max\\!\\left(1,\\left\\lceil q|O_t|\\right\\rceil\\right)",
+      "implementation": "TopFractionMemeticLocalSearchPolicy"
+    },
+    {
+      "id": "ma.local-search.adaptive-stagnation",
+      "name": "Stagnation-adaptive local improvement",
+      "kind": "adaptive-application-policy",
+      "status": "implemented",
+      "formulaMode": "math",
+      "formula": "p_{\\mathrm{LS}}(t)=p_{\\min}+(p_{\\max}-p_{\\min})\\min\\!\\left(1,\\frac{s_t}{W}\\right)",
+      "implementation": "StagnationAdaptiveMemeticLocalSearchPolicy"
+    },
+    {
+      "id": "ma.learning.lamarckian",
+      "name": "Lamarckian learning",
+      "kind": "learning-policy",
+      "status": "implemented",
+      "formulaMode": "math",
+      "formula": "\\begin{aligned}x^{LS}&=\\mathcal L(x),\\\\g_{t+1}&\\leftarrow x^{LS},\\\\F&=f(x^{LS})\\end{aligned}",
+      "implementation": "LamarckianMemeticLearningPolicy"
+    },
+    {
+      "id": "ma.learning.baldwinian",
+      "name": "Baldwinian learning",
+      "kind": "learning-policy",
+      "status": "implemented",
+      "formulaMode": "math",
+      "formula": "\\begin{aligned}x^{LS}&=\\mathcal L(x),\\\\g_{t+1}&\\leftarrow x,\\\\F&=f(x^{LS})\\end{aligned}",
+      "implementation": "BaldwinianMemeticLearningPolicy"
+    },
+    {
+      "id": "ma.meme.self-adaptive-choice",
+      "name": "Self-adaptive meme choice",
+      "kind": "meme-adaptation",
+      "status": "reviewed-deferred",
+      "formulaMode": "prose",
+      "formula": "Credit-based co-adaptation of multiple local-improvement memes requires a dedicated meme-selection lifecycle and is intentionally not approximated by a fixed selector in v0.43.",
+      "implementation": null
+    },
+    {
+      "id": "ma.engine.additional-population",
+      "name": "Additional population-engine wiring",
+      "kind": "population-engine",
+      "status": "reviewed-deferred",
+      "formulaMode": "prose",
+      "formula": "The memetic policies are population-engine agnostic, while direct DE or other engine integration is deferred until those runtimes expose a shared generation-level extension point.",
+      "implementation": null
+    }
+  ],
+  "references": [
+    {
+      "publication": "Moscato (1989), On Evolution, Search, Optimization, Genetic Algorithms and Martial Arts: Towards Memetic Algorithms, Caltech Concurrent Computation Program Report 826",
+      "doi": null
+    },
+    {
+      "publication": "Krasnogor & Smith (2005), A Tutorial for Competent Memetic Algorithms: Model, Taxonomy, and Design Issues, IEEE Transactions on Evolutionary Computation 9(5), 474-488",
+      "doi": "10.1109/TEVC.2005.850260"
+    }
+  ]
+}

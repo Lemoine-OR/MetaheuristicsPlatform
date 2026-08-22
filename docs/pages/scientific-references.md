@@ -84,3 +84,8 @@ v0.41.0 implements a representation-independent fixed-size generational GA found
 - Deb, K.; Agrawal, R. B. (1995), *Simulated Binary Crossover for Continuous Search Space*, Complex Systems 9(2), 115-148. No DOI asserted.
 - Deb, K.; Pratap, A.; Agarwal, S.; Meyarivan, T. (2002), *A fast and elitist multiobjective genetic algorithm: NSGA-II*. DOI `10.1109/4235.996017`.
 - Deb, K.; Deb, D. (2014), *Analysing mutation schemes for real-parameter genetic algorithms*. DOI `10.1504/IJAISC.2014.059280`.
+
+## Memetic Algorithms
+
+- Moscato, P. (1989). *On Evolution, Search, Optimization, Genetic Algorithms and Martial Arts: Towards Memetic Algorithms*. Caltech Concurrent Computation Program Report 826.
+- Krasnogor, N.; Smith, J. E. (2005). *A Tutorial for Competent Memetic Algorithms: Model, Taxonomy, and Design Issues*. IEEE Transactions on Evolutionary Computation, 9(5), 474-488. DOI: `10.1109/TEVC.2005.850260`.
