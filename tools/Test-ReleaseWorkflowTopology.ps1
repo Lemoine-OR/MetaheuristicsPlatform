@@ -1,4 +1,4 @@
-﻿[CmdletBinding()]
+[CmdletBinding()]
 param(
     [string]$Root = (Split-Path -Parent $PSScriptRoot)
 )
@@ -71,6 +71,21 @@ foreach ($marker in @(
 
 if ($release.Contains("- Build and Test")) {
     throw "Release workflow topology: Create Release must not listen directly to Build and Test."
+}
+
+foreach ($marker in @(
+    'select(.path==".github/workflows/build.yml")',
+    'select(.path==".github/workflows/documentation.yml")',
+    'docs_conclusion="$WORKFLOW_CONCLUSION"'
+)) {
+    if (-not $release.Contains($marker)) {
+        throw "Release workflow topology: stable workflow identity marker '$marker' is missing."
+    }
+}
+
+if ($release.Contains('select(.name=="Build and Test")') -or
+    $release.Contains('select(.name=="Build Documentation")')) {
+    throw "Release workflow topology: workflow runs must be identified by stable path, not display/run name."
 }
 
 $automaticPrerequisiteMatches =

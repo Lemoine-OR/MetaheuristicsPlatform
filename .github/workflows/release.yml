@@ -76,22 +76,26 @@ jobs:
           build_conclusion="$(
             jq -r '
               [.workflow_runs[]
-               | select(.name=="Build and Test")]
+               | select(.path==".github/workflows/build.yml")]
               | sort_by(.run_number)
               | last
               | .conclusion // ""
             ' <<<"$runs_json"
           )"
 
-          docs_conclusion="$(
-            jq -r '
-              [.workflow_runs[]
-               | select(.name=="Build Documentation")]
-              | sort_by(.run_number)
-              | last
-              | .conclusion // ""
-            ' <<<"$runs_json"
-          )"
+          if [[ "$EVENT_NAME" == "workflow_run" ]]; then
+            docs_conclusion="$WORKFLOW_CONCLUSION"
+          else
+            docs_conclusion="$(
+              jq -r '
+                [.workflow_runs[]
+                 | select(.path==".github/workflows/documentation.yml")]
+                | sort_by(.run_number)
+                | last
+                | .conclusion // ""
+              ' <<<"$runs_json"
+            )"
+          fi
 
           echo "Build and Test: $build_conclusion"
           echo "Build Documentation: $docs_conclusion"
