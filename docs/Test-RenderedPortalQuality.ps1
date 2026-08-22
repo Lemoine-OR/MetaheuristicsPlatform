@@ -185,6 +185,10 @@ $componentChecks = @(
     @{
         catalog = "docs\advanced-scatter-search-catalog.json"
         page = "components\advanced-scatter-search-strategies.html"
+    },
+    @{
+        catalog = "docs\advanced-genetic-algorithm-catalog.json"
+        page = "components\advanced-genetic-algorithm-operators.html"
     }
 )
 
@@ -335,6 +339,21 @@ $graspPathRelinkingPortal =
 if (-not $graspPathRelinkingPortal.Contains(
     '../components/path-relinking-strategies.html')) {
     throw "Rendered portal quality: GRASP-PR portal page is missing the Advanced Path Relinking component link."
+}
+
+$geneticAlgorithmPortal =
+    Read-Utf8Path (Join-Path $Site "algorithms\genetic-algorithm-generational.html")
+
+if (-not $geneticAlgorithmPortal.Contains(
+    '../components/advanced-genetic-algorithm-operators.html')) {
+    throw "Rendered portal quality: Generational GA portal page is missing the Advanced Genetic Algorithm operator link."
+}
+
+$advancedGeneticDoxygen =
+    Join-Path $Site "api\advanced_genetic_algorithm_operators.html"
+
+if (-not (Test-Path -LiteralPath $advancedGeneticDoxygen)) {
+    throw "Rendered portal quality: canonical Advanced Genetic Algorithm Doxygen page is missing."
 }
 
 $pathRelinkingDoxygen =

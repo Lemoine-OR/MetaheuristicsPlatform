@@ -66,8 +66,9 @@ The foundation applies whenever the domain can provide:
 5. correct solution cloning.
 
 The optimizer itself does not impose binary strings, real vectors or permutations.
-Representation-specific operator catalogs are intentionally reserved for the advanced GA
-release rather than being fabricated inside the generic core.
+Representation-specific operator identities are supplied by the v0.42 Advanced Genetic Algorithm component catalog; the generic runtime remains representation-independent.
+
+@subpage advanced_genetic_algorithm_operators
 
 ## Detailed operation
 

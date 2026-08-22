@@ -171,7 +171,7 @@ stable ID used by the canonical catalog/factory.
 <td width="50%"></td>
 </tr><tr>
 <td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/advanced-scatter-search-strategies.html"><strong>Advanced Scatter Search Strategies</strong></a><br><sub>5 executable generic components &middot; dynamic/tiered RefSet control &middot; max-min rebuilding &middot; minimum diversity &middot; representative Subset Types 1-4</sub><br><code>ss.*</code></td>
-<td width="50%"></td>
+<td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/components/advanced-genetic-algorithm-operators.html"><strong>Advanced Genetic Algorithm Operators</strong></a><br><sub>18 executable ga.* components · selection · sequence/permutation/real crossover · mutation · steady-state reviewed/deferred</sub><br><code>ga.*</code></td>
 </tr></table>
 
 

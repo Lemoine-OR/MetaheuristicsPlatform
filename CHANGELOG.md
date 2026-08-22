@@ -4,6 +4,34 @@ All notable changes to MetaheuristicsPlatform will be documented in this file.
 
 ## [Unreleased]
 
+## [0.42.0]
+
+### Added
+- Add 18 executable Advanced Genetic Algorithm components under stable ga.* component IDs while preserving the single public genetic-algorithm-generational ID.
+- Add truncation, linear-ranking, exponential-ranking and explicit-weight fitness-proportionate parent selection alongside the existing tournament selector.
+- Add one-point, two-point and uniform crossover for equal-length arrays; PMX and OX1 for validated permutations; bounded SBX for real vectors.
+- Add bit-flip, bounded integer random-reset, swap, inversion, bounded Gaussian and bounded polynomial mutation.
+- Add a machine-readable operator catalog, generated portal/Doxygen component page, mathematical models and dedicated validator.
+- Add focused tests for min/max rank selection, explicit fitness weights, representation legality, real bounds and exact scientific reference metadata.
+
+### Reviewed / deferred
+- Keep true steady-state replacement reviewed/deferred because it changes the live parent population between offspring events; it cannot be represented faithfully by only changing the end-of-generation replacement step in the v0.41 runtime.
+
+### Scientific basis
+- Goldberg & Deb (1991), DOI 10.1016/B978-0-08-050684-5.50008-2.
+- Blickle & Thiele (1996), DOI 10.1162/EVCO.1996.4.4.361.
+- Syswerda (1989), DOI 10.5555/645512.657265.
+- Syswerda (1991), DOI 10.1016/B978-0-08-050684-5.50009-4 for the generational/steady-state distinction.
+- Goldberg & Lingle (1985), DOI 10.5555/645511.657095.
+- Davis (1985), DOI 10.5555/1625135.1625164.
+- Deb & Agrawal (1995), original SBX paper; no DOI asserted.
+- Deb et al. (2002), DOI 10.1109/4235.996017.
+- Deb & Deb (2014), DOI 10.1504/IJAISC.2014.059280.
+
+### Compatibility
+- Public algorithm count remains 30 and evolutionary-method count remains 7.
+- Existing v0.41 GA constructors, stable algorithm ID and generational lifecycle remain source compatible.
+- v0.42 adds stable component identities only; no representation-specific operator is misrepresented as a new top-level algorithm.
 ## [0.41.0]
 
 ### Added

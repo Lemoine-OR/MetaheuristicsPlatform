@@ -30,6 +30,7 @@ use, start from the project portal and the short guides below.
 - @subpage path_relinking_strategies - forward/backward/mixed direction policies, truncation and greedy-randomized path construction.
 - @subpage advanced_iterated_greedy_strategies - generic IG controls and reviewed complete advanced variants.
 - @subpage advanced_scatter_search_strategies - dynamic/tiered RefSet control, rebuilding, diversity and representative subset families.
+- @subpage advanced_genetic_algorithm_operators - selection, crossover, mutation and replacement component catalog.
 ## Validation and reproducibility
 
 - @subpage complexity_applicability

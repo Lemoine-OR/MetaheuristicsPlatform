@@ -72,4 +72,15 @@ v0.37.0 implements the generic destruction/reconstruction core with optional loc
 - Whitley, D. (1994), *A genetic algorithm tutorial*, *Statistics and Computing* 4(2), 65-85. DOI `10.1007/BF00175354`.
 - Blickle, T.; Thiele, L. (1996), *A Comparison of Selection Schemes used in Evolutionary Algorithms*, *Evolutionary Computation* 4(4), 361-394. DOI `10.1162/EVCO.1996.4.4.361`.
 
-v0.41.0 implements a representation-independent fixed-size generational GA foundation. Representation-specific crossover/mutation catalogs and alternative selection/replacement families are reserved for the advanced GA line.
+v0.41.0 implements a representation-independent fixed-size generational GA foundation. v0.42.0 adds the audited `ga.*` operator catalog without adding public algorithm IDs.
+
+### Advanced Genetic Algorithm additions in v0.42.0
+
+- Goldberg, D. E.; Deb, K. (1991), *A Comparative Analysis of Selection Schemes Used in Genetic Algorithms*. DOI `10.1016/B978-0-08-050684-5.50008-2`.
+- Syswerda, G. (1989), *Uniform Crossover in Genetic Algorithms*, ICGA 1989, 2-9. DOI `10.5555/645512.657265`.
+- Syswerda, G. (1991), *A Study of Reproduction in Generational and Steady-State Genetic Algorithms*. DOI `10.1016/B978-0-08-050684-5.50009-4`.
+- Goldberg, D. E.; Lingle, R. (1985), *Alleles, Loci, and the Traveling Salesman Problem*. DOI `10.5555/645511.657095`.
+- Davis, L. (1985), *Applying Adaptive Algorithms to Epistatic Domains*. DOI `10.5555/1625135.1625164`.
+- Deb, K.; Agrawal, R. B. (1995), *Simulated Binary Crossover for Continuous Search Space*, Complex Systems 9(2), 115-148. No DOI asserted.
+- Deb, K.; Pratap, A.; Agarwal, S.; Meyarivan, T. (2002), *A fast and elitist multiobjective genetic algorithm: NSGA-II*. DOI `10.1109/4235.996017`.
+- Deb, K.; Deb, D. (2014), *Analysing mutation schemes for real-parameter genetic algorithms*. DOI `10.1504/IJAISC.2014.059280`.

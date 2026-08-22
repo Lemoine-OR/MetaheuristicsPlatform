@@ -1,0 +1,274 @@
+{
+  "algorithmId": "genetic-algorithm-generational",
+  "publicAlgorithmCountDelta": 0,
+  "implementedCount": 18,
+  "reviewedDeferredCount": 1,
+  "entries": [
+    {
+      "id": "ga.selection.tournament",
+      "name": "Tournament selection",
+      "status": "implemented",
+      "kind": "selection",
+      "representation": "generic",
+      "description": "Samples k population indices with replacement and returns the objective-sense best sampled member.",
+      "formulaMode": "math",
+      "formula": "i^\\star\\in\\operatorname*{arg\\,best}_{i\\in T_k} f(x_i),\\qquad |T_k|=k",
+      "reference": "Blickle & Thiele (1996)",
+      "doi": "10.1162/EVCO.1996.4.4.361"
+    },
+    {
+      "id": "ga.selection.truncation",
+      "name": "Truncation selection",
+      "status": "implemented",
+      "kind": "selection",
+      "representation": "generic",
+      "description": "Ranks the population by objective sense and samples uniformly from the best configured fraction.",
+      "formulaMode": "math",
+      "formula": "S_\\tau=\\{x_{(1)},\\ldots,x_{(\\lceil\\tau N\\rceil)}\\},\\qquad x\\sim\\mathcal U(S_\\tau)",
+      "reference": "Blickle & Thiele (1996)",
+      "doi": "10.1162/EVCO.1996.4.4.361"
+    },
+    {
+      "id": "ga.selection.linear-ranking",
+      "name": "Linear ranking selection",
+      "status": "implemented",
+      "kind": "selection",
+      "representation": "generic",
+      "description": "Uses objective rank rather than raw objective magnitude, with selective pressure s in [1,2].",
+      "formulaMode": "math",
+      "formula": "p_r=\\frac{1}{N}\\left(s-\\frac{2(s-1)r}{N-1}\\right),\\qquad r=0,\\ldots,N-1",
+      "reference": "Blickle & Thiele (1996)",
+      "doi": "10.1162/EVCO.1996.4.4.361"
+    },
+    {
+      "id": "ga.selection.exponential-ranking",
+      "name": "Exponential ranking selection",
+      "status": "implemented",
+      "kind": "selection",
+      "representation": "generic",
+      "description": "Assigns exponentially decaying weights by objective rank, avoiding raw-objective scaling assumptions.",
+      "formulaMode": "math",
+      "formula": "p_r=\\frac{e^{-\\lambda r}}{\\sum_{j=0}^{N-1}e^{-\\lambda j}},\\qquad \\lambda>0",
+      "reference": "Blickle & Thiele (1996)",
+      "doi": "10.1162/EVCO.1996.4.4.361"
+    },
+    {
+      "id": "ga.selection.fitness-proportionate-explicit-weights",
+      "name": "Fitness-proportionate selection with explicit weights",
+      "status": "implemented",
+      "kind": "selection",
+      "representation": "generic",
+      "description": "Roulette-wheel sampling over user-supplied finite non-negative weights; no implicit objective-to-fitness transform is fabricated.",
+      "formulaMode": "math",
+      "formula": "p_i=\\frac{w_i}{\\sum_{j=1}^{N}w_j},\\qquad w_i=g(f(x_i),\\operatorname{sense})\\ge 0",
+      "reference": "Goldberg & Deb (1991)",
+      "doi": "10.1016/B978-0-08-050684-5.50008-2"
+    },
+    {
+      "id": "ga.crossover.one-point",
+      "name": "One-point crossover",
+      "status": "implemented",
+      "kind": "crossover",
+      "representation": "equal-length arrays",
+      "description": "Copies one prefix from each parent and exchanges the suffix after one interior cut.",
+      "formulaMode": "math",
+      "formula": "c^{(1)}=(a_{0:q-1},b_{q:n-1}),\\qquad c^{(2)}=(b_{0:q-1},a_{q:n-1})",
+      "reference": "Eiben & Smith (2003)",
+      "doi": "10.1007/978-3-662-05094-1_3"
+    },
+    {
+      "id": "ga.crossover.two-point",
+      "name": "Two-point crossover",
+      "status": "implemented",
+      "kind": "crossover",
+      "representation": "equal-length arrays",
+      "description": "Exchanges the half-open segment between two sampled cut positions.",
+      "formulaMode": "math",
+      "formula": "c^{(1)}=(a_{0:q_1-1},b_{q_1:q_2-1},a_{q_2:n-1})",
+      "reference": "Eiben & Smith (2003)",
+      "doi": "10.1007/978-3-662-05094-1_3"
+    },
+    {
+      "id": "ga.crossover.uniform",
+      "name": "Uniform crossover",
+      "status": "implemented",
+      "kind": "crossover",
+      "representation": "equal-length arrays",
+      "description": "Independently exchanges each locus with an explicit exchange probability.",
+      "formulaMode": "math",
+      "formula": "c_i^{(1)}=\\begin{cases}b_i,&U_i<p_x\\\\a_i,&U_i\\ge p_x\\end{cases},\\qquad U_i\\sim\\mathcal U(0,1)",
+      "reference": "Syswerda (1989)",
+      "doi": "10.5555/645512.657265"
+    },
+    {
+      "id": "ga.crossover.pmx",
+      "name": "Partially mapped crossover (PMX)",
+      "status": "implemented",
+      "kind": "crossover",
+      "representation": "permutations",
+      "description": "Preserves a copied permutation segment and resolves outside conflicts by repeated segment mapping.",
+      "formulaMode": "math",
+      "formula": "c_i=\\begin{cases}a_i,&q_1\\le i<q_2\\\\\\phi_{A\\to B}^{\\star}(b_i),&\\text{otherwise}\\end{cases}",
+      "reference": "Goldberg & Lingle (1985)",
+      "doi": "10.5555/645511.657095"
+    },
+    {
+      "id": "ga.crossover.ox1",
+      "name": "Order crossover (OX1)",
+      "status": "implemented",
+      "kind": "crossover",
+      "representation": "permutations",
+      "description": "Copies one parent segment and fills remaining positions in the cyclic relative order of the other parent while skipping duplicates.",
+      "formulaMode": "math",
+      "formula": "c=A[q_1:q_2]\\oplus\\operatorname{filter}_{\\notin A[q_1:q_2]}\\!\\left(\\operatorname{rotate}_{q_2}(B)\\right)",
+      "reference": "Davis (1985)",
+      "doi": "10.5555/1625135.1625164"
+    },
+    {
+      "id": "ga.crossover.sbx-bounded",
+      "name": "Bounded Simulated Binary Crossover (SBX)",
+      "status": "implemented",
+      "kind": "crossover",
+      "representation": "bounded real vectors",
+      "description": "Real-coded SBX with explicit finite lower/upper bounds and the bounded formulation widely used with NSGA-II.",
+      "formulaMode": "math",
+      "formula": "c_{1,2}=\\frac{1}{2}\\left[(y_1+y_2)\\mp\\beta_q(y_2-y_1)\\right],\\qquad \\beta_q=\\beta_q(u,\\eta_c,L,U)",
+      "reference": "Deb & Agrawal (1995); Deb et al. (2002) for bounded use",
+      "doi": "10.1109/4235.996017"
+    },
+    {
+      "id": "ga.mutation.bit-flip",
+      "name": "Bit-flip mutation",
+      "status": "implemented",
+      "kind": "mutation",
+      "representation": "boolean vectors",
+      "description": "Flips each boolean locus independently with an explicit per-bit probability.",
+      "formulaMode": "math",
+      "formula": "x_i^\\prime=1-x_i\\quad\\text{with probability }p_m",
+      "reference": "Eiben & Smith (2003)",
+      "doi": "10.1007/978-3-662-05094-1_3"
+    },
+    {
+      "id": "ga.mutation.integer-random-reset",
+      "name": "Integer random-reset mutation",
+      "status": "implemented",
+      "kind": "mutation",
+      "representation": "bounded integer vectors",
+      "description": "Resamples a selected integer gene uniformly from its legal interval while excluding its current value whenever another value exists.",
+      "formulaMode": "math",
+      "formula": "x_i^\\prime\\sim\\mathcal U\\!\\left(\\{L_i,\\ldots,U_i-1\\}\\setminus\\{x_i\\}\\right)",
+      "reference": "Eiben & Smith (2003)",
+      "doi": "10.1007/978-3-662-05094-1_3"
+    },
+    {
+      "id": "ga.mutation.swap",
+      "name": "Swap mutation",
+      "status": "implemented",
+      "kind": "mutation",
+      "representation": "arrays / permutations",
+      "description": "Swaps two distinct sampled positions once per mutation invocation.",
+      "formulaMode": "math",
+      "formula": "x^\\prime=\\operatorname{swap}(x;i,j),\\qquad i\\ne j",
+      "reference": "Eiben & Smith (2003)",
+      "doi": "10.1007/978-3-662-05094-1_3"
+    },
+    {
+      "id": "ga.mutation.inversion",
+      "name": "Inversion mutation",
+      "status": "implemented",
+      "kind": "mutation",
+      "representation": "arrays / permutations",
+      "description": "Reverses one sampled contiguous segment once per mutation invocation.",
+      "formulaMode": "math",
+      "formula": "x^\\prime=(x_0,\\ldots,x_{i-1},x_{j-1},\\ldots,x_i,x_j,\\ldots,x_{n-1})",
+      "reference": "Eiben & Smith (2003)",
+      "doi": "10.1007/978-3-662-05094-1_3"
+    },
+    {
+      "id": "ga.mutation.gaussian-bounded",
+      "name": "Bounded Gaussian mutation",
+      "status": "implemented",
+      "kind": "mutation",
+      "representation": "bounded real vectors",
+      "description": "Adds an independent Gaussian perturbation to selected coordinates and projects the result to explicit finite bounds.",
+      "formulaMode": "math",
+      "formula": "x_i^\\prime=\\Pi_{[L_i,U_i]}\\!\\left(x_i+\\sigma Z_i\\right),\\qquad Z_i\\sim\\mathcal N(0,1)",
+      "reference": "Deb & Deb (2014)",
+      "doi": "10.1504/IJAISC.2014.059280"
+    },
+    {
+      "id": "ga.mutation.polynomial-bounded",
+      "name": "Bounded polynomial mutation",
+      "status": "implemented",
+      "kind": "mutation",
+      "representation": "bounded real vectors",
+      "description": "Uses bounded polynomial mutation with an explicit distribution index and per-coordinate invocation probability.",
+      "formulaMode": "math",
+      "formula": "x_i^\\prime=\\Pi_{[L_i,U_i]}\\!\\left(x_i+\\delta_q(U_i-L_i)\\right),\\qquad \\delta_q=\\delta_q(u,\\eta_m,x_i,L_i,U_i)",
+      "reference": "Deb & Deb (2014); Deb et al. (2002)",
+      "doi": "10.1504/IJAISC.2014.059280"
+    },
+    {
+      "id": "ga.replacement.generational-elitist",
+      "name": "Generational replacement with optional elitism",
+      "status": "implemented",
+      "kind": "replacement",
+      "representation": "generic",
+      "description": "The v0.41 runtime copies E elites without re-evaluation and fills the remaining N-E positions with newly evaluated offspring.",
+      "formulaMode": "math",
+      "formula": "P_{t+1}=E_t\\cup O_t,\\qquad |P_{t+1}|=N,\\qquad |E_t|=E",
+      "reference": "Eiben & Smith (2003)",
+      "doi": "10.1007/978-3-662-05094-1_3"
+    },
+    {
+      "id": "ga.replacement.steady-state",
+      "name": "Steady-state replacement",
+      "status": "reviewed/deferred",
+      "kind": "replacement",
+      "representation": "generic",
+      "description": "Reviewed as scientifically distinct from the current generation-snapshot lifecycle. A faithful implementation requires offspring to compete with an immediately updated population rather than only changing a final replacement policy.",
+      "formulaMode": "prose",
+      "formula": "Select parents from the current live population, create and evaluate a small number of offspring, immediately replace selected population members, then select subsequent parents from that updated population.",
+      "reference": "Syswerda (1991)",
+      "doi": "10.1016/B978-0-08-050684-5.50009-4"
+    }
+  ],
+  "references": [
+    {
+      "publication": "Blickle, T.; Thiele, L. (1996). A Comparison of Selection Schemes used in Evolutionary Algorithms. Evolutionary Computation 4(4), 361-394.",
+      "doi": "10.1162/EVCO.1996.4.4.361"
+    },
+    {
+      "publication": "Goldberg, D. E.; Deb, K. (1991). A Comparative Analysis of Selection Schemes Used in Genetic Algorithms. Foundations of Genetic Algorithms 1, 69-93.",
+      "doi": "10.1016/B978-0-08-050684-5.50008-2"
+    },
+    {
+      "publication": "Syswerda, G. (1989). Uniform Crossover in Genetic Algorithms. ICGA 1989, 2-9.",
+      "doi": "10.5555/645512.657265"
+    },
+    {
+      "publication": "Syswerda, G. (1991). A Study of Reproduction in Generational and Steady-State Genetic Algorithms. Foundations of Genetic Algorithms 1, 94-101.",
+      "doi": "10.1016/B978-0-08-050684-5.50009-4"
+    },
+    {
+      "publication": "Goldberg, D. E.; Lingle, R. (1985). Alleles, Loci, and the Traveling Salesman Problem. ICGA 1985, 154-159.",
+      "doi": "10.5555/645511.657095"
+    },
+    {
+      "publication": "Davis, L. (1985). Applying Adaptive Algorithms to Epistatic Domains. IJCAI 1985, 162-164.",
+      "doi": "10.5555/1625135.1625164"
+    },
+    {
+      "publication": "Deb, K.; Agrawal, R. B. (1995). Simulated Binary Crossover for Continuous Search Space. Complex Systems 9(2), 115-148.",
+      "doi": "No DOI verified for the original publication"
+    },
+    {
+      "publication": "Deb, K.; Pratap, A.; Agarwal, S.; Meyarivan, T. (2002). A fast and elitist multiobjective genetic algorithm: NSGA-II.",
+      "doi": "10.1109/4235.996017"
+    },
+    {
+      "publication": "Deb, K.; Deb, D. (2014). Analysing mutation schemes for real-parameter genetic algorithms.",
+      "doi": "10.1504/IJAISC.2014.059280"
+    }
+  ]
+}

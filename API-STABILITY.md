@@ -69,3 +69,12 @@ the same spirit as ULSAlgorithms.
 - `GeneticAlgorithmParameters` defines population size, generation bound, crossover/mutation invocation probabilities and optional elitism;
 - composed GA construction uses typed `MetaheuristicFactory.Register(...)`;
 - no representation-specific crossover/mutation identity is claimed by the v0.41 foundation.
+
+### v0.42.0
+
+- canonical public GA ID remains genetic-algorithm-generational;
+- stable Advanced Genetic Algorithm component IDs use the ga.* namespace;
+- sequence crossover IDs do not imply permutation feasibility; PMX/OX1 are the permutation-preserving components;
+- bounded SBX/Gaussian/polynomial operators require explicit finite bounds;
+- fitness-proportionate selection requires explicit non-negative user weights; raw objectives are not silently converted;
+- true steady-state replacement remains reviewed/deferred because it requires a different live-population lifecycle.

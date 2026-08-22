@@ -149,7 +149,8 @@ foreach ($catalogRelative in @(
     "docs\acceptance-based-trajectory-catalog.json",
     "docs\ts-memory-control-catalog.json",
     "docs\advanced-iterated-greedy-catalog.json",
-    "docs\advanced-scatter-search-catalog.json"
+    "docs\advanced-scatter-search-catalog.json",
+    "docs\advanced-genetic-algorithm-catalog.json"
 )) {
     $componentCatalog =
         (Read-Utf8 $catalogRelative) |
@@ -268,7 +269,8 @@ foreach ($specialBuilder in @(
     "docs\Build-TabuSearchAdvancedDocumentation.ps1",
     "docs\Build-PathRelinkingStrategyDocumentation.ps1",
     "docs\Build-AdvancedIteratedGreedyDocumentation.ps1",
-    "docs\Build-AdvancedScatterSearchDocumentation.ps1"
+    "docs\Build-AdvancedScatterSearchDocumentation.ps1",
+    "docs\Build-AdvancedGeneticAlgorithmDocumentation.ps1"
 )) {
     $specialSource = Read-Utf8 $specialBuilder
 
