@@ -2,6 +2,23 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.53.0] - 2026-08-22
+
+### Added
+
+- Canonical Adaptive Large Neighborhood Search layer following Ropke-Pisinger 2006.
+- Stable ID `adaptive-large-neighborhood-search-ropke-pisinger-2006`, primary DOI `10.1287/trsc.1050.0135`.
+- Independently weighted destroy and repair pools selected by roulette-wheel probabilities.
+- Novel-solution sigma reward tiers and segmented reaction-factor weight updates.
+- Geometric simulated-annealing acceptance compatible with the v0.52 LNS acceptance contract.
+- Adaptive LNS scientific component catalog, tests, benchmark and complete mathematical documentation.
+
+### Changed
+
+- Public algorithm count increases from 43 to 44; trajectory-based count increases from 20 to 21.
+- LNS documentation now points to the separate public ALNS identity instead of describing adaptation as merely planned.
+- The v0.52 test-helper provenance and historical README-count isolation guards remain mandatory release-pack rules.
+
 ## [0.52.0] - 2026-08-22
 
 ### Added

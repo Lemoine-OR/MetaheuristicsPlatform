@@ -65,9 +65,9 @@
       "name": "Adaptive destroy/repair operator selection",
       "status": "reviewed-deferred",
       "scope": "future-alns",
-      "description": "Competing destroy and repair subheuristics are selected with frequencies driven by their historical performance.",
+      "description": "Competing destroy and repair subheuristics are selected by the separate public ALNS controller introduced in v0.53. The mechanism remains outside the canonical Shaw LNS identity.",
       "formulaMode": "prose",
-      "formula": "This performance-weighted multi-operator controller is reserved for the distinct Adaptive Large Neighborhood Search release.",
+      "formula": "Adaptive operator selection is implemented separately by stable ID adaptive-large-neighborhood-search-ropke-pisinger-2006 and is not folded into the canonical LNS identity.",
       "publication": "Ropke & Pisinger (2006)",
       "doi": "10.1287/trsc.1050.0135"
     }

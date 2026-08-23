@@ -212,6 +212,7 @@ Require-Contains `
         "Build-PathRelinkingStrategyDocumentation.ps1",
         "Build-AdvancedIteratedGreedyDocumentation.ps1",
         "Build-LargeNeighborhoodSearchDocumentation.ps1",
+        "Build-AdaptiveLargeNeighborhoodSearchDocumentation.ps1",
         "Build-AdvancedScatterSearchDocumentation.ps1",
         "Build-AdvancedGeneticAlgorithmDocumentation.ps1",
         "Build-MemeticAlgorithmDocumentation.ps1",
@@ -228,6 +229,7 @@ Require-Contains `
         "@subpage path_relinking_strategies",
         "@subpage advanced_iterated_greedy_strategies",
         "@subpage large_neighborhood_search_components",
+        "@subpage adaptive_large_neighborhood_search_components",
         "@subpage advanced_scatter_search_strategies",
         "@subpage advanced_genetic_algorithm_operators",
         "@subpage memetic_algorithm_components",
@@ -272,6 +274,26 @@ Require-Contains `
         "lns.acceptance.improving-only",
         "10.1007/3-540-49481-2_30",
         "10.1287/trsc.1050.0135"
+    )
+
+Require-Contains `
+    "docs\Build-AdaptiveLargeNeighborhoodSearchDocumentation.ps1" @(
+        "Adaptive Large Neighborhood Search Components",
+        "adaptive-large-neighborhood-search-components.html",
+        "adaptive-large-neighborhood-search-component-catalog.json",
+        "formula-note",
+        "mathjax@3.2.2/es5/tex-chtml.js"
+    )
+
+Require-Contains `
+    "docs\pages\components\adaptive-large-neighborhood-search-components.md" @(
+        "@page adaptive_large_neighborhood_search_components",
+        "alns.selection.roulette-independent",
+        "alns.adaptation.segmented-reaction-factor",
+        "alns.scoring.novel-outcome",
+        "alns.acceptance.geometric-metropolis",
+        "10.1287/trsc.1050.0135",
+        "10.1007/s10732-018-9377-x"
     )
 
 Require-Contains `
@@ -392,7 +414,9 @@ foreach ($marker in @(
     "components/advanced-genetic-algorithm-operators.html",
     "components/memetic-algorithm-components.html",
     "components/advanced-ant-colony-optimization.html",
-    "components/cma-es-components.html"
+    "components/cma-es-components.html",
+    "components/large-neighborhood-search-components.html",
+    "components/adaptive-large-neighborhood-search-components.html"
 )) {
     if (-not $readme.Contains($marker)) {
         throw "README documentation parity: missing '$marker'."

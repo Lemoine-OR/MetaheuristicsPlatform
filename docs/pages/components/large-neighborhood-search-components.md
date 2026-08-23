@@ -44,8 +44,9 @@ not a Boolean option on the generic LNS core.
 ### Adaptive operator selection
 
 Ropke & Pisinger (2006) use multiple competing destroy and repair subheuristics with
-performance-dependent usage frequencies. This is the planned ALNS layer and remains distinct
-from v0.52 LNS.
+performance-dependent usage frequencies. This mechanism is implemented separately from
+v0.53 under stable ID `adaptive-large-neighborhood-search-ropke-pisinger-2006` and remains
+scientifically distinct from the canonical v0.52 Shaw LNS identity.
 
 ## Scientific references
 

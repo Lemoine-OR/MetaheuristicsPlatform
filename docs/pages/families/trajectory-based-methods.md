@@ -25,6 +25,8 @@ memory and state-transition policies.
   `iterated-greedy-ruiz-stutzle-2007` — generic destruction/reconstruction with optional local improvement and pluggable acceptance.
 - **[Large Neighborhood Search](../algorithms/large-neighborhood-search-shaw-1998.md)** —
   `large-neighborhood-search-shaw-1998` — generic owned-clone destroy/repair large-neighborhood trajectory with explicit acceptance.
+- **[Adaptive Large Neighborhood Search](../algorithms/adaptive-large-neighborhood-search-ropke-pisinger-2006.md)** —
+  `adaptive-large-neighborhood-search-ropke-pisinger-2006` — performance-weighted destroy/repair pools with segmented reaction-factor learning and Metropolis acceptance.
 - **[Tabu Search](../algorithms/tabu-search-glover.md)** — `tabu-search-glover` —
   best-admissible neighborhood search with short-term memory and aspiration.
 - **[Reactive Tabu Search](../algorithms/reactive-tabu-search-battiti-tecchiolli-1994.md)** —
@@ -38,6 +40,7 @@ memory and state-transition policies.
 - @ref acceptance_based_trajectory_methods "Acceptance-Based Trajectory Methods".
 - @ref tabu_search_memory_control_strategies "Tabu Search Memory and Reactive Control Catalog".
 - @ref large_neighborhood_search_components "Large Neighborhood Search Components".
+- @ref adaptive_large_neighborhood_search_components "Adaptive Large Neighborhood Search Components".
 
 ## v0.23.0 Local Search Core
 

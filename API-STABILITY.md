@@ -188,4 +188,22 @@ Stable public ID introduced:
 
 The stable identity denotes the generic Shaw destroy/repair large-neighborhood lifecycle.
 Problem-specific Shaw relatedness and constraint-search reinsertion remain domain composition;
-adaptive multi-operator weighting is reserved for the separate ALNS identity.
+adaptive multi-operator weighting is implemented separately by the public ALNS identity.
+
+## v0.53.0 Adaptive Large Neighborhood Search
+
+Stable public ID introduced:
+
+- `adaptive-large-neighborhood-search-ropke-pisinger-2006`
+
+`AdaptiveLargeNeighborhoodSearchOptimizer<TSolution,TRemoved>`,
+`AdaptiveLargeNeighborhoodSearchParameters`, `AdaptiveLargeNeighborhoodSearchState`,
+`AdaptiveLargeNeighborhoodDestroyOperator<TSolution,TRemoved>`,
+`AdaptiveLargeNeighborhoodRepairOperator<TSolution,TRemoved>`,
+`AdaptiveLargeNeighborhoodAdaptation` and
+`GeometricSimulatedAnnealingLargeNeighborhoodAcceptancePolicy` are public API.
+
+The stable identity denotes independently weighted destroy/repair pools, canonical
+Ropke-Pisinger roulette selection, novelty-aware sigma rewards, segmented reaction-factor
+adaptation and a geometric Metropolis default acceptance policy. Alternative advanced ALNS
+selection and acceptance controllers remain separate scientific components.

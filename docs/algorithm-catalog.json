@@ -782,6 +782,28 @@
                            "factoryMode":  "composition"
                        },
                        {
+                           "id":  "adaptive-large-neighborhood-search-ropke-pisinger-2006",
+                           "name":  "Adaptive Large Neighborhood Search - Ropke-Pisinger",
+                           "class":  "AdaptiveLargeNeighborhoodSearchOptimizer\u003cTSolution,TRemoved\u003e",
+                           "category":  "trajectory-based-methods",
+                           "kind":  "single-solution",
+                           "family":  "Trajectory-based methods",
+                           "time":  "O(D+R+C_D(q)+C_R(q)+C_f) per iteration plus O(D+R) at segment boundaries",
+                           "space":  "O(D+R+V) adaptive state plus cloned visited-solution snapshots",
+                           "applicability":  "Structured discrete or mixed optimization with multiple complementary destroy and repair heuristics",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/AdaptiveLargeNeighborhoodSearch/AdaptiveLargeNeighborhoodSearchOptimizer.cs",
+                           "publication":  "Ropke \u0026 Pisinger (2006), An Adaptive Large Neighborhood Search Heuristic for the Pickup and Delivery Problem with Time Windows, Transportation Science 40(4), 455-472",
+                           "doi":  "10.1287/trsc.1050.0135",
+                           "implementation":  "Independent roulette-wheel destroy/repair selection, novelty-aware sigma rewards, segmented reaction-factor weight adaptation and geometric simulated-annealing acceptance.",
+                           "page":  "docs/pages/algorithms/adaptive-large-neighborhood-search-ropke-pisinger-2006.md",
+                           "problem":  "\\operatorname*{opt}_{x\\in\\mathcal X} f(x)",
+                           "update":  "\\begin{aligned}P(D_i)\u0026=\\frac{w_{D_i}^{s}}{\\sum_{D_j\\in\\mathcal D}w_{D_j}^{s}},\\\\P(R_i)\u0026=\\frac{w_{R_i}^{s}}{\\sum_{R_j\\in\\mathcal R}w_{R_j}^{s}},\\\\w_h^{s+1}\u0026=(1-r)w_h^s+r\\frac{\\pi_h}{\\theta_h}\\quad(\\theta_h\u003e0),\\\\T_k\u0026=T_0\\alpha^{k-1}\\end{aligned}",
+                           "assumptions":  "Compatible destroy/repair removed-component representation; stable supplied solution equality for cloned snapshots; finite objective values; complete repair before evaluation; unique operator IDs.",
+                           "convergence":  "No universal finite-time global-optimum guarantee is claimed. Adaptive frequencies do not replace reachability assumptions on destroy/repair operators and acceptance.",
+                           "factoryMode":  "composition"
+                       },
+                       {
                            "id":  "memetic-algorithm-moscato-1989",
                            "name":  "Memetic Algorithm - Moscato",
                            "class":  "MemeticAlgorithmOptimizer\u003cTSolution\u003e",

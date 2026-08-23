@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "release": "0.53.0",
+  "family": "Adaptive Large Neighborhood Search Components",
+  "implementedCount": 4,
+  "reviewedDeferredCount": 3,
+  "entries": [
+    {
+      "id": "alns.selection.roulette-independent",
+      "name": "Independent roulette-wheel destroy/repair selection",
+      "status": "implemented",
+      "scope": "generic",
+      "description": "Destroy and repair operators are sampled independently with probabilities proportional to their current weights.",
+      "formulaMode": "math",
+      "formula": "\\begin{aligned}P(D_i)&=\\frac{w_{D_i}}{\\sum_{D_j\\in\\mathcal D}w_{D_j}},\\\\P(R_i)&=\\frac{w_{R_i}}{\\sum_{R_j\\in\\mathcal R}w_{R_j}}\\end{aligned}",
+      "publication": "Ropke & Pisinger (2006)",
+      "doi": "10.1287/trsc.1050.0135"
+    },
+    {
+      "id": "alns.adaptation.segmented-reaction-factor",
+      "name": "Segmented reaction-factor weight adaptation",
+      "status": "implemented",
+      "scope": "generic",
+      "description": "Average segment performance is exponentially blended into historical operator weights.",
+      "formulaMode": "math",
+      "formula": "\\begin{aligned}w_h^{s+1}&=(1-r)w_h^s+r\\frac{\\pi_h}{\\theta_h}\\quad(\\theta_h>0),\\\\w_h^{s+1}&=w_h^s\\quad(\\theta_h=0)\\end{aligned}",
+      "publication": "Ropke & Pisinger (2006)",
+      "doi": "10.1287/trsc.1050.0135"
+    },
+    {
+      "id": "alns.scoring.novel-outcome",
+      "name": "Novel-solution outcome scoring",
+      "status": "implemented",
+      "scope": "generic-composition",
+      "description": "Selected destroy and repair operators receive sigma-tier rewards only when the candidate is novel under the supplied solution comparer.",
+      "formulaMode": "math",
+      "formula": "\\begin{aligned}\\rho(y)&=\\sigma_1\\ \\text{if novel global best},\\\\\\rho(y)&=\\sigma_2\\ \\text{if novel accepted improvement},\\\\\\rho(y)&=\\sigma_3\\ \\text{if novel accepted non-improvement},\\\\\\rho(y)&=0\\ \\text{otherwise}\\end{aligned}",
+      "publication": "Ropke & Pisinger (2006)",
+      "doi": "10.1287/trsc.1050.0135"
+    },
+    {
+      "id": "alns.acceptance.geometric-metropolis",
+      "name": "Geometric simulated-annealing acceptance",
+      "status": "implemented",
+      "scope": "generic",
+      "description": "Improving/equal candidates are accepted; worsening candidates use a Metropolis probability with geometric cooling.",
+      "formulaMode": "math",
+      "formula": "\\begin{aligned}T_k&=T_0\\alpha^{k-1},\\\\P(\\mathrm{accept}\\mid\\Delta>0)&=\\exp\\!\\left(-\\frac{\\Delta}{T_k}\\right)\\end{aligned}",
+      "publication": "Ropke & Pisinger (2006)",
+      "doi": "10.1287/trsc.1050.0135"
+    },
+    {
+      "id": "alns.selection.pair-coupled",
+      "name": "Pair-coupled destroy/repair adaptation",
+      "status": "reviewed-deferred",
+      "scope": "advanced-alns",
+      "description": "Learns joint pair performance instead of independent destroy and repair weights.",
+      "formulaMode": "prose",
+      "formula": "Pair-coupled adaptation requires a separate joint state and changes the canonical independent-selection controller, so it is reserved for Advanced ALNS.",
+      "publication": "Post-canonical ALNS design family",
+      "doi": "10.1287/trsc.1050.0135"
+    },
+    {
+      "id": "alns.acceptance.criteria-catalog",
+      "name": "Alternative ALNS acceptance criteria",
+      "status": "reviewed-deferred",
+      "scope": "advanced-alns",
+      "description": "Alternative reusable acceptance mechanisms remain composition-compatible but are distinct from the canonical simulated-annealing default.",
+      "formulaMode": "prose",
+      "formula": "Alternative acceptance criteria are composition-compatible but remain distinct from the canonical Ropke-Pisinger simulated-annealing default.",
+      "publication": "Santini, Ropke & Hvattum (2018)",
+      "doi": "10.1007/s10732-018-9377-x"
+    },
+    {
+      "id": "alns.selection.contextual-learning",
+      "name": "Contextual or learning-based operator selection",
+      "status": "reviewed-deferred",
+      "scope": "advanced-alns",
+      "description": "Contextual bandit and learned policies replace the canonical historical roulette controller.",
+      "formulaMode": "prose",
+      "formula": "Learning-based operator choice is architecturally compatible but is not part of the 2006 ALNS stable identity.",
+      "publication": "Modern ALNS extensions",
+      "doi": "10.1287/trsc.1050.0135"
+    }
+  ],
+  "references": [
+    {
+      "publication": "Ropke & Pisinger (2006), canonical ALNS",
+      "doi": "10.1287/trsc.1050.0135"
+    },
+    {
+      "publication": "Pisinger & Ropke (2007), general ALNS framework for VRP",
+      "doi": "10.1016/j.cor.2005.09.012"
+    },
+    {
+      "publication": "Santini, Ropke & Hvattum (2018), ALNS acceptance criteria",
+      "doi": "10.1007/s10732-018-9377-x"
+    }
+  ]
+}

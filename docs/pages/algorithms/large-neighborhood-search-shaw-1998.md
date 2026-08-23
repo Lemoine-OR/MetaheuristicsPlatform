@@ -10,8 +10,9 @@ and reconstructing a complete candidate. The original vehicle-routing implementa
 related customer visits and reinserts them with constraint-based search.
 
 MetaheuristicsPlatform exposes the representation-independent destroy/repair foundation.
-Problem-specific relatedness measures, exact reinsertion searches and later adaptive operator
-selection are deliberately kept outside the canonical v0.52 identity.
+Problem-specific relatedness measures and exact reinsertion searches remain outside the
+canonical v0.52 identity. Adaptive operator selection is implemented separately by the public
+v0.53 ALNS identity `adaptive-large-neighborhood-search-ropke-pisinger-2006`.
 
 ## Technical specifications
 
@@ -54,8 +55,8 @@ representation of removed components.
 7. Record one completed iteration only after the acceptance decision.
 
 The default constructor uses strict-improvement acceptance, matching a canonical local-search
-interpretation. Alternative acceptance policies can be composed explicitly and will be reused
-by the adaptive LNS layer planned separately.
+interpretation. Alternative acceptance policies can be composed explicitly and are reused
+by the separate public ALNS layer introduced in v0.53.
 
 If generic stopping fires after the repaired candidate evaluation, that visited candidate can
 still update the common best-so-far state, but the incomplete destroy-repair-accept cycle is not
@@ -163,5 +164,6 @@ Pisinger & Ropke (2010), *Large Neighborhood Search*, Handbook of Metaheuristics
 2nd edition, 399-419.
 DOI: `10.1007/978-1-4419-1665-5_13`.
 
-The adaptive multi-operator extension is scientifically distinct and is tracked separately
-under Ropke & Pisinger (2006), DOI `10.1287/trsc.1050.0135`.
+The adaptive multi-operator extension is scientifically distinct and is implemented
+separately by the v0.53 ALNS identity under Ropke & Pisinger (2006),
+DOI `10.1287/trsc.1050.0135`.
