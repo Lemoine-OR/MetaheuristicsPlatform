@@ -36,6 +36,9 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.ImprovedHarmonySearch,
             "MetaheuristicsPlatform.Algorithms.HarmonySearch.ImprovedHarmonySearchOptimizer");
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.GlobalBestHarmonySearch,
+            "MetaheuristicsPlatform.Algorithms.HarmonySearch.GlobalBestHarmonySearchOptimizer");
 
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.CmaEs,

@@ -104,4 +104,4 @@ v0.44.0 implements the canonical Ant System foundation. ACS and MAX-MIN Ant Syst
 - Mahdavi, M.; Fesanghary, M.; Damangir, E. (2007), *An improved harmony search algorithm for solving optimization problems*, Applied Mathematics and Computation 188(2), 1567-1579. DOI `10.1016/j.amc.2006.11.033`.
 - Omran, M. G. H.; Mahdavi, M. (2008), *Global-best harmony search*, Applied Mathematics and Computation 198(2), 643-656. DOI `10.1016/j.amc.2007.09.004`.
 
-v0.55.0 implements the fixed-parameter 2001 Harmony Search foundation. v0.56.0 implements IHS 2007 as a separate public identity with dynamic PAR/bw schedules. GHS 2008 remains a scientifically distinct reviewed/deferred variant and is not silently mixed into either identity.
+v0.55.0 implements fixed-parameter HS 2001, v0.56.0 implements IHS 2007 with dynamic PAR/bw, and v0.57.0 implements GHS 2008 with dynamic PAR and bandwidth-free cross-coordinate global-best pitch adjustment. The three methods remain separate public scientific identities.

@@ -14,6 +14,8 @@ public static class MetaheuristicAlgorithmIds
         "harmony-search-geem-kim-loganathan-2001";
     public const string ImprovedHarmonySearch =
         "improved-harmony-search-mahdavi-fesanghary-damangir-2007";
+    public const string GlobalBestHarmonySearch =
+        "global-best-harmony-search-omran-mahdavi-2008";
     public const string AntSystem =
         "ant-system-dorigo-maniezzo-colorni-1996";
     public const string AntColonySystem =

@@ -1049,6 +1049,28 @@
                            "assumptions":  "Finite bounded continuous box; finite objective values; fixed HMS, HMCR and NI; 0\u003c=PAR_min\u003c=PAR_max\u003c=1; 0\u003cbw_min\u003c=bw_max; bandwidth limits are problem-dependent absolute coordinate-unit parameters.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; IHS changes deterministic parameter control while retaining the stochastic HS memory/random/pitch and replacement process.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "global-best-harmony-search-omran-mahdavi-2008",
+                           "name":  "Global-best Harmony Search",
+                           "class":  "GlobalBestHarmonySearchOptimizer",
+                           "category":  "other-metaheuristics",
+                           "kind":  "population",
+                           "family":  "Other / music-inspired methods",
+                           "time":  "O(H*D) initialization; O(D+H) per improvisation plus O(1) dynamic PAR and one objective evaluation",
+                           "space":  "O(H*D)",
+                           "applicability":  "Bounded continuous derivative-free optimization with fixed HMCR, dynamic PAR and bandwidth-free cross-coordinate global-best pitch adjustment",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/HarmonySearch/GlobalBestHarmonySearchOptimizer.cs",
+                           "publication":  "Omran \u0026 Mahdavi (2008), Global-best harmony search, Applied Mathematics and Computation 198(2), 643-656",
+                           "doi":  "10.1016/j.amc.2007.09.004",
+                           "implementation":  "Canonical GHS dynamic PAR with no bandwidth parameter; pitch adjustment assigns x_i from a random coordinate x_k of the current best harmony, followed by explicit bounded-platform clamp and strict worst-harmony replacement.",
+                           "page":  "docs/pages/algorithms/global-best-harmony-search-omran-mahdavi-2008.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}PAR_t\u0026=PAR_{\\min}+\\frac{PAR_{\\max}-PAR_{\\min}}{NI}t,\\\\x_i^{new}\u0026=\\begin{cases}x_{K_i}^{(b)},\u0026U_i\u003cHMCR,\\ B_{i,t}=1,\\\\x_i^{(R_i)},\u0026U_i\u003cHMCR,\\ B_{i,t}=0,\\\\l_i+V_i(u_i-l_i),\u0026U_i\\ge HMCR\\end{cases}\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous box; finite objective values; fixed HMS, HMCR, PAR bounds and NI; GHS has no bandwidth; K_i is a uniformly selected decision-variable index of the current best harmony. Final clamping is explicit platform repair for heterogeneous bounds.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; the global-best rule increases exploitation and can exhibit premature-convergence behavior without changing the published GHS identity.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

@@ -11,9 +11,9 @@ by reusing values from the memory or drawing a fresh value from the feasible dom
 memory-derived pitch may additionally be adjusted locally.
 
 v0.55.0 implements the fixed-parameter foundation. Improved Harmony Search (IHS) of
-Mahdavi, Fesanghary and Damangir (2007), which schedules PAR and bandwidth, is exposed as a
-separate public identity since v0.56.0. Global-best Harmony Search (GHS) of Omran and Mahdavi
-(2008) remains scientifically distinct and is not implemented in v0.56.0.
+Mahdavi, Fesanghary and Damangir (2007) is a separate public identity since v0.56.0.
+Global-best Harmony Search (GHS) of Omran and Mahdavi (2008) is a third separate public
+identity since v0.57.0; neither later variant is retroactively mixed into canonical HS.
 
 ## Technical specifications
 
@@ -174,4 +174,4 @@ This IHS variant is a separate public identity since v0.56.0.
 Omran, M. G. H.; Mahdavi, M. (2008),
 *Global-best harmony search*, Applied Mathematics and Computation 198(2), 643-656.
 DOI: `10.1016/j.amc.2007.09.004`.
-This GHS variant is reviewed but not implemented in v0.56.0.
+This GHS variant is a separate public identity since v0.57.0.

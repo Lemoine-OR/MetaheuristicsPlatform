@@ -141,7 +141,7 @@ if ($canonical.Count -ne 1) {
     throw "Improved Harmony Search validation: canonical 2001 HS identity must remain exactly once."
 }
 
-$prematureGhs =
+$ghs =
     @(
         $catalog.algorithms |
         Where-Object {
@@ -150,8 +150,13 @@ $prematureGhs =
         }
     )
 
-if ($prematureGhs.Count -ne 0) {
-    throw "Improved Harmony Search validation: GHS must remain a separate future identity in v0.56.0."
+if ($ghs.Count -ne 1) {
+    throw "Improved Harmony Search validation: GHS must remain a separate public identity."
+}
+
+if ($optimizer.Contains("GlobalBest") -or
+    $parameters.Contains("GlobalBest")) {
+    throw "Improved Harmony Search validation: IHS must not absorb GHS global-best mechanics."
 }
 
 if ($page.Contains('\\f') -or
@@ -182,7 +187,7 @@ foreach ($marker in @(
     "bw_{\min}",
     "bw_{\max}",
     "fixed HMCR",
-    "GHS remains a distinct"
+    "GHS is a separate public identity since v0.57.0"
 )) {
     if (-not $page.Contains($marker)) {
         throw "Improved Harmony Search validation: page marker '$marker' is missing."
@@ -190,5 +195,5 @@ foreach ($marker in @(
 }
 
 Write-Host `
-    "Improved Harmony Search validation passed: Mahdavi-Fesanghary-Damangir 2007 PAR/bw schedules executable; canonical HS unchanged; GHS deferred." `
+    "Improved Harmony Search validation passed: Mahdavi-Fesanghary-Damangir 2007 PAR/bw schedules executable; HS and GHS remain separate identities." `
     -ForegroundColor Green

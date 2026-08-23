@@ -2,6 +2,22 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.57.0] - 2026-08-23
+
+### Added
+
+- Global-best Harmony Search following Omran and Mahdavi (2008).
+- Stable ID `global-best-harmony-search-omran-mahdavi-2008`, primary DOI `10.1016/j.amc.2007.09.004`.
+- Fixed-HMCR GHS with the IHS dynamic PAR schedule and the published bandwidth-free cross-coordinate global-best pitch rule.
+- Dedicated `GlobalBestHarmonySearchState` so an absent GHS bandwidth is not represented as a synthetic zero-valued scientific parameter.
+- Focused no-bandwidth, schedule, deterministic, evaluation-accounting, maximization and three-identity factory tests plus benchmark and mathematical documentation.
+
+### Changed
+
+- Public algorithm count increases from 46 to 47; the Other / music-inspired family now contains HS 2001, IHS 2007 and GHS 2008 as separate identities.
+- Canonical HS and IHS source implementations remain unchanged.
+- The bounded-continuous platform applies final component-wise clamping after GHS cross-coordinate pitch copying; this is documented explicitly as platform boundary repair, not as part of the 2008 GHS equation.
+- Release packaging reuses the exact proven v0.56 transform helper layer and generic Automation v6.0; no new packaging primitive is introduced.
 ## [0.56.0] - 2026-08-23
 
 ### Added

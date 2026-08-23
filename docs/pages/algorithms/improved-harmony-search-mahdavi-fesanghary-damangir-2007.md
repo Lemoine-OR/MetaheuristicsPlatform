@@ -10,10 +10,10 @@ Memory lifecycle, fixed HMCR, memory consideration, random generation, pitch-adj
 branch and worst-harmony replacement remain those of HS. The scientific change is the
 deterministic scheduling of PAR and bandwidth over the generation counter.
 
-This public identity is intentionally separate from both the fixed-parameter 2001 HS and the
-Global-best Harmony Search (GHS) of Omran and Mahdavi (2008). v0.56.0 does not introduce
-global-best guidance, PSO-like information exchange, feedback self-adaptation or local-search
-hybridization.
+This public identity remains separate from fixed-parameter HS 2001 and Global-best Harmony
+Search (GHS) of Omran and Mahdavi (2008). GHS is exposed as a separate public identity since
+v0.57.0; IHS itself retains bandwidth-based pitch adjustment and does not absorb global-best,
+PSO-like, feedback self-adaptive or local-search mechanisms.
 
 ## Technical specifications
 
@@ -180,4 +180,4 @@ DOI: `10.1177/003754970107600201`.
 Omran, M. G. H.; Mahdavi, M. (2008),
 *Global-best harmony search*, Applied Mathematics and Computation 198(2), 643-656.
 DOI: `10.1016/j.amc.2007.09.004`.
-GHS remains a distinct reviewed/deferred identity in v0.56.0.
+GHS is a separate public identity since v0.57.0.

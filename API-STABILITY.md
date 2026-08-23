@@ -268,3 +268,21 @@ the canonical HS memory/random/pitch branches, and strict worst-harmony replacem
 The platform exposes `bw_min` and `bw_max` as absolute problem-dependent coordinate-unit
 parameters and does not silently normalize them by bounds. Global-best Harmony Search remains
 a separate future identity.
+
+## v0.57.0 Global-best Harmony Search
+
+Stable public ID introduced:
+
+- `global-best-harmony-search-omran-mahdavi-2008`
+
+`GlobalBestHarmonySearchOptimizer`, `GlobalBestHarmonySearchParameters` and
+`GlobalBestHarmonySearchState` are public API.
+
+The stable identity denotes Omran-Mahdavi 2008 GHS for bounded continuous vectors: fixed
+HMCR, linearly increasing PAR, no bandwidth parameter, and pitch adjustment by assigning
+destination coordinate `i` from a randomly selected coordinate `k` of the current best harmony.
+
+The original cross-coordinate rule can produce a value outside the target coordinate's bounds
+when variables have heterogeneous domains. The platform preserves the published GHS rule and
+then applies its existing component-wise bounded-domain clamp as an explicit adaptation.
+Canonical HS 2001 and IHS 2007 stable identities remain behaviorally unchanged.

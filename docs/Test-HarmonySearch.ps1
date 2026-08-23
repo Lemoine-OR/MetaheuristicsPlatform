@@ -161,7 +161,7 @@ foreach ($marker in @(
     "10.1016/j.amc.2007.09.004",
     "absolute bandwidth",
     "separate public identity since v0.56.0",
-    "not implemented in v0.56.0"
+    "separate public identity since v0.57.0"
 )) {
     if (-not $page.Contains($marker)) {
         throw "Harmony Search validation: algorithm page is missing '$marker'."
@@ -169,5 +169,5 @@ foreach ($marker in @(
 }
 
 Write-Host `
-    "Harmony Search validation passed: canonical 2001 HS unchanged; IHS 2007 separate public identity; GHS 2008 reviewed/deferred." `
+    "Harmony Search validation passed: canonical 2001 HS unchanged; IHS 2007 and GHS 2008 remain separate public identities." `
     -ForegroundColor Green
