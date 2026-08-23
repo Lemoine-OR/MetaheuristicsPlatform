@@ -1071,6 +1071,28 @@
                            "assumptions":  "Finite bounded continuous box; finite objective values; fixed HMS, HMCR, PAR bounds and NI; GHS has no bandwidth; K_i is a uniformly selected decision-variable index of the current best harmony. Final clamping is explicit platform repair for heterogeneous bounds.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; the global-best rule increases exploitation and can exhibit premature-convergence behavior without changing the published GHS identity.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "self-adaptive-global-best-harmony-search-pan-suganthan-tasgetiren-liang-2010",
+                           "name":  "Self-Adaptive Global-best Harmony Search",
+                           "class":  "SelfAdaptiveGlobalBestHarmonySearchOptimizer",
+                           "category":  "other-metaheuristics",
+                           "kind":  "population",
+                           "family":  "Other / music-inspired methods",
+                           "time":  "O(H*D) initialization; O(D+H) expected per improvisation plus periodic O(LP) successful-parameter averaging",
+                           "space":  "O(H*D+LP)",
+                           "applicability":  "Bounded continuous derivative-free optimization with successful HMCR/PAR learning, bounded-normal sampling, piecewise bandwidth and corresponding-coordinate global-best pitch exploitation",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/HarmonySearch/SelfAdaptiveGlobalBestHarmonySearchOptimizer.cs",
+                           "publication":  "Pan, Suganthan, Tasgetiren \u0026 Liang (2010), A self-adaptive global best harmony search algorithm for continuous optimization problems, Applied Mathematics and Computation 216(3), 830-848",
+                           "doi":  "10.1016/j.amc.2010.01.088",
+                           "implementation":  "SGHS with HMCR~N(HMCRm,0.01) restricted to [0.9,1], PAR~N(PARm,0.05) restricted to [0,1], successful-value mean learning every LP, piecewise BW, and x_i^new=x_i^best pitch exploitation.",
+                           "page":  "docs/pages/algorithms/self-adaptive-global-best-harmony-search-pan-suganthan-tasgetiren-liang-2010.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}HMCR_t\u0026\\sim\\mathcal N(HMCR_m,0.01^2)\\vert_{[0.9,1]},\\\\PAR_t\u0026\\sim\\mathcal N(PAR_m,0.05^2)\\vert_{[0,1]},\\\\BW_i(t)\u0026=\\begin{cases}BW_{i,\\max}-\\frac{BW_{i,\\max}-BW_{\\min}}{NI}2t,\u00262t\u003cNI,\\\\BW_{\\min},\u00262t\\ge NI,\\end{cases}\\\\x_i^{new}\u0026=x_i^{best}\\quad\\text{on pitch adjustment}\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous box; finite objective values; fixed published normal standard deviations/ranges; successful HMCR/PAR values update their means every LP. BWmax=(UB-LB)/10 is represented coordinate-wise. Empty successful periods preserve prior means as explicit platform completion.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; SGHS changes parameter adaptation and exploitation/exploration balance while remaining stochastic.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

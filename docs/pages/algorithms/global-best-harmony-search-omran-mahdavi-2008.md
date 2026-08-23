@@ -11,8 +11,9 @@ bandwidth parameter entirely, and changes the pitch-adjustment rule so that the 
 coordinate receives a value from a randomly selected coordinate of the current best harmony.
 
 v0.57.0 keeps GHS as a third public scientific identity, separate from fixed-parameter HS 2001
-and IHS 2007. It does not silently add SGHS/NGHS/IGHS learning, mutation, differential or
-self-adaptive mechanisms.
+and IHS 2007. Self-Adaptive Global-best Harmony Search (SGHS) is a fourth separate public
+identity since v0.58.0; GHS itself does not absorb SGHS learning/bandwidth, NGHS mutation or
+later IGHS mechanisms.
 
 ## Technical specifications
 

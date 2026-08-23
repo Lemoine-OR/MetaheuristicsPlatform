@@ -31,4 +31,11 @@ public static class HarmonySearchReferences
             "Global-best harmony search",
             "Applied Mathematics and Computation 198(2), 643-656",
             "10.1016/j.amc.2007.09.004");
+    public static ScientificReference PanSuganthanTasgetirenLiang2010 { get; } =
+        new(
+            "Q.-K. Pan, P. N. Suganthan, M. F. Tasgetiren, J. J. Liang",
+            2010,
+            "A self-adaptive global best harmony search algorithm for continuous optimization problems",
+            "Applied Mathematics and Computation 216(3), 830-848",
+            "10.1016/j.amc.2010.01.088");
 }

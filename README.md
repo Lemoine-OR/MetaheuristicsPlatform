@@ -41,11 +41,11 @@ catalog IDs and literature-backed documentation.
 <td width="20%"><strong>3 constructive methods</strong><br><sub>GRASP, Reactive GRASP and GRASP with Path Relinking.</sub></td>
 <td width="20%"><strong>1 hybrid / memetic method</strong><br><sub>Moscato-style memetic evolution with local improvement.</sub></td>
 </tr>
-<tr><td colspan="5"><strong>3 other / music-inspired methods</strong><br><sub>Harmony Search, Improved Harmony Search and Global-best Harmony Search as separate literature identities.</sub></td>
+<tr><td colspan="5"><strong>4 other / music-inspired methods</strong><br><sub>HS, IHS, GHS and SGHS as separate literature identities.</sub></td>
 </tr>
 </table>
 
-<p align="center"><strong>47 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>48 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -156,7 +156,7 @@ Each card also exposes the stable catalog/factory ID.
 
 <table>
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/harmony-search-geem-kim-loganathan-2001.html"><strong>Harmony Search - Geem, Kim and Loganathan</strong></a><br><sub>Canonical Harmony Memory improvisation with fixed HMCR, PAR and absolute bandwidth.</sub><br><code>harmony-search-geem-kim-loganathan-2001</code><br><sub><code>HarmonySearchOptimizer</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/improved-harmony-search-mahdavi-fesanghary-damangir-2007.html"><strong>Improved Harmony Search - Mahdavi, Fesanghary and Damangir</strong></a><br><sub>Fixed HMCR with linearly increasing PAR and exponentially decreasing absolute bandwidth.</sub><br><code>improved-harmony-search-mahdavi-fesanghary-damangir-2007</code><br><sub><code>ImprovedHarmonySearchOptimizer</code></sub></td></tr>
-<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/global-best-harmony-search-omran-mahdavi-2008.html"><strong>Global-best Harmony Search - Omran and Mahdavi</strong></a><br><sub>Dynamic PAR with bandwidth-free cross-coordinate pitch adjustment from the current best harmony.</sub><br><code>global-best-harmony-search-omran-mahdavi-2008</code><br><sub><code>GlobalBestHarmonySearchOptimizer</code></sub></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/global-best-harmony-search-omran-mahdavi-2008.html"><strong>Global-best Harmony Search - Omran and Mahdavi</strong></a><br><sub>Dynamic PAR with bandwidth-free cross-coordinate pitch adjustment from the current best harmony.</sub><br><code>global-best-harmony-search-omran-mahdavi-2008</code><br><sub><code>GlobalBestHarmonySearchOptimizer</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/self-adaptive-global-best-harmony-search-pan-suganthan-tasgetiren-liang-2010.html"><strong>Self-Adaptive Global-best Harmony Search - Pan et al.</strong></a><br><sub>Success-learned HMCR/PAR, piecewise bandwidth and corresponding-coordinate best-harmony pitch exploitation.</sub><br><code>self-adaptive-global-best-harmony-search-pan-suganthan-tasgetiren-liang-2010</code><br><sub><code>SelfAdaptiveGlobalBestHarmonySearchOptimizer</code></sub></td></tr>
 </table>
 ## Scientific components
 

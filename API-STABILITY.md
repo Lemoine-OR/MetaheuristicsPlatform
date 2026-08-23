@@ -286,3 +286,23 @@ The original cross-coordinate rule can produce a value outside the target coordi
 when variables have heterogeneous domains. The platform preserves the published GHS rule and
 then applies its existing component-wise bounded-domain clamp as an explicit adaptation.
 Canonical HS 2001 and IHS 2007 stable identities remain behaviorally unchanged.
+
+## v0.58.0 Self-Adaptive Global-best Harmony Search
+
+Stable public ID introduced:
+
+- `self-adaptive-global-best-harmony-search-pan-suganthan-tasgetiren-liang-2010`
+
+`SelfAdaptiveGlobalBestHarmonySearchOptimizer`,
+`SelfAdaptiveGlobalBestHarmonySearchParameters` and
+`SelfAdaptiveGlobalBestHarmonySearchState` are public API.
+
+The stable identity denotes Pan-Suganthan-Tasgetiren-Liang 2010 SGHS for bounded continuous
+vectors: HMCR/PAR sampled from the published bounded normal distributions, success-based
+learning of their means over LP, piecewise bandwidth control, and corresponding-coordinate
+best-harmony pitch exploitation.
+
+The platform exposes the paper's BWmax=(UB-LB)/10 experimental prescription as a
+coordinate-wise range fraction for heterogeneous bounded boxes. Empty successful-learning
+periods preserve the previous means as an explicit defensive completion of the paper's
+otherwise undefined empty-set average. HS, IHS and GHS stable identities remain unchanged.

@@ -20,8 +20,8 @@ $catalog =
 $algorithms = @($catalog.algorithms)
 $families = @($catalog.families)
 
-if ($algorithms.Count -lt 47) {
-    throw "Documentation parity: expected at least the forty-seven currently public algorithms."
+if ($algorithms.Count -lt 48) {
+    throw "Documentation parity: expected at least the forty-eight currently public algorithms."
 }
 
 $requiredFields = @(
@@ -147,6 +147,8 @@ $requiredRepoFiles = @(
     "docs\pages\algorithms\improved-harmony-search-mahdavi-fesanghary-damangir-2007.md",
     "docs\Test-GlobalBestHarmonySearch.ps1",
     "docs\pages\algorithms\global-best-harmony-search-omran-mahdavi-2008.md",
+    "docs\Test-SelfAdaptiveGlobalBestHarmonySearch.ps1",
+    "docs\pages\algorithms\self-adaptive-global-best-harmony-search-pan-suganthan-tasgetiren-liang-2010.md",
     "docs\pages\families\other-metaheuristics.md",
     "docs\Test-DoxygenMarkupSafety.ps1",
     "docs\Test-ContinuousCrossEntropy.ps1",
@@ -295,8 +297,8 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.57.0") {
-    throw "Documentation parity: version.json must be 0.57.0 for this release."
+if ([string]$version.version -ne "0.58.0") {
+    throw "Documentation parity: version.json must be 0.58.0 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root
@@ -319,6 +321,7 @@ if ([string]$version.version -ne "0.57.0") {
 & (Join-Path $Root "docs\Test-HarmonySearch.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-ImprovedHarmonySearch.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-GlobalBestHarmonySearch.ps1") -Root $Root
+& (Join-Path $Root "docs\Test-SelfAdaptiveGlobalBestHarmonySearch.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-DoxygenMarkupSafety.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-ContinuousCrossEntropy.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-LargeNeighborhoodSearch.ps1") -Root $Root
@@ -345,3 +348,43 @@ if ([string]$version.version -ne "0.57.0") {
 & (Join-Path $Root "docs\Test-DoxygenDiagnosticQuality.ps1") -Root $Root
 
 Write-Host "Documentation parity validation passed: $($algorithms.Count) algorithms, $($families.Count) family pages." -ForegroundColor Green
+
+# xUnit analyzer safety: xUnit2031
+# Assert.Single(collection.Where(predicate)) is rejected by xUnit analyzers.
+# Use Assert.Single(collection, predicate) so violations fail during documentation
+# parity before the more expensive build stage.
+$testRoot =
+    Join-Path $Root "tests"
+
+if (Test-Path -LiteralPath $testRoot -PathType Container) {
+    $xunit2031Pattern =
+        '(?s)Assert\.Single\s*\(\s*[^;]{0,1200}?\.Where\s*\('
+
+    $xunit2031Violations =
+        @(
+            Get-ChildItem `
+                -LiteralPath $testRoot `
+                -Recurse `
+                -File `
+                -Filter "*.cs" |
+            Where-Object {
+                $source =
+                    [System.IO.File]::ReadAllText(
+                        $_.FullName,
+                        [System.Text.Encoding]::UTF8)
+
+                [regex]::IsMatch(
+                    $source,
+                    $xunit2031Pattern)
+            }
+        )
+
+    if ($xunit2031Violations.Count -gt 0) {
+        throw (
+            "Documentation parity: xUnit2031 safety violation(s): {0}. " +
+            "Replace Assert.Single(collection.Where(predicate)) with " +
+            "Assert.Single(collection, predicate)." -f
+            (($xunit2031Violations |
+                ForEach-Object { $_.FullName }) -join "; "))
+    }
+}

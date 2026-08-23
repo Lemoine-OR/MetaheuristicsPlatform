@@ -2,6 +2,24 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.58.0] - 2026-08-23
+
+### Added
+
+- Self-Adaptive Global-best Harmony Search following Pan, Suganthan, Tasgetiren and Liang (2010).
+- Stable ID `self-adaptive-global-best-harmony-search-pan-suganthan-tasgetiren-liang-2010`, primary DOI `10.1016/j.amc.2010.01.088`.
+- Success-based learning of HMCRm/PARm over learning periods, with fixed published Gaussian standard deviations and bounded normal sampling.
+- Piecewise SGHS bandwidth: linear decrease during the first half and BWmin thereafter.
+- Corresponding-coordinate global-best pitch exploitation `x_i^new=x_i^best`, distinct from the GHS random cross-coordinate rule.
+- Focused default-setting, bandwidth-equation, sampled-range, empty-learning-period, deterministic, budget and four-identity factory tests plus benchmark and complete mathematical documentation.
+
+### Changed
+
+- Public algorithm count increases from 47 to 48; the Other / music-inspired family now contains HS 2001, IHS 2007, GHS 2008 and SGHS 2010 as separate identities.
+- HS/IHS/GHS source implementations remain unchanged.
+- The paper's experimental `BWmax=(UB-LB)/10` prescription is lifted coordinate-wise for heterogeneous bounded boxes; this is explicitly documented as a platform adaptation.
+- If a learning period contains no successful replacement, HMCRm/PARm remain unchanged because the paper's requested successful-value average is undefined on the empty set; this is explicitly documented as defensive platform completion.
+- Release packaging reuses the exact proven v0.57 transform helper layer and generic Automation v6.0; no new packaging primitive is introduced.
 ## [0.57.0] - 2026-08-23
 
 ### Added

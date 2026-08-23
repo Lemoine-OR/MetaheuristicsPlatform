@@ -105,7 +105,8 @@ $catalog =
 foreach ($identity in @(
     "harmony-search-geem-kim-loganathan-2001",
     "improved-harmony-search-mahdavi-fesanghary-damangir-2007",
-    "global-best-harmony-search-omran-mahdavi-2008"
+    "global-best-harmony-search-omran-mahdavi-2008",
+    "self-adaptive-global-best-harmony-search-pan-suganthan-tasgetiren-liang-2010"
 )) {
     $matches =
         @(
@@ -175,5 +176,5 @@ foreach ($marker in @(
 }
 
 Write-Host `
-    "Global-best Harmony Search validation passed: Omran-Mahdavi 2008 dynamic PAR + bandwidth-free cross-coordinate global-best pitch executable; HS/IHS identities preserved." `
+    "Global-best Harmony Search validation passed: Omran-Mahdavi 2008 dynamic PAR + bandwidth-free cross-coordinate pitch preserved; SGHS remains a separate catalog identity." `
     -ForegroundColor Green
