@@ -20,8 +20,8 @@ $catalog =
 $algorithms = @($catalog.algorithms)
 $families = @($catalog.families)
 
-if ($algorithms.Count -lt 50) {
-    throw "Documentation parity: expected at least the fifty currently public algorithms."
+if ($algorithms.Count -lt 51) {
+    throw "Documentation parity: expected at least the fifty-one currently public algorithms."
 }
 
 $requiredFields = @(
@@ -98,6 +98,23 @@ foreach ($family in $families) {
     if (-not (Test-Path $familyPath)) {
         throw "Documentation parity: missing family page '$($family.id)'."
     }
+
+    $familyLines =
+        [System.IO.File]::ReadAllLines(
+            $familyPath,
+            [System.Text.Encoding]::UTF8)
+
+    foreach ($familyLine in $familyLines) {
+        $subpageCount =
+            [regex]::Matches(
+                [string]$familyLine,
+                [regex]::Escape("@subpage")).Count
+
+        if ($subpageCount -gt 1) {
+            throw (
+                "Documentation parity: family page '$($family.id)' contains multiple @subpage directives on one line.")
+        }
+    }
 }
 
 $requiredRepoFiles = @(
@@ -153,6 +170,8 @@ $requiredRepoFiles = @(
     "docs\pages\algorithms\novel-global-harmony-search-zou-gao-wu-li-2010.md",
     "docs\Test-ParameterSettingFreeHarmonySearch.ps1",
     "docs\pages\algorithms\parameter-setting-free-harmony-search-geem-sim-2010.md",
+    "docs\Test-AdvancedParameterSettingFreeHarmonySearchIteration.ps1",
+    "docs\pages\algorithms\advanced-parameter-setting-free-harmony-search-iteration-jeong-park-geem-sim-2020.md",
     "docs\pages\families\other-metaheuristics.md",
     "docs\Test-DoxygenMarkupSafety.ps1",
     "docs\Test-ContinuousCrossEntropy.ps1",
@@ -301,8 +320,8 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.60.0") {
-    throw "Documentation parity: version.json must be 0.60.0 for this release."
+if ([string]$version.version -ne "0.61.0") {
+    throw "Documentation parity: version.json must be 0.61.0 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root
@@ -328,6 +347,7 @@ if ([string]$version.version -ne "0.60.0") {
 & (Join-Path $Root "docs\Test-SelfAdaptiveGlobalBestHarmonySearch.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-NovelGlobalHarmonySearch.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-ParameterSettingFreeHarmonySearch.ps1") -Root $Root
+& (Join-Path $Root "docs\Test-AdvancedParameterSettingFreeHarmonySearchIteration.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-DoxygenMarkupSafety.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-ContinuousCrossEntropy.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-LargeNeighborhoodSearch.ps1") -Root $Root

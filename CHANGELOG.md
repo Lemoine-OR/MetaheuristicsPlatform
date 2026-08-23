@@ -2,6 +2,22 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.61.0] - 2026-08-23
+
+### Added
+
+- Advanced Parameter-Setting-Free Harmony Search iteration scheme following Jeong, Park, Geem and Sim (2020).
+- Stable ID `advanced-parameter-setting-free-harmony-search-iteration-jeong-park-geem-sim-2020`, DOI `10.3390/app10072586`.
+- Exact iteration HMCR Equation (5), logistic Equation (6), and PAR Equation (8).
+- Explicit D=1 right-hand-limit completion for the published `log(D)` singular endpoint.
+- Focused formula, monotonicity, D=1, deterministic, budget, maximization and seven-identity tests.
+
+### Changed
+
+- Public algorithm count increases from 50 to 51.
+- Published historical scientific validators remain frozen; the new v0.61 validator owns seven-identity parity.
+- No Operation Type Matrix or object-dependent bandwidth is mixed into the iteration identity.
+- System.Math/.NET is sufficient; no external numerical package is required.
 ## [0.60.0] - 2026-08-23
 
 ### Added

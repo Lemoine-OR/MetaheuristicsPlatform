@@ -1137,6 +1137,28 @@
                            "assumptions":  "OTM moves in lock-step with strict Harmony Memory replacement; initial OTM is Random; rehearsal uses HMCR=PAR=0.5; pitch bandwidth remains problem dependent. If the PAR denominator is zero, HMCR=0 and platform PAR=0 is explicit defensive completion.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted. Conventional PSF can drive variable-specific probabilities to 0 or 1 as OTM columns homogenize.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "advanced-parameter-setting-free-harmony-search-iteration-jeong-park-geem-sim-2020",
+                           "name":  "Advanced Parameter-Setting-Free Harmony Search - Iteration Scheme",
+                           "class":  "AdvancedParameterSettingFreeHarmonySearchIterationOptimizer",
+                           "category":  "other-metaheuristics",
+                           "kind":  "population",
+                           "family":  "Other / music-inspired methods",
+                           "time":  "O(H*D) initialization; O(H+D) per improvisation plus one objective evaluation",
+                           "space":  "O(H*D)",
+                           "applicability":  "Bounded continuous derivative-free optimization with iteration/dimension sigmoid HMCR and dimension-aware PAR",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/HarmonySearch/AdvancedParameterSettingFreeHarmonySearchIterationOptimizer.cs",
+                           "publication":  "Jeong, Park, Geem \u0026 Sim (2020), Advanced Parameter-Setting-Free Harmony Search Algorithm, Applied Sciences 10(7), 2586",
+                           "doi":  "10.3390/app10072586",
+                           "implementation":  "Iteration APSF-HS only: published Equations (5),(6),(8); no OTM; fixed problem-scale bandwidth; object PSF excluded.",
+                           "page":  "docs/pages/algorithms/advanced-parameter-setting-free-harmony-search-iteration-jeong-park-geem-sim-2020.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}HMCR(t)\u0026=0.5+0.5\\sigma(10t/NI-5/\\ln D),\\\\PAR(t)\u0026=HMCR(t)\\sigma(4/D-2),\\\\\\sigma(z)\u0026=(1+e^{-z})^{-1}\\end{aligned}",
+                           "assumptions":  "Positive NI and bounded finite continuous spans. D=1 uses the explicit right-hand dimensional limit HMCR=0.5. Object-dependent HMCR/bandwidth is excluded.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

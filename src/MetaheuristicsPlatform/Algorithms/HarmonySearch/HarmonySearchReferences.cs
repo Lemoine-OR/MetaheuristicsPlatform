@@ -60,4 +60,11 @@ public static class HarmonySearchReferences
             "Parameter-setting-free harmony search algorithm",
             "Applied Mathematics and Computation 217(8), 3881-3889",
             "10.1016/j.amc.2010.09.049");
+    public static ScientificReference JeongParkGeemSim2020AdvancedParameterSettingFree { get; } =
+        new(
+            "Y.-W. Jeong, S.-M. Park, Z. W. Geem, K.-B. Sim",
+            2020,
+            "Advanced Parameter-Setting-Free Harmony Search Algorithm",
+            "Applied Sciences 10(7), 2586",
+            "10.3390/app10072586");
 }

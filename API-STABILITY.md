@@ -337,3 +337,17 @@ types surviving in Harmony Memory after rehearsal.
 
 The stable identity does not claim that HMS, stopping budget, rehearsal duration or pitch
 bandwidth are universally parameter free. Later advanced PSF schemes must use separate IDs.
+
+## v0.61.0 Advanced Parameter-Setting-Free Harmony Search - Iteration Scheme
+
+Stable public ID introduced:
+
+- `advanced-parameter-setting-free-harmony-search-iteration-jeong-park-geem-sim-2020`
+
+The identity implements only the Jeong-Park-Geem-Sim 2020 iteration PSF scheme. HMCR follows
+the published iteration/dimension sigmoid and PAR follows its dimension-aware equation. No OTM
+is allocated. The publication's object-dependent HMCR and bandwidth scheme is reserved for a
+separate stable identity.
+
+For D=1 the published `log(D)` term is singular; the platform uses the explicit right-hand
+dimensional limit HMCR=0.5.
