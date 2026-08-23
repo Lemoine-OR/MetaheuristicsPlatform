@@ -2,6 +2,20 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.65.0] - 2026-08-23
+
+### Added
+
+- IHSDE from Yong et al. (2012), preserving its F~U[0.6,1] differential-mutation rule.
+- Stable ID `improved-harmony-search-differential-mutation-yong-liu-zhang-feng-2012` and DOI `10.1155/2012/147950`.
+- Focused scientific tests, validator, benchmark and complete documentation page.
+
+### Changed
+
+- Public algorithm count increases to 55.
+- Existing historical scientific validators remain frozen.
+- No external numerical dependency is introduced.
+
 ## [0.64.0] - 2026-08-23
 
 ### Added

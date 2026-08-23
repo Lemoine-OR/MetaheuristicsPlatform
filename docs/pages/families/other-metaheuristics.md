@@ -34,3 +34,5 @@ Return to @ref method_families "method families".
 - @subpage differential_harmony_search_chakraborty_roy_das_jain_abraham_2009 - Differential Harmony Search with DE/rand/1-style mutation replacing classical pitch adjustment.
 
 - @subpage exploratory_harmony_search_das_mukhopadhyay_roy_abraham_panigrahi_2011 - Exploratory Harmony Search with Harmony-Memory standard-deviation fine-tuning width.
+
+- @subpage improved_harmony_search_differential_mutation_yong_liu_zhang_feng_2012 - IHSDE with differential mutation and F sampled uniformly from [0.6,1].

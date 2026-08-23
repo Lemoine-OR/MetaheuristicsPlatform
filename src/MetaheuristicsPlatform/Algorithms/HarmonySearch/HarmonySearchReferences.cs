@@ -83,4 +83,12 @@ public static class HarmonySearchReferences
             "Exploratory Power of the Harmony Search Algorithm: Analysis and Improvements for Global Numerical Optimization",
             "IEEE Transactions on Systems, Man, and Cybernetics, Part B 41(1), 89-106",
             "10.1109/TSMCB.2010.2046035");
+
+    public static ScientificReference YongLiuZhangFeng2012 { get; } =
+        new(
+            "L. Yong, S. Liu, J. Zhang, Q. Feng",
+            2012,
+            "Theoretical and Empirical Analyses of an Improved Harmony Search Algorithm Based on Differential Mutation Operator",
+            "Journal of Applied Mathematics 2012, Article 147950",
+            "10.1155/2012/147950");
 }

@@ -1225,6 +1225,28 @@
                            "assumptions":  "Bounded continuous search, finite HM coordinate variance and finite objective values.",
                            "convergence":  "The paper analyzes population variance and exploratory power; no universal finite-time global convergence theorem is asserted.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "improved-harmony-search-differential-mutation-yong-liu-zhang-feng-2012",
+                           "name":  "Improved Harmony Search Based on Differential Mutation Operator",
+                           "class":  "ImprovedHarmonySearchDifferentialMutationOptimizer",
+                           "category":  "other-metaheuristics",
+                           "kind":  "population",
+                           "family":  "Other / music-inspired methods",
+                           "time":  "O(H*D) memory plus variant-specific improvisation work",
+                           "space":  "O(H*D)",
+                           "applicability":  "Bounded continuous derivative-free minimization.",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/HarmonySearch/ImprovedHarmonySearchDifferentialMutationOptimizer.cs",
+                           "publication":  "L. Yong, S. Liu, J. Zhang, Q. Feng (2012), Theoretical and Empirical Analyses of an Improved Harmony Search Algorithm Based on Differential Mutation Operator, Journal of Applied Mathematics 2012, Article 147950",
+                           "doi":  "10.1155/2012/147950",
+                           "implementation":  "IHSDE memory branch chooses j,r1,r2 distinct and generates x\u0027_i=x^j_i+F(x^r1_i-x^r2_i), F~U[0.6,1]; random branch remains uniform over bounds.",
+                           "page":  "docs/pages/algorithms/improved-harmony-search-differential-mutation-yong-liu-zhang-feng-2012.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}x_i\u0027\u0026=x_i^j+F(x_i^{r1}-x_i^{r2}),\\\\ F\u0026\\sim U(0.6,1),\\quad j\\ne r1\\ne r2\\end{aligned}",
+                           "assumptions":  "Bounded continuous minimization, HMS\u003e=3, finite objective values.",
+                           "convergence":  "The paper derives population mean/variance behavior and reports empirical convergence; no universal finite-time global convergence theorem is claimed.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

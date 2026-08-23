@@ -111,3 +111,6 @@ v0.63.0 differential-harmony-search-chakraborty-roy-das-jain-abraham-2009: P. Ch
 
 
 v0.64.0 exploratory-harmony-search-das-mukhopadhyay-roy-abraham-panigrahi-2011: S. Das, A. Mukhopadhyay, A. Roy, A. Abraham, B. K. Panigrahi (2011), Exploratory Power of the Harmony Search Algorithm: Analysis and Improvements for Global Numerical Optimization, IEEE Transactions on Systems, Man, and Cybernetics, Part B 41(1), 89-106. DOI `10.1109/TSMCB.2010.2046035`.
+
+
+v0.65.0 improved-harmony-search-differential-mutation-yong-liu-zhang-feng-2012: L. Yong, S. Liu, J. Zhang, Q. Feng (2012), Theoretical and Empirical Analyses of an Improved Harmony Search Algorithm Based on Differential Mutation Operator, Journal of Applied Mathematics 2012, Article 147950. DOI `10.1155/2012/147950`.

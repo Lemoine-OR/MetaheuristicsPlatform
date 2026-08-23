@@ -386,3 +386,14 @@ Stable public ID introduced:
 Scientific source: S. Das, A. Mukhopadhyay, A. Roy, A. Abraham, B. K. Panigrahi (2011), Exploratory Power of the Harmony Search Algorithm: Analysis and Improvements for Global Numerical Optimization, IEEE Transactions on Systems, Man, and Cybernetics, Part B 41(1), 89-106. DOI `10.1109/TSMCB.2010.2046035`.
 
 EHS keeps canonical HS memory consideration/random selection and sets per-coordinate fine-tuning width FW_i=k*sqrt(Var(HM_i)), recomputed from the current Harmony Memory.
+
+
+## v0.65.0 Improved Harmony Search Based on Differential Mutation Operator
+
+Stable public ID introduced:
+
+- `improved-harmony-search-differential-mutation-yong-liu-zhang-feng-2012`
+
+Scientific source: L. Yong, S. Liu, J. Zhang, Q. Feng (2012), Theoretical and Empirical Analyses of an Improved Harmony Search Algorithm Based on Differential Mutation Operator, Journal of Applied Mathematics 2012, Article 147950. DOI `10.1155/2012/147950`.
+
+IHSDE memory branch chooses j,r1,r2 distinct and generates x'_i=x^j_i+F(x^r1_i-x^r2_i), F~U[0.6,1]; random branch remains uniform over bounds.
