@@ -12,6 +12,8 @@ public static class MetaheuristicAlgorithmIds
         "firefly-algorithm-yang-2009";
     public const string HarmonySearch =
         "harmony-search-geem-kim-loganathan-2001";
+    public const string ImprovedHarmonySearch =
+        "improved-harmony-search-mahdavi-fesanghary-damangir-2007";
     public const string AntSystem =
         "ant-system-dorigo-maniezzo-colorni-1996";
     public const string AntColonySystem =

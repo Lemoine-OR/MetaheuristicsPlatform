@@ -41,11 +41,11 @@ catalog IDs and literature-backed documentation.
 <td width="20%"><strong>3 constructive methods</strong><br><sub>GRASP, Reactive GRASP and GRASP with Path Relinking.</sub></td>
 <td width="20%"><strong>1 hybrid / memetic method</strong><br><sub>Moscato-style memetic evolution with local improvement.</sub></td>
 </tr>
-<tr><td colspan="5"><strong>1 other / music-inspired method</strong><br><sub>Canonical Harmony Search with Harmony Memory improvisation.</sub></td>
+<tr><td colspan="5"><strong>2 other / music-inspired methods</strong><br><sub>Canonical Harmony Search and Improved Harmony Search with scheduled PAR/bandwidth.</sub></td>
 </tr>
 </table>
 
-<p align="center"><strong>45 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>46 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -155,7 +155,7 @@ Each card also exposes the stable catalog/factory ID.
 ### Other / music-inspired methods
 
 <table>
-<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/harmony-search-geem-kim-loganathan-2001.html"><strong>Harmony Search - Geem, Kim and Loganathan</strong></a><br><sub>Canonical Harmony Memory improvisation with fixed HMCR, PAR and absolute bandwidth.</sub><br><code>harmony-search-geem-kim-loganathan-2001</code><br><sub><code>HarmonySearchOptimizer</code></sub></td></tr>
+<tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/harmony-search-geem-kim-loganathan-2001.html"><strong>Harmony Search - Geem, Kim and Loganathan</strong></a><br><sub>Canonical Harmony Memory improvisation with fixed HMCR, PAR and absolute bandwidth.</sub><br><code>harmony-search-geem-kim-loganathan-2001</code><br><sub><code>HarmonySearchOptimizer</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/improved-harmony-search-mahdavi-fesanghary-damangir-2007.html"><strong>Improved Harmony Search - Mahdavi, Fesanghary and Damangir</strong></a><br><sub>Fixed HMCR with linearly increasing PAR and exponentially decreasing absolute bandwidth.</sub><br><code>improved-harmony-search-mahdavi-fesanghary-damangir-2007</code><br><sub><code>ImprovedHarmonySearchOptimizer</code></sub></td></tr>
 </table>
 ## Scientific components
 

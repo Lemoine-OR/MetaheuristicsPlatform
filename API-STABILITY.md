@@ -250,3 +250,21 @@ and strict replacement of the current worst harmony.
 Improved Harmony Search (Mahdavi-Fesanghary-Damangir 2007) and Global-best Harmony Search
 (Omran-Mahdavi 2008) remain scientifically distinct later variants and are not retroactively
 mixed into this stable identity.
+
+## v0.56.0 Improved Harmony Search
+
+Stable public ID introduced:
+
+- `improved-harmony-search-mahdavi-fesanghary-damangir-2007`
+
+`ImprovedHarmonySearchOptimizer` and `ImprovedHarmonySearchParameters` are public API.
+The optimizer reuses the public `HarmonySearchState` / `HarmonySearchPhase` observation model
+without changing the canonical 2001 Harmony Search behavior.
+
+The stable identity denotes Mahdavi-Fesanghary-Damangir 2007 IHS for bounded continuous
+vectors: fixed HMCR, linearly increasing PAR, exponentially decreasing positive bandwidth,
+the canonical HS memory/random/pitch branches, and strict worst-harmony replacement.
+
+The platform exposes `bw_min` and `bw_max` as absolute problem-dependent coordinate-unit
+parameters and does not silently normalize them by bounds. Global-best Harmony Search remains
+a separate future identity.

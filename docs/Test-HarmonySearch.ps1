@@ -160,7 +160,8 @@ foreach ($marker in @(
     "10.1016/j.amc.2006.11.033",
     "10.1016/j.amc.2007.09.004",
     "absolute bandwidth",
-    "not implemented in v0.55.0"
+    "separate public identity since v0.56.0",
+    "not implemented in v0.56.0"
 )) {
     if (-not $page.Contains($marker)) {
         throw "Harmony Search validation: algorithm page is missing '$marker'."
@@ -168,5 +169,5 @@ foreach ($marker in @(
 }
 
 Write-Host `
-    "Harmony Search validation passed: canonical 2001 HS executable; IHS 2007 and GHS 2008 scientifically separated/deferred." `
+    "Harmony Search validation passed: canonical 2001 HS unchanged; IHS 2007 separate public identity; GHS 2008 reviewed/deferred." `
     -ForegroundColor Green

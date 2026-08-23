@@ -2,6 +2,22 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.56.0] - 2026-08-23
+
+### Added
+
+- Improved Harmony Search following Mahdavi, Fesanghary and Damangir (2007).
+- Stable ID `improved-harmony-search-mahdavi-fesanghary-damangir-2007`, primary DOI `10.1016/j.amc.2006.11.033`.
+- Fixed-HMCR IHS improvisation with the published linearly increasing PAR schedule and exponentially decreasing bandwidth schedule.
+- Explicit positive problem-dependent `bw_min`/`bw_max` parameters with no silent range normalization.
+- Focused schedule-equation, deterministic, evaluation-accounting, maximization and factory-separation tests plus benchmark and mathematical documentation.
+
+### Changed
+
+- Public algorithm count increases from 45 to 46; the Other / music-inspired family now contains canonical HS and IHS as separate identities.
+- The v0.55 canonical Harmony Search implementation and stable ID remain behaviorally unchanged.
+- Global-best Harmony Search (Omran-Mahdavi 2008) remains reviewed/deferred for a separate release.
+- Release packaging uses the generic Automation v6.0 and a small algorithm-specific transform/payload pack; no version-specific packaging engine is introduced.
 ## [0.55.0] - 2026-08-23
 
 ### Added

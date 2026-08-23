@@ -10,10 +10,10 @@ population of candidate harmonies, and a new harmony is improvised coordinate by
 by reusing values from the memory or drawing a fresh value from the feasible domain. A
 memory-derived pitch may additionally be adjusted locally.
 
-v0.55.0 implements the fixed-parameter foundation only. The Improved Harmony Search (IHS)
-of Mahdavi, Fesanghary and Damangir (2007), which schedules PAR and bandwidth, and the
-Global-best Harmony Search (GHS) of Omran and Mahdavi (2008) are scientifically distinct
-variants and are not implemented in v0.55.0.
+v0.55.0 implements the fixed-parameter foundation. Improved Harmony Search (IHS) of
+Mahdavi, Fesanghary and Damangir (2007), which schedules PAR and bandwidth, is exposed as a
+separate public identity since v0.56.0. Global-best Harmony Search (GHS) of Omran and Mahdavi
+(2008) remains scientifically distinct and is not implemented in v0.56.0.
 
 ## Technical specifications
 
@@ -169,9 +169,9 @@ Mahdavi, M.; Fesanghary, M.; Damangir, E. (2007),
 *An improved harmony search algorithm for solving optimization problems*,
 Applied Mathematics and Computation 188(2), 1567-1579.
 DOI: `10.1016/j.amc.2006.11.033`.
-This IHS variant is reviewed but not implemented in v0.55.0.
+This IHS variant is a separate public identity since v0.56.0.
 
 Omran, M. G. H.; Mahdavi, M. (2008),
 *Global-best harmony search*, Applied Mathematics and Computation 198(2), 643-656.
 DOI: `10.1016/j.amc.2007.09.004`.
-This GHS variant is reviewed but not implemented in v0.55.0.
+This GHS variant is reviewed but not implemented in v0.56.0.

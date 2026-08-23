@@ -1027,6 +1027,28 @@
                            "assumptions":  "Finite bounded continuous box; finite objective values; fixed HMS, HMCR, PAR and absolute bandwidth during one run; deterministic platform-owned random stream.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; behavior depends on Harmony Memory size, HMCR, PAR, absolute bandwidth, scaling and evaluation budget. IHS/GHS variants remain scientifically separate.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "improved-harmony-search-mahdavi-fesanghary-damangir-2007",
+                           "name":  "Improved Harmony Search",
+                           "class":  "ImprovedHarmonySearchOptimizer",
+                           "category":  "other-metaheuristics",
+                           "kind":  "population",
+                           "family":  "Other / music-inspired methods",
+                           "time":  "O(H*D) initialization; O(D+H) per improvisation plus O(1) PAR/bw scheduling and one objective evaluation",
+                           "space":  "O(H*D)",
+                           "applicability":  "Bounded continuous derivative-free optimization with fixed HMCR, linearly increasing PAR and exponentially decreasing positive bandwidth",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/HarmonySearch/ImprovedHarmonySearchOptimizer.cs",
+                           "publication":  "Mahdavi, Fesanghary \u0026 Damangir (2007), An improved harmony search algorithm for solving optimization problems, Applied Mathematics and Computation 188(2), 1567-1579",
+                           "doi":  "10.1016/j.amc.2006.11.033",
+                           "implementation":  "Canonical IHS parameter control with fixed HMCR, published linear PAR schedule, published exponential absolute-bandwidth schedule, HS improvisation and strict worst-harmony replacement.",
+                           "page":  "docs/pages/algorithms/improved-harmony-search-mahdavi-fesanghary-damangir-2007.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}PAR_t\u0026=PAR_{\\min}+\\frac{PAR_{\\max}-PAR_{\\min}}{NI}t,\\\\bw_t\u0026=bw_{\\max}\\exp\\!\\left(\\frac{t}{NI}\\ln\\frac{bw_{\\min}}{bw_{\\max}}\\right)\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous box; finite objective values; fixed HMS, HMCR and NI; 0\u003c=PAR_min\u003c=PAR_max\u003c=1; 0\u003cbw_min\u003c=bw_max; bandwidth limits are problem-dependent absolute coordinate-unit parameters.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; IHS changes deterministic parameter control while retaining the stochastic HS memory/random/pitch and replacement process.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }
