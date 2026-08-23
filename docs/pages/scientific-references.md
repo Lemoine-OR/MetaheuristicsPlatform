@@ -105,3 +105,6 @@ v0.44.0 implements the canonical Ant System foundation. ACS and MAX-MIN Ant Syst
 - Omran, M. G. H.; Mahdavi, M. (2008), *Global-best harmony search*, Applied Mathematics and Computation 198(2), 643-656. DOI `10.1016/j.amc.2007.09.004`.
 
 v0.55.0 implements HS 2001, v0.56.0 IHS 2007, v0.57.0 GHS 2008, v0.58.0 SGHS 2010, v0.59.0 NGHS 2010, and v0.60.0 Geem-Sim PSF-HS 2010 with an Operation Type Matrix and variable-specific HMCR/PAR learned from surviving operators. All six remain separate public identities. v0.61.0 adds the Jeong-Park-Geem-Sim 2020 iteration Advanced PSF-HS scheme as a seventh identity, without OTM or object-dependent bandwidth. v0.62.0 adds the same paper's distinct Object PSF scheme as an eighth identity, using target-dependent HMCR/PAR and the object-only adaptive bandwidth Equation (9).
+
+
+v0.63.0 differential-harmony-search-chakraborty-roy-das-jain-abraham-2009: P. Chakraborty, G. G. Roy, S. Das, D. Jain, A. Abraham (2009), An Improved Harmony Search Algorithm with Differential Mutation Operator, Fundamenta Informaticae 95(4), 401-426. DOI `10.3233/FI-2009-157`.

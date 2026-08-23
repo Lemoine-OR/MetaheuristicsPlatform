@@ -41,11 +41,11 @@ catalog IDs and literature-backed documentation.
 <td width="20%"><strong>3 constructive methods</strong><br><sub>GRASP, Reactive GRASP and GRASP with Path Relinking.</sub></td>
 <td width="20%"><strong>1 hybrid / memetic method</strong><br><sub>Moscato-style memetic evolution with local improvement.</sub></td>
 </tr>
-<tr><td colspan="5"><strong>8 other / music-inspired methods</strong><br><sub>HS, IHS, GHS, SGHS, NGHS, PSF-HS, iteration APSF-HS and object APSF-HS as separate literature identities.</sub></td>
+<tr><td colspan="5"><strong>9 other / music-inspired methods</strong><br><sub>HS, IHS, GHS, SGHS, NGHS, PSF-HS, iteration APSF-HS and object APSF-HS as separate literature identities.</sub></td>
 </tr>
 </table>
 
-<p align="center"><strong>52 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>53 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -160,6 +160,7 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/novel-global-harmony-search-zou-gao-wu-li-2010.html"><strong>Novel Global Harmony Search - Zou, Gao, Wu and Li</strong></a><br><sub>Reflected-best position update, low-probability genetic mutation and unconditional worst-harmony replacement.</sub><br><code>novel-global-harmony-search-zou-gao-wu-li-2010</code><br><sub><code>NovelGlobalHarmonySearchOptimizer</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/parameter-setting-free-harmony-search-geem-sim-2010.html"><strong>Parameter-Setting-Free Harmony Search - Geem and Sim</strong></a><br><sub>Operation Type Matrix with rehearsal then variable-specific HMCR/PAR learned from surviving random, memory and pitch operations.</sub><br><code>parameter-setting-free-harmony-search-geem-sim-2010</code><br><sub><code>ParameterSettingFreeHarmonySearchOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/advanced-parameter-setting-free-harmony-search-iteration-jeong-park-geem-sim-2020.html"><strong>Advanced Parameter-Setting-Free Harmony Search - Iteration Scheme</strong></a><br><sub>Sigmoid iteration/dimension HMCR with dimension-aware PAR and no Operation Type Matrix.</sub><br><code>advanced-parameter-setting-free-harmony-search-iteration-jeong-park-geem-sim-2020</code><br><sub><code>AdvancedParameterSettingFreeHarmonySearchIterationOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/advanced-parameter-setting-free-harmony-search-object-jeong-park-geem-sim-2020.html"><strong>Advanced Parameter-Setting-Free Harmony Search - Object Scheme</strong></a><br><sub>Target-dependent HMCR/PAR with object-only adaptive bandwidth from HM-mean progress.</sub><br><code>advanced-parameter-setting-free-harmony-search-object-jeong-park-geem-sim-2020</code><br><sub><code>AdvancedParameterSettingFreeHarmonySearchObjectOptimizer</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/differential-harmony-search-chakraborty-roy-das-jain-abraham-2009.html"><strong>Differential Harmony Search</strong></a><br><sub>HS memory/random improvisation followed by the paper's differential mutation Eq. (5), with F drawn uniformly on [0,1].</sub><br><code>differential-harmony-search-chakraborty-roy-das-jain-abraham-2009</code><br><sub><code>DifferentialHarmonySearchOptimizer</code></sub></td></tr>
 </table>
 ## Scientific components
 

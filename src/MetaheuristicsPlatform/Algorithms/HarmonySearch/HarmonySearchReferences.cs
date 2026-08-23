@@ -67,4 +67,12 @@ public static class HarmonySearchReferences
             "Advanced Parameter-Setting-Free Harmony Search Algorithm",
             "Applied Sciences 10(7), 2586",
             "10.3390/app10072586");
+
+    public static ScientificReference ChakrabortyRoyDasJainAbraham2009 { get; } =
+        new(
+            "P. Chakraborty, G. G. Roy, S. Das, D. Jain, A. Abraham",
+            2009,
+            "An Improved Harmony Search Algorithm with Differential Mutation Operator",
+            "Fundamenta Informaticae 95(4), 401-426",
+            "10.3233/FI-2009-157");
 }

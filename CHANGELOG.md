@@ -2,6 +2,20 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.63.0] - 2026-08-23
+
+### Added
+
+- Differential Harmony Search (DHS) from Chakraborty et al. (2009), with Eq. (5) differential mutation and F~U[0,1].
+- Stable ID `differential-harmony-search-chakraborty-roy-das-jain-abraham-2009` and DOI `10.3233/FI-2009-157`.
+- Focused scientific tests, validator, benchmark and complete documentation page.
+
+### Changed
+
+- Public algorithm count increases to 53.
+- Existing historical scientific validators remain frozen.
+- No external numerical dependency is introduced.
+
 ## [0.62.0] - 2026-08-23
 
 ### Added

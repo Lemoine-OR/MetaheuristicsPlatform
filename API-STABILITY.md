@@ -364,3 +364,14 @@ published equation is minimization-only and is not silently generalized to maxim
 
 The paper leaves the fixed rehearsal rates and pre-Equation-(9) bandwidth underdetermined.
 The platform exposes those quantities and documents its 0.5/0.5 and 0.1%-range defaults.
+
+
+## v0.63.0 Differential Harmony Search
+
+Stable public ID introduced:
+
+- `differential-harmony-search-chakraborty-roy-das-jain-abraham-2009`
+
+Scientific source: P. Chakraborty, G. G. Roy, S. Das, D. Jain, A. Abraham (2009), An Improved Harmony Search Algorithm with Differential Mutation Operator, Fundamenta Informaticae 95(4), 401-426. DOI `10.3233/FI-2009-157`.
+
+Exact DHS structure: HS memory/random intermediate vector followed by DE/rand/1-style differential mutation with one F~U[0,1] and two distinct HM members; strict objective-sense replacement.

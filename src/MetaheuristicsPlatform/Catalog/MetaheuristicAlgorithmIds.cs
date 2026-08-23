@@ -26,6 +26,8 @@ public static class MetaheuristicAlgorithmIds
         "advanced-parameter-setting-free-harmony-search-iteration-jeong-park-geem-sim-2020";
     public const string AdvancedParameterSettingFreeHarmonySearchObject =
         "advanced-parameter-setting-free-harmony-search-object-jeong-park-geem-sim-2020";
+    public const string DifferentialHarmonySearch =
+        "differential-harmony-search-chakraborty-roy-das-jain-abraham-2009";
     public const string AntSystem =
         "ant-system-dorigo-maniezzo-colorni-1996";
     public const string AntColonySystem =
