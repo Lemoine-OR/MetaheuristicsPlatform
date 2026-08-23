@@ -36,3 +36,5 @@ Return to @ref method_families "method families".
 - @subpage exploratory_harmony_search_das_mukhopadhyay_roy_abraham_panigrahi_2011 - Exploratory Harmony Search with Harmony-Memory standard-deviation fine-tuning width.
 
 - @subpage improved_harmony_search_differential_mutation_yong_liu_zhang_feng_2012 - IHSDE with differential mutation and F sampled uniformly from [0.6,1].
+
+- @subpage novel_self_adaptive_harmony_search_luo_2013 - Novel Self-Adaptive Harmony Search with dimension-derived HMCR and fitness-dispersion control.

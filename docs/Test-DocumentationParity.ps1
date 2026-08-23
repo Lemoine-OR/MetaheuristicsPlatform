@@ -20,8 +20,8 @@ $catalog =
 $algorithms = @($catalog.algorithms)
 $families = @($catalog.families)
 
-if ($algorithms.Count -lt 55) {
-    throw "Documentation parity: expected at least 55 currently public algorithms."
+if ($algorithms.Count -lt 56) {
+    throw "Documentation parity: expected at least 56 currently public algorithms."
 }
 
 $requiredFields = @(
@@ -180,6 +180,8 @@ $requiredRepoFiles = @(
     "docs\pages\algorithms\exploratory-harmony-search-das-mukhopadhyay-roy-abraham-panigrahi-2011.md",
     "docs\Test-ImprovedHarmonySearchDifferentialMutation.ps1",
     "docs\pages\algorithms\improved-harmony-search-differential-mutation-yong-liu-zhang-feng-2012.md",
+    "docs\Test-NovelSelfAdaptiveHarmonySearch.ps1",
+    "docs\pages\algorithms\novel-self-adaptive-harmony-search-luo-2013.md",
     "docs\pages\families\other-metaheuristics.md",
     "docs\Test-DoxygenMarkupSafety.ps1",
     "docs\Test-ContinuousCrossEntropy.ps1",
@@ -328,8 +330,8 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.65.0") {
-    throw "Documentation parity: version.json must be 0.65.0 for this release."
+if ([string]$version.version -ne "0.66.0") {
+    throw "Documentation parity: version.json must be 0.66.0 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root
@@ -360,6 +362,7 @@ if ([string]$version.version -ne "0.65.0") {
 & (Join-Path $Root "docs\Test-DifferentialHarmonySearch.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-ExploratoryHarmonySearch.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-ImprovedHarmonySearchDifferentialMutation.ps1") -Root $Root
+& (Join-Path $Root "docs\Test-NovelSelfAdaptiveHarmonySearch.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-DoxygenMarkupSafety.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-ContinuousCrossEntropy.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-LargeNeighborhoodSearch.ps1") -Root $Root

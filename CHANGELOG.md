@@ -2,6 +2,20 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.66.0] - 2026-08-23
+
+### Added
+
+- NSHS from Luo (2013), with HMCR=1-1/(D+1), no PAR and fstd-driven perturbation.
+- Stable ID `novel-self-adaptive-harmony-search-luo-2013` and DOI `10.1155/2013/653749`.
+- Focused scientific tests, validator, benchmark and complete documentation page.
+
+### Changed
+
+- Public algorithm count increases to 56.
+- Existing historical scientific validators remain frozen.
+- No external numerical dependency is introduced.
+
 ## [0.65.0] - 2026-08-23
 
 ### Added

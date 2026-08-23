@@ -397,3 +397,14 @@ Stable public ID introduced:
 Scientific source: L. Yong, S. Liu, J. Zhang, Q. Feng (2012), Theoretical and Empirical Analyses of an Improved Harmony Search Algorithm Based on Differential Mutation Operator, Journal of Applied Mathematics 2012, Article 147950. DOI `10.1155/2012/147950`.
 
 IHSDE memory branch chooses j,r1,r2 distinct and generates x'_i=x^j_i+F(x^r1_i-x^r2_i), F~U[0.6,1]; random branch remains uniform over bounds.
+
+
+## v0.66.0 Novel Self-Adaptive Harmony Search
+
+Stable public ID introduced:
+
+- `novel-self-adaptive-harmony-search-luo-2013`
+
+Scientific source: K. Luo (2013), A Novel Self-Adaptive Harmony Search Algorithm, Journal of Applied Mathematics 2013, Article 653749. DOI `10.1155/2013/653749`.
+
+NSHS dimension-derived HMCR, no PAR, fitness-standard-deviation threshold 0.0001, best-to-worst narrow randomization under low diversity and the paper's two perturbation branches.

@@ -1247,6 +1247,28 @@
                            "assumptions":  "Bounded continuous minimization, HMS\u003e=3, finite objective values.",
                            "convergence":  "The paper derives population mean/variance behavior and reports empirical convergence; no universal finite-time global convergence theorem is claimed.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "novel-self-adaptive-harmony-search-luo-2013",
+                           "name":  "Novel Self-Adaptive Harmony Search",
+                           "class":  "NovelSelfAdaptiveHarmonySearchOptimizer",
+                           "category":  "other-metaheuristics",
+                           "kind":  "population",
+                           "family":  "Other / music-inspired methods",
+                           "time":  "O(H*D) memory plus variant-specific improvisation work",
+                           "space":  "O(H*D)",
+                           "applicability":  "Bounded continuous derivative-free minimization.",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/HarmonySearch/NovelSelfAdaptiveHarmonySearchOptimizer.cs",
+                           "publication":  "K. Luo (2013), A Novel Self-Adaptive Harmony Search Algorithm, Journal of Applied Mathematics 2013, Article 653749",
+                           "doi":  "10.1155/2013/653749",
+                           "implementation":  "NSHS dimension-derived HMCR, no PAR, fitness-standard-deviation threshold 0.0001, best-to-worst narrow randomization under low diversity and the paper\u0027s two perturbation branches.",
+                           "page":  "docs/pages/algorithms/novel-self-adaptive-harmony-search-luo-2013.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}HMCR\u0026=1-\\frac{1}{D+1},\\quad PAR\\ \\text{removed},\\\\ \\delta_i\u0026=\\frac{U_i-L_i}{100}(1-t/NI)U(-1,1)\\ \\text{if }f_{std}\u003e10^{-4}\\ \\text{else }10^{-4}U(-1,1)\\end{aligned}",
+                           "assumptions":  "Bounded continuous minimization, finite objectives and positive dimensionality.",
+                           "convergence":  "The paper motivates self-adaptation through diversity/intensity balance; no universal finite-time global convergence theorem is asserted.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

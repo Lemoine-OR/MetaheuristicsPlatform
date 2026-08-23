@@ -114,3 +114,6 @@ v0.64.0 exploratory-harmony-search-das-mukhopadhyay-roy-abraham-panigrahi-2011: 
 
 
 v0.65.0 improved-harmony-search-differential-mutation-yong-liu-zhang-feng-2012: L. Yong, S. Liu, J. Zhang, Q. Feng (2012), Theoretical and Empirical Analyses of an Improved Harmony Search Algorithm Based on Differential Mutation Operator, Journal of Applied Mathematics 2012, Article 147950. DOI `10.1155/2012/147950`.
+
+
+v0.66.0 novel-self-adaptive-harmony-search-luo-2013: K. Luo (2013), A Novel Self-Adaptive Harmony Search Algorithm, Journal of Applied Mathematics 2013, Article 653749. DOI `10.1155/2013/653749`.

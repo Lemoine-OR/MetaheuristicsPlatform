@@ -91,4 +91,12 @@ public static class HarmonySearchReferences
             "Theoretical and Empirical Analyses of an Improved Harmony Search Algorithm Based on Differential Mutation Operator",
             "Journal of Applied Mathematics 2012, Article 147950",
             "10.1155/2012/147950");
+
+    public static ScientificReference Luo2013NovelSelfAdaptive { get; } =
+        new(
+            "K. Luo",
+            2013,
+            "A Novel Self-Adaptive Harmony Search Algorithm",
+            "Journal of Applied Mathematics 2013, Article 653749",
+            "10.1155/2013/653749");
 }
