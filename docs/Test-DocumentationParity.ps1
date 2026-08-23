@@ -20,8 +20,8 @@ $catalog =
 $algorithms = @($catalog.algorithms)
 $families = @($catalog.families)
 
-if ($algorithms.Count -lt 53) {
-    throw "Documentation parity: expected at least 53 currently public algorithms."
+if ($algorithms.Count -lt 54) {
+    throw "Documentation parity: expected at least 54 currently public algorithms."
 }
 
 $requiredFields = @(
@@ -176,6 +176,8 @@ $requiredRepoFiles = @(
     "docs\pages\algorithms\advanced-parameter-setting-free-harmony-search-object-jeong-park-geem-sim-2020.md",
     "docs\Test-DifferentialHarmonySearch.ps1",
     "docs\pages\algorithms\differential-harmony-search-chakraborty-roy-das-jain-abraham-2009.md",
+    "docs\Test-ExploratoryHarmonySearch.ps1",
+    "docs\pages\algorithms\exploratory-harmony-search-das-mukhopadhyay-roy-abraham-panigrahi-2011.md",
     "docs\pages\families\other-metaheuristics.md",
     "docs\Test-DoxygenMarkupSafety.ps1",
     "docs\Test-ContinuousCrossEntropy.ps1",
@@ -324,8 +326,8 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.63.0") {
-    throw "Documentation parity: version.json must be 0.63.0 for this release."
+if ([string]$version.version -ne "0.64.0") {
+    throw "Documentation parity: version.json must be 0.64.0 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root
@@ -354,6 +356,7 @@ if ([string]$version.version -ne "0.63.0") {
 & (Join-Path $Root "docs\Test-AdvancedParameterSettingFreeHarmonySearchIteration.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-AdvancedParameterSettingFreeHarmonySearchObject.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-DifferentialHarmonySearch.ps1") -Root $Root
+& (Join-Path $Root "docs\Test-ExploratoryHarmonySearch.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-DoxygenMarkupSafety.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-ContinuousCrossEntropy.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-LargeNeighborhoodSearch.ps1") -Root $Root

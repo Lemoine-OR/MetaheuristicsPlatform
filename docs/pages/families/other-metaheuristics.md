@@ -32,3 +32,5 @@ keep all eight scientific identities separate.
 Return to @ref method_families "method families".
 
 - @subpage differential_harmony_search_chakraborty_roy_das_jain_abraham_2009 - Differential Harmony Search with DE/rand/1-style mutation replacing classical pitch adjustment.
+
+- @subpage exploratory_harmony_search_das_mukhopadhyay_roy_abraham_panigrahi_2011 - Exploratory Harmony Search with Harmony-Memory standard-deviation fine-tuning width.

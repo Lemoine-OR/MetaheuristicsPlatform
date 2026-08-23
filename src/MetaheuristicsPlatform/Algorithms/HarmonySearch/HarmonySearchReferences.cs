@@ -75,4 +75,12 @@ public static class HarmonySearchReferences
             "An Improved Harmony Search Algorithm with Differential Mutation Operator",
             "Fundamenta Informaticae 95(4), 401-426",
             "10.3233/FI-2009-157");
+
+    public static ScientificReference DasMukhopadhyayRoyAbrahamPanigrahi2011 { get; } =
+        new(
+            "S. Das, A. Mukhopadhyay, A. Roy, A. Abraham, B. K. Panigrahi",
+            2011,
+            "Exploratory Power of the Harmony Search Algorithm: Analysis and Improvements for Global Numerical Optimization",
+            "IEEE Transactions on Systems, Man, and Cybernetics, Part B 41(1), 89-106",
+            "10.1109/TSMCB.2010.2046035");
 }

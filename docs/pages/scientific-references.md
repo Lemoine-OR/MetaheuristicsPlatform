@@ -108,3 +108,6 @@ v0.55.0 implements HS 2001, v0.56.0 IHS 2007, v0.57.0 GHS 2008, v0.58.0 SGHS 201
 
 
 v0.63.0 differential-harmony-search-chakraborty-roy-das-jain-abraham-2009: P. Chakraborty, G. G. Roy, S. Das, D. Jain, A. Abraham (2009), An Improved Harmony Search Algorithm with Differential Mutation Operator, Fundamenta Informaticae 95(4), 401-426. DOI `10.3233/FI-2009-157`.
+
+
+v0.64.0 exploratory-harmony-search-das-mukhopadhyay-roy-abraham-panigrahi-2011: S. Das, A. Mukhopadhyay, A. Roy, A. Abraham, B. K. Panigrahi (2011), Exploratory Power of the Harmony Search Algorithm: Analysis and Improvements for Global Numerical Optimization, IEEE Transactions on Systems, Man, and Cybernetics, Part B 41(1), 89-106. DOI `10.1109/TSMCB.2010.2046035`.

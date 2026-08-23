@@ -1203,6 +1203,28 @@
                            "assumptions":  "Bounded continuous search, at least two harmonies, finite objective values.",
                            "convergence":  "No universal finite-time global convergence theorem is claimed in the paper.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "exploratory-harmony-search-das-mukhopadhyay-roy-abraham-panigrahi-2011",
+                           "name":  "Exploratory Harmony Search",
+                           "class":  "ExploratoryHarmonySearchOptimizer",
+                           "category":  "other-metaheuristics",
+                           "kind":  "population",
+                           "family":  "Other / music-inspired methods",
+                           "time":  "O(H*D) memory plus variant-specific improvisation work",
+                           "space":  "O(H*D)",
+                           "applicability":  "Bounded continuous derivative-free global numerical optimization.",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/HarmonySearch/ExploratoryHarmonySearchOptimizer.cs",
+                           "publication":  "S. Das, A. Mukhopadhyay, A. Roy, A. Abraham, B. K. Panigrahi (2011), Exploratory Power of the Harmony Search Algorithm: Analysis and Improvements for Global Numerical Optimization, IEEE Transactions on Systems, Man, and Cybernetics, Part B 41(1), 89-106",
+                           "doi":  "10.1109/TSMCB.2010.2046035",
+                           "implementation":  "EHS keeps canonical HS memory consideration/random selection and sets per-coordinate fine-tuning width FW_i=k*sqrt(Var(HM_i)), recomputed from the current Harmony Memory.",
+                           "page":  "docs/pages/algorithms/exploratory-harmony-search-das-mukhopadhyay-roy-abraham-panigrahi-2011.md",
+                           "problem":  "\\operatorname{opt}_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}FW_i\u0026=k\\sqrt{\\operatorname{Var}(HM_i)},\\quad k=1.17,\\\\ x_i\u0027\u0026=x_i\\pm U(0,1)FW_i\\ \\text{with probability }PAR\\end{aligned}",
+                           "assumptions":  "Bounded continuous search, finite HM coordinate variance and finite objective values.",
+                           "convergence":  "The paper analyzes population variance and exploratory power; no universal finite-time global convergence theorem is asserted.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

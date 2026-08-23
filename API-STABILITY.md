@@ -375,3 +375,14 @@ Stable public ID introduced:
 Scientific source: P. Chakraborty, G. G. Roy, S. Das, D. Jain, A. Abraham (2009), An Improved Harmony Search Algorithm with Differential Mutation Operator, Fundamenta Informaticae 95(4), 401-426. DOI `10.3233/FI-2009-157`.
 
 Exact DHS structure: HS memory/random intermediate vector followed by DE/rand/1-style differential mutation with one F~U[0,1] and two distinct HM members; strict objective-sense replacement.
+
+
+## v0.64.0 Exploratory Harmony Search
+
+Stable public ID introduced:
+
+- `exploratory-harmony-search-das-mukhopadhyay-roy-abraham-panigrahi-2011`
+
+Scientific source: S. Das, A. Mukhopadhyay, A. Roy, A. Abraham, B. K. Panigrahi (2011), Exploratory Power of the Harmony Search Algorithm: Analysis and Improvements for Global Numerical Optimization, IEEE Transactions on Systems, Man, and Cybernetics, Part B 41(1), 89-106. DOI `10.1109/TSMCB.2010.2046035`.
+
+EHS keeps canonical HS memory consideration/random selection and sets per-coordinate fine-tuning width FW_i=k*sqrt(Var(HM_i)), recomputed from the current Harmony Memory.

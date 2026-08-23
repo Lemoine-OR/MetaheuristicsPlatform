@@ -2,6 +2,20 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.64.0] - 2026-08-23
+
+### Added
+
+- Exploratory Harmony Search (EHS) from Das et al. with population-variance-derived fine-tuning width.
+- Stable ID `exploratory-harmony-search-das-mukhopadhyay-roy-abraham-panigrahi-2011` and DOI `10.1109/TSMCB.2010.2046035`.
+- Focused scientific tests, validator, benchmark and complete documentation page.
+
+### Changed
+
+- Public algorithm count increases to 54.
+- Existing historical scientific validators remain frozen.
+- No external numerical dependency is introduced.
+
 ## [0.63.0] - 2026-08-23
 
 ### Added
