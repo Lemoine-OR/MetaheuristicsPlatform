@@ -30,18 +30,20 @@ The canonical default acceptance policy uses geometric simulated annealing. Beca
 scales are generic in the platform, the starting temperature is explicit rather than inferred
 from an assumed positive routing cost.
 
-## Reviewed but deferred to Advanced ALNS
+## Advanced ALNS composition
+
+v0.54 publishes executable advanced components separately under @ref advanced_adaptive_large_neighborhood_search_components "Advanced Adaptive Large Neighborhood Search Components". They remain outside the canonical Ropke-Pisinger identity described on this page.
+
+## Mechanisms still deferred from the canonical identity
 
 ### Pair-coupled operator weights
 
 A joint destroy-repair pair controller changes the learning state from two independent weight
-vectors to a matrix and is therefore kept scientifically distinct.
+vectors to a matrix. v0.54 implements it as a separate advanced component.
 
 ### Alternative acceptance criteria
 
-The platform already contains reusable acceptance mechanisms, but replacing the canonical
-simulated-annealing default belongs to an advanced ALNS catalog. Santini, Ropke & Hvattum
-(2018), DOI `10.1007/s10732-018-9377-x`, provides the dedicated comparative reference.
+Replacing the canonical simulated-annealing default belongs to advanced ALNS composition. v0.54 exposes Threshold Accepting and Record-to-Record Travel through the common trajectory-acceptance adapter. Santini, Ropke & Hvattum (2018), DOI `10.1007/s10732-018-9377-x`, provides the comparative reference.
 
 ### Contextual and learned operator selection
 

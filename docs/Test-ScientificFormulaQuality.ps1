@@ -155,7 +155,8 @@ foreach ($catalogRelative in @(
     "docs\advanced-ant-colony-optimization-catalog.json",
     "docs\cma-es-component-catalog.json",
     "docs\large-neighborhood-search-component-catalog.json",
-    "docs\adaptive-large-neighborhood-search-component-catalog.json"
+    "docs\adaptive-large-neighborhood-search-component-catalog.json",
+    "docs\advanced-adaptive-large-neighborhood-search-catalog.json"
 )) {
     $componentCatalog =
         (Read-Utf8 $catalogRelative) |
@@ -279,7 +280,8 @@ foreach ($specialBuilder in @(
     "docs\Build-MemeticAlgorithmDocumentation.ps1",
     "docs\Build-AdvancedAntColonyDocumentation.ps1",
     "docs\Build-CmaEsDocumentation.ps1",
-    "docs\Build-AdaptiveLargeNeighborhoodSearchDocumentation.ps1"
+    "docs\Build-AdaptiveLargeNeighborhoodSearchDocumentation.ps1",
+    "docs\Build-AdvancedAdaptiveLargeNeighborhoodSearchDocumentation.ps1"
 )) {
     $specialSource = Read-Utf8 $specialBuilder
 

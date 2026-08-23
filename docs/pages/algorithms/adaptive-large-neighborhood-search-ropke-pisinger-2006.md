@@ -111,6 +111,12 @@ OptimizationResult<MySolution> result =
 
 `adaptive-large-neighborhood-search-ropke-pisinger-2006`
 
+## Advanced ALNS composition
+
+The canonical stable ID does not change in v0.54. Optional pair-level selection, alpha-UCB
+operator learning and alternative acceptance criteria are documented under
+@subpage advanced_adaptive_large_neighborhood_search_components.
+
 ## Mathematical details
 
 ### Problem formulation

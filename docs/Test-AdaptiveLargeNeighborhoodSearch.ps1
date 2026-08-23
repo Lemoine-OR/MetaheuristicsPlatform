@@ -35,6 +35,7 @@ foreach ($relative in @(
     "src\MetaheuristicsPlatform\Algorithms\AdaptiveLargeNeighborhoodSearch\AdaptiveLargeNeighborhoodSearchAcceptance.cs",
     "src\MetaheuristicsPlatform\Algorithms\AdaptiveLargeNeighborhoodSearch\AdaptiveLargeNeighborhoodSearchState.cs",
     "src\MetaheuristicsPlatform\Algorithms\AdaptiveLargeNeighborhoodSearch\AdaptiveLargeNeighborhoodSearchReferences.cs",
+    "src\MetaheuristicsPlatform\Algorithms\AdaptiveLargeNeighborhoodSearch\AdaptiveLargeNeighborhoodOperatorSelection.cs",
     "tests\MetaheuristicsPlatform.Tests\AdaptiveLargeNeighborhoodSearchTests.cs",
     "benchmarks\MetaheuristicsPlatform.Benchmarks\AdaptiveLargeNeighborhoodSearchBenchmarks.cs",
     "docs\adaptive-large-neighborhood-search-component-catalog.json",
@@ -51,12 +52,15 @@ $source =
     Read-Utf8 "src\MetaheuristicsPlatform\Algorithms\AdaptiveLargeNeighborhoodSearch\AdaptiveLargeNeighborhoodSearchOptimizer.cs"
 
 foreach ($marker in @(
-    "AdaptiveLargeNeighborhoodAdaptation.SelectIndex(",
+    "IAdaptiveLargeNeighborhoodOperatorSelectionSession selectionSession",
+    "selectionSession.Select(",
     "_destroyOperators[destroyIndex]",
     "_repairOperators[repairIndex]",
     "visited.Add(",
     "AdaptiveLargeNeighborhoodAdaptation.DetermineReward(",
-    "UpdateWeights(",
+    "selectionSession.RecordOutcome(",
+    "selectionSession.CompleteIteration(",
+    "selectionSession.GetCurrentSelectionMetrics(",
     "context.Evaluate(",
     "context.EvaluateStopping(",
     "context.CompleteIteration(",
@@ -64,6 +68,21 @@ foreach ($marker in @(
 )) {
     if (-not $source.Contains($marker)) {
         throw "Adaptive Large Neighborhood Search validation: implementation marker '$marker' is missing."
+    }
+}
+
+$selection =
+    Read-Utf8 "src\MetaheuristicsPlatform\Algorithms\AdaptiveLargeNeighborhoodSearch\AdaptiveLargeNeighborhoodOperatorSelection.cs"
+
+foreach ($marker in @(
+    "IndependentSegmentedRouletteOperatorSelectionStrategy",
+    "AdaptiveLargeNeighborhoodAdaptation.SelectIndex(",
+    "AdaptiveLargeNeighborhoodAdaptation.UpdateWeight(",
+    "SegmentUpdateCount",
+    "parameters.SegmentLength"
+)) {
+    if (-not $selection.Contains($marker)) {
+        throw "Adaptive Large Neighborhood Search validation: canonical selection marker '$marker' is missing."
     }
 }
 

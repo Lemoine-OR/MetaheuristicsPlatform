@@ -2,6 +2,22 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.54.0] - 2026-08-23
+
+### Added
+
+- Advanced ALNS component layer without creating a second algorithm identity.
+- Pair-coupled segmented roulette selection with joint destroy/repair weights.
+- Alpha-UCB destroy/repair pair selection following Hendel (2022), DOI `10.1007/s12532-021-00209-7`.
+- Generic trajectory-acceptance adapter exposing Threshold Accepting and Record-to-Record Travel to ALNS.
+- Advanced ALNS component catalog, documentation, focused tests and benchmarks.
+
+### Changed
+
+- `AdaptiveLargeNeighborhoodSearchOptimizer<TSolution,TRemoved>` now accepts an optional operator-selection strategy while preserving every v0.53 constructor and default behavior.
+- The canonical v0.53 selector is implemented as `IndependentSegmentedRouletteOperatorSelectionStrategy`.
+- Public algorithm count remains 44; v0.54 is a component/API release.
+
 ## [0.53.0] - 2026-08-22
 
 ### Added

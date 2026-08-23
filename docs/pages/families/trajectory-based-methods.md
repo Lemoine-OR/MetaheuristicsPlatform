@@ -41,6 +41,7 @@ memory and state-transition policies.
 - @ref tabu_search_memory_control_strategies "Tabu Search Memory and Reactive Control Catalog".
 - @ref large_neighborhood_search_components "Large Neighborhood Search Components".
 - @ref adaptive_large_neighborhood_search_components "Adaptive Large Neighborhood Search Components".
+- @ref advanced_adaptive_large_neighborhood_search_components "Advanced Adaptive Large Neighborhood Search Components".
 
 ## v0.23.0 Local Search Core
 

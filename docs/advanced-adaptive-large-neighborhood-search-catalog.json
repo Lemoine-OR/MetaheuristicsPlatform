@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "release": "0.54.0",
+  "family": "Advanced Adaptive Large Neighborhood Search Components",
+  "implementedCount": 4,
+  "reviewedDeferredCount": 2,
+  "entries": [
+    {
+      "id": "alns.advanced.selection.pair-coupled-segmented-roulette",
+      "name": "Pair-coupled segmented roulette selection",
+      "status": "implemented",
+      "scope": "generic",
+      "description": "Learns one adaptive weight per destroy/repair pair instead of two independent operator weights.",
+      "formulaMode": "math",
+      "formula": "\\begin{aligned}P(d,r)&=\\frac{w_{dr}}{\\sum_{i\\in\\mathcal D}\\sum_{j\\in\\mathcal R}w_{ij}},\\\\w_{dr}^{s+1}&=(1-r)w_{dr}^{s}+r\\frac{\\pi_{dr}}{\\theta_{dr}}\\quad(\\theta_{dr}>0)\\end{aligned}",
+      "publication": "Sarasola et al. (2020)",
+      "doi": "10.1002/net.21905"
+    },
+    {
+      "id": "alns.advanced.selection.alpha-ucb-hendel-2022",
+      "name": "Alpha-UCB operator-pair selection",
+      "status": "implemented",
+      "scope": "generic",
+      "description": "Treats each destroy/repair pair as a bandit action and balances average reward against an exploration bonus.",
+      "formulaMode": "math",
+      "formula": "\\begin{aligned}Q_a(t)&=\\bar r_a(t-1)+\\sqrt{\\frac{\\alpha\\ln(1+t)}{T_a(t-1)}},\\\\a_t&\\in\\operatorname*{argmax}_{a\\in\\mathcal A}Q_a(t)\\end{aligned}",
+      "publication": "Hendel (2022)",
+      "doi": "10.1007/s12532-021-00209-7"
+    },
+    {
+      "id": "alns.advanced.acceptance.threshold-adapter",
+      "name": "Threshold Accepting adapter",
+      "status": "implemented",
+      "scope": "generic",
+      "description": "Reuses the platform's sense-aware ThresholdAcceptancePolicy through the LNS/ALNS acceptance contract.",
+      "formulaMode": "math",
+      "formula": "\\begin{aligned}\\Delta(y\\mid x)&=\\operatorname{degradation}(x,y),\\\\A_{TA}(x,y)&=\\mathbf 1[\\Delta(y\\mid x)\\le\\tau]\\end{aligned}",
+      "publication": "Santini, Ropke & Hvattum (2018)",
+      "doi": "10.1007/s10732-018-9377-x"
+    },
+    {
+      "id": "alns.advanced.acceptance.record-to-record-adapter",
+      "name": "Record-to-Record Travel adapter",
+      "status": "implemented",
+      "scope": "generic",
+      "description": "Reuses the platform's best-record deviation acceptance through the LNS/ALNS acceptance contract.",
+      "formulaMode": "math",
+      "formula": "\\begin{aligned}\\Delta_B(y)&=\\operatorname{degradation}(x^{best},y),\\\\A_{RTR}(y)&=\\mathbf 1[\\Delta_B(y)\\le\\delta]\\end{aligned}",
+      "publication": "Santini, Ropke & Hvattum (2018)",
+      "doi": "10.1007/s10732-018-9377-x"
+    },
+    {
+      "id": "alns.advanced.selection.contextual-bandit",
+      "name": "Contextual multi-armed-bandit selection",
+      "status": "reviewed-deferred",
+      "scope": "future",
+      "description": "Conditions pair selection on a state-context vector rather than reward history alone.",
+      "formulaMode": "prose",
+      "formula": "Deferred until the platform has a stable generic context-vector contract for arbitrary solution representations.",
+      "publication": "Advanced ALNS / contextual bandit family",
+      "doi": "10.1007/s12532-021-00209-7"
+    },
+    {
+      "id": "alns.advanced.acceptance.great-deluge-scheduled-adapter",
+      "name": "Scheduled Great Deluge adapter",
+      "status": "reviewed-deferred",
+      "scope": "future",
+      "description": "Requires an explicit run-local level-advance hook because Great Deluge acceptance carries evolving water-level state.",
+      "formulaMode": "prose",
+      "formula": "Deferred rather than hiding mutable schedule state inside a reusable acceptance object.",
+      "publication": "Santini, Ropke & Hvattum (2018)",
+      "doi": "10.1007/s10732-018-9377-x"
+    }
+  ],
+  "references": [
+    {
+      "publication": "Sarasola et al. (2020)",
+      "doi": "10.1002/net.21905"
+    },
+    {
+      "publication": "Hendel (2022)",
+      "doi": "10.1007/s12532-021-00209-7"
+    },
+    {
+      "publication": "Santini, Ropke & Hvattum (2018)",
+      "doi": "10.1007/s10732-018-9377-x"
+    }
+  ]
+}

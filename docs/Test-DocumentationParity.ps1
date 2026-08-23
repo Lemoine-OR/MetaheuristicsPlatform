@@ -148,6 +148,10 @@ $requiredRepoFiles = @(
     "docs\Build-AdaptiveLargeNeighborhoodSearchDocumentation.ps1",
     "docs\pages\components\adaptive-large-neighborhood-search-components.md",
     "docs\pages\algorithms\adaptive-large-neighborhood-search-ropke-pisinger-2006.md",
+    "docs\Test-AdvancedAdaptiveLargeNeighborhoodSearch.ps1",
+    "docs\advanced-adaptive-large-neighborhood-search-catalog.json",
+    "docs\Build-AdvancedAdaptiveLargeNeighborhoodSearchDocumentation.ps1",
+    "docs\pages\components\advanced-adaptive-large-neighborhood-search-components.md",
     "docs\Test-ReadmeQuality.ps1",
     "docs\Test-ReadmeHistoricalCompatibility.ps1",
     "docs\large-neighborhood-search-component-catalog.json",
@@ -283,8 +287,8 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.53.0") {
-    throw "Documentation parity: version.json must be 0.53.0 for this release."
+if ([string]$version.version -ne "0.54.0") {
+    throw "Documentation parity: version.json must be 0.54.0 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root
@@ -307,6 +311,7 @@ if ([string]$version.version -ne "0.53.0") {
 & (Join-Path $Root "docs\Test-ContinuousCrossEntropy.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-LargeNeighborhoodSearch.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-AdaptiveLargeNeighborhoodSearch.ps1") -Root $Root
+& (Join-Path $Root "docs\Test-AdvancedAdaptiveLargeNeighborhoodSearch.ps1") -Root $Root
 & (Join-Path $Root "tools\Test-ReleaseWorkflowTopology.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-ReadmeQuality.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-ReadmeHistoricalCompatibility.ps1") -Root $Root

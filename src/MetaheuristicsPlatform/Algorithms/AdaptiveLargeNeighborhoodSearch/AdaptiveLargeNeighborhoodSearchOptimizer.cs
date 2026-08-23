@@ -16,6 +16,7 @@ public sealed class AdaptiveLargeNeighborhoodSearchOptimizer<TSolution,TRemoved>
     private readonly AdaptiveLargeNeighborhoodRepairOperator<TSolution,TRemoved>[] _repairOperators;
     private readonly IEqualityComparer<TSolution> _solutionComparer;
     private readonly ILargeNeighborhoodAcceptancePolicy? _acceptanceOverride;
+    private readonly IAdaptiveLargeNeighborhoodOperatorSelectionStrategy _selectionStrategy;
 
     public AdaptiveLargeNeighborhoodSearchOptimizer(
         INeighborhoodSearchInitialSolutionGenerator<TSolution> initialSolutionGenerator,
@@ -27,7 +28,8 @@ public sealed class AdaptiveLargeNeighborhoodSearchOptimizer<TSolution,TRemoved>
             destroyOperators,
             repairOperators,
             solutionComparer,
-            acceptanceOverride: null)
+            acceptanceOverride: null,
+            selectionStrategy: null)
     {
     }
 
@@ -37,6 +39,23 @@ public sealed class AdaptiveLargeNeighborhoodSearchOptimizer<TSolution,TRemoved>
         IEnumerable<AdaptiveLargeNeighborhoodRepairOperator<TSolution,TRemoved>> repairOperators,
         IEqualityComparer<TSolution> solutionComparer,
         ILargeNeighborhoodAcceptancePolicy? acceptanceOverride)
+        : this(
+            initialSolutionGenerator,
+            destroyOperators,
+            repairOperators,
+            solutionComparer,
+            acceptanceOverride,
+            selectionStrategy: null)
+    {
+    }
+
+    public AdaptiveLargeNeighborhoodSearchOptimizer(
+        INeighborhoodSearchInitialSolutionGenerator<TSolution> initialSolutionGenerator,
+        IEnumerable<AdaptiveLargeNeighborhoodDestroyOperator<TSolution,TRemoved>> destroyOperators,
+        IEnumerable<AdaptiveLargeNeighborhoodRepairOperator<TSolution,TRemoved>> repairOperators,
+        IEqualityComparer<TSolution> solutionComparer,
+        ILargeNeighborhoodAcceptancePolicy? acceptanceOverride,
+        IAdaptiveLargeNeighborhoodOperatorSelectionStrategy? selectionStrategy)
     {
         _initial =
             initialSolutionGenerator ??
@@ -52,7 +71,12 @@ public sealed class AdaptiveLargeNeighborhoodSearchOptimizer<TSolution,TRemoved>
             solutionComparer ??
             throw new ArgumentNullException(nameof(solutionComparer));
 
-        _acceptanceOverride = acceptanceOverride;
+        _acceptanceOverride =
+            acceptanceOverride;
+
+        _selectionStrategy =
+            selectionStrategy ??
+            IndependentSegmentedRouletteOperatorSelectionStrategy.Instance;
 
         ValidateOperatorPool(
             _destroyOperators.Select(item => item.Id),
@@ -126,27 +150,11 @@ public sealed class AdaptiveLargeNeighborhoodSearchOptimizer<TSolution,TRemoved>
                 parameters.InitialTemperature,
                 parameters.CoolingRate);
 
-        double[] destroyWeights =
-            CreateUniformVector(
+        IAdaptiveLargeNeighborhoodOperatorSelectionSession selectionSession =
+            _selectionStrategy.CreateSession(
                 _destroyOperators.Length,
-                parameters.InitialOperatorWeight);
-
-        double[] repairWeights =
-            CreateUniformVector(
                 _repairOperators.Length,
-                parameters.InitialOperatorWeight);
-
-        double[] destroyScores =
-            new double[_destroyOperators.Length];
-
-        double[] repairScores =
-            new double[_repairOperators.Length];
-
-        int[] destroyUsage =
-            new int[_destroyOperators.Length];
-
-        int[] repairUsage =
-            new int[_repairOperators.Length];
+                parameters);
 
         var visited =
             new HashSet<TSolution>(
@@ -235,15 +243,16 @@ public sealed class AdaptiveLargeNeighborhoodSearchOptimizer<TSolution,TRemoved>
         {
             cancellationToken.ThrowIfCancellationRequested();
 
+            AdaptiveLargeNeighborhoodOperatorSelection selection =
+                selectionSession.Select(
+                    context.Random,
+                    iteration);
+
             int destroyIndex =
-                AdaptiveLargeNeighborhoodAdaptation.SelectIndex(
-                    destroyWeights,
-                    context.Random);
+                selection.DestroyIndex;
 
             int repairIndex =
-                AdaptiveLargeNeighborhoodAdaptation.SelectIndex(
-                    repairWeights,
-                    context.Random);
+                selection.RepairIndex;
 
             AdaptiveLargeNeighborhoodDestroyOperator<TSolution,TRemoved> destroy =
                 _destroyOperators[destroyIndex];
@@ -295,8 +304,8 @@ public sealed class AdaptiveLargeNeighborhoodSearchOptimizer<TSolution,TRemoved>
                     lastCandidateObjective: double.NaN,
                     destroyOperatorId: destroy.Id,
                     repairOperatorId: repair.Id,
-                    destroyOperatorWeight: destroyWeights[destroyIndex],
-                    repairOperatorWeight: repairWeights[repairIndex],
+                    destroyOperatorWeight: selection.DestroySelectionMetric,
+                    repairOperatorWeight: selection.RepairSelectionMetric,
                     lastReward: 0.0,
                     lastCandidateAccepted: false,
                     lastCandidateNovel: false,
@@ -368,10 +377,9 @@ public sealed class AdaptiveLargeNeighborhoodSearchOptimizer<TSolution,TRemoved>
                     accepted,
                     parameters);
 
-            destroyScores[destroyIndex] += reward;
-            repairScores[repairIndex] += reward;
-            destroyUsage[destroyIndex]++;
-            repairUsage[repairIndex]++;
+            selectionSession.RecordOutcome(
+                in selection,
+                reward);
 
             if (accepted)
             {
@@ -384,23 +392,16 @@ public sealed class AdaptiveLargeNeighborhoodSearchOptimizer<TSolution,TRemoved>
                 rejectedCandidates++;
             }
 
-            if (iterationInSegment ==
-                parameters.SegmentLength)
-            {
-                UpdateWeights(
-                    destroyWeights,
-                    destroyScores,
-                    destroyUsage,
-                    parameters.ReactionFactor);
+            selectionSession.CompleteIteration(
+                iteration);
 
-                UpdateWeights(
-                    repairWeights,
-                    repairScores,
-                    repairUsage,
-                    parameters.ReactionFactor);
+            segmentWeightUpdates =
+                selectionSession.SegmentUpdateCount;
 
-                segmentWeightUpdates++;
-            }
+            AdaptiveLargeNeighborhoodOperatorSelection currentSelectionMetrics =
+                selectionSession.GetCurrentSelectionMetrics(
+                    in selection,
+                    iteration);
 
             state =
                 CreateState(
@@ -412,8 +413,8 @@ public sealed class AdaptiveLargeNeighborhoodSearchOptimizer<TSolution,TRemoved>
                     lastCandidateObjective: candidateObjective,
                     destroyOperatorId: destroy.Id,
                     repairOperatorId: repair.Id,
-                    destroyOperatorWeight: destroyWeights[destroyIndex],
-                    repairOperatorWeight: repairWeights[repairIndex],
+                    destroyOperatorWeight: currentSelectionMetrics.DestroySelectionMetric,
+                    repairOperatorWeight: currentSelectionMetrics.RepairSelectionMetric,
                     lastReward: reward,
                     lastCandidateAccepted: accepted,
                     lastCandidateNovel: isNovel,
@@ -444,35 +445,6 @@ public sealed class AdaptiveLargeNeighborhoodSearchOptimizer<TSolution,TRemoved>
                 "MaximumAdaptiveLargeNeighborhoodSearchIterations",
                 "The configured Adaptive Large Neighborhood Search iteration limit was reached."),
             state);
-    }
-
-    private static double[] CreateUniformVector(
-        int length,
-        double value)
-    {
-        var values = new double[length];
-        Array.Fill(values, value);
-        return values;
-    }
-
-    private static void UpdateWeights(
-        double[] weights,
-        double[] scores,
-        int[] usage,
-        double reactionFactor)
-    {
-        for (int i = 0; i < weights.Length; i++)
-        {
-            weights[i] =
-                AdaptiveLargeNeighborhoodAdaptation.UpdateWeight(
-                    weights[i],
-                    scores[i],
-                    usage[i],
-                    reactionFactor);
-
-            scores[i] = 0.0;
-            usage[i] = 0;
-        }
     }
 
     private static void ValidateOperatorPool(

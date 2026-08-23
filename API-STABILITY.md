@@ -207,3 +207,28 @@ The stable identity denotes independently weighted destroy/repair pools, canonic
 Ropke-Pisinger roulette selection, novelty-aware sigma rewards, segmented reaction-factor
 adaptation and a geometric Metropolis default acceptance policy. Alternative advanced ALNS
 selection and acceptance controllers remain separate scientific components.
+
+## v0.54.0 Advanced Adaptive Large Neighborhood Search
+
+No new algorithm ID is introduced. The canonical stable identity remains:
+
+- `adaptive-large-neighborhood-search-ropke-pisinger-2006`
+
+New public composition API:
+
+- `IAdaptiveLargeNeighborhoodOperatorSelectionStrategy`
+- `IAdaptiveLargeNeighborhoodOperatorSelectionSession`
+- `AdaptiveLargeNeighborhoodOperatorSelection`
+- `IndependentSegmentedRouletteOperatorSelectionStrategy`
+- `PairCoupledSegmentedRouletteOperatorSelectionStrategy`
+- `AlphaUcbOperatorPairSelectionStrategy`
+- `TrajectoryAcceptanceLargeNeighborhoodAdapter`
+- `AdvancedAdaptiveLargeNeighborhoodAcceptance`
+- `AdvancedAdaptiveLargeNeighborhoodSearchReferences`
+
+All v0.53 optimizer constructors remain available. The new overload adds an optional
+selection-strategy argument. When omitted, the optimizer uses the canonical independent
+segmented roulette controller, preserving v0.53 semantics.
+
+Pair-level and bandit selectors are advanced composition components, not retroactive changes
+to the Ropke-Pisinger 2006 algorithm identity.
