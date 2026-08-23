@@ -1115,6 +1115,28 @@
                            "assumptions":  "Finite bounded continuous box and finite objective values; HMCR, PAR and BW are absent; mutation probability p_m is in [0,1]; reflected endpoints are truncated before interpolation.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted. Canonical unconditional replacement permits deterioration and is intentionally preserved.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "parameter-setting-free-harmony-search-geem-sim-2010",
+                           "name":  "Parameter-Setting-Free Harmony Search",
+                           "class":  "ParameterSettingFreeHarmonySearchOptimizer",
+                           "category":  "other-metaheuristics",
+                           "kind":  "population",
+                           "family":  "Other / music-inspired methods",
+                           "time":  "O(H*D) initialization; O(H*D) adaptive-rate recomputation plus O(H+D) improvisation and one objective evaluation",
+                           "space":  "O(H*D)",
+                           "applicability":  "Bounded continuous derivative-free optimization with OTM-derived variable-specific HMCR/PAR after rehearsal",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/HarmonySearch/ParameterSettingFreeHarmonySearchOptimizer.cs",
+                           "publication":  "Geem \u0026 Sim (2010), Parameter-setting-free harmony search algorithm, Applied Mathematics and Computation 217(8), 3881-3889",
+                           "doi":  "10.1016/j.amc.2010.09.049",
+                           "implementation":  "Conventional PSF-HS random tuning + rehearsal HMCR=PAR=0.5 + OTM-coupled strict replacement + per-variable HMCR/PAR derived from Random/Memory/Pitch labels.",
+                           "page":  "docs/pages/algorithms/parameter-setting-free-harmony-search-geem-sim-2010.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}HMCR_i\u0026=\\frac{\\#(Memory_i\\vee Pitch_i)}{HMS},\\\\PAR_i\u0026=\\frac{\\#Pitch_i}{\\#(Memory_i\\vee Pitch_i)},\\\\P(Random_i)\u0026=1-HMCR_i,\\\\P(Memory_i)\u0026=HMCR_i(1-PAR_i),\\\\P(Pitch_i)\u0026=HMCR_iPAR_i\\end{aligned}",
+                           "assumptions":  "OTM moves in lock-step with strict Harmony Memory replacement; initial OTM is Random; rehearsal uses HMCR=PAR=0.5; pitch bandwidth remains problem dependent. If the PAR denominator is zero, HMCR=0 and platform PAR=0 is explicit defensive completion.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted. Conventional PSF can drive variable-specific probabilities to 0 or 1 as OTM columns homogenize.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

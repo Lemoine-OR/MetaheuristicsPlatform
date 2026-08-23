@@ -20,6 +20,8 @@ public static class MetaheuristicAlgorithmIds
         "self-adaptive-global-best-harmony-search-pan-suganthan-tasgetiren-liang-2010";
     public const string NovelGlobalHarmonySearch =
         "novel-global-harmony-search-zou-gao-wu-li-2010";
+    public const string ParameterSettingFreeHarmonySearch =
+        "parameter-setting-free-harmony-search-geem-sim-2010";
     public const string AntSystem =
         "ant-system-dorigo-maniezzo-colorni-1996";
     public const string AntColonySystem =

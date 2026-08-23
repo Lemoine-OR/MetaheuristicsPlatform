@@ -53,4 +53,11 @@ public static class HarmonySearchReferences
             "Novel global harmony search algorithm for unconstrained problems",
             "Neurocomputing 73(16-18), 3308-3318",
             "10.1016/j.neucom.2010.07.010");
+    public static ScientificReference GeemSim2010ParameterSettingFree { get; } =
+        new(
+            "Z. W. Geem, K.-B. Sim",
+            2010,
+            "Parameter-setting-free harmony search algorithm",
+            "Applied Mathematics and Computation 217(8), 3881-3889",
+            "10.1016/j.amc.2010.09.049");
 }

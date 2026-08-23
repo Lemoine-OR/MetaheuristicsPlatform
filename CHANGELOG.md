@@ -2,6 +2,24 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.60.0] - 2026-08-23
+
+### Added
+
+- Parameter-Setting-Free Harmony Search following Geem and Sim (2010).
+- Stable ID `parameter-setting-free-harmony-search-geem-sim-2010`, DOI `10.1016/j.amc.2010.09.049`.
+- Operation Type Matrix tracking `RandomSelection`, `MemoryConsideration` and `PitchAdjustment` for every stored variable.
+- Conventional rehearsal with fixed HMCR = PAR = 0.5 followed by variable-specific OTM-derived HMCR/PAR.
+- Explicit zero-denominator completion: when an OTM column has no Memory/Pitch entries, HMCR=0 makes pitch unreachable and platform PAR is set to 0.
+- Focused rehearsal, OTM-degenerate, determinism, evaluation-accounting, maximization and six-identity tests plus benchmark and mathematical documentation.
+
+### Changed
+
+- Public algorithm count increases from 49 to 50.
+- Existing HS/IHS/GHS/SGHS/NGHS source implementations remain unchanged.
+- Published historical Harmony Search validators are frozen; the new PSF-HS validator owns six-identity catalog parity, avoiding retroactive validator coupling.
+- PSF-HS uses only System.Math/.NET; no external numerical package is required.
+- Release uses generic Automation v6.1.
 ## [0.59.0] - 2026-08-23
 
 ### Added

@@ -324,3 +324,16 @@ Canonical NGHS unconditionally replaces the current worst Harmony Memory member 
 new harmony, even when the candidate is not better. This behavior is API/scientific identity,
 not an implementation accident. Later fitter-only or selective-acceptance NGHS variants must
 use separate stable IDs.
+
+## v0.60.0 Parameter-Setting-Free Harmony Search
+
+Stable public ID introduced:
+
+- `parameter-setting-free-harmony-search-geem-sim-2010`
+
+The public optimizer, parameter/state types and OTM operation enum expose the Geem-Sim 2010
+PSF-HS identity. HMCR and PAR are learned separately for each decision variable from operation
+types surviving in Harmony Memory after rehearsal.
+
+The stable identity does not claim that HMS, stopping budget, rehearsal duration or pitch
+bandwidth are universally parameter free. Later advanced PSF schemes must use separate IDs.
