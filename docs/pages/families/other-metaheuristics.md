@@ -15,16 +15,17 @@ search or hybrid/memetic composition.
 - @subpage novel_global_harmony_search_zou_gao_wu_li_2010 - Novel Global Harmony Search with reflected-best position updating, genetic mutation and unconditional replacement.
 - @subpage parameter_setting_free_harmony_search_geem_sim_2010 - Parameter-Setting-Free Harmony Search with Operation Type Matrix adaptation.
 - @subpage advanced_parameter_setting_free_harmony_search_iteration_jeong_park_geem_sim_2020 - Advanced PSF-HS iteration scheme with sigmoid HMCR/PAR and no OTM.
+- @subpage advanced_parameter_setting_free_harmony_search_object_jeong_park_geem_sim_2020 - Advanced PSF-HS object scheme with target-dependent HMCR/PAR and Equation (9) bandwidth.
 
 ## Classification note
 
 Harmony Search, Improved Harmony Search, Global-best Harmony Search, Self-Adaptive
 Global-best Harmony Search, Novel Global Harmony Search, Parameter-Setting-Free Harmony
-Search and Advanced Parameter-Setting-Free Harmony Search iteration scheme are represented
+Search and the two Advanced Parameter-Setting-Free Harmony Search schemes are represented
 by `MetaheuristicFamily.Other` and `MetaheuristicSolutionModel.Population`. Conventional
-PSF-HS learns per-variable probabilities from OTM, whereas iteration APSF-HS removes OTM and
-uses direct iteration/dimension sigmoid formulas. Stable IDs keep all seven scientific
-identities separate.
+PSF-HS learns probabilities from OTM; iteration APSF-HS uses iteration/dimension formulas;
+object APSF-HS uses a target-dependent HM mean and object-only adaptive bandwidth. Stable IDs
+keep all eight scientific identities separate.
 
 ## Navigation
 

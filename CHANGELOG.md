@@ -2,6 +2,22 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.62.0] - 2026-08-23
+
+### Added
+
+- Advanced Parameter-Setting-Free Harmony Search Object scheme from Jeong, Park, Geem and Sim (2020).
+- Stable ID `advanced-parameter-setting-free-harmony-search-object-jeong-park-geem-sim-2020` with the existing paper DOI `10.3390/app10072586`.
+- Exact object-dependent HMCR Equation (7), PAR Equation (8), and object-only adaptive bandwidth Equation (9).
+- First-HMS rehearsal, explicit target-objective termination and minimization-only scientific semantics.
+- Focused formula, bandwidth-branch, target-stop, minimization-only, deterministic and eight-identity tests.
+
+### Changed
+
+- Public algorithm count increases from 51 to 52.
+- The 2020 iteration and object schemes remain separate public identities.
+- Existing historical scientific validators remain frozen.
+- No external numerical package is required.
 ## [0.61.0] - 2026-08-23
 
 ### Added

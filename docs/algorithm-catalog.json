@@ -1159,6 +1159,28 @@
                            "assumptions":  "Positive NI and bounded finite continuous spans. D=1 uses the explicit right-hand dimensional limit HMCR=0.5. Object-dependent HMCR/bandwidth is excluded.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "advanced-parameter-setting-free-harmony-search-object-jeong-park-geem-sim-2020",
+                           "name":  "Advanced Parameter-Setting-Free Harmony Search - Object Scheme",
+                           "class":  "AdvancedParameterSettingFreeHarmonySearchObjectOptimizer",
+                           "category":  "other-metaheuristics",
+                           "kind":  "population",
+                           "family":  "Other / music-inspired methods",
+                           "time":  "O(H*D) initialization; O(H+D) per improvisation; Equation (9) at HMS block boundaries",
+                           "space":  "O(H*D)",
+                           "applicability":  "Bounded continuous minimization with a known target objective",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/HarmonySearch/AdvancedParameterSettingFreeHarmonySearchObjectOptimizer.cs",
+                           "publication":  "Jeong, Park, Geem \u0026 Sim (2020), Advanced Parameter-Setting-Free Harmony Search Algorithm, Applied Sciences 10(7), 2586",
+                           "doi":  "10.3390/app10072586",
+                           "implementation":  "Object APSF-HS only: Equations (7),(8),(9); first-HMS rehearsal; strict replacement; minimization-only; target stop; coordinate-wise span lift.",
+                           "page":  "docs/pages/algorithms/advanced-parameter-setting-free-harmony-search-object-jeong-park-geem-sim-2020.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}HMCR\u0026=0.5+0.5\\sigma(10-10(L_{mean}-L_{obj})/(L_{start}-L_{obj})-5/\\ln D),\\\\ PAR\u0026=HMCR\\,\\sigma(4/D-2),\\\\ b_i/(U-L)\u0026=\\Delta L_i/(L_{start}-L_{obj})\\quad\\text{or Eq.9 fallback}\\end{aligned}",
+                           "assumptions":  "Known finite minimization target, positive finite coordinate spans, first-HMS fixed rehearsal, Loss_start greater than target while search continues.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

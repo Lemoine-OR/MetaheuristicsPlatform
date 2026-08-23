@@ -351,3 +351,16 @@ separate stable identity.
 
 For D=1 the published `log(D)` term is singular; the platform uses the explicit right-hand
 dimensional limit HMCR=0.5.
+
+## v0.62.0 Advanced Parameter-Setting-Free Harmony Search - Object Scheme
+
+Stable public ID introduced:
+
+- `advanced-parameter-setting-free-harmony-search-object-jeong-park-geem-sim-2020`
+
+This identity implements only the Jeong-Park-Geem-Sim 2020 Object PSF branch: target-dependent
+HMCR Equation (7), PAR Equation (8), and object-only adaptive bandwidth Equation (9). The
+published equation is minimization-only and is not silently generalized to maximization.
+
+The paper leaves the fixed rehearsal rates and pre-Equation-(9) bandwidth underdetermined.
+The platform exposes those quantities and documents its 0.5/0.5 and 0.1%-range defaults.
