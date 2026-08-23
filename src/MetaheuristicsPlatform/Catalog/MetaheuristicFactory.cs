@@ -30,6 +30,9 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.Firefly,
             "MetaheuristicsPlatform.Algorithms.Firefly.FireflyOptimizer");
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.HarmonySearch,
+            "MetaheuristicsPlatform.Algorithms.HarmonySearch.HarmonySearchOptimizer");
 
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.CmaEs,

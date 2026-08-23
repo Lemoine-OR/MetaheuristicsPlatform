@@ -232,3 +232,21 @@ segmented roulette controller, preserving v0.53 semantics.
 
 Pair-level and bandit selectors are advanced composition components, not retroactive changes
 to the Ropke-Pisinger 2006 algorithm identity.
+
+## v0.55.0 Harmony Search
+
+Stable public ID introduced:
+
+- `harmony-search-geem-kim-loganathan-2001`
+
+`HarmonySearchOptimizer`, `HarmonySearchParameters`, `HarmonySearchState`,
+`HarmonySearchPhase` and `HarmonySearchReferences` are public API.
+
+The stable identity denotes the fixed-parameter Geem-Kim-Loganathan 2001 Harmony Search
+foundation for bounded continuous vectors: Harmony Memory initialization, HMCR-based
+coordinate memory consideration, PAR-based pitch adjustment with an absolute bandwidth,
+and strict replacement of the current worst harmony.
+
+Improved Harmony Search (Mahdavi-Fesanghary-Damangir 2007) and Global-best Harmony Search
+(Omran-Mahdavi 2008) remain scientifically distinct later variants and are not retroactively
+mixed into this stable identity.

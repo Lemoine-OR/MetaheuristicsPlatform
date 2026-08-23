@@ -10,3 +10,4 @@ documentation portal exposes homogeneous method-family panels.
 - @subpage family_trajectory_based_methods
 - @subpage family_constructive_methods
 - @subpage family_hybrid_methods
+- @subpage family_other_metaheuristics

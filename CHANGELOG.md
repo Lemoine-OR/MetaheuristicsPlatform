@@ -2,6 +2,27 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.55.0] - 2026-08-23
+
+### Added
+
+- Canonical bounded-continuous Harmony Search foundation following Geem, Kim and Loganathan (2001).
+- Stable ID `harmony-search-geem-kim-loganathan-2001`, primary DOI `10.1177/003754970107600201`.
+- Explicit Harmony Memory Size, HMCR, PAR and absolute-bandwidth improvisation with strict worst-harmony replacement.
+- Focused deterministic/evaluation-budget/factory tests, benchmark coverage and complete mathematical documentation.
+- A dedicated `Other / music-inspired methods` documentary family avoiding forced swarm/evolutionary reclassification.
+
+### Changed
+
+- Public algorithm count increases from 44 to 45; documentation-family count increases from 5 to 6.
+- Improved Harmony Search (2007) and Global-best Harmony Search (2008) are reviewed and documented but remain distinct from the canonical 2001 executable identity.
+- v0.55 pack construction derives `expectedPaths` from a validated worktree diff and uses short physical staging paths before invoking Automation v6.0.
+- Doxygen markup safety now rejects double-escaped `\\f`, `\\begin`, `\\end` and related command sequences introduced through literal PowerShell here-strings.
+- Pack mutation switched from context-sensitive Git text patches to baseline-verified immutable final-file payloads after an exact-baseline proof exposed patch/BOM/line-ending sensitivity.
+- Pack scope derivation now cross-checks porcelain status against tracked-diff plus explicit untracked-file enumeration, preventing new files from disappearing when no intent-to-add staging side effect exists.
+- Generic pack automation v6.0 supersedes v5.9 for new releases: explicit `git.exe`, guarded .NET ZIP extraction, expanded reserved-variable safety and AST-based PowerShell 5.1 overload validation.
+- Packaging path construction now uses a single typed `Path.Combine` helper plus executable copy/hash micro-tests; malformed positional `Join-Path`/function composition is rejected before candidate generation.
+- PowerShell `-f` format-operator safety rejects concatenation/precedence patterns that can leave placeholders such as `{0}` unexpanded in diagnostics.
 ## [0.54.0] - 2026-08-23
 
 ### Added

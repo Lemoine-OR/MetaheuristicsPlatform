@@ -1,4 +1,4 @@
-﻿[CmdletBinding()]
+[CmdletBinding()]
 param(
     [string]$Root = (Split-Path -Parent $PSScriptRoot)
 )
@@ -159,6 +159,68 @@ foreach ($validator in $algorithmValidators) {
     }
 }
 
+# Historical algorithm/component validators must remain forward-compatible with later
+# releases. A component-only historical validator may assert a lower bound, uniqueness of
+# its own public IDs and its own component counts, but it must not freeze the repository-wide
+# public algorithm catalog at an exact historical size.
+function Get-FrozenPublicCatalogExactCounts(
+    [string]$ValidatorText) {
+
+    $pattern =
+        '(?is)@\(\s*\$[A-Za-z_][A-Za-z0-9_]*\.algorithms\s*\)\.Count\s*-(?:eq|ne)\s*\d+'
+
+    return @(
+        [regex]::Matches(
+            $ValidatorText,
+            $pattern) |
+        ForEach-Object {
+            [string]$_.Value
+        }
+    )
+}
+
+$validPublicCatalogGuardFixture =
+    'if (@($publicCatalog.algorithms).Count -lt 44) { throw "preserve the historical floor" }'
+
+if (@(Get-FrozenPublicCatalogExactCounts $validPublicCatalogGuardFixture).Count -ne 0) {
+    throw "Historical validator forward-compatibility self-test: a legitimate lower-bound catalog guard was rejected."
+}
+
+$invalidPublicCatalogGuardFixture =
+    'if (@($publicCatalog.algorithms).Count -ne 44) { throw "freeze future releases" }'
+
+if (@(Get-FrozenPublicCatalogExactCounts $invalidPublicCatalogGuardFixture).Count -ne 1) {
+    throw "Historical validator forward-compatibility self-test: an exact historical public-catalog count was not detected."
+}
+
+foreach ($validator in $algorithmValidators) {
+    if ($validator.Name -eq "Test-DocumentationParity.ps1" -or
+        $validator.Name -eq "Test-ReadmeQuality.ps1" -or
+        $validator.Name -eq "Test-ReadmeHistoricalCompatibility.ps1") {
+
+        continue
+    }
+
+    $validatorText =
+        [System.IO.File]::ReadAllText(
+            $validator.FullName,
+            [System.Text.Encoding]::UTF8)
+
+    $frozenPublicCounts =
+        @(Get-FrozenPublicCatalogExactCounts $validatorText)
+
+    foreach ($frozenPublicCount in $frozenPublicCounts) {
+        throw (
+            "Historical validator forward compatibility: algorithm/component validator " +
+            "'$($validator.Name)' freezes the repository-wide public algorithm catalog " +
+            "with '$frozenPublicCount'. Use a historical lower bound plus method-specific " +
+            "identity/component invariants instead.")
+    }
+}
+
+Write-Host `
+    "Historical-validator public-catalog forward compatibility passed: exact historical global counts are forbidden outside current-product parity/quality validators." `
+    -ForegroundColor Green
 Write-Host `
     "Historical-validator README aggregate-count isolation passed: catalog lower bounds are allowed; frozen README counts are forbidden." `
     -ForegroundColor Green

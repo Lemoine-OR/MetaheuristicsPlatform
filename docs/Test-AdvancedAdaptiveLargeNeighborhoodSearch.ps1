@@ -1,4 +1,4 @@
-﻿[CmdletBinding()]
+[CmdletBinding()]
 param(
     [string]$Root = (Split-Path -Parent $PSScriptRoot)
 )
@@ -135,8 +135,8 @@ $publicCatalog =
     (Read-Utf8 "docs\algorithm-catalog.json") |
     ConvertFrom-Json
 
-if (@($publicCatalog.algorithms).Count -ne 44) {
-    throw "Advanced ALNS validation: v0.54 is a component release and must keep 44 public algorithms."
+if (@($publicCatalog.algorithms).Count -lt 44) {
+    throw "Advanced ALNS validation: repositories at v0.54.0 or later must preserve at least the 44 public algorithms present when v0.54.0 was released."
 }
 
 if (@($publicCatalog.algorithms |
@@ -145,5 +145,5 @@ if (@($publicCatalog.algorithms |
 }
 
 Write-Host `
-    "Advanced ALNS validation passed: pair-coupled segmented roulette + alpha-UCB pair learning + Threshold/RTR acceptance composition; public algorithm count remains 44." `
+    "Advanced ALNS validation passed: pair-coupled segmented roulette + alpha-UCB pair learning + Threshold/RTR acceptance composition; v0.54 public-algorithm floor preserved." `
     -ForegroundColor Green

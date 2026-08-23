@@ -41,9 +41,11 @@ catalog IDs and literature-backed documentation.
 <td width="20%"><strong>3 constructive methods</strong><br><sub>GRASP, Reactive GRASP and GRASP with Path Relinking.</sub></td>
 <td width="20%"><strong>1 hybrid / memetic method</strong><br><sub>Moscato-style memetic evolution with local improvement.</sub></td>
 </tr>
+<tr><td colspan="5"><strong>1 other / music-inspired method</strong><br><sub>Canonical Harmony Search with Harmony Memory improvisation.</sub></td>
+</tr>
 </table>
 
-<p align="center"><strong>44 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>45 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -91,6 +93,8 @@ MetaheuristicFactory.Register(
 <td width="20%"><strong>Trajectory-based</strong><br><sub>Single-solution neighborhood trajectories and acceptance policies.</sub></td>
 <td width="20%"><strong>Constructive methods</strong><br><sub>Adaptive randomized construction followed by improvement.</sub></td>
 <td width="20%"><strong>Hybrid / memetic</strong><br><sub>Population methods coupled with local improvement and learning.</sub></td>
+</tr>
+<tr><td colspan="5"><strong>Other / music-inspired</strong><br><sub>Population or memory-based methods with distinct scientific identities.</sub></td>
 </tr>
 </table>
 
@@ -148,6 +152,11 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/memetic-algorithm-moscato-1989.html"><strong>Memetic Algorithm - Moscato</strong></a><br><sub>Generational evolution with adaptive local improvement and Lamarckian/Baldwinian learning.</sub><br><code>memetic-algorithm-moscato-1989</code><br><sub><code>MemeticAlgorithmOptimizer&lt;TSolution&gt;</code></sub></td></tr>
 </table>
 
+### Other / music-inspired methods
+
+<table>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/harmony-search-geem-kim-loganathan-2001.html"><strong>Harmony Search - Geem, Kim and Loganathan</strong></a><br><sub>Canonical Harmony Memory improvisation with fixed HMCR, PAR and absolute bandwidth.</sub><br><code>harmony-search-geem-kim-loganathan-2001</code><br><sub><code>HarmonySearchOptimizer</code></sub></td></tr>
+</table>
 ## Scientific components
 
 Every component catalog is integrated into the same balanced grid; no scientific component

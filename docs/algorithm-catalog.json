@@ -27,6 +27,11 @@
                          "id":  "constructive-methods",
                          "name":  "Constructive methods",
                          "description":  "Methods that build complete solutions progressively from domain-defined components, often followed by local improvement."
+                     },
+                     {
+                         "id":  "other-metaheuristics",
+                         "name":  "Other / music-inspired methods",
+                         "description":  "Population-based or memory-driven metaheuristics whose scientific identity is not accurately represented as swarm, evolutionary, trajectory, constructive or hybrid."
                      }
                  ],
     "algorithms":  [
@@ -930,7 +935,7 @@
                            "implementation":  "Weighted active covariance adaptation with normalized negative unsuccessful directions, positive logarithmic parent recombination, CSA and positive-definite covariance reconstruction.",
                            "page":  "docs/pages/algorithms/active-cma-es-hansen-ros-2010.md",
                            "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^n} f(x)",
-                           "update":  "\\begin{aligned}C^+\u0026=\\left(1-c_1-c_{\\mu}\\sum_{i=1}^{\\lambda}w_i\\right)C+c_1p_cp_c^{\\mathsf T}+c_{\\mu}\\sum_{i=1}^{\\lambda}w_i^{\\circ}y_i y_i^{\\mathsf T},\\\\w_i^{\\circ}\u0026=w_i\\quad(w_i\\ge0),\\qquad w_i^{\\circ}=w_i n/\\lVert C^{-1/2}y_i\\rVert^2\\quad(w_i<0)\\end{aligned}",
+                           "update":  "\\begin{aligned}C^+\u0026=\\left(1-c_1-c_{\\mu}\\sum_{i=1}^{\\lambda}w_i\\right)C+c_1p_cp_c^{\\mathsf T}+c_{\\mu}\\sum_{i=1}^{\\lambda}w_i^{\\circ}y_i y_i^{\\mathsf T},\\\\w_i^{\\circ}\u0026=w_i\\quad(w_i\\ge0),\\qquad w_i^{\\circ}=w_i n/\\lVert C^{-1/2}y_i\\rVert^2\\quad(w_i\u003c0)\\end{aligned}",
                            "assumptions":  "Finite bounded continuous domain; finite objective values; negative covariance mass is limited and covariance eigenvalues are floored before the next generation.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; active covariance adaptation remains stochastic and problem dependent.",
                            "factoryMode":  "direct"
@@ -999,6 +1004,28 @@
                            "update":  "\\begin{aligned}\\lambda_{\\mathrm{small}}\u0026=\\left\\lfloor\\lambda_0\\left(\\frac{1}{2}\\frac{\\lambda_{\\mathrm{large}}}{\\lambda_0}\\right)^{U_1^2}\\right\\rfloor,\\\\\\sigma_{\\mathrm{small}}^0\u0026=\\sigma_0 10^{-2U_2}\\end{aligned}",
                            "assumptions":  "Finite bounded continuous domain; large and small regimes share one global evaluation budget and best-so-far state.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; BIPOP diversifies restart scales through a two-regime portfolio.",
+                           "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "harmony-search-geem-kim-loganathan-2001",
+                           "name":  "Harmony Search",
+                           "class":  "HarmonySearchOptimizer",
+                           "category":  "other-metaheuristics",
+                           "kind":  "population",
+                           "family":  "Other / music-inspired methods",
+                           "time":  "O(H*D) initialization; O(D+H) per improvisation plus one objective evaluation",
+                           "space":  "O(H*D)",
+                           "applicability":  "Bounded continuous derivative-free optimization using Harmony Memory consideration, pitch adjustment and worst-harmony replacement",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/HarmonySearch/HarmonySearchOptimizer.cs",
+                           "publication":  "Geem, Kim \u0026 Loganathan (2001), A New Heuristic Optimization Algorithm: Harmony Search, SIMULATION 76(2), 60-68",
+                           "doi":  "10.1177/003754970107600201",
+                           "implementation":  "Canonical fixed-parameter HMS/HMCR/PAR/absolute-bandwidth improvisation, component-wise bounded repair, strict worst-harmony replacement and exact OptimizationContext accounting.",
+                           "page":  "docs/pages/algorithms/harmony-search-geem-kim-loganathan-2001.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x),\\quad \\mathcal X=\\prod_{j=1}^{D}[l_j,u_j]",
+                           "update":  "\\begin{aligned}x\u0027_j\u0026=\\begin{cases}x_j^{(K_j)}+B_jS_jW_jbw,\u0026U_j\u003cHMCR,\\\\l_j+V_j(u_j-l_j),\u0026U_j\\ge HMCR,\\end{cases}\\\\B_j\u0026\\sim\\operatorname{Bernoulli}(PAR),\\quad K_j\\sim\\mathcal U\\{1,\\ldots,H\\}\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous box; finite objective values; fixed HMS, HMCR, PAR and absolute bandwidth during one run; deterministic platform-owned random stream.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; behavior depends on Harmony Memory size, HMCR, PAR, absolute bandwidth, scaling and evaluation budget. IHS/GHS variants remain scientifically separate.",
                            "factoryMode":  "direct"
                        }
                    ]

@@ -97,3 +97,11 @@ v0.41.0 implements a representation-independent fixed-size generational GA found
 - Stützle, T.; Hoos, H. H. (2000). *MAX-MIN Ant System*. Future Generation Computer Systems 16(8), 889-914. DOI `10.1016/S0167-739X(00)00043-1`.
 
 v0.44.0 implements the canonical Ant System foundation. ACS and MAX-MIN Ant System remain scientifically distinct reviewed/deferred variants for the next ACO layer.
+
+## Harmony Search
+
+- Geem, Z. W.; Kim, J. H.; Loganathan, G. V. (2001), *A New Heuristic Optimization Algorithm: Harmony Search*, SIMULATION 76(2), 60-68. DOI `10.1177/003754970107600201`.
+- Mahdavi, M.; Fesanghary, M.; Damangir, E. (2007), *An improved harmony search algorithm for solving optimization problems*, Applied Mathematics and Computation 188(2), 1567-1579. DOI `10.1016/j.amc.2006.11.033`.
+- Omran, M. G. H.; Mahdavi, M. (2008), *Global-best harmony search*, Applied Mathematics and Computation 198(2), 643-656. DOI `10.1016/j.amc.2007.09.004`.
+
+v0.55.0 implements the fixed-parameter 2001 Harmony Search foundation. IHS 2007 and GHS 2008 are documented as scientifically distinct later variants and are not silently mixed into the canonical public identity.

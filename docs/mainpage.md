@@ -19,6 +19,7 @@ use, start from the project portal and the short guides below.
 - @subpage family_trajectory_based_methods — trajectory-based methods.
 - @subpage family_constructive_methods - constructive methods.
 - @subpage family_hybrid_methods — hybrid / memetic methods.
+- @subpage family_other_metaheuristics - other / music-inspired methods.
 - @subpage algorithm_catalog — complete generated inventory.
 
 ## Scientific components
