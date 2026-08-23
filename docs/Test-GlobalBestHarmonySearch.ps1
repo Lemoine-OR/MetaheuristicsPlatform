@@ -106,7 +106,8 @@ foreach ($identity in @(
     "harmony-search-geem-kim-loganathan-2001",
     "improved-harmony-search-mahdavi-fesanghary-damangir-2007",
     "global-best-harmony-search-omran-mahdavi-2008",
-    "self-adaptive-global-best-harmony-search-pan-suganthan-tasgetiren-liang-2010"
+    "self-adaptive-global-best-harmony-search-pan-suganthan-tasgetiren-liang-2010",
+    "novel-global-harmony-search-zou-gao-wu-li-2010"
 )) {
     $matches =
         @(

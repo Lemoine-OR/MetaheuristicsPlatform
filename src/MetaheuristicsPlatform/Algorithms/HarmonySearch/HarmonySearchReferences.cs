@@ -38,4 +38,19 @@ public static class HarmonySearchReferences
             "A self-adaptive global best harmony search algorithm for continuous optimization problems",
             "Applied Mathematics and Computation 216(3), 830-848",
             "10.1016/j.amc.2010.01.088");
+    public static ScientificReference ZouGaoWuLi2010NovelGlobal { get; } =
+        new(
+            "D. X. Zou, L. Q. Gao, J. H. Wu, S. Li, Y. Li",
+            2010,
+            "A novel global harmony search algorithm for reliability problems",
+            "Computers & Industrial Engineering 58(2), 307-316",
+            "10.1016/j.cie.2009.11.003");
+
+    public static ScientificReference ZouGaoWuLi2010Unconstrained { get; } =
+        new(
+            "D. Zou, L. Gao, J. Wu, S. Li",
+            2010,
+            "Novel global harmony search algorithm for unconstrained problems",
+            "Neurocomputing 73(16-18), 3308-3318",
+            "10.1016/j.neucom.2010.07.010");
 }

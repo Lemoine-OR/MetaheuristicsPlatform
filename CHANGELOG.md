@@ -2,6 +2,24 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.59.0] - 2026-08-23
+
+### Added
+
+- Novel Global Harmony Search following Zou, Gao, Wu and Li (2010).
+- Stable ID `novel-global-harmony-search-zou-gao-wu-li-2010`, primary DOI `10.1016/j.cie.2009.11.003`.
+- Canonical reflected-best NGHS position update with explicit endpoint truncation, low-probability coordinate mutation and unconditional worst-harmony replacement.
+- Dedicated state exposing mutation count and whether the unconditionally accepted candidate strictly improved the replaced worst harmony.
+- Focused no-HMCR/PAR/BW, unconditional-replacement, full-mutation, deterministic, evaluation-accounting, maximization and five-identity factory tests plus benchmark and mathematical documentation.
+- Supporting provenance for the 2010 Neurocomputing unconstrained-problems NGHS paper, DOI `10.1016/j.neucom.2010.07.010`.
+
+### Changed
+
+- Public algorithm count increases from 48 to 49; the Other / music-inspired family now contains HS 2001, IHS 2007, GHS 2008, SGHS 2010 and NGHS 2010 as separate identities.
+- HS/IHS/GHS/SGHS source implementations remain unchanged.
+- Historical GHS and SGHS validators extend their stable-ID separation checks to NGHS without relying on prose fragments.
+- NGHS requires no external numerical package; System.Math/.NET primitives are sufficient.
+- Release packaging reuses the exact proven v0.58 helper layer and generic Automation v6.1; no new packaging primitive is introduced.
 ## [0.58.0] - 2026-08-23
 
 ### Added

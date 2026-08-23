@@ -1093,6 +1093,28 @@
                            "assumptions":  "Finite bounded continuous box; finite objective values; fixed published normal standard deviations/ranges; successful HMCR/PAR values update their means every LP. BWmax=(UB-LB)/10 is represented coordinate-wise. Empty successful periods preserve prior means as explicit platform completion.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; SGHS changes parameter adaptation and exploitation/exploration balance while remaining stochastic.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "novel-global-harmony-search-zou-gao-wu-li-2010",
+                           "name":  "Novel Global Harmony Search",
+                           "class":  "NovelGlobalHarmonySearchOptimizer",
+                           "category":  "other-metaheuristics",
+                           "kind":  "population",
+                           "family":  "Other / music-inspired methods",
+                           "time":  "O(H*D) initialization; O(H+D) per improvisation plus one objective evaluation",
+                           "space":  "O(H*D)",
+                           "applicability":  "Bounded continuous derivative-free optimization with reflected-best position updating, low-probability mutation and unconditional worst-harmony replacement",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/HarmonySearch/NovelGlobalHarmonySearchOptimizer.cs",
+                           "publication":  "Zou, Gao, Wu, Li \u0026 Li (2010), A novel global harmony search algorithm for reliability problems, Computers \u0026 Industrial Engineering 58(2), 307-316",
+                           "doi":  "10.1016/j.cie.2009.11.003",
+                           "implementation":  "Canonical NGHS: HMCR/PAR/BW absent; x_R=clip(2*x_best-x_worst); x_new=x_worst+U*(x_R-x_worst); uniform coordinate mutation with p_m; unconditional replacement of the worst Harmony Memory member.",
+                           "page":  "docs/pages/algorithms/novel-global-harmony-search-zou-gao-wu-li-2010.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}x_{R,i}\u0026=\\operatorname{clip}_{[l_i,u_i]}(2x_i^{best}-x_i^{worst}),\\\\\\widetilde{x}_i\u0026=x_i^{worst}+U_i(x_{R,i}-x_i^{worst}),\\\\x_i^{new}\u0026=\\begin{cases}l_i+V_i(u_i-l_i),\u0026M_i=1,\\\\\\widetilde{x}_i,\u0026M_i=0,\\end{cases}\\\\x^{worst}\u0026\\leftarrow x^{new}\\ \\text{unconditionally}\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous box and finite objective values; HMCR, PAR and BW are absent; mutation probability p_m is in [0,1]; reflected endpoints are truncated before interpolation.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted. Canonical unconditional replacement permits deterioration and is intentionally preserved.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

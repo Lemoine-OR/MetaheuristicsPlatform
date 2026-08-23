@@ -306,3 +306,21 @@ The platform exposes the paper's BWmax=(UB-LB)/10 experimental prescription as a
 coordinate-wise range fraction for heterogeneous bounded boxes. Empty successful-learning
 periods preserve the previous means as an explicit defensive completion of the paper's
 otherwise undefined empty-set average. HS, IHS and GHS stable identities remain unchanged.
+
+## v0.59.0 Novel Global Harmony Search
+
+Stable public ID introduced:
+
+- `novel-global-harmony-search-zou-gao-wu-li-2010`
+
+`NovelGlobalHarmonySearchOptimizer`, `NovelGlobalHarmonySearchParameters` and
+`NovelGlobalHarmonySearchState` are public API.
+
+The stable identity denotes Zou-Gao-Wu-Li NGHS 2010: HMCR, PAR and BW are absent; each
+coordinate is updated from the current worst harmony toward the bounded reflection
+`2*best-worst`, then mutated uniformly with probability `p_m`.
+
+Canonical NGHS unconditionally replaces the current worst Harmony Memory member with the
+new harmony, even when the candidate is not better. This behavior is API/scientific identity,
+not an implementation accident. Later fitter-only or selective-acceptance NGHS variants must
+use separate stable IDs.

@@ -12,8 +12,9 @@ coordinate receives a value from a randomly selected coordinate of the current b
 
 v0.57.0 keeps GHS as a third public scientific identity, separate from fixed-parameter HS 2001
 and IHS 2007. Self-Adaptive Global-best Harmony Search (SGHS) is a fourth separate public
-identity since v0.58.0; GHS itself does not absorb SGHS learning/bandwidth, NGHS mutation or
-later IGHS mechanisms.
+identity since v0.58.0, and Novel Global Harmony Search (NGHS) is a fifth separate public
+identity since v0.59.0. GHS itself absorbs neither SGHS learning/bandwidth nor NGHS mutation
+and unconditional replacement.
 
 ## Technical specifications
 

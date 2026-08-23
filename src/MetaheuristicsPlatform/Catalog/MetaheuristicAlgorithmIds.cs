@@ -18,6 +18,8 @@ public static class MetaheuristicAlgorithmIds
         "global-best-harmony-search-omran-mahdavi-2008";
     public const string SelfAdaptiveGlobalBestHarmonySearch =
         "self-adaptive-global-best-harmony-search-pan-suganthan-tasgetiren-liang-2010";
+    public const string NovelGlobalHarmonySearch =
+        "novel-global-harmony-search-zou-gao-wu-li-2010";
     public const string AntSystem =
         "ant-system-dorigo-maniezzo-colorni-1996";
     public const string AntColonySystem =
