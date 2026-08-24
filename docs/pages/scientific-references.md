@@ -117,3 +117,6 @@ v0.65.0 improved-harmony-search-differential-mutation-yong-liu-zhang-feng-2012: 
 
 
 v0.66.0 novel-self-adaptive-harmony-search-luo-2013: K. Luo (2013), A Novel Self-Adaptive Harmony Search Algorithm, Journal of Applied Mathematics 2013, Article 653749. DOI `10.1155/2013/653749`.
+
+
+v0.67.0 adaptive-harmony-search-differential-evolution-zhao-li-hao-liu-yuan-2020: X. Zhao, R. Li, J. Hao, Z. Liu, J. Yuan (2020), A New Differential Mutation Based Adaptive Harmony Search Algorithm for Global Optimization, Applied Sciences 10(8), 2916. DOI `10.3390/app10082916`.

@@ -2,6 +2,20 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.67.0] - 2026-08-23
+
+### Added
+
+- aHSDE from Zhao et al. (2020), preserving its three inseparable adaptive mechanisms.
+- Stable ID `adaptive-harmony-search-differential-evolution-zhao-li-hao-liu-yuan-2020` and DOI `10.3390/app10082916`.
+- Focused scientific tests, validator, benchmark and complete documentation page.
+
+### Changed
+
+- Public algorithm count increases to 57.
+- Existing historical scientific validators remain frozen.
+- No external numerical dependency is introduced.
+
 ## [0.66.0] - 2026-08-23
 
 ### Added

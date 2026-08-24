@@ -99,4 +99,12 @@ public static class HarmonySearchReferences
             "A Novel Self-Adaptive Harmony Search Algorithm",
             "Journal of Applied Mathematics 2013, Article 653749",
             "10.1155/2013/653749");
+
+    public static ScientificReference ZhaoLiHaoLiuYuan2020 { get; } =
+        new(
+            "X. Zhao, R. Li, J. Hao, Z. Liu, J. Yuan",
+            2020,
+            "A New Differential Mutation Based Adaptive Harmony Search Algorithm for Global Optimization",
+            "Applied Sciences 10(8), 2916",
+            "10.3390/app10082916");
 }

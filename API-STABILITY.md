@@ -408,3 +408,14 @@ Stable public ID introduced:
 Scientific source: K. Luo (2013), A Novel Self-Adaptive Harmony Search Algorithm, Journal of Applied Mathematics 2013, Article 653749. DOI `10.1155/2013/653749`.
 
 NSHS dimension-derived HMCR, no PAR, fitness-standard-deviation threshold 0.0001, best-to-worst narrow randomization under low diversity and the paper's two perturbation branches.
+
+
+## v0.67.0 Adaptive Harmony Search with Differential Evolution
+
+Stable public ID introduced:
+
+- `adaptive-harmony-search-differential-evolution-zhao-li-hao-liu-yuan-2020`
+
+Scientific source: X. Zhao, R. Li, J. Hao, Z. Liu, J. Yuan (2020), A New Differential Mutation Based Adaptive Harmony Search Algorithm for Global Optimization, Applied Sciences 10(8), 2916. DOI `10.3390/app10082916`.
+
+Exact paper-defined aHSDE mechanism bundle: DE/best/2 pitch adjustment, Gaussian PAR/F sampling around learned means, successful-parameter weighted Lehmer updates, and linear HMS reduction against NFE.

@@ -72,6 +72,10 @@ public static class MetaheuristicFactory
             "MetaheuristicsPlatform.Algorithms.HarmonySearch.NovelSelfAdaptiveHarmonySearchOptimizer");
 
         RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.AdaptiveHarmonySearchDifferentialEvolution,
+            "MetaheuristicsPlatform.Algorithms.HarmonySearch.AdaptiveHarmonySearchDifferentialEvolutionOptimizer");
+
+        RegisterAssemblyType(
             MetaheuristicAlgorithmIds.CmaEs,
             "MetaheuristicsPlatform.Algorithms.CMAES.CmaEsOptimizer");
 

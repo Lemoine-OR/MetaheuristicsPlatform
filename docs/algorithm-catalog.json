@@ -1269,6 +1269,28 @@
                            "assumptions":  "Bounded continuous minimization, finite objectives and positive dimensionality.",
                            "convergence":  "The paper motivates self-adaptation through diversity/intensity balance; no universal finite-time global convergence theorem is asserted.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "adaptive-harmony-search-differential-evolution-zhao-li-hao-liu-yuan-2020",
+                           "name":  "Adaptive Harmony Search with Differential Evolution",
+                           "class":  "AdaptiveHarmonySearchDifferentialEvolutionOptimizer",
+                           "category":  "other-metaheuristics",
+                           "kind":  "population",
+                           "family":  "Other / music-inspired methods",
+                           "time":  "O(H*D) memory plus variant-specific improvisation work",
+                           "space":  "O(H*D)",
+                           "applicability":  "Bounded continuous derivative-free minimization.",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/HarmonySearch/AdaptiveHarmonySearchDifferentialEvolutionOptimizer.cs",
+                           "publication":  "X. Zhao, R. Li, J. Hao, Z. Liu, J. Yuan (2020), A New Differential Mutation Based Adaptive Harmony Search Algorithm for Global Optimization, Applied Sciences 10(8), 2916",
+                           "doi":  "10.3390/app10082916",
+                           "implementation":  "Exact paper-defined aHSDE mechanism bundle: DE/best/2 pitch adjustment, Gaussian PAR/F sampling around learned means, successful-parameter weighted Lehmer updates, and linear HMS reduction against NFE.",
+                           "page":  "docs/pages/algorithms/adaptive-harmony-search-differential-evolution-zhao-li-hao-liu-yuan-2020.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}x_i\u0027\u0026=x_i^{best}+F[(x_i^{r1}-x_i^{r2})+(x_i^{r3}-x_i^{r4})]+U(-1,1)bw,\\\\ HMS\u0026=\\operatorname{round}\\!\\left(HMS_{max}-\\frac{HMS_{max}-HMS_{min}}{MAXNFE}NFE\\right),\\\\ \\mu_S\u0026=\\frac{\\sum_k w_kS_k^2}{\\sum_k w_kS_k}\\end{aligned}",
+                           "assumptions":  "Bounded continuous minimization, active HMS\u003e=5, finite objectives and finite positive NFE budget.",
+                           "convergence":  "The paper evaluates cooperation of its adaptive mechanisms empirically; no universal finite-time global convergence theorem is asserted.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

@@ -34,6 +34,8 @@ public static class MetaheuristicAlgorithmIds
         "improved-harmony-search-differential-mutation-yong-liu-zhang-feng-2012";
     public const string NovelSelfAdaptiveHarmonySearch =
         "novel-self-adaptive-harmony-search-luo-2013";
+    public const string AdaptiveHarmonySearchDifferentialEvolution =
+        "adaptive-harmony-search-differential-evolution-zhao-li-hao-liu-yuan-2020";
     public const string AntSystem =
         "ant-system-dorigo-maniezzo-colorni-1996";
     public const string AntColonySystem =

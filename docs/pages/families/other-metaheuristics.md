@@ -38,3 +38,5 @@ Return to @ref method_families "method families".
 - @subpage improved_harmony_search_differential_mutation_yong_liu_zhang_feng_2012 - IHSDE with differential mutation and F sampled uniformly from [0.6,1].
 
 - @subpage novel_self_adaptive_harmony_search_luo_2013 - Novel Self-Adaptive Harmony Search with dimension-derived HMCR and fitness-dispersion control.
+
+- @subpage adaptive_harmony_search_differential_evolution_zhao_li_hao_liu_yuan_2020 - aHSDE with differential mutation, periodic parameter learning and linear HMS reduction.
