@@ -36,7 +36,7 @@ catalog IDs and literature-backed documentation.
 <table>
 <tr>
 <td width="20%"><strong>6 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Firefly, Ant System, ACS and MAX-MIN Ant System.</sub></td>
-<td width="20%"><strong>13 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
+<td width="20%"><strong>14 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
 <td width="20%"><strong>21 trajectory methods</strong><br><sub>Acceptance methods, Tabu, local search, ILS, Iterated Greedy, LNS, ALNS, VNS and GLS.</sub></td>
 <td width="20%"><strong>3 constructive methods</strong><br><sub>GRASP, Reactive GRASP and GRASP with Path Relinking.</sub></td>
 <td width="20%"><strong>1 hybrid / memetic method</strong><br><sub>Moscato-style memetic evolution with local improvement.</sub></td>
@@ -45,7 +45,7 @@ catalog IDs and literature-backed documentation.
 </tr>
 </table>
 
-<p align="center"><strong>57 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>58 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -121,6 +121,7 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/active-cma-es-hansen-ros-2010.html"><strong>Active CMA-ES</strong></a><br><sub>Weighted negative covariance adaptation from unsuccessful ranked offspring.</sub><br><code>active-cma-es-hansen-ros-2010</code><br><sub><code>ActiveCmaEsOptimizer</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/separable-cma-es-ros-hansen-2008.html"><strong>Separable CMA-ES</strong></a><br><sub>Diagonal covariance adaptation with linear internal time and memory.</sub><br><code>separable-cma-es-ros-hansen-2008</code><br><sub><code>SeparableCmaEsOptimizer</code></sub></td></tr>
 <tr><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/ipop-cma-es-auger-hansen-2005.html"><strong>IPOP-CMA-ES</strong></a><br><sub>Increasing-population restart CMA-ES under one global evaluation lifecycle.</sub><br><code>ipop-cma-es-auger-hansen-2005</code><br><sub><code>IpopCmaEsOptimizer</code></sub></td><td width="50%"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/bipop-cma-es-hansen-2009.html"><strong>BIPOP-CMA-ES</strong></a><br><sub>Budget-balanced large/small population CMA restart portfolio.</sub><br><code>bipop-cma-es-hansen-2009</code><br><sub><code>BipopCmaEsOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/cross-entropy-continuous-kroese-porotsky-rubinstein-2006.html"><strong>Cross-Entropy Method - Continuous Optimization</strong></a><br><sub>Elite normal-distribution learning with fixed mean smoothing and dynamic standard-deviation smoothing.</sub><br><code>cross-entropy-continuous-kroese-porotsky-rubinstein-2006</code><br><sub><code>ContinuousCrossEntropyOptimizer</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/biogeography-based-optimization-simon-2008.html"><strong>Biogeography-Based Optimization</strong></a><br><sub>Canonical rank-derived species counts, linear immigration/emigration curves, equilibrium species-probability mutation, explicit elitism and bounded SIV repair.</sub><br><code>biogeography-based-optimization-simon-2008</code><br><sub><code>BiogeographyBasedOptimizationOptimizer</code></sub></td></tr>
 </table>
 
 ### Trajectory-based methods

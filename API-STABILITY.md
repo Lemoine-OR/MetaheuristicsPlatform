@@ -1,5 +1,9 @@
 # API stability
 
+## v0.68.0
+
+- Added stable direct-factory algorithm ID `biogeography-based-optimization-simon-2008` (`BiogeographyBasedOptimizationOptimizer`). Existing public IDs and signatures are unchanged.
+
 MetaheuristicsPlatform follows the same repository discipline as ULSAlgorithms.
 
 ## Stable contract now

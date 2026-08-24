@@ -6,6 +6,10 @@ Every literature-derived implementation must cite the publication that defines t
 implemented mechanism and include a DOI when one exists. Algorithm pages are the
 authoritative location for method-specific provenance.
 
+## Biogeography-Based Optimization
+
+- Simon (2008), Biogeography-Based Optimization, IEEE Transactions on Evolutionary Computation 12(6), 702-713. DOI: `10.1109/TEVC.2008.919004`.
+
 ## Threshold Accepting
 
 - Dueck, G.; Scheuer, T. (1990). *Threshold accepting: A general purpose optimization

@@ -788,7 +788,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Constructive/GraspPathRelinkingOptimizer.cs",
             "Resende & Werneck (2004), Journal of Heuristics 10(1), 59-88; Aiex, Resende, Pardalos & Toraldo (2005), INFORMS Journal on Computing 17(2), 224-247; Resende, Marti, Gallego & Duarte (2010), Computers & Operations Research 37(3), 498-508; Ribeiro & Resende (2012), Journal of Heuristics 18(2), 193-214",
             "10.1287/ijoc.1030.0059",
-            "Quality/diversity elite memory, advanced forward/backward/back-and-forward/mixed pairwise path relinking, truncation, greedy-randomized pooled RCL selection, and optional EvolutionaryPathRelinkingProcedure<TSolution> all-pairs elite evolution.")
+            "Quality/diversity elite memory, advanced forward/backward/back-and-forward/mixed pairwise path relinking, truncation, greedy-randomized pooled RCL selection, and optional EvolutionaryPathRelinkingProcedure<TSolution> all-pairs elite evolution."),
+        new(
+            "biogeography-based-optimization-simon-2008",
+            "Biogeography-Based Optimization",
+            "BiogeographyBasedOptimizationOptimizer",
+            "evolutionary-methods",
+            "Evolutionary methods",
+            "O(N log N + N^2 D) per generation plus objective-evaluation cost",
+            "O(ND + N)",
+            "Bounded continuous derivative-free optimization using rank-based immigration, emigration, mutation and elitism",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/BiogeographyBasedOptimization/BiogeographyBasedOptimizationOptimizer.cs",
+            "Simon (2008), Biogeography-Based Optimization, IEEE Transactions on Evolutionary Computation 12(6), 702-713",
+            "10.1109/TEVC.2008.919004",
+            "Canonical rank-derived species counts, linear immigration/emigration curves, equilibrium species-probability mutation, explicit elitism and bounded SIV repair.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

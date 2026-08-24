@@ -1291,6 +1291,28 @@
                            "assumptions":  "Bounded continuous minimization, active HMS\u003e=5, finite objectives and finite positive NFE budget.",
                            "convergence":  "The paper evaluates cooperation of its adaptive mechanisms empirically; no universal finite-time global convergence theorem is asserted.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "biogeography-based-optimization-simon-2008",
+                           "name":  "Biogeography-Based Optimization",
+                           "class":  "BiogeographyBasedOptimizationOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "O(N log N + N^2 D) per generation plus objective-evaluation cost",
+                           "space":  "O(ND + N)",
+                           "applicability":  "Bounded continuous derivative-free optimization using rank-based immigration, emigration, mutation and elitism",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/BiogeographyBasedOptimization/BiogeographyBasedOptimizationOptimizer.cs",
+                           "publication":  "Simon (2008), Biogeography-Based Optimization, IEEE Transactions on Evolutionary Computation 12(6), 702-713",
+                           "doi":  "10.1109/TEVC.2008.919004",
+                           "implementation":  "Canonical rank-derived species counts, linear immigration/emigration curves, equilibrium species-probability mutation, explicit elitism and bounded SIV repair.",
+                           "page":  "docs/pages/algorithms/biogeography-based-optimization-simon-2008.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}\\lambda_s\u0026=I\\left(1-\\frac{s}{S_{\\max}}\\right),\\\\\\mu_s\u0026=E\\frac{s}{S_{\\max}},\\\\m(s)\u0026=m_{\\max}\\left(1-\\frac{P_s}{P_{\\max}}\\right)\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous box; finite objective values; habitat quality ranking maps monotonically to species count; migration and mutation use the paper\u0027s linear rates.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; the implementation reproduces the stochastic migration/mutation mechanism and preserves elites explicitly.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

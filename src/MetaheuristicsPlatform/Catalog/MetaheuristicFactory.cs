@@ -118,6 +118,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.LShade,
             "MetaheuristicsPlatform.Algorithms.DE.Adaptive.LShadeOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.BiogeographyBasedOptimization,
+            "MetaheuristicsPlatform.Algorithms.BiogeographyBasedOptimization.BiogeographyBasedOptimizationOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

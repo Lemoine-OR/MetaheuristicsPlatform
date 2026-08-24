@@ -20,7 +20,9 @@ $catalog =
 $algorithms = @($catalog.algorithms)
 $families = @($catalog.families)
 
-if ($algorithms.Count -lt 57) {
+& (Join-Path $Root "docs\Test-BiogeographyBasedOptimization.ps1") -Root $Root
+
+if ($algorithms.Count -lt 58) {
     throw "Documentation parity: expected at least 57 currently public algorithms."
 }
 
@@ -185,6 +187,8 @@ $requiredRepoFiles = @(
     "docs\Test-AdaptiveHarmonySearchDifferentialEvolution.ps1",
     "docs\pages\algorithms\adaptive-harmony-search-differential-evolution-zhao-li-hao-liu-yuan-2020.md",
     "docs\pages\families\other-metaheuristics.md",
+    "docs\Test-BiogeographyBasedOptimization.ps1",
+    "docs\pages\algorithms\biogeography-based-optimization-simon-2008.md",
     "docs\Test-DoxygenMarkupSafety.ps1",
     "docs\Test-ContinuousCrossEntropy.ps1",
     "docs\Test-LargeNeighborhoodSearch.ps1",
@@ -332,8 +336,8 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.67.0") {
-    throw "Documentation parity: version.json must be 0.67.0 for this release."
+if ([string]$version.version -ne "0.68.0") {
+    throw "Documentation parity: version.json must be 0.68.0 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root

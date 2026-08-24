@@ -97,4 +97,7 @@ public static class MetaheuristicAlgorithmIds
     public const string Grasp = "grasp-feo-resende-1995";
     public const string ReactiveGrasp = "reactive-grasp-prais-ribeiro-2000";
     public const string GraspPathRelinking = "grasp-path-relinking";
+
+    public const string BiogeographyBasedOptimization =
+        "biogeography-based-optimization-simon-2008";
 }
