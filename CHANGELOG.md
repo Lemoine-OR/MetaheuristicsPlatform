@@ -1,13 +1,20 @@
 # Changelog
 
-## v0.68.0 — Biogeography-Based Optimization
+All notable changes to MetaheuristicsPlatform will be documented in this file.
+
+## [0.68.0] - 2026-08-25
+
+### Added
 
 - Adds the canonical Biogeography-Based Optimization scientific identity from Simon (2008), Biogeography-Based Optimization, IEEE Transactions on Evolutionary Computation 12(6), 702-713 (DOI 10.1109/TEVC.2008.919004).
 - Stable ID: `biogeography-based-optimization-simon-2008`.
 - Direct factory registration, structured mathematical documentation, semantic tests and benchmark included.
 
-All notable changes to MetaheuristicsPlatform will be documented in this file.
+### Changed
 
+- Public algorithm count increases to 58.
+- Existing historical scientific validators remain frozen.
+- No external numerical dependency is introduced.
 ## [0.67.0] - 2026-08-23
 
 ### Added

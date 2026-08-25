@@ -62,11 +62,76 @@ foreach ($file in $files) {
             -Encoding utf8
 }
 
-$commit =
-    (& git rev-parse HEAD 2>$null | Select-Object -First 1)
+# Release asset Git commit proof via System.Diagnostics.Process.
+$gitExe =
+    (Get-Command git.exe -CommandType Application -ErrorAction Stop).Source
 
-if ([string]::IsNullOrWhiteSpace($commit)) {
-    $commit = "unknown"
+$gitStartInfo =
+    New-Object System.Diagnostics.ProcessStartInfo
+
+$gitStartInfo.FileName =
+    $gitExe
+
+$gitStartInfo.Arguments =
+    "rev-parse HEAD"
+
+$gitStartInfo.WorkingDirectory =
+    [System.IO.Path]::GetFullPath($Root)
+
+$gitStartInfo.UseShellExecute =
+    $false
+
+$gitStartInfo.RedirectStandardOutput =
+    $true
+
+$gitStartInfo.RedirectStandardError =
+    $true
+
+$gitStartInfo.CreateNoWindow =
+    $true
+
+$gitProcess =
+    New-Object System.Diagnostics.Process
+
+$gitProcess.StartInfo =
+    $gitStartInfo
+
+try {
+    if (-not $gitProcess.Start()) {
+        throw "Unable to start git.exe for release commit proof."
+    }
+
+    $gitOutputTask =
+        $gitProcess.StandardOutput.ReadToEndAsync()
+
+    $gitErrorTask =
+        $gitProcess.StandardError.ReadToEndAsync()
+
+    $gitProcess.WaitForExit()
+
+    $gitOutput =
+        ([string]$gitOutputTask.Result).Trim()
+
+    $gitError =
+        ([string]$gitErrorTask.Result).Trim()
+
+    if ($gitProcess.ExitCode -ne 0) {
+        throw (
+            "Unable to prove release commit from repository root '{0}'. Exit={1}. {2}" -f
+            $Root,
+            $gitProcess.ExitCode,
+            $gitError)
+    }
+
+    if ([string]::IsNullOrWhiteSpace($gitOutput)) {
+        throw "git rev-parse HEAD returned an empty release commit."
+    }
+
+    $commit =
+        $gitOutput
+}
+finally {
+    $gitProcess.Dispose()
 }
 
 [pscustomobject]@{
