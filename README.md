@@ -35,7 +35,7 @@ catalog IDs and literature-backed documentation.
 
 <table>
 <tr>
-<td width="20%"><strong>12 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Firefly, Ant System, ACS and MAX-MIN Ant System.</sub></td>
+<td width="20%"><strong>13 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Firefly, Ant System, ACS and MAX-MIN Ant System.</sub></td>
 <td width="20%"><strong>14 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
 <td width="20%"><strong>21 trajectory methods</strong><br><sub>Acceptance methods, Tabu, local search, ILS, Iterated Greedy, LNS, ALNS, VNS and GLS.</sub></td>
 <td width="20%"><strong>3 constructive methods</strong><br><sub>GRASP, Reactive GRASP and GRASP with Path Relinking.</sub></td>
@@ -45,7 +45,7 @@ catalog IDs and literature-backed documentation.
 </tr>
 </table>
 
-<p align="center"><strong>64 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>65 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -115,6 +115,7 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/grey-wolf-optimizer-mirjalili-mirjalili-lewis-2014.html"><strong>Grey Wolf Optimizer</strong></a><br><sub>Canonical alpha-beta-delta leadership, three independent A/C encircling vectors, arithmetic mean position update and linear a decrease from 2 to 0.</sub><br><code>grey-wolf-optimizer-mirjalili-mirjalili-lewis-2014</code><br><sub><code>GreyWolfOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/moth-flame-optimization-mirjalili-2015.html"><strong>Moth-Flame Optimization</strong></a><br><sub>Canonical moth/flame dual population, historical flame elitism, logarithmic spiral update, and linearly decreasing flame count from Mirjalili (2015).</sub><br><code>moth-flame-optimization-mirjalili-2015</code><br><sub><code>MothFlameOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/whale-optimization-algorithm-mirjalili-lewis-2016.html"><strong>Whale Optimization Algorithm</strong></a><br><sub>Canonical WOA with scalar A/C coefficients per whale, random-prey exploration for |A|>=1, best-prey encircling for |A|<1, and the 50/50 logarithmic spiral mechanism.</sub><br><code>whale-optimization-algorithm-mirjalili-lewis-2016</code><br><sub><code>WhaleOptimizationAlgorithmOptimizer</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/sine-cosine-algorithm-mirjalili-2016.html"><strong>Sine Cosine Algorithm</strong></a><br><sub>Canonical SCA with linearly decreasing r1, r2 in [0,2pi), r3 in [0,2), and an equiprobable sine/cosine switch r4.</sub><br><code>sine-cosine-algorithm-mirjalili-2016</code><br><sub><code>SineCosineAlgorithmOptimizer</code></sub></td></tr>
 </table>
 
 ### Evolutionary methods

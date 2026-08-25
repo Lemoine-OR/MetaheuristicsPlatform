@@ -2,6 +2,19 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.75.0] - 2026-08-25
+
+### Added
+
+- Adds the canonical Sine Cosine Algorithm scientific identity from Mirjalili (2016), Knowledge-Based Systems 96, 120-133 (DOI 10.1016/j.knosys.2015.12.022).
+- Stable ID: `sine-cosine-algorithm-mirjalili-2016`.
+- Direct factory registration, structured mathematical documentation, semantic tests and benchmark included.
+
+### Changed
+
+- Public algorithm count increases to 65.
+- Existing historical scientific validators remain frozen.
+- No external numerical dependency is introduced.
 ## [0.74.0] - 2026-08-25
 
 ### Added

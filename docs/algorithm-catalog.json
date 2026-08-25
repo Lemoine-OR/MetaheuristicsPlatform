@@ -1445,6 +1445,28 @@
                            "assumptions":  "Finite bounded continuous box and finite objective values; at least two whales; the best-so-far whale is the prey estimate and random-prey exploration samples the current population.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; the linear decrease of a from 2 toward 0 reduces the probability of |A|\u003e=1 exploration.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "sine-cosine-algorithm-mirjalili-2016",
+                           "name":  "Sine Cosine Algorithm",
+                           "class":  "SineCosineAlgorithmOptimizer",
+                           "category":  "swarm-intelligence",
+                           "kind":  "population",
+                           "family":  "Swarm intelligence",
+                           "time":  "O(ND) per generation plus N objective evaluations",
+                           "space":  "O(ND + N)",
+                           "applicability":  "Bounded continuous derivative-free optimization with sine/cosine oscillation around the best destination",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/SineCosine/SineCosineAlgorithmOptimizer.cs",
+                           "publication":  "Mirjalili (2016), SCA: A Sine Cosine Algorithm for solving optimization problems, Knowledge-Based Systems 96, 120-133",
+                           "doi":  "10.1016/j.knosys.2015.12.022",
+                           "implementation":  "Canonical SCA with linearly decreasing r1, r2 in [0,2pi), r3 in [0,2), and an equiprobable sine/cosine switch r4.",
+                           "page":  "docs/pages/algorithms/sine-cosine-algorithm-mirjalili-2016.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}r_1(t)\u0026=a\\left(1-\\frac{t}{T}\\right),\\quad r_2\\sim\\mathcal U[0,2\\pi),\\quad r_3\\sim\\mathcal U[0,2),\\\\x_{i,d}^{t+1}\u0026=x_{i,d}^{t}+r_1\\sin(r_2)\\left|r_3p_d^t-x_{i,d}^{t}\\right|\\quad(r_4\u003c\\tfrac12),\\\\x_{i,d}^{t+1}\u0026=x_{i,d}^{t}+r_1\\cos(r_2)\\left|r_3p_d^t-x_{i,d}^{t}\\right|\\quad(r_4\\ge\\tfrac12),\\\\r_4\u0026\\sim\\mathcal U[0,1)\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous box and finite objective values; at least two search agents; the destination is the best-so-far candidate under the configured objective sense.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; r1 decreases linearly from the canonical amplitude a=2 toward zero.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

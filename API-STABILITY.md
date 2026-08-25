@@ -1,5 +1,9 @@
 # API stability
 
+## v0.75.0
+
+- Added stable direct-factory algorithm ID `sine-cosine-algorithm-mirjalili-2016` (`SineCosineAlgorithmOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.74.0
 
 - Added stable direct-factory algorithm ID `whale-optimization-algorithm-mirjalili-lewis-2016` (`WhaleOptimizationAlgorithmOptimizer`). Existing public IDs and signatures are unchanged.

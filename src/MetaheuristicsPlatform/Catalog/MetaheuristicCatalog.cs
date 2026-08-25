@@ -886,7 +886,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/WhaleOptimization/WhaleOptimizationAlgorithmOptimizer.cs",
             "Mirjalili & Lewis (2016), The Whale Optimization Algorithm, Advances in Engineering Software 95, 51-67",
             "10.1016/j.advengsoft.2016.01.008",
-            "Canonical WOA with scalar A/C coefficients per whale, random-prey exploration for |A|>=1, best-prey encircling for |A|<1, and the 50/50 logarithmic spiral mechanism.")
+            "Canonical WOA with scalar A/C coefficients per whale, random-prey exploration for |A|>=1, best-prey encircling for |A|<1, and the 50/50 logarithmic spiral mechanism."),
+        new(
+            "sine-cosine-algorithm-mirjalili-2016",
+            "Sine Cosine Algorithm",
+            "SineCosineAlgorithmOptimizer",
+            "swarm-intelligence",
+            "Swarm intelligence",
+            "O(ND) per generation plus N objective evaluations",
+            "O(ND + N)",
+            "Bounded continuous derivative-free optimization with sine/cosine oscillation around the best destination",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/SineCosine/SineCosineAlgorithmOptimizer.cs",
+            "Mirjalili (2016), SCA: A Sine Cosine Algorithm for solving optimization problems, Knowledge-Based Systems 96, 120-133",
+            "10.1016/j.knosys.2015.12.022",
+            "Canonical SCA with linearly decreasing r1, r2 in [0,2pi), r3 in [0,2), and an equiprobable sine/cosine switch r4.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

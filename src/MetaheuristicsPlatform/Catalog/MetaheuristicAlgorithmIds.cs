@@ -118,4 +118,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string WhaleOptimizationAlgorithm =
         "whale-optimization-algorithm-mirjalili-lewis-2016";
+
+    public const string SineCosineAlgorithm =
+        "sine-cosine-algorithm-mirjalili-2016";
 }

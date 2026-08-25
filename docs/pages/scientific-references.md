@@ -34,6 +34,10 @@ authoritative location for method-specific provenance.
 
 - Mirjalili & Lewis (2016), The Whale Optimization Algorithm, Advances in Engineering Software 95, 51-67. DOI: `10.1016/j.advengsoft.2016.01.008`.
 
+## Sine Cosine Algorithm
+
+- Mirjalili (2016), SCA: A Sine Cosine Algorithm for solving optimization problems, Knowledge-Based Systems 96, 120-133. DOI: `10.1016/j.knosys.2015.12.022`.
+
 ## Threshold Accepting
 
 - Dueck, G.; Scheuer, T. (1990). *Threshold accepting: A general purpose optimization
