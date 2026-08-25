@@ -220,7 +220,7 @@ jobs:
         id: release_info
         shell: pwsh
         run: |
-          $release = ./build/Prepare-ReleaseAssets.ps1
+          $release = ./build/Prepare-ReleaseAssets.ps1 -CommitId $env:TARGET_SHA
 
           "version=$($release.ReleaseVersion)" |
               Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
