@@ -858,7 +858,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/GreyWolf/GreyWolfOptimizer.cs",
             "Mirjalili, Mirjalili & Lewis (2014), Grey Wolf Optimizer, Advances in Engineering Software 69, 46-61",
             "10.1016/j.advengsoft.2013.12.007",
-            "Canonical alpha-beta-delta leadership, three independent A/C encircling vectors, arithmetic mean position update and linear a decrease from 2 to 0.")
+            "Canonical alpha-beta-delta leadership, three independent A/C encircling vectors, arithmetic mean position update and linear a decrease from 2 to 0."),
+        new(
+            "moth-flame-optimization-mirjalili-2015",
+            "Moth-Flame Optimization",
+            "MothFlameOptimizer",
+            "swarm-intelligence",
+            "Swarm intelligence",
+            "O(ND + N log N) per generation plus N objective evaluations",
+            "O(ND + N)",
+            "Bounded continuous derivative-free optimization with logarithmic moth-to-flame spirals and a linearly decreasing flame count",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/MothFlame/MothFlameOptimizer.cs",
+            "Mirjalili (2015), Moth-flame optimization algorithm: A novel nature-inspired heuristic paradigm, Knowledge-Based Systems 89, 228-249",
+            "10.1016/j.knosys.2015.07.006",
+            "Canonical moth/flame dual population, historical flame elitism, logarithmic spiral update, and linearly decreasing flame count from Mirjalili (2015).")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

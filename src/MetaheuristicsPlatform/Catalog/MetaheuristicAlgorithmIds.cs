@@ -112,4 +112,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string GreyWolfOptimizer =
         "grey-wolf-optimizer-mirjalili-mirjalili-lewis-2014";
+
+    public const string MothFlameOptimization =
+        "moth-flame-optimization-mirjalili-2015";
 }

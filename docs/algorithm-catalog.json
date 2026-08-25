@@ -1401,6 +1401,28 @@
                            "assumptions":  "Finite bounded continuous box and finite objective values; at least three wolves; alpha, beta and delta are the three best current solutions under the configured objective sense.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; the linearly decreasing coefficient a moves the canonical model from exploration toward exploitation.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "moth-flame-optimization-mirjalili-2015",
+                           "name":  "Moth-Flame Optimization",
+                           "class":  "MothFlameOptimizer",
+                           "category":  "swarm-intelligence",
+                           "kind":  "population",
+                           "family":  "Swarm intelligence",
+                           "time":  "O(ND + N log N) per generation plus N objective evaluations",
+                           "space":  "O(ND + N)",
+                           "applicability":  "Bounded continuous derivative-free optimization with logarithmic moth-to-flame spirals and a linearly decreasing flame count",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/MothFlame/MothFlameOptimizer.cs",
+                           "publication":  "Mirjalili (2015), Moth-flame optimization algorithm: A novel nature-inspired heuristic paradigm, Knowledge-Based Systems 89, 228-249",
+                           "doi":  "10.1016/j.knosys.2015.07.006",
+                           "implementation":  "Canonical moth/flame dual population, historical flame elitism, logarithmic spiral update, and linearly decreasing flame count from Mirjalili (2015).",
+                           "page":  "docs/pages/algorithms/moth-flame-optimization-mirjalili-2015.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}D_{ij}^{t}\u0026=\\left|F_j^t-M_i^t\\right|,\\\\M_i^{t+1}\u0026=D_{ij}^{t}e^{b\\tau}\\cos(2\\pi\\tau)+F_j^t,\\\\N_f(t)\u0026=\\operatorname{round}\\!\\left(N-t\\frac{N-1}{T}\\right),\\\\a_t\u0026=-1-\\frac{t}{T},\\quad \\tau\\sim\\mathcal U[a_t,1]\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous box and finite objective values; at least two moths; flames are the best historical positions under the configured objective sense.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; the decreasing number of flames and shrinking lower bound of the spiral parameter progressively emphasize exploitation.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

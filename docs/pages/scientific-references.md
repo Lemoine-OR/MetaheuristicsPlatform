@@ -26,6 +26,10 @@ authoritative location for method-specific provenance.
 
 - Mirjalili, Mirjalili & Lewis (2014), Grey Wolf Optimizer, Advances in Engineering Software 69, 46-61. DOI: `10.1016/j.advengsoft.2013.12.007`.
 
+## Moth-Flame Optimization
+
+- Mirjalili (2015), Moth-flame optimization algorithm: A novel nature-inspired heuristic paradigm, Knowledge-Based Systems 89, 228-249. DOI: `10.1016/j.knosys.2015.07.006`.
+
 ## Threshold Accepting
 
 - Dueck, G.; Scheuer, T. (1990). *Threshold accepting: A general purpose optimization

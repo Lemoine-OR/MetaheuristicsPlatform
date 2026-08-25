@@ -1,5 +1,9 @@
 # API stability
 
+## v0.73.0
+
+- Added stable direct-factory algorithm ID `moth-flame-optimization-mirjalili-2015` (`MothFlameOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.72.0
 
 - Added stable direct-factory algorithm ID `grey-wolf-optimizer-mirjalili-mirjalili-lewis-2014` (`GreyWolfOptimizer`). Existing public IDs and signatures are unchanged.

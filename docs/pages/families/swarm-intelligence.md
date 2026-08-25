@@ -17,6 +17,7 @@ probabilistic recruitment or shared pheromone memory.
 - **[Bat Algorithm](../algorithms/bat-algorithm-yang-2010.md)** — `bat-algorithm-yang-2010` — Bounded continuous derivative-free optimization with frequency-tuned motion, pulse-rate local search and loudness acceptance.
 - **[Flower Pollination Algorithm](../algorithms/flower-pollination-algorithm-yang-2012.md)** — `flower-pollination-algorithm-yang-2012` — Bounded continuous derivative-free optimization mixing global Levy pollination and local flower constancy.
 - **[Grey Wolf Optimizer](../algorithms/grey-wolf-optimizer-mirjalili-mirjalili-lewis-2014.md)** — `grey-wolf-optimizer-mirjalili-mirjalili-lewis-2014` — Bounded continuous derivative-free optimization using alpha/beta/delta leadership and encircling dynamics.
+- **[Moth-Flame Optimization](../algorithms/moth-flame-optimization-mirjalili-2015.md)** — `moth-flame-optimization-mirjalili-2015` — Bounded continuous derivative-free optimization with logarithmic moth-to-flame spirals and a linearly decreasing flame count.
 
 ## Navigation
 

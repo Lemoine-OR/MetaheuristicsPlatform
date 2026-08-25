@@ -2,6 +2,19 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.73.0] - 2026-08-25
+
+### Added
+
+- Adds the canonical Moth-Flame Optimization scientific identity from Mirjalili (2015), Knowledge-Based Systems 89, 228-249 (DOI 10.1016/j.knosys.2015.07.006).
+- Stable ID: `moth-flame-optimization-mirjalili-2015`.
+- Direct factory registration, structured mathematical documentation, semantic tests and benchmark included.
+
+### Changed
+
+- Public algorithm count increases to 63.
+- Existing historical scientific validators remain frozen.
+- No external numerical dependency is introduced.
 ## [0.72.0] - 2026-08-25
 
 ### Added

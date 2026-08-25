@@ -138,6 +138,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.GreyWolfOptimizer,
             "MetaheuristicsPlatform.Algorithms.GreyWolf.GreyWolfOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.MothFlameOptimization,
+            "MetaheuristicsPlatform.Algorithms.MothFlame.MothFlameOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>
