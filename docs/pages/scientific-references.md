@@ -22,6 +22,10 @@ authoritative location for method-specific provenance.
 
 - Yang (2012), Flower Pollination Algorithm for Global Optimization, UCNC 2012, LNCS 7445, 240-249. DOI: `10.1007/978-3-642-32894-7_27`.
 
+## Grey Wolf Optimizer
+
+- Mirjalili, Mirjalili & Lewis (2014), Grey Wolf Optimizer, Advances in Engineering Software 69, 46-61. DOI: `10.1016/j.advengsoft.2013.12.007`.
+
 ## Threshold Accepting
 
 - Dueck, G.; Scheuer, T. (1990). *Threshold accepting: A general purpose optimization

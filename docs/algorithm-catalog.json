@@ -1379,6 +1379,28 @@
                            "assumptions":  "Finite bounded continuous box; finite objective values; global pollination uses a dimension-wise Levy vector and local pollination samples two distinct population members.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; stochastic exploration/exploitation is governed by the switch probability and Levy-flight scaling.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "grey-wolf-optimizer-mirjalili-mirjalili-lewis-2014",
+                           "name":  "Grey Wolf Optimizer",
+                           "class":  "GreyWolfOptimizer",
+                           "category":  "swarm-intelligence",
+                           "kind":  "population",
+                           "family":  "Swarm intelligence",
+                           "time":  "O(ND + N log N) per generation plus N objective evaluations",
+                           "space":  "O(ND + N)",
+                           "applicability":  "Bounded continuous derivative-free optimization using alpha/beta/delta leadership and encircling dynamics",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/GreyWolf/GreyWolfOptimizer.cs",
+                           "publication":  "Mirjalili, Mirjalili \u0026 Lewis (2014), Grey Wolf Optimizer, Advances in Engineering Software 69, 46-61",
+                           "doi":  "10.1016/j.advengsoft.2013.12.007",
+                           "implementation":  "Canonical alpha-beta-delta leadership, three independent A/C encircling vectors, arithmetic mean position update and linear a decrease from 2 to 0.",
+                           "page":  "docs/pages/algorithms/grey-wolf-optimizer-mirjalili-mirjalili-lewis-2014.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}D_{\\alpha}\u0026=\\left|C_1X_{\\alpha}-X\\right|,\\\\X_1\u0026=X_{\\alpha}-A_1D_{\\alpha},\\\\X^{t+1}\u0026=\\frac{X_1+X_2+X_3}{3},\\\\a_t\u0026=2\\left(1-\\frac{t}{T}\\right)\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous box and finite objective values; at least three wolves; alpha, beta and delta are the three best current solutions under the configured objective sense.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; the linearly decreasing coefficient a moves the canonical model from exploration toward exploitation.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

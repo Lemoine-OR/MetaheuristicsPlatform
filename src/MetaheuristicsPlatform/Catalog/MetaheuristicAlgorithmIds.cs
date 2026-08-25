@@ -109,4 +109,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string FlowerPollinationAlgorithm =
         "flower-pollination-algorithm-yang-2012";
+
+    public const string GreyWolfOptimizer =
+        "grey-wolf-optimizer-mirjalili-mirjalili-lewis-2014";
 }

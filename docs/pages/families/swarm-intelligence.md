@@ -16,6 +16,7 @@ probabilistic recruitment or shared pheromone memory.
 - **[Cuckoo Search via Levy Flights](../algorithms/cuckoo-search-yang-deb-2009.md)** — `cuckoo-search-yang-deb-2009` — Bounded continuous derivative-free optimization with Levy-flight exploration and nest abandonment.
 - **[Bat Algorithm](../algorithms/bat-algorithm-yang-2010.md)** — `bat-algorithm-yang-2010` — Bounded continuous derivative-free optimization with frequency-tuned motion, pulse-rate local search and loudness acceptance.
 - **[Flower Pollination Algorithm](../algorithms/flower-pollination-algorithm-yang-2012.md)** — `flower-pollination-algorithm-yang-2012` — Bounded continuous derivative-free optimization mixing global Levy pollination and local flower constancy.
+- **[Grey Wolf Optimizer](../algorithms/grey-wolf-optimizer-mirjalili-mirjalili-lewis-2014.md)** — `grey-wolf-optimizer-mirjalili-mirjalili-lewis-2014` — Bounded continuous derivative-free optimization using alpha/beta/delta leadership and encircling dynamics.
 
 ## Navigation
 

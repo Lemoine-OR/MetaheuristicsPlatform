@@ -844,7 +844,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/FlowerPollination/FlowerPollinationOptimizer.cs",
             "Yang (2012), Flower Pollination Algorithm for Global Optimization, UCNC 2012, LNCS 7445, 240-249",
             "10.1007/978-3-642-32894-7_27",
-            "Canonical switch-controlled global Levy pollination toward the current best and local random flower-pair pollination with greedy replacement. The Levy-flight operator uses a fixed internal Mantegna beta=1.5 numerical realization rather than exposing a later variant parameter.")
+            "Canonical switch-controlled global Levy pollination toward the current best and local random flower-pair pollination with greedy replacement. The Levy-flight operator uses a fixed internal Mantegna beta=1.5 numerical realization rather than exposing a later variant parameter."),
+        new(
+            "grey-wolf-optimizer-mirjalili-mirjalili-lewis-2014",
+            "Grey Wolf Optimizer",
+            "GreyWolfOptimizer",
+            "swarm-intelligence",
+            "Swarm intelligence",
+            "O(ND + N log N) per generation plus N objective evaluations",
+            "O(ND + N)",
+            "Bounded continuous derivative-free optimization using alpha/beta/delta leadership and encircling dynamics",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/GreyWolf/GreyWolfOptimizer.cs",
+            "Mirjalili, Mirjalili & Lewis (2014), Grey Wolf Optimizer, Advances in Engineering Software 69, 46-61",
+            "10.1016/j.advengsoft.2013.12.007",
+            "Canonical alpha-beta-delta leadership, three independent A/C encircling vectors, arithmetic mean position update and linear a decrease from 2 to 0.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

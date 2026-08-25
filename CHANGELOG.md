@@ -2,6 +2,19 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.72.0] - 2026-08-25
+
+### Added
+
+- Adds the canonical Grey Wolf Optimizer scientific identity from Mirjalili, Mirjalili & Lewis (2014), Grey Wolf Optimizer, Advances in Engineering Software 69, 46-61 (DOI 10.1016/j.advengsoft.2013.12.007).
+- Stable ID: `grey-wolf-optimizer-mirjalili-mirjalili-lewis-2014`.
+- Direct factory registration, structured mathematical documentation, semantic tests and benchmark included.
+
+### Changed
+
+- Public algorithm count increases to 62.
+- Existing historical scientific validators remain frozen.
+- No external numerical dependency is introduced.
 ## [0.71.0] - 2026-08-25
 
 ### Added

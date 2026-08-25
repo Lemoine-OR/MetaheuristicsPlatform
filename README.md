@@ -35,7 +35,7 @@ catalog IDs and literature-backed documentation.
 
 <table>
 <tr>
-<td width="20%"><strong>9 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Firefly, Ant System, ACS and MAX-MIN Ant System.</sub></td>
+<td width="20%"><strong>10 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Firefly, Ant System, ACS and MAX-MIN Ant System.</sub></td>
 <td width="20%"><strong>14 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
 <td width="20%"><strong>21 trajectory methods</strong><br><sub>Acceptance methods, Tabu, local search, ILS, Iterated Greedy, LNS, ALNS, VNS and GLS.</sub></td>
 <td width="20%"><strong>3 constructive methods</strong><br><sub>GRASP, Reactive GRASP and GRASP with Path Relinking.</sub></td>
@@ -45,7 +45,7 @@ catalog IDs and literature-backed documentation.
 </tr>
 </table>
 
-<p align="center"><strong>61 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>62 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -112,6 +112,7 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/cuckoo-search-yang-deb-2009.html"><strong>Cuckoo Search via Levy Flights</strong></a><br><sub>Published Yang-Deb pseudocode: one randomly chosen cuckoo Levy-flight proposal, random host-nest comparison, replacement of a p_a fraction of worst nests by new random nests, elitist retention and ranking. The Levy-flight operator is realized internally with Mantegna's symmetric beta=1.5 construction; beta is intentionally not exposed as a configurable public parameter for this canonical identity.</sub><br><code>cuckoo-search-yang-deb-2009</code><br><sub><code>CuckooSearchOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/bat-algorithm-yang-2010.html"><strong>Bat Algorithm</strong></a><br><sub>Canonical frequency/velocity/position update, best-centered local random walk, loudness-gated greedy acceptance, geometric loudness decay and asymptotic pulse-rate growth.</sub><br><code>bat-algorithm-yang-2010</code><br><sub><code>BatAlgorithmOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/flower-pollination-algorithm-yang-2012.html"><strong>Flower Pollination Algorithm</strong></a><br><sub>Canonical switch-controlled global Levy pollination toward the current best and local random flower-pair pollination with greedy replacement. The Levy-flight operator uses a fixed internal Mantegna beta=1.5 numerical realization rather than exposing a later variant parameter.</sub><br><code>flower-pollination-algorithm-yang-2012</code><br><sub><code>FlowerPollinationOptimizer</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/grey-wolf-optimizer-mirjalili-mirjalili-lewis-2014.html"><strong>Grey Wolf Optimizer</strong></a><br><sub>Canonical alpha-beta-delta leadership, three independent A/C encircling vectors, arithmetic mean position update and linear a decrease from 2 to 0.</sub><br><code>grey-wolf-optimizer-mirjalili-mirjalili-lewis-2014</code><br><sub><code>GreyWolfOptimizer</code></sub></td></tr>
 </table>
 
 ### Evolutionary methods

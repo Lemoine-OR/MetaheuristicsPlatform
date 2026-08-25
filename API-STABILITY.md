@@ -1,5 +1,9 @@
 # API stability
 
+## v0.72.0
+
+- Added stable direct-factory algorithm ID `grey-wolf-optimizer-mirjalili-mirjalili-lewis-2014` (`GreyWolfOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.71.0
 
 - Added stable direct-factory algorithm ID `flower-pollination-algorithm-yang-2012` (`FlowerPollinationOptimizer`). Existing public IDs and signatures are unchanged.

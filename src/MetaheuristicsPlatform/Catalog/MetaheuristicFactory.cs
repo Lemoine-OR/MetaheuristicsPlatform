@@ -134,6 +134,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.FlowerPollinationAlgorithm,
             "MetaheuristicsPlatform.Algorithms.FlowerPollination.FlowerPollinationOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.GreyWolfOptimizer,
+            "MetaheuristicsPlatform.Algorithms.GreyWolf.GreyWolfOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>
