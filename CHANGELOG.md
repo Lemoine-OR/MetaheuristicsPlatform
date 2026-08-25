@@ -2,6 +2,19 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.74.0] - 2026-08-25
+
+### Added
+
+- Adds the canonical Whale Optimization Algorithm scientific identity from Mirjalili & Lewis (2016), Advances in Engineering Software 95, 51-67 (DOI 10.1016/j.advengsoft.2016.01.008).
+- Stable ID: `whale-optimization-algorithm-mirjalili-lewis-2016`.
+- Direct factory registration, structured mathematical documentation, semantic tests and benchmark included.
+
+### Changed
+
+- Public algorithm count increases to 64.
+- Existing historical scientific validators remain frozen.
+- No external numerical dependency is introduced.
 ## [0.73.0] - 2026-08-25
 
 ### Added

@@ -115,4 +115,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string MothFlameOptimization =
         "moth-flame-optimization-mirjalili-2015";
+
+    public const string WhaleOptimizationAlgorithm =
+        "whale-optimization-algorithm-mirjalili-lewis-2016";
 }

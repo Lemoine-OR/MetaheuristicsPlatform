@@ -30,6 +30,10 @@ authoritative location for method-specific provenance.
 
 - Mirjalili (2015), Moth-flame optimization algorithm: A novel nature-inspired heuristic paradigm, Knowledge-Based Systems 89, 228-249. DOI: `10.1016/j.knosys.2015.07.006`.
 
+## Whale Optimization Algorithm
+
+- Mirjalili & Lewis (2016), The Whale Optimization Algorithm, Advances in Engineering Software 95, 51-67. DOI: `10.1016/j.advengsoft.2016.01.008`.
+
 ## Threshold Accepting
 
 - Dueck, G.; Scheuer, T. (1990). *Threshold accepting: A general purpose optimization

@@ -872,7 +872,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/MothFlame/MothFlameOptimizer.cs",
             "Mirjalili (2015), Moth-flame optimization algorithm: A novel nature-inspired heuristic paradigm, Knowledge-Based Systems 89, 228-249",
             "10.1016/j.knosys.2015.07.006",
-            "Canonical moth/flame dual population, historical flame elitism, logarithmic spiral update, and linearly decreasing flame count from Mirjalili (2015).")
+            "Canonical moth/flame dual population, historical flame elitism, logarithmic spiral update, and linearly decreasing flame count from Mirjalili (2015)."),
+        new(
+            "whale-optimization-algorithm-mirjalili-lewis-2016",
+            "Whale Optimization Algorithm",
+            "WhaleOptimizationAlgorithmOptimizer",
+            "swarm-intelligence",
+            "Swarm intelligence",
+            "O(ND) per generation plus N objective evaluations",
+            "O(ND + N)",
+            "Bounded continuous derivative-free optimization with encircling, random-prey exploration and logarithmic bubble-net spirals",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/WhaleOptimization/WhaleOptimizationAlgorithmOptimizer.cs",
+            "Mirjalili & Lewis (2016), The Whale Optimization Algorithm, Advances in Engineering Software 95, 51-67",
+            "10.1016/j.advengsoft.2016.01.008",
+            "Canonical WOA with scalar A/C coefficients per whale, random-prey exploration for |A|>=1, best-prey encircling for |A|<1, and the 50/50 logarithmic spiral mechanism.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

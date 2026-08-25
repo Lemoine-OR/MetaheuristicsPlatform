@@ -142,6 +142,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.MothFlameOptimization,
             "MetaheuristicsPlatform.Algorithms.MothFlame.MothFlameOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.WhaleOptimizationAlgorithm,
+            "MetaheuristicsPlatform.Algorithms.WhaleOptimization.WhaleOptimizationAlgorithmOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

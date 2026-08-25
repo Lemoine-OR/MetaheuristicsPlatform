@@ -1,5 +1,9 @@
 # API stability
 
+## v0.74.0
+
+- Added stable direct-factory algorithm ID `whale-optimization-algorithm-mirjalili-lewis-2016` (`WhaleOptimizationAlgorithmOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.73.0
 
 - Added stable direct-factory algorithm ID `moth-flame-optimization-mirjalili-2015` (`MothFlameOptimizer`). Existing public IDs and signatures are unchanged.
