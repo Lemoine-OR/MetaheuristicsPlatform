@@ -130,6 +130,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.BatAlgorithm,
             "MetaheuristicsPlatform.Algorithms.BatAlgorithm.BatAlgorithmOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.FlowerPollinationAlgorithm,
+            "MetaheuristicsPlatform.Algorithms.FlowerPollination.FlowerPollinationOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

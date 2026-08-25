@@ -15,6 +15,7 @@ probabilistic recruitment or shared pheromone memory.
 - **[MAX-MIN Ant System - Stutzle-Hoos](../algorithms/max-min-ant-system-stutzle-hoos-2000.md)** — `max-min-ant-system-stutzle-hoos-2000` — bounded pheromone memory with selective best reinforcement.
 - **[Cuckoo Search via Levy Flights](../algorithms/cuckoo-search-yang-deb-2009.md)** — `cuckoo-search-yang-deb-2009` — Bounded continuous derivative-free optimization with Levy-flight exploration and nest abandonment.
 - **[Bat Algorithm](../algorithms/bat-algorithm-yang-2010.md)** — `bat-algorithm-yang-2010` — Bounded continuous derivative-free optimization with frequency-tuned motion, pulse-rate local search and loudness acceptance.
+- **[Flower Pollination Algorithm](../algorithms/flower-pollination-algorithm-yang-2012.md)** — `flower-pollination-algorithm-yang-2012` — Bounded continuous derivative-free optimization mixing global Levy pollination and local flower constancy.
 
 ## Navigation
 

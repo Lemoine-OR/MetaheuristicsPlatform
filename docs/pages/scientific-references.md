@@ -18,6 +18,10 @@ authoritative location for method-specific provenance.
 
 - Yang (2010), A New Metaheuristic Bat-Inspired Algorithm, NICSO 2010, 65-74. DOI: `10.1007/978-3-642-12538-6_6`.
 
+## Flower Pollination Algorithm
+
+- Yang (2012), Flower Pollination Algorithm for Global Optimization, UCNC 2012, LNCS 7445, 240-249. DOI: `10.1007/978-3-642-32894-7_27`.
+
 ## Threshold Accepting
 
 - Dueck, G.; Scheuer, T. (1990). *Threshold accepting: A general purpose optimization

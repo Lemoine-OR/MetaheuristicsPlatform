@@ -1,5 +1,9 @@
 # API stability
 
+## v0.71.0
+
+- Added stable direct-factory algorithm ID `flower-pollination-algorithm-yang-2012` (`FlowerPollinationOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.70.0
 
 - Added stable direct-factory algorithm ID `bat-algorithm-yang-2010` (`BatAlgorithmOptimizer`). Existing public IDs and signatures are unchanged.

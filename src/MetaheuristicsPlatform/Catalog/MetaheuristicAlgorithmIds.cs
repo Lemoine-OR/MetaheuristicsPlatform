@@ -106,4 +106,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string BatAlgorithm =
         "bat-algorithm-yang-2010";
+
+    public const string FlowerPollinationAlgorithm =
+        "flower-pollination-algorithm-yang-2012";
 }

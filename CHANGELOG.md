@@ -2,6 +2,19 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.71.0] - 2026-08-25
+
+### Added
+
+- Adds the canonical Flower Pollination Algorithm scientific identity from Yang (2012), Flower Pollination Algorithm for Global Optimization, UCNC 2012, LNCS 7445, 240-249 (DOI 10.1007/978-3-642-32894-7_27).
+- Stable ID: `flower-pollination-algorithm-yang-2012`.
+- Direct factory registration, structured mathematical documentation, semantic tests and benchmark included.
+
+### Changed
+
+- Public algorithm count increases to 61.
+- Existing historical scientific validators remain frozen.
+- No external numerical dependency is introduced.
 ## [0.70.0] - 2026-08-25
 
 ### Added

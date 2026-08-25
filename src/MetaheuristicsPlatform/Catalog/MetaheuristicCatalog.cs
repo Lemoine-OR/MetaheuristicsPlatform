@@ -830,7 +830,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/BatAlgorithm/BatAlgorithmOptimizer.cs",
             "Yang (2010), A New Metaheuristic Bat-Inspired Algorithm, NICSO 2010, 65-74",
             "10.1007/978-3-642-12538-6_6",
-            "Canonical frequency/velocity/position update, best-centered local random walk, loudness-gated greedy acceptance, geometric loudness decay and asymptotic pulse-rate growth.")
+            "Canonical frequency/velocity/position update, best-centered local random walk, loudness-gated greedy acceptance, geometric loudness decay and asymptotic pulse-rate growth."),
+        new(
+            "flower-pollination-algorithm-yang-2012",
+            "Flower Pollination Algorithm",
+            "FlowerPollinationOptimizer",
+            "swarm-intelligence",
+            "Swarm intelligence",
+            "O(ND) per generation plus N objective evaluations",
+            "O(ND + N)",
+            "Bounded continuous derivative-free optimization mixing global Levy pollination and local flower constancy",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/FlowerPollination/FlowerPollinationOptimizer.cs",
+            "Yang (2012), Flower Pollination Algorithm for Global Optimization, UCNC 2012, LNCS 7445, 240-249",
+            "10.1007/978-3-642-32894-7_27",
+            "Canonical switch-controlled global Levy pollination toward the current best and local random flower-pair pollination with greedy replacement. The Levy-flight operator uses a fixed internal Mantegna beta=1.5 numerical realization rather than exposing a later variant parameter.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

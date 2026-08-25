@@ -1357,6 +1357,28 @@
                            "assumptions":  "Finite bounded continuous box and finite objective values; loudness is positive, pulse rate lies in [0,1], and alpha/gamma are positive control parameters.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; the implementation follows Yang\u0027s published coupled loudness/pulse adaptation.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "flower-pollination-algorithm-yang-2012",
+                           "name":  "Flower Pollination Algorithm",
+                           "class":  "FlowerPollinationOptimizer",
+                           "category":  "swarm-intelligence",
+                           "kind":  "population",
+                           "family":  "Swarm intelligence",
+                           "time":  "O(ND) per generation plus N objective evaluations",
+                           "space":  "O(ND + N)",
+                           "applicability":  "Bounded continuous derivative-free optimization mixing global Levy pollination and local flower constancy",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/FlowerPollination/FlowerPollinationOptimizer.cs",
+                           "publication":  "Yang (2012), Flower Pollination Algorithm for Global Optimization, UCNC 2012, LNCS 7445, 240-249",
+                           "doi":  "10.1007/978-3-642-32894-7_27",
+                           "implementation":  "Canonical switch-controlled global Levy pollination toward the current best and local random flower-pair pollination with greedy replacement. The Levy-flight operator uses a fixed internal Mantegna beta=1.5 numerical realization rather than exposing a later variant parameter.",
+                           "page":  "docs/pages/algorithms/flower-pollination-algorithm-yang-2012.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}x_i^{t+1}\u0026=x_i^t+\\gamma L(g_*-x_i^t)\u0026\u0026\\text{(global)},\\\\x_i^{t+1}\u0026=x_i^t+\\varepsilon(x_j^t-x_k^t)\u0026\u0026\\text{(local)}\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous box; finite objective values; global pollination uses a dimension-wise Levy vector and local pollination samples two distinct population members.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; stochastic exploration/exploitation is governed by the switch probability and Levy-flight scaling.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }
