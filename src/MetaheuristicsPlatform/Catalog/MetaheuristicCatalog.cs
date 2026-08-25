@@ -816,7 +816,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/CuckooSearch/CuckooSearchOptimizer.cs",
             "Yang & Deb (2009), Cuckoo Search via Levy Flights, NaBIC 2009, 210-214",
             "10.1109/NABIC.2009.5393690",
-            "Published Yang-Deb pseudocode: one randomly chosen cuckoo Levy-flight proposal, random host-nest comparison, replacement of a p_a fraction of worst nests by new random nests, elitist retention and ranking. The Levy-flight operator is realized internally with Mantegna's symmetric beta=1.5 construction; beta is intentionally not exposed as a configurable public parameter for this canonical identity.")
+            "Published Yang-Deb pseudocode: one randomly chosen cuckoo Levy-flight proposal, random host-nest comparison, replacement of a p_a fraction of worst nests by new random nests, elitist retention and ranking. The Levy-flight operator is realized internally with Mantegna's symmetric beta=1.5 construction; beta is intentionally not exposed as a configurable public parameter for this canonical identity."),
+        new(
+            "bat-algorithm-yang-2010",
+            "Bat Algorithm",
+            "BatAlgorithmOptimizer",
+            "swarm-intelligence",
+            "Swarm intelligence",
+            "O(ND) per generation plus N objective evaluations",
+            "O(ND + N)",
+            "Bounded continuous derivative-free optimization with frequency-tuned motion, pulse-rate local search and loudness acceptance",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/BatAlgorithm/BatAlgorithmOptimizer.cs",
+            "Yang (2010), A New Metaheuristic Bat-Inspired Algorithm, NICSO 2010, 65-74",
+            "10.1007/978-3-642-12538-6_6",
+            "Canonical frequency/velocity/position update, best-centered local random walk, loudness-gated greedy acceptance, geometric loudness decay and asymptotic pulse-rate growth.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

@@ -126,6 +126,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.CuckooSearch,
             "MetaheuristicsPlatform.Algorithms.CuckooSearch.CuckooSearchOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.BatAlgorithm,
+            "MetaheuristicsPlatform.Algorithms.BatAlgorithm.BatAlgorithmOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

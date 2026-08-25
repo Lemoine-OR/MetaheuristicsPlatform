@@ -14,6 +14,10 @@ authoritative location for method-specific provenance.
 
 - Yang & Deb (2009), Cuckoo Search via Levy Flights, NaBIC 2009, 210-214. DOI: `10.1109/NABIC.2009.5393690`.
 
+## Bat Algorithm
+
+- Yang (2010), A New Metaheuristic Bat-Inspired Algorithm, NICSO 2010, 65-74. DOI: `10.1007/978-3-642-12538-6_6`.
+
 ## Threshold Accepting
 
 - Dueck, G.; Scheuer, T. (1990). *Threshold accepting: A general purpose optimization

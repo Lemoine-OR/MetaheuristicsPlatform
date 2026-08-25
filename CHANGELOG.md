@@ -2,6 +2,19 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.70.0] - 2026-08-25
+
+### Added
+
+- Adds the canonical Bat Algorithm scientific identity from Yang (2010), A New Metaheuristic Bat-Inspired Algorithm, NICSO 2010, 65-74 (DOI 10.1007/978-3-642-12538-6_6).
+- Stable ID: `bat-algorithm-yang-2010`.
+- Direct factory registration, structured mathematical documentation, semantic tests and benchmark included.
+
+### Changed
+
+- Public algorithm count increases to 60.
+- Existing historical scientific validators remain frozen.
+- No external numerical dependency is introduced.
 ## [0.69.0] - 2026-08-25
 
 ### Added

@@ -1,5 +1,9 @@
 # API stability
 
+## v0.70.0
+
+- Added stable direct-factory algorithm ID `bat-algorithm-yang-2010` (`BatAlgorithmOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.69.0
 
 - Added stable direct-factory algorithm ID `cuckoo-search-yang-deb-2009` (`CuckooSearchOptimizer`). Existing public IDs and signatures are unchanged.

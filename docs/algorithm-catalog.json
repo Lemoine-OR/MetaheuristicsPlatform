@@ -1335,6 +1335,28 @@
                            "assumptions":  "Finite bounded continuous box; finite objective values; Levy steps use a fixed internal Mantegna beta=1.5 realization; abandoned nests are resampled from the search space.",
                            "convergence":  "No universal finite-time convergence guarantee is claimed; global exploration follows the heavy-tailed Levy-flight mechanism and random abandonment.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "bat-algorithm-yang-2010",
+                           "name":  "Bat Algorithm",
+                           "class":  "BatAlgorithmOptimizer",
+                           "category":  "swarm-intelligence",
+                           "kind":  "population",
+                           "family":  "Swarm intelligence",
+                           "time":  "O(ND) per generation plus N objective evaluations",
+                           "space":  "O(ND + N)",
+                           "applicability":  "Bounded continuous derivative-free optimization with frequency-tuned motion, pulse-rate local search and loudness acceptance",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/BatAlgorithm/BatAlgorithmOptimizer.cs",
+                           "publication":  "Yang (2010), A New Metaheuristic Bat-Inspired Algorithm, NICSO 2010, 65-74",
+                           "doi":  "10.1007/978-3-642-12538-6_6",
+                           "implementation":  "Canonical frequency/velocity/position update, best-centered local random walk, loudness-gated greedy acceptance, geometric loudness decay and asymptotic pulse-rate growth.",
+                           "page":  "docs/pages/algorithms/bat-algorithm-yang-2010.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}f_i\u0026=f_{\\min}+(f_{\\max}-f_{\\min})\\beta,\\\\v_i^t\u0026=v_i^{t-1}+(x_i^{t-1}-x_*)f_i,\\\\x_i^t\u0026=x_i^{t-1}+v_i^t\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous box and finite objective values; loudness is positive, pulse rate lies in [0,1], and alpha/gamma are positive control parameters.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; the implementation follows Yang\u0027s published coupled loudness/pulse adaptation.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

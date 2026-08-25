@@ -103,4 +103,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string CuckooSearch =
         "cuckoo-search-yang-deb-2009";
+
+    public const string BatAlgorithm =
+        "bat-algorithm-yang-2010";
 }
