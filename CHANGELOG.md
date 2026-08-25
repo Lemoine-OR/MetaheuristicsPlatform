@@ -2,6 +2,19 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.76.0] - 2026-08-25
+
+### Added
+
+- Adds the canonical single-objective Salp Swarm Algorithm scientific identity from Mirjalili et al. (2017), Advances in Engineering Software 114, 163-191 (DOI 10.1016/j.advengsoft.2017.07.002).
+- Stable ID: `salp-swarm-algorithm-mirjalili-gandomi-mirjalili-saremi-faris-mirjalili-2017`.
+- Direct factory registration, structured mathematical documentation, semantic tests and benchmark included.
+
+### Changed
+
+- Public algorithm count increases to 66.
+- Existing historical scientific validators remain frozen.
+- No external numerical dependency is introduced.
 ## [0.75.0] - 2026-08-25
 
 ### Added

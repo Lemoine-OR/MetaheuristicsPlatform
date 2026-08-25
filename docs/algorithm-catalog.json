@@ -1467,6 +1467,28 @@
                            "assumptions":  "Finite bounded continuous box and finite objective values; at least two search agents; the destination is the best-so-far candidate under the configured objective sense.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; r1 decreases linearly from the canonical amplitude a=2 toward zero.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "salp-swarm-algorithm-mirjalili-gandomi-mirjalili-saremi-faris-mirjalili-2017",
+                           "name":  "Salp Swarm Algorithm",
+                           "class":  "SalpSwarmAlgorithmOptimizer",
+                           "category":  "swarm-intelligence",
+                           "kind":  "population",
+                           "family":  "Swarm intelligence",
+                           "time":  "O(ND) per generation plus N objective evaluations",
+                           "space":  "O(ND + N)",
+                           "applicability":  "Bounded continuous derivative-free optimization with food-directed leaders and chain-following salps",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/SalpSwarm/SalpSwarmAlgorithmOptimizer.cs",
+                           "publication":  "Mirjalili, Gandomi, Mirjalili, Saremi, Faris \u0026 Mirjalili (2017), Salp Swarm Algorithm: A bio-inspired optimizer for engineering design problems, Advances in Engineering Software 114, 163-191",
+                           "doi":  "10.1016/j.advengsoft.2017.07.002",
+                           "implementation":  "Canonical single-objective SSA with c1=2 exp(-(4t/T)^2), leader coordinates sampled around the food source, and followers updated by the published half-sum chain rule.",
+                           "page":  "docs/pages/algorithms/salp-swarm-algorithm-mirjalili-gandomi-mirjalili-saremi-faris-mirjalili-2017.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}\\ell\u0026=t+1,\\quad T_s=T+1,\\quad c_1(t)=2e^{-\\left(4\\ell/T_s\\right)^2},\\\\x_{i,d}^{t+1}\u0026=F_d+c_1\\left((u_d-l_d)c_2+l_d\\right)\\quad(i\\le\\lfloor N/2\\rfloor,\\ c_3\u003c\\tfrac12),\\\\x_{i,d}^{t+1}\u0026=F_d-c_1\\left((u_d-l_d)c_2+l_d\\right)\\quad(i\\le\\lfloor N/2\\rfloor,\\ c_3\\ge\\tfrac12),\\\\x_{i,d}^{t+1}\u0026=\\frac{x_{i,d}^{t}+x_{i-1,d}^{t+1}}{2}\\quad(i\u003e\\lfloor N/2\\rfloor)\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous box and finite objective values; at least four salps; the food source is the best-so-far solution and the first half of the chain acts as leaders.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; c1 decreases rapidly toward zero, progressively contracting leader motion around the food source.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

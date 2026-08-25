@@ -1,5 +1,9 @@
 # API stability
 
+## v0.76.0
+
+- Added stable direct-factory algorithm ID `salp-swarm-algorithm-mirjalili-gandomi-mirjalili-saremi-faris-mirjalili-2017` (`SalpSwarmAlgorithmOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.75.0
 
 - Added stable direct-factory algorithm ID `sine-cosine-algorithm-mirjalili-2016` (`SineCosineAlgorithmOptimizer`). Existing public IDs and signatures are unchanged.

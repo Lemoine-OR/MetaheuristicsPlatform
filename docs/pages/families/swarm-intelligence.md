@@ -20,6 +20,7 @@ probabilistic recruitment or shared pheromone memory.
 - **[Moth-Flame Optimization](../algorithms/moth-flame-optimization-mirjalili-2015.md)** — `moth-flame-optimization-mirjalili-2015` — Bounded continuous derivative-free optimization with logarithmic moth-to-flame spirals and a linearly decreasing flame count.
 - **[Whale Optimization Algorithm](../algorithms/whale-optimization-algorithm-mirjalili-lewis-2016.md)** — `whale-optimization-algorithm-mirjalili-lewis-2016` — Bounded continuous derivative-free optimization with encircling, random-prey exploration and logarithmic bubble-net spirals.
 - **[Sine Cosine Algorithm](../algorithms/sine-cosine-algorithm-mirjalili-2016.md)** — `sine-cosine-algorithm-mirjalili-2016` — Bounded continuous derivative-free optimization with sine/cosine oscillation around the best destination.
+- **[Salp Swarm Algorithm](../algorithms/salp-swarm-algorithm-mirjalili-gandomi-mirjalili-saremi-faris-mirjalili-2017.md)** — `salp-swarm-algorithm-mirjalili-gandomi-mirjalili-saremi-faris-mirjalili-2017` — Bounded continuous derivative-free optimization with food-directed leaders and chain-following salps.
 
 ## Navigation
 

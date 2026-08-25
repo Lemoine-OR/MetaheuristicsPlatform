@@ -150,6 +150,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.SineCosineAlgorithm,
             "MetaheuristicsPlatform.Algorithms.SineCosine.SineCosineAlgorithmOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.SalpSwarmAlgorithm,
+            "MetaheuristicsPlatform.Algorithms.SalpSwarm.SalpSwarmAlgorithmOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

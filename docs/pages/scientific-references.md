@@ -38,6 +38,10 @@ authoritative location for method-specific provenance.
 
 - Mirjalili (2016), SCA: A Sine Cosine Algorithm for solving optimization problems, Knowledge-Based Systems 96, 120-133. DOI: `10.1016/j.knosys.2015.12.022`.
 
+## Salp Swarm Algorithm
+
+- Mirjalili, Gandomi, Mirjalili, Saremi, Faris & Mirjalili (2017), Salp Swarm Algorithm: A bio-inspired optimizer for engineering design problems, Advances in Engineering Software 114, 163-191. DOI: `10.1016/j.advengsoft.2017.07.002`.
+
 ## Threshold Accepting
 
 - Dueck, G.; Scheuer, T. (1990). *Threshold accepting: A general purpose optimization

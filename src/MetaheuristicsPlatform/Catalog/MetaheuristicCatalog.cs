@@ -900,7 +900,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/SineCosine/SineCosineAlgorithmOptimizer.cs",
             "Mirjalili (2016), SCA: A Sine Cosine Algorithm for solving optimization problems, Knowledge-Based Systems 96, 120-133",
             "10.1016/j.knosys.2015.12.022",
-            "Canonical SCA with linearly decreasing r1, r2 in [0,2pi), r3 in [0,2), and an equiprobable sine/cosine switch r4.")
+            "Canonical SCA with linearly decreasing r1, r2 in [0,2pi), r3 in [0,2), and an equiprobable sine/cosine switch r4."),
+        new(
+            "salp-swarm-algorithm-mirjalili-gandomi-mirjalili-saremi-faris-mirjalili-2017",
+            "Salp Swarm Algorithm",
+            "SalpSwarmAlgorithmOptimizer",
+            "swarm-intelligence",
+            "Swarm intelligence",
+            "O(ND) per generation plus N objective evaluations",
+            "O(ND + N)",
+            "Bounded continuous derivative-free optimization with food-directed leaders and chain-following salps",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/SalpSwarm/SalpSwarmAlgorithmOptimizer.cs",
+            "Mirjalili, Gandomi, Mirjalili, Saremi, Faris & Mirjalili (2017), Salp Swarm Algorithm: A bio-inspired optimizer for engineering design problems, Advances in Engineering Software 114, 163-191",
+            "10.1016/j.advengsoft.2017.07.002",
+            "Canonical single-objective SSA with c1=2 exp(-(4t/T)^2), leader coordinates sampled around the food source, and followers updated by the published half-sum chain rule.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

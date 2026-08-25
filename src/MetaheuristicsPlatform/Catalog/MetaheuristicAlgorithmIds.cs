@@ -121,4 +121,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string SineCosineAlgorithm =
         "sine-cosine-algorithm-mirjalili-2016";
+
+    public const string SalpSwarmAlgorithm =
+        "salp-swarm-algorithm-mirjalili-gandomi-mirjalili-saremi-faris-mirjalili-2017";
 }

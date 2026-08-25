@@ -20,6 +20,8 @@ $catalog =
 $algorithms = @($catalog.algorithms)
 $families = @($catalog.families)
 
+& (Join-Path $Root "docs\Test-SalpSwarmAlgorithm.ps1") -Root $Root
+
 & (Join-Path $Root "docs\Test-SineCosineAlgorithm.ps1") -Root $Root
 
 & (Join-Path $Root "docs\Test-WhaleOptimizationAlgorithm.ps1") -Root $Root
@@ -36,7 +38,7 @@ $families = @($catalog.families)
 
 & (Join-Path $Root "docs\Test-BiogeographyBasedOptimization.ps1") -Root $Root
 
-if ($algorithms.Count -lt 65) {
+if ($algorithms.Count -lt 66) {
     throw "Documentation parity: expected at least 57 currently public algorithms."
 }
 
@@ -217,6 +219,8 @@ $requiredRepoFiles = @(
     "docs\pages\algorithms\whale-optimization-algorithm-mirjalili-lewis-2016.md",
     "docs\Test-SineCosineAlgorithm.ps1",
     "docs\pages\algorithms\sine-cosine-algorithm-mirjalili-2016.md",
+    "docs\Test-SalpSwarmAlgorithm.ps1",
+    "docs\pages\algorithms\salp-swarm-algorithm-mirjalili-gandomi-mirjalili-saremi-faris-mirjalili-2017.md",
     "docs\Test-DoxygenMarkupSafety.ps1",
     "docs\Test-ContinuousCrossEntropy.ps1",
     "docs\Test-LargeNeighborhoodSearch.ps1",
@@ -364,8 +368,8 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.75.0") {
-    throw "Documentation parity: version.json must be 0.75.0 for this release."
+if ([string]$version.version -ne "0.76.0") {
+    throw "Documentation parity: version.json must be 0.76.0 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root
