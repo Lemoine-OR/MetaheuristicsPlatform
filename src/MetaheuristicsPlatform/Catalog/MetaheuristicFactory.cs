@@ -122,6 +122,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.BiogeographyBasedOptimization,
             "MetaheuristicsPlatform.Algorithms.BiogeographyBasedOptimization.BiogeographyBasedOptimizationOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.CuckooSearch,
+            "MetaheuristicsPlatform.Algorithms.CuckooSearch.CuckooSearchOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

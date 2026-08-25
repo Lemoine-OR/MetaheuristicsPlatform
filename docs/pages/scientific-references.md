@@ -10,6 +10,10 @@ authoritative location for method-specific provenance.
 
 - Simon (2008), Biogeography-Based Optimization, IEEE Transactions on Evolutionary Computation 12(6), 702-713. DOI: `10.1109/TEVC.2008.919004`.
 
+## Cuckoo Search via Levy Flights
+
+- Yang & Deb (2009), Cuckoo Search via Levy Flights, NaBIC 2009, 210-214. DOI: `10.1109/NABIC.2009.5393690`.
+
 ## Threshold Accepting
 
 - Dueck, G.; Scheuer, T. (1990). *Threshold accepting: A general purpose optimization

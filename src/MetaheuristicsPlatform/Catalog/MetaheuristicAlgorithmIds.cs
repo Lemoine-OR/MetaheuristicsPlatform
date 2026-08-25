@@ -100,4 +100,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string BiogeographyBasedOptimization =
         "biogeography-based-optimization-simon-2008";
+
+    public const string CuckooSearch =
+        "cuckoo-search-yang-deb-2009";
 }

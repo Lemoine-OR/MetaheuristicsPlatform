@@ -1313,6 +1313,28 @@
                            "assumptions":  "Finite bounded continuous box; finite objective values; habitat quality ranking maps monotonically to species count; migration and mutation use the paper\u0027s linear rates.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; the implementation reproduces the stochastic migration/mutation mechanism and preserves elites explicitly.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "cuckoo-search-yang-deb-2009",
+                           "name":  "Cuckoo Search via Levy Flights",
+                           "class":  "CuckooSearchOptimizer",
+                           "category":  "swarm-intelligence",
+                           "kind":  "population",
+                           "family":  "Swarm intelligence",
+                           "time":  "O(D + N log N + p_a N D) per published generation plus objective-evaluation cost",
+                           "space":  "O(ND + N)",
+                           "applicability":  "Bounded continuous derivative-free optimization with Levy-flight exploration and nest abandonment",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/CuckooSearch/CuckooSearchOptimizer.cs",
+                           "publication":  "Yang \u0026 Deb (2009), Cuckoo Search via Levy Flights, NaBIC 2009, 210-214",
+                           "doi":  "10.1109/NABIC.2009.5393690",
+                           "implementation":  "Published Yang-Deb pseudocode: one randomly chosen cuckoo Levy-flight proposal, random host-nest comparison, replacement of a p_a fraction of worst nests by new random nests, elitist retention and ranking. The Levy-flight operator is realized internally with Mantegna\u0027s symmetric beta=1.5 construction; beta is intentionally not exposed as a configurable public parameter for this canonical identity.",
+                           "page":  "docs/pages/algorithms/cuckoo-search-yang-deb-2009.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}x_i^{t+1}\u0026=x_i^t+\\alpha L,\\\\L\u0026\\sim\\operatorname{Levy},\\\\n_{\\mathrm{abandon}}\u0026=\\left\\lceil p_aN\\right\\rceil\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous box; finite objective values; Levy steps use a fixed internal Mantegna beta=1.5 realization; abandoned nests are resampled from the search space.",
+                           "convergence":  "No universal finite-time convergence guarantee is claimed; global exploration follows the heavy-tailed Levy-flight mechanism and random abandonment.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

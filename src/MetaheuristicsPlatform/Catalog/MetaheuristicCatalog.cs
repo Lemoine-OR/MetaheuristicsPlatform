@@ -802,7 +802,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/BiogeographyBasedOptimization/BiogeographyBasedOptimizationOptimizer.cs",
             "Simon (2008), Biogeography-Based Optimization, IEEE Transactions on Evolutionary Computation 12(6), 702-713",
             "10.1109/TEVC.2008.919004",
-            "Canonical rank-derived species counts, linear immigration/emigration curves, equilibrium species-probability mutation, explicit elitism and bounded SIV repair.")
+            "Canonical rank-derived species counts, linear immigration/emigration curves, equilibrium species-probability mutation, explicit elitism and bounded SIV repair."),
+        new(
+            "cuckoo-search-yang-deb-2009",
+            "Cuckoo Search via Levy Flights",
+            "CuckooSearchOptimizer",
+            "swarm-intelligence",
+            "Swarm intelligence",
+            "O(D + N log N + p_a N D) per published generation plus objective-evaluation cost",
+            "O(ND + N)",
+            "Bounded continuous derivative-free optimization with Levy-flight exploration and nest abandonment",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/CuckooSearch/CuckooSearchOptimizer.cs",
+            "Yang & Deb (2009), Cuckoo Search via Levy Flights, NaBIC 2009, 210-214",
+            "10.1109/NABIC.2009.5393690",
+            "Published Yang-Deb pseudocode: one randomly chosen cuckoo Levy-flight proposal, random host-nest comparison, replacement of a p_a fraction of worst nests by new random nests, elitist retention and ranking. The Levy-flight operator is realized internally with Mantegna's symmetric beta=1.5 construction; beta is intentionally not exposed as a configurable public parameter for this canonical identity.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

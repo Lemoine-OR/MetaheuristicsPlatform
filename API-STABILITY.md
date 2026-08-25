@@ -1,5 +1,9 @@
 # API stability
 
+## v0.69.0
+
+- Added stable direct-factory algorithm ID `cuckoo-search-yang-deb-2009` (`CuckooSearchOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.68.0
 
 - Added stable direct-factory algorithm ID `biogeography-based-optimization-simon-2008` (`BiogeographyBasedOptimizationOptimizer`). Existing public IDs and signatures are unchanged.

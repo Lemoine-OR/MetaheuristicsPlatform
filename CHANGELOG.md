@@ -2,6 +2,19 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.69.0] - 2026-08-25
+
+### Added
+
+- Adds the canonical Cuckoo Search via Levy Flights scientific identity from Yang & Deb (2009), Cuckoo Search via Levy Flights, NaBIC 2009, 210-214 (DOI 10.1109/NABIC.2009.5393690).
+- Stable ID: `cuckoo-search-yang-deb-2009`.
+- Direct factory registration, structured mathematical documentation, semantic tests and benchmark included.
+
+### Changed
+
+- Public algorithm count increases to 59.
+- Existing historical scientific validators remain frozen.
+- No external numerical dependency is introduced.
 ## [0.68.0] - 2026-08-25
 
 ### Added
