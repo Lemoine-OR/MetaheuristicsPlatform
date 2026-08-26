@@ -170,6 +170,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.TeachingLearningBasedOptimization,
             "MetaheuristicsPlatform.Algorithms.TeachingLearningBasedOptimization.TeachingLearningBasedOptimizationOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.CrowSearch,
+            "MetaheuristicsPlatform.Algorithms.CrowSearch.CrowSearchOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

@@ -136,4 +136,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string TeachingLearningBasedOptimization =
         "teaching-learning-based-optimization-rao-savsani-vakharia-2011";
+
+    public const string CrowSearch =
+        "crow-search-algorithm-askarzadeh-2016";
 }

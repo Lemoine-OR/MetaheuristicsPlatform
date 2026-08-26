@@ -58,6 +58,10 @@ authoritative location for method-specific provenance.
 
 - Rao, Savsani & Vakharia (2011), Teaching-learning-based optimization: A novel method for constrained mechanical design optimization problems, Computer-Aided Design 43(3), 303-315. DOI: `10.1016/j.cad.2010.12.015`.
 
+## Crow Search Algorithm
+
+- Askarzadeh (2016), A novel metaheuristic method for solving constrained engineering optimization problems: Crow search algorithm, Computers & Structures 169, 1-12. DOI: `10.1016/j.compstruc.2016.03.001`.
+
 ## Threshold Accepting
 
 - Dueck, G.; Scheuer, T. (1990). *Threshold accepting: A general purpose optimization

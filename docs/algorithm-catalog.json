@@ -1577,6 +1577,28 @@
                            "assumptions":  "Finite bounded continuous box, finite objective values and at least two learners. The teaching factor is generated internally as 1 or 2 with equal probability and is not an algorithm-specific input parameter.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; teacher and learner candidates are accepted only when they improve the incumbent under the configured objective sense.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "crow-search-algorithm-askarzadeh-2016",
+                           "name":  "Crow Search Algorithm",
+                           "class":  "CrowSearchOptimizer",
+                           "category":  "swarm-intelligence",
+                           "kind":  "population",
+                           "family":  "Swarm intelligence",
+                           "time":  "O(ND) per iteration plus N objective evaluations",
+                           "space":  "O(ND)",
+                           "applicability":  "Bounded continuous derivative-free optimization using personal hiding-place memory, crow following, flight length and awareness-controlled random relocation",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/CrowSearch/CrowSearchOptimizer.cs",
+                           "publication":  "Askarzadeh (2016), A novel metaheuristic method for solving constrained engineering optimization problems: Crow search algorithm, Computers \u0026 Structures 169, 1-12",
+                           "doi":  "10.1016/j.compstruc.2016.03.001",
+                           "implementation":  "Canonical CSA with each crow following another crow memory when the target is unaware, random relocation when it is aware, and personal-memory greedy update; paper benchmark controls fl=2 and AP=0.1 are the defaults.",
+                           "page":  "docs/pages/algorithms/crow-search-algorithm-askarzadeh-2016.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}x_i^{t+1}\u0026=\\begin{cases}x_i^t+r_i^t\\,\\mathrm{fl}\\,(m_j^t-x_i^t),\u0026q_j^t\\ge \\mathrm{AP},\\\\U(\\mathcal X),\u0026q_j^t\u003c\\mathrm{AP},\\end{cases}\\quad j\\ne i,\\\\m_i^{t+1}\u0026=\\begin{cases}x_i^{t+1},\u0026f(x_i^{t+1})\\prec f(m_i^t),\\\\m_i^t,\u0026\\text{otherwise}.\\end{cases}\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous box, finite objective values and at least two crows. Flight length and awareness probability are fixed per run; random relocation samples uniformly from the bounded search space.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; awareness probability controls diversification while flight length controls the scale of directed movement toward remembered hiding places.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

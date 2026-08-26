@@ -970,7 +970,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/TeachingLearningBasedOptimization/TeachingLearningBasedOptimizationOptimizer.cs",
             "Rao, Savsani & Vakharia (2011), Teaching-learning-based optimization: A novel method for constrained mechanical design optimization problems, Computer-Aided Design 43(3), 303-315",
             "10.1016/j.cad.2010.12.015",
-            "Canonical 2011 TLBO teacher phase with randomly selected teaching factor 1 or 2, followed by the published learner phase and greedy replacement after each candidate evaluation.")
+            "Canonical 2011 TLBO teacher phase with randomly selected teaching factor 1 or 2, followed by the published learner phase and greedy replacement after each candidate evaluation."),
+        new(
+            "crow-search-algorithm-askarzadeh-2016",
+            "Crow Search Algorithm",
+            "CrowSearchOptimizer",
+            "swarm-intelligence",
+            "Swarm intelligence",
+            "O(ND) per iteration plus N objective evaluations",
+            "O(ND)",
+            "Bounded continuous derivative-free optimization using personal hiding-place memory, crow following, flight length and awareness-controlled random relocation",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/CrowSearch/CrowSearchOptimizer.cs",
+            "Askarzadeh (2016), A novel metaheuristic method for solving constrained engineering optimization problems: Crow search algorithm, Computers & Structures 169, 1-12",
+            "10.1016/j.compstruc.2016.03.001",
+            "Canonical CSA with each crow following another crow memory when the target is unaware, random relocation when it is aware, and personal-memory greedy update; paper benchmark controls fl=2 and AP=0.1 are the defaults.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

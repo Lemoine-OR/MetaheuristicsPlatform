@@ -1,5 +1,9 @@
 # API stability
 
+## v0.81.0
+
+- Added stable direct-factory algorithm ID `crow-search-algorithm-askarzadeh-2016` (`CrowSearchOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.80.0
 
 - Added stable direct-factory algorithm ID `teaching-learning-based-optimization-rao-savsani-vakharia-2011` (`TeachingLearningBasedOptimizationOptimizer`). Existing public IDs and signatures are unchanged.

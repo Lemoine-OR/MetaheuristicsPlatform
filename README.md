@@ -35,7 +35,7 @@ catalog IDs and literature-backed documentation.
 
 <table>
 <tr>
-<td width="20%"><strong>16 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Firefly, Ant System, ACS and MAX-MIN Ant System.</sub></td>
+<td width="20%"><strong>17 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Firefly, Ant System, ACS and MAX-MIN Ant System.</sub></td>
 <td width="20%"><strong>14 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
 <td width="20%"><strong>21 trajectory methods</strong><br><sub>Acceptance methods, Tabu, local search, ILS, Iterated Greedy, LNS, ALNS, VNS and GLS.</sub></td>
 <td width="20%"><strong>3 constructive methods</strong><br><sub>GRASP, Reactive GRASP and GRASP with Path Relinking.</sub></td>
@@ -45,7 +45,7 @@ catalog IDs and literature-backed documentation.
 </tr>
 </table>
 
-<p align="center"><strong>70 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>71 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -119,6 +119,7 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/salp-swarm-algorithm-mirjalili-gandomi-mirjalili-saremi-faris-mirjalili-2017.html"><strong>Salp Swarm Algorithm</strong></a><br><sub>Canonical single-objective SSA with c1=2 exp(-(4t/T)^2), leader coordinates sampled around the food source, and followers updated by the published half-sum chain rule.</sub><br><code>salp-swarm-algorithm-mirjalili-gandomi-mirjalili-saremi-faris-mirjalili-2017</code><br><sub><code>SalpSwarmAlgorithmOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/harris-hawks-optimization-heidari-mirjalili-faris-aljarah-mafarja-chen-2019.html"><strong>Harris Hawks Optimization</strong></a><br><sub>Canonical HHO exploration plus four exploitation modes governed by escaping energy and prey escape probability, including beta=1.5 Levy rapid dives.</sub><br><code>harris-hawks-optimization-heidari-mirjalili-faris-aljarah-mafarja-chen-2019</code><br><sub><code>HarrisHawksOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/gravitational-search-algorithm-rashedi-nezamabadi-pour-saryazdi-2009.html"><strong>Gravitational Search Algorithm</strong></a><br><sub>Canonical GSA mass normalization, G(t)=G0 exp(-alpha t/T), elitist Kbest force set decreasing toward 2%, randomly weighted gravitational acceleration, velocity and position updates.</sub><br><code>gravitational-search-algorithm-rashedi-nezamabadi-pour-saryazdi-2009</code><br><sub><code>GravitationalSearchOptimizer</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/crow-search-algorithm-askarzadeh-2016.html"><strong>Crow Search Algorithm</strong></a><br><sub>Canonical CSA with each crow following another crow memory when the target is unaware, random relocation when it is aware, and personal-memory greedy update; paper benchmark controls fl=2 and AP=0.1 are the defaults.</sub><br><code>crow-search-algorithm-askarzadeh-2016</code><br><sub><code>CrowSearchOptimizer</code></sub></td></tr>
 </table>
 
 ### Evolutionary methods

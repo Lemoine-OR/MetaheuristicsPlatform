@@ -2,6 +2,19 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.81.0] - 2026-08-26
+
+### Added
+
+- Adds the canonical Crow Search Algorithm scientific identity from Askarzadeh (2016) (DOI 10.1016/j.compstruc.2016.03.001).
+- Stable ID: `crow-search-algorithm-askarzadeh-2016`.
+- Direct factory registration, structured mathematical documentation, semantic tests and benchmark included.
+
+### Changed
+
+- Public algorithm count increases to 71.
+- Existing historical scientific validators remain frozen.
+- No external numerical dependency is introduced.
 ## [0.80.0] - 2026-08-26
 
 ### Added
