@@ -50,6 +50,10 @@ authoritative location for method-specific provenance.
 
 - Erol & Eksin (2006), A new optimization method: Big Bang-Big Crunch, Advances in Engineering Software 37(2), 106-111. DOI: `10.1016/j.advengsoft.2005.04.005`.
 
+## Gravitational Search Algorithm
+
+- Rashedi, Nezamabadi-pour & Saryazdi (2009), GSA: A Gravitational Search Algorithm, Information Sciences 179(13), 2232-2248. DOI: `10.1016/j.ins.2009.03.004`.
+
 ## Threshold Accepting
 
 - Dueck, G.; Scheuer, T. (1990). *Threshold accepting: A general purpose optimization

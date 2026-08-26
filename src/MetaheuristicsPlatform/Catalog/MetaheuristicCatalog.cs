@@ -942,7 +942,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/BigBangBigCrunch/BigBangBigCrunchOptimizer.cs",
             "Erol & Eksin (2006), A new optimization method: Big Bang-Big Crunch, Advances in Engineering Software 37(2), 106-111",
             "10.1016/j.advengsoft.2005.04.005",
-            "Published BB-BC minimal-cost representative option with Gaussian Big-Bang sampling whose radius decreases as alpha/t; no later local-search hybrid is mixed in.")
+            "Published BB-BC minimal-cost representative option with Gaussian Big-Bang sampling whose radius decreases as alpha/t; no later local-search hybrid is mixed in."),
+        new(
+            "gravitational-search-algorithm-rashedi-nezamabadi-pour-saryazdi-2009",
+            "Gravitational Search Algorithm",
+            "GravitationalSearchOptimizer",
+            "swarm-intelligence",
+            "Swarm intelligence",
+            "O(N K D) per iteration plus N objective evaluations, with K decreasing from the population toward the published 2% terminal fraction",
+            "O(ND + N)",
+            "Bounded continuous derivative-free optimization using fitness-dependent masses, decaying gravitational attraction and velocity updates",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/GravitationalSearch/GravitationalSearchOptimizer.cs",
+            "Rashedi, Nezamabadi-pour & Saryazdi (2009), GSA: A Gravitational Search Algorithm, Information Sciences 179(13), 2232-2248",
+            "10.1016/j.ins.2009.03.004",
+            "Canonical GSA mass normalization, G(t)=G0 exp(-alpha t/T), elitist Kbest force set decreasing toward 2%, randomly weighted gravitational acceleration, velocity and position updates.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

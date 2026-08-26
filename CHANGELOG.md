@@ -2,6 +2,19 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.79.0] - 2026-08-26
+
+### Added
+
+- Adds the canonical Gravitational Search Algorithm scientific identity from Rashedi, Nezamabadi-pour & Saryazdi (2009) (DOI 10.1016/j.ins.2009.03.004).
+- Stable ID: `gravitational-search-algorithm-rashedi-nezamabadi-pour-saryazdi-2009`.
+- Direct factory registration, structured mathematical documentation, semantic tests and benchmark included.
+
+### Changed
+
+- Public algorithm count increases to 69.
+- Existing historical scientific validators remain frozen.
+- No external numerical dependency is introduced.
 ## [0.78.0] - 2026-08-26
 
 ### Added

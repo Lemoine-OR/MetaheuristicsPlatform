@@ -1,5 +1,9 @@
 # API stability
 
+## v0.79.0
+
+- Added stable direct-factory algorithm ID `gravitational-search-algorithm-rashedi-nezamabadi-pour-saryazdi-2009` (`GravitationalSearchOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.78.0
 
 - Added stable direct-factory algorithm ID `big-bang-big-crunch-erol-eksin-2006` (`BigBangBigCrunchOptimizer`). Existing public IDs and signatures are unchanged.

@@ -130,4 +130,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string BigBangBigCrunch =
         "big-bang-big-crunch-erol-eksin-2006";
+
+    public const string GravitationalSearch =
+        "gravitational-search-algorithm-rashedi-nezamabadi-pour-saryazdi-2009";
 }

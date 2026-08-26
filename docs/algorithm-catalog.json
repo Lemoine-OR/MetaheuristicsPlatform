@@ -1533,6 +1533,28 @@
                            "assumptions":  "Finite bounded continuous box, finite objective values and at least two candidates. The original paper explicitly allows the Big-Crunch representative to be either the center of mass or the minimal-cost candidate; this identity uses the published minimal-cost option so it remains well-defined for zero and signed objectives.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; the published Gaussian radius contracts proportionally to 1/t around the current minimal-cost representative.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "gravitational-search-algorithm-rashedi-nezamabadi-pour-saryazdi-2009",
+                           "name":  "Gravitational Search Algorithm",
+                           "class":  "GravitationalSearchOptimizer",
+                           "category":  "swarm-intelligence",
+                           "kind":  "population",
+                           "family":  "Swarm intelligence",
+                           "time":  "O(N K D) per iteration plus N objective evaluations, with K decreasing from the population toward the published 2% terminal fraction",
+                           "space":  "O(ND + N)",
+                           "applicability":  "Bounded continuous derivative-free optimization using fitness-dependent masses, decaying gravitational attraction and velocity updates",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/GravitationalSearch/GravitationalSearchOptimizer.cs",
+                           "publication":  "Rashedi, Nezamabadi-pour \u0026 Saryazdi (2009), GSA: A Gravitational Search Algorithm, Information Sciences 179(13), 2232-2248",
+                           "doi":  "10.1016/j.ins.2009.03.004",
+                           "implementation":  "Canonical GSA mass normalization, G(t)=G0 exp(-alpha t/T), elitist Kbest force set decreasing toward 2%, randomly weighted gravitational acceleration, velocity and position updates.",
+                           "page":  "docs/pages/algorithms/gravitational-search-algorithm-rashedi-nezamabadi-pour-saryazdi-2009.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}m_i^t\u0026=\\frac{f_i^t-w^t}{b^t-w^t},\\quad M_i^t=\\frac{m_i^t}{\\sum_j m_j^t},\\\\G^t\u0026=G_0e^{-\\alpha t/T},\\\\a_{i,d}^t\u0026=\\sum_{j\\in K_t,\\,j\\ne i}r_j^tG^tM_j^t\\frac{x_{j,d}^t-x_{i,d}^t}{\\lVert x_j^t-x_i^t\\rVert_2+\\varepsilon},\\\\v_{i,d}^{t+1}\u0026=r_i^t v_{i,d}^t+a_{i,d}^t,\\quad x_{i,d}^{t+1}=x_{i,d}^t+v_{i,d}^{t+1}\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous box and finite objective values; population size at least two; equal-fitness generations use equal normalized masses as the continuous limiting tie case; Kbest is clamped to at least one agent for finite populations.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; gravitational strength decays exponentially and the published elitist Kbest set shrinks to emphasize exploitation.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

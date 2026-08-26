@@ -162,6 +162,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.BigBangBigCrunch,
             "MetaheuristicsPlatform.Algorithms.BigBangBigCrunch.BigBangBigCrunchOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.GravitationalSearch,
+            "MetaheuristicsPlatform.Algorithms.GravitationalSearch.GravitationalSearchOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>
