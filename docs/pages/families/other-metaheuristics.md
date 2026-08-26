@@ -31,6 +31,7 @@ keep all eight scientific identities separate.
 - **[Jaya Algorithm](../algorithms/jaya-algorithm-rao-2016.md)** — `jaya-algorithm-rao-2016` — Bounded continuous derivative-free population optimization that moves every variable toward the current best and away from the current worst without algorithm-specific control parameters.
 - **[Imperialist Competitive Algorithm](../algorithms/imperialist-competitive-algorithm-atashpaz-gargari-lucas-2007.md)** — `imperialist-competitive-algorithm-atashpaz-gargari-lucas-2007` — Bounded continuous derivative-free optimization using countries, empires, assimilation, revolution and imperialistic competition.
 - **[Black Hole Algorithm](../algorithms/black-hole-algorithm-hatamlou-2013.md)** — `black-hole-algorithm-hatamlou-2013` — Positive-cost bounded continuous minimization using attraction to the current black hole and event-horizon replacement.
+- **[Multi-Verse Optimizer](../algorithms/multi-verse-optimizer-mirjalili-mirjalili-hatamlou-2016.md)** — `multi-verse-optimizer-mirjalili-mirjalili-hatamlou-2016` — Non-negative-cost bounded continuous minimization using white-hole exchange and best-universe wormholes.
 
 ## Navigation
 

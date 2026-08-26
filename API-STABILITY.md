@@ -1,5 +1,9 @@
 # API stability
 
+## v0.86.0
+
+- Added stable direct-factory algorithm ID `multi-verse-optimizer-mirjalili-mirjalili-hatamlou-2016` (`MultiVerseOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.85.0
 
 - Added stable direct-factory algorithm ID `symbiotic-organisms-search-cheng-prayogo-2014` (`SymbioticOrganismsSearchOptimizer`). Existing public IDs and signatures are unchanged.

@@ -190,6 +190,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.SymbioticOrganismsSearch,
             "MetaheuristicsPlatform.Algorithms.SymbioticOrganismsSearch.SymbioticOrganismsSearchOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.MultiVerseOptimizer,
+            "MetaheuristicsPlatform.Algorithms.MultiVerseOptimizer.MultiVerseOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

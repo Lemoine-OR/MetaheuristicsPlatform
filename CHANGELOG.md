@@ -2,6 +2,19 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.86.0] - 2026-08-26
+
+### Added
+
+- Adds the canonical Multi-Verse Optimizer scientific identity from Mirjalili, Mirjalili and Hatamlou (2016) (DOI 10.1007/s00521-015-1870-7).
+- Stable ID: `multi-verse-optimizer-mirjalili-mirjalili-hatamlou-2016`.
+- Direct factory registration, structured mathematical documentation, semantic tests and benchmark included.
+
+### Changed
+
+- Public algorithm count increases to 76.
+- Existing historical scientific validators remain frozen.
+- No external numerical dependency is introduced.
 ## [0.85.0] - 2026-08-26
 
 ### Added

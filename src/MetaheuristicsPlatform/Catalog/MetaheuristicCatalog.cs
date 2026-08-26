@@ -1040,7 +1040,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/SymbioticOrganismsSearch/SymbioticOrganismsSearchOptimizer.cs",
             "Cheng and Prayogo (2014), Symbiotic Organisms Search: A new metaheuristic optimization algorithm, Computers & Structures 139, 98-112",
             "10.1016/j.compstruc.2014.03.007",
-            "Canonical SOS with mutualism benefit factors in {1,2}, commensalism random factor in [-1,1], parasite-vector mutation, and greedy replacement after each published interaction.")
+            "Canonical SOS with mutualism benefit factors in {1,2}, commensalism random factor in [-1,1], parasite-vector mutation, and greedy replacement after each published interaction."),
+        new(
+            "multi-verse-optimizer-mirjalili-mirjalili-hatamlou-2016",
+            "Multi-Verse Optimizer",
+            "MultiVerseOptimizer",
+            "other-metaheuristics",
+            "Other / music-inspired methods",
+            "O(ND + N log N) per iteration plus N objective evaluations",
+            "O(ND + N)",
+            "Non-negative-cost bounded continuous minimization using white-hole exchange and best-universe wormholes",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/MultiVerseOptimizer/MultiVerseOptimizer.cs",
+            "Mirjalili, Mirjalili and Hatamlou (2016), Multi-Verse Optimizer: a nature-inspired algorithm for global optimization, Neural Computing and Applications 27, 495-513",
+            "10.1007/s00521-015-1870-7",
+            "Canonical minimization-oriented MVO white-hole roulette, normalized inflation rates, elite best universe, linearly increasing wormhole existence probability and power-law travelling distance rate with p=6 by default.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

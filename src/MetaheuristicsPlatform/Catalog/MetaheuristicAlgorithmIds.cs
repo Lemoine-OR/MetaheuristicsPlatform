@@ -151,4 +151,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string SymbioticOrganismsSearch =
         "symbiotic-organisms-search-cheng-prayogo-2014";
+
+    public const string MultiVerseOptimizer =
+        "multi-verse-optimizer-mirjalili-mirjalili-hatamlou-2016";
 }

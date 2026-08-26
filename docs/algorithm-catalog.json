@@ -1687,6 +1687,28 @@
                            "assumptions":  "Finite bounded continuous box, finite objective values and at least two organisms. SOS exposes no algorithm-specific tuning coefficient beyond generic population size and iteration budget.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; the three canonical symbiosis phases combine directed exploitation and stochastic replacement without algorithm-specific coefficients.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "multi-verse-optimizer-mirjalili-mirjalili-hatamlou-2016",
+                           "name":  "Multi-Verse Optimizer",
+                           "class":  "MultiVerseOptimizer",
+                           "category":  "other-metaheuristics",
+                           "kind":  "population",
+                           "family":  "Other / music-inspired methods",
+                           "time":  "O(ND + N log N) per iteration plus N objective evaluations",
+                           "space":  "O(ND + N)",
+                           "applicability":  "Non-negative-cost bounded continuous minimization using white-hole exchange and best-universe wormholes",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/MultiVerseOptimizer/MultiVerseOptimizer.cs",
+                           "publication":  "Mirjalili, Mirjalili and Hatamlou (2016), Multi-Verse Optimizer: a nature-inspired algorithm for global optimization, Neural Computing and Applications 27, 495-513",
+                           "doi":  "10.1007/s00521-015-1870-7",
+                           "implementation":  "Canonical minimization-oriented MVO white-hole roulette, normalized inflation rates, elite best universe, linearly increasing wormhole existence probability and power-law travelling distance rate with p=6 by default.",
+                           "page":  "docs/pages/algorithms/multi-verse-optimizer-mirjalili-mirjalili-hatamlou-2016.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x),\\quad f(x)\\ge0",
+                           "update":  "\\begin{aligned}WEP_t\u0026=WEP_{min}+\\frac{t}{T}(WEP_{max}-WEP_{min}),\\\\TDR_t\u0026=1-\\left(\\frac{t}{T}\\right)^{1/p},\\\\x_{i,j}\u0026\\leftarrow x_{k,j}\\;\\text{with probability }NI(U_i),\\quad x_{i,j}\\leftarrow x_j^*\\pm TDR_t((u_j-l_j)r+l_j)\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous box and finite non-negative inflation rates. The original minimization-oriented normalized-inflation/roulette semantics are preserved; maximization and negative objective values are rejected rather than silently transformed.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; WEP increases exploitation while TDR decreases the maximum wormhole displacement according to the published p-controlled schedule.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

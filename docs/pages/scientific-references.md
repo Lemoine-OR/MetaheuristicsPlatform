@@ -78,6 +78,10 @@ authoritative location for method-specific provenance.
 
 - Cheng and Prayogo (2014), Symbiotic Organisms Search: A new metaheuristic optimization algorithm, Computers & Structures 139, 98-112. DOI: `10.1016/j.compstruc.2014.03.007`.
 
+## Multi-Verse Optimizer
+
+- Mirjalili, Mirjalili and Hatamlou (2016), Multi-Verse Optimizer: a nature-inspired algorithm for global optimization, Neural Computing and Applications 27, 495-513. DOI: `10.1007/s00521-015-1870-7`.
+
 ## Threshold Accepting
 
 - Dueck, G.; Scheuer, T. (1990). *Threshold accepting: A general purpose optimization
