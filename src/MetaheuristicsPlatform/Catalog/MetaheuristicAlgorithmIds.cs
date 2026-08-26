@@ -139,4 +139,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string CrowSearch =
         "crow-search-algorithm-askarzadeh-2016";
+
+    public const string Jaya =
+        "jaya-algorithm-rao-2016";
 }

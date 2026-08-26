@@ -1599,6 +1599,28 @@
                            "assumptions":  "Finite bounded continuous box, finite objective values and at least two crows. Flight length and awareness probability are fixed per run; random relocation samples uniformly from the bounded search space.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; awareness probability controls diversification while flight length controls the scale of directed movement toward remembered hiding places.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "jaya-algorithm-rao-2016",
+                           "name":  "Jaya Algorithm",
+                           "class":  "JayaOptimizer",
+                           "category":  "other-metaheuristics",
+                           "kind":  "population",
+                           "family":  "Other / music-inspired methods",
+                           "time":  "O(ND) per iteration plus N objective evaluations",
+                           "space":  "O(ND)",
+                           "applicability":  "Bounded continuous derivative-free population optimization that moves every variable toward the current best and away from the current worst without algorithm-specific control parameters",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Jaya/JayaOptimizer.cs",
+                           "publication":  "Rao (2016), Jaya: A simple and new optimization algorithm for solving constrained and unconstrained optimization problems, International Journal of Industrial Engineering Computations 7(1), 19-34",
+                           "doi":  "10.5267/j.ijiec.2015.8.004",
+                           "implementation":  "Canonical Jaya best/worst update with per-variable r1/r2 draws, the published absolute-value terms and greedy replacement; population size and iteration budget are the only controls.",
+                           "page":  "docs/pages/algorithms/jaya-algorithm-rao-2016.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}y_{i,d}^t\u0026=x_{i,d}^t+r_{1,i,d}^t\\bigl(x_{b,d}^t-|x_{i,d}^t|\\bigr)-r_{2,i,d}^t\\bigl(x_{w,d}^t-|x_{i,d}^t|\\bigr),\\\\x_i^{t+1}\u0026=\\begin{cases}y_i^t,\u0026f(y_i^t)\\prec f(x_i^t),\\\\x_i^t,\u0026\\text{otherwise}.\\end{cases}\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous box, finite objective values and at least two candidates. The best and worst candidates are frozen while candidate updates for one iteration are generated; boundary repair is component-wise.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted. Jaya has no algorithm-specific tuning coefficients: stochastic movement is defined only by the current best/worst candidates and uniform random factors.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

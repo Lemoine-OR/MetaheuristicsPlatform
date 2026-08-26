@@ -2,6 +2,19 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.82.0] - 2026-08-26
+
+### Added
+
+- Adds the canonical Jaya Algorithm scientific identity from Rao (2016) (DOI 10.5267/j.ijiec.2015.8.004).
+- Stable ID: `jaya-algorithm-rao-2016`.
+- Direct factory registration, structured mathematical documentation, semantic tests and benchmark included.
+
+### Changed
+
+- Public algorithm count increases to 72.
+- Existing historical scientific validators remain frozen.
+- No external numerical dependency is introduced.
 ## [0.81.0] - 2026-08-26
 
 ### Added

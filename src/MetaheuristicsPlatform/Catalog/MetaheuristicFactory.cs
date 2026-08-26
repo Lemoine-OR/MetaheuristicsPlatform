@@ -174,6 +174,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.CrowSearch,
             "MetaheuristicsPlatform.Algorithms.CrowSearch.CrowSearchOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.Jaya,
+            "MetaheuristicsPlatform.Algorithms.Jaya.JayaOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

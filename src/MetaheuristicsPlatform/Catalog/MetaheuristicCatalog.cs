@@ -984,7 +984,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/CrowSearch/CrowSearchOptimizer.cs",
             "Askarzadeh (2016), A novel metaheuristic method for solving constrained engineering optimization problems: Crow search algorithm, Computers & Structures 169, 1-12",
             "10.1016/j.compstruc.2016.03.001",
-            "Canonical CSA with each crow following another crow memory when the target is unaware, random relocation when it is aware, and personal-memory greedy update; paper benchmark controls fl=2 and AP=0.1 are the defaults.")
+            "Canonical CSA with each crow following another crow memory when the target is unaware, random relocation when it is aware, and personal-memory greedy update; paper benchmark controls fl=2 and AP=0.1 are the defaults."),
+        new(
+            "jaya-algorithm-rao-2016",
+            "Jaya Algorithm",
+            "JayaOptimizer",
+            "other-metaheuristics",
+            "Other / music-inspired methods",
+            "O(ND) per iteration plus N objective evaluations",
+            "O(ND)",
+            "Bounded continuous derivative-free population optimization that moves every variable toward the current best and away from the current worst without algorithm-specific control parameters",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/Jaya/JayaOptimizer.cs",
+            "Rao (2016), Jaya: A simple and new optimization algorithm for solving constrained and unconstrained optimization problems, International Journal of Industrial Engineering Computations 7(1), 19-34",
+            "10.5267/j.ijiec.2015.8.004",
+            "Canonical Jaya best/worst update with per-variable r1/r2 draws, the published absolute-value terms and greedy replacement; population size and iteration budget are the only controls.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

@@ -62,6 +62,10 @@ authoritative location for method-specific provenance.
 
 - Askarzadeh (2016), A novel metaheuristic method for solving constrained engineering optimization problems: Crow search algorithm, Computers & Structures 169, 1-12. DOI: `10.1016/j.compstruc.2016.03.001`.
 
+## Jaya Algorithm
+
+- Rao (2016), Jaya: A simple and new optimization algorithm for solving constrained and unconstrained optimization problems, International Journal of Industrial Engineering Computations 7(1), 19-34. DOI: `10.5267/j.ijiec.2015.8.004`.
+
 ## Threshold Accepting
 
 - Dueck, G.; Scheuer, T. (1990). *Threshold accepting: A general purpose optimization
