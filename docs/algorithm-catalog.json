@@ -1621,6 +1621,28 @@
                            "assumptions":  "Finite bounded continuous box, finite objective values and at least two candidates. The best and worst candidates are frozen while candidate updates for one iteration are generated; boundary repair is component-wise.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted. Jaya has no algorithm-specific tuning coefficients: stochastic movement is defined only by the current best/worst candidates and uniform random factors.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "imperialist-competitive-algorithm-atashpaz-gargari-lucas-2007",
+                           "name":  "Imperialist Competitive Algorithm",
+                           "class":  "ImperialistCompetitiveAlgorithmOptimizer",
+                           "category":  "other-metaheuristics",
+                           "kind":  "population",
+                           "family":  "Other / music-inspired methods",
+                           "time":  "O(ND) per iteration plus assimilation/revolution objective evaluations",
+                           "space":  "O(ND + N)",
+                           "applicability":  "Bounded continuous derivative-free optimization using countries, empires, assimilation, revolution and imperialistic competition",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/ImperialistCompetitiveAlgorithm/ImperialistCompetitiveAlgorithmOptimizer.cs",
+                           "publication":  "Atashpaz-Gargari and Lucas (2007), Imperialist competitive algorithm: An algorithm for optimization inspired by imperialistic competition, IEEE Congress on Evolutionary Computation, 4661-4667",
+                           "doi":  "10.1109/CEC.2007.4425083",
+                           "implementation":  "Canonical ICA lifecycle with fitness-ranked imperialists, probabilistic colony allocation, beta-scaled assimilation with angular deviation, revolution, imperialist/colony exchange and weakest-empire competition.",
+                           "page":  "docs/pages/algorithms/imperialist-competitive-algorithm-atashpaz-gargari-lucas-2007.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}s\u0026\\sim\\mathcal U(0,\\beta d),\\quad \\theta\\sim\\mathcal U(-\\gamma,\\gamma),\\\\x_c^{t+1}\u0026=x_c^t+s\\,u(x_I^t-x_c^t,\\theta),\\\\C_n\u0026=c_n+\\zeta\\,\\overline c_{\\mathrm{colonies}(n)}\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous box and finite objective values; at least two imperialists and at least one colony. Objective sense is converted only to an order-equivalent competition cost.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; assimilation, revolution and imperialistic competition preserve the stochastic search mechanism of the 2007 ICA.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

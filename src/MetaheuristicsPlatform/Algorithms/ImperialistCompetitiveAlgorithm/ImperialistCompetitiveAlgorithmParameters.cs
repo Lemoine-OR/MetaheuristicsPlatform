@@ -1,0 +1,7 @@
+using MetaheuristicsPlatform.Parameters;
+namespace MetaheuristicsPlatform.Algorithms.ImperialistCompetitiveAlgorithm;
+public sealed class ImperialistCompetitiveAlgorithmParameters : IMetaheuristicParameters
+{
+ public int PopulationSize { get; init; }=40; public int InitialImperialistCount { get; init; }=5; public int MaximumIterations { get; init; }=200; public double AssimilationCoefficient { get; init; }=2.0; public double AssimilationAngleCoefficient { get; init; }=0.5; public double RevolutionRate { get; init; }=0.1; public double ColonyCostWeight { get; init; }=0.02;
+ public void Validate(){if(PopulationSize<3)throw new ArgumentOutOfRangeException(nameof(PopulationSize));if(InitialImperialistCount<2||InitialImperialistCount>=PopulationSize)throw new ArgumentOutOfRangeException(nameof(InitialImperialistCount));if(MaximumIterations<=0)throw new ArgumentOutOfRangeException(nameof(MaximumIterations));if(!double.IsFinite(AssimilationCoefficient)||AssimilationCoefficient<=1.0)throw new ArgumentOutOfRangeException(nameof(AssimilationCoefficient));if(!double.IsFinite(AssimilationAngleCoefficient)||AssimilationAngleCoefficient<0.0||AssimilationAngleCoefficient>Math.PI)throw new ArgumentOutOfRangeException(nameof(AssimilationAngleCoefficient));if(!double.IsFinite(RevolutionRate)||RevolutionRate<0.0||RevolutionRate>1.0)throw new ArgumentOutOfRangeException(nameof(RevolutionRate));if(!double.IsFinite(ColonyCostWeight)||ColonyCostWeight<0.0)throw new ArgumentOutOfRangeException(nameof(ColonyCostWeight));}
+}

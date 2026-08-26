@@ -998,7 +998,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Jaya/JayaOptimizer.cs",
             "Rao (2016), Jaya: A simple and new optimization algorithm for solving constrained and unconstrained optimization problems, International Journal of Industrial Engineering Computations 7(1), 19-34",
             "10.5267/j.ijiec.2015.8.004",
-            "Canonical Jaya best/worst update with per-variable r1/r2 draws, the published absolute-value terms and greedy replacement; population size and iteration budget are the only controls.")
+            "Canonical Jaya best/worst update with per-variable r1/r2 draws, the published absolute-value terms and greedy replacement; population size and iteration budget are the only controls."),
+        new(
+            "imperialist-competitive-algorithm-atashpaz-gargari-lucas-2007",
+            "Imperialist Competitive Algorithm",
+            "ImperialistCompetitiveAlgorithmOptimizer",
+            "other-metaheuristics",
+            "Other / music-inspired methods",
+            "O(ND) per iteration plus assimilation/revolution objective evaluations",
+            "O(ND + N)",
+            "Bounded continuous derivative-free optimization using countries, empires, assimilation, revolution and imperialistic competition",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/ImperialistCompetitiveAlgorithm/ImperialistCompetitiveAlgorithmOptimizer.cs",
+            "Atashpaz-Gargari and Lucas (2007), Imperialist competitive algorithm: An algorithm for optimization inspired by imperialistic competition, IEEE Congress on Evolutionary Computation, 4661-4667",
+            "10.1109/CEC.2007.4425083",
+            "Canonical ICA lifecycle with fitness-ranked imperialists, probabilistic colony allocation, beta-scaled assimilation with angular deviation, revolution, imperialist/colony exchange and weakest-empire competition.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

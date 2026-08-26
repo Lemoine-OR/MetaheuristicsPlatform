@@ -29,6 +29,7 @@ keep all eight scientific identities separate.
 - **[Big Bang-Big Crunch](../algorithms/big-bang-big-crunch-erol-eksin-2006.md)** — `big-bang-big-crunch-erol-eksin-2006` — Bounded continuous derivative-free optimization using alternating random expansion and a shrinking Big-Crunch representative.
 - **[Teaching-Learning-Based Optimization](../algorithms/teaching-learning-based-optimization-rao-savsani-vakharia-2011.md)** — `teaching-learning-based-optimization-rao-savsani-vakharia-2011` — Bounded continuous derivative-free optimization using teacher-phase mean displacement and learner-to-learner interaction without algorithm-specific tuning parameters.
 - **[Jaya Algorithm](../algorithms/jaya-algorithm-rao-2016.md)** — `jaya-algorithm-rao-2016` — Bounded continuous derivative-free population optimization that moves every variable toward the current best and away from the current worst without algorithm-specific control parameters.
+- **[Imperialist Competitive Algorithm](../algorithms/imperialist-competitive-algorithm-atashpaz-gargari-lucas-2007.md)** — `imperialist-competitive-algorithm-atashpaz-gargari-lucas-2007` — Bounded continuous derivative-free optimization using countries, empires, assimilation, revolution and imperialistic competition.
 
 ## Navigation
 

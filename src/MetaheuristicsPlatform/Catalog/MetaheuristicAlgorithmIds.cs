@@ -142,4 +142,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string Jaya =
         "jaya-algorithm-rao-2016";
+
+    public const string ImperialistCompetitiveAlgorithm =
+        "imperialist-competitive-algorithm-atashpaz-gargari-lucas-2007";
 }

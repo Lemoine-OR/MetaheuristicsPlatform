@@ -1,5 +1,9 @@
 # API stability
 
+## v0.83.0
+
+- Added stable direct-factory algorithm ID `imperialist-competitive-algorithm-atashpaz-gargari-lucas-2007` (`ImperialistCompetitiveAlgorithmOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.82.0
 
 - Added stable direct-factory algorithm ID `jaya-algorithm-rao-2016` (`JayaOptimizer`). Existing public IDs and signatures are unchanged.

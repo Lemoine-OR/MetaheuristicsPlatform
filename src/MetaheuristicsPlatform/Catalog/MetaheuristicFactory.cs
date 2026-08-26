@@ -178,6 +178,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.Jaya,
             "MetaheuristicsPlatform.Algorithms.Jaya.JayaOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.ImperialistCompetitiveAlgorithm,
+            "MetaheuristicsPlatform.Algorithms.ImperialistCompetitiveAlgorithm.ImperialistCompetitiveAlgorithmOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

@@ -2,6 +2,19 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.83.0] - 2026-08-26
+
+### Added
+
+- Adds the canonical Imperialist Competitive Algorithm scientific identity from Atashpaz-Gargari and Lucas (2007) (DOI 10.1109/CEC.2007.4425083).
+- Stable ID: `imperialist-competitive-algorithm-atashpaz-gargari-lucas-2007`.
+- Direct factory registration, structured mathematical documentation, semantic tests and benchmark included.
+
+### Changed
+
+- Public algorithm count increases to 73.
+- Existing historical scientific validators remain frozen.
+- No external numerical dependency is introduced.
 ## [0.82.0] - 2026-08-26
 
 ### Added
