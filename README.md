@@ -41,11 +41,11 @@ catalog IDs and literature-backed documentation.
 <td width="20%"><strong>3 constructive methods</strong><br><sub>GRASP, Reactive GRASP and GRASP with Path Relinking.</sub></td>
 <td width="20%"><strong>1 hybrid / memetic method</strong><br><sub>Moscato-style memetic evolution with local improvement.</sub></td>
 </tr>
-<tr><td colspan="5"><strong>14 other / music-inspired methods</strong><br><sub>HS, IHS, GHS, SGHS, NGHS, PSF-HS, iteration APSF-HS and object APSF-HS as separate literature identities.</sub></td>
+<tr><td colspan="5"><strong>15 other / music-inspired methods</strong><br><sub>HS, IHS, GHS, SGHS, NGHS, PSF-HS, iteration APSF-HS and object APSF-HS as separate literature identities.</sub></td>
 </tr>
 </table>
 
-<p align="center"><strong>69 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>70 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -177,6 +177,7 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/novel-self-adaptive-harmony-search-luo-2013.html"><strong>Novel Self-Adaptive Harmony Search</strong></a><br><sub>Dimension-derived HMCR, no PAR, and fitness-dispersion switching between global and narrow self-adaptive perturbation regimes.</sub><br><code>novel-self-adaptive-harmony-search-luo-2013</code><br><sub><code>NovelSelfAdaptiveHarmonySearchOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/adaptive-harmony-search-differential-evolution-zhao-li-hao-liu-yuan-2020.html"><strong>Adaptive Harmony Search with Differential Evolution</strong></a><br><sub>Paper-defined combination of DE/best/2 pitch adjustment, periodic PAR/F learning and linear Harmony Memory size reduction.</sub><br><code>adaptive-harmony-search-differential-evolution-zhao-li-hao-liu-yuan-2020</code><br><sub><code>AdaptiveHarmonySearchDifferentialEvolutionOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/big-bang-big-crunch-erol-eksin-2006.html"><strong>Big Bang-Big Crunch</strong></a><br><sub>Published BB-BC minimal-cost representative option with Gaussian Big-Bang sampling whose radius decreases as alpha/t; no later local-search hybrid is mixed in.</sub><br><code>big-bang-big-crunch-erol-eksin-2006</code><br><sub><code>BigBangBigCrunchOptimizer</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/teaching-learning-based-optimization-rao-savsani-vakharia-2011.html"><strong>Teaching-Learning-Based Optimization</strong></a><br><sub>Canonical 2011 TLBO teacher phase with randomly selected teaching factor 1 or 2, followed by the published learner phase and greedy replacement after each candidate evaluation.</sub><br><code>teaching-learning-based-optimization-rao-savsani-vakharia-2011</code><br><sub><code>TeachingLearningBasedOptimizationOptimizer</code></sub></td></tr>
 </table>
 ## Scientific components
 

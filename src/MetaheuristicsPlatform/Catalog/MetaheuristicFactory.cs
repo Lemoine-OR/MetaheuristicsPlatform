@@ -166,6 +166,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.GravitationalSearch,
             "MetaheuristicsPlatform.Algorithms.GravitationalSearch.GravitationalSearchOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.TeachingLearningBasedOptimization,
+            "MetaheuristicsPlatform.Algorithms.TeachingLearningBasedOptimization.TeachingLearningBasedOptimizationOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

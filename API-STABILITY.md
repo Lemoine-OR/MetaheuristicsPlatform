@@ -1,5 +1,9 @@
 # API stability
 
+## v0.80.0
+
+- Added stable direct-factory algorithm ID `teaching-learning-based-optimization-rao-savsani-vakharia-2011` (`TeachingLearningBasedOptimizationOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.79.0
 
 - Added stable direct-factory algorithm ID `gravitational-search-algorithm-rashedi-nezamabadi-pour-saryazdi-2009` (`GravitationalSearchOptimizer`). Existing public IDs and signatures are unchanged.

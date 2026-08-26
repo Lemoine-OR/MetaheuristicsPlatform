@@ -133,4 +133,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string GravitationalSearch =
         "gravitational-search-algorithm-rashedi-nezamabadi-pour-saryazdi-2009";
+
+    public const string TeachingLearningBasedOptimization =
+        "teaching-learning-based-optimization-rao-savsani-vakharia-2011";
 }

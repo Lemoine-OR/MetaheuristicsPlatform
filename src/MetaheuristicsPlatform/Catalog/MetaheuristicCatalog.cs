@@ -956,7 +956,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/GravitationalSearch/GravitationalSearchOptimizer.cs",
             "Rashedi, Nezamabadi-pour & Saryazdi (2009), GSA: A Gravitational Search Algorithm, Information Sciences 179(13), 2232-2248",
             "10.1016/j.ins.2009.03.004",
-            "Canonical GSA mass normalization, G(t)=G0 exp(-alpha t/T), elitist Kbest force set decreasing toward 2%, randomly weighted gravitational acceleration, velocity and position updates.")
+            "Canonical GSA mass normalization, G(t)=G0 exp(-alpha t/T), elitist Kbest force set decreasing toward 2%, randomly weighted gravitational acceleration, velocity and position updates."),
+        new(
+            "teaching-learning-based-optimization-rao-savsani-vakharia-2011",
+            "Teaching-Learning-Based Optimization",
+            "TeachingLearningBasedOptimizationOptimizer",
+            "other-metaheuristics",
+            "Other / music-inspired methods",
+            "O(ND) per iteration plus 2N objective evaluations",
+            "O(ND)",
+            "Bounded continuous derivative-free optimization using teacher-phase mean displacement and learner-to-learner interaction without algorithm-specific tuning parameters",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/TeachingLearningBasedOptimization/TeachingLearningBasedOptimizationOptimizer.cs",
+            "Rao, Savsani & Vakharia (2011), Teaching-learning-based optimization: A novel method for constrained mechanical design optimization problems, Computer-Aided Design 43(3), 303-315",
+            "10.1016/j.cad.2010.12.015",
+            "Canonical 2011 TLBO teacher phase with randomly selected teaching factor 1 or 2, followed by the published learner phase and greedy replacement after each candidate evaluation.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

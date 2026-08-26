@@ -2,6 +2,19 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.80.0] - 2026-08-26
+
+### Added
+
+- Adds the canonical Teaching-Learning-Based Optimization scientific identity from Rao, Savsani & Vakharia (2011) (DOI 10.1016/j.cad.2010.12.015).
+- Stable ID: `teaching-learning-based-optimization-rao-savsani-vakharia-2011`.
+- Direct factory registration, structured mathematical documentation, semantic tests and benchmark included.
+
+### Changed
+
+- Public algorithm count increases to 70.
+- Existing historical scientific validators remain frozen.
+- No external numerical dependency is introduced.
 ## [0.79.0] - 2026-08-26
 
 ### Added

@@ -54,6 +54,10 @@ authoritative location for method-specific provenance.
 
 - Rashedi, Nezamabadi-pour & Saryazdi (2009), GSA: A Gravitational Search Algorithm, Information Sciences 179(13), 2232-2248. DOI: `10.1016/j.ins.2009.03.004`.
 
+## Teaching-Learning-Based Optimization
+
+- Rao, Savsani & Vakharia (2011), Teaching-learning-based optimization: A novel method for constrained mechanical design optimization problems, Computer-Aided Design 43(3), 303-315. DOI: `10.1016/j.cad.2010.12.015`.
+
 ## Threshold Accepting
 
 - Dueck, G.; Scheuer, T. (1990). *Threshold accepting: A general purpose optimization

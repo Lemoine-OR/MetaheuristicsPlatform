@@ -1555,6 +1555,28 @@
                            "assumptions":  "Finite bounded continuous box and finite objective values; population size at least two; equal-fitness generations use equal normalized masses as the continuous limiting tie case; Kbest is clamped to at least one agent for finite populations.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; gravitational strength decays exponentially and the published elitist Kbest set shrinks to emphasize exploitation.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "teaching-learning-based-optimization-rao-savsani-vakharia-2011",
+                           "name":  "Teaching-Learning-Based Optimization",
+                           "class":  "TeachingLearningBasedOptimizationOptimizer",
+                           "category":  "other-metaheuristics",
+                           "kind":  "population",
+                           "family":  "Other / music-inspired methods",
+                           "time":  "O(ND) per iteration plus 2N objective evaluations",
+                           "space":  "O(ND)",
+                           "applicability":  "Bounded continuous derivative-free optimization using teacher-phase mean displacement and learner-to-learner interaction without algorithm-specific tuning parameters",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/TeachingLearningBasedOptimization/TeachingLearningBasedOptimizationOptimizer.cs",
+                           "publication":  "Rao, Savsani \u0026 Vakharia (2011), Teaching-learning-based optimization: A novel method for constrained mechanical design optimization problems, Computer-Aided Design 43(3), 303-315",
+                           "doi":  "10.1016/j.cad.2010.12.015",
+                           "implementation":  "Canonical 2011 TLBO teacher phase with randomly selected teaching factor 1 or 2, followed by the published learner phase and greedy replacement after each candidate evaluation.",
+                           "page":  "docs/pages/algorithms/teaching-learning-based-optimization-rao-savsani-vakharia-2011.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}M^t\u0026=\\frac1N\\sum_{i=1}^N x_i^t,\\quad T_F\\in\\{1,2\\},\\\\y_i^t\u0026=x_i^t+r_i^t\\bigl(T^t-T_FM^t\\bigr),\\\\z_i^t\u0026=\\begin{cases}y_i^t+s_i^t(y_i^t-y_j^t),\u0026f(y_i^t)\\le f(y_j^t),\\\\y_i^t+s_i^t(y_j^t-y_i^t),\u0026\\text{otherwise},\\end{cases}\\quad j\\ne i\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous box, finite objective values and at least two learners. The teaching factor is generated internally as 1 or 2 with equal probability and is not an algorithm-specific input parameter.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; teacher and learner candidates are accepted only when they improve the incumbent under the configured objective sense.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }
