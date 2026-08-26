@@ -1,5 +1,9 @@
 # API stability
 
+## v0.78.0
+
+- Added stable direct-factory algorithm ID `big-bang-big-crunch-erol-eksin-2006` (`BigBangBigCrunchOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.77.0
 
 - Added stable direct-factory algorithm ID `harris-hawks-optimization-heidari-mirjalili-faris-aljarah-mafarja-chen-2019` (`HarrisHawksOptimizer`). Existing public IDs and signatures are unchanged.

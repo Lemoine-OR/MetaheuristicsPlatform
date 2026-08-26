@@ -2,6 +2,19 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.78.0] - 2026-08-26
+
+### Added
+
+- Adds the canonical Big Bang-Big Crunch scientific identity from Erol & Eksin (2006) (DOI 10.1016/j.advengsoft.2005.04.005).
+- Stable ID: `big-bang-big-crunch-erol-eksin-2006`.
+- Direct factory registration, structured mathematical documentation, semantic tests and benchmark included.
+
+### Changed
+
+- Public algorithm count increases to 68.
+- Existing historical scientific validators remain frozen.
+- No external numerical dependency is introduced.
 ## [0.77.0] - 2026-08-26
 
 ### Added

@@ -1511,6 +1511,28 @@
                            "assumptions":  "Finite bounded continuous box and finite objective values; at least two hawks; the rabbit is the best-so-far solution and Levy rapid dives use the beta=1.5 Mantegna realization.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; escaping energy E transitions the canonical mechanism from exploration to the four exploitation strategies.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "big-bang-big-crunch-erol-eksin-2006",
+                           "name":  "Big Bang-Big Crunch",
+                           "class":  "BigBangBigCrunchOptimizer",
+                           "category":  "other-metaheuristics",
+                           "kind":  "population",
+                           "family":  "Other / music-inspired methods",
+                           "time":  "O(ND) per iteration plus N objective evaluations",
+                           "space":  "O(ND)",
+                           "applicability":  "Bounded continuous derivative-free optimization using alternating random expansion and a shrinking Big-Crunch representative",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/BigBangBigCrunch/BigBangBigCrunchOptimizer.cs",
+                           "publication":  "Erol \u0026 Eksin (2006), A new optimization method: Big Bang-Big Crunch, Advances in Engineering Software 37(2), 106-111",
+                           "doi":  "10.1016/j.advengsoft.2005.04.005",
+                           "implementation":  "Published BB-BC minimal-cost representative option with Gaussian Big-Bang sampling whose radius decreases as alpha/t; no later local-search hybrid is mixed in.",
+                           "page":  "docs/pages/algorithms/big-bang-big-crunch-erol-eksin-2006.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}c^t\u0026=x_{b(t)}^t,\\quad b(t)\\in\\operatorname*{arg\\,min}_i f(x_i^t),\\\\x_{i,d}^{t+1}\u0026=c_d^t+z_{i,d}^t\\,\\alpha\\,\\frac{u_d-\\ell_d}{t},\\quad z_{i,d}^t\\sim\\mathcal N(0,1)\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous box, finite objective values and at least two candidates. The original paper explicitly allows the Big-Crunch representative to be either the center of mass or the minimal-cost candidate; this identity uses the published minimal-cost option so it remains well-defined for zero and signed objectives.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; the published Gaussian radius contracts proportionally to 1/t around the current minimal-cost representative.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

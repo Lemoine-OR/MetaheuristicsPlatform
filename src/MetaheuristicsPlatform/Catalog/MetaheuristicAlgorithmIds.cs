@@ -127,4 +127,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string HarrisHawksOptimization =
         "harris-hawks-optimization-heidari-mirjalili-faris-aljarah-mafarja-chen-2019";
+
+    public const string BigBangBigCrunch =
+        "big-bang-big-crunch-erol-eksin-2006";
 }

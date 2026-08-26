@@ -928,7 +928,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/HarrisHawks/HarrisHawksOptimizer.cs",
             "Heidari, Mirjalili, Faris, Aljarah, Mafarja & Chen (2019), Harris hawks optimization: Algorithm and applications, Future Generation Computer Systems 97, 849-872",
             "10.1016/j.future.2019.02.028",
-            "Canonical HHO exploration plus four exploitation modes governed by escaping energy and prey escape probability, including beta=1.5 Levy rapid dives.")
+            "Canonical HHO exploration plus four exploitation modes governed by escaping energy and prey escape probability, including beta=1.5 Levy rapid dives."),
+        new(
+            "big-bang-big-crunch-erol-eksin-2006",
+            "Big Bang-Big Crunch",
+            "BigBangBigCrunchOptimizer",
+            "other-metaheuristics",
+            "Other / music-inspired methods",
+            "O(ND) per iteration plus N objective evaluations",
+            "O(ND)",
+            "Bounded continuous derivative-free optimization using alternating random expansion and a shrinking Big-Crunch representative",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/BigBangBigCrunch/BigBangBigCrunchOptimizer.cs",
+            "Erol & Eksin (2006), A new optimization method: Big Bang-Big Crunch, Advances in Engineering Software 37(2), 106-111",
+            "10.1016/j.advengsoft.2005.04.005",
+            "Published BB-BC minimal-cost representative option with Gaussian Big-Bang sampling whose radius decreases as alpha/t; no later local-search hybrid is mixed in.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

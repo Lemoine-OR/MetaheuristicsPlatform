@@ -46,6 +46,10 @@ authoritative location for method-specific provenance.
 
 - Heidari, Mirjalili, Faris, Aljarah, Mafarja & Chen (2019), Harris hawks optimization: Algorithm and applications, Future Generation Computer Systems 97, 849-872. DOI: `10.1016/j.future.2019.02.028`.
 
+## Big Bang-Big Crunch
+
+- Erol & Eksin (2006), A new optimization method: Big Bang-Big Crunch, Advances in Engineering Software 37(2), 106-111. DOI: `10.1016/j.advengsoft.2005.04.005`.
+
 ## Threshold Accepting
 
 - Dueck, G.; Scheuer, T. (1990). *Threshold accepting: A general purpose optimization

@@ -26,6 +26,7 @@ by `MetaheuristicFamily.Other` and `MetaheuristicSolutionModel.Population`. Conv
 PSF-HS learns probabilities from OTM; iteration APSF-HS uses iteration/dimension formulas;
 object APSF-HS uses a target-dependent HM mean and object-only adaptive bandwidth. Stable IDs
 keep all eight scientific identities separate.
+- **[Big Bang-Big Crunch](../algorithms/big-bang-big-crunch-erol-eksin-2006.md)** — `big-bang-big-crunch-erol-eksin-2006` — Bounded continuous derivative-free optimization using alternating random expansion and a shrinking Big-Crunch representative.
 
 ## Navigation
 

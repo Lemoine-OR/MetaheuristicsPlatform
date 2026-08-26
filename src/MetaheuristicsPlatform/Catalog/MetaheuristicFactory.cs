@@ -158,6 +158,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.HarrisHawksOptimization,
             "MetaheuristicsPlatform.Algorithms.HarrisHawks.HarrisHawksOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.BigBangBigCrunch,
+            "MetaheuristicsPlatform.Algorithms.BigBangBigCrunch.BigBangBigCrunchOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>
