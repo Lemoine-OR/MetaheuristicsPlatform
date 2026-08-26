@@ -914,7 +914,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/SalpSwarm/SalpSwarmAlgorithmOptimizer.cs",
             "Mirjalili, Gandomi, Mirjalili, Saremi, Faris & Mirjalili (2017), Salp Swarm Algorithm: A bio-inspired optimizer for engineering design problems, Advances in Engineering Software 114, 163-191",
             "10.1016/j.advengsoft.2017.07.002",
-            "Canonical single-objective SSA with c1=2 exp(-(4t/T)^2), leader coordinates sampled around the food source, and followers updated by the published half-sum chain rule.")
+            "Canonical single-objective SSA with c1=2 exp(-(4t/T)^2), leader coordinates sampled around the food source, and followers updated by the published half-sum chain rule."),
+        new(
+            "harris-hawks-optimization-heidari-mirjalili-faris-aljarah-mafarja-chen-2019",
+            "Harris Hawks Optimization",
+            "HarrisHawksOptimizer",
+            "swarm-intelligence",
+            "Swarm intelligence",
+            "O(ND) population motion plus up to 2N rapid-dive candidate evaluations per generation",
+            "O(ND + N)",
+            "Bounded continuous derivative-free optimization using surprise-pounce exploration, besiege modes and Levy rapid dives",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/HarrisHawks/HarrisHawksOptimizer.cs",
+            "Heidari, Mirjalili, Faris, Aljarah, Mafarja & Chen (2019), Harris hawks optimization: Algorithm and applications, Future Generation Computer Systems 97, 849-872",
+            "10.1016/j.future.2019.02.028",
+            "Canonical HHO exploration plus four exploitation modes governed by escaping energy and prey escape probability, including beta=1.5 Levy rapid dives.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

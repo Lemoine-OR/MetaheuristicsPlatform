@@ -1,5 +1,9 @@
 # API stability
 
+## v0.77.0
+
+- Added stable direct-factory algorithm ID `harris-hawks-optimization-heidari-mirjalili-faris-aljarah-mafarja-chen-2019` (`HarrisHawksOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.76.0
 
 - Added stable direct-factory algorithm ID `salp-swarm-algorithm-mirjalili-gandomi-mirjalili-saremi-faris-mirjalili-2017` (`SalpSwarmAlgorithmOptimizer`). Existing public IDs and signatures are unchanged.

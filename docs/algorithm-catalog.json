@@ -1489,6 +1489,28 @@
                            "assumptions":  "Finite bounded continuous box and finite objective values; at least four salps; the food source is the best-so-far solution and the first half of the chain acts as leaders.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; c1 decreases rapidly toward zero, progressively contracting leader motion around the food source.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "harris-hawks-optimization-heidari-mirjalili-faris-aljarah-mafarja-chen-2019",
+                           "name":  "Harris Hawks Optimization",
+                           "class":  "HarrisHawksOptimizer",
+                           "category":  "swarm-intelligence",
+                           "kind":  "population",
+                           "family":  "Swarm intelligence",
+                           "time":  "O(ND) population motion plus up to 2N rapid-dive candidate evaluations per generation",
+                           "space":  "O(ND + N)",
+                           "applicability":  "Bounded continuous derivative-free optimization using surprise-pounce exploration, besiege modes and Levy rapid dives",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/HarrisHawks/HarrisHawksOptimizer.cs",
+                           "publication":  "Heidari, Mirjalili, Faris, Aljarah, Mafarja \u0026 Chen (2019), Harris hawks optimization: Algorithm and applications, Future Generation Computer Systems 97, 849-872",
+                           "doi":  "10.1016/j.future.2019.02.028",
+                           "implementation":  "Canonical HHO exploration plus four exploitation modes governed by escaping energy and prey escape probability, including beta=1.5 Levy rapid dives.",
+                           "page":  "docs/pages/algorithms/harris-hawks-optimization-heidari-mirjalili-faris-aljarah-mafarja-chen-2019.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}E_t\u0026=2E_0\\left(1-\\frac{t}{T}\\right),\\quad E_0\\sim\\mathcal U[-1,1],\\quad J=2(1-r_5),\\\\X^{t+1}\u0026=X_{\\rm rabbit}-E_t\\left|X_{\\rm rabbit}-X^t\\right|\\quad(r\\ge\\tfrac12,|E_t|\u003c\\tfrac12),\\\\X^{t+1}\u0026=(X_{\\rm rabbit}-X^t)-E_t\\left|JX_{\\rm rabbit}-X^t\\right|\\quad(r\\ge\\tfrac12,|E_t|\\ge\\tfrac12),\\\\Y\u0026=X_{\\rm rabbit}-E_t\\left|JX_{\\rm rabbit}-Z\\right|,\\quad Z\\in\\{X^t,X_{\\rm mean}^t\\},\\\\X_2\u0026=Y+R\\odot L_{1.5}\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous box and finite objective values; at least two hawks; the rabbit is the best-so-far solution and Levy rapid dives use the beta=1.5 Mantegna realization.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; escaping energy E transitions the canonical mechanism from exploration to the four exploitation strategies.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

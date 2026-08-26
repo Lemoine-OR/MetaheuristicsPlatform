@@ -124,4 +124,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string SalpSwarmAlgorithm =
         "salp-swarm-algorithm-mirjalili-gandomi-mirjalili-saremi-faris-mirjalili-2017";
+
+    public const string HarrisHawksOptimization =
+        "harris-hawks-optimization-heidari-mirjalili-faris-aljarah-mafarja-chen-2019";
 }

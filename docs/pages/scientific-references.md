@@ -42,6 +42,10 @@ authoritative location for method-specific provenance.
 
 - Mirjalili, Gandomi, Mirjalili, Saremi, Faris & Mirjalili (2017), Salp Swarm Algorithm: A bio-inspired optimizer for engineering design problems, Advances in Engineering Software 114, 163-191. DOI: `10.1016/j.advengsoft.2017.07.002`.
 
+## Harris Hawks Optimization
+
+- Heidari, Mirjalili, Faris, Aljarah, Mafarja & Chen (2019), Harris hawks optimization: Algorithm and applications, Future Generation Computer Systems 97, 849-872. DOI: `10.1016/j.future.2019.02.028`.
+
 ## Threshold Accepting
 
 - Dueck, G.; Scheuer, T. (1990). *Threshold accepting: A general purpose optimization

@@ -154,6 +154,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.SalpSwarmAlgorithm,
             "MetaheuristicsPlatform.Algorithms.SalpSwarm.SalpSwarmAlgorithmOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.HarrisHawksOptimization,
+            "MetaheuristicsPlatform.Algorithms.HarrisHawks.HarrisHawksOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

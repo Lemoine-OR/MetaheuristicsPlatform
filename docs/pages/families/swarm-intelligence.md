@@ -21,6 +21,7 @@ probabilistic recruitment or shared pheromone memory.
 - **[Whale Optimization Algorithm](../algorithms/whale-optimization-algorithm-mirjalili-lewis-2016.md)** — `whale-optimization-algorithm-mirjalili-lewis-2016` — Bounded continuous derivative-free optimization with encircling, random-prey exploration and logarithmic bubble-net spirals.
 - **[Sine Cosine Algorithm](../algorithms/sine-cosine-algorithm-mirjalili-2016.md)** — `sine-cosine-algorithm-mirjalili-2016` — Bounded continuous derivative-free optimization with sine/cosine oscillation around the best destination.
 - **[Salp Swarm Algorithm](../algorithms/salp-swarm-algorithm-mirjalili-gandomi-mirjalili-saremi-faris-mirjalili-2017.md)** — `salp-swarm-algorithm-mirjalili-gandomi-mirjalili-saremi-faris-mirjalili-2017` — Bounded continuous derivative-free optimization with food-directed leaders and chain-following salps.
+- **[Harris Hawks Optimization](../algorithms/harris-hawks-optimization-heidari-mirjalili-faris-aljarah-mafarja-chen-2019.md)** — `harris-hawks-optimization-heidari-mirjalili-faris-aljarah-mafarja-chen-2019` — Bounded continuous derivative-free optimization using surprise-pounce exploration, besiege modes and Levy rapid dives.
 
 ## Navigation
 

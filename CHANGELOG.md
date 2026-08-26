@@ -2,6 +2,19 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.77.0] - 2026-08-26
+
+### Added
+
+- Adds the canonical Harris Hawks Optimization scientific identity from Heidari et al. (2019), Future Generation Computer Systems 97, 849-872 (DOI 10.1016/j.future.2019.02.028).
+- Stable ID: `harris-hawks-optimization-heidari-mirjalili-faris-aljarah-mafarja-chen-2019`.
+- Direct factory registration, structured mathematical documentation, semantic tests and benchmark included.
+
+### Changed
+
+- Public algorithm count increases to 67.
+- Existing historical scientific validators remain frozen.
+- No external numerical dependency is introduced.
 ## [0.76.0] - 2026-08-25
 
 ### Added
