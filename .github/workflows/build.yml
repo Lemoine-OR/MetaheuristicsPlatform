@@ -33,6 +33,14 @@ jobs:
         run: |
           ./build/Build-Validated.ps1
 
+      - name: Upload validated binaries
+        uses: actions/upload-artifact@v7
+        with:
+          name: MetaheuristicsPlatform-Binaries
+          path: src/MetaheuristicsPlatform/bin/Release/net10.0
+          if-no-files-found: error
+          retention-days: 30
+
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v7

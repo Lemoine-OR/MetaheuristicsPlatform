@@ -19,14 +19,15 @@ function Read-Utf8([string]$Relative) {
         [System.Text.Encoding]::UTF8)
 }
 
+$build =
+    Read-Utf8 ".github\workflows\build.yml"
+
 $documentation =
     Read-Utf8 ".github\workflows\documentation.yml"
 
 $release =
     Read-Utf8 ".github\workflows\release.yml"
 
-# GitHub Actions expressions are literal workflow text here. In PowerShell
-# source they must be single-quoted (or have the dollar sign escaped).
 $githubExpressionLiteral =
     'ref: ${{ env.TARGET_SHA }}'
 
@@ -52,7 +53,17 @@ foreach ($marker in @(
 if ([regex]::IsMatch(
     $documentation,
     '(?m)^  push:\s*$')) {
-    throw "Release workflow topology: documentation must not run directly on main push; it must follow Build and Test."
+    throw "Release workflow topology: documentation must follow Build and Test."
+}
+
+foreach ($marker in @(
+    "MetaheuristicsPlatform-Binaries",
+    "src/MetaheuristicsPlatform/bin/Release/net10.0",
+    "actions/upload-artifact@v7"
+)) {
+    if (-not $build.Contains($marker)) {
+        throw "Release workflow topology: build workflow is missing validated-binary artifact marker '$marker'."
+    }
 }
 
 foreach ($marker in @(
@@ -62,11 +73,26 @@ foreach ($marker in @(
     "- main",
     "WORKFLOW_CONCLUSION:",
     "Release trigger workflow did not succeed",
-    "workflow_dispatch:"
+    "workflow_dispatch:",
+    "build_run_id:",
+    "docs_run_id:",
+    "MetaheuristicsPlatform-Binaries",
+    "MetaheuristicsPlatform-Documentation",
+    "gh run download",
+    '-CommitId $env:TARGET_SHA'
 )) {
     if (-not $release.Contains($marker)) {
         throw "Release workflow topology: release workflow is missing '$marker'."
     }
+}
+
+if ($release.Contains("Build-All.ps1") -or
+    $release.Contains("Build-Validated.ps1") -or
+    $release.Contains("build-documentation.ps1") -or
+    $release.Contains("Install Doxygen") -or
+    $release.Contains("Install Graphviz")) {
+
+    throw "Release workflow topology: Create Release must consume exact-SHA validated artifacts and must not rebuild/retest/regenerate documentation."
 }
 
 if ($release.Contains("- Build and Test")) {
@@ -85,6 +111,7 @@ foreach ($marker in @(
 
 if ($release.Contains('select(.name=="Build and Test")') -or
     $release.Contains('select(.name=="Build Documentation")')) {
+
     throw "Release workflow topology: workflow runs must be identified by stable path, not display/run name."
 }
 
@@ -100,5 +127,5 @@ if ($automaticPrerequisiteMatches.Count -ne 1) {
 }
 
 Write-Host `
-    "Release workflow topology passed: Build and Test -> Build Documentation -> one automatic Create Release run." `
+    "Release workflow topology passed: Build -> Documentation -> artifact-only Release; no release-stage rebuild/retest/Doxygen." `
     -ForegroundColor Green

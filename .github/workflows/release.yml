@@ -27,6 +27,8 @@ jobs:
     outputs:
       ready: ${{ steps.gate.outputs.ready }}
       target_sha: ${{ steps.gate.outputs.target_sha }}
+      build_run_id: ${{ steps.gate.outputs.build_run_id }}
+      docs_run_id: ${{ steps.gate.outputs.docs_run_id }}
 
     steps:
       - id: gate
@@ -38,6 +40,7 @@ jobs:
           WORKFLOW_SHA: ${{ github.event.workflow_run.head_sha }}
           WORKFLOW_BRANCH: ${{ github.event.workflow_run.head_branch }}
           WORKFLOW_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+          WORKFLOW_RUN_ID: ${{ github.event.workflow_run.id }}
           DISPATCH_SHA: ${{ github.sha }}
         run: |
           set -euo pipefail
@@ -73,6 +76,16 @@ jobs:
 
           runs_json="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs?head_sha=$target_sha&branch=main&per_page=100")"
 
+          build_run_id="$(
+            jq -r '
+              [.workflow_runs[]
+               | select(.path==".github/workflows/build.yml")]
+              | sort_by(.run_number)
+              | last
+              | .id // ""
+            ' <<<"$runs_json"
+          )"
+
           build_conclusion="$(
             jq -r '
               [.workflow_runs[]
@@ -84,8 +97,19 @@ jobs:
           )"
 
           if [[ "$EVENT_NAME" == "workflow_run" ]]; then
+            docs_run_id="$WORKFLOW_RUN_ID"
             docs_conclusion="$WORKFLOW_CONCLUSION"
           else
+            docs_run_id="$(
+              jq -r '
+                [.workflow_runs[]
+                 | select(.path==".github/workflows/documentation.yml")]
+                | sort_by(.run_number)
+                | last
+                | .id // ""
+              ' <<<"$runs_json"
+            )"
+
             docs_conclusion="$(
               jq -r '
                 [.workflow_runs[]
@@ -97,15 +121,20 @@ jobs:
             )"
           fi
 
-          echo "Build and Test: $build_conclusion"
-          echo "Build Documentation: $docs_conclusion"
+          echo "Build and Test: $build_conclusion | run=$build_run_id"
+          echo "Build Documentation: $docs_conclusion | run=$docs_run_id"
 
           if [[ "$build_conclusion" != "success" ||
-                "$docs_conclusion" != "success" ]]; then
-            echo "Both prerequisite workflows are not green."
+                "$docs_conclusion" != "success" ||
+                -z "$build_run_id" ||
+                -z "$docs_run_id" ]]; then
+            echo "Both exact-SHA prerequisite workflows and run ids are required."
             echo "ready=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
+
+          echo "build_run_id=$build_run_id" >> "$GITHUB_OUTPUT"
+          echo "docs_run_id=$docs_run_id" >> "$GITHUB_OUTPUT"
 
           version="$(
             gh api "repos/$GITHUB_REPOSITORY/contents/version.json?ref=$target_sha" \
@@ -131,14 +160,17 @@ jobs:
           echo "ready=true" >> "$GITHUB_OUTPUT"
 
   release:
-    name: Build, validate and publish release
+    name: Assemble validated artifacts and publish release
     needs: gate
     if: needs.gate.outputs.ready == 'true'
     runs-on: windows-latest
-    timeout-minutes: 45
+    timeout-minutes: 20
     env:
       PublicRelease: 'true'
+      GH_TOKEN: ${{ github.token }}
       TARGET_SHA: ${{ needs.gate.outputs.target_sha }}
+      BUILD_RUN_ID: ${{ needs.gate.outputs.build_run_id }}
+      DOCS_RUN_ID: ${{ needs.gate.outputs.docs_run_id }}
 
     steps:
       - name: Checkout exact validated commit
@@ -156,65 +188,71 @@ jobs:
               throw "Release checkout SHA mismatch."
           }
 
-      - name: Setup .NET 10
-        uses: actions/setup-dotnet@v6
-        with:
-          dotnet-version: '10.0.x'
-
-      - name: Install Graphviz
+      - name: Download exact-SHA validated binaries
         shell: pwsh
         run: |
-          $ErrorActionPreference = "Stop"
+          $binaryRoot =
+              Join-Path `
+                  (Get-Location).Path `
+                  "src\MetaheuristicsPlatform\bin\Release\net10.0"
 
-          $version = "15.1.1"
-          $packageBase = "https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/$version"
-          $archiveName = "windows_10_cmake_Release_Graphviz-$version-win64.zip"
-          $archive = Join-Path $env:RUNNER_TEMP $archiveName
-          $checksumFile = "$archive.sha256"
-          $destination = Join-Path $env:RUNNER_TEMP "graphviz"
+          New-Item `
+              -ItemType Directory `
+              -Force `
+              -Path $binaryRoot |
+              Out-Null
 
-          Invoke-WebRequest -Uri "$packageBase/$archiveName" -OutFile $archive
-          Invoke-WebRequest -Uri "$packageBase/$archiveName.sha256" -OutFile $checksumFile
+          & gh run download `
+              $env:BUILD_RUN_ID `
+              --repo $env:GITHUB_REPOSITORY `
+              --name "MetaheuristicsPlatform-Binaries" `
+              --dir $binaryRoot
 
-          $checksumText = [System.IO.File]::ReadAllText($checksumFile)
-          $match = [regex]::Match($checksumText, '(?i)\b[0-9a-f]{64}\b')
-
-          if (-not $match.Success) {
-              throw "Unable to read Graphviz SHA-256 checksum."
+          if ($LASTEXITCODE -ne 0) {
+              throw "Unable to download exact-SHA validated binaries."
           }
 
-          $expectedHash = $match.Value.ToUpperInvariant()
-          $actualHash = (Get-FileHash $archive -Algorithm SHA256).Hash.ToUpperInvariant()
+          $dll =
+              Join-Path `
+                  $binaryRoot `
+                  "MetaheuristicsPlatform.dll"
 
-          if ($actualHash -ne $expectedHash) {
-              throw "Graphviz SHA-256 verification failed."
+          if (-not (Test-Path -LiteralPath $dll -PathType Leaf)) {
+              throw "Validated binary artifact is incomplete."
           }
 
-          Remove-Item $destination -Recurse -Force -ErrorAction SilentlyContinue
-          Expand-Archive -Path $archive -DestinationPath $destination -Force
+      - name: Download exact-SHA validated documentation
+        shell: pwsh
+        run: |
+          $siteRoot =
+              Join-Path `
+                  (Get-Location).Path `
+                  "Documentation\site"
 
-          $dot =
-              Get-ChildItem -Path $destination -Recurse -File -Filter "dot.exe" |
-              Select-Object -First 1
+          New-Item `
+              -ItemType Directory `
+              -Force `
+              -Path $siteRoot |
+              Out-Null
 
-          if ($null -eq $dot) {
-              throw "dot.exe not found."
+          & gh run download `
+              $env:DOCS_RUN_ID `
+              --repo $env:GITHUB_REPOSITORY `
+              --name "MetaheuristicsPlatform-Documentation" `
+              --dir $siteRoot
+
+          if ($LASTEXITCODE -ne 0) {
+              throw "Unable to download exact-SHA validated documentation."
           }
 
-          $dot.Directory.FullName |
-              Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+          $index =
+              Join-Path `
+                  $siteRoot `
+                  "index.html"
 
-      - name: Install Doxygen
-        shell: pwsh
-        run: ./tools/Install-Doxygen.ps1
-
-      - name: Automation preflight
-        shell: pwsh
-        run: ./tools/Test-Automation.ps1
-
-      - name: Full public-release build
-        shell: pwsh
-        run: ./build/Build-All.ps1
+          if (-not (Test-Path -LiteralPath $index -PathType Leaf)) {
+              throw "Validated documentation artifact is incomplete."
+          }
 
       - name: Prepare and validate release assets
         id: release_info
@@ -242,7 +280,6 @@ jobs:
       - name: Publish GitHub Release
         shell: pwsh
         env:
-          GH_TOKEN: ${{ github.token }}
           RELEASE_TAG: ${{ steps.release_info.outputs.tag }}
           RELEASE_VERSION: ${{ steps.release_info.outputs.version }}
           RELEASE_PRERELEASE: ${{ steps.release_info.outputs.prerelease }}
@@ -273,8 +310,7 @@ jobs:
                   $env:RELEASE_TAG
               )
 
-          $arguments +=
-              $assets
+          $arguments += $assets
 
           $arguments +=
               @(
