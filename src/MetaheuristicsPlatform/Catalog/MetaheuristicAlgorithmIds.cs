@@ -148,4 +148,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string BlackHoleAlgorithm =
         "black-hole-algorithm-hatamlou-2013";
+
+    public const string SymbioticOrganismsSearch =
+        "symbiotic-organisms-search-cheng-prayogo-2014";
 }

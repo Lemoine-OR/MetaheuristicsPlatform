@@ -1,5 +1,9 @@
 # API stability
 
+## v0.85.0
+
+- Added stable direct-factory algorithm ID `symbiotic-organisms-search-cheng-prayogo-2014` (`SymbioticOrganismsSearchOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.84.0
 
 - Added stable direct-factory algorithm ID `black-hole-algorithm-hatamlou-2013` (`BlackHoleOptimizer`). Existing public IDs and signatures are unchanged.

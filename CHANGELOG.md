@@ -2,6 +2,19 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.85.0] - 2026-08-26
+
+### Added
+
+- Adds the canonical Symbiotic Organisms Search scientific identity from Cheng and Prayogo (2014) (DOI 10.1016/j.compstruc.2014.03.007).
+- Stable ID: `symbiotic-organisms-search-cheng-prayogo-2014`.
+- Direct factory registration, structured mathematical documentation, semantic tests and benchmark included.
+
+### Changed
+
+- Public algorithm count increases to 75.
+- Existing historical scientific validators remain frozen.
+- No external numerical dependency is introduced.
 ## [0.84.0] - 2026-08-26
 
 ### Added

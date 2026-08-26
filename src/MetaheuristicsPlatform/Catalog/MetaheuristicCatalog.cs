@@ -1026,7 +1026,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/BlackHole/BlackHoleOptimizer.cs",
             "Hatamlou (2013), Black hole: A new heuristic optimization approach for data clustering, Information Sciences 222, 175-184",
             "10.1016/j.ins.2012.08.023",
-            "Canonical Black Hole Algorithm: every star moves toward the current best using one uniform scalar, a better star becomes the black hole, and stars inside the published event horizon are reinitialized.")
+            "Canonical Black Hole Algorithm: every star moves toward the current best using one uniform scalar, a better star becomes the black hole, and stars inside the published event horizon are reinitialized."),
+        new(
+            "symbiotic-organisms-search-cheng-prayogo-2014",
+            "Symbiotic Organisms Search",
+            "SymbioticOrganismsSearchOptimizer",
+            "swarm-intelligence",
+            "Swarm intelligence",
+            "O(ND) per cycle plus 4N objective evaluations",
+            "O(ND)",
+            "Bounded continuous derivative-free optimization with parameter-free mutualism, commensalism and parasitism phases",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/SymbioticOrganismsSearch/SymbioticOrganismsSearchOptimizer.cs",
+            "Cheng and Prayogo (2014), Symbiotic Organisms Search: A new metaheuristic optimization algorithm, Computers & Structures 139, 98-112",
+            "10.1016/j.compstruc.2014.03.007",
+            "Canonical SOS with mutualism benefit factors in {1,2}, commensalism random factor in [-1,1], parasite-vector mutation, and greedy replacement after each published interaction.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

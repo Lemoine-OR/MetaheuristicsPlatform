@@ -186,6 +186,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.BlackHoleAlgorithm,
             "MetaheuristicsPlatform.Algorithms.BlackHole.BlackHoleOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.SymbioticOrganismsSearch,
+            "MetaheuristicsPlatform.Algorithms.SymbioticOrganismsSearch.SymbioticOrganismsSearchOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

@@ -24,6 +24,7 @@ probabilistic recruitment or shared pheromone memory.
 - **[Harris Hawks Optimization](../algorithms/harris-hawks-optimization-heidari-mirjalili-faris-aljarah-mafarja-chen-2019.md)** — `harris-hawks-optimization-heidari-mirjalili-faris-aljarah-mafarja-chen-2019` — Bounded continuous derivative-free optimization using surprise-pounce exploration, besiege modes and Levy rapid dives.
 - **[Gravitational Search Algorithm](../algorithms/gravitational-search-algorithm-rashedi-nezamabadi-pour-saryazdi-2009.md)** — `gravitational-search-algorithm-rashedi-nezamabadi-pour-saryazdi-2009` — Bounded continuous derivative-free optimization using fitness-dependent masses, decaying gravitational attraction and velocity updates.
 - **[Crow Search Algorithm](../algorithms/crow-search-algorithm-askarzadeh-2016.md)** — `crow-search-algorithm-askarzadeh-2016` — Bounded continuous derivative-free optimization using personal hiding-place memory, crow following, flight length and awareness-controlled random relocation.
+- **[Symbiotic Organisms Search](../algorithms/symbiotic-organisms-search-cheng-prayogo-2014.md)** — `symbiotic-organisms-search-cheng-prayogo-2014` — Bounded continuous derivative-free optimization with parameter-free mutualism, commensalism and parasitism phases.
 
 ## Navigation
 

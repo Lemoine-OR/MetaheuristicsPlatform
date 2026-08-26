@@ -74,6 +74,10 @@ authoritative location for method-specific provenance.
 
 - Hatamlou (2013), Black hole: A new heuristic optimization approach for data clustering, Information Sciences 222, 175-184. DOI: `10.1016/j.ins.2012.08.023`.
 
+## Symbiotic Organisms Search
+
+- Cheng and Prayogo (2014), Symbiotic Organisms Search: A new metaheuristic optimization algorithm, Computers & Structures 139, 98-112. DOI: `10.1016/j.compstruc.2014.03.007`.
+
 ## Threshold Accepting
 
 - Dueck, G.; Scheuer, T. (1990). *Threshold accepting: A general purpose optimization
