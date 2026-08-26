@@ -194,6 +194,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.MultiVerseOptimizer,
             "MetaheuristicsPlatform.Algorithms.MultiVerseOptimizer.MultiVerseOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.EquilibriumOptimizer,
+            "MetaheuristicsPlatform.Algorithms.EquilibriumOptimizer.EquilibriumOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

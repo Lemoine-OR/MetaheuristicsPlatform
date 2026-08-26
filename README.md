@@ -41,11 +41,11 @@ catalog IDs and literature-backed documentation.
 <td width="20%"><strong>3 constructive methods</strong><br><sub>GRASP, Reactive GRASP and GRASP with Path Relinking.</sub></td>
 <td width="20%"><strong>1 hybrid / memetic method</strong><br><sub>Moscato-style memetic evolution with local improvement.</sub></td>
 </tr>
-<tr><td colspan="5"><strong>19 other / music-inspired methods</strong><br><sub>HS, IHS, GHS, SGHS, NGHS, PSF-HS, iteration APSF-HS and object APSF-HS as separate literature identities.</sub></td>
+<tr><td colspan="5"><strong>20 other / music-inspired methods</strong><br><sub>HS, IHS, GHS, SGHS, NGHS, PSF-HS, iteration APSF-HS and object APSF-HS as separate literature identities.</sub></td>
 </tr>
 </table>
 
-<p align="center"><strong>76 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>77 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -184,6 +184,7 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/imperialist-competitive-algorithm-atashpaz-gargari-lucas-2007.html"><strong>Imperialist Competitive Algorithm</strong></a><br><sub>Canonical ICA lifecycle with fitness-ranked imperialists, probabilistic colony allocation, beta-scaled assimilation with angular deviation, revolution, imperialist/colony exchange and weakest-empire competition.</sub><br><code>imperialist-competitive-algorithm-atashpaz-gargari-lucas-2007</code><br><sub><code>ImperialistCompetitiveAlgorithmOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/black-hole-algorithm-hatamlou-2013.html"><strong>Black Hole Algorithm</strong></a><br><sub>Canonical Black Hole Algorithm: every star moves toward the current best using one uniform scalar, a better star becomes the black hole, and stars inside the published event horizon are reinitialized.</sub><br><code>black-hole-algorithm-hatamlou-2013</code><br><sub><code>BlackHoleOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/multi-verse-optimizer-mirjalili-mirjalili-hatamlou-2016.html"><strong>Multi-Verse Optimizer</strong></a><br><sub>Canonical minimization-oriented MVO white-hole roulette, normalized inflation rates, elite best universe, linearly increasing wormhole existence probability and power-law travelling distance rate with p=6 by default.</sub><br><code>multi-verse-optimizer-mirjalili-mirjalili-hatamlou-2016</code><br><sub><code>MultiVerseOptimizer</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/equilibrium-optimizer-faramarzi-heidarinejad-stephens-mirjalili-2020.html"><strong>Equilibrium Optimizer</strong></a><br><sub>Canonical EO with four best equilibrium candidates plus their average, a1=2, a2=1, GP=0.5 defaults, exponential F term, generation probability and source-code memory saving.</sub><br><code>equilibrium-optimizer-faramarzi-heidarinejad-stephens-mirjalili-2020</code><br><sub><code>EquilibriumOptimizer</code></sub></td></tr>
 </table>
 ## Scientific components
 

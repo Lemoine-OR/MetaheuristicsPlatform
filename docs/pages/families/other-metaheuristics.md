@@ -32,6 +32,7 @@ keep all eight scientific identities separate.
 - **[Imperialist Competitive Algorithm](../algorithms/imperialist-competitive-algorithm-atashpaz-gargari-lucas-2007.md)** — `imperialist-competitive-algorithm-atashpaz-gargari-lucas-2007` — Bounded continuous derivative-free optimization using countries, empires, assimilation, revolution and imperialistic competition.
 - **[Black Hole Algorithm](../algorithms/black-hole-algorithm-hatamlou-2013.md)** — `black-hole-algorithm-hatamlou-2013` — Positive-cost bounded continuous minimization using attraction to the current black hole and event-horizon replacement.
 - **[Multi-Verse Optimizer](../algorithms/multi-verse-optimizer-mirjalili-mirjalili-hatamlou-2016.md)** — `multi-verse-optimizer-mirjalili-mirjalili-hatamlou-2016` — Non-negative-cost bounded continuous minimization using white-hole exchange and best-universe wormholes.
+- **[Equilibrium Optimizer](../algorithms/equilibrium-optimizer-faramarzi-heidarinejad-stephens-mirjalili-2020.md)** — `equilibrium-optimizer-faramarzi-heidarinejad-stephens-mirjalili-2020` — Bounded continuous derivative-free optimization using an equilibrium pool, exponential turnover and generation-rate control.
 
 ## Navigation
 

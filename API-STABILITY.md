@@ -1,5 +1,9 @@
 # API stability
 
+## v0.87.0
+
+- Added stable direct-factory algorithm ID `equilibrium-optimizer-faramarzi-heidarinejad-stephens-mirjalili-2020` (`EquilibriumOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.86.0
 
 - Added stable direct-factory algorithm ID `multi-verse-optimizer-mirjalili-mirjalili-hatamlou-2016` (`MultiVerseOptimizer`). Existing public IDs and signatures are unchanged.

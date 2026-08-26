@@ -2,6 +2,19 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.87.0] - 2026-08-26
+
+### Added
+
+- Adds the canonical Equilibrium Optimizer scientific identity from Faramarzi, Heidarinejad, Stephens and Mirjalili (2020) (DOI 10.1016/j.knosys.2019.105190).
+- Stable ID: `equilibrium-optimizer-faramarzi-heidarinejad-stephens-mirjalili-2020`.
+- Direct factory registration, structured mathematical documentation, semantic tests and benchmark included.
+
+### Changed
+
+- Public algorithm count increases to 77.
+- Existing historical scientific validators remain frozen.
+- No external numerical dependency is introduced.
 ## [0.86.0] - 2026-08-26
 
 ### Added

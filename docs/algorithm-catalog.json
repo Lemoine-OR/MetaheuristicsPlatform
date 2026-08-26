@@ -1709,6 +1709,28 @@
                            "assumptions":  "Finite bounded continuous box and finite non-negative inflation rates. The original minimization-oriented normalized-inflation/roulette semantics are preserved; maximization and negative objective values are rejected rather than silently transformed.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; WEP increases exploitation while TDR decreases the maximum wormhole displacement according to the published p-controlled schedule.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "equilibrium-optimizer-faramarzi-heidarinejad-stephens-mirjalili-2020",
+                           "name":  "Equilibrium Optimizer",
+                           "class":  "EquilibriumOptimizer",
+                           "category":  "other-metaheuristics",
+                           "kind":  "population",
+                           "family":  "Other / music-inspired methods",
+                           "time":  "O(ND) per iteration plus N objective evaluations",
+                           "space":  "O(ND)",
+                           "applicability":  "Bounded continuous derivative-free optimization using an equilibrium pool, exponential turnover and generation-rate control",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/EquilibriumOptimizer/EquilibriumOptimizer.cs",
+                           "publication":  "Faramarzi, Heidarinejad, Stephens and Mirjalili (2020), Equilibrium optimizer: A novel optimization algorithm, Knowledge-Based Systems 191, 105190",
+                           "doi":  "10.1016/j.knosys.2019.105190",
+                           "implementation":  "Canonical EO with four best equilibrium candidates plus their average, a1=2, a2=1, GP=0.5 defaults, exponential F term, generation probability and source-code memory saving.",
+                           "page":  "docs/pages/algorithms/equilibrium-optimizer-faramarzi-heidarinejad-stephens-mirjalili-2020.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}t\u0026=(1-\\tau/T)^{a_2\\tau/T},\\quad F=a_1\\operatorname{sign}(r-0.5)(e^{-\\lambda t}-1),\\\\G_0\u0026=GCP(C_{eq}-\\lambda C),\\quad G=G_0F,\\\\C^{t+1}\u0026=C_{eq}+(C-C_{eq})F+\\frac{G}{\\lambda V}(1-F)\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous box, finite objective values and at least four particles. The equilibrium pool contains the four best-so-far candidates and their arithmetic mean; V=1 is the canonical internal constant.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; the exponential turnover term and generation probability balance exploration and exploitation around the equilibrium pool.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

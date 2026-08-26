@@ -82,6 +82,10 @@ authoritative location for method-specific provenance.
 
 - Mirjalili, Mirjalili and Hatamlou (2016), Multi-Verse Optimizer: a nature-inspired algorithm for global optimization, Neural Computing and Applications 27, 495-513. DOI: `10.1007/s00521-015-1870-7`.
 
+## Equilibrium Optimizer
+
+- Faramarzi, Heidarinejad, Stephens and Mirjalili (2020), Equilibrium optimizer: A novel optimization algorithm, Knowledge-Based Systems 191, 105190. DOI: `10.1016/j.knosys.2019.105190`.
+
 ## Threshold Accepting
 
 - Dueck, G.; Scheuer, T. (1990). *Threshold accepting: A general purpose optimization

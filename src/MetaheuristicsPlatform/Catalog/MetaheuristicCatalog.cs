@@ -1054,7 +1054,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/MultiVerseOptimizer/MultiVerseOptimizer.cs",
             "Mirjalili, Mirjalili and Hatamlou (2016), Multi-Verse Optimizer: a nature-inspired algorithm for global optimization, Neural Computing and Applications 27, 495-513",
             "10.1007/s00521-015-1870-7",
-            "Canonical minimization-oriented MVO white-hole roulette, normalized inflation rates, elite best universe, linearly increasing wormhole existence probability and power-law travelling distance rate with p=6 by default.")
+            "Canonical minimization-oriented MVO white-hole roulette, normalized inflation rates, elite best universe, linearly increasing wormhole existence probability and power-law travelling distance rate with p=6 by default."),
+        new(
+            "equilibrium-optimizer-faramarzi-heidarinejad-stephens-mirjalili-2020",
+            "Equilibrium Optimizer",
+            "EquilibriumOptimizer",
+            "other-metaheuristics",
+            "Other / music-inspired methods",
+            "O(ND) per iteration plus N objective evaluations",
+            "O(ND)",
+            "Bounded continuous derivative-free optimization using an equilibrium pool, exponential turnover and generation-rate control",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/EquilibriumOptimizer/EquilibriumOptimizer.cs",
+            "Faramarzi, Heidarinejad, Stephens and Mirjalili (2020), Equilibrium optimizer: A novel optimization algorithm, Knowledge-Based Systems 191, 105190",
+            "10.1016/j.knosys.2019.105190",
+            "Canonical EO with four best equilibrium candidates plus their average, a1=2, a2=1, GP=0.5 defaults, exponential F term, generation probability and source-code memory saving.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

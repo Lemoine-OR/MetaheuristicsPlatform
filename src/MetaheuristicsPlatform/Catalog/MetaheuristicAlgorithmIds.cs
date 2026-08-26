@@ -154,4 +154,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string MultiVerseOptimizer =
         "multi-verse-optimizer-mirjalili-mirjalili-hatamlou-2016";
+
+    public const string EquilibriumOptimizer =
+        "equilibrium-optimizer-faramarzi-heidarinejad-stephens-mirjalili-2020";
 }
