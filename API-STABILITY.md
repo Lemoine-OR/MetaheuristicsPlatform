@@ -1,5 +1,9 @@
 # API stability
 
+## v0.84.0
+
+- Added stable direct-factory algorithm ID `black-hole-algorithm-hatamlou-2013` (`BlackHoleOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.83.0
 
 - Added stable direct-factory algorithm ID `imperialist-competitive-algorithm-atashpaz-gargari-lucas-2007` (`ImperialistCompetitiveAlgorithmOptimizer`). Existing public IDs and signatures are unchanged.

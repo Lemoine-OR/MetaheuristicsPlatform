@@ -1012,7 +1012,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/ImperialistCompetitiveAlgorithm/ImperialistCompetitiveAlgorithmOptimizer.cs",
             "Atashpaz-Gargari and Lucas (2007), Imperialist competitive algorithm: An algorithm for optimization inspired by imperialistic competition, IEEE Congress on Evolutionary Computation, 4661-4667",
             "10.1109/CEC.2007.4425083",
-            "Canonical ICA lifecycle with fitness-ranked imperialists, probabilistic colony allocation, beta-scaled assimilation with angular deviation, revolution, imperialist/colony exchange and weakest-empire competition.")
+            "Canonical ICA lifecycle with fitness-ranked imperialists, probabilistic colony allocation, beta-scaled assimilation with angular deviation, revolution, imperialist/colony exchange and weakest-empire competition."),
+        new(
+            "black-hole-algorithm-hatamlou-2013",
+            "Black Hole Algorithm",
+            "BlackHoleOptimizer",
+            "other-metaheuristics",
+            "Other / music-inspired methods",
+            "O(ND) per iteration plus N-1 attraction evaluations and event-horizon replacement evaluations",
+            "O(ND)",
+            "Positive-cost bounded continuous minimization using attraction to the current black hole and event-horizon replacement",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/BlackHole/BlackHoleOptimizer.cs",
+            "Hatamlou (2013), Black hole: A new heuristic optimization approach for data clustering, Information Sciences 222, 175-184",
+            "10.1016/j.ins.2012.08.023",
+            "Canonical Black Hole Algorithm: every star moves toward the current best using one uniform scalar, a better star becomes the black hole, and stars inside the published event horizon are reinitialized.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

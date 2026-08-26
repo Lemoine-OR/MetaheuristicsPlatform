@@ -1643,6 +1643,28 @@
                            "assumptions":  "Finite bounded continuous box and finite objective values; at least two imperialists and at least one colony. Objective sense is converted only to an order-equivalent competition cost.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; assimilation, revolution and imperialistic competition preserve the stochastic search mechanism of the 2007 ICA.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "black-hole-algorithm-hatamlou-2013",
+                           "name":  "Black Hole Algorithm",
+                           "class":  "BlackHoleOptimizer",
+                           "category":  "other-metaheuristics",
+                           "kind":  "population",
+                           "family":  "Other / music-inspired methods",
+                           "time":  "O(ND) per iteration plus N-1 attraction evaluations and event-horizon replacement evaluations",
+                           "space":  "O(ND)",
+                           "applicability":  "Positive-cost bounded continuous minimization using attraction to the current black hole and event-horizon replacement",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/BlackHole/BlackHoleOptimizer.cs",
+                           "publication":  "Hatamlou (2013), Black hole: A new heuristic optimization approach for data clustering, Information Sciences 222, 175-184",
+                           "doi":  "10.1016/j.ins.2012.08.023",
+                           "implementation":  "Canonical Black Hole Algorithm: every star moves toward the current best using one uniform scalar, a better star becomes the black hole, and stars inside the published event horizon are reinitialized.",
+                           "page":  "docs/pages/algorithms/black-hole-algorithm-hatamlou-2013.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x),\\quad f(x)\u003e0",
+                           "update":  "\\begin{aligned}x_i^{t+1}\u0026=x_i^t+r_i(x_{BH}^t-x_i^t),\\quad r_i\\sim\\mathcal U(0,1),\\\\R_t\u0026=\\left|\\frac{f(x_{BH}^t)}{\\sum_{i=1}^{N}f(x_i^t)}\\right|,\\\\\\|x_i-x_{BH}\\|_2\u003cR_t\u0026\\Rightarrow x_i\\leftarrow\\operatorname{Uniform}(\\mathcal X)\\end{aligned}",
+                           "assumptions":  "Canonical event-horizon semantics require finite strictly positive objective values and minimization. Maximization or non-positive costs are rejected rather than silently transformed.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; random event-horizon replacement maintains exploration while attraction concentrates stars around the current black hole.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

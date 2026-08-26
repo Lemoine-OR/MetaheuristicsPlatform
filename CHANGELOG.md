@@ -2,6 +2,19 @@
 
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
+## [0.84.0] - 2026-08-26
+
+### Added
+
+- Adds the canonical Black Hole Algorithm scientific identity from Hatamlou (2013) (DOI 10.1016/j.ins.2012.08.023).
+- Stable ID: `black-hole-algorithm-hatamlou-2013`.
+- Direct factory registration, structured mathematical documentation, semantic tests and benchmark included.
+
+### Changed
+
+- Public algorithm count increases to 74.
+- Existing historical scientific validators remain frozen.
+- No external numerical dependency is introduced.
 ## [0.83.0] - 2026-08-26
 
 ### Added

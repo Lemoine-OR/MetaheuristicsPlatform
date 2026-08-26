@@ -145,4 +145,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string ImperialistCompetitiveAlgorithm =
         "imperialist-competitive-algorithm-atashpaz-gargari-lucas-2007";
+
+    public const string BlackHoleAlgorithm =
+        "black-hole-algorithm-hatamlou-2013";
 }

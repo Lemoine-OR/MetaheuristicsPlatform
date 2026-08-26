@@ -5,7 +5,7 @@ type: software
 authors:
   - family-names: "Lemoine"
     given-names: "David"
-version: "0.83.0"
+version: "0.84.0"
 license: MIT
 repository-code: "https://github.com/Lemoine-OR/MetaheuristicsPlatform"
 url: "https://lemoine-or.github.io/MetaheuristicsPlatform/"

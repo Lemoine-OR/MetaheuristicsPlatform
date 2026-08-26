@@ -70,6 +70,10 @@ authoritative location for method-specific provenance.
 
 - Atashpaz-Gargari and Lucas (2007), Imperialist competitive algorithm: An algorithm for optimization inspired by imperialistic competition, IEEE Congress on Evolutionary Computation, 4661-4667. DOI: `10.1109/CEC.2007.4425083`.
 
+## Black Hole Algorithm
+
+- Hatamlou (2013), Black hole: A new heuristic optimization approach for data clustering, Information Sciences 222, 175-184. DOI: `10.1016/j.ins.2012.08.023`.
+
 ## Threshold Accepting
 
 - Dueck, G.; Scheuer, T. (1990). *Threshold accepting: A general purpose optimization
