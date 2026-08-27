@@ -28,6 +28,7 @@ probabilistic recruitment or shared pheromone memory.
 - @subpage inertia_weight_particle_swarm_shi_eberhart_1998 — Inertia Weight Particle Swarm Optimization (`inertia-weight-particle-swarm-shi-eberhart-1998`).
 - @subpage constriction_particle_swarm_clerc_kennedy_2002 — Clerc-Kennedy Constriction Particle Swarm (`constriction-particle-swarm-clerc-kennedy-2002`).
 - @subpage bare_bones_particle_swarm_kennedy_2003 — Bare Bones Particle Swarm (`bare-bones-particle-swarm-kennedy-2003`).
+- @subpage fully_informed_particle_swarm_mendes_kennedy_neves_2004 — Fully Informed Particle Swarm (`fully-informed-particle-swarm-mendes-kennedy-neves-2004`).
 
 ## Navigation
 

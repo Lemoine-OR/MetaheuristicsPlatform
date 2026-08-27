@@ -1797,6 +1797,28 @@
                            "assumptions":  "Finite bounded continuous box and finite objective values; global-best bare-bones form.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; the release is the velocity-free Gaussian mechanism of Kennedy (2003).",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "fully-informed-particle-swarm-mendes-kennedy-neves-2004",
+                           "name":  "Fully Informed Particle Swarm",
+                           "class":  "FullyInformedParticleSwarmOptimizer",
+                           "category":  "swarm-intelligence",
+                           "kind":  "population",
+                           "family":  "Swarm intelligence",
+                           "time":  "O(N^2D) for the fully connected unweighted informer structure plus N evaluations per iteration",
+                           "space":  "O(ND)",
+                           "applicability":  "Bounded continuous optimization where every particle is influenced by all informers rather than a single neighborhood best",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/PSO/Scientific/FullyInformedParticleSwarmOptimizer.cs",
+                           "publication":  "Mendes, Kennedy \u0026 Neves (2004), The Fully Informed Particle Swarm: Simpler, Maybe Better, IEEE Transactions on Evolutionary Computation 8(3), 204-210",
+                           "doi":  "10.1109/TEVC.2004.826074",
+                           "implementation":  "Unweighted fully informed structure: total acceleration is divided equally among all informers, with independent random multipliers per informer and coordinate, combined with Clerc-Kennedy constriction.",
+                           "page":  "docs/pages/algorithms/fully-informed-particle-swarm-mendes-kennedy-neves-2004.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}v_{i,d}^{t+1}\u0026=\\chi\\!\\left(v_{i,d}^{t}+\\sum_{j\\in N_i}\\frac{\\phi}{|N_i|}r_{i,j,d}(p_{j,d}^{t}-x_{i,d}^{t})\\right).\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous box; nonempty informer set; this public identity uses the unweighted fully connected informer structure.",
+                           "convergence":  "The constriction controls the linearized motion; no universal objective-independent global convergence guarantee is asserted.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

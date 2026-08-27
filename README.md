@@ -35,7 +35,7 @@ catalog IDs and literature-backed documentation.
 
 <table>
 <tr>
-<td width="20%"><strong>21 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Firefly, Ant System, ACS and MAX-MIN Ant System.</sub></td>
+<td width="20%"><strong>22 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Firefly, Ant System, ACS and MAX-MIN Ant System.</sub></td>
 <td width="20%"><strong>14 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
 <td width="20%"><strong>21 trajectory methods</strong><br><sub>Acceptance methods, Tabu, local search, ILS, Iterated Greedy, LNS, ALNS, VNS and GLS.</sub></td>
 <td width="20%"><strong>3 constructive methods</strong><br><sub>GRASP, Reactive GRASP and GRASP with Path Relinking.</sub></td>
@@ -45,7 +45,7 @@ catalog IDs and literature-backed documentation.
 </tr>
 </table>
 
-<p align="center"><strong>80 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>81 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -124,6 +124,7 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/inertia-weight-particle-swarm-shi-eberhart-1998.html"><strong>Inertia Weight Particle Swarm Optimization</strong></a><br><sub>Canonical synchronous global-best PSO with explicit constant inertia weight w; it does not silently substitute the later linearly decreasing inertia schedule.</sub><br><code>inertia-weight-particle-swarm-shi-eberhart-1998</code><br><sub><code>InertiaWeightParticleSwarmOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/constriction-particle-swarm-clerc-kennedy-2002.html"><strong>Clerc-Kennedy Constriction Particle Swarm</strong></a><br><sub>Canonical constriction-factor velocity dynamics with chi computed from phi=c1+c2 and kappa; default c1=c2=2.05, phi=4.10, kappa=1.</sub><br><code>constriction-particle-swarm-clerc-kennedy-2002</code><br><sub><code>ConstrictionParticleSwarmOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/bare-bones-particle-swarm-kennedy-2003.html"><strong>Bare Bones Particle Swarm</strong></a><br><sub>Velocity is eliminated. Each coordinate is sampled from a Gaussian centered at (p_i+g)/2 with standard deviation |p_i-g|, followed by bounded repair and personal-best update.</sub><br><code>bare-bones-particle-swarm-kennedy-2003</code><br><sub><code>BareBonesParticleSwarmOptimizer</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/fully-informed-particle-swarm-mendes-kennedy-neves-2004.html"><strong>Fully Informed Particle Swarm</strong></a><br><sub>Unweighted fully informed structure: total acceleration is divided equally among all informers, with independent random multipliers per informer and coordinate, combined with Clerc-Kennedy constriction.</sub><br><code>fully-informed-particle-swarm-mendes-kennedy-neves-2004</code><br><sub><code>FullyInformedParticleSwarmOptimizer</code></sub></td></tr>
 </table>
 
 ### Evolutionary methods

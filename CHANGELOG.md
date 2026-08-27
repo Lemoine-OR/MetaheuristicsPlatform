@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.91.0] - 2026-08-27
+
+- Add canonical Fully Informed Particle Swarm scientific identity (Mendes, Kennedy & Neves (2004), The Fully Informed Particle Swarm: Simpler, Maybe Better, IEEE Transactions on Evolutionary Computation 8(3), 204-210; DOI 10.1109/TEVC.2004.826074).
+- Stable ID: `fully-informed-particle-swarm-mendes-kennedy-neves-2004`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.90.0] - 2026-08-27
 
 - Add canonical Bare Bones Particle Swarm scientific identity (Kennedy (2003), Bare bones particle swarms, Proceedings of the 2003 IEEE Swarm Intelligence Symposium, 80-87; DOI 10.1109/SIS.2003.1202251).

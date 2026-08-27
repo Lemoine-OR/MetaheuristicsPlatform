@@ -1110,7 +1110,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/PSO/BareBones/BareBonesParticleSwarmOptimizer.cs",
             "Kennedy (2003), Bare bones particle swarms, Proceedings of the 2003 IEEE Swarm Intelligence Symposium, 80-87",
             "10.1109/SIS.2003.1202251",
-            "Velocity is eliminated. Each coordinate is sampled from a Gaussian centered at (p_i+g)/2 with standard deviation |p_i-g|, followed by bounded repair and personal-best update.")
+            "Velocity is eliminated. Each coordinate is sampled from a Gaussian centered at (p_i+g)/2 with standard deviation |p_i-g|, followed by bounded repair and personal-best update."),
+        new(
+            "fully-informed-particle-swarm-mendes-kennedy-neves-2004",
+            "Fully Informed Particle Swarm",
+            "FullyInformedParticleSwarmOptimizer",
+            "swarm-intelligence",
+            "Swarm intelligence",
+            "O(N^2D) for the fully connected unweighted informer structure plus N evaluations per iteration",
+            "O(ND)",
+            "Bounded continuous optimization where every particle is influenced by all informers rather than a single neighborhood best",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/PSO/Scientific/FullyInformedParticleSwarmOptimizer.cs",
+            "Mendes, Kennedy & Neves (2004), The Fully Informed Particle Swarm: Simpler, Maybe Better, IEEE Transactions on Evolutionary Computation 8(3), 204-210",
+            "10.1109/TEVC.2004.826074",
+            "Unweighted fully informed structure: total acceleration is divided equally among all informers, with independent random multipliers per informer and coordinate, combined with Clerc-Kennedy constriction.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

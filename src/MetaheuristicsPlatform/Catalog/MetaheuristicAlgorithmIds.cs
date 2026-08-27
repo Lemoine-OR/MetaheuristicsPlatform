@@ -166,4 +166,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string BareBonesParticleSwarm =
         "bare-bones-particle-swarm-kennedy-2003";
+
+    public const string FullyInformedParticleSwarm =
+        "fully-informed-particle-swarm-mendes-kennedy-neves-2004";
 }
