@@ -36,7 +36,7 @@ catalog IDs and literature-backed documentation.
 <table>
 <tr>
 <td width="20%"><strong>26 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Firefly, Ant System, ACS and MAX-MIN Ant System.</sub></td>
-<td width="20%"><strong>16 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
+<td width="20%"><strong>17 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
 <td width="20%"><strong>21 trajectory methods</strong><br><sub>Acceptance methods, Tabu, local search, ILS, Iterated Greedy, LNS, ALNS, VNS and GLS.</sub></td>
 <td width="20%"><strong>3 constructive methods</strong><br><sub>GRASP, Reactive GRASP and GRASP with Path Relinking.</sub></td>
 <td width="20%"><strong>1 hybrid / memetic method</strong><br><sub>Moscato-style memetic evolution with local improvement.</sub></td>
@@ -45,7 +45,7 @@ catalog IDs and literature-backed documentation.
 </tr>
 </table>
 
-<p align="center"><strong>87 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>88 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -144,6 +144,7 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/biogeography-based-optimization-simon-2008.html"><strong>Biogeography-Based Optimization</strong></a><br><sub>Canonical rank-derived species counts, linear immigration/emigration curves, equilibrium species-probability mutation, explicit elitism and bounded SIV repair.</sub><br><code>biogeography-based-optimization-simon-2008</code><br><sub><code>BiogeographyBasedOptimizationOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/nsga-ii-deb-pratap-agarwal-meyarivan-2002.html"><strong>NSGA-II</strong></a><br><sub>Fast nondominated sorting, elitist parent-offspring survival and crowding-distance diversity.</sub><br><code>nsga-ii-deb-pratap-agarwal-meyarivan-2002</code><br><sub><code>NsgaIIOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/paes-knowles-corne-2000.html"><strong>Pareto Archived Evolution Strategy</strong></a><br><sub>Canonical (1+1)-PAES local mutation with Pareto archive and adaptive objective-space grid.</sub><br><code>paes-knowles-corne-2000</code><br><sub><code>PaesOptimizer</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/pesa-ii-corne-jerram-knowles-oates-2001.html"><strong>PESA-II</strong></a><br><sub>Region-based selection from an external nondominated archive using adaptive hyperbox density.</sub><br><code>pesa-ii-corne-jerram-knowles-oates-2001</code><br><sub><code>PesaIIOptimizer</code></sub></td></tr>
 </table>
 
 ### Trajectory-based methods

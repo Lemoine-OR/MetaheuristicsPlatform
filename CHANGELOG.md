@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.98.0] - 2026-08-27
+
+- Add canonical PESA-II scientific identity (Corne, Jerram, Knowles & Oates, 2001; DOI 10.5555/2955239.2955289).
+- Stable ID: `pesa-ii-corne-jerram-knowles-oates-2001`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.97.0] - 2026-08-27
 
 - Add canonical Pareto Archived Evolution Strategy scientific identity (Knowles & Corne, 2000; DOI 10.1162/106365600568167).

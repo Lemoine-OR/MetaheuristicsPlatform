@@ -187,4 +187,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string Paes =
         "paes-knowles-corne-2000";
+
+    public const string PesaII =
+        "pesa-ii-corne-jerram-knowles-oates-2001";
 }

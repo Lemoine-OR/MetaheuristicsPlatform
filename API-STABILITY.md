@@ -1,5 +1,9 @@
 # API stability
 
+## v0.98.0
+
+- Added stable direct-factory algorithm ID `pesa-ii-corne-jerram-knowles-oates-2001` (`PesaIIOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.97.0
 
 - Added stable direct-factory algorithm ID `paes-knowles-corne-2000` (`PaesOptimizer`). Existing public IDs and signatures are unchanged.

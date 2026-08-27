@@ -1951,6 +1951,28 @@
                            "assumptions":  "Finite bounded continuous decision box, at least two finite objectives, and one explicit OptimizationSense per objective.",
                            "convergence":  "No universal finite-time convergence guarantee is asserted; the implementation preserves the named multiobjective mechanism.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "pesa-ii-corne-jerram-knowles-oates-2001",
+                           "name":  "PESA-II",
+                           "class":  "PesaIIOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "O(ANM) archive/grid selection plus objective evaluations",
+                           "space":  "O((A+N)(D+M))",
+                           "applicability":  "Bounded continuous native multiobjective Pareto optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multiobjective/PesaII/PesaIIOptimizer.cs",
+                           "publication":  "Corne, Jerram, Knowles \u0026 Oates (2001), PESA-II: Region-Based Selection in Evolutionary Multiobjective Optimization, GECCO 2001, 283-290",
+                           "doi":  "10.5555/2955239.2955289",
+                           "implementation":  "Region-based selection from an external nondominated archive using adaptive hyperbox density.",
+                           "page":  "docs/pages/algorithms/pesa-ii-corne-jerram-knowles-oates-2001.md",
+                           "problem":  "\\operatorname{ParetoMin}_{x\\in\\mathcal X\\subseteq\\mathbb R^D}F(x)=\\bigl(f_1(x),\\ldots,f_M(x)\\bigr)",
+                           "update":  "\\begin{aligned}A_{t+1}\u0026=\\operatorname{ND}(A_t\\cup P_t),\\\\h^\\star\u0026=\\arg\\min_h n_h,\\qquad p\\sim\\operatorname{Uniform}(A_{t+1}\\cap h^\\star).\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, at least two finite objectives, and one explicit OptimizationSense per objective.",
+                           "convergence":  "No universal finite-time convergence guarantee is asserted; the implementation preserves the named multiobjective mechanism.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

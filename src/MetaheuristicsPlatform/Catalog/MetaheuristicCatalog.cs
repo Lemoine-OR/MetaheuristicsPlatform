@@ -1208,7 +1208,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Paes/PaesOptimizer.cs",
             "Knowles & Corne (2000), Approximating the Nondominated Front Using the Pareto Archived Evolution Strategy, Evolutionary Computation 8(2), 149-172",
             "10.1162/106365600568167",
-            "Canonical (1+1)-PAES local mutation with Pareto archive and adaptive objective-space grid.")
+            "Canonical (1+1)-PAES local mutation with Pareto archive and adaptive objective-space grid."),
+        new(
+            "pesa-ii-corne-jerram-knowles-oates-2001",
+            "PESA-II",
+            "PesaIIOptimizer",
+            "evolutionary-methods",
+            "Evolutionary methods",
+            "O(ANM) archive/grid selection plus objective evaluations",
+            "O((A+N)(D+M))",
+            "Bounded continuous native multiobjective Pareto optimization",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/Multiobjective/PesaII/PesaIIOptimizer.cs",
+            "Corne, Jerram, Knowles & Oates (2001), PESA-II: Region-Based Selection in Evolutionary Multiobjective Optimization, GECCO 2001, 283-290",
+            "10.5555/2955239.2955289",
+            "Region-based selection from an external nondominated archive using adaptive hyperbox density.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>
