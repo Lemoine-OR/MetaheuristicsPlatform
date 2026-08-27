@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.94.0] - 2026-08-27
+
+- Add canonical Standard Particle Swarm Optimization 2007 scientific identity (Bratton & Kennedy (2007), Defining a Standard for Particle Swarm Optimization, Proceedings of the 2007 IEEE Swarm Intelligence Symposium, 120-127; DOI 10.1109/SIS.2007.368035).
+- Stable ID: `standard-particle-swarm-bratton-kennedy-2007`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.93.0] - 2026-08-27
 
 - Add canonical Cooperative Particle Swarm Optimization (CPSO-SK) scientific identity (van den Bergh & Engelbrecht (2004), A Cooperative Approach to Particle Swarm Optimization, IEEE Transactions on Evolutionary Computation 8(3), 225-239; DOI 10.1109/TEVC.2004.826069).

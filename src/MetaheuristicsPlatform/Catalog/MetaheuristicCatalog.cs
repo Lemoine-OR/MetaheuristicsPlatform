@@ -1152,7 +1152,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/PSO/Cooperative/CooperativeParticleSwarmOptimizer.cs",
             "van den Bergh & Engelbrecht (2004), A Cooperative Approach to Particle Swarm Optimization, IEEE Transactions on Evolutionary Computation 8(3), 225-239",
             "10.1109/TEVC.2004.826069",
-            "CPSO-SK cooperative decomposition: K sub-swarms optimize disjoint components and are evaluated through a shared context vector assembled from the current best component of every sub-swarm.")
+            "CPSO-SK cooperative decomposition: K sub-swarms optimize disjoint components and are evaluated through a shared context vector assembled from the current best component of every sub-swarm."),
+        new(
+            "standard-particle-swarm-bratton-kennedy-2007",
+            "Standard Particle Swarm Optimization 2007",
+            "StandardPso2007Optimizer",
+            "swarm-intelligence",
+            "Swarm intelligence",
+            "O(ND + N^2) per iteration for explicit adaptive-random informer discovery plus N objective evaluations",
+            "O(ND + N^2)",
+            "Bounded continuous baseline PSO with standardized parameter values and adaptive random local communication",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/PSO/Standard2007/StandardPso2007Optimizer.cs",
+            "Bratton & Kennedy (2007), Defining a Standard for Particle Swarm Optimization, Proceedings of the 2007 IEEE Swarm Intelligence Symposium, 120-127",
+            "10.1109/SIS.2007.368035",
+            "SPSO-2007 parameterization w=1/(2 ln 2), c=1/2+ln 2, default swarm size 10+floor(2 sqrt(D)), K=3 random informing attempts and topology regeneration on non-improvement.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

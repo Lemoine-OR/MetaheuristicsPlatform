@@ -175,4 +175,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string CooperativeParticleSwarm =
         "cooperative-particle-swarm-cpso-sk-van-den-bergh-engelbrecht-2004";
+
+    public const string StandardParticleSwarm2007 =
+        "standard-particle-swarm-bratton-kennedy-2007";
 }

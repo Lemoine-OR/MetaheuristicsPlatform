@@ -31,6 +31,7 @@ probabilistic recruitment or shared pheromone memory.
 - @subpage fully_informed_particle_swarm_mendes_kennedy_neves_2004 — Fully Informed Particle Swarm (`fully-informed-particle-swarm-mendes-kennedy-neves-2004`).
 - @subpage comprehensive_learning_particle_swarm_liang_qin_suganthan_baskar_2006 — Comprehensive Learning Particle Swarm Optimizer (`comprehensive-learning-particle-swarm-liang-qin-suganthan-baskar-2006`).
 - @subpage cooperative_particle_swarm_cpso_sk_van_den_bergh_engelbrecht_2004 — Cooperative Particle Swarm Optimization (CPSO-SK) (`cooperative-particle-swarm-cpso-sk-van-den-bergh-engelbrecht-2004`).
+- @subpage standard_particle_swarm_bratton_kennedy_2007 — Standard Particle Swarm Optimization 2007 (`standard-particle-swarm-bratton-kennedy-2007`).
 
 ## Navigation
 

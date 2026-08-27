@@ -35,7 +35,7 @@ catalog IDs and literature-backed documentation.
 
 <table>
 <tr>
-<td width="20%"><strong>24 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Firefly, Ant System, ACS and MAX-MIN Ant System.</sub></td>
+<td width="20%"><strong>25 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Firefly, Ant System, ACS and MAX-MIN Ant System.</sub></td>
 <td width="20%"><strong>14 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
 <td width="20%"><strong>21 trajectory methods</strong><br><sub>Acceptance methods, Tabu, local search, ILS, Iterated Greedy, LNS, ALNS, VNS and GLS.</sub></td>
 <td width="20%"><strong>3 constructive methods</strong><br><sub>GRASP, Reactive GRASP and GRASP with Path Relinking.</sub></td>
@@ -45,7 +45,7 @@ catalog IDs and literature-backed documentation.
 </tr>
 </table>
 
-<p align="center"><strong>83 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>84 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -127,6 +127,7 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/fully-informed-particle-swarm-mendes-kennedy-neves-2004.html"><strong>Fully Informed Particle Swarm</strong></a><br><sub>Unweighted fully informed structure: total acceleration is divided equally among all informers, with independent random multipliers per informer and coordinate, combined with Clerc-Kennedy constriction.</sub><br><code>fully-informed-particle-swarm-mendes-kennedy-neves-2004</code><br><sub><code>FullyInformedParticleSwarmOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/comprehensive-learning-particle-swarm-liang-qin-suganthan-baskar-2006.html"><strong>Comprehensive Learning Particle Swarm Optimizer</strong></a><br><sub>Dimension-wise comprehensive learning with particle-specific Pc, two-particle tournaments, c=1.49445, inertia 0.9 to 0.4 and refreshing gap m=7.</sub><br><code>comprehensive-learning-particle-swarm-liang-qin-suganthan-baskar-2006</code><br><sub><code>ComprehensiveLearningParticleSwarmOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/cooperative-particle-swarm-cpso-sk-van-den-bergh-engelbrecht-2004.html"><strong>Cooperative Particle Swarm Optimization (CPSO-SK)</strong></a><br><sub>CPSO-SK cooperative decomposition: K sub-swarms optimize disjoint components and are evaluated through a shared context vector assembled from the current best component of every sub-swarm.</sub><br><code>cooperative-particle-swarm-cpso-sk-van-den-bergh-engelbrecht-2004</code><br><sub><code>CooperativeParticleSwarmOptimizer</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/standard-particle-swarm-bratton-kennedy-2007.html"><strong>Standard Particle Swarm Optimization 2007</strong></a><br><sub>SPSO-2007 parameterization w=1/(2 ln 2), c=1/2+ln 2, default swarm size 10+floor(2 sqrt(D)), K=3 random informing attempts and topology regeneration on non-improvement.</sub><br><code>standard-particle-swarm-bratton-kennedy-2007</code><br><sub><code>StandardPso2007Optimizer</code></sub></td></tr>
 </table>
 
 ### Evolutionary methods

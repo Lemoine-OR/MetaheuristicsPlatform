@@ -1863,6 +1863,28 @@
                            "assumptions":  "Finite bounded continuous vector, deterministic balanced component partition and finite objective values.",
                            "convergence":  "No universal global convergence guarantee is asserted; the release is explicitly CPSO-SK and does not silently claim the hybrid CPSO-HK variant.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "standard-particle-swarm-bratton-kennedy-2007",
+                           "name":  "Standard Particle Swarm Optimization 2007",
+                           "class":  "StandardPso2007Optimizer",
+                           "category":  "swarm-intelligence",
+                           "kind":  "population",
+                           "family":  "Swarm intelligence",
+                           "time":  "O(ND + N^2) per iteration for explicit adaptive-random informer discovery plus N objective evaluations",
+                           "space":  "O(ND + N^2)",
+                           "applicability":  "Bounded continuous baseline PSO with standardized parameter values and adaptive random local communication",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/PSO/Standard2007/StandardPso2007Optimizer.cs",
+                           "publication":  "Bratton \u0026 Kennedy (2007), Defining a Standard for Particle Swarm Optimization, Proceedings of the 2007 IEEE Swarm Intelligence Symposium, 120-127",
+                           "doi":  "10.1109/SIS.2007.368035",
+                           "implementation":  "SPSO-2007 parameterization w=1/(2 ln 2), c=1/2+ln 2, default swarm size 10+floor(2 sqrt(D)), K=3 random informing attempts and topology regeneration on non-improvement.",
+                           "page":  "docs/pages/algorithms/standard-particle-swarm-bratton-kennedy-2007.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}v_{i,d}^{t+1}\u0026=w v_{i,d}^{t}+U(0,c)(p_{i,d}^{t}-x_{i,d}^{t})+U(0,c)(l_{i,d}^{t}-x_{i,d}^{t}).\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous box and a nonempty random informer neighborhood for every particle.",
+                           "convergence":  "The release is a reproducible SPSO-2007 baseline; no objective-independent finite-time global convergence guarantee is asserted.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }
