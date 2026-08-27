@@ -2259,6 +2259,28 @@
                            "assumptions":  "Finite bounded continuous decision box, finite objective values, at least two objectives and one explicit OptimizationSense per objective.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; the implementation preserves the named stochastic multiobjective mechanism.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "hype-bader-zitzler-2011",
+                           "name":  "HypE",
+                           "class":  "HypeOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "O(SNM+MN^2) hypervolume sampling and nondominated sorting per generation",
+                           "space":  "O(N(D+M)+S)",
+                           "applicability":  "Bounded continuous native multiobjective Pareto optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Hype/HypeOptimizer.cs",
+                           "publication":  "Bader \u0026 Zitzler (2011), HypE: An Algorithm for Fast Hypervolume-Based Many-Objective Optimization, Evolutionary Computation 19(1), 45-76",
+                           "doi":  "10.1162/EVCO_A_00009",
+                           "implementation":  "HypE drives mating and environmental selection with Monte-Carlo estimates of hypervolume contribution.",
+                           "page":  "docs/pages/algorithms/hype-bader-zitzler-2011.md",
+                           "problem":  "\\operatorname{ParetoMin}_{x\\in\\mathcal X\\subseteq\\mathbb R^D}F(x)=\\bigl(f_1(x),\\ldots,f_M(x)\\bigr)",
+                           "update":  "\\begin{aligned}\\widehat I_H(x)\u0026=\\frac1S\\sum_{s=1}^{S}\\frac{\\mathbf 1[x\\preceq u_s]}{|\\{y:y\\preceq u_s\\}|},\\\\P_{t+1}\u0026=\\operatorname{EnvironmentalSelect}_{\\widehat I_H}(P_t\\cup Q_t,N).\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, finite objective values, at least two objectives and one explicit OptimizationSense per objective.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; the implementation preserves the named stochastic multiobjective mechanism.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

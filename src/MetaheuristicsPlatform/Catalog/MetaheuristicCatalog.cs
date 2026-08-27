@@ -1404,7 +1404,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Multiobjective/MoeadDe/MoeadDeOptimizer.cs",
             "Li & Zhang (2009), Multiobjective Optimization Problems With Complicated Pareto Sets, MOEA/D and NSGA-II, IEEE Transactions on Evolutionary Computation 13(2), 284-302",
             "10.1109/TEVC.2008.925798",
-            "MOEA/D-DE combines Tchebycheff decomposition, neighborhood mating/update and differential-evolution reproduction.")
+            "MOEA/D-DE combines Tchebycheff decomposition, neighborhood mating/update and differential-evolution reproduction."),
+        new(
+            "hype-bader-zitzler-2011",
+            "HypE",
+            "HypeOptimizer",
+            "evolutionary-methods",
+            "Evolutionary methods",
+            "O(SNM+MN^2) hypervolume sampling and nondominated sorting per generation",
+            "O(N(D+M)+S)",
+            "Bounded continuous native multiobjective Pareto optimization",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Hype/HypeOptimizer.cs",
+            "Bader & Zitzler (2011), HypE: An Algorithm for Fast Hypervolume-Based Many-Objective Optimization, Evolutionary Computation 19(1), 45-76",
+            "10.1162/EVCO_A_00009",
+            "HypE drives mating and environmental selection with Monte-Carlo estimates of hypervolume contribution.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

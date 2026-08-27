@@ -1,5 +1,9 @@
 # API stability
 
+## v0.112.0
+
+- Added stable direct-factory algorithm ID `hype-bader-zitzler-2011` (`HypeOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.111.0
 
 - Added stable direct-factory algorithm ID `moead-de-li-zhang-2009` (`MoeadDeOptimizer`). Existing public IDs and signatures are unchanged.

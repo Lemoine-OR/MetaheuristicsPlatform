@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.112.0] - 2026-08-27
+
+- Add canonical HypE scientific identity (Bader & Zitzler, 2011; DOI 10.1162/EVCO_A_00009).
+- Stable ID: `hype-bader-zitzler-2011`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.111.0] - 2026-08-27
 
 - Add canonical MOEA/D-DE scientific identity (Li & Zhang, 2009; DOI 10.1109/TEVC.2008.925798).

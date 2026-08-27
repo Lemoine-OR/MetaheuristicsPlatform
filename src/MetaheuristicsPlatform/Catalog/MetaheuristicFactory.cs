@@ -294,6 +294,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.MoeadDe,
             "MetaheuristicsPlatform.Algorithms.Multiobjective.MoeadDe.MoeadDeOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.Hype,
+            "MetaheuristicsPlatform.Algorithms.Multiobjective.Hype.HypeOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

@@ -229,4 +229,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string MoeadDe =
         "moead-de-li-zhang-2009";
+
+    public const string Hype =
+        "hype-bader-zitzler-2011";
 }
