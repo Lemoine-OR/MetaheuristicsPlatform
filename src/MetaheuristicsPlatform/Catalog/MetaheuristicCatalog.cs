@@ -1138,7 +1138,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/PSO/ComprehensiveLearning/ComprehensiveLearningParticleSwarmOptimizer.cs",
             "Liang, Qin, Suganthan & Baskar (2006), Comprehensive learning particle swarm optimizer for global optimization of multimodal functions, IEEE Transactions on Evolutionary Computation 10(3), 281-295",
             "10.1109/TEVC.2005.857610",
-            "Dimension-wise comprehensive learning with particle-specific Pc, two-particle tournaments, c=1.49445, inertia 0.9 to 0.4 and refreshing gap m=7.")
+            "Dimension-wise comprehensive learning with particle-specific Pc, two-particle tournaments, c=1.49445, inertia 0.9 to 0.4 and refreshing gap m=7."),
+        new(
+            "cooperative-particle-swarm-cpso-sk-van-den-bergh-engelbrecht-2004",
+            "Cooperative Particle Swarm Optimization (CPSO-SK)",
+            "CooperativeParticleSwarmOptimizer",
+            "swarm-intelligence",
+            "Swarm intelligence",
+            "O(KSD) movement with K*S context-vector objective evaluations per iteration",
+            "O(SD + D)",
+            "Bounded continuous optimization benefiting from cooperative decomposition of the decision vector into component subspaces",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/PSO/Cooperative/CooperativeParticleSwarmOptimizer.cs",
+            "van den Bergh & Engelbrecht (2004), A Cooperative Approach to Particle Swarm Optimization, IEEE Transactions on Evolutionary Computation 8(3), 225-239",
+            "10.1109/TEVC.2004.826069",
+            "CPSO-SK cooperative decomposition: K sub-swarms optimize disjoint components and are evaluated through a shared context vector assembled from the current best component of every sub-swarm.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

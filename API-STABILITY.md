@@ -1,5 +1,9 @@
 # API stability
 
+## v0.93.0
+
+- Added stable direct-factory algorithm ID `cooperative-particle-swarm-cpso-sk-van-den-bergh-engelbrecht-2004` (`CooperativeParticleSwarmOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.92.0
 
 - Added stable direct-factory algorithm ID `comprehensive-learning-particle-swarm-liang-qin-suganthan-baskar-2006` (`ComprehensiveLearningParticleSwarmOptimizer`). Existing public IDs and signatures are unchanged.

@@ -1841,6 +1841,28 @@
                            "assumptions":  "Finite bounded continuous domain; particle-specific dimension exemplars and refresh after the configured stagnation gap.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; the release preserves the published comprehensive-learning mechanism and schedules.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "cooperative-particle-swarm-cpso-sk-van-den-bergh-engelbrecht-2004",
+                           "name":  "Cooperative Particle Swarm Optimization (CPSO-SK)",
+                           "class":  "CooperativeParticleSwarmOptimizer",
+                           "category":  "swarm-intelligence",
+                           "kind":  "population",
+                           "family":  "Swarm intelligence",
+                           "time":  "O(KSD) movement with K*S context-vector objective evaluations per iteration",
+                           "space":  "O(SD + D)",
+                           "applicability":  "Bounded continuous optimization benefiting from cooperative decomposition of the decision vector into component subspaces",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/PSO/Cooperative/CooperativeParticleSwarmOptimizer.cs",
+                           "publication":  "van den Bergh \u0026 Engelbrecht (2004), A Cooperative Approach to Particle Swarm Optimization, IEEE Transactions on Evolutionary Computation 8(3), 225-239",
+                           "doi":  "10.1109/TEVC.2004.826069",
+                           "implementation":  "CPSO-SK cooperative decomposition: K sub-swarms optimize disjoint components and are evaluated through a shared context vector assembled from the current best component of every sub-swarm.",
+                           "page":  "docs/pages/algorithms/cooperative-particle-swarm-cpso-sk-van-den-bergh-engelbrecht-2004.md",
+                           "problem":  "\\min_{x=(x^{(1)},\\dots,x^{(K)})\\in\\mathcal X} f(x)",
+                           "update":  "\\begin{aligned}x_{\\mathrm{ctx}}\u0026=\\bigl(g^{(1)},\\dots,g^{(K)}\\bigr),\\\\f_i^{(k)}\u0026=f\\!\\left(g^{(1)},\\dots,x_i^{(k)},\\dots,g^{(K)}\\right).\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous vector, deterministic balanced component partition and finite objective values.",
+                           "convergence":  "No universal global convergence guarantee is asserted; the release is explicitly CPSO-SK and does not silently claim the hybrid CPSO-HK variant.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

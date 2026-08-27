@@ -172,4 +172,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string ComprehensiveLearningParticleSwarm =
         "comprehensive-learning-particle-swarm-liang-qin-suganthan-baskar-2006";
+
+    public const string CooperativeParticleSwarm =
+        "cooperative-particle-swarm-cpso-sk-van-den-bergh-engelbrecht-2004";
 }

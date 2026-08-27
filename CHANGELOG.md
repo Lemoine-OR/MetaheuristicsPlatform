@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.93.0] - 2026-08-27
+
+- Add canonical Cooperative Particle Swarm Optimization (CPSO-SK) scientific identity (van den Bergh & Engelbrecht (2004), A Cooperative Approach to Particle Swarm Optimization, IEEE Transactions on Evolutionary Computation 8(3), 225-239; DOI 10.1109/TEVC.2004.826069).
+- Stable ID: `cooperative-particle-swarm-cpso-sk-van-den-bergh-engelbrecht-2004`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.92.0] - 2026-08-27
 
 - Add canonical Comprehensive Learning Particle Swarm Optimizer scientific identity (Liang, Qin, Suganthan & Baskar (2006), Comprehensive learning particle swarm optimizer for global optimization of multimodal functions, IEEE Transactions on Evolutionary Computation 10(3), 281-295; DOI 10.1109/TEVC.2005.857610).
