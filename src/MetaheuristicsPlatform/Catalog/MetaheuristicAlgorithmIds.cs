@@ -214,4 +214,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string Spea =
         "strength-pareto-evolutionary-algorithm-zitzler-thiele-1999";
+
+    public const string Spea2 =
+        "spea2-zitzler-laumanns-thiele-2001";
 }

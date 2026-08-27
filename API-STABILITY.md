@@ -1,5 +1,9 @@
 # API stability
 
+## v0.107.0
+
+- Added stable direct-factory algorithm ID `spea2-zitzler-laumanns-thiele-2001` (`Spea2Optimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.106.0
 
 - Added stable direct-factory algorithm ID `strength-pareto-evolutionary-algorithm-zitzler-thiele-1999` (`SpeaOptimizer`). Existing public IDs and signatures are unchanged.

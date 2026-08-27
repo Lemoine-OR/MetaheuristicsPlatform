@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.107.0] - 2026-08-27
+
+- Add canonical SPEA2 scientific identity (Zitzler, Laumanns & Thiele, 2001; DOI 10.3929/ethz-a-004284029).
+- Stable ID: `spea2-zitzler-laumanns-thiele-2001`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.106.0] - 2026-08-27
 
 - Add canonical Strength Pareto Evolutionary Algorithm scientific identity (Zitzler & Thiele, 1999; DOI 10.1109/4235.797969).

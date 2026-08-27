@@ -1334,7 +1334,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Spea/SpeaOptimizer.cs",
             "Zitzler & Thiele (1999), Multiobjective Evolutionary Algorithms: A Comparative Case Study and the Strength Pareto Approach, IEEE Transactions on Evolutionary Computation 3(4), 257-271",
             "10.1109/4235.797969",
-            "Original SPEA with an external nondominated set, strength fitness assignment and archive clustering/truncation.")
+            "Original SPEA with an external nondominated set, strength fitness assignment and archive clustering/truncation."),
+        new(
+            "spea2-zitzler-laumanns-thiele-2001",
+            "SPEA2",
+            "Spea2Optimizer",
+            "evolutionary-methods",
+            "Evolutionary methods",
+            "O(N^2M+N^2 log N) strength and density work per generation",
+            "O((N+A)(D+M)+N^2)",
+            "Bounded continuous native multiobjective Pareto optimization",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Spea2/Spea2Optimizer.cs",
+            "Zitzler, Laumanns & Thiele (2001), SPEA2: Improving the Strength Pareto Evolutionary Algorithm, TIK Report 103, ETH Zurich",
+            "10.3929/ethz-a-004284029",
+            "SPEA2 with fine-grained raw strength fitness, kth-neighbor density estimation and nearest-neighbor archive truncation.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>
