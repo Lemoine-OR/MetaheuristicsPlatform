@@ -2347,6 +2347,28 @@
                            "assumptions":  "Finite bounded continuous decision box, finite objective values, at least two objectives and one explicit OptimizationSense per objective.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; the implementation preserves the named stochastic multiobjective mechanism.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "knea-zhang-tian-jin-2015",
+                           "name":  "Knee Point Driven Evolutionary Algorithm",
+                           "class":  "KneaOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "O(MN^2+N^2M) nondominated sorting and knee-neighborhood analysis per generation",
+                           "space":  "O(N(D+M)+N^2)",
+                           "applicability":  "Bounded continuous native multiobjective Pareto optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Knea/KneaOptimizer.cs",
+                           "publication":  "Zhang, Tian \u0026 Jin (2015), A Knee Point Driven Evolutionary Algorithm for Many-Objective Optimization, IEEE Transactions on Evolutionary Computation 19(6), 761-776",
+                           "doi":  "10.1109/TEVC.2014.2378512",
+                           "implementation":  "KnEA detects locally preferred knee candidates and combines knee pressure with nondominated environmental selection.",
+                           "page":  "docs/pages/algorithms/knea-zhang-tian-jin-2015.md",
+                           "problem":  "\\operatorname{ParetoMin}_{x\\in\\mathcal X\\subseteq\\mathbb R^D}F(x)=\\bigl(f_1(x),\\ldots,f_M(x)\\bigr)",
+                           "update":  "\\begin{aligned}\\mathcal N_k(x)\u0026=\\operatorname{kNN}(x,F),\\\\K(x)\u0026=\\mathbf 1\\!\\left[\\operatorname{conv}(x)\\le\\operatorname{conv}(y)\\ \\forall y\\in\\mathcal N_k(x)\\right],\\qquad F_K(x)=\\operatorname{rank}(x)+(1-\\eta)\\operatorname{conv}(x)-\\eta K(x).\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, finite objective values, at least two objectives and one explicit OptimizationSense per objective.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; the implementation preserves the named stochastic multiobjective mechanism.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

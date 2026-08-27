@@ -1,5 +1,9 @@
 # API stability
 
+## v0.116.0
+
+- Added stable direct-factory algorithm ID `knea-zhang-tian-jin-2015` (`KneaOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.115.0
 
 - Added stable direct-factory algorithm ID `theta-dea-yuan-xu-wang-yao-2016` (`ThetaDeaOptimizer`). Existing public IDs and signatures are unchanged.

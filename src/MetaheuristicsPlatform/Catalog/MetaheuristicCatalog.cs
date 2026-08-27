@@ -1460,7 +1460,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Multiobjective/ThetaDea/ThetaDeaOptimizer.cs",
             "Yuan, Xu, Wang & Yao (2016), A New Dominance Relation-Based Evolutionary Algorithm for Many-Objective Optimization, IEEE Transactions on Evolutionary Computation 20(1), 16-37",
             "10.1109/TEVC.2015.2420112",
-            "Theta-DEA clusters normalized objective vectors by reference directions and ranks solutions with theta-dominance/PBI pressure.")
+            "Theta-DEA clusters normalized objective vectors by reference directions and ranks solutions with theta-dominance/PBI pressure."),
+        new(
+            "knea-zhang-tian-jin-2015",
+            "Knee Point Driven Evolutionary Algorithm",
+            "KneaOptimizer",
+            "evolutionary-methods",
+            "Evolutionary methods",
+            "O(MN^2+N^2M) nondominated sorting and knee-neighborhood analysis per generation",
+            "O(N(D+M)+N^2)",
+            "Bounded continuous native multiobjective Pareto optimization",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Knea/KneaOptimizer.cs",
+            "Zhang, Tian & Jin (2015), A Knee Point Driven Evolutionary Algorithm for Many-Objective Optimization, IEEE Transactions on Evolutionary Computation 19(6), 761-776",
+            "10.1109/TEVC.2014.2378512",
+            "KnEA detects locally preferred knee candidates and combines knee pressure with nondominated environmental selection.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

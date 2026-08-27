@@ -310,6 +310,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.ThetaDea,
             "MetaheuristicsPlatform.Algorithms.Multiobjective.ThetaDea.ThetaDeaOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.Knea,
+            "MetaheuristicsPlatform.Algorithms.Multiobjective.Knea.KneaOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

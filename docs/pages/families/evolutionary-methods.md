@@ -39,6 +39,7 @@ Population methods based on structured variation or combination, selection, refe
 - **[Two_Arch2](../algorithms/two-arch2-wang-jiao-yao-2015.md)** - `two-arch2-wang-jiao-yao-2015` - Two_Arch2 separates convergence and diversity responsibilities into two cooperating archives with distinct selection principles.
 - **[MOEA/DD](../algorithms/moeadd-li-deb-zhang-kwong-2015.md)** - `moeadd-li-deb-zhang-kwong-2015` - MOEA/DD unifies Pareto dominance and decomposition through reference subregions and decomposition values.
 - **[Theta-Dominance Evolutionary Algorithm](../algorithms/theta-dea-yuan-xu-wang-yao-2016.md)** - `theta-dea-yuan-xu-wang-yao-2016` - Theta-DEA clusters normalized objective vectors by reference directions and ranks solutions with theta-dominance/PBI pressure.
+- **[Knee Point Driven Evolutionary Algorithm](../algorithms/knea-zhang-tian-jin-2015.md)** - `knea-zhang-tian-jin-2015` - KnEA detects locally preferred knee candidates and combines knee pressure with nondominated environmental selection.
 
 ## Navigation
 
