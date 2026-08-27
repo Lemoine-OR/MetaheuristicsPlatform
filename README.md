@@ -36,7 +36,7 @@ catalog IDs and literature-backed documentation.
 <table>
 <tr>
 <td width="20%"><strong>28 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Firefly, Ant System, ACS and MAX-MIN Ant System.</sub></td>
-<td width="20%"><strong>29 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
+<td width="20%"><strong>30 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
 <td width="20%"><strong>21 trajectory methods</strong><br><sub>Acceptance methods, Tabu, local search, ILS, Iterated Greedy, LNS, ALNS, VNS and GLS.</sub></td>
 <td width="20%"><strong>3 constructive methods</strong><br><sub>GRASP, Reactive GRASP and GRASP with Path Relinking.</sub></td>
 <td width="20%"><strong>1 hybrid / memetic method</strong><br><sub>Moscato-style memetic evolution with local improvement.</sub></td>
@@ -45,7 +45,7 @@ catalog IDs and literature-backed documentation.
 </tr>
 </table>
 
-<p align="center"><strong>102 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>103 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -159,6 +159,7 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/multiobjective-cma-es-igel-hansen-roth-2007.html"><strong>Multi-objective CMA-ES</strong></a><br><sub>MO-CMA-ES maintains individual covariance/step-size strategy states and applies nondominated multiobjective selection.</sub><br><code>multiobjective-cma-es-igel-hansen-roth-2007</code><br><sub><code>MoCmaEsOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/moead-de-li-zhang-2009.html"><strong>MOEA/D-DE</strong></a><br><sub>MOEA/D-DE combines Tchebycheff decomposition, neighborhood mating/update and differential-evolution reproduction.</sub><br><code>moead-de-li-zhang-2009</code><br><sub><code>MoeadDeOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/hype-bader-zitzler-2011.html"><strong>HypE</strong></a><br><sub>HypE drives mating and environmental selection with Monte-Carlo estimates of hypervolume contribution.</sub><br><code>hype-bader-zitzler-2011</code><br><sub><code>HypeOptimizer</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/two-arch2-wang-jiao-yao-2015.html"><strong>Two_Arch2</strong></a><br><sub>Two_Arch2 separates convergence and diversity responsibilities into two cooperating archives with distinct selection principles.</sub><br><code>two-arch2-wang-jiao-yao-2015</code><br><sub><code>TwoArch2Optimizer</code></sub></td></tr>
 </table>
 
 ### Trajectory-based methods

@@ -298,6 +298,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.Hype,
             "MetaheuristicsPlatform.Algorithms.Multiobjective.Hype.HypeOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.TwoArch2,
+            "MetaheuristicsPlatform.Algorithms.Multiobjective.TwoArch2.TwoArch2Optimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

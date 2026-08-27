@@ -1418,7 +1418,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Hype/HypeOptimizer.cs",
             "Bader & Zitzler (2011), HypE: An Algorithm for Fast Hypervolume-Based Many-Objective Optimization, Evolutionary Computation 19(1), 45-76",
             "10.1162/EVCO_A_00009",
-            "HypE drives mating and environmental selection with Monte-Carlo estimates of hypervolume contribution.")
+            "HypE drives mating and environmental selection with Monte-Carlo estimates of hypervolume contribution."),
+        new(
+            "two-arch2-wang-jiao-yao-2015",
+            "Two_Arch2",
+            "TwoArch2Optimizer",
+            "evolutionary-methods",
+            "Evolutionary methods",
+            "O(MN^2+ANM) dominance and two-archive update work per generation",
+            "O((N+A_c+A_d)(D+M))",
+            "Bounded continuous native multiobjective Pareto optimization",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/Multiobjective/TwoArch2/TwoArch2Optimizer.cs",
+            "Wang, Jiao & Yao (2015), Two_Arch2: An Improved Two-Archive Algorithm for Many-Objective Optimization, IEEE Transactions on Evolutionary Computation 19(4), 524-541",
+            "10.1109/TEVC.2014.2350987",
+            "Two_Arch2 separates convergence and diversity responsibilities into two cooperating archives with distinct selection principles.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

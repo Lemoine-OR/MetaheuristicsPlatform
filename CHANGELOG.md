@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.113.0] - 2026-08-27
+
+- Add canonical Two_Arch2 scientific identity (Wang, Jiao & Yao, 2015; DOI 10.1109/TEVC.2014.2350987).
+- Stable ID: `two-arch2-wang-jiao-yao-2015`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.112.0] - 2026-08-27
 
 - Add canonical HypE scientific identity (Bader & Zitzler, 2011; DOI 10.1162/EVCO_A_00009).

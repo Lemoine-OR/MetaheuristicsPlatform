@@ -1,5 +1,9 @@
 # API stability
 
+## v0.113.0
+
+- Added stable direct-factory algorithm ID `two-arch2-wang-jiao-yao-2015` (`TwoArch2Optimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.112.0
 
 - Added stable direct-factory algorithm ID `hype-bader-zitzler-2011` (`HypeOptimizer`). Existing public IDs and signatures are unchanged.

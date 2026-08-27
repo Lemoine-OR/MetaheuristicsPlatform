@@ -2281,6 +2281,28 @@
                            "assumptions":  "Finite bounded continuous decision box, finite objective values, at least two objectives and one explicit OptimizationSense per objective.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; the implementation preserves the named stochastic multiobjective mechanism.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "two-arch2-wang-jiao-yao-2015",
+                           "name":  "Two_Arch2",
+                           "class":  "TwoArch2Optimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "O(MN^2+ANM) dominance and two-archive update work per generation",
+                           "space":  "O((N+A_c+A_d)(D+M))",
+                           "applicability":  "Bounded continuous native multiobjective Pareto optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multiobjective/TwoArch2/TwoArch2Optimizer.cs",
+                           "publication":  "Wang, Jiao \u0026 Yao (2015), Two_Arch2: An Improved Two-Archive Algorithm for Many-Objective Optimization, IEEE Transactions on Evolutionary Computation 19(4), 524-541",
+                           "doi":  "10.1109/TEVC.2014.2350987",
+                           "implementation":  "Two_Arch2 separates convergence and diversity responsibilities into two cooperating archives with distinct selection principles.",
+                           "page":  "docs/pages/algorithms/two-arch2-wang-jiao-yao-2015.md",
+                           "problem":  "\\operatorname{ParetoMin}_{x\\in\\mathcal X\\subseteq\\mathbb R^D}F(x)=\\bigl(f_1(x),\\ldots,f_M(x)\\bigr)",
+                           "update":  "\\begin{aligned}A_c^{t+1}\u0026=\\operatorname{ConvergenceArchive}(A_c^t\\cup A_d^t\\cup Q_t),\\\\A_d^{t+1}\u0026=\\operatorname{DiversityArchive}_{L_p}(A_c^{t+1},A_d^t\\cup Q_t).\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, finite objective values, at least two objectives and one explicit OptimizationSense per objective.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; the implementation preserves the named stochastic multiobjective mechanism.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }
