@@ -21,6 +21,7 @@ Population methods based on structured variation or combination, selection, refe
 - **[IPOP-CMA-ES](../algorithms/ipop-cma-es-auger-hansen-2005.md)** — `ipop-cma-es-auger-hansen-2005` — geometrically increasing population across CMA-ES restarts.
 - **[BIPOP-CMA-ES](../algorithms/bipop-cma-es-hansen-2009.md)** — `bipop-cma-es-hansen-2009` — evaluation-budget-balanced large/small population restart portfolio.
 - **[Biogeography-Based Optimization](../algorithms/biogeography-based-optimization-simon-2008.md)** — `biogeography-based-optimization-simon-2008` — Bounded continuous derivative-free optimization using rank-based immigration, emigration, mutation and elitism.
+- **[NSGA-II](../algorithms/nsga-ii-deb-pratap-agarwal-meyarivan-2002.md)** - `nsga-ii-deb-pratap-agarwal-meyarivan-2002` - Fast nondominated sorting, elitist parent-offspring survival and crowding-distance diversity.
 
 ## Navigation
 

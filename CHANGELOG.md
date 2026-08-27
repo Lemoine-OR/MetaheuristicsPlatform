@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.96.0] - 2026-08-27
+
+- Add canonical NSGA-II scientific identity (Deb, Pratap, Agarwal & Meyarivan, 2002; DOI 10.1109/4235.996017).
+- Stable ID: `nsga-ii-deb-pratap-agarwal-meyarivan-2002`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.95.0] - 2026-08-27
 
 - Add canonical Species-Based Particle Swarm Optimization scientific identity (Parrott & Li (2006), Locating and tracking multiple dynamic optima by a particle swarm model using speciation, IEEE Transactions on Evolutionary Computation 10(4), 440-458; DOI 10.1109/TEVC.2005.859468).

@@ -181,4 +181,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string SpeciesBasedParticleSwarm =
         "species-based-particle-swarm-parrott-li-2006";
+
+    public const string NsgaII =
+        "nsga-ii-deb-pratap-agarwal-meyarivan-2002";
 }

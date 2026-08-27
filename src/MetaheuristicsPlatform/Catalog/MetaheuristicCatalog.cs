@@ -1180,7 +1180,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/PSO/Speciation/SpeciesBasedParticleSwarmOptimizer.cs",
             "Parrott & Li (2006), Locating and tracking multiple dynamic optima by a particle swarm model using speciation, IEEE Transactions on Evolutionary Computation 10(4), 440-458",
             "10.1109/TEVC.2005.859468",
-            "Static SPSO mode: personal bests are sorted by dominance, species seeds are formed with a distance radius, and each particle uses its current species seed as neighborhood best.")
+            "Static SPSO mode: personal bests are sorted by dominance, species seeds are formed with a distance radius, and each particle uses its current species seed as neighborhood best."),
+        new(
+            "nsga-ii-deb-pratap-agarwal-meyarivan-2002",
+            "NSGA-II",
+            "NsgaIIOptimizer",
+            "evolutionary-methods",
+            "Evolutionary methods",
+            "O(MN^2) nondominated sorting plus objective evaluations per generation",
+            "O(MN+ND)",
+            "Bounded continuous native multiobjective Pareto optimization",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/Multiobjective/NsgaII/NsgaIIOptimizer.cs",
+            "Deb, Pratap, Agarwal & Meyarivan (2002), A Fast and Elitist Multiobjective Genetic Algorithm: NSGA-II, IEEE Transactions on Evolutionary Computation 6(2), 182-197",
+            "10.1109/4235.996017",
+            "Fast nondominated sorting, elitist parent-offspring survival and crowding-distance diversity.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

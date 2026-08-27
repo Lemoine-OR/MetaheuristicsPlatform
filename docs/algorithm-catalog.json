@@ -1907,6 +1907,28 @@
                            "assumptions":  "Finite bounded continuous domain, finite objective values and a positive species radius; this release implements the static multimodal SPSO mode, not the dynamic-environment extension.",
                            "convergence":  "The method intentionally maintains multiple species and therefore does not assert single-point swarm convergence or a universal global-optimum guarantee.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "nsga-ii-deb-pratap-agarwal-meyarivan-2002",
+                           "name":  "NSGA-II",
+                           "class":  "NsgaIIOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "O(MN^2) nondominated sorting plus objective evaluations per generation",
+                           "space":  "O(MN+ND)",
+                           "applicability":  "Bounded continuous native multiobjective Pareto optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multiobjective/NsgaII/NsgaIIOptimizer.cs",
+                           "publication":  "Deb, Pratap, Agarwal \u0026 Meyarivan (2002), A Fast and Elitist Multiobjective Genetic Algorithm: NSGA-II, IEEE Transactions on Evolutionary Computation 6(2), 182-197",
+                           "doi":  "10.1109/4235.996017",
+                           "implementation":  "Fast nondominated sorting, elitist parent-offspring survival and crowding-distance diversity.",
+                           "page":  "docs/pages/algorithms/nsga-ii-deb-pratap-agarwal-meyarivan-2002.md",
+                           "problem":  "\\operatorname{ParetoMin}_{x\\in\\mathcal X\\subseteq\\mathbb R^D}F(x)=\\bigl(f_1(x),\\ldots,f_M(x)\\bigr)",
+                           "update":  "\\begin{aligned}R_t\u0026=\\operatorname{FastNonDominatedSort}(P_t\\cup Q_t),\\\\P_{t+1}\u0026=\\operatorname{CrowdingSelect}(R_t,N).\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, at least two finite objectives, and one explicit OptimizationSense per objective.",
+                           "convergence":  "No universal finite-time convergence guarantee is asserted; the implementation preserves the named multiobjective mechanism.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }
