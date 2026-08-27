@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.101.0] - 2026-08-27
+
+- Add canonical Multiobjective Particle Swarm Optimizer scientific identity (Coello Coello, Pulido & Lechuga, 2004; DOI 10.1109/TEVC.2004.826067).
+- Stable ID: `mopso-coello-pulido-lechuga-2004`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.100.0] - 2026-08-27
 
 - Add canonical MOEA/D scientific identity (Zhang & Li, 2007; DOI 10.1109/TEVC.2007.892759).

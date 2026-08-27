@@ -196,4 +196,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string Moead =
         "moead-zhang-li-2007";
+
+    public const string Mopso =
+        "mopso-coello-pulido-lechuga-2004";
 }

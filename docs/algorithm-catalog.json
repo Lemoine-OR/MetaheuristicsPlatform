@@ -2017,6 +2017,28 @@
                            "assumptions":  "Finite bounded continuous decision box, at least two finite objectives, and one explicit OptimizationSense per objective.",
                            "convergence":  "No universal finite-time convergence guarantee is asserted; the implementation preserves the named multiobjective mechanism.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "mopso-coello-pulido-lechuga-2004",
+                           "name":  "Multiobjective Particle Swarm Optimizer",
+                           "class":  "MopsoOptimizer",
+                           "category":  "swarm-intelligence",
+                           "kind":  "population",
+                           "family":  "Swarm intelligence",
+                           "time":  "O(ND+AM) swarm motion and repository maintenance per iteration",
+                           "space":  "O((N+A)(D+M))",
+                           "applicability":  "Bounded continuous native multiobjective Pareto optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Mopso/MopsoOptimizer.cs",
+                           "publication":  "Coello Coello, Pulido \u0026 Lechuga (2004), Handling Multiple Objectives With Particle Swarm Optimization, IEEE Transactions on Evolutionary Computation 8(3), 256-279",
+                           "doi":  "10.1109/TEVC.2004.826067",
+                           "implementation":  "Pareto-repository PSO with adaptive hypercubes, inverse-density leader selection, pbest dominance and decaying mutation.",
+                           "page":  "docs/pages/algorithms/mopso-coello-pulido-lechuga-2004.md",
+                           "problem":  "\\operatorname{ParetoMin}_{x\\in\\mathcal X\\subseteq\\mathbb R^D}F(x)=\\bigl(f_1(x),\\ldots,f_M(x)\\bigr)",
+                           "update":  "\\begin{aligned}v_i^{t+1}\u0026=0.4v_i^t+r_1(p_i^t-x_i^t)+r_2(g_i^t-x_i^t),\\qquad g_i^t\\sim\\operatorname{GridRoulette}(A_t),\\\\p_m(t)\u0026=(1-t/T)^{5/\\eta}.\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, at least two finite objectives, and one explicit OptimizationSense per objective.",
+                           "convergence":  "No universal finite-time convergence guarantee is asserted; the implementation preserves the named multiobjective mechanism.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

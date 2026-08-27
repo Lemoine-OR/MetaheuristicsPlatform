@@ -250,6 +250,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.Moead,
             "MetaheuristicsPlatform.Algorithms.Multiobjective.Moead.MoeadOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.Mopso,
+            "MetaheuristicsPlatform.Algorithms.Multiobjective.Mopso.MopsoOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

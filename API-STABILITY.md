@@ -1,5 +1,9 @@
 # API stability
 
+## v0.101.0
+
+- Added stable direct-factory algorithm ID `mopso-coello-pulido-lechuga-2004` (`MopsoOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.100.0
 
 - Added stable direct-factory algorithm ID `moead-zhang-li-2007` (`MoeadOptimizer`). Existing public IDs and signatures are unchanged.

@@ -1250,7 +1250,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Moead/MoeadOptimizer.cs",
             "Zhang & Li (2007), MOEA/D: A Multiobjective Evolutionary Algorithm Based on Decomposition, IEEE Transactions on Evolutionary Computation 11(6), 712-731",
             "10.1109/TEVC.2007.892759",
-            "Tchebycheff decomposition into neighboring scalar subproblems with differential reproduction and ideal-point updates.")
+            "Tchebycheff decomposition into neighboring scalar subproblems with differential reproduction and ideal-point updates."),
+        new(
+            "mopso-coello-pulido-lechuga-2004",
+            "Multiobjective Particle Swarm Optimizer",
+            "MopsoOptimizer",
+            "swarm-intelligence",
+            "Swarm intelligence",
+            "O(ND+AM) swarm motion and repository maintenance per iteration",
+            "O((N+A)(D+M))",
+            "Bounded continuous native multiobjective Pareto optimization",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Mopso/MopsoOptimizer.cs",
+            "Coello Coello, Pulido & Lechuga (2004), Handling Multiple Objectives With Particle Swarm Optimization, IEEE Transactions on Evolutionary Computation 8(3), 256-279",
+            "10.1109/TEVC.2004.826067",
+            "Pareto-repository PSO with adaptive hypercubes, inverse-density leader selection, pbest dominance and decaying mutation.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>
