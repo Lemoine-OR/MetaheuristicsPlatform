@@ -223,4 +223,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string Grea =
         "grid-based-evolutionary-algorithm-yang-li-liu-zheng-2013";
+
+    public const string MoCmaEs =
+        "multiobjective-cma-es-igel-hansen-roth-2007";
 }

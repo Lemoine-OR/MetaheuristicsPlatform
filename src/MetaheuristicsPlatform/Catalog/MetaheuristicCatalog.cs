@@ -1376,7 +1376,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Grea/GreaOptimizer.cs",
             "Yang, Li, Liu & Zheng (2013), A Grid-Based Evolutionary Algorithm for Many-Objective Optimization, IEEE Transactions on Evolutionary Computation 17(5), 721-736",
             "10.1109/TEVC.2012.2227145",
-            "GrEA uses normalized objective-space grids to couple convergence pressure with grid density and distribution.")
+            "GrEA uses normalized objective-space grids to couple convergence pressure with grid density and distribution."),
+        new(
+            "multiobjective-cma-es-igel-hansen-roth-2007",
+            "Multi-objective CMA-ES",
+            "MoCmaEsOptimizer",
+            "evolutionary-methods",
+            "Evolutionary methods",
+            "O(ND^3+MN^2) covariance factorization and multiobjective selection per generation",
+            "O(ND^2+N(D+M))",
+            "Bounded continuous native multiobjective Pareto optimization",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/Multiobjective/MoCmaEs/MoCmaEsOptimizer.cs",
+            "Igel, Hansen & Roth (2007), Covariance Matrix Adaptation for Multi-objective Optimization, Evolutionary Computation 15(1), 1-28",
+            "10.1162/evco.2007.15.1.1",
+            "MO-CMA-ES maintains individual covariance/step-size strategy states and applies nondominated multiobjective selection.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

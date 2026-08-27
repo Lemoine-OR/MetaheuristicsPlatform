@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.110.0] - 2026-08-27
+
+- Add canonical Multi-objective CMA-ES scientific identity (Igel, Hansen & Roth, 2007; DOI 10.1162/evco.2007.15.1.1).
+- Stable ID: `multiobjective-cma-es-igel-hansen-roth-2007`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.109.0] - 2026-08-27
 
 - Add canonical Grid-Based Evolutionary Algorithm scientific identity (Yang, Li, Liu & Zheng, 2013; DOI 10.1109/TEVC.2012.2227145).

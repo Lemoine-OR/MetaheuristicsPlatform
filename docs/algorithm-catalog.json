@@ -2215,6 +2215,28 @@
                            "assumptions":  "Finite bounded continuous decision box, finite objective values, at least two objectives and one explicit OptimizationSense per objective.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; the implementation preserves the named stochastic multiobjective mechanism.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "multiobjective-cma-es-igel-hansen-roth-2007",
+                           "name":  "Multi-objective CMA-ES",
+                           "class":  "MoCmaEsOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "O(ND^3+MN^2) covariance factorization and multiobjective selection per generation",
+                           "space":  "O(ND^2+N(D+M))",
+                           "applicability":  "Bounded continuous native multiobjective Pareto optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multiobjective/MoCmaEs/MoCmaEsOptimizer.cs",
+                           "publication":  "Igel, Hansen \u0026 Roth (2007), Covariance Matrix Adaptation for Multi-objective Optimization, Evolutionary Computation 15(1), 1-28",
+                           "doi":  "10.1162/evco.2007.15.1.1",
+                           "implementation":  "MO-CMA-ES maintains individual covariance/step-size strategy states and applies nondominated multiobjective selection.",
+                           "page":  "docs/pages/algorithms/multiobjective-cma-es-igel-hansen-roth-2007.md",
+                           "problem":  "\\operatorname{ParetoMin}_{x\\in\\mathcal X\\subseteq\\mathbb R^D}F(x)=\\bigl(f_1(x),\\ldots,f_M(x)\\bigr)",
+                           "update":  "\\begin{aligned}x\u0027\u0026=x+\\sigma A z,\\qquad z\\sim\\mathcal N(0,I),\\quad AA^\\top=C,\\\\C\u0027\u0026=(1-c_C)C+c_C\\,\\frac{(x\u0027-x)(x\u0027-x)^\\top}{\\sigma^2},\\qquad \\sigma\u0027=\\sigma\\exp\\!\\left(\\frac{p_s-p_{\\mathrm{target}}}{d_\\sigma(1-p_{\\mathrm{target}})}\\right).\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, finite objective values, at least two objectives and one explicit OptimizationSense per objective.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; the implementation preserves the named stochastic multiobjective mechanism.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

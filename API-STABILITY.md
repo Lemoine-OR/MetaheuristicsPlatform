@@ -1,5 +1,9 @@
 # API stability
 
+## v0.110.0
+
+- Added stable direct-factory algorithm ID `multiobjective-cma-es-igel-hansen-roth-2007` (`MoCmaEsOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.109.0
 
 - Added stable direct-factory algorithm ID `grid-based-evolutionary-algorithm-yang-li-liu-zheng-2013` (`GreaOptimizer`). Existing public IDs and signatures are unchanged.

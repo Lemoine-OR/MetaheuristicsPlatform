@@ -286,6 +286,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.Grea,
             "MetaheuristicsPlatform.Algorithms.Multiobjective.Grea.GreaOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.MoCmaEs,
+            "MetaheuristicsPlatform.Algorithms.Multiobjective.MoCmaEs.MoCmaEsOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>
