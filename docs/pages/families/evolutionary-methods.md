@@ -38,6 +38,7 @@ Population methods based on structured variation or combination, selection, refe
 - **[HypE](../algorithms/hype-bader-zitzler-2011.md)** - `hype-bader-zitzler-2011` - HypE drives mating and environmental selection with Monte-Carlo estimates of hypervolume contribution.
 - **[Two_Arch2](../algorithms/two-arch2-wang-jiao-yao-2015.md)** - `two-arch2-wang-jiao-yao-2015` - Two_Arch2 separates convergence and diversity responsibilities into two cooperating archives with distinct selection principles.
 - **[MOEA/DD](../algorithms/moeadd-li-deb-zhang-kwong-2015.md)** - `moeadd-li-deb-zhang-kwong-2015` - MOEA/DD unifies Pareto dominance and decomposition through reference subregions and decomposition values.
+- **[Theta-Dominance Evolutionary Algorithm](../algorithms/theta-dea-yuan-xu-wang-yao-2016.md)** - `theta-dea-yuan-xu-wang-yao-2016` - Theta-DEA clusters normalized objective vectors by reference directions and ranks solutions with theta-dominance/PBI pressure.
 
 ## Navigation
 

@@ -238,4 +238,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string Moeadd =
         "moeadd-li-deb-zhang-kwong-2015";
+
+    public const string ThetaDea =
+        "theta-dea-yuan-xu-wang-yao-2016";
 }

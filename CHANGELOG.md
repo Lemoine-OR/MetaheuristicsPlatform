@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.115.0] - 2026-08-27
+
+- Add canonical Theta-Dominance Evolutionary Algorithm scientific identity (Yuan, Xu, Wang & Yao, 2016; DOI 10.1109/TEVC.2015.2420112).
+- Stable ID: `theta-dea-yuan-xu-wang-yao-2016`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.114.0] - 2026-08-27
 
 - Add canonical MOEA/DD scientific identity (Li, Deb, Zhang & Kwong, 2015; DOI 10.1109/TEVC.2014.2373386).

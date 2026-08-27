@@ -1446,7 +1446,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Moeadd/MoeaddOptimizer.cs",
             "Li, Deb, Zhang & Kwong (2015), An Evolutionary Many-Objective Optimization Algorithm Based on Dominance and Decomposition, IEEE Transactions on Evolutionary Computation 19(5), 694-716",
             "10.1109/TEVC.2014.2373386",
-            "MOEA/DD unifies Pareto dominance and decomposition through reference subregions and decomposition values.")
+            "MOEA/DD unifies Pareto dominance and decomposition through reference subregions and decomposition values."),
+        new(
+            "theta-dea-yuan-xu-wang-yao-2016",
+            "Theta-Dominance Evolutionary Algorithm",
+            "ThetaDeaOptimizer",
+            "evolutionary-methods",
+            "Evolutionary methods",
+            "O(NRM+MN^2) reference clustering and selection per generation",
+            "O(N(D+M)+RM)",
+            "Bounded continuous native multiobjective Pareto optimization",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/Multiobjective/ThetaDea/ThetaDeaOptimizer.cs",
+            "Yuan, Xu, Wang & Yao (2016), A New Dominance Relation-Based Evolutionary Algorithm for Many-Objective Optimization, IEEE Transactions on Evolutionary Computation 20(1), 16-37",
+            "10.1109/TEVC.2015.2420112",
+            "Theta-DEA clusters normalized objective vectors by reference directions and ranks solutions with theta-dominance/PBI pressure.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

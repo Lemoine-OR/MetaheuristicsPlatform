@@ -2325,6 +2325,28 @@
                            "assumptions":  "Finite bounded continuous decision box, finite objective values, at least two objectives and one explicit OptimizationSense per objective.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; the implementation preserves the named stochastic multiobjective mechanism.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "theta-dea-yuan-xu-wang-yao-2016",
+                           "name":  "Theta-Dominance Evolutionary Algorithm",
+                           "class":  "ThetaDeaOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "O(NRM+MN^2) reference clustering and selection per generation",
+                           "space":  "O(N(D+M)+RM)",
+                           "applicability":  "Bounded continuous native multiobjective Pareto optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multiobjective/ThetaDea/ThetaDeaOptimizer.cs",
+                           "publication":  "Yuan, Xu, Wang \u0026 Yao (2016), A New Dominance Relation-Based Evolutionary Algorithm for Many-Objective Optimization, IEEE Transactions on Evolutionary Computation 20(1), 16-37",
+                           "doi":  "10.1109/TEVC.2015.2420112",
+                           "implementation":  "Theta-DEA clusters normalized objective vectors by reference directions and ranks solutions with theta-dominance/PBI pressure.",
+                           "page":  "docs/pages/algorithms/theta-dea-yuan-xu-wang-yao-2016.md",
+                           "problem":  "\\operatorname{ParetoMin}_{x\\in\\mathcal X\\subseteq\\mathbb R^D}F(x)=\\bigl(f_1(x),\\ldots,f_M(x)\\bigr)",
+                           "update":  "\\begin{aligned}r(x)\u0026=\\arg\\min_k d_\\perp(\\bar f(x),\\lambda^k),\\\\\\theta\\operatorname{-fitness}(x)\u0026=d_1(x,\\lambda^{r(x)})+\\theta d_2(x,\\lambda^{r(x)}).\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, finite objective values, at least two objectives and one explicit OptimizationSense per objective.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; the implementation preserves the named stochastic multiobjective mechanism.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

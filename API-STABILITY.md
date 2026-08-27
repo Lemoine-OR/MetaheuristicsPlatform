@@ -1,5 +1,9 @@
 # API stability
 
+## v0.115.0
+
+- Added stable direct-factory algorithm ID `theta-dea-yuan-xu-wang-yao-2016` (`ThetaDeaOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.114.0
 
 - Added stable direct-factory algorithm ID `moeadd-li-deb-zhang-kwong-2015` (`MoeaddOptimizer`). Existing public IDs and signatures are unchanged.

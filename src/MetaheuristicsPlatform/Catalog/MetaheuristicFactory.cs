@@ -306,6 +306,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.Moeadd,
             "MetaheuristicsPlatform.Algorithms.Multiobjective.Moeadd.MoeaddOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.ThetaDea,
+            "MetaheuristicsPlatform.Algorithms.Multiobjective.ThetaDea.ThetaDeaOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>
