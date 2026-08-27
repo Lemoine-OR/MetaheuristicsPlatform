@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.105.0] - 2026-08-27
+
+- Add canonical RVEA scientific identity (Cheng, Jin, Olhofer & Sendhoff, 2016; DOI 10.1109/TEVC.2016.2519378).
+- Stable ID: `rvea-cheng-jin-olhofer-sendhoff-2016`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.104.0] - 2026-08-27
 
 - Add canonical SMS-EMOA scientific identity (Beume, Naujoks & Emmerich, 2007; DOI 10.1016/j.ejor.2006.08.008).

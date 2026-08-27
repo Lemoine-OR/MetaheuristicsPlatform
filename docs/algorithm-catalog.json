@@ -2105,6 +2105,28 @@
                            "assumptions":  "Finite bounded continuous decision box, at least two finite objectives, and one explicit OptimizationSense per objective.",
                            "convergence":  "No universal finite-time convergence guarantee is asserted; the implementation preserves the named multiobjective mechanism.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "rvea-cheng-jin-olhofer-sendhoff-2016",
+                           "name":  "RVEA",
+                           "class":  "RveaOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "O(NRM) reference-vector association and angle-penalized selection per generation",
+                           "space":  "O(N(D+M)+RM)",
+                           "applicability":  "Bounded continuous native multiobjective Pareto optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Rvea/RveaOptimizer.cs",
+                           "publication":  "Cheng, Jin, Olhofer \u0026 Sendhoff (2016), A Reference Vector Guided Evolutionary Algorithm for Many-Objective Optimization, IEEE Transactions on Evolutionary Computation 20(5), 773-791",
+                           "doi":  "10.1109/TEVC.2016.2519378",
+                           "implementation":  "Reference-vector guided many-objective selection using angle-penalized distance normalized by nearest reference-vector angle and periodic vector adaptation.",
+                           "page":  "docs/pages/algorithms/rvea-cheng-jin-olhofer-sendhoff-2016.md",
+                           "problem":  "\\operatorname{ParetoMin}_{x\\in\\mathcal X\\subseteq\\mathbb R^D}F(x)=\\bigl(f_1(x),\\ldots,f_M(x)\\bigr)",
+                           "update":  "\\begin{aligned}\\theta(x,\\lambda)\u0026=\\arccos\\!\\frac{f(x)^\\top\\lambda}{\\|f(x)\\|\\,\\|\\lambda\\|},\\\\APD(x,\\lambda,t)\u0026=\\|f(x)\\|\\left(1+M(t/T)^\\alpha\\theta(x,\\lambda)/\\gamma_\\lambda\\right).\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, at least two finite objectives, and one explicit OptimizationSense per objective.",
+                           "convergence":  "No universal finite-time convergence guarantee is asserted; the implementation preserves the named multiobjective mechanism.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

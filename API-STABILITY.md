@@ -1,5 +1,9 @@
 # API stability
 
+## v0.105.0
+
+- Added stable direct-factory algorithm ID `rvea-cheng-jin-olhofer-sendhoff-2016` (`RveaOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.104.0
 
 - Added stable direct-factory algorithm ID `sms-emoa-beume-naujoks-emmerich-2007` (`SmsEmoaOptimizer`). Existing public IDs and signatures are unchanged.

@@ -208,4 +208,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string SmsEmoa =
         "sms-emoa-beume-naujoks-emmerich-2007";
+
+    public const string Rvea =
+        "rvea-cheng-jin-olhofer-sendhoff-2016";
 }

@@ -266,6 +266,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.SmsEmoa,
             "MetaheuristicsPlatform.Algorithms.Multiobjective.SmsEmoa.SmsEmoaOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.Rvea,
+            "MetaheuristicsPlatform.Algorithms.Multiobjective.Rvea.RveaOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

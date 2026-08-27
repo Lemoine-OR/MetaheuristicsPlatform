@@ -1306,7 +1306,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Multiobjective/SmsEmoa/SmsEmoaOptimizer.cs",
             "Beume, Naujoks & Emmerich (2007), SMS-EMOA: Multiobjective Selection Based on Dominated Hypervolume, European Journal of Operational Research 181(3), 1653-1669",
             "10.1016/j.ejor.2006.08.008",
-            "Steady-state environmental selection removes the minimum dominated-hypervolume contributor from the worst front.")
+            "Steady-state environmental selection removes the minimum dominated-hypervolume contributor from the worst front."),
+        new(
+            "rvea-cheng-jin-olhofer-sendhoff-2016",
+            "RVEA",
+            "RveaOptimizer",
+            "evolutionary-methods",
+            "Evolutionary methods",
+            "O(NRM) reference-vector association and angle-penalized selection per generation",
+            "O(N(D+M)+RM)",
+            "Bounded continuous native multiobjective Pareto optimization",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Rvea/RveaOptimizer.cs",
+            "Cheng, Jin, Olhofer & Sendhoff (2016), A Reference Vector Guided Evolutionary Algorithm for Many-Objective Optimization, IEEE Transactions on Evolutionary Computation 20(5), 773-791",
+            "10.1109/TEVC.2016.2519378",
+            "Reference-vector guided many-objective selection using angle-penalized distance normalized by nearest reference-vector angle and periodic vector adaptation.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>
