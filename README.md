@@ -35,7 +35,7 @@ catalog IDs and literature-backed documentation.
 
 <table>
 <tr>
-<td width="20%"><strong>19 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Firefly, Ant System, ACS and MAX-MIN Ant System.</sub></td>
+<td width="20%"><strong>20 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Firefly, Ant System, ACS and MAX-MIN Ant System.</sub></td>
 <td width="20%"><strong>14 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
 <td width="20%"><strong>21 trajectory methods</strong><br><sub>Acceptance methods, Tabu, local search, ILS, Iterated Greedy, LNS, ALNS, VNS and GLS.</sub></td>
 <td width="20%"><strong>3 constructive methods</strong><br><sub>GRASP, Reactive GRASP and GRASP with Path Relinking.</sub></td>
@@ -45,7 +45,7 @@ catalog IDs and literature-backed documentation.
 </tr>
 </table>
 
-<p align="center"><strong>78 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>79 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -122,6 +122,7 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/crow-search-algorithm-askarzadeh-2016.html"><strong>Crow Search Algorithm</strong></a><br><sub>Canonical CSA with each crow following another crow memory when the target is unaware, random relocation when it is aware, and personal-memory greedy update; paper benchmark controls fl=2 and AP=0.1 are the defaults.</sub><br><code>crow-search-algorithm-askarzadeh-2016</code><br><sub><code>CrowSearchOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/symbiotic-organisms-search-cheng-prayogo-2014.html"><strong>Symbiotic Organisms Search</strong></a><br><sub>Canonical SOS with mutualism benefit factors in {1,2}, commensalism random factor in [-1,1], parasite-vector mutation, and greedy replacement after each published interaction.</sub><br><code>symbiotic-organisms-search-cheng-prayogo-2014</code><br><sub><code>SymbioticOrganismsSearchOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/inertia-weight-particle-swarm-shi-eberhart-1998.html"><strong>Inertia Weight Particle Swarm Optimization</strong></a><br><sub>Canonical synchronous global-best PSO with explicit constant inertia weight w; it does not silently substitute the later linearly decreasing inertia schedule.</sub><br><code>inertia-weight-particle-swarm-shi-eberhart-1998</code><br><sub><code>InertiaWeightParticleSwarmOptimizer</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/constriction-particle-swarm-clerc-kennedy-2002.html"><strong>Clerc-Kennedy Constriction Particle Swarm</strong></a><br><sub>Canonical constriction-factor velocity dynamics with chi computed from phi=c1+c2 and kappa; default c1=c2=2.05, phi=4.10, kappa=1.</sub><br><code>constriction-particle-swarm-clerc-kennedy-2002</code><br><sub><code>ConstrictionParticleSwarmOptimizer</code></sub></td></tr>
 </table>
 
 ### Evolutionary methods

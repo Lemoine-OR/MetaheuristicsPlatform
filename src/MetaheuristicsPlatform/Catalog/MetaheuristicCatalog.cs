@@ -1082,7 +1082,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/PSO/Scientific/InertiaWeightParticleSwarmOptimizer.cs",
             "Shi & Eberhart (1998), A Modified Particle Swarm Optimizer, Proceedings of the 1998 IEEE International Conference on Evolutionary Computation, 69-73",
             "10.1109/ICEC.1998.699146",
-            "Canonical synchronous global-best PSO with explicit constant inertia weight w; it does not silently substitute the later linearly decreasing inertia schedule.")
+            "Canonical synchronous global-best PSO with explicit constant inertia weight w; it does not silently substitute the later linearly decreasing inertia schedule."),
+        new(
+            "constriction-particle-swarm-clerc-kennedy-2002",
+            "Clerc-Kennedy Constriction Particle Swarm",
+            "ConstrictionParticleSwarmOptimizer",
+            "swarm-intelligence",
+            "Swarm intelligence",
+            "O(ND) movement plus N objective evaluations per iteration",
+            "O(ND)",
+            "Bounded continuous optimization using the Clerc-Kennedy constriction analysis with phi > 4",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/PSO/Scientific/ConstrictionParticleSwarmOptimizer.cs",
+            "Clerc & Kennedy (2002), The particle swarm - explosion, stability, and convergence in a multidimensional complex space, IEEE Transactions on Evolutionary Computation 6(1), 58-73",
+            "10.1109/4235.985692",
+            "Canonical constriction-factor velocity dynamics with chi computed from phi=c1+c2 and kappa; default c1=c2=2.05, phi=4.10, kappa=1.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

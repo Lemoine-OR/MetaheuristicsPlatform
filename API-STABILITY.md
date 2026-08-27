@@ -1,5 +1,9 @@
 # API stability
 
+## v0.89.0
+
+- Added stable direct-factory algorithm ID `constriction-particle-swarm-clerc-kennedy-2002` (`ConstrictionParticleSwarmOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.88.0
 
 - Added stable direct-factory algorithm ID `inertia-weight-particle-swarm-shi-eberhart-1998` (`InertiaWeightParticleSwarmOptimizer`). Existing public IDs and signatures are unchanged.

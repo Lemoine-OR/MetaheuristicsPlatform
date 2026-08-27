@@ -204,3 +204,4 @@ v0.67.0 adaptive-harmony-search-differential-evolution-zhao-li-hao-liu-yuan-2020
 ## PSO scientific variants v0.88.0-v0.95.0
 
 - Shi & Eberhart (1998), A Modified Particle Swarm Optimizer, Proceedings of the 1998 IEEE International Conference on Evolutionary Computation, 69-73. DOI `10.1109/ICEC.1998.699146`. Public identity `inertia-weight-particle-swarm-shi-eberhart-1998` since v0.88.0.
+- Clerc & Kennedy (2002), The particle swarm - explosion, stability, and convergence in a multidimensional complex space, IEEE Transactions on Evolutionary Computation 6(1), 58-73. DOI `10.1109/4235.985692`. Public identity `constriction-particle-swarm-clerc-kennedy-2002` since v0.89.0.

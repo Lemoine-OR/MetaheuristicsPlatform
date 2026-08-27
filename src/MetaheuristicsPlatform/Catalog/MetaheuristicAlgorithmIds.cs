@@ -160,4 +160,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string InertiaWeightParticleSwarm =
         "inertia-weight-particle-swarm-shi-eberhart-1998";
+
+    public const string ConstrictionParticleSwarm =
+        "constriction-particle-swarm-clerc-kennedy-2002";
 }

@@ -202,6 +202,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.InertiaWeightParticleSwarm,
             "MetaheuristicsPlatform.Algorithms.PSO.Scientific.InertiaWeightParticleSwarmOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.ConstrictionParticleSwarm,
+            "MetaheuristicsPlatform.Algorithms.PSO.Scientific.ConstrictionParticleSwarmOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

@@ -1753,6 +1753,28 @@
                            "assumptions":  "Finite bounded continuous box, finite objective values, synchronous personal/global best updates and a constant inertia weight.",
                            "convergence":  "No universal global convergence guarantee is asserted; the release preserves the inertia-weight mechanism introduced by Shi and Eberhart without mixing later schedules.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "constriction-particle-swarm-clerc-kennedy-2002",
+                           "name":  "Clerc-Kennedy Constriction Particle Swarm",
+                           "class":  "ConstrictionParticleSwarmOptimizer",
+                           "category":  "swarm-intelligence",
+                           "kind":  "population",
+                           "family":  "Swarm intelligence",
+                           "time":  "O(ND) movement plus N objective evaluations per iteration",
+                           "space":  "O(ND)",
+                           "applicability":  "Bounded continuous optimization using the Clerc-Kennedy constriction analysis with phi \u003e 4",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/PSO/Scientific/ConstrictionParticleSwarmOptimizer.cs",
+                           "publication":  "Clerc \u0026 Kennedy (2002), The particle swarm - explosion, stability, and convergence in a multidimensional complex space, IEEE Transactions on Evolutionary Computation 6(1), 58-73",
+                           "doi":  "10.1109/4235.985692",
+                           "implementation":  "Canonical constriction-factor velocity dynamics with chi computed from phi=c1+c2 and kappa; default c1=c2=2.05, phi=4.10, kappa=1.",
+                           "page":  "docs/pages/algorithms/constriction-particle-swarm-clerc-kennedy-2002.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}\\chi\u0026=\\frac{2\\kappa}{|2-\\phi-\\sqrt{\\phi^2-4\\phi}|},\\quad \\phi=c_1+c_2\u003e4,\\\\v_{i}^{t+1}\u0026=\\chi\\left(v_i^t+c_1r_1(p_i^t-x_i^t)+c_2r_2(g^t-x_i^t)\\right).\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous box; phi greater than four for the published constriction expression.",
+                           "convergence":  "The release implements the published constriction dynamics and exposes the stability-related phi/kappa controls; it does not claim objective-independent global convergence.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

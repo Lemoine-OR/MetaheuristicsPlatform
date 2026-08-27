@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.89.0] - 2026-08-27
+
+- Add canonical Clerc-Kennedy Constriction Particle Swarm scientific identity (Clerc & Kennedy (2002), The particle swarm - explosion, stability, and convergence in a multidimensional complex space, IEEE Transactions on Evolutionary Computation 6(1), 58-73; DOI 10.1109/4235.985692).
+- Stable ID: `constriction-particle-swarm-clerc-kennedy-2002`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.88.0] - 2026-08-27
 
 - Add canonical Inertia Weight Particle Swarm Optimization scientific identity (Shi & Eberhart (1998), A Modified Particle Swarm Optimizer, Proceedings of the 1998 IEEE International Conference on Evolutionary Computation, 69-73; DOI 10.1109/ICEC.1998.699146).
