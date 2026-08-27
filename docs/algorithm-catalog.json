@@ -1819,6 +1819,28 @@
                            "assumptions":  "Finite bounded continuous box; nonempty informer set; this public identity uses the unweighted fully connected informer structure.",
                            "convergence":  "The constriction controls the linearized motion; no universal objective-independent global convergence guarantee is asserted.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "comprehensive-learning-particle-swarm-liang-qin-suganthan-baskar-2006",
+                           "name":  "Comprehensive Learning Particle Swarm Optimizer",
+                           "class":  "ComprehensiveLearningParticleSwarmOptimizer",
+                           "category":  "swarm-intelligence",
+                           "kind":  "population",
+                           "family":  "Swarm intelligence",
+                           "time":  "O(ND) exemplar-guided movement plus N objective evaluations per iteration",
+                           "space":  "O(ND)",
+                           "applicability":  "Multimodal bounded continuous global optimization using dimension-wise exemplars learned from different particles",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/PSO/ComprehensiveLearning/ComprehensiveLearningParticleSwarmOptimizer.cs",
+                           "publication":  "Liang, Qin, Suganthan \u0026 Baskar (2006), Comprehensive learning particle swarm optimizer for global optimization of multimodal functions, IEEE Transactions on Evolutionary Computation 10(3), 281-295",
+                           "doi":  "10.1109/TEVC.2005.857610",
+                           "implementation":  "Dimension-wise comprehensive learning with particle-specific Pc, two-particle tournaments, c=1.49445, inertia 0.9 to 0.4 and refreshing gap m=7.",
+                           "page":  "docs/pages/algorithms/comprehensive-learning-particle-swarm-liang-qin-suganthan-baskar-2006.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}v_{i,d}^{t+1}\u0026=w_t v_{i,d}^{t}+c\\,r_{i,d}^{t}\\bigl(p_{f_i(d),d}^{t}-x_{i,d}^{t}\\bigr).\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous domain; particle-specific dimension exemplars and refresh after the configured stagnation gap.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; the release preserves the published comprehensive-learning mechanism and schedules.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

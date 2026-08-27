@@ -1124,7 +1124,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/PSO/Scientific/FullyInformedParticleSwarmOptimizer.cs",
             "Mendes, Kennedy & Neves (2004), The Fully Informed Particle Swarm: Simpler, Maybe Better, IEEE Transactions on Evolutionary Computation 8(3), 204-210",
             "10.1109/TEVC.2004.826074",
-            "Unweighted fully informed structure: total acceleration is divided equally among all informers, with independent random multipliers per informer and coordinate, combined with Clerc-Kennedy constriction.")
+            "Unweighted fully informed structure: total acceleration is divided equally among all informers, with independent random multipliers per informer and coordinate, combined with Clerc-Kennedy constriction."),
+        new(
+            "comprehensive-learning-particle-swarm-liang-qin-suganthan-baskar-2006",
+            "Comprehensive Learning Particle Swarm Optimizer",
+            "ComprehensiveLearningParticleSwarmOptimizer",
+            "swarm-intelligence",
+            "Swarm intelligence",
+            "O(ND) exemplar-guided movement plus N objective evaluations per iteration",
+            "O(ND)",
+            "Multimodal bounded continuous global optimization using dimension-wise exemplars learned from different particles",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/PSO/ComprehensiveLearning/ComprehensiveLearningParticleSwarmOptimizer.cs",
+            "Liang, Qin, Suganthan & Baskar (2006), Comprehensive learning particle swarm optimizer for global optimization of multimodal functions, IEEE Transactions on Evolutionary Computation 10(3), 281-295",
+            "10.1109/TEVC.2005.857610",
+            "Dimension-wise comprehensive learning with particle-specific Pc, two-particle tournaments, c=1.49445, inertia 0.9 to 0.4 and refreshing gap m=7.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

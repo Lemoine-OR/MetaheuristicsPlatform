@@ -29,6 +29,7 @@ probabilistic recruitment or shared pheromone memory.
 - @subpage constriction_particle_swarm_clerc_kennedy_2002 — Clerc-Kennedy Constriction Particle Swarm (`constriction-particle-swarm-clerc-kennedy-2002`).
 - @subpage bare_bones_particle_swarm_kennedy_2003 — Bare Bones Particle Swarm (`bare-bones-particle-swarm-kennedy-2003`).
 - @subpage fully_informed_particle_swarm_mendes_kennedy_neves_2004 — Fully Informed Particle Swarm (`fully-informed-particle-swarm-mendes-kennedy-neves-2004`).
+- @subpage comprehensive_learning_particle_swarm_liang_qin_suganthan_baskar_2006 — Comprehensive Learning Particle Swarm Optimizer (`comprehensive-learning-particle-swarm-liang-qin-suganthan-baskar-2006`).
 
 ## Navigation
 

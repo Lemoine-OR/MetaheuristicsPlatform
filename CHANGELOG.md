@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.92.0] - 2026-08-27
+
+- Add canonical Comprehensive Learning Particle Swarm Optimizer scientific identity (Liang, Qin, Suganthan & Baskar (2006), Comprehensive learning particle swarm optimizer for global optimization of multimodal functions, IEEE Transactions on Evolutionary Computation 10(3), 281-295; DOI 10.1109/TEVC.2005.857610).
+- Stable ID: `comprehensive-learning-particle-swarm-liang-qin-suganthan-baskar-2006`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.91.0] - 2026-08-27
 
 - Add canonical Fully Informed Particle Swarm scientific identity (Mendes, Kennedy & Neves (2004), The Fully Informed Particle Swarm: Simpler, Maybe Better, IEEE Transactions on Evolutionary Computation 8(3), 204-210; DOI 10.1109/TEVC.2004.826074).

@@ -214,6 +214,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.FullyInformedParticleSwarm,
             "MetaheuristicsPlatform.Algorithms.PSO.Scientific.FullyInformedParticleSwarmOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.ComprehensiveLearningParticleSwarm,
+            "MetaheuristicsPlatform.Algorithms.PSO.ComprehensiveLearning.ComprehensiveLearningParticleSwarmOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>
