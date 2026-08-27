@@ -2127,6 +2127,28 @@
                            "assumptions":  "Finite bounded continuous decision box, at least two finite objectives, and one explicit OptimizationSense per objective.",
                            "convergence":  "No universal finite-time convergence guarantee is asserted; the implementation preserves the named multiobjective mechanism.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "strength-pareto-evolutionary-algorithm-zitzler-thiele-1999",
+                           "name":  "Strength Pareto Evolutionary Algorithm",
+                           "class":  "SpeaOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "O(N^2M) dominance/strength work plus objective evaluations per generation",
+                           "space":  "O((N+A)(D+M))",
+                           "applicability":  "Bounded continuous native multiobjective Pareto optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Spea/SpeaOptimizer.cs",
+                           "publication":  "Zitzler \u0026 Thiele (1999), Multiobjective Evolutionary Algorithms: A Comparative Case Study and the Strength Pareto Approach, IEEE Transactions on Evolutionary Computation 3(4), 257-271",
+                           "doi":  "10.1109/4235.797969",
+                           "implementation":  "Original SPEA with an external nondominated set, strength fitness assignment and archive clustering/truncation.",
+                           "page":  "docs/pages/algorithms/strength-pareto-evolutionary-algorithm-zitzler-thiele-1999.md",
+                           "problem":  "\\operatorname{ParetoMin}_{x\\in\\mathcal X\\subseteq\\mathbb R^D}F(x)=\\bigl(f_1(x),\\ldots,f_M(x)\\bigr)",
+                           "update":  "\\begin{aligned}S(i)\u0026=\\frac{|\\{j:i\\prec j\\}|}{N},\\\\F(j)\u0026=1+\\sum_{i\\in A,\\ i\\prec j}S(i),\\qquad A^+=\\operatorname{ND}(P\\cup A).\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, finite objective values, at least two objectives and one explicit OptimizationSense per objective.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; the implementation preserves the named stochastic multiobjective mechanism.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

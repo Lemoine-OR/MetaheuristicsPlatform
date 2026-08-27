@@ -29,6 +29,7 @@ Population methods based on structured variation or combination, selection, refe
 - **[NSGA-III](../algorithms/nsga-iii-deb-jain-2014.md)** - `nsga-iii-deb-jain-2014` - NSGA-II framework with normalized objective vectors, Das-Dennis reference directions and reference niching.
 - **[SMS-EMOA](../algorithms/sms-emoa-beume-naujoks-emmerich-2007.md)** - `sms-emoa-beume-naujoks-emmerich-2007` - Steady-state environmental selection removes the minimum dominated-hypervolume contributor from the worst front.
 - **[RVEA](../algorithms/rvea-cheng-jin-olhofer-sendhoff-2016.md)** - `rvea-cheng-jin-olhofer-sendhoff-2016` - Reference-vector guided many-objective selection using angle-penalized distance normalized by nearest reference-vector angle and periodic vector adaptation.
+- **[Strength Pareto Evolutionary Algorithm](../algorithms/strength-pareto-evolutionary-algorithm-zitzler-thiele-1999.md)** - `strength-pareto-evolutionary-algorithm-zitzler-thiele-1999` - Original SPEA with an external nondominated set, strength fitness assignment and archive clustering/truncation.
 
 ## Navigation
 

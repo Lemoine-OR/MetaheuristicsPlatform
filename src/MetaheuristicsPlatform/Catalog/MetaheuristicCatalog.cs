@@ -1320,7 +1320,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Rvea/RveaOptimizer.cs",
             "Cheng, Jin, Olhofer & Sendhoff (2016), A Reference Vector Guided Evolutionary Algorithm for Many-Objective Optimization, IEEE Transactions on Evolutionary Computation 20(5), 773-791",
             "10.1109/TEVC.2016.2519378",
-            "Reference-vector guided many-objective selection using angle-penalized distance normalized by nearest reference-vector angle and periodic vector adaptation.")
+            "Reference-vector guided many-objective selection using angle-penalized distance normalized by nearest reference-vector angle and periodic vector adaptation."),
+        new(
+            "strength-pareto-evolutionary-algorithm-zitzler-thiele-1999",
+            "Strength Pareto Evolutionary Algorithm",
+            "SpeaOptimizer",
+            "evolutionary-methods",
+            "Evolutionary methods",
+            "O(N^2M) dominance/strength work plus objective evaluations per generation",
+            "O((N+A)(D+M))",
+            "Bounded continuous native multiobjective Pareto optimization",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Spea/SpeaOptimizer.cs",
+            "Zitzler & Thiele (1999), Multiobjective Evolutionary Algorithms: A Comparative Case Study and the Strength Pareto Approach, IEEE Transactions on Evolutionary Computation 3(4), 257-271",
+            "10.1109/4235.797969",
+            "Original SPEA with an external nondominated set, strength fitness assignment and archive clustering/truncation.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

@@ -211,4 +211,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string Rvea =
         "rvea-cheng-jin-olhofer-sendhoff-2016";
+
+    public const string Spea =
+        "strength-pareto-evolutionary-algorithm-zitzler-thiele-1999";
 }

@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.106.0] - 2026-08-27
+
+- Add canonical Strength Pareto Evolutionary Algorithm scientific identity (Zitzler & Thiele, 1999; DOI 10.1109/4235.797969).
+- Stable ID: `strength-pareto-evolutionary-algorithm-zitzler-thiele-1999`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.105.0] - 2026-08-27
 
 - Add canonical RVEA scientific identity (Cheng, Jin, Olhofer & Sendhoff, 2016; DOI 10.1109/TEVC.2016.2519378).

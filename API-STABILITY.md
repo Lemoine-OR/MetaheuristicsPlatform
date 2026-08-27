@@ -1,5 +1,9 @@
 # API stability
 
+## v0.106.0
+
+- Added stable direct-factory algorithm ID `strength-pareto-evolutionary-algorithm-zitzler-thiele-1999` (`SpeaOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.105.0
 
 - Added stable direct-factory algorithm ID `rvea-cheng-jin-olhofer-sendhoff-2016` (`RveaOptimizer`). Existing public IDs and signatures are unchanged.

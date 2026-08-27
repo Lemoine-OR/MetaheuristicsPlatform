@@ -270,6 +270,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.Rvea,
             "MetaheuristicsPlatform.Algorithms.Multiobjective.Rvea.RveaOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.Spea,
+            "MetaheuristicsPlatform.Algorithms.Multiobjective.Spea.SpeaOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>
