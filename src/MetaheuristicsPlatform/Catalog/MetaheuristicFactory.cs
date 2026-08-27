@@ -254,6 +254,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.Mopso,
             "MetaheuristicsPlatform.Algorithms.Multiobjective.Mopso.MopsoOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.Smpso,
+            "MetaheuristicsPlatform.Algorithms.Multiobjective.Smpso.SmpsoOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

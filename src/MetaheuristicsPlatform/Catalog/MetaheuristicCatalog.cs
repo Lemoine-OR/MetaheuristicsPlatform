@@ -1264,7 +1264,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Mopso/MopsoOptimizer.cs",
             "Coello Coello, Pulido & Lechuga (2004), Handling Multiple Objectives With Particle Swarm Optimization, IEEE Transactions on Evolutionary Computation 8(3), 256-279",
             "10.1109/TEVC.2004.826067",
-            "Pareto-repository PSO with adaptive hypercubes, inverse-density leader selection, pbest dominance and decaying mutation.")
+            "Pareto-repository PSO with adaptive hypercubes, inverse-density leader selection, pbest dominance and decaying mutation."),
+        new(
+            "smpso-nebro-durillo-garcia-nieto-coello-luna-alba-2009",
+            "SMPSO",
+            "SmpsoOptimizer",
+            "swarm-intelligence",
+            "Swarm intelligence",
+            "O(ND+AM) speed-constrained swarm motion and archive maintenance",
+            "O((N+A)(D+M))",
+            "Bounded continuous native multiobjective Pareto optimization",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Smpso/SmpsoOptimizer.cs",
+            "Nebro, Durillo, Garcia-Nieto, Coello Coello, Luna & Alba (2009), SMPSO: A New PSO-Based Metaheuristic for Multi-objective Optimization, IEEE MCDM 2009, 66-73",
+            "10.1109/MCDM.2009.4938830",
+            "Speed-constrained MOPSO with constriction, componentwise velocity bounds, polynomial turbulence and external archive.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

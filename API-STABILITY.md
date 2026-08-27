@@ -1,5 +1,9 @@
 # API stability
 
+## v0.102.0
+
+- Added stable direct-factory algorithm ID `smpso-nebro-durillo-garcia-nieto-coello-luna-alba-2009` (`SmpsoOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.101.0
 
 - Added stable direct-factory algorithm ID `mopso-coello-pulido-lechuga-2004` (`MopsoOptimizer`). Existing public IDs and signatures are unchanged.

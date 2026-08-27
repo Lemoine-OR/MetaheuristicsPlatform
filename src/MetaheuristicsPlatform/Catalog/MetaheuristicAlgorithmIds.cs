@@ -199,4 +199,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string Mopso =
         "mopso-coello-pulido-lechuga-2004";
+
+    public const string Smpso =
+        "smpso-nebro-durillo-garcia-nieto-coello-luna-alba-2009";
 }

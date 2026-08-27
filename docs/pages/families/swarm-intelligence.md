@@ -34,6 +34,7 @@ probabilistic recruitment or shared pheromone memory.
 - @subpage standard_particle_swarm_bratton_kennedy_2007 — Standard Particle Swarm Optimization 2007 (`standard-particle-swarm-bratton-kennedy-2007`).
 - @subpage species_based_particle_swarm_parrott_li_2006 — Species-Based Particle Swarm Optimization (`species-based-particle-swarm-parrott-li-2006`).
 - **[Multiobjective Particle Swarm Optimizer](../algorithms/mopso-coello-pulido-lechuga-2004.md)** - `mopso-coello-pulido-lechuga-2004` - Pareto-repository PSO with adaptive hypercubes, inverse-density leader selection, pbest dominance and decaying mutation.
+- **[SMPSO](../algorithms/smpso-nebro-durillo-garcia-nieto-coello-luna-alba-2009.md)** - `smpso-nebro-durillo-garcia-nieto-coello-luna-alba-2009` - Speed-constrained MOPSO with constriction, componentwise velocity bounds, polynomial turbulence and external archive.
 
 ## Navigation
 

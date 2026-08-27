@@ -2039,6 +2039,28 @@
                            "assumptions":  "Finite bounded continuous decision box, at least two finite objectives, and one explicit OptimizationSense per objective.",
                            "convergence":  "No universal finite-time convergence guarantee is asserted; the implementation preserves the named multiobjective mechanism.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "smpso-nebro-durillo-garcia-nieto-coello-luna-alba-2009",
+                           "name":  "SMPSO",
+                           "class":  "SmpsoOptimizer",
+                           "category":  "swarm-intelligence",
+                           "kind":  "population",
+                           "family":  "Swarm intelligence",
+                           "time":  "O(ND+AM) speed-constrained swarm motion and archive maintenance",
+                           "space":  "O((N+A)(D+M))",
+                           "applicability":  "Bounded continuous native multiobjective Pareto optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Smpso/SmpsoOptimizer.cs",
+                           "publication":  "Nebro, Durillo, Garcia-Nieto, Coello Coello, Luna \u0026 Alba (2009), SMPSO: A New PSO-Based Metaheuristic for Multi-objective Optimization, IEEE MCDM 2009, 66-73",
+                           "doi":  "10.1109/MCDM.2009.4938830",
+                           "implementation":  "Speed-constrained MOPSO with constriction, componentwise velocity bounds, polynomial turbulence and external archive.",
+                           "page":  "docs/pages/algorithms/smpso-nebro-durillo-garcia-nieto-coello-luna-alba-2009.md",
+                           "problem":  "\\operatorname{ParetoMin}_{x\\in\\mathcal X\\subseteq\\mathbb R^D}F(x)=\\bigl(f_1(x),\\ldots,f_M(x)\\bigr)",
+                           "update":  "\\begin{aligned}\\tilde v_{i,d}^{t+1}\u0026=\\chi\\!\\left(0.2v_{i,d}^t+c_1r_1(p_{i,d}^t-x_{i,d}^t)+c_2r_2(g_{i,d}^t-x_{i,d}^t)\\right),\\\\v_{i,d}^{t+1}\u0026=\\operatorname{clip}(\\tilde v_{i,d}^{t+1},-\\Delta_d,\\Delta_d),\\qquad \\Delta_d=(u_d-l_d)/2.\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, at least two finite objectives, and one explicit OptimizationSense per objective.",
+                           "convergence":  "No universal finite-time convergence guarantee is asserted; the implementation preserves the named multiobjective mechanism.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

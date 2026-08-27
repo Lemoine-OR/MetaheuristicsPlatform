@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.102.0] - 2026-08-27
+
+- Add canonical SMPSO scientific identity (Nebro, Durillo, Garcia-Nieto, Coello Coello, Luna & Alba, 2009; DOI 10.1109/MCDM.2009.4938830).
+- Stable ID: `smpso-nebro-durillo-garcia-nieto-coello-luna-alba-2009`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.101.0] - 2026-08-27
 
 - Add canonical Multiobjective Particle Swarm Optimizer scientific identity (Coello Coello, Pulido & Lechuga, 2004; DOI 10.1109/TEVC.2004.826067).
