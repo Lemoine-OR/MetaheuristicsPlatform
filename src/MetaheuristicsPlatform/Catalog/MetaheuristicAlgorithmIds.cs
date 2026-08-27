@@ -235,4 +235,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string TwoArch2 =
         "two-arch2-wang-jiao-yao-2015";
+
+    public const string Moeadd =
+        "moeadd-li-deb-zhang-kwong-2015";
 }

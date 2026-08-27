@@ -1432,7 +1432,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Multiobjective/TwoArch2/TwoArch2Optimizer.cs",
             "Wang, Jiao & Yao (2015), Two_Arch2: An Improved Two-Archive Algorithm for Many-Objective Optimization, IEEE Transactions on Evolutionary Computation 19(4), 524-541",
             "10.1109/TEVC.2014.2350987",
-            "Two_Arch2 separates convergence and diversity responsibilities into two cooperating archives with distinct selection principles.")
+            "Two_Arch2 separates convergence and diversity responsibilities into two cooperating archives with distinct selection principles."),
+        new(
+            "moeadd-li-deb-zhang-kwong-2015",
+            "MOEA/DD",
+            "MoeaddOptimizer",
+            "evolutionary-methods",
+            "Evolutionary methods",
+            "O(MN^2+NRM) dominance sorting and reference-region decomposition per generation",
+            "O(N(D+M)+RM)",
+            "Bounded continuous native multiobjective Pareto optimization",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Moeadd/MoeaddOptimizer.cs",
+            "Li, Deb, Zhang & Kwong (2015), An Evolutionary Many-Objective Optimization Algorithm Based on Dominance and Decomposition, IEEE Transactions on Evolutionary Computation 19(5), 694-716",
+            "10.1109/TEVC.2014.2373386",
+            "MOEA/DD unifies Pareto dominance and decomposition through reference subregions and decomposition values.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

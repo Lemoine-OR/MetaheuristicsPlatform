@@ -2303,6 +2303,28 @@
                            "assumptions":  "Finite bounded continuous decision box, finite objective values, at least two objectives and one explicit OptimizationSense per objective.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; the implementation preserves the named stochastic multiobjective mechanism.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "moeadd-li-deb-zhang-kwong-2015",
+                           "name":  "MOEA/DD",
+                           "class":  "MoeaddOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "O(MN^2+NRM) dominance sorting and reference-region decomposition per generation",
+                           "space":  "O(N(D+M)+RM)",
+                           "applicability":  "Bounded continuous native multiobjective Pareto optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Moeadd/MoeaddOptimizer.cs",
+                           "publication":  "Li, Deb, Zhang \u0026 Kwong (2015), An Evolutionary Many-Objective Optimization Algorithm Based on Dominance and Decomposition, IEEE Transactions on Evolutionary Computation 19(5), 694-716",
+                           "doi":  "10.1109/TEVC.2014.2373386",
+                           "implementation":  "MOEA/DD unifies Pareto dominance and decomposition through reference subregions and decomposition values.",
+                           "page":  "docs/pages/algorithms/moeadd-li-deb-zhang-kwong-2015.md",
+                           "problem":  "\\operatorname{ParetoMin}_{x\\in\\mathcal X\\subseteq\\mathbb R^D}F(x)=\\bigl(f_1(x),\\ldots,f_M(x)\\bigr)",
+                           "update":  "\\begin{aligned}r(x)\u0026=\\arg\\min_k d_\\perp(\\bar f(x),\\lambda^k),\\\\PBI(x\\mid\\lambda^k)\u0026=d_1+\\theta d_2,\\qquad P_{t+1}=\\operatorname{DominanceDecompositionSelect}(P_t\\cup Q_t,N).\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, finite objective values, at least two objectives and one explicit OptimizationSense per objective.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; the implementation preserves the named stochastic multiobjective mechanism.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

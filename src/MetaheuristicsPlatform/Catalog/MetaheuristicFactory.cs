@@ -302,6 +302,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.TwoArch2,
             "MetaheuristicsPlatform.Algorithms.Multiobjective.TwoArch2.TwoArch2Optimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.Moeadd,
+            "MetaheuristicsPlatform.Algorithms.Multiobjective.Moeadd.MoeaddOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

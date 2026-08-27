@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.114.0] - 2026-08-27
+
+- Add canonical MOEA/DD scientific identity (Li, Deb, Zhang & Kwong, 2015; DOI 10.1109/TEVC.2014.2373386).
+- Stable ID: `moeadd-li-deb-zhang-kwong-2015`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.113.0] - 2026-08-27
 
 - Add canonical Two_Arch2 scientific identity (Wang, Jiao & Yao, 2015; DOI 10.1109/TEVC.2014.2350987).
