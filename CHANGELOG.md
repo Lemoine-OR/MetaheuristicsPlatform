@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.95.0] - 2026-08-27
+
+- Add canonical Species-Based Particle Swarm Optimization scientific identity (Parrott & Li (2006), Locating and tracking multiple dynamic optima by a particle swarm model using speciation, IEEE Transactions on Evolutionary Computation 10(4), 440-458; DOI 10.1109/TEVC.2005.859468).
+- Stable ID: `species-based-particle-swarm-parrott-li-2006`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.94.0] - 2026-08-27
 
 - Add canonical Standard Particle Swarm Optimization 2007 scientific identity (Bratton & Kennedy (2007), Defining a Standard for Particle Swarm Optimization, Proceedings of the 2007 IEEE Swarm Intelligence Symposium, 120-127; DOI 10.1109/SIS.2007.368035).

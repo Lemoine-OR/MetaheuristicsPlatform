@@ -178,4 +178,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string StandardParticleSwarm2007 =
         "standard-particle-swarm-bratton-kennedy-2007";
+
+    public const string SpeciesBasedParticleSwarm =
+        "species-based-particle-swarm-parrott-li-2006";
 }

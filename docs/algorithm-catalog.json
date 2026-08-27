@@ -1885,6 +1885,28 @@
                            "assumptions":  "Finite bounded continuous box and a nonempty random informer neighborhood for every particle.",
                            "convergence":  "The release is a reproducible SPSO-2007 baseline; no objective-independent finite-time global convergence guarantee is asserted.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "species-based-particle-swarm-parrott-li-2006",
+                           "name":  "Species-Based Particle Swarm Optimization",
+                           "class":  "SpeciesBasedParticleSwarmOptimizer",
+                           "category":  "swarm-intelligence",
+                           "kind":  "population",
+                           "family":  "Swarm intelligence",
+                           "time":  "O(N^2D) species reconstruction plus O(ND) movement and N objective evaluations per iteration",
+                           "space":  "O(ND + N)",
+                           "applicability":  "Static multimodal bounded continuous optimization where multiple species should form around different dominating personal-best seeds",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/PSO/Speciation/SpeciesBasedParticleSwarmOptimizer.cs",
+                           "publication":  "Parrott \u0026 Li (2006), Locating and tracking multiple dynamic optima by a particle swarm model using speciation, IEEE Transactions on Evolutionary Computation 10(4), 440-458",
+                           "doi":  "10.1109/TEVC.2005.859468",
+                           "implementation":  "Static SPSO mode: personal bests are sorted by dominance, species seeds are formed with a distance radius, and each particle uses its current species seed as neighborhood best.",
+                           "page":  "docs/pages/algorithms/species-based-particle-swarm-parrott-li-2006.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)\\quad\\text{with multiple attraction basins}",
+                           "update":  "\\begin{aligned}N_i^t\u0026=s(i,t),\\\\v_i^{t+1}\u0026=w v_i^t+c_1r_1(p_i^t-x_i^t)+c_2r_2(p_{s(i,t)}^t-x_i^t).\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous domain, finite objective values and a positive species radius; this release implements the static multimodal SPSO mode, not the dynamic-environment extension.",
+                           "convergence":  "The method intentionally maintains multiple species and therefore does not assert single-point swarm convergence or a universal global-optimum guarantee.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

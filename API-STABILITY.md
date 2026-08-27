@@ -1,5 +1,9 @@
 # API stability
 
+## v0.95.0
+
+- Added stable direct-factory algorithm ID `species-based-particle-swarm-parrott-li-2006` (`SpeciesBasedParticleSwarmOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.94.0
 
 - Added stable direct-factory algorithm ID `standard-particle-swarm-bratton-kennedy-2007` (`StandardPso2007Optimizer`). Existing public IDs and signatures are unchanged.

@@ -226,6 +226,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.StandardParticleSwarm2007,
             "MetaheuristicsPlatform.Algorithms.PSO.Standard2007.StandardPso2007Optimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.SpeciesBasedParticleSwarm,
+            "MetaheuristicsPlatform.Algorithms.PSO.Speciation.SpeciesBasedParticleSwarmOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

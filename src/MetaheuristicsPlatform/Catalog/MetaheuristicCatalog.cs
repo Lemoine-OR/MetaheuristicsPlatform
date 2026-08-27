@@ -1166,7 +1166,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/PSO/Standard2007/StandardPso2007Optimizer.cs",
             "Bratton & Kennedy (2007), Defining a Standard for Particle Swarm Optimization, Proceedings of the 2007 IEEE Swarm Intelligence Symposium, 120-127",
             "10.1109/SIS.2007.368035",
-            "SPSO-2007 parameterization w=1/(2 ln 2), c=1/2+ln 2, default swarm size 10+floor(2 sqrt(D)), K=3 random informing attempts and topology regeneration on non-improvement.")
+            "SPSO-2007 parameterization w=1/(2 ln 2), c=1/2+ln 2, default swarm size 10+floor(2 sqrt(D)), K=3 random informing attempts and topology regeneration on non-improvement."),
+        new(
+            "species-based-particle-swarm-parrott-li-2006",
+            "Species-Based Particle Swarm Optimization",
+            "SpeciesBasedParticleSwarmOptimizer",
+            "swarm-intelligence",
+            "Swarm intelligence",
+            "O(N^2D) species reconstruction plus O(ND) movement and N objective evaluations per iteration",
+            "O(ND + N)",
+            "Static multimodal bounded continuous optimization where multiple species should form around different dominating personal-best seeds",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/PSO/Speciation/SpeciesBasedParticleSwarmOptimizer.cs",
+            "Parrott & Li (2006), Locating and tracking multiple dynamic optima by a particle swarm model using speciation, IEEE Transactions on Evolutionary Computation 10(4), 440-458",
+            "10.1109/TEVC.2005.859468",
+            "Static SPSO mode: personal bests are sorted by dominance, species seeds are formed with a distance radius, and each particle uses its current species seed as neighborhood best.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>
