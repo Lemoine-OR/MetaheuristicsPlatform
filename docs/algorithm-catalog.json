@@ -1973,6 +1973,28 @@
                            "assumptions":  "Finite bounded continuous decision box, at least two finite objectives, and one explicit OptimizationSense per objective.",
                            "convergence":  "No universal finite-time convergence guarantee is asserted; the implementation preserves the named multiobjective mechanism.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "ibea-zitzler-kunzli-2004",
+                           "name":  "Indicator-Based Evolutionary Algorithm",
+                           "class":  "IbeaOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "O(MN^2) binary-indicator fitness per environmental selection",
+                           "space":  "O(MN)",
+                           "applicability":  "Bounded continuous native multiobjective Pareto optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Ibea/IbeaOptimizer.cs",
+                           "publication":  "Zitzler \u0026 Kunzli (2004), Indicator-Based Selection in Multiobjective Search, PPSN VIII, LNCS 3242, 832-842",
+                           "doi":  "10.1007/978-3-540-30217-9_84",
+                           "implementation":  "Binary additive-epsilon indicator fitness directly drives environmental selection.",
+                           "page":  "docs/pages/algorithms/ibea-zitzler-kunzli-2004.md",
+                           "problem":  "\\operatorname{ParetoMin}_{x\\in\\mathcal X\\subseteq\\mathbb R^D}F(x)=\\bigl(f_1(x),\\ldots,f_M(x)\\bigr)",
+                           "update":  "\\begin{aligned}F(x)\u0026=\\sum_{y\\ne x}\\exp\\!\\left(-I_{\\epsilon+}(y,x)/\\kappa\\right),\\\\P_{t+1}\u0026=\\operatorname{EnvironmentalSelect}_{I_{\\epsilon+}}(P_t\\cup Q_t,N).\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, at least two finite objectives, and one explicit OptimizationSense per objective.",
+                           "convergence":  "No universal finite-time convergence guarantee is asserted; the implementation preserves the named multiobjective mechanism.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

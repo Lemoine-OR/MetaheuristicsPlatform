@@ -1222,7 +1222,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Multiobjective/PesaII/PesaIIOptimizer.cs",
             "Corne, Jerram, Knowles & Oates (2001), PESA-II: Region-Based Selection in Evolutionary Multiobjective Optimization, GECCO 2001, 283-290",
             "10.5555/2955239.2955289",
-            "Region-based selection from an external nondominated archive using adaptive hyperbox density.")
+            "Region-based selection from an external nondominated archive using adaptive hyperbox density."),
+        new(
+            "ibea-zitzler-kunzli-2004",
+            "Indicator-Based Evolutionary Algorithm",
+            "IbeaOptimizer",
+            "evolutionary-methods",
+            "Evolutionary methods",
+            "O(MN^2) binary-indicator fitness per environmental selection",
+            "O(MN)",
+            "Bounded continuous native multiobjective Pareto optimization",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Ibea/IbeaOptimizer.cs",
+            "Zitzler & Kunzli (2004), Indicator-Based Selection in Multiobjective Search, PPSN VIII, LNCS 3242, 832-842",
+            "10.1007/978-3-540-30217-9_84",
+            "Binary additive-epsilon indicator fitness directly drives environmental selection.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

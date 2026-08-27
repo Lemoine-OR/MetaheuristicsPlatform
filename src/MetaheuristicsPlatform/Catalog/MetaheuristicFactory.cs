@@ -242,6 +242,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.PesaII,
             "MetaheuristicsPlatform.Algorithms.Multiobjective.PesaII.PesaIIOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.Ibea,
+            "MetaheuristicsPlatform.Algorithms.Multiobjective.Ibea.IbeaOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

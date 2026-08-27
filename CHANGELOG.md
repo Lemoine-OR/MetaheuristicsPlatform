@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.99.0] - 2026-08-27
+
+- Add canonical Indicator-Based Evolutionary Algorithm scientific identity (Zitzler & Kunzli, 2004; DOI 10.1007/978-3-540-30217-9_84).
+- Stable ID: `ibea-zitzler-kunzli-2004`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.98.0] - 2026-08-27
 
 - Add canonical PESA-II scientific identity (Corne, Jerram, Knowles & Oates, 2001; DOI 10.5555/2955239.2955289).

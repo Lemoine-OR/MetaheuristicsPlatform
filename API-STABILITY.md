@@ -1,5 +1,9 @@
 # API stability
 
+## v0.99.0
+
+- Added stable direct-factory algorithm ID `ibea-zitzler-kunzli-2004` (`IbeaOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.98.0
 
 - Added stable direct-factory algorithm ID `pesa-ii-corne-jerram-knowles-oates-2001` (`PesaIIOptimizer`). Existing public IDs and signatures are unchanged.

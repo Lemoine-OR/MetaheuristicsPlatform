@@ -24,6 +24,7 @@ Population methods based on structured variation or combination, selection, refe
 - **[NSGA-II](../algorithms/nsga-ii-deb-pratap-agarwal-meyarivan-2002.md)** - `nsga-ii-deb-pratap-agarwal-meyarivan-2002` - Fast nondominated sorting, elitist parent-offspring survival and crowding-distance diversity.
 - **[Pareto Archived Evolution Strategy](../algorithms/paes-knowles-corne-2000.md)** - `paes-knowles-corne-2000` - Canonical (1+1)-PAES local mutation with Pareto archive and adaptive objective-space grid.
 - **[PESA-II](../algorithms/pesa-ii-corne-jerram-knowles-oates-2001.md)** - `pesa-ii-corne-jerram-knowles-oates-2001` - Region-based selection from an external nondominated archive using adaptive hyperbox density.
+- **[Indicator-Based Evolutionary Algorithm](../algorithms/ibea-zitzler-kunzli-2004.md)** - `ibea-zitzler-kunzli-2004` - Binary additive-epsilon indicator fitness directly drives environmental selection.
 
 ## Navigation
 

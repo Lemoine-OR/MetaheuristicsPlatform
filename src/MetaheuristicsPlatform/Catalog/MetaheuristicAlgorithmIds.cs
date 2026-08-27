@@ -190,4 +190,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string PesaII =
         "pesa-ii-corne-jerram-knowles-oates-2001";
+
+    public const string Ibea =
+        "ibea-zitzler-kunzli-2004";
 }
