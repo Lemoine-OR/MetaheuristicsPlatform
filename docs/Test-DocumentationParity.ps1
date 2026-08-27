@@ -20,6 +20,8 @@ $catalog =
 $algorithms = @($catalog.algorithms)
 $families = @($catalog.families)
 
+& (Join-Path $Root "docs\Test-SmsEmoa.ps1") -Root $Root
+
 & (Join-Path $Root "docs\Test-NsgaIII.ps1") -Root $Root
 
 & (Join-Path $Root "docs\Test-Smpso.ps1") -Root $Root
@@ -92,7 +94,7 @@ $families = @($catalog.families)
 
 & (Join-Path $Root "docs\Test-BiogeographyBasedOptimization.ps1") -Root $Root
 
-if ($algorithms.Count -lt 93) {
+if ($algorithms.Count -lt 94) {
     throw "Documentation parity: expected at least 57 currently public algorithms."
 }
 
@@ -329,6 +331,8 @@ $requiredRepoFiles = @(
     "docs\pages\algorithms\smpso-nebro-durillo-garcia-nieto-coello-luna-alba-2009.md",
     "docs\Test-NsgaIII.ps1",
     "docs\pages\algorithms\nsga-iii-deb-jain-2014.md",
+    "docs\Test-SmsEmoa.ps1",
+    "docs\pages\algorithms\sms-emoa-beume-naujoks-emmerich-2007.md",
     "docs\Test-DoxygenMarkupSafety.ps1",
     "docs\Test-ContinuousCrossEntropy.ps1",
     "docs\Test-LargeNeighborhoodSearch.ps1",
@@ -476,8 +480,8 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.103.0") {
-    throw "Documentation parity: version.json must be 0.103.0 for this release."
+if ([string]$version.version -ne "0.104.0") {
+    throw "Documentation parity: version.json must be 0.104.0 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root

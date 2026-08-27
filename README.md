@@ -36,7 +36,7 @@ catalog IDs and literature-backed documentation.
 <table>
 <tr>
 <td width="20%"><strong>28 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Firefly, Ant System, ACS and MAX-MIN Ant System.</sub></td>
-<td width="20%"><strong>20 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
+<td width="20%"><strong>21 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
 <td width="20%"><strong>21 trajectory methods</strong><br><sub>Acceptance methods, Tabu, local search, ILS, Iterated Greedy, LNS, ALNS, VNS and GLS.</sub></td>
 <td width="20%"><strong>3 constructive methods</strong><br><sub>GRASP, Reactive GRASP and GRASP with Path Relinking.</sub></td>
 <td width="20%"><strong>1 hybrid / memetic method</strong><br><sub>Moscato-style memetic evolution with local improvement.</sub></td>
@@ -45,7 +45,7 @@ catalog IDs and literature-backed documentation.
 </tr>
 </table>
 
-<p align="center"><strong>93 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>94 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -150,6 +150,7 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/ibea-zitzler-kunzli-2004.html"><strong>Indicator-Based Evolutionary Algorithm</strong></a><br><sub>Binary additive-epsilon indicator fitness directly drives environmental selection.</sub><br><code>ibea-zitzler-kunzli-2004</code><br><sub><code>IbeaOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/moead-zhang-li-2007.html"><strong>MOEA/D</strong></a><br><sub>Tchebycheff decomposition into neighboring scalar subproblems with differential reproduction and ideal-point updates.</sub><br><code>moead-zhang-li-2007</code><br><sub><code>MoeadOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/nsga-iii-deb-jain-2014.html"><strong>NSGA-III</strong></a><br><sub>NSGA-II framework with normalized objective vectors, Das-Dennis reference directions and reference niching.</sub><br><code>nsga-iii-deb-jain-2014</code><br><sub><code>NsgaIIIOptimizer</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/sms-emoa-beume-naujoks-emmerich-2007.html"><strong>SMS-EMOA</strong></a><br><sub>Steady-state environmental selection removes the minimum dominated-hypervolume contributor from the worst front.</sub><br><code>sms-emoa-beume-naujoks-emmerich-2007</code><br><sub><code>SmsEmoaOptimizer</code></sub></td></tr>
 </table>
 
 ### Trajectory-based methods

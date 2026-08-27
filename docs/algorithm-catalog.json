@@ -2083,6 +2083,28 @@
                            "assumptions":  "Finite bounded continuous decision box, at least two finite objectives, and one explicit OptimizationSense per objective.",
                            "convergence":  "No universal finite-time convergence guarantee is asserted; the implementation preserves the named multiobjective mechanism.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "sms-emoa-beume-naujoks-emmerich-2007",
+                           "name":  "SMS-EMOA",
+                           "class":  "SmsEmoaOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "Steady-state nondominated sorting plus dominated-hypervolume contribution selection",
+                           "space":  "O(N(D+M)) plus hypervolume recursion",
+                           "applicability":  "Bounded continuous native multiobjective Pareto optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multiobjective/SmsEmoa/SmsEmoaOptimizer.cs",
+                           "publication":  "Beume, Naujoks \u0026 Emmerich (2007), SMS-EMOA: Multiobjective Selection Based on Dominated Hypervolume, European Journal of Operational Research 181(3), 1653-1669",
+                           "doi":  "10.1016/j.ejor.2006.08.008",
+                           "implementation":  "Steady-state environmental selection removes the minimum dominated-hypervolume contributor from the worst front.",
+                           "page":  "docs/pages/algorithms/sms-emoa-beume-naujoks-emmerich-2007.md",
+                           "problem":  "\\operatorname{ParetoMin}_{x\\in\\mathcal X\\subseteq\\mathbb R^D}F(x)=\\bigl(f_1(x),\\ldots,f_M(x)\\bigr)",
+                           "update":  "\\begin{aligned}\\Delta S(x)\u0026=HV(F_\\ell)-HV(F_\\ell\\setminus\\{x\\}),\\\\x^-\u0026=\\arg\\min_{x\\in F_\\ell}\\Delta S(x),\\qquad P_{t+1}=(P_t\\cup\\{y\\})\\setminus\\{x^-\\}.\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, at least two finite objectives, and one explicit OptimizationSense per objective.",
+                           "convergence":  "No universal finite-time convergence guarantee is asserted; the implementation preserves the named multiobjective mechanism.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

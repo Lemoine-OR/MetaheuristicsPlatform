@@ -1292,7 +1292,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Multiobjective/NsgaIII/NsgaIIIOptimizer.cs",
             "Deb & Jain (2014), An Evolutionary Many-Objective Optimization Algorithm Using Reference-Point-Based Nondominated Sorting Approach, Part I, IEEE Transactions on Evolutionary Computation 18(4), 577-601",
             "10.1109/TEVC.2013.2281535",
-            "NSGA-II framework with normalized objective vectors, Das-Dennis reference directions and reference niching.")
+            "NSGA-II framework with normalized objective vectors, Das-Dennis reference directions and reference niching."),
+        new(
+            "sms-emoa-beume-naujoks-emmerich-2007",
+            "SMS-EMOA",
+            "SmsEmoaOptimizer",
+            "evolutionary-methods",
+            "Evolutionary methods",
+            "Steady-state nondominated sorting plus dominated-hypervolume contribution selection",
+            "O(N(D+M)) plus hypervolume recursion",
+            "Bounded continuous native multiobjective Pareto optimization",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/Multiobjective/SmsEmoa/SmsEmoaOptimizer.cs",
+            "Beume, Naujoks & Emmerich (2007), SMS-EMOA: Multiobjective Selection Based on Dominated Hypervolume, European Journal of Operational Research 181(3), 1653-1669",
+            "10.1016/j.ejor.2006.08.008",
+            "Steady-state environmental selection removes the minimum dominated-hypervolume contributor from the worst front.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

@@ -205,4 +205,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string NsgaIII =
         "nsga-iii-deb-jain-2014";
+
+    public const string SmsEmoa =
+        "sms-emoa-beume-naujoks-emmerich-2007";
 }

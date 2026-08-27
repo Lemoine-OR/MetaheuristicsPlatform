@@ -27,6 +27,7 @@ Population methods based on structured variation or combination, selection, refe
 - **[Indicator-Based Evolutionary Algorithm](../algorithms/ibea-zitzler-kunzli-2004.md)** - `ibea-zitzler-kunzli-2004` - Binary additive-epsilon indicator fitness directly drives environmental selection.
 - **[MOEA/D](../algorithms/moead-zhang-li-2007.md)** - `moead-zhang-li-2007` - Tchebycheff decomposition into neighboring scalar subproblems with differential reproduction and ideal-point updates.
 - **[NSGA-III](../algorithms/nsga-iii-deb-jain-2014.md)** - `nsga-iii-deb-jain-2014` - NSGA-II framework with normalized objective vectors, Das-Dennis reference directions and reference niching.
+- **[SMS-EMOA](../algorithms/sms-emoa-beume-naujoks-emmerich-2007.md)** - `sms-emoa-beume-naujoks-emmerich-2007` - Steady-state environmental selection removes the minimum dominated-hypervolume contributor from the worst front.
 
 ## Navigation
 

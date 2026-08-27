@@ -1,5 +1,9 @@
 # API stability
 
+## v0.104.0
+
+- Added stable direct-factory algorithm ID `sms-emoa-beume-naujoks-emmerich-2007` (`SmsEmoaOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.103.0
 
 - Added stable direct-factory algorithm ID `nsga-iii-deb-jain-2014` (`NsgaIIIOptimizer`). Existing public IDs and signatures are unchanged.

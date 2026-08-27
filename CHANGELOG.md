@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.104.0] - 2026-08-27
+
+- Add canonical SMS-EMOA scientific identity (Beume, Naujoks & Emmerich, 2007; DOI 10.1016/j.ejor.2006.08.008).
+- Stable ID: `sms-emoa-beume-naujoks-emmerich-2007`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.103.0] - 2026-08-27
 
 - Add canonical NSGA-III scientific identity (Deb & Jain, 2014; DOI 10.1109/TEVC.2013.2281535).
