@@ -2171,6 +2171,28 @@
                            "assumptions":  "Finite bounded continuous decision box, finite objective values, at least two objectives and one explicit OptimizationSense per objective.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; the implementation preserves the named stochastic multiobjective mechanism.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "nondominated-sorting-genetic-algorithm-srinivas-deb-1994",
+                           "name":  "Nondominated Sorting Genetic Algorithm",
+                           "class":  "NsgaOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "O(MN^2) nondominated sorting plus sharing and objective evaluations per generation",
+                           "space":  "O(N(D+M))",
+                           "applicability":  "Bounded continuous native multiobjective Pareto optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Nsga/NsgaOptimizer.cs",
+                           "publication":  "Srinivas \u0026 Deb (1994), Multiobjective Optimization Using Nondominated Sorting in Genetic Algorithms, Evolutionary Computation 2(3), 221-248",
+                           "doi":  "10.1162/evco.1994.2.3.221",
+                           "implementation":  "Original non-elitist NSGA using nondominated ranks and objective-space fitness sharing within fronts.",
+                           "page":  "docs/pages/algorithms/nondominated-sorting-genetic-algorithm-srinivas-deb-1994.md",
+                           "problem":  "\\operatorname{ParetoMin}_{x\\in\\mathcal X\\subseteq\\mathbb R^D}F(x)=\\bigl(f_1(x),\\ldots,f_M(x)\\bigr)",
+                           "update":  "\\begin{aligned}\\operatorname{rank}(x)\u0026=\\operatorname{front}(x),\\\\m_i\u0026=\\sum_{j\\in F_i}\\max\\!\\left(0,1-\\left(\\frac{d_{ij}}{\\sigma_{\\mathrm{share}}}\\right)^\\alpha\\right),\\qquad \\widetilde F_i=F_i/m_i.\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, finite objective values, at least two objectives and one explicit OptimizationSense per objective.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; the implementation preserves the named stochastic multiobjective mechanism.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

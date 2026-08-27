@@ -1348,7 +1348,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Spea2/Spea2Optimizer.cs",
             "Zitzler, Laumanns & Thiele (2001), SPEA2: Improving the Strength Pareto Evolutionary Algorithm, TIK Report 103, ETH Zurich",
             "10.3929/ethz-a-004284029",
-            "SPEA2 with fine-grained raw strength fitness, kth-neighbor density estimation and nearest-neighbor archive truncation.")
+            "SPEA2 with fine-grained raw strength fitness, kth-neighbor density estimation and nearest-neighbor archive truncation."),
+        new(
+            "nondominated-sorting-genetic-algorithm-srinivas-deb-1994",
+            "Nondominated Sorting Genetic Algorithm",
+            "NsgaOptimizer",
+            "evolutionary-methods",
+            "Evolutionary methods",
+            "O(MN^2) nondominated sorting plus sharing and objective evaluations per generation",
+            "O(N(D+M))",
+            "Bounded continuous native multiobjective Pareto optimization",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Nsga/NsgaOptimizer.cs",
+            "Srinivas & Deb (1994), Multiobjective Optimization Using Nondominated Sorting in Genetic Algorithms, Evolutionary Computation 2(3), 221-248",
+            "10.1162/evco.1994.2.3.221",
+            "Original non-elitist NSGA using nondominated ranks and objective-space fitness sharing within fronts.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

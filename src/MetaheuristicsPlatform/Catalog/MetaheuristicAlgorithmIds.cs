@@ -217,4 +217,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string Spea2 =
         "spea2-zitzler-laumanns-thiele-2001";
+
+    public const string Nsga =
+        "nondominated-sorting-genetic-algorithm-srinivas-deb-1994";
 }

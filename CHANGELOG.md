@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.108.0] - 2026-08-27
+
+- Add canonical Nondominated Sorting Genetic Algorithm scientific identity (Srinivas & Deb, 1994; DOI 10.1162/evco.1994.2.3.221).
+- Stable ID: `nondominated-sorting-genetic-algorithm-srinivas-deb-1994`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.107.0] - 2026-08-27
 
 - Add canonical SPEA2 scientific identity (Zitzler, Laumanns & Thiele, 2001; DOI 10.3929/ethz-a-004284029).

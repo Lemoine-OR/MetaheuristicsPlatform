@@ -36,7 +36,7 @@ catalog IDs and literature-backed documentation.
 <table>
 <tr>
 <td width="20%"><strong>28 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Firefly, Ant System, ACS and MAX-MIN Ant System.</sub></td>
-<td width="20%"><strong>24 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
+<td width="20%"><strong>25 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
 <td width="20%"><strong>21 trajectory methods</strong><br><sub>Acceptance methods, Tabu, local search, ILS, Iterated Greedy, LNS, ALNS, VNS and GLS.</sub></td>
 <td width="20%"><strong>3 constructive methods</strong><br><sub>GRASP, Reactive GRASP and GRASP with Path Relinking.</sub></td>
 <td width="20%"><strong>1 hybrid / memetic method</strong><br><sub>Moscato-style memetic evolution with local improvement.</sub></td>
@@ -45,7 +45,7 @@ catalog IDs and literature-backed documentation.
 </tr>
 </table>
 
-<p align="center"><strong>97 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>98 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -154,6 +154,7 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/rvea-cheng-jin-olhofer-sendhoff-2016.html"><strong>RVEA</strong></a><br><sub>Reference-vector guided many-objective selection using angle-penalized distance normalized by nearest reference-vector angle and periodic vector adaptation.</sub><br><code>rvea-cheng-jin-olhofer-sendhoff-2016</code><br><sub><code>RveaOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/strength-pareto-evolutionary-algorithm-zitzler-thiele-1999.html"><strong>Strength Pareto Evolutionary Algorithm</strong></a><br><sub>Original SPEA with an external nondominated set, strength fitness assignment and archive clustering/truncation.</sub><br><code>strength-pareto-evolutionary-algorithm-zitzler-thiele-1999</code><br><sub><code>SpeaOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/spea2-zitzler-laumanns-thiele-2001.html"><strong>SPEA2</strong></a><br><sub>SPEA2 with fine-grained raw strength fitness, kth-neighbor density estimation and nearest-neighbor archive truncation.</sub><br><code>spea2-zitzler-laumanns-thiele-2001</code><br><sub><code>Spea2Optimizer</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/nondominated-sorting-genetic-algorithm-srinivas-deb-1994.html"><strong>Nondominated Sorting Genetic Algorithm</strong></a><br><sub>Original non-elitist NSGA using nondominated ranks and objective-space fitness sharing within fronts.</sub><br><code>nondominated-sorting-genetic-algorithm-srinivas-deb-1994</code><br><sub><code>NsgaOptimizer</code></sub></td></tr>
 </table>
 
 ### Trajectory-based methods

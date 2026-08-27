@@ -278,6 +278,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.Spea2,
             "MetaheuristicsPlatform.Algorithms.Multiobjective.Spea2.Spea2Optimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.Nsga,
+            "MetaheuristicsPlatform.Algorithms.Multiobjective.Nsga.NsgaOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

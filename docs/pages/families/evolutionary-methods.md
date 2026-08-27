@@ -31,6 +31,7 @@ Population methods based on structured variation or combination, selection, refe
 - **[RVEA](../algorithms/rvea-cheng-jin-olhofer-sendhoff-2016.md)** - `rvea-cheng-jin-olhofer-sendhoff-2016` - Reference-vector guided many-objective selection using angle-penalized distance normalized by nearest reference-vector angle and periodic vector adaptation.
 - **[Strength Pareto Evolutionary Algorithm](../algorithms/strength-pareto-evolutionary-algorithm-zitzler-thiele-1999.md)** - `strength-pareto-evolutionary-algorithm-zitzler-thiele-1999` - Original SPEA with an external nondominated set, strength fitness assignment and archive clustering/truncation.
 - **[SPEA2](../algorithms/spea2-zitzler-laumanns-thiele-2001.md)** - `spea2-zitzler-laumanns-thiele-2001` - SPEA2 with fine-grained raw strength fitness, kth-neighbor density estimation and nearest-neighbor archive truncation.
+- **[Nondominated Sorting Genetic Algorithm](../algorithms/nondominated-sorting-genetic-algorithm-srinivas-deb-1994.md)** - `nondominated-sorting-genetic-algorithm-srinivas-deb-1994` - Original non-elitist NSGA using nondominated ranks and objective-space fitness sharing within fronts.
 
 ## Navigation
 

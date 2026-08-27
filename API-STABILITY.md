@@ -1,5 +1,9 @@
 # API stability
 
+## v0.108.0
+
+- Added stable direct-factory algorithm ID `nondominated-sorting-genetic-algorithm-srinivas-deb-1994` (`NsgaOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.107.0
 
 - Added stable direct-factory algorithm ID `spea2-zitzler-laumanns-thiele-2001` (`Spea2Optimizer`). Existing public IDs and signatures are unchanged.
