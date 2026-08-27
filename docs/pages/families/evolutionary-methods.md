@@ -40,6 +40,7 @@ Population methods based on structured variation or combination, selection, refe
 - **[MOEA/DD](../algorithms/moeadd-li-deb-zhang-kwong-2015.md)** - `moeadd-li-deb-zhang-kwong-2015` - MOEA/DD unifies Pareto dominance and decomposition through reference subregions and decomposition values.
 - **[Theta-Dominance Evolutionary Algorithm](../algorithms/theta-dea-yuan-xu-wang-yao-2016.md)** - `theta-dea-yuan-xu-wang-yao-2016` - Theta-DEA clusters normalized objective vectors by reference directions and ranks solutions with theta-dominance/PBI pressure.
 - **[Knee Point Driven Evolutionary Algorithm](../algorithms/knea-zhang-tian-jin-2015.md)** - `knea-zhang-tian-jin-2015` - KnEA detects locally preferred knee candidates and combines knee pressure with nondominated environmental selection.
+- **[Vector Angle-Based Evolutionary Algorithm](../algorithms/vaea-xiang-zhou-li-chen-2017.md)** - `vaea-xiang-zhou-li-chen-2017` - VaEA uses normalized objective-vector angles for diversity and convergence-aware elimination without predefined reference vectors.
 
 ## Navigation
 

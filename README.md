@@ -36,7 +36,7 @@ catalog IDs and literature-backed documentation.
 <table>
 <tr>
 <td width="20%"><strong>28 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Firefly, Ant System, ACS and MAX-MIN Ant System.</sub></td>
-<td width="20%"><strong>33 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
+<td width="20%"><strong>34 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
 <td width="20%"><strong>21 trajectory methods</strong><br><sub>Acceptance methods, Tabu, local search, ILS, Iterated Greedy, LNS, ALNS, VNS and GLS.</sub></td>
 <td width="20%"><strong>3 constructive methods</strong><br><sub>GRASP, Reactive GRASP and GRASP with Path Relinking.</sub></td>
 <td width="20%"><strong>1 hybrid / memetic method</strong><br><sub>Moscato-style memetic evolution with local improvement.</sub></td>
@@ -45,7 +45,7 @@ catalog IDs and literature-backed documentation.
 </tr>
 </table>
 
-<p align="center"><strong>106 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>107 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -163,6 +163,7 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/moeadd-li-deb-zhang-kwong-2015.html"><strong>MOEA/DD</strong></a><br><sub>MOEA/DD unifies Pareto dominance and decomposition through reference subregions and decomposition values.</sub><br><code>moeadd-li-deb-zhang-kwong-2015</code><br><sub><code>MoeaddOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/theta-dea-yuan-xu-wang-yao-2016.html"><strong>Theta-Dominance Evolutionary Algorithm</strong></a><br><sub>Theta-DEA clusters normalized objective vectors by reference directions and ranks solutions with theta-dominance/PBI pressure.</sub><br><code>theta-dea-yuan-xu-wang-yao-2016</code><br><sub><code>ThetaDeaOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/knea-zhang-tian-jin-2015.html"><strong>Knee Point Driven Evolutionary Algorithm</strong></a><br><sub>KnEA detects locally preferred knee candidates and combines knee pressure with nondominated environmental selection.</sub><br><code>knea-zhang-tian-jin-2015</code><br><sub><code>KneaOptimizer</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/vaea-xiang-zhou-li-chen-2017.html"><strong>Vector Angle-Based Evolutionary Algorithm</strong></a><br><sub>VaEA uses normalized objective-vector angles for diversity and convergence-aware elimination without predefined reference vectors.</sub><br><code>vaea-xiang-zhou-li-chen-2017</code><br><sub><code>VaeaOptimizer</code></sub></td></tr>
 </table>
 
 ### Trajectory-based methods

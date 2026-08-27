@@ -314,6 +314,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.Knea,
             "MetaheuristicsPlatform.Algorithms.Multiobjective.Knea.KneaOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.Vaea,
+            "MetaheuristicsPlatform.Algorithms.Multiobjective.Vaea.VaeaOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

@@ -2369,6 +2369,28 @@
                            "assumptions":  "Finite bounded continuous decision box, finite objective values, at least two objectives and one explicit OptimizationSense per objective.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; the implementation preserves the named stochastic multiobjective mechanism.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "vaea-xiang-zhou-li-chen-2017",
+                           "name":  "Vector Angle-Based Evolutionary Algorithm",
+                           "class":  "VaeaOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "O(MN^2) nondominated sorting and vector-angle selection per generation",
+                           "space":  "O(N(D+M)+N^2)",
+                           "applicability":  "Bounded continuous native multiobjective Pareto optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Vaea/VaeaOptimizer.cs",
+                           "publication":  "Xiang, Zhou, Li \u0026 Chen (2017), A Vector Angle-Based Evolutionary Algorithm for Unconstrained Many-Objective Optimization, IEEE Transactions on Evolutionary Computation 21(1), 131-152",
+                           "doi":  "10.1109/TEVC.2016.2587808",
+                           "implementation":  "VaEA uses normalized objective-vector angles for diversity and convergence-aware elimination without predefined reference vectors.",
+                           "page":  "docs/pages/algorithms/vaea-xiang-zhou-li-chen-2017.md",
+                           "problem":  "\\operatorname{ParetoMin}_{x\\in\\mathcal X\\subseteq\\mathbb R^D}F(x)=\\bigl(f_1(x),\\ldots,f_M(x)\\bigr)",
+                           "update":  "\\begin{aligned}\\theta_{ij}\u0026=\\arccos\\!\\frac{\\bar f_i^\\top\\bar f_j}{\\|\\bar f_i\\|\\,\\|\\bar f_j\\|},\\\\x^\\star\u0026=\\arg\\max_{x\\in F_\\ell}\\min_{y\\in S}\\theta(x,y),\\qquad S\\leftarrow S\\cup\\{x^\\star\\}.\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, finite objective values, at least two objectives and one explicit OptimizationSense per objective.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; the implementation preserves the named stochastic multiobjective mechanism.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

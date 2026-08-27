@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.117.0] - 2026-08-27
+
+- Add canonical Vector Angle-Based Evolutionary Algorithm scientific identity (Xiang, Zhou, Li & Chen, 2017; DOI 10.1109/TEVC.2016.2587808).
+- Stable ID: `vaea-xiang-zhou-li-chen-2017`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.116.0] - 2026-08-27
 
 - Add canonical Knee Point Driven Evolutionary Algorithm scientific identity (Zhang, Tian & Jin, 2015; DOI 10.1109/TEVC.2014.2378512).

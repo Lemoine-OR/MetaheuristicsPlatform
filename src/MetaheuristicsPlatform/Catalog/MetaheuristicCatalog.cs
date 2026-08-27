@@ -1474,7 +1474,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Knea/KneaOptimizer.cs",
             "Zhang, Tian & Jin (2015), A Knee Point Driven Evolutionary Algorithm for Many-Objective Optimization, IEEE Transactions on Evolutionary Computation 19(6), 761-776",
             "10.1109/TEVC.2014.2378512",
-            "KnEA detects locally preferred knee candidates and combines knee pressure with nondominated environmental selection.")
+            "KnEA detects locally preferred knee candidates and combines knee pressure with nondominated environmental selection."),
+        new(
+            "vaea-xiang-zhou-li-chen-2017",
+            "Vector Angle-Based Evolutionary Algorithm",
+            "VaeaOptimizer",
+            "evolutionary-methods",
+            "Evolutionary methods",
+            "O(MN^2) nondominated sorting and vector-angle selection per generation",
+            "O(N(D+M)+N^2)",
+            "Bounded continuous native multiobjective Pareto optimization",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Vaea/VaeaOptimizer.cs",
+            "Xiang, Zhou, Li & Chen (2017), A Vector Angle-Based Evolutionary Algorithm for Unconstrained Many-Objective Optimization, IEEE Transactions on Evolutionary Computation 21(1), 131-152",
+            "10.1109/TEVC.2016.2587808",
+            "VaEA uses normalized objective-vector angles for diversity and convergence-aware elimination without predefined reference vectors.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

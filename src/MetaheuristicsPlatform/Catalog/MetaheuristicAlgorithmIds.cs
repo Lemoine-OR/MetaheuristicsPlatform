@@ -244,4 +244,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string Knea =
         "knea-zhang-tian-jin-2015";
+
+    public const string Vaea =
+        "vaea-xiang-zhou-li-chen-2017";
 }
