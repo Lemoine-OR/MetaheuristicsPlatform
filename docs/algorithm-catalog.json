@@ -2061,6 +2061,28 @@
                            "assumptions":  "Finite bounded continuous decision box, at least two finite objectives, and one explicit OptimizationSense per objective.",
                            "convergence":  "No universal finite-time convergence guarantee is asserted; the implementation preserves the named multiobjective mechanism.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "nsga-iii-deb-jain-2014",
+                           "name":  "NSGA-III",
+                           "class":  "NsgaIIIOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "O(MN^2+NRM) sorting and reference-direction association per generation",
+                           "space":  "O(N(D+M)+RM)",
+                           "applicability":  "Bounded continuous native multiobjective Pareto optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multiobjective/NsgaIII/NsgaIIIOptimizer.cs",
+                           "publication":  "Deb \u0026 Jain (2014), An Evolutionary Many-Objective Optimization Algorithm Using Reference-Point-Based Nondominated Sorting Approach, Part I, IEEE Transactions on Evolutionary Computation 18(4), 577-601",
+                           "doi":  "10.1109/TEVC.2013.2281535",
+                           "implementation":  "NSGA-II framework with normalized objective vectors, Das-Dennis reference directions and reference niching.",
+                           "page":  "docs/pages/algorithms/nsga-iii-deb-jain-2014.md",
+                           "problem":  "\\operatorname{ParetoMin}_{x\\in\\mathcal X\\subseteq\\mathbb R^D}F(x)=\\bigl(f_1(x),\\ldots,f_M(x)\\bigr)",
+                           "update":  "\\begin{aligned}z_i\u0026=\\frac{f(x_i)-z^\\star}{a-z^\\star},\\\\\\pi(i)\u0026=\\arg\\min_r d_\\perp(z_i,\\lambda^r),\\qquad P_{t+1}=\\operatorname{ReferenceNiching}(F_\\ell,\\pi,\\rho,N).\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, at least two finite objectives, and one explicit OptimizationSense per objective.",
+                           "convergence":  "No universal finite-time convergence guarantee is asserted; the implementation preserves the named multiobjective mechanism.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

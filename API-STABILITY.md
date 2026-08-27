@@ -1,5 +1,9 @@
 # API stability
 
+## v0.103.0
+
+- Added stable direct-factory algorithm ID `nsga-iii-deb-jain-2014` (`NsgaIIIOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.102.0
 
 - Added stable direct-factory algorithm ID `smpso-nebro-durillo-garcia-nieto-coello-luna-alba-2009` (`SmpsoOptimizer`). Existing public IDs and signatures are unchanged.

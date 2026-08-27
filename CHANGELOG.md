@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.103.0] - 2026-08-27
+
+- Add canonical NSGA-III scientific identity (Deb & Jain, 2014; DOI 10.1109/TEVC.2013.2281535).
+- Stable ID: `nsga-iii-deb-jain-2014`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.102.0] - 2026-08-27
 
 - Add canonical SMPSO scientific identity (Nebro, Durillo, Garcia-Nieto, Coello Coello, Luna & Alba, 2009; DOI 10.1109/MCDM.2009.4938830).

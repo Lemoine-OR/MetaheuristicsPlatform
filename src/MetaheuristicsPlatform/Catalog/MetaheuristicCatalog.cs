@@ -1278,7 +1278,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Smpso/SmpsoOptimizer.cs",
             "Nebro, Durillo, Garcia-Nieto, Coello Coello, Luna & Alba (2009), SMPSO: A New PSO-Based Metaheuristic for Multi-objective Optimization, IEEE MCDM 2009, 66-73",
             "10.1109/MCDM.2009.4938830",
-            "Speed-constrained MOPSO with constriction, componentwise velocity bounds, polynomial turbulence and external archive.")
+            "Speed-constrained MOPSO with constriction, componentwise velocity bounds, polynomial turbulence and external archive."),
+        new(
+            "nsga-iii-deb-jain-2014",
+            "NSGA-III",
+            "NsgaIIIOptimizer",
+            "evolutionary-methods",
+            "Evolutionary methods",
+            "O(MN^2+NRM) sorting and reference-direction association per generation",
+            "O(N(D+M)+RM)",
+            "Bounded continuous native multiobjective Pareto optimization",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/Multiobjective/NsgaIII/NsgaIIIOptimizer.cs",
+            "Deb & Jain (2014), An Evolutionary Many-Objective Optimization Algorithm Using Reference-Point-Based Nondominated Sorting Approach, Part I, IEEE Transactions on Evolutionary Computation 18(4), 577-601",
+            "10.1109/TEVC.2013.2281535",
+            "NSGA-II framework with normalized objective vectors, Das-Dennis reference directions and reference niching.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

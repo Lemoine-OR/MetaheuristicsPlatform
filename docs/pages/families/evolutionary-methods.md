@@ -26,6 +26,7 @@ Population methods based on structured variation or combination, selection, refe
 - **[PESA-II](../algorithms/pesa-ii-corne-jerram-knowles-oates-2001.md)** - `pesa-ii-corne-jerram-knowles-oates-2001` - Region-based selection from an external nondominated archive using adaptive hyperbox density.
 - **[Indicator-Based Evolutionary Algorithm](../algorithms/ibea-zitzler-kunzli-2004.md)** - `ibea-zitzler-kunzli-2004` - Binary additive-epsilon indicator fitness directly drives environmental selection.
 - **[MOEA/D](../algorithms/moead-zhang-li-2007.md)** - `moead-zhang-li-2007` - Tchebycheff decomposition into neighboring scalar subproblems with differential reproduction and ideal-point updates.
+- **[NSGA-III](../algorithms/nsga-iii-deb-jain-2014.md)** - `nsga-iii-deb-jain-2014` - NSGA-II framework with normalized objective vectors, Das-Dennis reference directions and reference niching.
 
 ## Navigation
 

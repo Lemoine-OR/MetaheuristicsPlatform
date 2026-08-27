@@ -202,4 +202,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string Smpso =
         "smpso-nebro-durillo-garcia-nieto-coello-luna-alba-2009";
+
+    public const string NsgaIII =
+        "nsga-iii-deb-jain-2014";
 }
