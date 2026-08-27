@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.100.0] - 2026-08-27
+
+- Add canonical MOEA/D scientific identity (Zhang & Li, 2007; DOI 10.1109/TEVC.2007.892759).
+- Stable ID: `moead-zhang-li-2007`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.99.0] - 2026-08-27
 
 - Add canonical Indicator-Based Evolutionary Algorithm scientific identity (Zitzler & Kunzli, 2004; DOI 10.1007/978-3-540-30217-9_84).

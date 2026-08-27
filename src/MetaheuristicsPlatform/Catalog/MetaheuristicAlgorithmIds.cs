@@ -193,4 +193,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string Ibea =
         "ibea-zitzler-kunzli-2004";
+
+    public const string Moead =
+        "moead-zhang-li-2007";
 }

@@ -1,5 +1,9 @@
 # API stability
 
+## v0.100.0
+
+- Added stable direct-factory algorithm ID `moead-zhang-li-2007` (`MoeadOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.99.0
 
 - Added stable direct-factory algorithm ID `ibea-zitzler-kunzli-2004` (`IbeaOptimizer`). Existing public IDs and signatures are unchanged.

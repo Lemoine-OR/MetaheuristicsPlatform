@@ -1995,6 +1995,28 @@
                            "assumptions":  "Finite bounded continuous decision box, at least two finite objectives, and one explicit OptimizationSense per objective.",
                            "convergence":  "No universal finite-time convergence guarantee is asserted; the implementation preserves the named multiobjective mechanism.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "moead-zhang-li-2007",
+                           "name":  "MOEA/D",
+                           "class":  "MoeadOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "O(NTM) neighborhood scalarization updates plus objective evaluations",
+                           "space":  "O(N(D+M+T))",
+                           "applicability":  "Bounded continuous native multiobjective Pareto optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Moead/MoeadOptimizer.cs",
+                           "publication":  "Zhang \u0026 Li (2007), MOEA/D: A Multiobjective Evolutionary Algorithm Based on Decomposition, IEEE Transactions on Evolutionary Computation 11(6), 712-731",
+                           "doi":  "10.1109/TEVC.2007.892759",
+                           "implementation":  "Tchebycheff decomposition into neighboring scalar subproblems with differential reproduction and ideal-point updates.",
+                           "page":  "docs/pages/algorithms/moead-zhang-li-2007.md",
+                           "problem":  "\\operatorname{ParetoMin}_{x\\in\\mathcal X\\subseteq\\mathbb R^D}F(x)=\\bigl(f_1(x),\\ldots,f_M(x)\\bigr)",
+                           "update":  "\\begin{aligned}g^{te}(x\\mid\\lambda^i,z^\\star)\u0026=\\max_j\\lambda_j^i|f_j(x)-z_j^\\star|,\\\\x^j\u0026\\leftarrow y\\quad\\text{if }g^{te}(y\\mid\\lambda^j,z^\\star)\\le g^{te}(x^j\\mid\\lambda^j,z^\\star),\\quad j\\in B(i).\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, at least two finite objectives, and one explicit OptimizationSense per objective.",
+                           "convergence":  "No universal finite-time convergence guarantee is asserted; the implementation preserves the named multiobjective mechanism.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

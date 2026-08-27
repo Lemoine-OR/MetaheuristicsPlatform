@@ -214,3 +214,4 @@ v0.67.0 adaptive-harmony-search-differential-evolution-zhao-li-hao-liu-yuan-2020
 - **Knowles & Corne (2000)** - *Approximating the Nondominated Front Using the Pareto Archived Evolution Strategy*, Evolutionary Computation 8(2), 149-172. DOI: [10.1162/106365600568167](https://doi.org/10.1162/106365600568167).
 - **Corne, Jerram, Knowles & Oates (2001)** - *PESA-II: Region-Based Selection in Evolutionary Multiobjective Optimization*, GECCO 2001, 283-290. DOI: [10.5555/2955239.2955289](https://doi.org/10.5555/2955239.2955289).
 - **Zitzler & Kunzli (2004)** - *Indicator-Based Selection in Multiobjective Search*, PPSN VIII, LNCS 3242, 832-842. DOI: [10.1007/978-3-540-30217-9_84](https://doi.org/10.1007/978-3-540-30217-9_84).
+- **Zhang & Li (2007)** - *MOEA/D: A Multiobjective Evolutionary Algorithm Based on Decomposition*, IEEE Transactions on Evolutionary Computation 11(6), 712-731. DOI: [10.1109/TEVC.2007.892759](https://doi.org/10.1109/TEVC.2007.892759).

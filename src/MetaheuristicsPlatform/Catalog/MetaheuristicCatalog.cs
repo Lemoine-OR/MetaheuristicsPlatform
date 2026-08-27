@@ -1236,7 +1236,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Ibea/IbeaOptimizer.cs",
             "Zitzler & Kunzli (2004), Indicator-Based Selection in Multiobjective Search, PPSN VIII, LNCS 3242, 832-842",
             "10.1007/978-3-540-30217-9_84",
-            "Binary additive-epsilon indicator fitness directly drives environmental selection.")
+            "Binary additive-epsilon indicator fitness directly drives environmental selection."),
+        new(
+            "moead-zhang-li-2007",
+            "MOEA/D",
+            "MoeadOptimizer",
+            "evolutionary-methods",
+            "Evolutionary methods",
+            "O(NTM) neighborhood scalarization updates plus objective evaluations",
+            "O(N(D+M+T))",
+            "Bounded continuous native multiobjective Pareto optimization",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Moead/MoeadOptimizer.cs",
+            "Zhang & Li (2007), MOEA/D: A Multiobjective Evolutionary Algorithm Based on Decomposition, IEEE Transactions on Evolutionary Computation 11(6), 712-731",
+            "10.1109/TEVC.2007.892759",
+            "Tchebycheff decomposition into neighboring scalar subproblems with differential reproduction and ideal-point updates.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>
