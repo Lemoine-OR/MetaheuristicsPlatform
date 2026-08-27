@@ -290,6 +290,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.MoCmaEs,
             "MetaheuristicsPlatform.Algorithms.Multiobjective.MoCmaEs.MoCmaEsOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.MoeadDe,
+            "MetaheuristicsPlatform.Algorithms.Multiobjective.MoeadDe.MoeadDeOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

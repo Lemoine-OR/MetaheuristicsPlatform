@@ -1390,7 +1390,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Multiobjective/MoCmaEs/MoCmaEsOptimizer.cs",
             "Igel, Hansen & Roth (2007), Covariance Matrix Adaptation for Multi-objective Optimization, Evolutionary Computation 15(1), 1-28",
             "10.1162/evco.2007.15.1.1",
-            "MO-CMA-ES maintains individual covariance/step-size strategy states and applies nondominated multiobjective selection.")
+            "MO-CMA-ES maintains individual covariance/step-size strategy states and applies nondominated multiobjective selection."),
+        new(
+            "moead-de-li-zhang-2009",
+            "MOEA/D-DE",
+            "MoeadDeOptimizer",
+            "evolutionary-methods",
+            "Evolutionary methods",
+            "O(NTM+NTD) neighborhood scalarization and DE variation per generation",
+            "O(N(D+M+T))",
+            "Bounded continuous native multiobjective Pareto optimization",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/Multiobjective/MoeadDe/MoeadDeOptimizer.cs",
+            "Li & Zhang (2009), Multiobjective Optimization Problems With Complicated Pareto Sets, MOEA/D and NSGA-II, IEEE Transactions on Evolutionary Computation 13(2), 284-302",
+            "10.1109/TEVC.2008.925798",
+            "MOEA/D-DE combines Tchebycheff decomposition, neighborhood mating/update and differential-evolution reproduction.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

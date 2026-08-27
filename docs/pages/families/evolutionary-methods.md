@@ -34,6 +34,7 @@ Population methods based on structured variation or combination, selection, refe
 - **[Nondominated Sorting Genetic Algorithm](../algorithms/nondominated-sorting-genetic-algorithm-srinivas-deb-1994.md)** - `nondominated-sorting-genetic-algorithm-srinivas-deb-1994` - Original non-elitist NSGA using nondominated ranks and objective-space fitness sharing within fronts.
 - **[Grid-Based Evolutionary Algorithm](../algorithms/grid-based-evolutionary-algorithm-yang-li-liu-zheng-2013.md)** - `grid-based-evolutionary-algorithm-yang-li-liu-zheng-2013` - GrEA uses normalized objective-space grids to couple convergence pressure with grid density and distribution.
 - **[Multi-objective CMA-ES](../algorithms/multiobjective-cma-es-igel-hansen-roth-2007.md)** - `multiobjective-cma-es-igel-hansen-roth-2007` - MO-CMA-ES maintains individual covariance/step-size strategy states and applies nondominated multiobjective selection.
+- **[MOEA/D-DE](../algorithms/moead-de-li-zhang-2009.md)** - `moead-de-li-zhang-2009` - MOEA/D-DE combines Tchebycheff decomposition, neighborhood mating/update and differential-evolution reproduction.
 
 ## Navigation
 

@@ -226,4 +226,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string MoCmaEs =
         "multiobjective-cma-es-igel-hansen-roth-2007";
+
+    public const string MoeadDe =
+        "moead-de-li-zhang-2009";
 }

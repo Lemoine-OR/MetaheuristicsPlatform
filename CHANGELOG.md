@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.111.0] - 2026-08-27
+
+- Add canonical MOEA/D-DE scientific identity (Li & Zhang, 2009; DOI 10.1109/TEVC.2008.925798).
+- Stable ID: `moead-de-li-zhang-2009`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.110.0] - 2026-08-27
 
 - Add canonical Multi-objective CMA-ES scientific identity (Igel, Hansen & Roth, 2007; DOI 10.1162/evco.2007.15.1.1).

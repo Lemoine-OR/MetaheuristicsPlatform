@@ -2237,6 +2237,28 @@
                            "assumptions":  "Finite bounded continuous decision box, finite objective values, at least two objectives and one explicit OptimizationSense per objective.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; the implementation preserves the named stochastic multiobjective mechanism.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "moead-de-li-zhang-2009",
+                           "name":  "MOEA/D-DE",
+                           "class":  "MoeadDeOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "O(NTM+NTD) neighborhood scalarization and DE variation per generation",
+                           "space":  "O(N(D+M+T))",
+                           "applicability":  "Bounded continuous native multiobjective Pareto optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multiobjective/MoeadDe/MoeadDeOptimizer.cs",
+                           "publication":  "Li \u0026 Zhang (2009), Multiobjective Optimization Problems With Complicated Pareto Sets, MOEA/D and NSGA-II, IEEE Transactions on Evolutionary Computation 13(2), 284-302",
+                           "doi":  "10.1109/TEVC.2008.925798",
+                           "implementation":  "MOEA/D-DE combines Tchebycheff decomposition, neighborhood mating/update and differential-evolution reproduction.",
+                           "page":  "docs/pages/algorithms/moead-de-li-zhang-2009.md",
+                           "problem":  "\\operatorname{ParetoMin}_{x\\in\\mathcal X\\subseteq\\mathbb R^D}F(x)=\\bigl(f_1(x),\\ldots,f_M(x)\\bigr)",
+                           "update":  "\\begin{aligned}y\u0026=x_i+F(x_{r_1}-x_{r_2}),\\\\g^{te}(y\\mid\\lambda^j,z^\\star)\u0026=\\max_m\\lambda_m^j|f_m(y)-z_m^\\star|,\\qquad x_j\\leftarrow y\\ \\text{if }g^{te}(y)\\le g^{te}(x_j).\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, finite objective values, at least two objectives and one explicit OptimizationSense per objective.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; the implementation preserves the named stochastic multiobjective mechanism.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

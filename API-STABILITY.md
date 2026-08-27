@@ -1,5 +1,9 @@
 # API stability
 
+## v0.111.0
+
+- Added stable direct-factory algorithm ID `moead-de-li-zhang-2009` (`MoeadDeOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.110.0
 
 - Added stable direct-factory algorithm ID `multiobjective-cma-es-igel-hansen-roth-2007` (`MoCmaEsOptimizer`). Existing public IDs and signatures are unchanged.
