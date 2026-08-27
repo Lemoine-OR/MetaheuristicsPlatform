@@ -1,5 +1,9 @@
 # API stability
 
+## v0.97.0
+
+- Added stable direct-factory algorithm ID `paes-knowles-corne-2000` (`PaesOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.96.0
 
 - Added stable direct-factory algorithm ID `nsga-ii-deb-pratap-agarwal-meyarivan-2002` (`NsgaIIOptimizer`). Existing public IDs and signatures are unchanged.

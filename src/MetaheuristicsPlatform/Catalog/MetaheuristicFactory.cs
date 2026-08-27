@@ -234,6 +234,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.NsgaII,
             "MetaheuristicsPlatform.Algorithms.Multiobjective.NsgaII.NsgaIIOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.Paes,
+            "MetaheuristicsPlatform.Algorithms.Multiobjective.Paes.PaesOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

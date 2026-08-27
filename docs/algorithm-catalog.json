@@ -1929,6 +1929,28 @@
                            "assumptions":  "Finite bounded continuous decision box, at least two finite objectives, and one explicit OptimizationSense per objective.",
                            "convergence":  "No universal finite-time convergence guarantee is asserted; the implementation preserves the named multiobjective mechanism.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "paes-knowles-corne-2000",
+                           "name":  "Pareto Archived Evolution Strategy",
+                           "class":  "PaesOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "single-solution",
+                           "family":  "Evolutionary methods",
+                           "time":  "O(AM) archive dominance per mutation step",
+                           "space":  "O(A(D+M))",
+                           "applicability":  "Bounded continuous native multiobjective Pareto optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Paes/PaesOptimizer.cs",
+                           "publication":  "Knowles \u0026 Corne (2000), Approximating the Nondominated Front Using the Pareto Archived Evolution Strategy, Evolutionary Computation 8(2), 149-172",
+                           "doi":  "10.1162/106365600568167",
+                           "implementation":  "Canonical (1+1)-PAES local mutation with Pareto archive and adaptive objective-space grid.",
+                           "page":  "docs/pages/algorithms/paes-knowles-corne-2000.md",
+                           "problem":  "\\operatorname{ParetoMin}_{x\\in\\mathcal X\\subseteq\\mathbb R^D}F(x)=\\bigl(f_1(x),\\ldots,f_M(x)\\bigr)",
+                           "update":  "\\begin{aligned}y\u0026=\\operatorname{Mutate}(x),\\\\x_{t+1}\u0026=\\operatorname{ParetoGridSelect}(x_t,y,A_t),\\qquad A_{t+1}=\\operatorname{Archive}(A_t\\cup\\{y\\}).\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, at least two finite objectives, and one explicit OptimizationSense per objective.",
+                           "convergence":  "No universal finite-time convergence guarantee is asserted; the implementation preserves the named multiobjective mechanism.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

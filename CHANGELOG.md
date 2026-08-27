@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.97.0] - 2026-08-27
+
+- Add canonical Pareto Archived Evolution Strategy scientific identity (Knowles & Corne, 2000; DOI 10.1162/106365600568167).
+- Stable ID: `paes-knowles-corne-2000`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.96.0] - 2026-08-27
 
 - Add canonical NSGA-II scientific identity (Deb, Pratap, Agarwal & Meyarivan, 2002; DOI 10.1109/4235.996017).

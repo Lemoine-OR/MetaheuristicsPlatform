@@ -1194,7 +1194,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Multiobjective/NsgaII/NsgaIIOptimizer.cs",
             "Deb, Pratap, Agarwal & Meyarivan (2002), A Fast and Elitist Multiobjective Genetic Algorithm: NSGA-II, IEEE Transactions on Evolutionary Computation 6(2), 182-197",
             "10.1109/4235.996017",
-            "Fast nondominated sorting, elitist parent-offspring survival and crowding-distance diversity.")
+            "Fast nondominated sorting, elitist parent-offspring survival and crowding-distance diversity."),
+        new(
+            "paes-knowles-corne-2000",
+            "Pareto Archived Evolution Strategy",
+            "PaesOptimizer",
+            "evolutionary-methods",
+            "Evolutionary methods",
+            "O(AM) archive dominance per mutation step",
+            "O(A(D+M))",
+            "Bounded continuous native multiobjective Pareto optimization",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Paes/PaesOptimizer.cs",
+            "Knowles & Corne (2000), Approximating the Nondominated Front Using the Pareto Archived Evolution Strategy, Evolutionary Computation 8(2), 149-172",
+            "10.1162/106365600568167",
+            "Canonical (1+1)-PAES local mutation with Pareto archive and adaptive objective-space grid.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

@@ -184,4 +184,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string NsgaII =
         "nsga-ii-deb-pratap-agarwal-meyarivan-2002";
+
+    public const string Paes =
+        "paes-knowles-corne-2000";
 }
