@@ -282,6 +282,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.Nsga,
             "MetaheuristicsPlatform.Algorithms.Multiobjective.Nsga.NsgaOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.Grea,
+            "MetaheuristicsPlatform.Algorithms.Multiobjective.Grea.GreaOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

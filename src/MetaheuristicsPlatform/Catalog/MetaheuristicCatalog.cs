@@ -1362,7 +1362,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Nsga/NsgaOptimizer.cs",
             "Srinivas & Deb (1994), Multiobjective Optimization Using Nondominated Sorting in Genetic Algorithms, Evolutionary Computation 2(3), 221-248",
             "10.1162/evco.1994.2.3.221",
-            "Original non-elitist NSGA using nondominated ranks and objective-space fitness sharing within fronts.")
+            "Original non-elitist NSGA using nondominated ranks and objective-space fitness sharing within fronts."),
+        new(
+            "grid-based-evolutionary-algorithm-yang-li-liu-zheng-2013",
+            "Grid-Based Evolutionary Algorithm",
+            "GreaOptimizer",
+            "evolutionary-methods",
+            "Evolutionary methods",
+            "O(MN^2) Pareto sorting plus O(MN) grid assignment per generation",
+            "O(N(D+M))",
+            "Bounded continuous native multiobjective Pareto optimization",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Grea/GreaOptimizer.cs",
+            "Yang, Li, Liu & Zheng (2013), A Grid-Based Evolutionary Algorithm for Many-Objective Optimization, IEEE Transactions on Evolutionary Computation 17(5), 721-736",
+            "10.1109/TEVC.2012.2227145",
+            "GrEA uses normalized objective-space grids to couple convergence pressure with grid density and distribution.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

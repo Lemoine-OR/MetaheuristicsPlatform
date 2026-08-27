@@ -220,4 +220,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string Nsga =
         "nondominated-sorting-genetic-algorithm-srinivas-deb-1994";
+
+    public const string Grea =
+        "grid-based-evolutionary-algorithm-yang-li-liu-zheng-2013";
 }

@@ -1,5 +1,9 @@
 # API stability
 
+## v0.109.0
+
+- Added stable direct-factory algorithm ID `grid-based-evolutionary-algorithm-yang-li-liu-zheng-2013` (`GreaOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.108.0
 
 - Added stable direct-factory algorithm ID `nondominated-sorting-genetic-algorithm-srinivas-deb-1994` (`NsgaOptimizer`). Existing public IDs and signatures are unchanged.

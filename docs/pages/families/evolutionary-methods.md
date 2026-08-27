@@ -32,6 +32,7 @@ Population methods based on structured variation or combination, selection, refe
 - **[Strength Pareto Evolutionary Algorithm](../algorithms/strength-pareto-evolutionary-algorithm-zitzler-thiele-1999.md)** - `strength-pareto-evolutionary-algorithm-zitzler-thiele-1999` - Original SPEA with an external nondominated set, strength fitness assignment and archive clustering/truncation.
 - **[SPEA2](../algorithms/spea2-zitzler-laumanns-thiele-2001.md)** - `spea2-zitzler-laumanns-thiele-2001` - SPEA2 with fine-grained raw strength fitness, kth-neighbor density estimation and nearest-neighbor archive truncation.
 - **[Nondominated Sorting Genetic Algorithm](../algorithms/nondominated-sorting-genetic-algorithm-srinivas-deb-1994.md)** - `nondominated-sorting-genetic-algorithm-srinivas-deb-1994` - Original non-elitist NSGA using nondominated ranks and objective-space fitness sharing within fronts.
+- **[Grid-Based Evolutionary Algorithm](../algorithms/grid-based-evolutionary-algorithm-yang-li-liu-zheng-2013.md)** - `grid-based-evolutionary-algorithm-yang-li-liu-zheng-2013` - GrEA uses normalized objective-space grids to couple convergence pressure with grid density and distribution.
 
 ## Navigation
 

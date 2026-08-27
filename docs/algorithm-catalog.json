@@ -2193,6 +2193,28 @@
                            "assumptions":  "Finite bounded continuous decision box, finite objective values, at least two objectives and one explicit OptimizationSense per objective.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; the implementation preserves the named stochastic multiobjective mechanism.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "grid-based-evolutionary-algorithm-yang-li-liu-zheng-2013",
+                           "name":  "Grid-Based Evolutionary Algorithm",
+                           "class":  "GreaOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "O(MN^2) Pareto sorting plus O(MN) grid assignment per generation",
+                           "space":  "O(N(D+M))",
+                           "applicability":  "Bounded continuous native multiobjective Pareto optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Grea/GreaOptimizer.cs",
+                           "publication":  "Yang, Li, Liu \u0026 Zheng (2013), A Grid-Based Evolutionary Algorithm for Many-Objective Optimization, IEEE Transactions on Evolutionary Computation 17(5), 721-736",
+                           "doi":  "10.1109/TEVC.2012.2227145",
+                           "implementation":  "GrEA uses normalized objective-space grids to couple convergence pressure with grid density and distribution.",
+                           "page":  "docs/pages/algorithms/grid-based-evolutionary-algorithm-yang-li-liu-zheng-2013.md",
+                           "problem":  "\\operatorname{ParetoMin}_{x\\in\\mathcal X\\subseteq\\mathbb R^D}F(x)=\\bigl(f_1(x),\\ldots,f_M(x)\\bigr)",
+                           "update":  "\\begin{aligned}g_{i,m}\u0026=\\left\\lfloor G\\,\\frac{f_m(x_i)-f_m^{\\min}}{f_m^{\\max}-f_m^{\\min}}\\right\\rfloor,\\\\F_i\u0026=\\operatorname{gridRank}(g_i)+\\operatorname{gridDensity}(g_i)+\\varepsilon\\,\\operatorname{conv}(x_i).\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, finite objective values, at least two objectives and one explicit OptimizationSense per objective.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; the implementation preserves the named stochastic multiobjective mechanism.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

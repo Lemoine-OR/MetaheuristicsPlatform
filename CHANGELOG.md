@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.109.0] - 2026-08-27
+
+- Add canonical Grid-Based Evolutionary Algorithm scientific identity (Yang, Li, Liu & Zheng, 2013; DOI 10.1109/TEVC.2012.2227145).
+- Stable ID: `grid-based-evolutionary-algorithm-yang-li-liu-zheng-2013`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.108.0] - 2026-08-27
 
 - Add canonical Nondominated Sorting Genetic Algorithm scientific identity (Srinivas & Deb, 1994; DOI 10.1162/evco.1994.2.3.221).
