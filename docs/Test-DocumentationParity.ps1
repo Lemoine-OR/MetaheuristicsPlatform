@@ -20,6 +20,8 @@ $catalog =
 $algorithms = @($catalog.algorithms)
 $families = @($catalog.families)
 
+& (Join-Path $Root "docs\Test-BareBonesParticleSwarm.ps1") -Root $Root
+
 & (Join-Path $Root "docs\Test-ConstrictionParticleSwarm.ps1") -Root $Root
 
 & (Join-Path $Root "docs\Test-InertiaWeightParticleSwarm.ps1") -Root $Root
@@ -64,7 +66,7 @@ $families = @($catalog.families)
 
 & (Join-Path $Root "docs\Test-BiogeographyBasedOptimization.ps1") -Root $Root
 
-if ($algorithms.Count -lt 79) {
+if ($algorithms.Count -lt 80) {
     throw "Documentation parity: expected at least 57 currently public algorithms."
 }
 
@@ -273,6 +275,8 @@ $requiredRepoFiles = @(
     "docs\pages\algorithms\inertia-weight-particle-swarm-shi-eberhart-1998.md",
     "docs\Test-ConstrictionParticleSwarm.ps1",
     "docs\pages\algorithms\constriction-particle-swarm-clerc-kennedy-2002.md",
+    "docs\Test-BareBonesParticleSwarm.ps1",
+    "docs\pages\algorithms\bare-bones-particle-swarm-kennedy-2003.md",
     "docs\Test-DoxygenMarkupSafety.ps1",
     "docs\Test-ContinuousCrossEntropy.ps1",
     "docs\Test-LargeNeighborhoodSearch.ps1",
@@ -420,8 +424,8 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.89.0") {
-    throw "Documentation parity: version.json must be 0.89.0 for this release."
+if ([string]$version.version -ne "0.90.0") {
+    throw "Documentation parity: version.json must be 0.90.0 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root

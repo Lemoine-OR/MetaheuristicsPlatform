@@ -1775,6 +1775,28 @@
                            "assumptions":  "Finite bounded continuous box; phi greater than four for the published constriction expression.",
                            "convergence":  "The release implements the published constriction dynamics and exposes the stability-related phi/kappa controls; it does not claim objective-independent global convergence.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "bare-bones-particle-swarm-kennedy-2003",
+                           "name":  "Bare Bones Particle Swarm",
+                           "class":  "BareBonesParticleSwarmOptimizer",
+                           "category":  "swarm-intelligence",
+                           "kind":  "population",
+                           "family":  "Swarm intelligence",
+                           "time":  "O(ND) Gaussian sampling plus N objective evaluations per iteration",
+                           "space":  "O(ND)",
+                           "applicability":  "Bounded continuous optimization using velocity-free Gaussian sampling around personal/global best positions",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/PSO/BareBones/BareBonesParticleSwarmOptimizer.cs",
+                           "publication":  "Kennedy (2003), Bare bones particle swarms, Proceedings of the 2003 IEEE Swarm Intelligence Symposium, 80-87",
+                           "doi":  "10.1109/SIS.2003.1202251",
+                           "implementation":  "Velocity is eliminated. Each coordinate is sampled from a Gaussian centered at (p_i+g)/2 with standard deviation |p_i-g|, followed by bounded repair and personal-best update.",
+                           "page":  "docs/pages/algorithms/bare-bones-particle-swarm-kennedy-2003.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}x_{i,d}^{t+1}\u0026\\sim\\mathcal N\\!\\left(\\frac{p_{i,d}^t+g_d^t}{2},\\,|p_{i,d}^t-g_d^t|\\right).\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous box and finite objective values; global-best bare-bones form.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; the release is the velocity-free Gaussian mechanism of Kennedy (2003).",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

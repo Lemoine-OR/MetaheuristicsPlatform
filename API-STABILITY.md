@@ -1,5 +1,9 @@
 # API stability
 
+## v0.90.0
+
+- Added stable direct-factory algorithm ID `bare-bones-particle-swarm-kennedy-2003` (`BareBonesParticleSwarmOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.89.0
 
 - Added stable direct-factory algorithm ID `constriction-particle-swarm-clerc-kennedy-2002` (`ConstrictionParticleSwarmOptimizer`). Existing public IDs and signatures are unchanged.

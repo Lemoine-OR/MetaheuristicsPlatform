@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.90.0] - 2026-08-27
+
+- Add canonical Bare Bones Particle Swarm scientific identity (Kennedy (2003), Bare bones particle swarms, Proceedings of the 2003 IEEE Swarm Intelligence Symposium, 80-87; DOI 10.1109/SIS.2003.1202251).
+- Stable ID: `bare-bones-particle-swarm-kennedy-2003`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.89.0] - 2026-08-27
 
 - Add canonical Clerc-Kennedy Constriction Particle Swarm scientific identity (Clerc & Kennedy (2002), The particle swarm - explosion, stability, and convergence in a multidimensional complex space, IEEE Transactions on Evolutionary Computation 6(1), 58-73; DOI 10.1109/4235.985692).

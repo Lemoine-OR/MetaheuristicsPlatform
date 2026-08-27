@@ -27,6 +27,7 @@ probabilistic recruitment or shared pheromone memory.
 - **[Symbiotic Organisms Search](../algorithms/symbiotic-organisms-search-cheng-prayogo-2014.md)** — `symbiotic-organisms-search-cheng-prayogo-2014` — Bounded continuous derivative-free optimization with parameter-free mutualism, commensalism and parasitism phases.
 - @subpage inertia_weight_particle_swarm_shi_eberhart_1998 — Inertia Weight Particle Swarm Optimization (`inertia-weight-particle-swarm-shi-eberhart-1998`).
 - @subpage constriction_particle_swarm_clerc_kennedy_2002 — Clerc-Kennedy Constriction Particle Swarm (`constriction-particle-swarm-clerc-kennedy-2002`).
+- @subpage bare_bones_particle_swarm_kennedy_2003 — Bare Bones Particle Swarm (`bare-bones-particle-swarm-kennedy-2003`).
 
 ## Navigation
 

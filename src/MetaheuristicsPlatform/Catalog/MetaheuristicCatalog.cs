@@ -1096,7 +1096,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/PSO/Scientific/ConstrictionParticleSwarmOptimizer.cs",
             "Clerc & Kennedy (2002), The particle swarm - explosion, stability, and convergence in a multidimensional complex space, IEEE Transactions on Evolutionary Computation 6(1), 58-73",
             "10.1109/4235.985692",
-            "Canonical constriction-factor velocity dynamics with chi computed from phi=c1+c2 and kappa; default c1=c2=2.05, phi=4.10, kappa=1.")
+            "Canonical constriction-factor velocity dynamics with chi computed from phi=c1+c2 and kappa; default c1=c2=2.05, phi=4.10, kappa=1."),
+        new(
+            "bare-bones-particle-swarm-kennedy-2003",
+            "Bare Bones Particle Swarm",
+            "BareBonesParticleSwarmOptimizer",
+            "swarm-intelligence",
+            "Swarm intelligence",
+            "O(ND) Gaussian sampling plus N objective evaluations per iteration",
+            "O(ND)",
+            "Bounded continuous optimization using velocity-free Gaussian sampling around personal/global best positions",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/PSO/BareBones/BareBonesParticleSwarmOptimizer.cs",
+            "Kennedy (2003), Bare bones particle swarms, Proceedings of the 2003 IEEE Swarm Intelligence Symposium, 80-87",
+            "10.1109/SIS.2003.1202251",
+            "Velocity is eliminated. Each coordinate is sampled from a Gaussian centered at (p_i+g)/2 with standard deviation |p_i-g|, followed by bounded repair and personal-best update.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

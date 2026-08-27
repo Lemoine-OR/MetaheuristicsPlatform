@@ -205,3 +205,4 @@ v0.67.0 adaptive-harmony-search-differential-evolution-zhao-li-hao-liu-yuan-2020
 
 - Shi & Eberhart (1998), A Modified Particle Swarm Optimizer, Proceedings of the 1998 IEEE International Conference on Evolutionary Computation, 69-73. DOI `10.1109/ICEC.1998.699146`. Public identity `inertia-weight-particle-swarm-shi-eberhart-1998` since v0.88.0.
 - Clerc & Kennedy (2002), The particle swarm - explosion, stability, and convergence in a multidimensional complex space, IEEE Transactions on Evolutionary Computation 6(1), 58-73. DOI `10.1109/4235.985692`. Public identity `constriction-particle-swarm-clerc-kennedy-2002` since v0.89.0.
+- Kennedy (2003), Bare bones particle swarms, Proceedings of the 2003 IEEE Swarm Intelligence Symposium, 80-87. DOI `10.1109/SIS.2003.1202251`. Public identity `bare-bones-particle-swarm-kennedy-2003` since v0.90.0.
