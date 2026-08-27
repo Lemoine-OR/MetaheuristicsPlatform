@@ -25,6 +25,7 @@ probabilistic recruitment or shared pheromone memory.
 - **[Gravitational Search Algorithm](../algorithms/gravitational-search-algorithm-rashedi-nezamabadi-pour-saryazdi-2009.md)** — `gravitational-search-algorithm-rashedi-nezamabadi-pour-saryazdi-2009` — Bounded continuous derivative-free optimization using fitness-dependent masses, decaying gravitational attraction and velocity updates.
 - **[Crow Search Algorithm](../algorithms/crow-search-algorithm-askarzadeh-2016.md)** — `crow-search-algorithm-askarzadeh-2016` — Bounded continuous derivative-free optimization using personal hiding-place memory, crow following, flight length and awareness-controlled random relocation.
 - **[Symbiotic Organisms Search](../algorithms/symbiotic-organisms-search-cheng-prayogo-2014.md)** — `symbiotic-organisms-search-cheng-prayogo-2014` — Bounded continuous derivative-free optimization with parameter-free mutualism, commensalism and parasitism phases.
+- @subpage inertia_weight_particle_swarm_shi_eberhart_1998 — Inertia Weight Particle Swarm Optimization (`inertia-weight-particle-swarm-shi-eberhart-1998`).
 
 ## Navigation
 

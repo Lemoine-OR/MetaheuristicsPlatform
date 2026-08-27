@@ -1731,6 +1731,28 @@
                            "assumptions":  "Finite bounded continuous box, finite objective values and at least four particles. The equilibrium pool contains the four best-so-far candidates and their arithmetic mean; V=1 is the canonical internal constant.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; the exponential turnover term and generation probability balance exploration and exploitation around the equilibrium pool.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "inertia-weight-particle-swarm-shi-eberhart-1998",
+                           "name":  "Inertia Weight Particle Swarm Optimization",
+                           "class":  "InertiaWeightParticleSwarmOptimizer",
+                           "category":  "swarm-intelligence",
+                           "kind":  "population",
+                           "family":  "Swarm intelligence",
+                           "time":  "O(ND) movement plus N objective evaluations per iteration",
+                           "space":  "O(ND)",
+                           "applicability":  "Bounded continuous derivative-free optimization using the 1998 constant inertia-weight PSO mechanism",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/PSO/Scientific/InertiaWeightParticleSwarmOptimizer.cs",
+                           "publication":  "Shi \u0026 Eberhart (1998), A Modified Particle Swarm Optimizer, Proceedings of the 1998 IEEE International Conference on Evolutionary Computation, 69-73",
+                           "doi":  "10.1109/ICEC.1998.699146",
+                           "implementation":  "Canonical synchronous global-best PSO with explicit constant inertia weight w; it does not silently substitute the later linearly decreasing inertia schedule.",
+                           "page":  "docs/pages/algorithms/inertia-weight-particle-swarm-shi-eberhart-1998.md",
+                           "problem":  "\\min_{x\\in\\mathcal X\\subseteq\\mathbb R^D} f(x)",
+                           "update":  "\\begin{aligned}v_{i,d}^{t+1}\u0026=w v_{i,d}^{t}+c_1r_1(p_{i,d}^{t}-x_{i,d}^{t})+c_2r_2(g_d^t-x_{i,d}^t),\\\\x_{i,d}^{t+1}\u0026=x_{i,d}^t+v_{i,d}^{t+1}.\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous box, finite objective values, synchronous personal/global best updates and a constant inertia weight.",
+                           "convergence":  "No universal global convergence guarantee is asserted; the release preserves the inertia-weight mechanism introduced by Shi and Eberhart without mixing later schedules.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

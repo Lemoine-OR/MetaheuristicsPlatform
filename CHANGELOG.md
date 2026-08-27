@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.88.0] - 2026-08-27
+
+- Add canonical Inertia Weight Particle Swarm Optimization scientific identity (Shi & Eberhart (1998), A Modified Particle Swarm Optimizer, Proceedings of the 1998 IEEE International Conference on Evolutionary Computation, 69-73; DOI 10.1109/ICEC.1998.699146).
+- Stable ID: `inertia-weight-particle-swarm-shi-eberhart-1998`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 All notable changes to MetaheuristicsPlatform will be documented in this file.
 
 ## [0.87.0] - 2026-08-26

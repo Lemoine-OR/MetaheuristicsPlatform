@@ -1,5 +1,9 @@
 # API stability
 
+## v0.88.0
+
+- Added stable direct-factory algorithm ID `inertia-weight-particle-swarm-shi-eberhart-1998` (`InertiaWeightParticleSwarmOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.87.0
 
 - Added stable direct-factory algorithm ID `equilibrium-optimizer-faramarzi-heidarinejad-stephens-mirjalili-2020` (`EquilibriumOptimizer`). Existing public IDs and signatures are unchanged.

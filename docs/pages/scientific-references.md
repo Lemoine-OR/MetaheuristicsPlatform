@@ -200,3 +200,7 @@ v0.66.0 novel-self-adaptive-harmony-search-luo-2013: K. Luo (2013), A Novel Self
 
 
 v0.67.0 adaptive-harmony-search-differential-evolution-zhao-li-hao-liu-yuan-2020: X. Zhao, R. Li, J. Hao, Z. Liu, J. Yuan (2020), A New Differential Mutation Based Adaptive Harmony Search Algorithm for Global Optimization, Applied Sciences 10(8), 2916. DOI `10.3390/app10082916`.
+
+## PSO scientific variants v0.88.0-v0.95.0
+
+- Shi & Eberhart (1998), A Modified Particle Swarm Optimizer, Proceedings of the 1998 IEEE International Conference on Evolutionary Computation, 69-73. DOI `10.1109/ICEC.1998.699146`. Public identity `inertia-weight-particle-swarm-shi-eberhart-1998` since v0.88.0.

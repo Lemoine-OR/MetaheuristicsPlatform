@@ -157,4 +157,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string EquilibriumOptimizer =
         "equilibrium-optimizer-faramarzi-heidarinejad-stephens-mirjalili-2020";
+
+    public const string InertiaWeightParticleSwarm =
+        "inertia-weight-particle-swarm-shi-eberhart-1998";
 }

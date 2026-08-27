@@ -1068,7 +1068,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/EquilibriumOptimizer/EquilibriumOptimizer.cs",
             "Faramarzi, Heidarinejad, Stephens and Mirjalili (2020), Equilibrium optimizer: A novel optimization algorithm, Knowledge-Based Systems 191, 105190",
             "10.1016/j.knosys.2019.105190",
-            "Canonical EO with four best equilibrium candidates plus their average, a1=2, a2=1, GP=0.5 defaults, exponential F term, generation probability and source-code memory saving.")
+            "Canonical EO with four best equilibrium candidates plus their average, a1=2, a2=1, GP=0.5 defaults, exponential F term, generation probability and source-code memory saving."),
+        new(
+            "inertia-weight-particle-swarm-shi-eberhart-1998",
+            "Inertia Weight Particle Swarm Optimization",
+            "InertiaWeightParticleSwarmOptimizer",
+            "swarm-intelligence",
+            "Swarm intelligence",
+            "O(ND) movement plus N objective evaluations per iteration",
+            "O(ND)",
+            "Bounded continuous derivative-free optimization using the 1998 constant inertia-weight PSO mechanism",
+            false,
+            "src/MetaheuristicsPlatform/Algorithms/PSO/Scientific/InertiaWeightParticleSwarmOptimizer.cs",
+            "Shi & Eberhart (1998), A Modified Particle Swarm Optimizer, Proceedings of the 1998 IEEE International Conference on Evolutionary Computation, 69-73",
+            "10.1109/ICEC.1998.699146",
+            "Canonical synchronous global-best PSO with explicit constant inertia weight w; it does not silently substitute the later linearly decreasing inertia schedule.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>
