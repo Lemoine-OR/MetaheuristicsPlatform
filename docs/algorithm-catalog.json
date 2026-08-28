@@ -3056,6 +3056,28 @@
                            "assumptions":  "Finite objective values, non-empty unique low-level heuristic pool and clonable state.",
                            "convergence":  "No universal finite-time global-convergence guarantee is asserted.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "bandit-aos-fialho-da-costa-schoenauer-sebag-2010",
+                           "name":  "Bandit-Based Adaptive Operator Selection",
+                           "class":  "BanditAosHyperHeuristicOptimizer",
+                           "category":  "hyper-heuristics",
+                           "kind":  "single-solution",
+                           "family":  "Hyper-heuristics and algorithm selection",
+                           "time":  "One or more low-level heuristic applications/evaluations per high-level iteration plus selector overhead",
+                           "space":  "O(H + M) high-level policy state plus domain solution state",
+                           "applicability":  "Reusable cross-domain heuristic selection and adaptive operator control",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/HyperHeuristics/BanditAosHyperHeuristic/BanditAosHyperHeuristicOptimizer.cs",
+                           "publication":  "Fialho, Da Costa, Schoenauer \u0026 Sebag (2010), Analyzing bandit-based adaptive operator selection mechanisms",
+                           "doi":  "10.1007/s10472-010-9213-y",
+                           "implementation":  "Each low-level heuristic is a bandit arm whose empirical mean reward is balanced against an upper-confidence exploration bonus.",
+                           "page":  "docs/pages/algorithms/bandit-aos-fialho-da-costa-schoenauer-sebag-2010.md",
+                           "problem":  "\\operatorname{HH}(\\mathcal H,\\phi,x_0)",
+                           "update":  "\\begin{aligned}\\bar r_i(t+1)\u0026=\\bar r_i(t)+\\frac{r_t-\\bar r_i(t)}{n_i(t+1)},\\\\h_t\u0026=\\arg\\max_i\\left(\\bar r_i(t)+c\\sqrt{\\frac{\\log t}{n_i(t)}}\\right).\\end{aligned}",
+                           "assumptions":  "Finite objective values, non-empty unique low-level heuristic pool and clonable state.",
+                           "convergence":  "No universal finite-time global-convergence guarantee is asserted.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

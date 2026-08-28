@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.148.0] - 2026-08-28
+
+- Add canonical Bandit-Based Adaptive Operator Selection scientific identity (Fialho, Da Costa, Schoenauer & Sebag, 2010; DOI 10.1007/s10472-010-9213-y).
+- Stable ID: `bandit-aos-fialho-da-costa-schoenauer-sebag-2010`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.147.0] - 2026-08-28
 
 - Add canonical Extreme-Value Dynamic Multi-Armed Bandit AOS scientific identity (Fialho, Da Costa, Schoenauer & Sebag, 2009; DOI 10.1007/978-3-642-11169-3_13).

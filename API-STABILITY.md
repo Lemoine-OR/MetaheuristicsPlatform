@@ -1,5 +1,9 @@
 # API stability
 
+## v0.148.0
+
+- Added stable direct-factory algorithm ID `bandit-aos-fialho-da-costa-schoenauer-sebag-2010` (`BanditAosHyperHeuristicOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.147.0
 
 - Added stable direct-factory algorithm ID `extreme-value-dmab-fialho-da-costa-schoenauer-sebag-2009` (`ExtremeValueMabHyperHeuristicOptimizer`). Existing public IDs and signatures are unchanged.

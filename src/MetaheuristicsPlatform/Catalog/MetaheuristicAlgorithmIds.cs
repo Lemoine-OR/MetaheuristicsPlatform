@@ -337,4 +337,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string ExtremeValueMabHyperHeuristic =
         "extreme-value-dmab-fialho-da-costa-schoenauer-sebag-2009";
+
+    public const string BanditAosHyperHeuristic =
+        "bandit-aos-fialho-da-costa-schoenauer-sebag-2010";
 }
