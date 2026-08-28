@@ -1,5 +1,9 @@
 # API stability
 
+## v0.121.0
+
+- Added stable direct-factory algorithm ID `nonstationary-penalty-ga-joines-houck-1994` (`JoinesHouckPenaltyGaOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.120.0
 
 - Added stable direct-factory algorithm ID `dominance-based-tournament-ga-coello-mezura-2002` (`DominanceTournamentGaOptimizer`). Existing public IDs and signatures are unchanged.

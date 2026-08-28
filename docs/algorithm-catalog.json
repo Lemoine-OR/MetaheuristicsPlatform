@@ -2457,6 +2457,28 @@
                            "assumptions":  "Finite bounded continuous decision box, finite objective/constraint values and explicit equality tolerance.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; the named stochastic mechanism is preserved.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "nonstationary-penalty-ga-joines-houck-1994",
+                           "name":  "Joines-Houck Nonstationary Penalty Genetic Algorithm",
+                           "class":  "JoinesHouckPenaltyGaOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "Population-based constrained search plus objective/constraint evaluations",
+                           "space":  "O(N(D+C))",
+                           "applicability":  "Bounded continuous constrained optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Constraints/JoinesHouckPenaltyGa/JoinesHouckPenaltyGaOptimizer.cs",
+                           "publication":  "Joines \u0026 Houck (1994), On the use of non-stationary penalty functions to solve nonlinear constrained optimization problems with GA\u0027s",
+                           "doi":  "10.1109/ICEC.1994.349995",
+                           "implementation":  "Generation-dependent nonstationary penalty pressure follows the Joines-Houck mechanism with explicit C, alpha and beta controls.",
+                           "page":  "docs/pages/algorithms/nonstationary-penalty-ga-joines-houck-1994.md",
+                           "problem":  "\\\\min/\\\\max\\\\;f(x)\\\\;\\\\text{s.t.}\\\\;g_i(x)\\\\le0,\\\\;h_j(x)=0,\\\\;x\\\\in\\\\mathcal X",
+                           "update":  "\\begin{aligned}F(x,t)\u0026=\\widetilde f(x)+(Ct)^{\\alpha}\\sum_j v_j(x)^{\\beta}.\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, finite objective/constraint values and explicit equality tolerance.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; the named stochastic mechanism is preserved.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

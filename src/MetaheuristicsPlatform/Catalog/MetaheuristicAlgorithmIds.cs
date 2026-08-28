@@ -256,4 +256,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string DominanceTournamentGa =
         "dominance-based-tournament-ga-coello-mezura-2002";
+
+    public const string JoinesHouckPenaltyGa =
+        "nonstationary-penalty-ga-joines-houck-1994";
 }

@@ -330,6 +330,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.DominanceTournamentGa,
             "MetaheuristicsPlatform.Algorithms.Constraints.DominanceTournamentGa.DominanceTournamentGaOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.JoinesHouckPenaltyGa,
+            "MetaheuristicsPlatform.Algorithms.Constraints.JoinesHouckPenaltyGa.JoinesHouckPenaltyGaOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

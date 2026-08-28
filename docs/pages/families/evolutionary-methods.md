@@ -44,6 +44,7 @@ Population methods based on structured variation or combination, selection, refe
 - **[Deb Feasibility Rules Genetic Algorithm](../algorithms/deb-feasibility-rules-ga-2000.md)** - `deb-feasibility-rules-ga-2000` - Feasibility-first Deb rules compare feasible candidates by objective, prefer feasible over infeasible, and compare infeasible candidates by aggregate constraint violation.
 - **[Stochastic Ranking Evolution Strategy](../algorithms/stochastic-ranking-es-runarsson-yao-2000.md)** - `stochastic-ranking-es-runarsson-yao-2000` - Stochastic ranking repeatedly orders an evolution-strategy population using objective comparison with probability P_f and violation comparison otherwise, avoiding a fixed penalty coefficient.
 - **[Dominance-Based Tournament Genetic Algorithm](../algorithms/dominance-based-tournament-ga-coello-mezura-2002.md)** - `dominance-based-tournament-ga-coello-mezura-2002` - Penalty-free tournament selection compares objective quality and aggregate constraint violation through a dominance relation, preserving nondominated tradeoffs among infeasible candidates.
+- **[Joines-Houck Nonstationary Penalty Genetic Algorithm](../algorithms/nonstationary-penalty-ga-joines-houck-1994.md)** - `nonstationary-penalty-ga-joines-houck-1994` - Generation-dependent nonstationary penalty pressure follows the Joines-Houck mechanism with explicit C, alpha and beta controls.
 
 ## Navigation
 

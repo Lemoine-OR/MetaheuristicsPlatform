@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.121.0] - 2026-08-28
+
+- Add canonical Joines-Houck Nonstationary Penalty Genetic Algorithm scientific identity (Joines & Houck, 1994; DOI 10.1109/ICEC.1994.349995).
+- Stable ID: `nonstationary-penalty-ga-joines-houck-1994`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.120.0] - 2026-08-28
 
 - Add canonical Dominance-Based Tournament Genetic Algorithm scientific identity (Coello Coello & Mezura-Montes, 2002; DOI 10.1016/S1474-0346(02)00011-3).

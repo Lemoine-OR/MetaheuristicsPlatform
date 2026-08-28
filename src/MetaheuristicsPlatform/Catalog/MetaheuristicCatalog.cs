@@ -1530,7 +1530,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Constraints/DominanceTournamentGa/DominanceTournamentGaOptimizer.cs",
     "Coello Coello & Mezura-Montes (2002), Constraint-handling in genetic algorithms through the use of dominance-based tournament selection",
     "10.1016/S1474-0346(02)00011-3",
-    "Penalty-free tournament selection compares objective quality and aggregate constraint violation through a dominance relation, preserving nondominated tradeoffs among infeasible candidates.")
+    "Penalty-free tournament selection compares objective quality and aggregate constraint violation through a dominance relation, preserving nondominated tradeoffs among infeasible candidates."),
+new(
+    "nonstationary-penalty-ga-joines-houck-1994",
+    "Joines-Houck Nonstationary Penalty Genetic Algorithm",
+    "JoinesHouckPenaltyGaOptimizer",
+    "evolutionary-methods",
+    "Evolutionary methods",
+    "Population-based constrained search plus objective/constraint evaluations",
+    "O(N(D+C))",
+    "Bounded continuous constrained optimization",
+    false,
+    "src/MetaheuristicsPlatform/Algorithms/Constraints/JoinesHouckPenaltyGa/JoinesHouckPenaltyGaOptimizer.cs",
+    "Joines & Houck (1994), On the use of non-stationary penalty functions to solve nonlinear constrained optimization problems with GA's",
+    "10.1109/ICEC.1994.349995",
+    "Generation-dependent nonstationary penalty pressure follows the Joines-Houck mechanism with explicit C, alpha and beta controls.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>
