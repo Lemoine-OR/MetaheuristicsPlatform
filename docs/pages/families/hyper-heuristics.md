@@ -20,6 +20,7 @@ policies, bandit/credit mechanisms and move-acceptance combinations.
 
 ## Methods
 - **[Tabu-Search Hyper-Heuristic](../algorithms/tabu-search-hyperheuristic-burke-kendall-soubeiga-2003.md)** - `tabu-search-hyperheuristic-burke-kendall-soubeiga-2003` - Heuristic-level reinforcement scores compete under a tabu list; non-improving low-level heuristics become temporarily unavailable.
+- **[Case-Based Heuristic Selection](../algorithms/case-based-heuristic-selection-burke-petrovic-qu-2006.md)** - `case-based-heuristic-selection-burke-petrovic-qu-2006` - A feature description of the current search state retrieves the most similar stored case and reuses its associated low-level heuristic.
 
 ## Navigation
 

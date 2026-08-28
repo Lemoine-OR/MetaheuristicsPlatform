@@ -1838,7 +1838,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/HyperHeuristics/TabuSearchHyperHeuristic/TabuSearchHyperHeuristicOptimizer.cs",
     "Burke, Kendall & Soubeiga (2003), A Tabu-Search Hyperheuristic for Timetabling and Rostering",
     "10.1023/B:HEUR.0000012446.94732.B6",
-    "Heuristic-level reinforcement scores compete under a tabu list; non-improving low-level heuristics become temporarily unavailable.")
+    "Heuristic-level reinforcement scores compete under a tabu list; non-improving low-level heuristics become temporarily unavailable."),
+new(
+    "case-based-heuristic-selection-burke-petrovic-qu-2006",
+    "Case-Based Heuristic Selection",
+    "CaseBasedHyperHeuristicOptimizer",
+    "hyper-heuristics",
+    "Hyper-heuristics and algorithm selection",
+    "One or more low-level heuristic applications/evaluations per high-level iteration plus selector overhead",
+    "O(H + M) high-level policy state plus domain solution state",
+    "Reusable cross-domain heuristic selection and adaptive operator control",
+    true,
+    "src/MetaheuristicsPlatform/Algorithms/HyperHeuristics/CaseBasedHyperHeuristic/CaseBasedHyperHeuristicOptimizer.cs",
+    "Burke, Petrovic & Qu (2006), Case Based Heuristic Selection for Timetabling Problems",
+    "10.1007/s10951-006-6775-y",
+    "A feature description of the current search state retrieves the most similar stored case and reuses its associated low-level heuristic.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

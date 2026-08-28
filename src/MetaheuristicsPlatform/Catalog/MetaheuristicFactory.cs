@@ -418,6 +418,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.TabuSearchHyperHeuristic,
             "MetaheuristicsPlatform.Algorithms.HyperHeuristics.TabuSearchHyperHeuristic.TabuSearchHyperHeuristicOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.CaseBasedHyperHeuristic,
+            "MetaheuristicsPlatform.Algorithms.HyperHeuristics.CaseBasedHyperHeuristic.CaseBasedHyperHeuristicOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

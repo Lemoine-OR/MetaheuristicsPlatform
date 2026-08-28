@@ -322,4 +322,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string TabuSearchHyperHeuristic =
         "tabu-search-hyperheuristic-burke-kendall-soubeiga-2003";
+
+    public const string CaseBasedHyperHeuristic =
+        "case-based-heuristic-selection-burke-petrovic-qu-2006";
 }

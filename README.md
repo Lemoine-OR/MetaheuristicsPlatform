@@ -45,7 +45,7 @@ catalog IDs and literature-backed documentation.
 </tr>
 </table>
 
-<p align="center"><strong>132 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>133 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -245,6 +245,7 @@ Each card also exposes the stable catalog/factory ID.
 
 <table>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/tabu-search-hyperheuristic-burke-kendall-soubeiga-2003.html"><strong>Tabu-Search Hyper-Heuristic</strong></a><br><sub>Heuristic-level reinforcement scores compete under a tabu list; non-improving low-level heuristics become temporarily unavailable.</sub><br><code>tabu-search-hyperheuristic-burke-kendall-soubeiga-2003</code><br><sub><code>TabuSearchHyperHeuristicOptimizer</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/case-based-heuristic-selection-burke-petrovic-qu-2006.html"><strong>Case-Based Heuristic Selection</strong></a><br><sub>A feature description of the current search state retrieves the most similar stored case and reuses its associated low-level heuristic.</sub><br><code>case-based-heuristic-selection-burke-petrovic-qu-2006</code><br><sub><code>CaseBasedHyperHeuristicOptimizer</code></sub></td></tr>
 </table>
 
 ## Scientific components

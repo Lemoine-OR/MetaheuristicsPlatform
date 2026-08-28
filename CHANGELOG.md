@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.143.0] - 2026-08-28
+
+- Add canonical Case-Based Heuristic Selection scientific identity (Burke, Petrovic & Qu, 2006; DOI 10.1007/s10951-006-6775-y).
+- Stable ID: `case-based-heuristic-selection-burke-petrovic-qu-2006`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.142.0] - 2026-08-28
 
 - Add canonical Tabu-Search Hyper-Heuristic scientific identity (Burke, Kendall & Soubeiga, 2003; DOI 10.1023/B:HEUR.0000012446.94732.B6).
