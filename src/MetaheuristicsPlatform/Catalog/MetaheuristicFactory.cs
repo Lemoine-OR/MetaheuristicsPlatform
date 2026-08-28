@@ -370,6 +370,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.ClearingGa,
             "MetaheuristicsPlatform.Algorithms.Multimodal.ClearingGa.ClearingGaOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.SpeciesConservingGa,
+            "MetaheuristicsPlatform.Algorithms.Multimodal.SpeciesConservingGa.SpeciesConservingGaOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

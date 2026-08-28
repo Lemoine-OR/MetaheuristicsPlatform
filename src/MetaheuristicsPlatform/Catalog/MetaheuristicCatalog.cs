@@ -1670,7 +1670,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Multimodal/ClearingGa/ClearingGaOptimizer.cs",
     "Petrowski (1996), A clearing procedure as a niching method for genetic algorithms",
     "10.1109/ICEC.1996.542703",
-    "Clearing assigns the available niche resources only to the best individuals within each niche, with an explicit niche radius and niche capacity.")
+    "Clearing assigns the available niche resources only to the best individuals within each niche, with an explicit niche radius and niche capacity."),
+new(
+    "species-conserving-ga-li-balazs-parks-clarkson-2002",
+    "Species Conserving Genetic Algorithm",
+    "SpeciesConservingGaOptimizer",
+    "evolutionary-methods",
+    "Evolutionary methods",
+    "Population-based multimodal search with decision-space niching",
+    "O(ND) to O(N^2D) plus objective evaluations depending on niching mechanism",
+    "Bounded continuous multimodal optimization",
+    false,
+    "src/MetaheuristicsPlatform/Algorithms/Multimodal/SpeciesConservingGa/SpeciesConservingGaOptimizer.cs",
+    "Li, Balazs, Parks & Clarkson (2002), A species conserving genetic algorithm for multimodal function optimization",
+    "10.1162/106365602760234081",
+    "The population is partitioned into species around dominating species seeds; the seeds are explicitly conserved into the next generation.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

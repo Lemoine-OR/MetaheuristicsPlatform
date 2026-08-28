@@ -2677,6 +2677,28 @@
                            "assumptions":  "Finite bounded continuous decision box, finite objective values, explicit optimization sense and Euclidean decision-space distances.",
                            "convergence":  "No universal finite-time guarantee of finding every optimum is asserted; the named stochastic niching mechanism is preserved.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "species-conserving-ga-li-balazs-parks-clarkson-2002",
+                           "name":  "Species Conserving Genetic Algorithm",
+                           "class":  "SpeciesConservingGaOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "Population-based multimodal search with decision-space niching",
+                           "space":  "O(ND) plus niche/archive state",
+                           "applicability":  "Bounded continuous multimodal optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multimodal/SpeciesConservingGa/SpeciesConservingGaOptimizer.cs",
+                           "publication":  "Li, Balazs, Parks \u0026 Clarkson (2002), A species conserving genetic algorithm for multimodal function optimization",
+                           "doi":  "10.1162/106365602760234081",
+                           "implementation":  "The population is partitioned into species around dominating species seeds; the seeds are explicitly conserved into the next generation.",
+                           "page":  "docs/pages/algorithms/species-conserving-ga-li-balazs-parks-clarkson-2002.md",
+                           "problem":  "\\operatorname{FindMany}_{x\\in\\mathcal X} f(x)",
+                           "update":  "\\begin{aligned}S_t\u0026=\\mathrm{SpeciesSeeds}(P_t,\\sigma_s),\\\\P_{t+1}\u0026=\\mathrm{Conserve}(S_t)\\cup\\mathrm{Offspring}(P_t).\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, finite objective values, explicit optimization sense and Euclidean decision-space distances.",
+                           "convergence":  "No universal finite-time guarantee of finding every optimum is asserted; the named stochastic niching mechanism is preserved.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

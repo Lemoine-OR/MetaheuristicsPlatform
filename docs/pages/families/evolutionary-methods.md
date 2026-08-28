@@ -54,6 +54,7 @@ Population methods based on structured variation or combination, selection, refe
 - **[Ensemble of Constraint Handling Techniques](../algorithms/ensemble-constraint-handling-mallipeddi-suganthan-2010.md)** - `ensemble-constraint-handling-mallipeddi-suganthan-2010` - Multiple subpopulations apply distinct constraint-handling techniques and periodically exchange elites, preserving the ensemble principle.
 - **[Infeasibility Driven Evolutionary Algorithm](../algorithms/infeasibility-driven-ea-ray-singh-isaacs-smith-2009.md)** - `infeasibility-driven-ea-ray-singh-isaacs-smith-2009` - Environmental selection deliberately retains a controlled infeasible fraction so search pressure can follow active constraint boundaries.
 - **[Clearing Genetic Algorithm](../algorithms/clearing-ga-petrowski-1996.md)** - `clearing-ga-petrowski-1996` - Clearing assigns the available niche resources only to the best individuals within each niche, with an explicit niche radius and niche capacity.
+- **[Species Conserving Genetic Algorithm](../algorithms/species-conserving-ga-li-balazs-parks-clarkson-2002.md)** - `species-conserving-ga-li-balazs-parks-clarkson-2002` - The population is partitioned into species around dominating species seeds; the seeds are explicitly conserved into the next generation.
 
 ## Navigation
 

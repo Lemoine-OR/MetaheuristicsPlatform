@@ -1,5 +1,9 @@
 # API stability
 
+## v0.131.0
+
+- Added stable direct-factory algorithm ID `species-conserving-ga-li-balazs-parks-clarkson-2002` (`SpeciesConservingGaOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.130.0
 
 - Added stable direct-factory algorithm ID `clearing-ga-petrowski-1996` (`ClearingGaOptimizer`). Existing public IDs and signatures are unchanged.

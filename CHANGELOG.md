@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.131.0] - 2026-08-28
+
+- Add canonical Species Conserving Genetic Algorithm scientific identity (Li, Balazs, Parks & Clarkson, 2002; DOI 10.1162/106365602760234081).
+- Stable ID: `species-conserving-ga-li-balazs-parks-clarkson-2002`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.130.0] - 2026-08-28
 
 - Add canonical Clearing Genetic Algorithm scientific identity (Petrowski, 1996; DOI 10.1109/ICEC.1996.542703).

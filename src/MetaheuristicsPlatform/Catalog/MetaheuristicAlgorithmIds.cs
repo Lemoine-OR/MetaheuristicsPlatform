@@ -286,4 +286,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string ClearingGa =
         "clearing-ga-petrowski-1996";
+
+    public const string SpeciesConservingGa =
+        "species-conserving-ga-li-balazs-parks-clarkson-2002";
 }
