@@ -1,5 +1,9 @@
 # API stability
 
+## v0.151.0
+
+- Added stable direct-factory algorithm ID `ils-hyperheuristic-soria-alcaraz-ochoa-sotelo-burke-2017` (`IlsBanditHyperHeuristicOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.150.0
 
 - Added stable direct-factory algorithm ID `reinforcement-learning-great-deluge-hh-ozcan-misir-ochoa-burke-2010` (`ReinforcementLearningGreatDelugeHyperHeuristicOptimizer`). Existing public IDs and signatures are unchanged.

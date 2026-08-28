@@ -1950,7 +1950,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/HyperHeuristics/ReinforcementLearningGreatDelugeHyperHeuristic/ReinforcementLearningGreatDelugeHyperHeuristicOptimizer.cs",
     "Ozcan, Misir, Ochoa & Burke (2010), A Reinforcement Learning - Great-Deluge Hyper-Heuristic for Examination Timetabling",
     "10.4018/jamc.2010102603",
-    "Reinforcement-learning utility values adapt low-level heuristic selection online, while Great Deluge supplies move acceptance through a decreasing water level.")
+    "Reinforcement-learning utility values adapt low-level heuristic selection online, while Great Deluge supplies move acceptance through a decreasing water level."),
+new(
+    "ils-hyperheuristic-soria-alcaraz-ochoa-sotelo-burke-2017",
+    "ILS Hyper-Heuristic with Effective Heuristic Subset",
+    "IlsBanditHyperHeuristicOptimizer",
+    "hyper-heuristics",
+    "Hyper-heuristics and algorithm selection",
+    "One or more low-level heuristic applications/evaluations per high-level iteration plus selector overhead",
+    "O(H + M) high-level policy state plus domain solution state",
+    "Reusable cross-domain heuristic selection and adaptive operator control",
+    true,
+    "src/MetaheuristicsPlatform/Algorithms/HyperHeuristics/IlsBanditHyperHeuristic/IlsBanditHyperHeuristicOptimizer.cs",
+    "Soria-Alcaraz, Ochoa, Sotelo-Figeroa & Burke (2017), A methodology for determining an effective subset of heuristics in selection hyper-heuristics",
+    "10.1016/j.ejor.2017.01.042",
+    "A bandit model identifies an effective low-level heuristic subset; the search iterates within that subset and periodically perturbs/refines it.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

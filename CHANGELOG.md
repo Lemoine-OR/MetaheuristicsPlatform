@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.151.0] - 2026-08-28
+
+- Add canonical ILS Hyper-Heuristic with Effective Heuristic Subset scientific identity (Soria-Alcaraz, Ochoa, Sotelo-Figeroa & Burke, 2017; DOI 10.1016/j.ejor.2017.01.042).
+- Stable ID: `ils-hyperheuristic-soria-alcaraz-ochoa-sotelo-burke-2017`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.150.0] - 2026-08-28
 
 - Add canonical Reinforcement Learning Great-Deluge Hyper-Heuristic scientific identity (Ozcan, Misir, Ochoa & Burke, 2010; DOI 10.4018/jamc.2010102603).

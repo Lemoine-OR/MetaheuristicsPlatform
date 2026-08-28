@@ -20,6 +20,8 @@ $catalog =
 $algorithms = @($catalog.algorithms)
 $families = @($catalog.families)
 
+& (Join-Path $Root "docs\Test-IlsBanditHyperHeuristic.ps1") -Root $Root
+
 & (Join-Path $Root "docs\Test-ReinforcementLearningGreatDelugeHyperHeuristic.ps1") -Root $Root
 
 & (Join-Path $Root "docs\Test-FrrmabHyperHeuristic.ps1") -Root $Root
@@ -186,7 +188,7 @@ $families = @($catalog.families)
 
 & (Join-Path $Root "docs\Test-BiogeographyBasedOptimization.ps1") -Root $Root
 
-if ($algorithms.Count -lt 140) {
+if ($algorithms.Count -lt 141) {
     throw "Documentation parity: expected at least 57 currently public algorithms."
 }
 
@@ -517,6 +519,8 @@ $requiredRepoFiles = @(
     "docs\pages\algorithms\frrmab-li-fialho-kwong-zhang-2014.md",
     "docs\Test-ReinforcementLearningGreatDelugeHyperHeuristic.ps1",
     "docs\pages\algorithms\reinforcement-learning-great-deluge-hh-ozcan-misir-ochoa-burke-2010.md",
+    "docs\Test-IlsBanditHyperHeuristic.ps1",
+    "docs\pages\algorithms\ils-hyperheuristic-soria-alcaraz-ochoa-sotelo-burke-2017.md",
     "docs\Test-DoxygenMarkupSafety.ps1",
     "docs\Test-ContinuousCrossEntropy.ps1",
     "docs\Test-LargeNeighborhoodSearch.ps1",
@@ -664,8 +668,8 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.150.0") {
-    throw "Documentation parity: version.json must be 0.150.0 for this release."
+if ([string]$version.version -ne "0.151.0") {
+    throw "Documentation parity: version.json must be 0.151.0 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root

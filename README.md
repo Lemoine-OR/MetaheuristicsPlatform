@@ -45,7 +45,7 @@ catalog IDs and literature-backed documentation.
 </tr>
 </table>
 
-<p align="center"><strong>140 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>141 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -253,6 +253,7 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/bandit-aos-fialho-da-costa-schoenauer-sebag-2010.html"><strong>Bandit-Based Adaptive Operator Selection</strong></a><br><sub>Each low-level heuristic is a bandit arm whose empirical mean reward is balanced against an upper-confidence exploration bonus.</sub><br><code>bandit-aos-fialho-da-costa-schoenauer-sebag-2010</code><br><sub><code>BanditAosHyperHeuristicOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/frrmab-li-fialho-kwong-zhang-2014.html"><strong>Fitness-Rate-Rank Multi-Armed Bandit</strong></a><br><sub>A sliding window accumulates fitness-improvement rewards, ranks operators by recent fitness-rate credit and combines rank credit with bandit exploration.</sub><br><code>frrmab-li-fialho-kwong-zhang-2014</code><br><sub><code>FrrmabHyperHeuristicOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/reinforcement-learning-great-deluge-hh-ozcan-misir-ochoa-burke-2010.html"><strong>Reinforcement Learning Great-Deluge Hyper-Heuristic</strong></a><br><sub>Reinforcement-learning utility values adapt low-level heuristic selection online, while Great Deluge supplies move acceptance through a decreasing water level.</sub><br><code>reinforcement-learning-great-deluge-hh-ozcan-misir-ochoa-burke-2010</code><br><sub><code>ReinforcementLearningGreatDelugeHyperHeuristicOptimizer</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/ils-hyperheuristic-soria-alcaraz-ochoa-sotelo-burke-2017.html"><strong>ILS Hyper-Heuristic with Effective Heuristic Subset</strong></a><br><sub>A bandit model identifies an effective low-level heuristic subset; the search iterates within that subset and periodically perturbs/refines it.</sub><br><code>ils-hyperheuristic-soria-alcaraz-ochoa-sotelo-burke-2017</code><br><sub><code>IlsBanditHyperHeuristicOptimizer</code></sub></td></tr>
 </table>
 
 ## Scientific components
