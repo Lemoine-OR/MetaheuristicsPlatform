@@ -20,6 +20,8 @@ $catalog =
 $algorithms = @($catalog.algorithms)
 $families = @($catalog.families)
 
+& (Join-Path $Root "docs\Test-ExtremeValueMabHyperHeuristic.ps1") -Root $Root
+
 & (Join-Path $Root "docs\Test-DynamicMabHyperHeuristic.ps1") -Root $Root
 
 & (Join-Path $Root "docs\Test-LateAcceptanceHyperHeuristic.ps1") -Root $Root
@@ -178,7 +180,7 @@ $families = @($catalog.families)
 
 & (Join-Path $Root "docs\Test-BiogeographyBasedOptimization.ps1") -Root $Root
 
-if ($algorithms.Count -lt 136) {
+if ($algorithms.Count -lt 137) {
     throw "Documentation parity: expected at least 57 currently public algorithms."
 }
 
@@ -501,6 +503,8 @@ $requiredRepoFiles = @(
     "docs\pages\algorithms\late-acceptance-hyperheuristic-ozcan-bykov-birben-burke-2009.md",
     "docs\Test-DynamicMabHyperHeuristic.ps1",
     "docs\pages\algorithms\dynamic-mab-aos-da-costa-fialho-schoenauer-sebag-2008.md",
+    "docs\Test-ExtremeValueMabHyperHeuristic.ps1",
+    "docs\pages\algorithms\extreme-value-dmab-fialho-da-costa-schoenauer-sebag-2009.md",
     "docs\Test-DoxygenMarkupSafety.ps1",
     "docs\Test-ContinuousCrossEntropy.ps1",
     "docs\Test-LargeNeighborhoodSearch.ps1",
@@ -648,8 +652,8 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.146.0") {
-    throw "Documentation parity: version.json must be 0.146.0 for this release."
+if ([string]$version.version -ne "0.147.0") {
+    throw "Documentation parity: version.json must be 0.147.0 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root

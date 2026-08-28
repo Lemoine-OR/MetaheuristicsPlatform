@@ -1894,7 +1894,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/HyperHeuristics/DynamicMabHyperHeuristic/DynamicMabHyperHeuristicOptimizer.cs",
     "Da Costa, Fialho, Schoenauer & Sebag (2008), Adaptive Operator Selection with Dynamic Multi-Armed Bandits",
     "10.1145/1389095.1389272",
-    "Low-level heuristics are arms of a dynamic multi-armed bandit; UCB selection is coupled to a change statistic that can reset stale credit.")
+    "Low-level heuristics are arms of a dynamic multi-armed bandit; UCB selection is coupled to a change statistic that can reset stale credit."),
+new(
+    "extreme-value-dmab-fialho-da-costa-schoenauer-sebag-2009",
+    "Extreme-Value Dynamic Multi-Armed Bandit AOS",
+    "ExtremeValueMabHyperHeuristicOptimizer",
+    "hyper-heuristics",
+    "Hyper-heuristics and algorithm selection",
+    "One or more low-level heuristic applications/evaluations per high-level iteration plus selector overhead",
+    "O(H + M) high-level policy state plus domain solution state",
+    "Reusable cross-domain heuristic selection and adaptive operator control",
+    true,
+    "src/MetaheuristicsPlatform/Algorithms/HyperHeuristics/ExtremeValueMabHyperHeuristic/ExtremeValueMabHyperHeuristicOptimizer.cs",
+    "Fialho, Da Costa, Schoenauer & Sebag (2009), Dynamic Multi-Armed Bandits and Extreme Value-Based Rewards for Adaptive Operator Selection in Evolutionary Algorithms",
+    "10.1007/978-3-642-11169-3_13",
+    "Operator credit is the extreme recent improvement in a bounded reward window and is combined with upper-confidence exploration.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.147.0] - 2026-08-28
+
+- Add canonical Extreme-Value Dynamic Multi-Armed Bandit AOS scientific identity (Fialho, Da Costa, Schoenauer & Sebag, 2009; DOI 10.1007/978-3-642-11169-3_13).
+- Stable ID: `extreme-value-dmab-fialho-da-costa-schoenauer-sebag-2009`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.146.0] - 2026-08-28
 
 - Add canonical Dynamic Multi-Armed Bandit Adaptive Operator Selection scientific identity (Da Costa, Fialho, Schoenauer & Sebag, 2008; DOI 10.1145/1389095.1389272).

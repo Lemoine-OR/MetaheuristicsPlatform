@@ -24,6 +24,7 @@ policies, bandit/credit mechanisms and move-acceptance combinations.
 - **[Graph-Based Hyper-Heuristic](../algorithms/graph-based-hyperheuristic-burke-mccollum-meisels-petrovic-qu-2007.md)** - `graph-based-hyperheuristic-burke-mccollum-meisels-petrovic-qu-2007` - A tabu search explores permutations of domain-provided low-level heuristics; each sequence is evaluated as a high-level heuristic ordering.
 - **[Late Acceptance Hyper-Heuristic](../algorithms/late-acceptance-hyperheuristic-ozcan-bykov-birben-burke-2009.md)** - `late-acceptance-hyperheuristic-ozcan-bykov-birben-burke-2009` - A low-level heuristic generates a candidate and late acceptance compares it with both the current objective and a historical objective.
 - **[Dynamic Multi-Armed Bandit Adaptive Operator Selection](../algorithms/dynamic-mab-aos-da-costa-fialho-schoenauer-sebag-2008.md)** - `dynamic-mab-aos-da-costa-fialho-schoenauer-sebag-2008` - Low-level heuristics are arms of a dynamic multi-armed bandit; UCB selection is coupled to a change statistic that can reset stale credit.
+- **[Extreme-Value Dynamic Multi-Armed Bandit AOS](../algorithms/extreme-value-dmab-fialho-da-costa-schoenauer-sebag-2009.md)** - `extreme-value-dmab-fialho-da-costa-schoenauer-sebag-2009` - Operator credit is the extreme recent improvement in a bounded reward window and is combined with upper-confidence exploration.
 
 ## Navigation
 

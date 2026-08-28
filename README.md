@@ -45,7 +45,7 @@ catalog IDs and literature-backed documentation.
 </tr>
 </table>
 
-<p align="center"><strong>136 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>137 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -249,6 +249,7 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/graph-based-hyperheuristic-burke-mccollum-meisels-petrovic-qu-2007.html"><strong>Graph-Based Hyper-Heuristic</strong></a><br><sub>A tabu search explores permutations of domain-provided low-level heuristics; each sequence is evaluated as a high-level heuristic ordering.</sub><br><code>graph-based-hyperheuristic-burke-mccollum-meisels-petrovic-qu-2007</code><br><sub><code>GraphBasedHyperHeuristicOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/late-acceptance-hyperheuristic-ozcan-bykov-birben-burke-2009.html"><strong>Late Acceptance Hyper-Heuristic</strong></a><br><sub>A low-level heuristic generates a candidate and late acceptance compares it with both the current objective and a historical objective.</sub><br><code>late-acceptance-hyperheuristic-ozcan-bykov-birben-burke-2009</code><br><sub><code>LateAcceptanceHyperHeuristicOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/dynamic-mab-aos-da-costa-fialho-schoenauer-sebag-2008.html"><strong>Dynamic Multi-Armed Bandit Adaptive Operator Selection</strong></a><br><sub>Low-level heuristics are arms of a dynamic multi-armed bandit; UCB selection is coupled to a change statistic that can reset stale credit.</sub><br><code>dynamic-mab-aos-da-costa-fialho-schoenauer-sebag-2008</code><br><sub><code>DynamicMabHyperHeuristicOptimizer</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/extreme-value-dmab-fialho-da-costa-schoenauer-sebag-2009.html"><strong>Extreme-Value Dynamic Multi-Armed Bandit AOS</strong></a><br><sub>Operator credit is the extreme recent improvement in a bounded reward window and is combined with upper-confidence exploration.</sub><br><code>extreme-value-dmab-fialho-da-costa-schoenauer-sebag-2009</code><br><sub><code>ExtremeValueMabHyperHeuristicOptimizer</code></sub></td></tr>
 </table>
 
 ## Scientific components

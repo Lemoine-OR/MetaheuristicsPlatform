@@ -1,5 +1,9 @@
 # API stability
 
+## v0.147.0
+
+- Added stable direct-factory algorithm ID `extreme-value-dmab-fialho-da-costa-schoenauer-sebag-2009` (`ExtremeValueMabHyperHeuristicOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.146.0
 
 - Added stable direct-factory algorithm ID `dynamic-mab-aos-da-costa-fialho-schoenauer-sebag-2008` (`DynamicMabHyperHeuristicOptimizer`). Existing public IDs and signatures are unchanged.
