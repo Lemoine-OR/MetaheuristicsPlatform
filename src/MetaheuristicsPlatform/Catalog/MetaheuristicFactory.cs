@@ -326,6 +326,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.StochasticRankingEs,
             "MetaheuristicsPlatform.Algorithms.Constraints.StochasticRankingEs.StochasticRankingEsOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.DominanceTournamentGa,
+            "MetaheuristicsPlatform.Algorithms.Constraints.DominanceTournamentGa.DominanceTournamentGaOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.120.0] - 2026-08-28
+
+- Add canonical Dominance-Based Tournament Genetic Algorithm scientific identity (Coello Coello & Mezura-Montes, 2002; DOI 10.1016/S1474-0346(02)00011-3).
+- Stable ID: `dominance-based-tournament-ga-coello-mezura-2002`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.119.0] - 2026-08-28
 
 - Add canonical Stochastic Ranking Evolution Strategy scientific identity (Runarsson & Yao, 2000; DOI 10.1109/4235.873238).

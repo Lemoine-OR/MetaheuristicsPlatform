@@ -1516,7 +1516,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Constraints/StochasticRankingEs/StochasticRankingEsOptimizer.cs",
     "Runarsson & Yao (2000), Stochastic ranking for constrained evolutionary optimization",
     "10.1109/4235.873238",
-    "Stochastic ranking repeatedly orders an evolution-strategy population using objective comparison with probability P_f and violation comparison otherwise, avoiding a fixed penalty coefficient.")
+    "Stochastic ranking repeatedly orders an evolution-strategy population using objective comparison with probability P_f and violation comparison otherwise, avoiding a fixed penalty coefficient."),
+new(
+    "dominance-based-tournament-ga-coello-mezura-2002",
+    "Dominance-Based Tournament Genetic Algorithm",
+    "DominanceTournamentGaOptimizer",
+    "evolutionary-methods",
+    "Evolutionary methods",
+    "Population-based constrained search plus objective/constraint evaluations",
+    "O(N(D+C))",
+    "Bounded continuous constrained optimization",
+    false,
+    "src/MetaheuristicsPlatform/Algorithms/Constraints/DominanceTournamentGa/DominanceTournamentGaOptimizer.cs",
+    "Coello Coello & Mezura-Montes (2002), Constraint-handling in genetic algorithms through the use of dominance-based tournament selection",
+    "10.1016/S1474-0346(02)00011-3",
+    "Penalty-free tournament selection compares objective quality and aggregate constraint violation through a dominance relation, preserving nondominated tradeoffs among infeasible candidates.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

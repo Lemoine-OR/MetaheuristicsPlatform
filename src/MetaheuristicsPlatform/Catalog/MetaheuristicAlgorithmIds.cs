@@ -253,4 +253,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string StochasticRankingEs =
         "stochastic-ranking-es-runarsson-yao-2000";
+
+    public const string DominanceTournamentGa =
+        "dominance-based-tournament-ga-coello-mezura-2002";
 }
