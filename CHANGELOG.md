@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.133.0] - 2026-08-28
+
+- Add canonical Species-Based Particle Swarm Optimization scientific identity (Li, 2004; DOI 10.1007/978-3-540-24854-5_10).
+- Stable ID: `species-based-pso-li-2004`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.132.0] - 2026-08-28
 
 - Add canonical Crowding Differential Evolution scientific identity (Thomsen, 2004; DOI 10.1109/CEC.2004.1331058).

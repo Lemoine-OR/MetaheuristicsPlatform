@@ -378,6 +378,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.CrowdingDe,
             "MetaheuristicsPlatform.Algorithms.Multimodal.CrowdingDe.CrowdingDeOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.SpeciesBasedPso,
+            "MetaheuristicsPlatform.Algorithms.Multimodal.SpeciesBasedPso.SpeciesBasedPsoOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

@@ -35,7 +35,7 @@ catalog IDs and literature-backed documentation.
 
 <table>
 <tr>
-<td width="20%"><strong>28 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Firefly, Ant System, ACS and MAX-MIN Ant System.</sub></td>
+<td width="20%"><strong>29 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Firefly, Ant System, ACS and MAX-MIN Ant System.</sub></td>
 <td width="20%"><strong>49 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
 <td width="20%"><strong>21 trajectory methods</strong><br><sub>Acceptance methods, Tabu, local search, ILS, Iterated Greedy, LNS, ALNS, VNS and GLS.</sub></td>
 <td width="20%"><strong>3 constructive methods</strong><br><sub>GRASP, Reactive GRASP and GRASP with Path Relinking.</sub></td>
@@ -45,7 +45,7 @@ catalog IDs and literature-backed documentation.
 </tr>
 </table>
 
-<p align="center"><strong>122 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>123 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -131,6 +131,7 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/species-based-particle-swarm-parrott-li-2006.html"><strong>Species-Based Particle Swarm Optimization</strong></a><br><sub>Static SPSO mode: personal bests are sorted by dominance, species seeds are formed with a distance radius, and each particle uses its current species seed as neighborhood best.</sub><br><code>species-based-particle-swarm-parrott-li-2006</code><br><sub><code>SpeciesBasedParticleSwarmOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/mopso-coello-pulido-lechuga-2004.html"><strong>Multiobjective Particle Swarm Optimizer</strong></a><br><sub>Pareto-repository PSO with adaptive hypercubes, inverse-density leader selection, pbest dominance and decaying mutation.</sub><br><code>mopso-coello-pulido-lechuga-2004</code><br><sub><code>MopsoOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/smpso-nebro-durillo-garcia-nieto-coello-luna-alba-2009.html"><strong>SMPSO</strong></a><br><sub>Speed-constrained MOPSO with constriction, componentwise velocity bounds, polynomial turbulence and external archive.</sub><br><code>smpso-nebro-durillo-garcia-nieto-coello-luna-alba-2009</code><br><sub><code>SmpsoOptimizer</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/species-based-pso-li-2004.html"><strong>Species-Based Particle Swarm Optimization</strong></a><br><sub>Particles are grouped into species around dominant seeds; each particle uses its species seed as its neighborhood best.</sub><br><code>species-based-pso-li-2004</code><br><sub><code>SpeciesBasedPsoOptimizer</code></sub></td></tr>
 </table>
 
 ### Evolutionary methods

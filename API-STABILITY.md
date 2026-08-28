@@ -1,5 +1,9 @@
 # API stability
 
+## v0.133.0
+
+- Added stable direct-factory algorithm ID `species-based-pso-li-2004` (`SpeciesBasedPsoOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.132.0
 
 - Added stable direct-factory algorithm ID `crowding-de-thomsen-2004` (`CrowdingDeOptimizer`). Existing public IDs and signatures are unchanged.

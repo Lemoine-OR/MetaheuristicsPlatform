@@ -292,4 +292,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string CrowdingDe =
         "crowding-de-thomsen-2004";
+
+    public const string SpeciesBasedPso =
+        "species-based-pso-li-2004";
 }

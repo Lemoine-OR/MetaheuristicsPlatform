@@ -1698,7 +1698,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Multimodal/CrowdingDe/CrowdingDeOptimizer.cs",
     "Thomsen (2004), Multimodal optimization using crowding-based differential evolution",
     "10.1109/CEC.2004.1331058",
-    "Differential-evolution offspring compete with the closest population member rather than only with their target, allowing several niches to be maintained.")
+    "Differential-evolution offspring compete with the closest population member rather than only with their target, allowing several niches to be maintained."),
+new(
+    "species-based-pso-li-2004",
+    "Species-Based Particle Swarm Optimization",
+    "SpeciesBasedPsoOptimizer",
+    "swarm-intelligence",
+    "Swarm intelligence",
+    "Population-based multimodal search with decision-space niching",
+    "O(ND) to O(N^2D) plus objective evaluations depending on niching mechanism",
+    "Bounded continuous multimodal optimization",
+    false,
+    "src/MetaheuristicsPlatform/Algorithms/Multimodal/SpeciesBasedPso/SpeciesBasedPsoOptimizer.cs",
+    "Li (2004), Adaptively choosing neighbourhood bests using species in a particle swarm optimizer for multimodal function optimization",
+    "10.1007/978-3-540-24854-5_10",
+    "Particles are grouped into species around dominant seeds; each particle uses its species seed as its neighborhood best.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>
