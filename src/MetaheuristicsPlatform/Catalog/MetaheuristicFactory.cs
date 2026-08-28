@@ -322,6 +322,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.DebConstraintGa,
             "MetaheuristicsPlatform.Algorithms.Constraints.DebConstraintGa.DebConstraintGaOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.StochasticRankingEs,
+            "MetaheuristicsPlatform.Algorithms.Constraints.StochasticRankingEs.StochasticRankingEsOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

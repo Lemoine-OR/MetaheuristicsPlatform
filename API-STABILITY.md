@@ -1,5 +1,9 @@
 # API stability
 
+## v0.119.0
+
+- Added stable direct-factory algorithm ID `stochastic-ranking-es-runarsson-yao-2000` (`StochasticRankingEsOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.118.0
 
 - Added stable direct-factory algorithm ID `deb-feasibility-rules-ga-2000` (`DebConstraintGaOptimizer`). Existing public IDs and signatures are unchanged.

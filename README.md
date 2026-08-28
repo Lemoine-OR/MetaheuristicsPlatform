@@ -36,7 +36,7 @@ catalog IDs and literature-backed documentation.
 <table>
 <tr>
 <td width="20%"><strong>28 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Firefly, Ant System, ACS and MAX-MIN Ant System.</sub></td>
-<td width="20%"><strong>35 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
+<td width="20%"><strong>36 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
 <td width="20%"><strong>21 trajectory methods</strong><br><sub>Acceptance methods, Tabu, local search, ILS, Iterated Greedy, LNS, ALNS, VNS and GLS.</sub></td>
 <td width="20%"><strong>3 constructive methods</strong><br><sub>GRASP, Reactive GRASP and GRASP with Path Relinking.</sub></td>
 <td width="20%"><strong>1 hybrid / memetic method</strong><br><sub>Moscato-style memetic evolution with local improvement.</sub></td>
@@ -45,7 +45,7 @@ catalog IDs and literature-backed documentation.
 </tr>
 </table>
 
-<p align="center"><strong>108 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>109 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -165,6 +165,7 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/knea-zhang-tian-jin-2015.html"><strong>Knee Point Driven Evolutionary Algorithm</strong></a><br><sub>KnEA detects locally preferred knee candidates and combines knee pressure with nondominated environmental selection.</sub><br><code>knea-zhang-tian-jin-2015</code><br><sub><code>KneaOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/vaea-xiang-zhou-li-chen-2017.html"><strong>Vector Angle-Based Evolutionary Algorithm</strong></a><br><sub>VaEA uses normalized objective-vector angles for diversity and convergence-aware elimination without predefined reference vectors.</sub><br><code>vaea-xiang-zhou-li-chen-2017</code><br><sub><code>VaeaOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/deb-feasibility-rules-ga-2000.html"><strong>Deb Feasibility Rules Genetic Algorithm</strong></a><br><sub>Feasibility-first Deb rules compare feasible candidates by objective, prefer feasible over infeasible, and compare infeasible candidates by aggregate constraint violation.</sub><br><code>deb-feasibility-rules-ga-2000</code><br><sub><code>DebConstraintGaOptimizer</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/stochastic-ranking-es-runarsson-yao-2000.html"><strong>Stochastic Ranking Evolution Strategy</strong></a><br><sub>Stochastic ranking repeatedly orders an evolution-strategy population using objective comparison with probability P_f and violation comparison otherwise, avoiding a fixed penalty coefficient.</sub><br><code>stochastic-ranking-es-runarsson-yao-2000</code><br><sub><code>StochasticRankingEsOptimizer</code></sub></td></tr>
 </table>
 
 ### Trajectory-based methods

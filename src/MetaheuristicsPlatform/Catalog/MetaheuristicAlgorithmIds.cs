@@ -250,4 +250,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string DebConstraintGa =
         "deb-feasibility-rules-ga-2000";
+
+    public const string StochasticRankingEs =
+        "stochastic-ranking-es-runarsson-yao-2000";
 }

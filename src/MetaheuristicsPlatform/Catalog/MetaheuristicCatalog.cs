@@ -1502,7 +1502,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Constraints/DebConstraintGa/DebConstraintGaOptimizer.cs",
     "Deb (2000), An efficient constraint handling method for genetic algorithms",
     "10.1016/S0045-7825(99)00389-8",
-    "Feasibility-first Deb rules compare feasible candidates by objective, prefer feasible over infeasible, and compare infeasible candidates by aggregate constraint violation.")
+    "Feasibility-first Deb rules compare feasible candidates by objective, prefer feasible over infeasible, and compare infeasible candidates by aggregate constraint violation."),
+new(
+    "stochastic-ranking-es-runarsson-yao-2000",
+    "Stochastic Ranking Evolution Strategy",
+    "StochasticRankingEsOptimizer",
+    "evolutionary-methods",
+    "Evolutionary methods",
+    "Population-based constrained search plus objective/constraint evaluations",
+    "O(N(D+C))",
+    "Bounded continuous constrained optimization",
+    false,
+    "src/MetaheuristicsPlatform/Algorithms/Constraints/StochasticRankingEs/StochasticRankingEsOptimizer.cs",
+    "Runarsson & Yao (2000), Stochastic ranking for constrained evolutionary optimization",
+    "10.1109/4235.873238",
+    "Stochastic ranking repeatedly orders an evolution-strategy population using objective comparison with probability P_f and violation comparison otherwise, avoiding a fixed penalty coefficient.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

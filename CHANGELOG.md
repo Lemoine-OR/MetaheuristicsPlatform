@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.119.0] - 2026-08-28
+
+- Add canonical Stochastic Ranking Evolution Strategy scientific identity (Runarsson & Yao, 2000; DOI 10.1109/4235.873238).
+- Stable ID: `stochastic-ranking-es-runarsson-yao-2000`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.118.0] - 2026-08-28
 
 - Add canonical Deb Feasibility Rules Genetic Algorithm scientific identity (Deb, 2000; DOI 10.1016/S0045-7825(99)00389-8).
