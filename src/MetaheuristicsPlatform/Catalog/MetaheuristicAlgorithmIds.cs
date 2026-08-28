@@ -328,4 +328,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string GraphBasedHyperHeuristic =
         "graph-based-hyperheuristic-burke-mccollum-meisels-petrovic-qu-2007";
+
+    public const string LateAcceptanceHyperHeuristic =
+        "late-acceptance-hyperheuristic-ozcan-bykov-birben-burke-2009";
 }

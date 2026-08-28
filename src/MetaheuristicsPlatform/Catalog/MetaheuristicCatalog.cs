@@ -1866,7 +1866,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/HyperHeuristics/GraphBasedHyperHeuristic/GraphBasedHyperHeuristicOptimizer.cs",
     "Burke, McCollum, Meisels, Petrovic & Qu (2007), A graph-based hyper-heuristic for educational timetabling problems",
     "10.1016/j.ejor.2005.08.012",
-    "A tabu search explores permutations of domain-provided low-level heuristics; each sequence is evaluated as a high-level heuristic ordering.")
+    "A tabu search explores permutations of domain-provided low-level heuristics; each sequence is evaluated as a high-level heuristic ordering."),
+new(
+    "late-acceptance-hyperheuristic-ozcan-bykov-birben-burke-2009",
+    "Late Acceptance Hyper-Heuristic",
+    "LateAcceptanceHyperHeuristicOptimizer",
+    "hyper-heuristics",
+    "Hyper-heuristics and algorithm selection",
+    "One or more low-level heuristic applications/evaluations per high-level iteration plus selector overhead",
+    "O(H + M) high-level policy state plus domain solution state",
+    "Reusable cross-domain heuristic selection and adaptive operator control",
+    true,
+    "src/MetaheuristicsPlatform/Algorithms/HyperHeuristics/LateAcceptanceHyperHeuristic/LateAcceptanceHyperHeuristicOptimizer.cs",
+    "Ozcan, Bykov, Birben & Burke (2009), Examination Timetabling Using Late Acceptance Hyper-heuristics",
+    "10.1109/CEC.2009.4983054",
+    "A low-level heuristic generates a candidate and late acceptance compares it with both the current objective and a historical objective.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

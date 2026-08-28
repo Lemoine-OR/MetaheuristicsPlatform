@@ -1,5 +1,9 @@
 # API stability
 
+## v0.145.0
+
+- Added stable direct-factory algorithm ID `late-acceptance-hyperheuristic-ozcan-bykov-birben-burke-2009` (`LateAcceptanceHyperHeuristicOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.144.0
 
 - Added stable direct-factory algorithm ID `graph-based-hyperheuristic-burke-mccollum-meisels-petrovic-qu-2007` (`GraphBasedHyperHeuristicOptimizer`). Existing public IDs and signatures are unchanged.

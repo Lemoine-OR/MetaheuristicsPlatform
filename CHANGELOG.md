@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.145.0] - 2026-08-28
+
+- Add canonical Late Acceptance Hyper-Heuristic scientific identity (Ozcan, Bykov, Birben & Burke, 2009; DOI 10.1109/CEC.2009.4983054).
+- Stable ID: `late-acceptance-hyperheuristic-ozcan-bykov-birben-burke-2009`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.144.0] - 2026-08-28
 
 - Add canonical Graph-Based Hyper-Heuristic scientific identity (Burke, McCollum, Meisels, Petrovic & Qu, 2007; DOI 10.1016/j.ejor.2005.08.012).
