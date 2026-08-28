@@ -1,5 +1,9 @@
 # API stability
 
+## v0.137.0
+
+- Added stable direct-factory algorithm ID `distance-based-lips-qu-suganthan-das-2013` (`LocallyInformedPsoOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.136.0
 
 - Added stable direct-factory algorithm ID `neighborhood-mutation-de-qu-suganthan-liang-2012` (`NeighborhoodMutationDeOptimizer`). Existing public IDs and signatures are unchanged.

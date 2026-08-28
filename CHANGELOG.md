@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.137.0] - 2026-08-28
+
+- Add canonical Distance-Based Locally Informed Particle Swarm scientific identity (Qu, Suganthan & Das, 2013; DOI 10.1109/TEVC.2012.2203138).
+- Stable ID: `distance-based-lips-qu-suganthan-das-2013`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.136.0] - 2026-08-28
 
 - Add canonical Neighborhood-Mutation Differential Evolution scientific identity (Qu, Suganthan & Liang, 2012; DOI 10.1109/TEVC.2011.2161873).

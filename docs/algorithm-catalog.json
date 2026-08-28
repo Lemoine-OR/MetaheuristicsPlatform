@@ -2809,6 +2809,28 @@
                            "assumptions":  "Finite bounded continuous decision box, finite objective values, explicit optimization sense and Euclidean decision-space distances.",
                            "convergence":  "No universal finite-time guarantee of finding every optimum is asserted; the named stochastic niching mechanism is preserved.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "distance-based-lips-qu-suganthan-das-2013",
+                           "name":  "Distance-Based Locally Informed Particle Swarm",
+                           "class":  "LocallyInformedPsoOptimizer",
+                           "category":  "swarm-intelligence",
+                           "kind":  "population",
+                           "family":  "Swarm intelligence",
+                           "time":  "Population-based multimodal search with decision-space niching",
+                           "space":  "O(ND) plus niche/archive state",
+                           "applicability":  "Bounded continuous multimodal optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multimodal/LocallyInformedPso/LocallyInformedPsoOptimizer.cs",
+                           "publication":  "Qu, Suganthan \u0026 Das (2013), A Distance-Based Locally Informed Particle Swarm Model for Multimodal Optimization",
+                           "doi":  "10.1109/TEVC.2012.2203138",
+                           "implementation":  "Each particle is informed by distance-selected neighboring personal bests rather than one global leader, enabling several optima to coexist.",
+                           "page":  "docs/pages/algorithms/distance-based-lips-qu-suganthan-das-2013.md",
+                           "problem":  "\\operatorname{FindMany}_{x\\in\\mathcal X} f(x)",
+                           "update":  "\\begin{aligned}\\mathcal N_i\u0026=\\mathrm{Nearest}(x_i,k),\\\\v_i^{t+1}\u0026=wv_i^t+\\frac{1}{|\\mathcal N_i|}\\sum_{j\\in\\mathcal N_i}c_jr_j(p_j-x_i^t).\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, finite objective values, explicit optimization sense and Euclidean decision-space distances.",
+                           "convergence":  "No universal finite-time guarantee of finding every optimum is asserted; the named stochastic niching mechanism is preserved.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

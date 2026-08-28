@@ -35,7 +35,7 @@ catalog IDs and literature-backed documentation.
 
 <table>
 <tr>
-<td width="20%"><strong>31 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Firefly, Ant System, ACS and MAX-MIN Ant System.</sub></td>
+<td width="20%"><strong>32 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Firefly, Ant System, ACS and MAX-MIN Ant System.</sub></td>
 <td width="20%"><strong>50 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
 <td width="20%"><strong>21 trajectory methods</strong><br><sub>Acceptance methods, Tabu, local search, ILS, Iterated Greedy, LNS, ALNS, VNS and GLS.</sub></td>
 <td width="20%"><strong>3 constructive methods</strong><br><sub>GRASP, Reactive GRASP and GRASP with Path Relinking.</sub></td>
@@ -45,7 +45,7 @@ catalog IDs and literature-backed documentation.
 </tr>
 </table>
 
-<p align="center"><strong>126 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>127 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -134,6 +134,7 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/species-based-pso-li-2004.html"><strong>Species-Based Particle Swarm Optimization</strong></a><br><sub>Particles are grouped into species around dominant seeds; each particle uses its species seed as its neighborhood best.</sub><br><code>species-based-pso-li-2004</code><br><sub><code>SpeciesBasedPsoOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/vector-niche-pso-schoeman-engelbrecht-2004.html"><strong>Vector-Niche Particle Swarm Optimization</strong></a><br><sub>Vector relationships between particles and candidate niche leaders are used to demarcate niches and maintain independent subswarms.</sub><br><code>vector-niche-pso-schoeman-engelbrecht-2004</code><br><sub><code>VectorNichePsoOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/adaptive-niching-pso-bird-li-2006.html"><strong>Adaptive Niching Particle Swarm Optimization</strong></a><br><sub>Population distance statistics determine the niching radius adaptively during the run instead of requiring a fixed radius supplied by the user.</sub><br><code>adaptive-niching-pso-bird-li-2006</code><br><sub><code>AdaptiveNichingPsoOptimizer</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/distance-based-lips-qu-suganthan-das-2013.html"><strong>Distance-Based Locally Informed Particle Swarm</strong></a><br><sub>Each particle is informed by distance-selected neighboring personal bests rather than one global leader, enabling several optima to coexist.</sub><br><code>distance-based-lips-qu-suganthan-das-2013</code><br><sub><code>LocallyInformedPsoOptimizer</code></sub></td></tr>
 </table>
 
 ### Evolutionary methods

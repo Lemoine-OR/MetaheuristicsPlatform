@@ -304,4 +304,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string NeighborhoodMutationDe =
         "neighborhood-mutation-de-qu-suganthan-liang-2012";
+
+    public const string LocallyInformedPso =
+        "distance-based-lips-qu-suganthan-das-2013";
 }

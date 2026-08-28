@@ -1754,7 +1754,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Multimodal/NeighborhoodMutationDe/NeighborhoodMutationDeOptimizer.cs",
     "Qu, Suganthan & Liang (2012), Differential Evolution With Neighborhood Mutation for Multimodal Optimization",
     "10.1109/TEVC.2011.2161873",
-    "DE mutation is restricted to Euclidean neighborhoods, preserving distinct attraction basins while evolving each niche toward its own optimum.")
+    "DE mutation is restricted to Euclidean neighborhoods, preserving distinct attraction basins while evolving each niche toward its own optimum."),
+new(
+    "distance-based-lips-qu-suganthan-das-2013",
+    "Distance-Based Locally Informed Particle Swarm",
+    "LocallyInformedPsoOptimizer",
+    "swarm-intelligence",
+    "Swarm intelligence",
+    "Population-based multimodal search with decision-space niching",
+    "O(ND) to O(N^2D) plus objective evaluations depending on niching mechanism",
+    "Bounded continuous multimodal optimization",
+    false,
+    "src/MetaheuristicsPlatform/Algorithms/Multimodal/LocallyInformedPso/LocallyInformedPsoOptimizer.cs",
+    "Qu, Suganthan & Das (2013), A Distance-Based Locally Informed Particle Swarm Model for Multimodal Optimization",
+    "10.1109/TEVC.2012.2203138",
+    "Each particle is informed by distance-selected neighboring personal bests rather than one global leader, enabling several optima to coexist.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

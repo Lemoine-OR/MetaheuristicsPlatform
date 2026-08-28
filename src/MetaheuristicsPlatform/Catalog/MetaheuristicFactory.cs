@@ -394,6 +394,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.NeighborhoodMutationDe,
             "MetaheuristicsPlatform.Algorithms.Multimodal.NeighborhoodMutationDe.NeighborhoodMutationDeOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.LocallyInformedPso,
+            "MetaheuristicsPlatform.Algorithms.Multimodal.LocallyInformedPso.LocallyInformedPsoOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>
