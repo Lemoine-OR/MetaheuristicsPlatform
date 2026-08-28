@@ -1642,7 +1642,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Constraints/EnsembleConstraintHandling/EnsembleConstraintHandlingOptimizer.cs",
     "Mallipeddi & Suganthan (2010), Ensemble of constraint handling techniques",
     "10.1109/TEVC.2009.2033582",
-    "Multiple subpopulations apply distinct constraint-handling techniques and periodically exchange elites, preserving the ensemble principle.")
+    "Multiple subpopulations apply distinct constraint-handling techniques and periodically exchange elites, preserving the ensemble principle."),
+new(
+    "infeasibility-driven-ea-ray-singh-isaacs-smith-2009",
+    "Infeasibility Driven Evolutionary Algorithm",
+    "InfeasibilityDrivenEaOptimizer",
+    "evolutionary-methods",
+    "Evolutionary methods",
+    "Population-based constrained search plus objective/constraint evaluations",
+    "O(N(D+C))",
+    "Bounded continuous constrained optimization",
+    false,
+    "src/MetaheuristicsPlatform/Algorithms/Constraints/InfeasibilityDrivenEa/InfeasibilityDrivenEaOptimizer.cs",
+    "Ray, Singh, Isaacs & Smith (2009), Infeasibility Driven Evolutionary Algorithm for Constrained Optimization",
+    "10.1007/978-3-642-00619-7_7",
+    "Environmental selection deliberately retains a controlled infeasible fraction so search pressure can follow active constraint boundaries.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

@@ -280,4 +280,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string EnsembleConstraintHandling =
         "ensemble-constraint-handling-mallipeddi-suganthan-2010";
+
+    public const string InfeasibilityDrivenEa =
+        "infeasibility-driven-ea-ray-singh-isaacs-smith-2009";
 }

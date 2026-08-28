@@ -1,5 +1,9 @@
 # API stability
 
+## v0.129.0
+
+- Added stable direct-factory algorithm ID `infeasibility-driven-ea-ray-singh-isaacs-smith-2009` (`InfeasibilityDrivenEaOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.128.0
 
 - Added stable direct-factory algorithm ID `ensemble-constraint-handling-mallipeddi-suganthan-2010` (`EnsembleConstraintHandlingOptimizer`). Existing public IDs and signatures are unchanged.

@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.129.0] - 2026-08-28
+
+- Add canonical Infeasibility Driven Evolutionary Algorithm scientific identity (Ray, Singh, Isaacs & Smith, 2009; DOI 10.1007/978-3-642-00619-7_7).
+- Stable ID: `infeasibility-driven-ea-ray-singh-isaacs-smith-2009`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.128.0] - 2026-08-28
 
 - Add canonical Ensemble of Constraint Handling Techniques scientific identity (Mallipeddi & Suganthan, 2010; DOI 10.1109/TEVC.2009.2033582).
