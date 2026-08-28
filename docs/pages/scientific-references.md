@@ -252,3 +252,4 @@ v0.67.0 adaptive-harmony-search-differential-evolution-zhao-li-hao-liu-yuan-2020
 - **Bird & Li (2006)** - *Adaptively choosing niching parameters in a PSO*, GECCO 2006, 3-10. DOI: [10.1145/1143997.1143999](https://doi.org/10.1145/1143997.1143999).
 - **Qu, Suganthan & Liang (2012)** - *Differential Evolution With Neighborhood Mutation for Multimodal Optimization*, IEEE Transactions on Evolutionary Computation 16(5), 601-614. DOI: [10.1109/TEVC.2011.2161873](https://doi.org/10.1109/TEVC.2011.2161873).
 - **Qu, Suganthan & Das (2013)** - *A Distance-Based Locally Informed Particle Swarm Model for Multimodal Optimization*, IEEE Transactions on Evolutionary Computation 17(3), 387-402. DOI: [10.1109/TEVC.2012.2203138](https://doi.org/10.1109/TEVC.2012.2203138).
+- **Deb & Saha (2012)** - *Multimodal optimization using a bi-objective evolutionary algorithm*, Evolutionary Computation 20(1), 27-62. DOI: [10.1162/EVCO_a_00042](https://doi.org/10.1162/EVCO_a_00042).

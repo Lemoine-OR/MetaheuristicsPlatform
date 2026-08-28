@@ -398,6 +398,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.LocallyInformedPso,
             "MetaheuristicsPlatform.Algorithms.Multimodal.LocallyInformedPso.LocallyInformedPsoOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.BiobjectiveMultimodalEa,
+            "MetaheuristicsPlatform.Algorithms.Multimodal.BiobjectiveMultimodalEa.BiobjectiveMultimodalEaOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

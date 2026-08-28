@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.138.0] - 2026-08-28
+
+- Add canonical Bi-Objective Evolutionary Multimodal Optimizer scientific identity (Deb & Saha, 2012; DOI 10.1162/EVCO_a_00042).
+- Stable ID: `biobjective-multimodal-ea-deb-saha-2012`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.137.0] - 2026-08-28
 
 - Add canonical Distance-Based Locally Informed Particle Swarm scientific identity (Qu, Suganthan & Das, 2013; DOI 10.1109/TEVC.2012.2203138).

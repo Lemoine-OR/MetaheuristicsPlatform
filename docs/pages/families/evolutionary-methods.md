@@ -57,6 +57,7 @@ Population methods based on structured variation or combination, selection, refe
 - **[Species Conserving Genetic Algorithm](../algorithms/species-conserving-ga-li-balazs-parks-clarkson-2002.md)** - `species-conserving-ga-li-balazs-parks-clarkson-2002` - The population is partitioned into species around dominating species seeds; the seeds are explicitly conserved into the next generation.
 - **[Crowding Differential Evolution](../algorithms/crowding-de-thomsen-2004.md)** - `crowding-de-thomsen-2004` - Differential-evolution offspring compete with the closest population member rather than only with their target, allowing several niches to be maintained.
 - **[Neighborhood-Mutation Differential Evolution](../algorithms/neighborhood-mutation-de-qu-suganthan-liang-2012.md)** - `neighborhood-mutation-de-qu-suganthan-liang-2012` - DE mutation is restricted to Euclidean neighborhoods, preserving distinct attraction basins while evolving each niche toward its own optimum.
+- **[Bi-Objective Evolutionary Multimodal Optimizer](../algorithms/biobjective-multimodal-ea-deb-saha-2012.md)** - `biobjective-multimodal-ea-deb-saha-2012` - The original objective is paired with a finite-difference gradient-norm objective; weak Pareto selection preserves separated stationary optima under the platform's bounded continuous contract.
 
 ## Navigation
 

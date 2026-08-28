@@ -2831,6 +2831,28 @@
                            "assumptions":  "Finite bounded continuous decision box, finite objective values, explicit optimization sense and Euclidean decision-space distances.",
                            "convergence":  "No universal finite-time guarantee of finding every optimum is asserted; the named stochastic niching mechanism is preserved.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "biobjective-multimodal-ea-deb-saha-2012",
+                           "name":  "Bi-Objective Evolutionary Multimodal Optimizer",
+                           "class":  "BiobjectiveMultimodalEaOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "Population-based multimodal search with decision-space niching",
+                           "space":  "O(ND) plus niche/archive state",
+                           "applicability":  "Bounded continuous multimodal optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multimodal/BiobjectiveMultimodalEa/BiobjectiveMultimodalEaOptimizer.cs",
+                           "publication":  "Deb \u0026 Saha (2012), Multimodal optimization using a bi-objective evolutionary algorithm",
+                           "doi":  "10.1162/EVCO_a_00042",
+                           "implementation":  "The original objective is paired with a finite-difference gradient-norm objective; weak Pareto selection preserves separated stationary optima under the platform\u0027s bounded continuous contract.",
+                           "page":  "docs/pages/algorithms/biobjective-multimodal-ea-deb-saha-2012.md",
+                           "problem":  "\\operatorname{FindMany}_{x\\in\\mathcal X} f(x)",
+                           "update":  "\\begin{aligned}F_1(x)\u0026=\\widetilde f(x),\\\\F_2(x)\u0026=\\lVert\\nabla f(x)\\rVert_2,\\\\P_{t+1}\u0026=\\mathrm{ParetoSelect}(P_t\\cup Q_t).\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, finite objective values, explicit optimization sense and Euclidean decision-space distances.",
+                           "convergence":  "No universal finite-time guarantee of finding every optimum is asserted; the named stochastic niching mechanism is preserved.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

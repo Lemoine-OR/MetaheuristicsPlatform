@@ -1768,7 +1768,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Multimodal/LocallyInformedPso/LocallyInformedPsoOptimizer.cs",
     "Qu, Suganthan & Das (2013), A Distance-Based Locally Informed Particle Swarm Model for Multimodal Optimization",
     "10.1109/TEVC.2012.2203138",
-    "Each particle is informed by distance-selected neighboring personal bests rather than one global leader, enabling several optima to coexist.")
+    "Each particle is informed by distance-selected neighboring personal bests rather than one global leader, enabling several optima to coexist."),
+new(
+    "biobjective-multimodal-ea-deb-saha-2012",
+    "Bi-Objective Evolutionary Multimodal Optimizer",
+    "BiobjectiveMultimodalEaOptimizer",
+    "evolutionary-methods",
+    "Evolutionary methods",
+    "Population-based multimodal search with decision-space niching",
+    "O(ND) to O(N^2D) plus objective evaluations depending on niching mechanism",
+    "Bounded continuous multimodal optimization",
+    false,
+    "src/MetaheuristicsPlatform/Algorithms/Multimodal/BiobjectiveMultimodalEa/BiobjectiveMultimodalEaOptimizer.cs",
+    "Deb & Saha (2012), Multimodal optimization using a bi-objective evolutionary algorithm",
+    "10.1162/EVCO_a_00042",
+    "The single-objective multimodal task is transformed into a bi-objective selection problem so that separated optimal solutions can coexist on a weak Pareto set.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

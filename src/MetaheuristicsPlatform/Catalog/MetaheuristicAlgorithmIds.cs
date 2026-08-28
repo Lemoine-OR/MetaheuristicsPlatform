@@ -307,4 +307,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string LocallyInformedPso =
         "distance-based-lips-qu-suganthan-das-2013";
+
+    public const string BiobjectiveMultimodalEa =
+        "biobjective-multimodal-ea-deb-saha-2012";
 }
