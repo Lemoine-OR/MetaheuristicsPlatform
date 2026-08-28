@@ -36,7 +36,7 @@ catalog IDs and literature-backed documentation.
 <table>
 <tr>
 <td width="20%"><strong>28 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Firefly, Ant System, ACS and MAX-MIN Ant System.</sub></td>
-<td width="20%"><strong>48 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
+<td width="20%"><strong>49 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
 <td width="20%"><strong>21 trajectory methods</strong><br><sub>Acceptance methods, Tabu, local search, ILS, Iterated Greedy, LNS, ALNS, VNS and GLS.</sub></td>
 <td width="20%"><strong>3 constructive methods</strong><br><sub>GRASP, Reactive GRASP and GRASP with Path Relinking.</sub></td>
 <td width="20%"><strong>1 hybrid / memetic method</strong><br><sub>Moscato-style memetic evolution with local improvement.</sub></td>
@@ -45,7 +45,7 @@ catalog IDs and literature-backed documentation.
 </tr>
 </table>
 
-<p align="center"><strong>121 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>122 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -178,6 +178,7 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/infeasibility-driven-ea-ray-singh-isaacs-smith-2009.html"><strong>Infeasibility Driven Evolutionary Algorithm</strong></a><br><sub>Environmental selection deliberately retains a controlled infeasible fraction so search pressure can follow active constraint boundaries.</sub><br><code>infeasibility-driven-ea-ray-singh-isaacs-smith-2009</code><br><sub><code>InfeasibilityDrivenEaOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/clearing-ga-petrowski-1996.html"><strong>Clearing Genetic Algorithm</strong></a><br><sub>Clearing assigns the available niche resources only to the best individuals within each niche, with an explicit niche radius and niche capacity.</sub><br><code>clearing-ga-petrowski-1996</code><br><sub><code>ClearingGaOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/species-conserving-ga-li-balazs-parks-clarkson-2002.html"><strong>Species Conserving Genetic Algorithm</strong></a><br><sub>The population is partitioned into species around dominating species seeds; the seeds are explicitly conserved into the next generation.</sub><br><code>species-conserving-ga-li-balazs-parks-clarkson-2002</code><br><sub><code>SpeciesConservingGaOptimizer</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/crowding-de-thomsen-2004.html"><strong>Crowding Differential Evolution</strong></a><br><sub>Differential-evolution offspring compete with the closest population member rather than only with their target, allowing several niches to be maintained.</sub><br><code>crowding-de-thomsen-2004</code><br><sub><code>CrowdingDeOptimizer</code></sub></td></tr>
 </table>
 
 ### Trajectory-based methods

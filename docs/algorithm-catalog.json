@@ -2699,6 +2699,28 @@
                            "assumptions":  "Finite bounded continuous decision box, finite objective values, explicit optimization sense and Euclidean decision-space distances.",
                            "convergence":  "No universal finite-time guarantee of finding every optimum is asserted; the named stochastic niching mechanism is preserved.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "crowding-de-thomsen-2004",
+                           "name":  "Crowding Differential Evolution",
+                           "class":  "CrowdingDeOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "Population-based multimodal search with decision-space niching",
+                           "space":  "O(ND) plus niche/archive state",
+                           "applicability":  "Bounded continuous multimodal optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multimodal/CrowdingDe/CrowdingDeOptimizer.cs",
+                           "publication":  "Thomsen (2004), Multimodal optimization using crowding-based differential evolution",
+                           "doi":  "10.1109/CEC.2004.1331058",
+                           "implementation":  "Differential-evolution offspring compete with the closest population member rather than only with their target, allowing several niches to be maintained.",
+                           "page":  "docs/pages/algorithms/crowding-de-thomsen-2004.md",
+                           "problem":  "\\operatorname{FindMany}_{x\\in\\mathcal X} f(x)",
+                           "update":  "\\begin{aligned}u_i\u0026=\\mathrm{DETrial}(x_i),\\\\j^\\star\u0026=\\arg\\min_j\\lVert u_i-x_j\\rVert_2,\\\\x_{j^\\star}\u0026\\leftarrow u_i\\quad\\text{if }u_i\\text{ is better}.\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, finite objective values, explicit optimization sense and Euclidean decision-space distances.",
+                           "convergence":  "No universal finite-time guarantee of finding every optimum is asserted; the named stochastic niching mechanism is preserved.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

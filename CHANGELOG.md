@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.132.0] - 2026-08-28
+
+- Add canonical Crowding Differential Evolution scientific identity (Thomsen, 2004; DOI 10.1109/CEC.2004.1331058).
+- Stable ID: `crowding-de-thomsen-2004`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.131.0] - 2026-08-28
 
 - Add canonical Species Conserving Genetic Algorithm scientific identity (Li, Balazs, Parks & Clarkson, 2002; DOI 10.1162/106365602760234081).

@@ -55,6 +55,7 @@ Population methods based on structured variation or combination, selection, refe
 - **[Infeasibility Driven Evolutionary Algorithm](../algorithms/infeasibility-driven-ea-ray-singh-isaacs-smith-2009.md)** - `infeasibility-driven-ea-ray-singh-isaacs-smith-2009` - Environmental selection deliberately retains a controlled infeasible fraction so search pressure can follow active constraint boundaries.
 - **[Clearing Genetic Algorithm](../algorithms/clearing-ga-petrowski-1996.md)** - `clearing-ga-petrowski-1996` - Clearing assigns the available niche resources only to the best individuals within each niche, with an explicit niche radius and niche capacity.
 - **[Species Conserving Genetic Algorithm](../algorithms/species-conserving-ga-li-balazs-parks-clarkson-2002.md)** - `species-conserving-ga-li-balazs-parks-clarkson-2002` - The population is partitioned into species around dominating species seeds; the seeds are explicitly conserved into the next generation.
+- **[Crowding Differential Evolution](../algorithms/crowding-de-thomsen-2004.md)** - `crowding-de-thomsen-2004` - Differential-evolution offspring compete with the closest population member rather than only with their target, allowing several niches to be maintained.
 
 ## Navigation
 

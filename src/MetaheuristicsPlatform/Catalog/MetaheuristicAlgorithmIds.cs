@@ -289,4 +289,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string SpeciesConservingGa =
         "species-conserving-ga-li-balazs-parks-clarkson-2002";
+
+    public const string CrowdingDe =
+        "crowding-de-thomsen-2004";
 }

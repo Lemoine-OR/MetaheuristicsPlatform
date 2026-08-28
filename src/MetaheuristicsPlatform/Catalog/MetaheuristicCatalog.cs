@@ -1684,7 +1684,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Multimodal/SpeciesConservingGa/SpeciesConservingGaOptimizer.cs",
     "Li, Balazs, Parks & Clarkson (2002), A species conserving genetic algorithm for multimodal function optimization",
     "10.1162/106365602760234081",
-    "The population is partitioned into species around dominating species seeds; the seeds are explicitly conserved into the next generation.")
+    "The population is partitioned into species around dominating species seeds; the seeds are explicitly conserved into the next generation."),
+new(
+    "crowding-de-thomsen-2004",
+    "Crowding Differential Evolution",
+    "CrowdingDeOptimizer",
+    "evolutionary-methods",
+    "Evolutionary methods",
+    "Population-based multimodal search with decision-space niching",
+    "O(ND) to O(N^2D) plus objective evaluations depending on niching mechanism",
+    "Bounded continuous multimodal optimization",
+    false,
+    "src/MetaheuristicsPlatform/Algorithms/Multimodal/CrowdingDe/CrowdingDeOptimizer.cs",
+    "Thomsen (2004), Multimodal optimization using crowding-based differential evolution",
+    "10.1109/CEC.2004.1331058",
+    "Differential-evolution offspring compete with the closest population member rather than only with their target, allowing several niches to be maintained.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>
