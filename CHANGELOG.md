@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.126.0] - 2026-08-28
+
+- Add canonical GENOCOP III scientific identity (Michalewicz & Nazhiyath, 1995; DOI 10.1109/ICEC.1995.487460).
+- Stable ID: `genocop-iii-michalewicz-nazhiyath-1995`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.125.0] - 2026-08-28
 
 - Add canonical Epsilon-Constrained Differential Evolution scientific identity (Takahama, Sakai & Iwane, 2006; DOI 10.1109/ICSMC.2006.385209).

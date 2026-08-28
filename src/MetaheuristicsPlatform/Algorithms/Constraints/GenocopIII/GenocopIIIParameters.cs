@@ -1,0 +1,4 @@
+using MetaheuristicsPlatform.Parameters;
+namespace MetaheuristicsPlatform.Algorithms.Constraints.GenocopIII;
+public sealed class GenocopIIIParameters : IMetaheuristicParameters
+{ public int PopulationSize { get; init; }=60; public int ReferencePopulationSize { get; init; }=20; public int MaximumReferenceAttempts { get; init; }=5000; public int MaximumGenerations { get; init; }=150; public int BisectionSteps { get; init; }=30; public void Validate(){if(PopulationSize<4)throw new ArgumentOutOfRangeException(nameof(PopulationSize));if(ReferencePopulationSize<1||ReferencePopulationSize>PopulationSize)throw new ArgumentOutOfRangeException(nameof(ReferencePopulationSize));if(MaximumReferenceAttempts<ReferencePopulationSize)throw new ArgumentOutOfRangeException(nameof(MaximumReferenceAttempts));if(MaximumGenerations<=0)throw new ArgumentOutOfRangeException(nameof(MaximumGenerations));if(BisectionSteps<=0)throw new ArgumentOutOfRangeException(nameof(BisectionSteps));} }

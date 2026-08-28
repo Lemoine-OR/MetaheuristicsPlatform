@@ -350,6 +350,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.EpsilonConstrainedDe,
             "MetaheuristicsPlatform.Algorithms.Constraints.EpsilonConstrainedDe.EpsilonConstrainedDeOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.GenocopIII,
+            "MetaheuristicsPlatform.Algorithms.Constraints.GenocopIII.GenocopIIIOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

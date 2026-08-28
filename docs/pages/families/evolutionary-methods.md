@@ -49,6 +49,7 @@ Population methods based on structured variation or combination, selection, refe
 - **[Lemonge-Barbosa Adaptive Penalty Genetic Algorithm](../algorithms/adaptive-penalty-ga-lemonge-barbosa-2004.md)** - `adaptive-penalty-ga-lemonge-barbosa-2004` - Parameter-less constraint-specific penalty coefficients are recomputed from population-average objective and violation information.
 - **[Tessema-Yen Adaptive Penalty Genetic Algorithm](../algorithms/adaptive-penalty-formulation-ga-tessema-yen-2009.md)** - `adaptive-penalty-formulation-ga-tessema-yen-2009` - Normalized objective and violation distance is combined with a feasible-ratio-driven adaptive penalty, retaining useful infeasible candidates without a user-tuned penalty coefficient.
 - **[Epsilon-Constrained Differential Evolution](../algorithms/epsilon-constrained-de-takahama-sakai-iwane-2006.md)** - `epsilon-constrained-de-takahama-sakai-iwane-2006` - DE/rand/1/bin uses an epsilon-level ordering whose admissible violation threshold decreases to zero over a controlled number of generations.
+- **[GENOCOP III](../algorithms/genocop-iii-michalewicz-nazhiyath-1995.md)** - `genocop-iii-michalewicz-nazhiyath-1995` - Search and feasible reference populations co-evolve; infeasible search points are repaired toward feasible reference points by segment bisection before evaluation.
 
 ## Navigation
 

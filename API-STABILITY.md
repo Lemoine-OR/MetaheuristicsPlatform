@@ -1,5 +1,9 @@
 # API stability
 
+## v0.126.0
+
+- Added stable direct-factory algorithm ID `genocop-iii-michalewicz-nazhiyath-1995` (`GenocopIIIOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.125.0
 
 - Added stable direct-factory algorithm ID `epsilon-constrained-de-takahama-sakai-iwane-2006` (`EpsilonConstrainedDeOptimizer`). Existing public IDs and signatures are unchanged.

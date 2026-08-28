@@ -1600,7 +1600,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Constraints/EpsilonConstrainedDe/EpsilonConstrainedDeOptimizer.cs",
     "Takahama, Sakai & Iwane (2006), Solving Nonlinear Constrained Optimization Problems by the epsilon Constrained Differential Evolution",
     "10.1109/ICSMC.2006.385209",
-    "DE/rand/1/bin uses an epsilon-level ordering whose admissible violation threshold decreases to zero over a controlled number of generations.")
+    "DE/rand/1/bin uses an epsilon-level ordering whose admissible violation threshold decreases to zero over a controlled number of generations."),
+new(
+    "genocop-iii-michalewicz-nazhiyath-1995",
+    "GENOCOP III",
+    "GenocopIIIOptimizer",
+    "evolutionary-methods",
+    "Evolutionary methods",
+    "Population-based constrained search plus objective/constraint evaluations",
+    "O(N(D+C))",
+    "Bounded continuous constrained optimization",
+    false,
+    "src/MetaheuristicsPlatform/Algorithms/Constraints/GenocopIII/GenocopIIIOptimizer.cs",
+    "Michalewicz & Nazhiyath (1995), GENOCOP III: A co-evolutionary algorithm for numerical optimization problems with nonlinear constraints",
+    "10.1109/ICEC.1995.487460",
+    "Search and feasible reference populations co-evolve; infeasible search points are repaired toward feasible reference points by segment bisection before evaluation.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

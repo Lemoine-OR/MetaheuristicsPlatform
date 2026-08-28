@@ -36,7 +36,7 @@ catalog IDs and literature-backed documentation.
 <table>
 <tr>
 <td width="20%"><strong>28 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Firefly, Ant System, ACS and MAX-MIN Ant System.</sub></td>
-<td width="20%"><strong>42 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
+<td width="20%"><strong>43 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
 <td width="20%"><strong>21 trajectory methods</strong><br><sub>Acceptance methods, Tabu, local search, ILS, Iterated Greedy, LNS, ALNS, VNS and GLS.</sub></td>
 <td width="20%"><strong>3 constructive methods</strong><br><sub>GRASP, Reactive GRASP and GRASP with Path Relinking.</sub></td>
 <td width="20%"><strong>1 hybrid / memetic method</strong><br><sub>Moscato-style memetic evolution with local improvement.</sub></td>
@@ -45,7 +45,7 @@ catalog IDs and literature-backed documentation.
 </tr>
 </table>
 
-<p align="center"><strong>115 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>116 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -172,6 +172,7 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/adaptive-penalty-ga-lemonge-barbosa-2004.html"><strong>Lemonge-Barbosa Adaptive Penalty Genetic Algorithm</strong></a><br><sub>Parameter-less constraint-specific penalty coefficients are recomputed from population-average objective and violation information.</sub><br><code>adaptive-penalty-ga-lemonge-barbosa-2004</code><br><sub><code>AdaptivePenaltyGaOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/adaptive-penalty-formulation-ga-tessema-yen-2009.html"><strong>Tessema-Yen Adaptive Penalty Genetic Algorithm</strong></a><br><sub>Normalized objective and violation distance is combined with a feasible-ratio-driven adaptive penalty, retaining useful infeasible candidates without a user-tuned penalty coefficient.</sub><br><code>adaptive-penalty-formulation-ga-tessema-yen-2009</code><br><sub><code>TessemaYenPenaltyGaOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/epsilon-constrained-de-takahama-sakai-iwane-2006.html"><strong>Epsilon-Constrained Differential Evolution</strong></a><br><sub>DE/rand/1/bin uses an epsilon-level ordering whose admissible violation threshold decreases to zero over a controlled number of generations.</sub><br><code>epsilon-constrained-de-takahama-sakai-iwane-2006</code><br><sub><code>EpsilonConstrainedDeOptimizer</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/genocop-iii-michalewicz-nazhiyath-1995.html"><strong>GENOCOP III</strong></a><br><sub>Search and feasible reference populations co-evolve; infeasible search points are repaired toward feasible reference points by segment bisection before evaluation.</sub><br><code>genocop-iii-michalewicz-nazhiyath-1995</code><br><sub><code>GenocopIIIOptimizer</code></sub></td></tr>
 </table>
 
 ### Trajectory-based methods

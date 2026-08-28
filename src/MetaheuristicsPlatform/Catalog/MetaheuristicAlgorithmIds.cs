@@ -271,4 +271,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string EpsilonConstrainedDe =
         "epsilon-constrained-de-takahama-sakai-iwane-2006";
+
+    public const string GenocopIII =
+        "genocop-iii-michalewicz-nazhiyath-1995";
 }
