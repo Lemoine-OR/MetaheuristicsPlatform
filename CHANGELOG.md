@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.146.0] - 2026-08-28
+
+- Add canonical Dynamic Multi-Armed Bandit Adaptive Operator Selection scientific identity (Da Costa, Fialho, Schoenauer & Sebag, 2008; DOI 10.1145/1389095.1389272).
+- Stable ID: `dynamic-mab-aos-da-costa-fialho-schoenauer-sebag-2008`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.145.0] - 2026-08-28
 
 - Add canonical Late Acceptance Hyper-Heuristic scientific identity (Ozcan, Bykov, Birben & Burke, 2009; DOI 10.1109/CEC.2009.4983054).

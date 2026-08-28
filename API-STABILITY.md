@@ -1,5 +1,9 @@
 # API stability
 
+## v0.146.0
+
+- Added stable direct-factory algorithm ID `dynamic-mab-aos-da-costa-fialho-schoenauer-sebag-2008` (`DynamicMabHyperHeuristicOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.145.0
 
 - Added stable direct-factory algorithm ID `late-acceptance-hyperheuristic-ozcan-bykov-birben-burke-2009` (`LateAcceptanceHyperHeuristicOptimizer`). Existing public IDs and signatures are unchanged.

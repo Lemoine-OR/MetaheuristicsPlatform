@@ -3012,6 +3012,28 @@
                            "assumptions":  "Finite objective values, non-empty unique low-level heuristic pool and clonable state.",
                            "convergence":  "No universal finite-time global-convergence guarantee is asserted.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "dynamic-mab-aos-da-costa-fialho-schoenauer-sebag-2008",
+                           "name":  "Dynamic Multi-Armed Bandit Adaptive Operator Selection",
+                           "class":  "DynamicMabHyperHeuristicOptimizer",
+                           "category":  "hyper-heuristics",
+                           "kind":  "single-solution",
+                           "family":  "Hyper-heuristics and algorithm selection",
+                           "time":  "One or more low-level heuristic applications/evaluations per high-level iteration plus selector overhead",
+                           "space":  "O(H + M) high-level policy state plus domain solution state",
+                           "applicability":  "Reusable cross-domain heuristic selection and adaptive operator control",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/HyperHeuristics/DynamicMabHyperHeuristic/DynamicMabHyperHeuristicOptimizer.cs",
+                           "publication":  "Da Costa, Fialho, Schoenauer \u0026 Sebag (2008), Adaptive Operator Selection with Dynamic Multi-Armed Bandits",
+                           "doi":  "10.1145/1389095.1389272",
+                           "implementation":  "Low-level heuristics are arms of a dynamic multi-armed bandit; UCB selection is coupled to a change statistic that can reset stale credit.",
+                           "page":  "docs/pages/algorithms/dynamic-mab-aos-da-costa-fialho-schoenauer-sebag-2008.md",
+                           "problem":  "\\operatorname{HH}(\\mathcal H,\\phi,x_0)",
+                           "update":  "\\begin{aligned}h_t\u0026=\\arg\\max_i\\left(\\bar r_i+c\\sqrt{\\frac{2\\log t}{n_i}}\\right),\\qquad D_t\u003e\\tau\\Longrightarrow(n_i,\\bar r_i)\\leftarrow(0,0).\\end{aligned}",
+                           "assumptions":  "Finite objective values, non-empty unique low-level heuristic pool and clonable state.",
+                           "convergence":  "No universal finite-time global-convergence guarantee is asserted.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

@@ -331,4 +331,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string LateAcceptanceHyperHeuristic =
         "late-acceptance-hyperheuristic-ozcan-bykov-birben-burke-2009";
+
+    public const string DynamicMabHyperHeuristic =
+        "dynamic-mab-aos-da-costa-fialho-schoenauer-sebag-2008";
 }

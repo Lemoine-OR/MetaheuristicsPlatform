@@ -1880,7 +1880,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/HyperHeuristics/LateAcceptanceHyperHeuristic/LateAcceptanceHyperHeuristicOptimizer.cs",
     "Ozcan, Bykov, Birben & Burke (2009), Examination Timetabling Using Late Acceptance Hyper-heuristics",
     "10.1109/CEC.2009.4983054",
-    "A low-level heuristic generates a candidate and late acceptance compares it with both the current objective and a historical objective.")
+    "A low-level heuristic generates a candidate and late acceptance compares it with both the current objective and a historical objective."),
+new(
+    "dynamic-mab-aos-da-costa-fialho-schoenauer-sebag-2008",
+    "Dynamic Multi-Armed Bandit Adaptive Operator Selection",
+    "DynamicMabHyperHeuristicOptimizer",
+    "hyper-heuristics",
+    "Hyper-heuristics and algorithm selection",
+    "One or more low-level heuristic applications/evaluations per high-level iteration plus selector overhead",
+    "O(H + M) high-level policy state plus domain solution state",
+    "Reusable cross-domain heuristic selection and adaptive operator control",
+    true,
+    "src/MetaheuristicsPlatform/Algorithms/HyperHeuristics/DynamicMabHyperHeuristic/DynamicMabHyperHeuristicOptimizer.cs",
+    "Da Costa, Fialho, Schoenauer & Sebag (2008), Adaptive Operator Selection with Dynamic Multi-Armed Bandits",
+    "10.1145/1389095.1389272",
+    "Low-level heuristics are arms of a dynamic multi-armed bandit; UCB selection is coupled to a change statistic that can reset stale credit.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>
