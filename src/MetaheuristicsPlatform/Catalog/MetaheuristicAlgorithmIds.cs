@@ -313,4 +313,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string DynamicNicheSharingGa =
         "dynamic-niche-sharing-ga-miller-shaw-1996";
+
+    public const string FuzzyClusteringNichingGa =
+        "fuzzy-clustering-niching-ga-imrani-bouroumi-zine-limouri-2000";
 }

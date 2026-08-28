@@ -2875,6 +2875,28 @@
                            "assumptions":  "Finite bounded continuous decision box, finite objective values, explicit optimization sense and Euclidean decision-space distances.",
                            "convergence":  "No universal finite-time guarantee of finding every optimum is asserted; the named stochastic niching mechanism is preserved.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "fuzzy-clustering-niching-ga-imrani-bouroumi-zine-limouri-2000",
+                           "name":  "Fuzzy-Clustering Niching Genetic Algorithm",
+                           "class":  "FuzzyClusteringNichingGaOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "Population-based multimodal search with decision-space niching",
+                           "space":  "O(ND) plus niche/archive state",
+                           "applicability":  "Bounded continuous multimodal optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multimodal/FuzzyClusteringNichingGa/FuzzyClusteringNichingGaOptimizer.cs",
+                           "publication":  "Imrani, Bouroumi, Zine \u0026 Limouri (2000), A fuzzy clustering-based niching approach to multimodal function optimization",
+                           "doi":  "10.1016/S1389-0417(99)00013-3",
+                           "implementation":  "Fuzzy clustering identifies and maintains niches without a fixed sharing radius; reproduction is organized within the inferred clusters.",
+                           "page":  "docs/pages/algorithms/fuzzy-clustering-niching-ga-imrani-bouroumi-zine-limouri-2000.md",
+                           "problem":  "\\operatorname{FindMany}_{x\\in\\mathcal X} f(x)",
+                           "update":  "\\begin{aligned}u_{ik}\u0026=\\frac{1}{\\sum_\\ell(d_{ik}/d_{i\\ell})^{2/(m-1)}},\\\\c_k\u0026=\\frac{\\sum_i u_{ik}^m x_i}{\\sum_i u_{ik}^m}.\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, finite objective values, explicit optimization sense and Euclidean decision-space distances.",
+                           "convergence":  "No universal finite-time guarantee of finding every optimum is asserted; the named stochastic niching mechanism is preserved.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

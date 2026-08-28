@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.140.0] - 2026-08-28
+
+- Add canonical Fuzzy-Clustering Niching Genetic Algorithm scientific identity (Imrani, Bouroumi, Zine & Limouri, 2000; DOI 10.1016/S1389-0417(99)00013-3).
+- Stable ID: `fuzzy-clustering-niching-ga-imrani-bouroumi-zine-limouri-2000`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.139.0] - 2026-08-28
 
 - Add canonical Dynamic Niche Sharing Genetic Algorithm scientific identity (Miller & Shaw, 1996; DOI 10.1109/ICEC.1996.542701).

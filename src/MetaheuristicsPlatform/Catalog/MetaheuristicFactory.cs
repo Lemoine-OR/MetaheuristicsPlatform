@@ -406,6 +406,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.DynamicNicheSharingGa,
             "MetaheuristicsPlatform.Algorithms.Multimodal.DynamicNicheSharingGa.DynamicNicheSharingGaOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.FuzzyClusteringNichingGa,
+            "MetaheuristicsPlatform.Algorithms.Multimodal.FuzzyClusteringNichingGa.FuzzyClusteringNichingGaOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

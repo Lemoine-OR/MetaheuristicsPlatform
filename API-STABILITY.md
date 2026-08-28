@@ -1,5 +1,9 @@
 # API stability
 
+## v0.140.0
+
+- Added stable direct-factory algorithm ID `fuzzy-clustering-niching-ga-imrani-bouroumi-zine-limouri-2000` (`FuzzyClusteringNichingGaOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.139.0
 
 - Added stable direct-factory algorithm ID `dynamic-niche-sharing-ga-miller-shaw-1996` (`DynamicNicheSharingGaOptimizer`). Existing public IDs and signatures are unchanged.

@@ -1796,7 +1796,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Multimodal/DynamicNicheSharingGa/DynamicNicheSharingGaOptimizer.cs",
     "Miller & Shaw (1996), Genetic algorithms with dynamic niche sharing for multimodal function optimization",
     "10.1109/ICEC.1996.542701",
-    "The sharing radius is updated from the current population structure and shared fitness penalizes densely occupied niches.")
+    "The sharing radius is updated from the current population structure and shared fitness penalizes densely occupied niches."),
+new(
+    "fuzzy-clustering-niching-ga-imrani-bouroumi-zine-limouri-2000",
+    "Fuzzy-Clustering Niching Genetic Algorithm",
+    "FuzzyClusteringNichingGaOptimizer",
+    "evolutionary-methods",
+    "Evolutionary methods",
+    "Population-based multimodal search with decision-space niching",
+    "O(ND) to O(N^2D) plus objective evaluations depending on niching mechanism",
+    "Bounded continuous multimodal optimization",
+    false,
+    "src/MetaheuristicsPlatform/Algorithms/Multimodal/FuzzyClusteringNichingGa/FuzzyClusteringNichingGaOptimizer.cs",
+    "Imrani, Bouroumi, Zine & Limouri (2000), A fuzzy clustering-based niching approach to multimodal function optimization",
+    "10.1016/S1389-0417(99)00013-3",
+    "Fuzzy clustering identifies and maintains niches without a fixed sharing radius; reproduction is organized within the inferred clusters.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>
