@@ -1656,7 +1656,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Constraints/InfeasibilityDrivenEa/InfeasibilityDrivenEaOptimizer.cs",
     "Ray, Singh, Isaacs & Smith (2009), Infeasibility Driven Evolutionary Algorithm for Constrained Optimization",
     "10.1007/978-3-642-00619-7_7",
-    "Environmental selection deliberately retains a controlled infeasible fraction so search pressure can follow active constraint boundaries.")
+    "Environmental selection deliberately retains a controlled infeasible fraction so search pressure can follow active constraint boundaries."),
+new(
+    "clearing-ga-petrowski-1996",
+    "Clearing Genetic Algorithm",
+    "ClearingGaOptimizer",
+    "evolutionary-methods",
+    "Evolutionary methods",
+    "Population-based multimodal search with decision-space niching",
+    "O(ND) to O(N^2D) plus objective evaluations depending on niching mechanism",
+    "Bounded continuous multimodal optimization",
+    false,
+    "src/MetaheuristicsPlatform/Algorithms/Multimodal/ClearingGa/ClearingGaOptimizer.cs",
+    "Petrowski (1996), A clearing procedure as a niching method for genetic algorithms",
+    "10.1109/ICEC.1996.542703",
+    "Clearing assigns the available niche resources only to the best individuals within each niche, with an explicit niche radius and niche capacity.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

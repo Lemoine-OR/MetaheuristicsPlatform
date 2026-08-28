@@ -1,5 +1,9 @@
 # API stability
 
+## v0.130.0
+
+- Added stable direct-factory algorithm ID `clearing-ga-petrowski-1996` (`ClearingGaOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.129.0
 
 - Added stable direct-factory algorithm ID `infeasibility-driven-ea-ray-singh-isaacs-smith-2009` (`InfeasibilityDrivenEaOptimizer`). Existing public IDs and signatures are unchanged.

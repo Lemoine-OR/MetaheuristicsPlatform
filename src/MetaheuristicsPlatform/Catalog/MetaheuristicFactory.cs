@@ -366,6 +366,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.InfeasibilityDrivenEa,
             "MetaheuristicsPlatform.Algorithms.Constraints.InfeasibilityDrivenEa.InfeasibilityDrivenEaOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.ClearingGa,
+            "MetaheuristicsPlatform.Algorithms.Multimodal.ClearingGa.ClearingGaOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

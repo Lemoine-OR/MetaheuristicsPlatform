@@ -2655,6 +2655,28 @@
                            "assumptions":  "Finite bounded continuous decision box, finite objective/constraint values and explicit equality tolerance.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; the named stochastic mechanism is preserved.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "clearing-ga-petrowski-1996",
+                           "name":  "Clearing Genetic Algorithm",
+                           "class":  "ClearingGaOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "Population-based multimodal search with decision-space niching",
+                           "space":  "O(ND) plus niche/archive state",
+                           "applicability":  "Bounded continuous multimodal optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multimodal/ClearingGa/ClearingGaOptimizer.cs",
+                           "publication":  "Petrowski (1996), A clearing procedure as a niching method for genetic algorithms",
+                           "doi":  "10.1109/ICEC.1996.542703",
+                           "implementation":  "Clearing assigns the available niche resources only to the best individuals within each niche, with an explicit niche radius and niche capacity.",
+                           "page":  "docs/pages/algorithms/clearing-ga-petrowski-1996.md",
+                           "problem":  "\\operatorname{FindMany}_{x\\in\\mathcal X} f(x)",
+                           "update":  "\\begin{aligned}\\mathrm{winner}(N)\u0026=\\arg\\min_{x\\in N}\\widetilde f(x),\\\\\\mathrm{fitness}(x)\u0026\\leftarrow+\\infty\\quad\\text{for cleared excess members of }N.\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, finite objective values, explicit optimization sense and Euclidean decision-space distances.",
+                           "convergence":  "No universal finite-time guarantee of finding every optimum is asserted; the named stochastic niching mechanism is preserved.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

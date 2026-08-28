@@ -283,4 +283,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string InfeasibilityDrivenEa =
         "infeasibility-driven-ea-ray-singh-isaacs-smith-2009";
+
+    public const string ClearingGa =
+        "clearing-ga-petrowski-1996";
 }

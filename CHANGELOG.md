@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.130.0] - 2026-08-28
+
+- Add canonical Clearing Genetic Algorithm scientific identity (Petrowski, 1996; DOI 10.1109/ICEC.1996.542703).
+- Stable ID: `clearing-ga-petrowski-1996`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.129.0] - 2026-08-28
 
 - Add canonical Infeasibility Driven Evolutionary Algorithm scientific identity (Ray, Singh, Isaacs & Smith, 2009; DOI 10.1007/978-3-642-00619-7_7).
