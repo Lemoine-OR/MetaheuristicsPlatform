@@ -301,4 +301,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string AdaptiveNichingPso =
         "adaptive-niching-pso-bird-li-2006";
+
+    public const string NeighborhoodMutationDe =
+        "neighborhood-mutation-de-qu-suganthan-liang-2012";
 }

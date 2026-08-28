@@ -20,6 +20,8 @@ $catalog =
 $algorithms = @($catalog.algorithms)
 $families = @($catalog.families)
 
+& (Join-Path $Root "docs\Test-NeighborhoodMutationDe.ps1") -Root $Root
+
 & (Join-Path $Root "docs\Test-AdaptiveNichingPso.ps1") -Root $Root
 
 & (Join-Path $Root "docs\Test-VectorNichePso.ps1") -Root $Root
@@ -156,7 +158,7 @@ $families = @($catalog.families)
 
 & (Join-Path $Root "docs\Test-BiogeographyBasedOptimization.ps1") -Root $Root
 
-if ($algorithms.Count -lt 125) {
+if ($algorithms.Count -lt 126) {
     throw "Documentation parity: expected at least 57 currently public algorithms."
 }
 
@@ -457,6 +459,8 @@ $requiredRepoFiles = @(
     "docs\pages\algorithms\vector-niche-pso-schoeman-engelbrecht-2004.md",
     "docs\Test-AdaptiveNichingPso.ps1",
     "docs\pages\algorithms\adaptive-niching-pso-bird-li-2006.md",
+    "docs\Test-NeighborhoodMutationDe.ps1",
+    "docs\pages\algorithms\neighborhood-mutation-de-qu-suganthan-liang-2012.md",
     "docs\Test-DoxygenMarkupSafety.ps1",
     "docs\Test-ContinuousCrossEntropy.ps1",
     "docs\Test-LargeNeighborhoodSearch.ps1",
@@ -604,8 +608,8 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.135.0") {
-    throw "Documentation parity: version.json must be 0.135.0 for this release."
+if ([string]$version.version -ne "0.136.0") {
+    throw "Documentation parity: version.json must be 0.136.0 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root

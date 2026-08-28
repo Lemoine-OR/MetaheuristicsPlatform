@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.136.0] - 2026-08-28
+
+- Add canonical Neighborhood-Mutation Differential Evolution scientific identity (Qu, Suganthan & Liang, 2012; DOI 10.1109/TEVC.2011.2161873).
+- Stable ID: `neighborhood-mutation-de-qu-suganthan-liang-2012`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.135.0] - 2026-08-28
 
 - Add canonical Adaptive Niching Particle Swarm Optimization scientific identity (Bird & Li, 2006; DOI 10.1145/1143997.1143999).

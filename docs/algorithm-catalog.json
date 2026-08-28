@@ -2787,6 +2787,28 @@
                            "assumptions":  "Finite bounded continuous decision box, finite objective values, explicit optimization sense and Euclidean decision-space distances.",
                            "convergence":  "No universal finite-time guarantee of finding every optimum is asserted; the named stochastic niching mechanism is preserved.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "neighborhood-mutation-de-qu-suganthan-liang-2012",
+                           "name":  "Neighborhood-Mutation Differential Evolution",
+                           "class":  "NeighborhoodMutationDeOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "Population-based multimodal search with decision-space niching",
+                           "space":  "O(ND) plus niche/archive state",
+                           "applicability":  "Bounded continuous multimodal optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multimodal/NeighborhoodMutationDe/NeighborhoodMutationDeOptimizer.cs",
+                           "publication":  "Qu, Suganthan \u0026 Liang (2012), Differential Evolution With Neighborhood Mutation for Multimodal Optimization",
+                           "doi":  "10.1109/TEVC.2011.2161873",
+                           "implementation":  "DE mutation is restricted to Euclidean neighborhoods, preserving distinct attraction basins while evolving each niche toward its own optimum.",
+                           "page":  "docs/pages/algorithms/neighborhood-mutation-de-qu-suganthan-liang-2012.md",
+                           "problem":  "\\operatorname{FindMany}_{x\\in\\mathcal X} f(x)",
+                           "update":  "\\begin{aligned}\\mathcal N_i\u0026=\\mathrm{Nearest}(x_i,k),\\\\v_i\u0026=x_{r_1}+F(x_{r_2}-x_{r_3}),\\qquad r_1,r_2,r_3\\in\\mathcal N_i.\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, finite objective values, explicit optimization sense and Euclidean decision-space distances.",
+                           "convergence":  "No universal finite-time guarantee of finding every optimum is asserted; the named stochastic niching mechanism is preserved.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

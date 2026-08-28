@@ -1,5 +1,9 @@
 # API stability
 
+## v0.136.0
+
+- Added stable direct-factory algorithm ID `neighborhood-mutation-de-qu-suganthan-liang-2012` (`NeighborhoodMutationDeOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.135.0
 
 - Added stable direct-factory algorithm ID `adaptive-niching-pso-bird-li-2006` (`AdaptiveNichingPsoOptimizer`). Existing public IDs and signatures are unchanged.

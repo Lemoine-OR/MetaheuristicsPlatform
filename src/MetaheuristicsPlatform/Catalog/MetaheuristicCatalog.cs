@@ -1740,7 +1740,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Multimodal/AdaptiveNichingPso/AdaptiveNichingPsoOptimizer.cs",
     "Bird & Li (2006), Adaptively choosing niching parameters in a PSO",
     "10.1145/1143997.1143999",
-    "Population distance statistics determine the niching radius adaptively during the run instead of requiring a fixed radius supplied by the user.")
+    "Population distance statistics determine the niching radius adaptively during the run instead of requiring a fixed radius supplied by the user."),
+new(
+    "neighborhood-mutation-de-qu-suganthan-liang-2012",
+    "Neighborhood-Mutation Differential Evolution",
+    "NeighborhoodMutationDeOptimizer",
+    "evolutionary-methods",
+    "Evolutionary methods",
+    "Population-based multimodal search with decision-space niching",
+    "O(ND) to O(N^2D) plus objective evaluations depending on niching mechanism",
+    "Bounded continuous multimodal optimization",
+    false,
+    "src/MetaheuristicsPlatform/Algorithms/Multimodal/NeighborhoodMutationDe/NeighborhoodMutationDeOptimizer.cs",
+    "Qu, Suganthan & Liang (2012), Differential Evolution With Neighborhood Mutation for Multimodal Optimization",
+    "10.1109/TEVC.2011.2161873",
+    "DE mutation is restricted to Euclidean neighborhoods, preserving distinct attraction basins while evolving each niche toward its own optimum.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>
