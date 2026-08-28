@@ -1,5 +1,9 @@
 # API stability
 
+## v0.125.0
+
+- Added stable direct-factory algorithm ID `epsilon-constrained-de-takahama-sakai-iwane-2006` (`EpsilonConstrainedDeOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.124.0
 
 - Added stable direct-factory algorithm ID `adaptive-penalty-formulation-ga-tessema-yen-2009` (`TessemaYenPenaltyGaOptimizer`). Existing public IDs and signatures are unchanged.

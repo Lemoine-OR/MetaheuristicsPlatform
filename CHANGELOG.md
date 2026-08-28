@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.125.0] - 2026-08-28
+
+- Add canonical Epsilon-Constrained Differential Evolution scientific identity (Takahama, Sakai & Iwane, 2006; DOI 10.1109/ICSMC.2006.385209).
+- Stable ID: `epsilon-constrained-de-takahama-sakai-iwane-2006`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.124.0] - 2026-08-28
 
 - Add canonical Tessema-Yen Adaptive Penalty Genetic Algorithm scientific identity (Tessema & Yen, 2009; DOI 10.1109/TSMCA.2009.2013333).

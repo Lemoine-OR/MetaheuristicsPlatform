@@ -20,6 +20,8 @@ $catalog =
 $algorithms = @($catalog.algorithms)
 $families = @($catalog.families)
 
+& (Join-Path $Root "docs\Test-EpsilonConstrainedDe.ps1") -Root $Root
+
 & (Join-Path $Root "docs\Test-TessemaYenPenaltyGa.ps1") -Root $Root
 
 & (Join-Path $Root "docs\Test-AdaptivePenaltyGa.ps1") -Root $Root
@@ -134,7 +136,7 @@ $families = @($catalog.families)
 
 & (Join-Path $Root "docs\Test-BiogeographyBasedOptimization.ps1") -Root $Root
 
-if ($algorithms.Count -lt 114) {
+if ($algorithms.Count -lt 115) {
     throw "Documentation parity: expected at least 57 currently public algorithms."
 }
 
@@ -413,6 +415,8 @@ $requiredRepoFiles = @(
     "docs\pages\algorithms\adaptive-penalty-ga-lemonge-barbosa-2004.md",
     "docs\Test-TessemaYenPenaltyGa.ps1",
     "docs\pages\algorithms\adaptive-penalty-formulation-ga-tessema-yen-2009.md",
+    "docs\Test-EpsilonConstrainedDe.ps1",
+    "docs\pages\algorithms\epsilon-constrained-de-takahama-sakai-iwane-2006.md",
     "docs\Test-DoxygenMarkupSafety.ps1",
     "docs\Test-ContinuousCrossEntropy.ps1",
     "docs\Test-LargeNeighborhoodSearch.ps1",
@@ -560,8 +564,8 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.124.0") {
-    throw "Documentation parity: version.json must be 0.124.0 for this release."
+if ([string]$version.version -ne "0.125.0") {
+    throw "Documentation parity: version.json must be 0.125.0 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root

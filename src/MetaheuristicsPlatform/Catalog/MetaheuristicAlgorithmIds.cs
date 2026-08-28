@@ -268,4 +268,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string TessemaYenPenaltyGa =
         "adaptive-penalty-formulation-ga-tessema-yen-2009";
+
+    public const string EpsilonConstrainedDe =
+        "epsilon-constrained-de-takahama-sakai-iwane-2006";
 }

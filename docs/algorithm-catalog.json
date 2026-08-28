@@ -2545,6 +2545,28 @@
                            "assumptions":  "Finite bounded continuous decision box, finite objective/constraint values and explicit equality tolerance.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; the named stochastic mechanism is preserved.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "epsilon-constrained-de-takahama-sakai-iwane-2006",
+                           "name":  "Epsilon-Constrained Differential Evolution",
+                           "class":  "EpsilonConstrainedDeOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "Population-based constrained search plus objective/constraint evaluations",
+                           "space":  "O(N(D+C))",
+                           "applicability":  "Bounded continuous constrained optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Constraints/EpsilonConstrainedDe/EpsilonConstrainedDeOptimizer.cs",
+                           "publication":  "Takahama, Sakai \u0026 Iwane (2006), Solving Nonlinear Constrained Optimization Problems by the epsilon Constrained Differential Evolution",
+                           "doi":  "10.1109/ICSMC.2006.385209",
+                           "implementation":  "DE/rand/1/bin uses an epsilon-level ordering whose admissible violation threshold decreases to zero over a controlled number of generations.",
+                           "page":  "docs/pages/algorithms/epsilon-constrained-de-takahama-sakai-iwane-2006.md",
+                           "problem":  "\\\\min/\\\\max\\\\;f(x)\\\\;\\\\text{s.t.}\\\\;g_i(x)\\\\le0,\\\\;h_j(x)=0,\\\\;x\\\\in\\\\mathcal X",
+                           "update":  "\\begin{aligned}\\varepsilon_t\u0026=\\varepsilon_0\\left(1-\\frac{t}{T_c}\\right)^{c_p},\\qquad x\\preceq_{\\varepsilon_t}y.\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, finite objective/constraint values and explicit equality tolerance.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; the named stochastic mechanism is preserved.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

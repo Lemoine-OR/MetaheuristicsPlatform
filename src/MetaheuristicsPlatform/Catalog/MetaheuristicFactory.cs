@@ -346,6 +346,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.TessemaYenPenaltyGa,
             "MetaheuristicsPlatform.Algorithms.Constraints.TessemaYenPenaltyGa.TessemaYenPenaltyGaOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.EpsilonConstrainedDe,
+            "MetaheuristicsPlatform.Algorithms.Constraints.EpsilonConstrainedDe.EpsilonConstrainedDeOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

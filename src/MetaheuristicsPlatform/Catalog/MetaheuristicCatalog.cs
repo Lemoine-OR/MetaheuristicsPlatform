@@ -1586,7 +1586,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Constraints/TessemaYenPenaltyGa/TessemaYenPenaltyGaOptimizer.cs",
     "Tessema & Yen (2009), An Adaptive Penalty Formulation for Constrained Evolutionary Optimization",
     "10.1109/TSMCA.2009.2013333",
-    "Normalized objective and violation distance is combined with a feasible-ratio-driven adaptive penalty, retaining useful infeasible candidates without a user-tuned penalty coefficient.")
+    "Normalized objective and violation distance is combined with a feasible-ratio-driven adaptive penalty, retaining useful infeasible candidates without a user-tuned penalty coefficient."),
+new(
+    "epsilon-constrained-de-takahama-sakai-iwane-2006",
+    "Epsilon-Constrained Differential Evolution",
+    "EpsilonConstrainedDeOptimizer",
+    "evolutionary-methods",
+    "Evolutionary methods",
+    "Population-based constrained search plus objective/constraint evaluations",
+    "O(N(D+C))",
+    "Bounded continuous constrained optimization",
+    false,
+    "src/MetaheuristicsPlatform/Algorithms/Constraints/EpsilonConstrainedDe/EpsilonConstrainedDeOptimizer.cs",
+    "Takahama, Sakai & Iwane (2006), Solving Nonlinear Constrained Optimization Problems by the epsilon Constrained Differential Evolution",
+    "10.1109/ICSMC.2006.385209",
+    "DE/rand/1/bin uses an epsilon-level ordering whose admissible violation threshold decreases to zero over a controlled number of generations.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>
