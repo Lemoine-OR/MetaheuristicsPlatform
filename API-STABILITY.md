@@ -1,5 +1,9 @@
 # API stability
 
+## v0.118.0
+
+- Added stable direct-factory algorithm ID `deb-feasibility-rules-ga-2000` (`DebConstraintGaOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.117.0
 
 - Added stable direct-factory algorithm ID `vaea-xiang-zhou-li-chen-2017` (`VaeaOptimizer`). Existing public IDs and signatures are unchanged.

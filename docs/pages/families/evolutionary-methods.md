@@ -41,6 +41,7 @@ Population methods based on structured variation or combination, selection, refe
 - **[Theta-Dominance Evolutionary Algorithm](../algorithms/theta-dea-yuan-xu-wang-yao-2016.md)** - `theta-dea-yuan-xu-wang-yao-2016` - Theta-DEA clusters normalized objective vectors by reference directions and ranks solutions with theta-dominance/PBI pressure.
 - **[Knee Point Driven Evolutionary Algorithm](../algorithms/knea-zhang-tian-jin-2015.md)** - `knea-zhang-tian-jin-2015` - KnEA detects locally preferred knee candidates and combines knee pressure with nondominated environmental selection.
 - **[Vector Angle-Based Evolutionary Algorithm](../algorithms/vaea-xiang-zhou-li-chen-2017.md)** - `vaea-xiang-zhou-li-chen-2017` - VaEA uses normalized objective-vector angles for diversity and convergence-aware elimination without predefined reference vectors.
+- **[Deb Feasibility Rules Genetic Algorithm](../algorithms/deb-feasibility-rules-ga-2000.md)** - `deb-feasibility-rules-ga-2000` - Feasibility-first Deb rules compare feasible candidates by objective, prefer feasible over infeasible, and compare infeasible candidates by aggregate constraint violation.
 
 ## Navigation
 

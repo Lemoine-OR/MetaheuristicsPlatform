@@ -1488,7 +1488,21 @@ public static class MetaheuristicCatalog
             "src/MetaheuristicsPlatform/Algorithms/Multiobjective/Vaea/VaeaOptimizer.cs",
             "Xiang, Zhou, Li & Chen (2017), A Vector Angle-Based Evolutionary Algorithm for Unconstrained Many-Objective Optimization, IEEE Transactions on Evolutionary Computation 21(1), 131-152",
             "10.1109/TEVC.2016.2587808",
-            "VaEA uses normalized objective-vector angles for diversity and convergence-aware elimination without predefined reference vectors.")
+            "VaEA uses normalized objective-vector angles for diversity and convergence-aware elimination without predefined reference vectors."),
+new(
+    "deb-feasibility-rules-ga-2000",
+    "Deb Feasibility Rules Genetic Algorithm",
+    "DebConstraintGaOptimizer",
+    "evolutionary-methods",
+    "Evolutionary methods",
+    "Population-based constrained search plus objective/constraint evaluations",
+    "O(N(D+C))",
+    "Bounded continuous constrained optimization",
+    false,
+    "src/MetaheuristicsPlatform/Algorithms/Constraints/DebConstraintGa/DebConstraintGaOptimizer.cs",
+    "Deb (2000), An efficient constraint handling method for genetic algorithms",
+    "10.1016/S0045-7825(99)00389-8",
+    "Feasibility-first Deb rules compare feasible candidates by objective, prefer feasible over infeasible, and compare infeasible candidates by aggregate constraint violation.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

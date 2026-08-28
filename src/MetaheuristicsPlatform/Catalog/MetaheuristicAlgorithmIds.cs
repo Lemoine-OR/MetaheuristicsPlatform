@@ -247,4 +247,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string Vaea =
         "vaea-xiang-zhou-li-chen-2017";
+
+    public const string DebConstraintGa =
+        "deb-feasibility-rules-ga-2000";
 }

@@ -318,6 +318,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.Vaea,
             "MetaheuristicsPlatform.Algorithms.Multiobjective.Vaea.VaeaOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.DebConstraintGa,
+            "MetaheuristicsPlatform.Algorithms.Constraints.DebConstraintGa.DebConstraintGaOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.118.0] - 2026-08-28
+
+- Add canonical Deb Feasibility Rules Genetic Algorithm scientific identity (Deb, 2000; DOI 10.1016/S0045-7825(99)00389-8).
+- Stable ID: `deb-feasibility-rules-ga-2000`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.117.0] - 2026-08-27
 
 - Add canonical Vector Angle-Based Evolutionary Algorithm scientific identity (Xiang, Zhou, Li & Chen, 2017; DOI 10.1109/TEVC.2016.2587808).
