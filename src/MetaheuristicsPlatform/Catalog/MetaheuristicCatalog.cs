@@ -1628,7 +1628,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Constraints/HomomorphousMappingEa/HomomorphousMappingEaOptimizer.cs",
     "Koziel & Michalewicz (1999), Evolutionary algorithms, homomorphous mappings, and constrained parameter optimization",
     "10.1162/evco.1999.7.1.19",
-    "A feasible reference point anchors a decoder that maps search points into the feasible region by radial segment projection and bisection.")
+    "A feasible reference point anchors a decoder that maps search points into the feasible region by radial segment projection and bisection."),
+new(
+    "ensemble-constraint-handling-mallipeddi-suganthan-2010",
+    "Ensemble of Constraint Handling Techniques",
+    "EnsembleConstraintHandlingOptimizer",
+    "evolutionary-methods",
+    "Evolutionary methods",
+    "Population-based constrained search plus objective/constraint evaluations",
+    "O(N(D+C))",
+    "Bounded continuous constrained optimization",
+    false,
+    "src/MetaheuristicsPlatform/Algorithms/Constraints/EnsembleConstraintHandling/EnsembleConstraintHandlingOptimizer.cs",
+    "Mallipeddi & Suganthan (2010), Ensemble of constraint handling techniques",
+    "10.1109/TEVC.2009.2033582",
+    "Multiple subpopulations apply distinct constraint-handling techniques and periodically exchange elites, preserving the ensemble principle.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

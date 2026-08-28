@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.128.0] - 2026-08-28
+
+- Add canonical Ensemble of Constraint Handling Techniques scientific identity (Mallipeddi & Suganthan, 2010; DOI 10.1109/TEVC.2009.2033582).
+- Stable ID: `ensemble-constraint-handling-mallipeddi-suganthan-2010`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.127.0] - 2026-08-28
 
 - Add canonical Homomorphous-Mapping Evolutionary Algorithm scientific identity (Koziel & Michalewicz, 1999; DOI 10.1162/evco.1999.7.1.19).

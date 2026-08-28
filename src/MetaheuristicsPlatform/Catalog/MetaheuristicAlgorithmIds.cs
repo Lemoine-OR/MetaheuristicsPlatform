@@ -277,4 +277,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string HomomorphousMappingEa =
         "homomorphous-mapping-ea-koziel-michalewicz-1999";
+
+    public const string EnsembleConstraintHandling =
+        "ensemble-constraint-handling-mallipeddi-suganthan-2010";
 }

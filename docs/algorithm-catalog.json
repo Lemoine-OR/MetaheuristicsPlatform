@@ -2611,6 +2611,28 @@
                            "assumptions":  "Finite bounded continuous decision box, finite objective/constraint values and explicit equality tolerance.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; the named stochastic mechanism is preserved.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "ensemble-constraint-handling-mallipeddi-suganthan-2010",
+                           "name":  "Ensemble of Constraint Handling Techniques",
+                           "class":  "EnsembleConstraintHandlingOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "Population-based constrained search plus objective/constraint evaluations",
+                           "space":  "O(N(D+C))",
+                           "applicability":  "Bounded continuous constrained optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Constraints/EnsembleConstraintHandling/EnsembleConstraintHandlingOptimizer.cs",
+                           "publication":  "Mallipeddi \u0026 Suganthan (2010), Ensemble of constraint handling techniques",
+                           "doi":  "10.1109/TEVC.2009.2033582",
+                           "implementation":  "Multiple subpopulations apply distinct constraint-handling techniques and periodically exchange elites, preserving the ensemble principle.",
+                           "page":  "docs/pages/algorithms/ensemble-constraint-handling-mallipeddi-suganthan-2010.md",
+                           "problem":  "\\\\min/\\\\max\\\\;f(x)\\\\;\\\\text{s.t.}\\\\;g_i(x)\\\\le0,\\\\;h_j(x)=0,\\\\;x\\\\in\\\\mathcal X",
+                           "update":  "\\begin{aligned}P_{t+1}^{(k)}\u0026=\\mathcal E_k(P_t^{(k)}),\\qquad \\text{elite exchange across }k.\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, finite objective/constraint values and explicit equality tolerance.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; the named stochastic mechanism is preserved.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

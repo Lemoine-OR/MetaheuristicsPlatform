@@ -1,5 +1,9 @@
 # API stability
 
+## v0.128.0
+
+- Added stable direct-factory algorithm ID `ensemble-constraint-handling-mallipeddi-suganthan-2010` (`EnsembleConstraintHandlingOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.127.0
 
 - Added stable direct-factory algorithm ID `homomorphous-mapping-ea-koziel-michalewicz-1999` (`HomomorphousMappingEaOptimizer`). Existing public IDs and signatures are unchanged.

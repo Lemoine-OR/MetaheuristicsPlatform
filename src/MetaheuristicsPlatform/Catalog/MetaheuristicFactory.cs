@@ -358,6 +358,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.HomomorphousMappingEa,
             "MetaheuristicsPlatform.Algorithms.Constraints.HomomorphousMappingEa.HomomorphousMappingEaOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.EnsembleConstraintHandling,
+            "MetaheuristicsPlatform.Algorithms.Constraints.EnsembleConstraintHandling.EnsembleConstraintHandlingOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

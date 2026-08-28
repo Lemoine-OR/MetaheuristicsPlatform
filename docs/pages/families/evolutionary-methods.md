@@ -51,6 +51,7 @@ Population methods based on structured variation or combination, selection, refe
 - **[Epsilon-Constrained Differential Evolution](../algorithms/epsilon-constrained-de-takahama-sakai-iwane-2006.md)** - `epsilon-constrained-de-takahama-sakai-iwane-2006` - DE/rand/1/bin uses an epsilon-level ordering whose admissible violation threshold decreases to zero over a controlled number of generations.
 - **[GENOCOP III](../algorithms/genocop-iii-michalewicz-nazhiyath-1995.md)** - `genocop-iii-michalewicz-nazhiyath-1995` - Search and feasible reference populations co-evolve; infeasible search points are repaired toward feasible reference points by segment bisection before evaluation.
 - **[Homomorphous-Mapping Evolutionary Algorithm](../algorithms/homomorphous-mapping-ea-koziel-michalewicz-1999.md)** - `homomorphous-mapping-ea-koziel-michalewicz-1999` - A feasible reference point anchors a decoder that maps search points into the feasible region by radial segment projection and bisection.
+- **[Ensemble of Constraint Handling Techniques](../algorithms/ensemble-constraint-handling-mallipeddi-suganthan-2010.md)** - `ensemble-constraint-handling-mallipeddi-suganthan-2010` - Multiple subpopulations apply distinct constraint-handling techniques and periodically exchange elites, preserving the ensemble principle.
 
 ## Navigation
 
