@@ -338,6 +338,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.HomaifarPenaltyGa,
             "MetaheuristicsPlatform.Algorithms.Constraints.HomaifarPenaltyGa.HomaifarPenaltyGaOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.AdaptivePenaltyGa,
+            "MetaheuristicsPlatform.Algorithms.Constraints.AdaptivePenaltyGa.AdaptivePenaltyGaOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

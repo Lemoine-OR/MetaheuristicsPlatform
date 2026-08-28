@@ -262,4 +262,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string HomaifarPenaltyGa =
         "homaifar-penalty-ga-1994";
+
+    public const string AdaptivePenaltyGa =
+        "adaptive-penalty-ga-lemonge-barbosa-2004";
 }

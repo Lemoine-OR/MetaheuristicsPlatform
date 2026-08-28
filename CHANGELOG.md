@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.123.0] - 2026-08-28
+
+- Add canonical Lemonge-Barbosa Adaptive Penalty Genetic Algorithm scientific identity (Lemonge & Barbosa, 2004; DOI 10.1002/nme.899).
+- Stable ID: `adaptive-penalty-ga-lemonge-barbosa-2004`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.122.0] - 2026-08-28
 
 - Add canonical Homaifar-Qi-Lai Penalty Genetic Algorithm scientific identity (Homaifar, Qi & Lai, 1994; DOI 10.1177/003754979406200405).

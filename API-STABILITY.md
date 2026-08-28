@@ -1,5 +1,9 @@
 # API stability
 
+## v0.123.0
+
+- Added stable direct-factory algorithm ID `adaptive-penalty-ga-lemonge-barbosa-2004` (`AdaptivePenaltyGaOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.122.0
 
 - Added stable direct-factory algorithm ID `homaifar-penalty-ga-1994` (`HomaifarPenaltyGaOptimizer`). Existing public IDs and signatures are unchanged.

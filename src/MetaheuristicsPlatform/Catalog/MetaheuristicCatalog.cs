@@ -1558,7 +1558,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Constraints/HomaifarPenaltyGa/HomaifarPenaltyGaOptimizer.cs",
     "Homaifar, Qi & Lai (1994), Constrained optimization via genetic algorithms",
     "10.1177/003754979406200405",
-    "Static multilevel penalty uses user-defined violation levels and a distinct penalty coefficient for each constraint/level pair; the active violation penalty is quadratic.")
+    "Static multilevel penalty uses user-defined violation levels and a distinct penalty coefficient for each constraint/level pair; the active violation penalty is quadratic."),
+new(
+    "adaptive-penalty-ga-lemonge-barbosa-2004",
+    "Lemonge-Barbosa Adaptive Penalty Genetic Algorithm",
+    "AdaptivePenaltyGaOptimizer",
+    "evolutionary-methods",
+    "Evolutionary methods",
+    "Population-based constrained search plus objective/constraint evaluations",
+    "O(N(D+C))",
+    "Bounded continuous constrained optimization",
+    false,
+    "src/MetaheuristicsPlatform/Algorithms/Constraints/AdaptivePenaltyGa/AdaptivePenaltyGaOptimizer.cs",
+    "Lemonge & Barbosa (2004), An adaptive penalty scheme for genetic algorithms in structural optimization",
+    "10.1002/nme.899",
+    "Parameter-less constraint-specific penalty coefficients are recomputed from population-average objective and violation information.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>
