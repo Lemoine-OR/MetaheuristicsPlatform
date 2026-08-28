@@ -1824,7 +1824,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Multimodal/AdaptiveRestrictedTournamentGa/AdaptiveRestrictedTournamentGaOptimizer.cs",
     "Roy & Parmee (2006), Adaptive Restricted Tournament Selection for the identification of multiple sub-optima in a multi-modal function",
     "10.1007/BFb0032787",
-    "Shared near-neighbor clustering adapts the restricted tournament competition neighborhood, avoiding a fixed modality-dependent niche radius.")
+    "Shared near-neighbor clustering adapts the restricted tournament competition neighborhood, avoiding a fixed modality-dependent niche radius."),
+new(
+    "tabu-search-hyperheuristic-burke-kendall-soubeiga-2003",
+    "Tabu-Search Hyper-Heuristic",
+    "TabuSearchHyperHeuristicOptimizer",
+    "hyper-heuristics",
+    "Hyper-heuristics and algorithm selection",
+    "One or more low-level heuristic applications/evaluations per high-level iteration plus selector overhead",
+    "O(H + M) high-level policy state plus domain solution state",
+    "Reusable cross-domain heuristic selection and adaptive operator control",
+    true,
+    "src/MetaheuristicsPlatform/Algorithms/HyperHeuristics/TabuSearchHyperHeuristic/TabuSearchHyperHeuristicOptimizer.cs",
+    "Burke, Kendall & Soubeiga (2003), A Tabu-Search Hyperheuristic for Timetabling and Rostering",
+    "10.1023/B:HEUR.0000012446.94732.B6",
+    "Heuristic-level reinforcement scores compete under a tabu list; non-improving low-level heuristics become temporarily unavailable.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

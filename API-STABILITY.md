@@ -1,5 +1,9 @@
 # API stability
 
+## v0.142.0
+
+- Added stable direct-factory algorithm ID `tabu-search-hyperheuristic-burke-kendall-soubeiga-2003` (`TabuSearchHyperHeuristicOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.141.0
 
 - Added stable direct-factory algorithm ID `adaptive-rts-ga-roy-parmee-2006` (`AdaptiveRestrictedTournamentGaOptimizer`). Existing public IDs and signatures are unchanged.

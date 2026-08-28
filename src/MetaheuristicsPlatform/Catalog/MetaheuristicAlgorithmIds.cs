@@ -319,4 +319,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string AdaptiveRestrictedTournamentGa =
         "adaptive-rts-ga-roy-parmee-2006";
+
+    public const string TabuSearchHyperHeuristic =
+        "tabu-search-hyperheuristic-burke-kendall-soubeiga-2003";
 }

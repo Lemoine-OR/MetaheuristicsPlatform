@@ -414,6 +414,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.AdaptiveRestrictedTournamentGa,
             "MetaheuristicsPlatform.Algorithms.Multimodal.AdaptiveRestrictedTournamentGa.AdaptiveRestrictedTournamentGaOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.TabuSearchHyperHeuristic,
+            "MetaheuristicsPlatform.Algorithms.HyperHeuristics.TabuSearchHyperHeuristic.TabuSearchHyperHeuristicOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

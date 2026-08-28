@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.142.0] - 2026-08-28
+
+- Add canonical Tabu-Search Hyper-Heuristic scientific identity (Burke, Kendall & Soubeiga, 2003; DOI 10.1023/B:HEUR.0000012446.94732.B6).
+- Stable ID: `tabu-search-hyperheuristic-burke-kendall-soubeiga-2003`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.141.0] - 2026-08-28
 
 - Add canonical Adaptive Restricted Tournament Selection Genetic Algorithm scientific identity (Roy & Parmee, 2006; DOI 10.1007/BFb0032787).

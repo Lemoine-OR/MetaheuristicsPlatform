@@ -45,7 +45,7 @@ catalog IDs and literature-backed documentation.
 </tr>
 </table>
 
-<p align="center"><strong>131 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>132 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -240,6 +240,13 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/multi-verse-optimizer-mirjalili-mirjalili-hatamlou-2016.html"><strong>Multi-Verse Optimizer</strong></a><br><sub>Canonical minimization-oriented MVO white-hole roulette, normalized inflation rates, elite best universe, linearly increasing wormhole existence probability and power-law travelling distance rate with p=6 by default.</sub><br><code>multi-verse-optimizer-mirjalili-mirjalili-hatamlou-2016</code><br><sub><code>MultiVerseOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/equilibrium-optimizer-faramarzi-heidarinejad-stephens-mirjalili-2020.html"><strong>Equilibrium Optimizer</strong></a><br><sub>Canonical EO with four best equilibrium candidates plus their average, a1=2, a2=1, GP=0.5 defaults, exponential F term, generation probability and source-code memory saving.</sub><br><code>equilibrium-optimizer-faramarzi-heidarinejad-stephens-mirjalili-2020</code><br><sub><code>EquilibriumOptimizer</code></sub></td></tr>
 </table>
+
+### Hyper-heuristics and algorithm selection
+
+<table>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/tabu-search-hyperheuristic-burke-kendall-soubeiga-2003.html"><strong>Tabu-Search Hyper-Heuristic</strong></a><br><sub>Heuristic-level reinforcement scores compete under a tabu list; non-improving low-level heuristics become temporarily unavailable.</sub><br><code>tabu-search-hyperheuristic-burke-kendall-soubeiga-2003</code><br><sub><code>TabuSearchHyperHeuristicOptimizer</code></sub></td></tr>
+</table>
+
 ## Scientific components
 
 Every component catalog is integrated into the same balanced grid; no scientific component

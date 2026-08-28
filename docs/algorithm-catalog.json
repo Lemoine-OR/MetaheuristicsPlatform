@@ -32,6 +32,11 @@
                          "id":  "other-metaheuristics",
                          "name":  "Other / music-inspired methods",
                          "description":  "Population-based or memory-driven metaheuristics whose scientific identity is not accurately represented as swarm, evolutionary, trajectory, constructive or hybrid."
+                     },
+                     {
+                         "id":  "hyper-heuristics",
+                         "name":  "Hyper-heuristics and algorithm selection",
+                         "description":  "High-level methods that select, sequence, adapt or generate lower-level heuristics and operators across reusable problem-domain interfaces."
                      }
                  ],
     "algorithms":  [
@@ -2918,6 +2923,28 @@
                            "update":  "\\begin{aligned}w_t\u0026=\\mathrm{AdaptiveWindow}(P_t),\\\\j^\\star\u0026=\\arg\\min_{j\\in\\mathcal T_i(w_t)}\\lVert u_i-x_j\\rVert_2,\\\\x_{j^\\star}\u0026\\leftarrow u_i\\quad\\text{if }u_i\\text{ is better}.\\end{aligned}",
                            "assumptions":  "Finite bounded continuous decision box, finite objective values, explicit optimization sense and Euclidean decision-space distances.",
                            "convergence":  "No universal finite-time guarantee of finding every optimum is asserted; the named stochastic niching mechanism is preserved.",
+                           "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "tabu-search-hyperheuristic-burke-kendall-soubeiga-2003",
+                           "name":  "Tabu-Search Hyper-Heuristic",
+                           "class":  "TabuSearchHyperHeuristicOptimizer",
+                           "category":  "hyper-heuristics",
+                           "kind":  "single-solution",
+                           "family":  "Hyper-heuristics and algorithm selection",
+                           "time":  "One or more low-level heuristic applications/evaluations per high-level iteration plus selector overhead",
+                           "space":  "O(H + M) high-level policy state plus domain solution state",
+                           "applicability":  "Reusable cross-domain heuristic selection and adaptive operator control",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/HyperHeuristics/TabuSearchHyperHeuristic/TabuSearchHyperHeuristicOptimizer.cs",
+                           "publication":  "Burke, Kendall \u0026 Soubeiga (2003), A Tabu-Search Hyperheuristic for Timetabling and Rostering",
+                           "doi":  "10.1023/B:HEUR.0000012446.94732.B6",
+                           "implementation":  "Heuristic-level reinforcement scores compete under a tabu list; non-improving low-level heuristics become temporarily unavailable.",
+                           "page":  "docs/pages/algorithms/tabu-search-hyperheuristic-burke-kendall-soubeiga-2003.md",
+                           "problem":  "\\operatorname{HH}(\\mathcal H,\\phi,x_0)",
+                           "update":  "\\begin{aligned}h_t\u0026=\\arg\\max_{h\\notin T_t}S_h(t),\\\\S_h(t+1)\u0026=(1-\\alpha)S_h(t)+\\alpha r_t.\\end{aligned}",
+                           "assumptions":  "Finite objective values, non-empty unique low-level heuristic pool and clonable state.",
+                           "convergence":  "No universal finite-time global-convergence guarantee is asserted.",
                            "factoryMode":  "direct"
                        }
                    ]
