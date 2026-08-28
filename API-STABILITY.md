@@ -1,5 +1,9 @@
 # API stability
 
+## v0.144.0
+
+- Added stable direct-factory algorithm ID `graph-based-hyperheuristic-burke-mccollum-meisels-petrovic-qu-2007` (`GraphBasedHyperHeuristicOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.143.0
 
 - Added stable direct-factory algorithm ID `case-based-heuristic-selection-burke-petrovic-qu-2006` (`CaseBasedHyperHeuristicOptimizer`). Existing public IDs and signatures are unchanged.

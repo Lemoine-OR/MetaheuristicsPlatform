@@ -1852,7 +1852,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/HyperHeuristics/CaseBasedHyperHeuristic/CaseBasedHyperHeuristicOptimizer.cs",
     "Burke, Petrovic & Qu (2006), Case Based Heuristic Selection for Timetabling Problems",
     "10.1007/s10951-006-6775-y",
-    "A feature description of the current search state retrieves the most similar stored case and reuses its associated low-level heuristic.")
+    "A feature description of the current search state retrieves the most similar stored case and reuses its associated low-level heuristic."),
+new(
+    "graph-based-hyperheuristic-burke-mccollum-meisels-petrovic-qu-2007",
+    "Graph-Based Hyper-Heuristic",
+    "GraphBasedHyperHeuristicOptimizer",
+    "hyper-heuristics",
+    "Hyper-heuristics and algorithm selection",
+    "One or more low-level heuristic applications/evaluations per high-level iteration plus selector overhead",
+    "O(H + M) high-level policy state plus domain solution state",
+    "Reusable cross-domain heuristic selection and adaptive operator control",
+    true,
+    "src/MetaheuristicsPlatform/Algorithms/HyperHeuristics/GraphBasedHyperHeuristic/GraphBasedHyperHeuristicOptimizer.cs",
+    "Burke, McCollum, Meisels, Petrovic & Qu (2007), A graph-based hyper-heuristic for educational timetabling problems",
+    "10.1016/j.ejor.2005.08.012",
+    "A tabu search explores permutations of domain-provided low-level heuristics; each sequence is evaluated as a high-level heuristic ordering.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

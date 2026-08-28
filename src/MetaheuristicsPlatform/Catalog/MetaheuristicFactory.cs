@@ -422,6 +422,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.CaseBasedHyperHeuristic,
             "MetaheuristicsPlatform.Algorithms.HyperHeuristics.CaseBasedHyperHeuristic.CaseBasedHyperHeuristicOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.GraphBasedHyperHeuristic,
+            "MetaheuristicsPlatform.Algorithms.HyperHeuristics.GraphBasedHyperHeuristic.GraphBasedHyperHeuristicOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

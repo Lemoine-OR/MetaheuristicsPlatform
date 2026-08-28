@@ -2968,6 +2968,28 @@
                            "assumptions":  "Finite objective values, non-empty unique low-level heuristic pool and clonable state.",
                            "convergence":  "No universal finite-time global-convergence guarantee is asserted.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "graph-based-hyperheuristic-burke-mccollum-meisels-petrovic-qu-2007",
+                           "name":  "Graph-Based Hyper-Heuristic",
+                           "class":  "GraphBasedHyperHeuristicOptimizer",
+                           "category":  "hyper-heuristics",
+                           "kind":  "single-solution",
+                           "family":  "Hyper-heuristics and algorithm selection",
+                           "time":  "One or more low-level heuristic applications/evaluations per high-level iteration plus selector overhead",
+                           "space":  "O(H + M) high-level policy state plus domain solution state",
+                           "applicability":  "Reusable cross-domain heuristic selection and adaptive operator control",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/HyperHeuristics/GraphBasedHyperHeuristic/GraphBasedHyperHeuristicOptimizer.cs",
+                           "publication":  "Burke, McCollum, Meisels, Petrovic \u0026 Qu (2007), A graph-based hyper-heuristic for educational timetabling problems",
+                           "doi":  "10.1016/j.ejor.2005.08.012",
+                           "implementation":  "A tabu search explores permutations of domain-provided low-level heuristics; each sequence is evaluated as a high-level heuristic ordering.",
+                           "page":  "docs/pages/algorithms/graph-based-hyperheuristic-burke-mccollum-meisels-petrovic-qu-2007.md",
+                           "problem":  "\\operatorname{HH}(\\mathcal H,\\phi,x_0)",
+                           "update":  "\\begin{aligned}\\pi\u0027\u0026=\\operatorname{swap}(\\pi,i,j),\\\\\\pi_{t+1}\u0026=\\arg\\min_{\\pi\u0027\\notin T_t}\\widetilde f(H_{\\pi\u0027}(x_0)).\\end{aligned}",
+                           "assumptions":  "Finite objective values, non-empty unique low-level heuristic pool and clonable state.",
+                           "convergence":  "No universal finite-time global-convergence guarantee is asserted.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

@@ -325,4 +325,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string CaseBasedHyperHeuristic =
         "case-based-heuristic-selection-burke-petrovic-qu-2006";
+
+    public const string GraphBasedHyperHeuristic =
+        "graph-based-hyperheuristic-burke-mccollum-meisels-petrovic-qu-2007";
 }

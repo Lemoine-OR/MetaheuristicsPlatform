@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.144.0] - 2026-08-28
+
+- Add canonical Graph-Based Hyper-Heuristic scientific identity (Burke, McCollum, Meisels, Petrovic & Qu, 2007; DOI 10.1016/j.ejor.2005.08.012).
+- Stable ID: `graph-based-hyperheuristic-burke-mccollum-meisels-petrovic-qu-2007`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.143.0] - 2026-08-28
 
 - Add canonical Case-Based Heuristic Selection scientific identity (Burke, Petrovic & Qu, 2006; DOI 10.1007/s10951-006-6775-y).
