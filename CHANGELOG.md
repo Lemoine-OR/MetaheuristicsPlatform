@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.122.0] - 2026-08-28
+
+- Add canonical Homaifar-Qi-Lai Penalty Genetic Algorithm scientific identity (Homaifar, Qi & Lai, 1994; DOI 10.1177/003754979406200405).
+- Stable ID: `homaifar-penalty-ga-1994`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.121.0] - 2026-08-28
 
 - Add canonical Joines-Houck Nonstationary Penalty Genetic Algorithm scientific identity (Joines & Houck, 1994; DOI 10.1109/ICEC.1994.349995).

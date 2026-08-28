@@ -45,6 +45,7 @@ Population methods based on structured variation or combination, selection, refe
 - **[Stochastic Ranking Evolution Strategy](../algorithms/stochastic-ranking-es-runarsson-yao-2000.md)** - `stochastic-ranking-es-runarsson-yao-2000` - Stochastic ranking repeatedly orders an evolution-strategy population using objective comparison with probability P_f and violation comparison otherwise, avoiding a fixed penalty coefficient.
 - **[Dominance-Based Tournament Genetic Algorithm](../algorithms/dominance-based-tournament-ga-coello-mezura-2002.md)** - `dominance-based-tournament-ga-coello-mezura-2002` - Penalty-free tournament selection compares objective quality and aggregate constraint violation through a dominance relation, preserving nondominated tradeoffs among infeasible candidates.
 - **[Joines-Houck Nonstationary Penalty Genetic Algorithm](../algorithms/nonstationary-penalty-ga-joines-houck-1994.md)** - `nonstationary-penalty-ga-joines-houck-1994` - Generation-dependent nonstationary penalty pressure follows the Joines-Houck mechanism with explicit C, alpha and beta controls.
+- **[Homaifar-Qi-Lai Penalty Genetic Algorithm](../algorithms/homaifar-penalty-ga-1994.md)** - `homaifar-penalty-ga-1994` - Static multilevel penalty uses user-defined violation levels and a distinct penalty coefficient for each constraint/level pair; the active violation penalty is quadratic.
 
 ## Navigation
 

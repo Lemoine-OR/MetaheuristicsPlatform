@@ -1544,7 +1544,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Constraints/JoinesHouckPenaltyGa/JoinesHouckPenaltyGaOptimizer.cs",
     "Joines & Houck (1994), On the use of non-stationary penalty functions to solve nonlinear constrained optimization problems with GA's",
     "10.1109/ICEC.1994.349995",
-    "Generation-dependent nonstationary penalty pressure follows the Joines-Houck mechanism with explicit C, alpha and beta controls.")
+    "Generation-dependent nonstationary penalty pressure follows the Joines-Houck mechanism with explicit C, alpha and beta controls."),
+new(
+    "homaifar-penalty-ga-1994",
+    "Homaifar-Qi-Lai Penalty Genetic Algorithm",
+    "HomaifarPenaltyGaOptimizer",
+    "evolutionary-methods",
+    "Evolutionary methods",
+    "Population-based constrained search plus objective/constraint evaluations",
+    "O(N(D+C))",
+    "Bounded continuous constrained optimization",
+    false,
+    "src/MetaheuristicsPlatform/Algorithms/Constraints/HomaifarPenaltyGa/HomaifarPenaltyGaOptimizer.cs",
+    "Homaifar, Qi & Lai (1994), Constrained optimization via genetic algorithms",
+    "10.1177/003754979406200405",
+    "Static multilevel penalty uses user-defined violation levels and a distinct penalty coefficient for each constraint/level pair; the active violation penalty is quadratic.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

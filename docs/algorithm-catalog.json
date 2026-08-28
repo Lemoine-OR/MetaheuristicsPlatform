@@ -2479,6 +2479,28 @@
                            "assumptions":  "Finite bounded continuous decision box, finite objective/constraint values and explicit equality tolerance.",
                            "convergence":  "No universal finite-time global convergence guarantee is asserted; the named stochastic mechanism is preserved.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "homaifar-penalty-ga-1994",
+                           "name":  "Homaifar-Qi-Lai Penalty Genetic Algorithm",
+                           "class":  "HomaifarPenaltyGaOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "Population-based constrained search plus objective/constraint evaluations",
+                           "space":  "O(N(D+C))",
+                           "applicability":  "Bounded continuous constrained optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Constraints/HomaifarPenaltyGa/HomaifarPenaltyGaOptimizer.cs",
+                           "publication":  "Homaifar, Qi \u0026 Lai (1994), Constrained optimization via genetic algorithms",
+                           "doi":  "10.1177/003754979406200405",
+                           "implementation":  "Static multilevel penalty uses user-defined violation levels and a distinct penalty coefficient for each constraint/level pair; the active violation penalty is quadratic.",
+                           "page":  "docs/pages/algorithms/homaifar-penalty-ga-1994.md",
+                           "problem":  "\\\\min/\\\\max\\\\;f(x)\\\\;\\\\text{s.t.}\\\\;g_i(x)\\\\le0,\\\\;h_j(x)=0,\\\\;x\\\\in\\\\mathcal X",
+                           "update":  "\\begin{aligned}F(x)\u0026=\\widetilde f(x)+\\sum_j R_{k(j),j}v_j(x)^2,\\qquad k(j)\\text{ selected by violation level}.\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, finite objective/constraint values and explicit equality tolerance.",
+                           "convergence":  "No universal finite-time global convergence guarantee is asserted; the named stochastic mechanism is preserved.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

@@ -259,4 +259,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string JoinesHouckPenaltyGa =
         "nonstationary-penalty-ga-joines-houck-1994";
+
+    public const string HomaifarPenaltyGa =
+        "homaifar-penalty-ga-1994";
 }

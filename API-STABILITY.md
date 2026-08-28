@@ -1,5 +1,9 @@
 # API stability
 
+## v0.122.0
+
+- Added stable direct-factory algorithm ID `homaifar-penalty-ga-1994` (`HomaifarPenaltyGaOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.121.0
 
 - Added stable direct-factory algorithm ID `nonstationary-penalty-ga-joines-houck-1994` (`JoinesHouckPenaltyGaOptimizer`). Existing public IDs and signatures are unchanged.
