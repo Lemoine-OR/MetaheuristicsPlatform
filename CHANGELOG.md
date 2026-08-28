@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.150.0] - 2026-08-28
+
+- Add canonical Reinforcement Learning Great-Deluge Hyper-Heuristic scientific identity (Ozcan, Misir, Ochoa & Burke, 2010; DOI 10.4018/jamc.2010102603).
+- Stable ID: `reinforcement-learning-great-deluge-hh-ozcan-misir-ochoa-burke-2010`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.149.0] - 2026-08-28
 
 - Add canonical Fitness-Rate-Rank Multi-Armed Bandit scientific identity (Li, Fialho, Kwong & Zhang, 2014; DOI 10.1109/TEVC.2013.2239648).

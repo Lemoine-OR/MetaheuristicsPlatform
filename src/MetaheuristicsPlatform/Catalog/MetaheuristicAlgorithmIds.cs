@@ -343,4 +343,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string FrrmabHyperHeuristic =
         "frrmab-li-fialho-kwong-zhang-2014";
+
+    public const string ReinforcementLearningGreatDelugeHyperHeuristic =
+        "reinforcement-learning-great-deluge-hh-ozcan-misir-ochoa-burke-2010";
 }

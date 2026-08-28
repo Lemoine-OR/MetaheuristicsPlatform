@@ -446,6 +446,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.FrrmabHyperHeuristic,
             "MetaheuristicsPlatform.Algorithms.HyperHeuristics.FrrmabHyperHeuristic.FrrmabHyperHeuristicOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.ReinforcementLearningGreatDelugeHyperHeuristic,
+            "MetaheuristicsPlatform.Algorithms.HyperHeuristics.ReinforcementLearningGreatDelugeHyperHeuristic.ReinforcementLearningGreatDelugeHyperHeuristicOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

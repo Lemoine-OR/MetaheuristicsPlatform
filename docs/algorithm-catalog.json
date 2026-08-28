@@ -3100,6 +3100,28 @@
                            "assumptions":  "Finite objective values, non-empty unique low-level heuristic pool and clonable state.",
                            "convergence":  "No universal finite-time global-convergence guarantee is asserted.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "reinforcement-learning-great-deluge-hh-ozcan-misir-ochoa-burke-2010",
+                           "name":  "Reinforcement Learning Great-Deluge Hyper-Heuristic",
+                           "class":  "ReinforcementLearningGreatDelugeHyperHeuristicOptimizer",
+                           "category":  "hyper-heuristics",
+                           "kind":  "single-solution",
+                           "family":  "Hyper-heuristics and algorithm selection",
+                           "time":  "One or more low-level heuristic applications/evaluations per high-level iteration plus selector overhead",
+                           "space":  "O(H + M) high-level policy state plus domain solution state",
+                           "applicability":  "Reusable cross-domain heuristic selection and adaptive operator control",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/HyperHeuristics/ReinforcementLearningGreatDelugeHyperHeuristic/ReinforcementLearningGreatDelugeHyperHeuristicOptimizer.cs",
+                           "publication":  "Ozcan, Misir, Ochoa \u0026 Burke (2010), A Reinforcement Learning - Great-Deluge Hyper-Heuristic for Examination Timetabling",
+                           "doi":  "10.4018/jamc.2010102603",
+                           "implementation":  "Reinforcement-learning utility values adapt low-level heuristic selection online, while Great Deluge supplies move acceptance through a decreasing water level.",
+                           "page":  "docs/pages/algorithms/reinforcement-learning-great-deluge-hh-ozcan-misir-ochoa-burke-2010.md",
+                           "problem":  "\\operatorname{HH}(\\mathcal H,\\phi,x_0)",
+                           "update":  "\\begin{aligned}u_h^{t+1}\u0026=(1-\\alpha)u_h^t+\\alpha r_t,\\\\B_{t+1}\u0026=B_t-\\Delta B,\\qquad x_{t+1}=\\operatorname{GD}(x_t,h_t(x_t),B_t).\\end{aligned}",
+                           "assumptions":  "Finite objective values, non-empty unique low-level heuristic pool and clonable state.",
+                           "convergence":  "No universal finite-time global-convergence guarantee is asserted.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

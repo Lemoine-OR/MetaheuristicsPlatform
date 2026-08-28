@@ -1,5 +1,9 @@
 # API stability
 
+## v0.150.0
+
+- Added stable direct-factory algorithm ID `reinforcement-learning-great-deluge-hh-ozcan-misir-ochoa-burke-2010` (`ReinforcementLearningGreatDelugeHyperHeuristicOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.149.0
 
 - Added stable direct-factory algorithm ID `frrmab-li-fialho-kwong-zhang-2014` (`FrrmabHyperHeuristicOptimizer`). Existing public IDs and signatures are unchanged.

@@ -1936,7 +1936,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/HyperHeuristics/FrrmabHyperHeuristic/FrrmabHyperHeuristicOptimizer.cs",
     "Li, Fialho, Kwong & Zhang (2014), Adaptive Operator Selection With Bandits for a Multiobjective Evolutionary Algorithm Based on Decomposition",
     "10.1109/TEVC.2013.2239648",
-    "A sliding window accumulates fitness-improvement rewards, ranks operators by recent fitness-rate credit and combines rank credit with bandit exploration.")
+    "A sliding window accumulates fitness-improvement rewards, ranks operators by recent fitness-rate credit and combines rank credit with bandit exploration."),
+new(
+    "reinforcement-learning-great-deluge-hh-ozcan-misir-ochoa-burke-2010",
+    "Reinforcement Learning Great-Deluge Hyper-Heuristic",
+    "ReinforcementLearningGreatDelugeHyperHeuristicOptimizer",
+    "hyper-heuristics",
+    "Hyper-heuristics and algorithm selection",
+    "One or more low-level heuristic applications/evaluations per high-level iteration plus selector overhead",
+    "O(H + M) high-level policy state plus domain solution state",
+    "Reusable cross-domain heuristic selection and adaptive operator control",
+    true,
+    "src/MetaheuristicsPlatform/Algorithms/HyperHeuristics/ReinforcementLearningGreatDelugeHyperHeuristic/ReinforcementLearningGreatDelugeHyperHeuristicOptimizer.cs",
+    "Ozcan, Misir, Ochoa & Burke (2010), A Reinforcement Learning - Great-Deluge Hyper-Heuristic for Examination Timetabling",
+    "10.4018/jamc.2010102603",
+    "Reinforcement-learning utility values adapt low-level heuristic selection online, while Great Deluge supplies move acceptance through a decreasing water level.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>
