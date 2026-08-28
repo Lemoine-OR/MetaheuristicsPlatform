@@ -1,5 +1,9 @@
 # API stability
 
+## v0.139.0
+
+- Added stable direct-factory algorithm ID `dynamic-niche-sharing-ga-miller-shaw-1996` (`DynamicNicheSharingGaOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.138.0
 
 - Added stable direct-factory algorithm ID `biobjective-multimodal-ea-deb-saha-2012` (`BiobjectiveMultimodalEaOptimizer`). Existing public IDs and signatures are unchanged.

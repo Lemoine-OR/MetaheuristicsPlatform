@@ -310,4 +310,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string BiobjectiveMultimodalEa =
         "biobjective-multimodal-ea-deb-saha-2012";
+
+    public const string DynamicNicheSharingGa =
+        "dynamic-niche-sharing-ga-miller-shaw-1996";
 }

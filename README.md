@@ -36,7 +36,7 @@ catalog IDs and literature-backed documentation.
 <table>
 <tr>
 <td width="20%"><strong>32 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Firefly, Ant System, ACS and MAX-MIN Ant System.</sub></td>
-<td width="20%"><strong>51 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
+<td width="20%"><strong>52 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
 <td width="20%"><strong>21 trajectory methods</strong><br><sub>Acceptance methods, Tabu, local search, ILS, Iterated Greedy, LNS, ALNS, VNS and GLS.</sub></td>
 <td width="20%"><strong>3 constructive methods</strong><br><sub>GRASP, Reactive GRASP and GRASP with Path Relinking.</sub></td>
 <td width="20%"><strong>1 hybrid / memetic method</strong><br><sub>Moscato-style memetic evolution with local improvement.</sub></td>
@@ -45,7 +45,7 @@ catalog IDs and literature-backed documentation.
 </tr>
 </table>
 
-<p align="center"><strong>128 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>129 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -185,6 +185,7 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/crowding-de-thomsen-2004.html"><strong>Crowding Differential Evolution</strong></a><br><sub>Differential-evolution offspring compete with the closest population member rather than only with their target, allowing several niches to be maintained.</sub><br><code>crowding-de-thomsen-2004</code><br><sub><code>CrowdingDeOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/neighborhood-mutation-de-qu-suganthan-liang-2012.html"><strong>Neighborhood-Mutation Differential Evolution</strong></a><br><sub>DE mutation is restricted to Euclidean neighborhoods, preserving distinct attraction basins while evolving each niche toward its own optimum.</sub><br><code>neighborhood-mutation-de-qu-suganthan-liang-2012</code><br><sub><code>NeighborhoodMutationDeOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/biobjective-multimodal-ea-deb-saha-2012.html"><strong>Bi-Objective Evolutionary Multimodal Optimizer</strong></a><br><sub>The original objective is paired with a finite-difference gradient-norm objective; weak Pareto selection preserves separated stationary optima under the platform's bounded continuous contract.</sub><br><code>biobjective-multimodal-ea-deb-saha-2012</code><br><sub><code>BiobjectiveMultimodalEaOptimizer</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/dynamic-niche-sharing-ga-miller-shaw-1996.html"><strong>Dynamic Niche Sharing Genetic Algorithm</strong></a><br><sub>The sharing radius is updated from the current population structure and shared fitness penalizes densely occupied niches.</sub><br><code>dynamic-niche-sharing-ga-miller-shaw-1996</code><br><sub><code>DynamicNicheSharingGaOptimizer</code></sub></td></tr>
 </table>
 
 ### Trajectory-based methods

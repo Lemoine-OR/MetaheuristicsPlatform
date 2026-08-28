@@ -1782,7 +1782,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Multimodal/BiobjectiveMultimodalEa/BiobjectiveMultimodalEaOptimizer.cs",
     "Deb & Saha (2012), Multimodal optimization using a bi-objective evolutionary algorithm",
     "10.1162/EVCO_a_00042",
-    "The single-objective multimodal task is transformed into a bi-objective selection problem so that separated optimal solutions can coexist on a weak Pareto set.")
+    "The single-objective multimodal task is transformed into a bi-objective selection problem so that separated optimal solutions can coexist on a weak Pareto set."),
+new(
+    "dynamic-niche-sharing-ga-miller-shaw-1996",
+    "Dynamic Niche Sharing Genetic Algorithm",
+    "DynamicNicheSharingGaOptimizer",
+    "evolutionary-methods",
+    "Evolutionary methods",
+    "Population-based multimodal search with decision-space niching",
+    "O(ND) to O(N^2D) plus objective evaluations depending on niching mechanism",
+    "Bounded continuous multimodal optimization",
+    false,
+    "src/MetaheuristicsPlatform/Algorithms/Multimodal/DynamicNicheSharingGa/DynamicNicheSharingGaOptimizer.cs",
+    "Miller & Shaw (1996), Genetic algorithms with dynamic niche sharing for multimodal function optimization",
+    "10.1109/ICEC.1996.542701",
+    "The sharing radius is updated from the current population structure and shared fitness penalizes densely occupied niches.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

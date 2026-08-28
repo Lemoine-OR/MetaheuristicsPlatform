@@ -402,6 +402,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.BiobjectiveMultimodalEa,
             "MetaheuristicsPlatform.Algorithms.Multimodal.BiobjectiveMultimodalEa.BiobjectiveMultimodalEaOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.DynamicNicheSharingGa,
+            "MetaheuristicsPlatform.Algorithms.Multimodal.DynamicNicheSharingGa.DynamicNicheSharingGaOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

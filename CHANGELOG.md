@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.139.0] - 2026-08-28
+
+- Add canonical Dynamic Niche Sharing Genetic Algorithm scientific identity (Miller & Shaw, 1996; DOI 10.1109/ICEC.1996.542701).
+- Stable ID: `dynamic-niche-sharing-ga-miller-shaw-1996`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.138.0] - 2026-08-28
 
 - Add canonical Bi-Objective Evolutionary Multimodal Optimizer scientific identity (Deb & Saha, 2012; DOI 10.1162/EVCO_a_00042).

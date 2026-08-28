@@ -2853,6 +2853,28 @@
                            "assumptions":  "Finite bounded continuous decision box, finite objective values, explicit optimization sense and Euclidean decision-space distances.",
                            "convergence":  "No universal finite-time guarantee of finding every optimum is asserted; the named stochastic niching mechanism is preserved.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "dynamic-niche-sharing-ga-miller-shaw-1996",
+                           "name":  "Dynamic Niche Sharing Genetic Algorithm",
+                           "class":  "DynamicNicheSharingGaOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "Population-based multimodal search with decision-space niching",
+                           "space":  "O(ND) plus niche/archive state",
+                           "applicability":  "Bounded continuous multimodal optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multimodal/DynamicNicheSharingGa/DynamicNicheSharingGaOptimizer.cs",
+                           "publication":  "Miller \u0026 Shaw (1996), Genetic algorithms with dynamic niche sharing for multimodal function optimization",
+                           "doi":  "10.1109/ICEC.1996.542701",
+                           "implementation":  "The sharing radius is updated from the current population structure and shared fitness penalizes densely occupied niches.",
+                           "page":  "docs/pages/algorithms/dynamic-niche-sharing-ga-miller-shaw-1996.md",
+                           "problem":  "\\operatorname{FindMany}_{x\\in\\mathcal X} f(x)",
+                           "update":  "\\begin{aligned}\\sigma_t\u0026=\\mathrm{DynamicSharingRadius}(P_t),\\\\m_i\u0026=\\sum_j\\max\\left\\{0,1-\\left(\\frac{d_{ij}}{\\sigma_t}\\right)^\\alpha\\right\\},\\\\f_i\u0027\u0026=\\frac{f_i}{m_i}.\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, finite objective values, explicit optimization sense and Euclidean decision-space distances.",
+                           "convergence":  "No universal finite-time guarantee of finding every optimum is asserted; the named stochastic niching mechanism is preserved.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

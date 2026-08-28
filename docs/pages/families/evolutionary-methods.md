@@ -58,6 +58,7 @@ Population methods based on structured variation or combination, selection, refe
 - **[Crowding Differential Evolution](../algorithms/crowding-de-thomsen-2004.md)** - `crowding-de-thomsen-2004` - Differential-evolution offspring compete with the closest population member rather than only with their target, allowing several niches to be maintained.
 - **[Neighborhood-Mutation Differential Evolution](../algorithms/neighborhood-mutation-de-qu-suganthan-liang-2012.md)** - `neighborhood-mutation-de-qu-suganthan-liang-2012` - DE mutation is restricted to Euclidean neighborhoods, preserving distinct attraction basins while evolving each niche toward its own optimum.
 - **[Bi-Objective Evolutionary Multimodal Optimizer](../algorithms/biobjective-multimodal-ea-deb-saha-2012.md)** - `biobjective-multimodal-ea-deb-saha-2012` - The original objective is paired with a finite-difference gradient-norm objective; weak Pareto selection preserves separated stationary optima under the platform's bounded continuous contract.
+- **[Dynamic Niche Sharing Genetic Algorithm](../algorithms/dynamic-niche-sharing-ga-miller-shaw-1996.md)** - `dynamic-niche-sharing-ga-miller-shaw-1996` - The sharing radius is updated from the current population structure and shared fitness penalizes densely occupied niches.
 
 ## Navigation
 
