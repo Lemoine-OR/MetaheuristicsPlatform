@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.135.0] - 2026-08-28
+
+- Add canonical Adaptive Niching Particle Swarm Optimization scientific identity (Bird & Li, 2006; DOI 10.1145/1143997.1143999).
+- Stable ID: `adaptive-niching-pso-bird-li-2006`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.134.0] - 2026-08-28
 
 - Add canonical Vector-Niche Particle Swarm Optimization scientific identity (Schoeman & Engelbrecht, 2004; DOI 10.1109/ICCIS.2004.1460441).

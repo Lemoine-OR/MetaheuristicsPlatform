@@ -37,6 +37,7 @@ probabilistic recruitment or shared pheromone memory.
 - **[SMPSO](../algorithms/smpso-nebro-durillo-garcia-nieto-coello-luna-alba-2009.md)** - `smpso-nebro-durillo-garcia-nieto-coello-luna-alba-2009` - Speed-constrained MOPSO with constriction, componentwise velocity bounds, polynomial turbulence and external archive.
 - **[Species-Based Particle Swarm Optimization](../algorithms/species-based-pso-li-2004.md)** - `species-based-pso-li-2004` - Particles are grouped into species around dominant seeds; each particle uses its species seed as its neighborhood best.
 - **[Vector-Niche Particle Swarm Optimization](../algorithms/vector-niche-pso-schoeman-engelbrecht-2004.md)** - `vector-niche-pso-schoeman-engelbrecht-2004` - Vector relationships between particles and candidate niche leaders are used to demarcate niches and maintain independent subswarms.
+- **[Adaptive Niching Particle Swarm Optimization](../algorithms/adaptive-niching-pso-bird-li-2006.md)** - `adaptive-niching-pso-bird-li-2006` - Population distance statistics determine the niching radius adaptively during the run instead of requiring a fixed radius supplied by the user.
 
 ## Navigation
 

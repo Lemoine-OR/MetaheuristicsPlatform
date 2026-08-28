@@ -2765,6 +2765,28 @@
                            "assumptions":  "Finite bounded continuous decision box, finite objective values, explicit optimization sense and Euclidean decision-space distances.",
                            "convergence":  "No universal finite-time guarantee of finding every optimum is asserted; the named stochastic niching mechanism is preserved.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "adaptive-niching-pso-bird-li-2006",
+                           "name":  "Adaptive Niching Particle Swarm Optimization",
+                           "class":  "AdaptiveNichingPsoOptimizer",
+                           "category":  "swarm-intelligence",
+                           "kind":  "population",
+                           "family":  "Swarm intelligence",
+                           "time":  "Population-based multimodal search with decision-space niching",
+                           "space":  "O(ND) plus niche/archive state",
+                           "applicability":  "Bounded continuous multimodal optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multimodal/AdaptiveNichingPso/AdaptiveNichingPsoOptimizer.cs",
+                           "publication":  "Bird \u0026 Li (2006), Adaptively choosing niching parameters in a PSO",
+                           "doi":  "10.1145/1143997.1143999",
+                           "implementation":  "Population distance statistics determine the niching radius adaptively during the run instead of requiring a fixed radius supplied by the user.",
+                           "page":  "docs/pages/algorithms/adaptive-niching-pso-bird-li-2006.md",
+                           "problem":  "\\operatorname{FindMany}_{x\\in\\mathcal X} f(x)",
+                           "update":  "\\begin{aligned}\\sigma_t\u0026=\\mathrm{AdaptiveNicheRadius}(P_t),\\\\s_i\u0026=\\arg\\min_{\\widetilde f}\\{x_j:\\lVert x_j-x_i\\rVert_2\\le\\sigma_t\\}.\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, finite objective values, explicit optimization sense and Euclidean decision-space distances.",
+                           "convergence":  "No universal finite-time guarantee of finding every optimum is asserted; the named stochastic niching mechanism is preserved.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

@@ -1726,7 +1726,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Multimodal/VectorNichePso/VectorNichePsoOptimizer.cs",
     "Schoeman & Engelbrecht (2004), Using vector operations to identify niches for particle swarm optimization",
     "10.1109/ICCIS.2004.1460441",
-    "Vector relationships between particles and candidate niche leaders are used to demarcate niches and maintain independent subswarms.")
+    "Vector relationships between particles and candidate niche leaders are used to demarcate niches and maintain independent subswarms."),
+new(
+    "adaptive-niching-pso-bird-li-2006",
+    "Adaptive Niching Particle Swarm Optimization",
+    "AdaptiveNichingPsoOptimizer",
+    "swarm-intelligence",
+    "Swarm intelligence",
+    "Population-based multimodal search with decision-space niching",
+    "O(ND) to O(N^2D) plus objective evaluations depending on niching mechanism",
+    "Bounded continuous multimodal optimization",
+    false,
+    "src/MetaheuristicsPlatform/Algorithms/Multimodal/AdaptiveNichingPso/AdaptiveNichingPsoOptimizer.cs",
+    "Bird & Li (2006), Adaptively choosing niching parameters in a PSO",
+    "10.1145/1143997.1143999",
+    "Population distance statistics determine the niching radius adaptively during the run instead of requiring a fixed radius supplied by the user.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

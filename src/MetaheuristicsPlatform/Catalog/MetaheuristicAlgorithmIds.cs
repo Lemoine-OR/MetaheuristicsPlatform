@@ -298,4 +298,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string VectorNichePso =
         "vector-niche-pso-schoeman-engelbrecht-2004";
+
+    public const string AdaptiveNichingPso =
+        "adaptive-niching-pso-bird-li-2006";
 }

@@ -386,6 +386,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.VectorNichePso,
             "MetaheuristicsPlatform.Algorithms.Multimodal.VectorNichePso.VectorNichePsoOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.AdaptiveNichingPso,
+            "MetaheuristicsPlatform.Algorithms.Multimodal.AdaptiveNichingPso.AdaptiveNichingPsoOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>
