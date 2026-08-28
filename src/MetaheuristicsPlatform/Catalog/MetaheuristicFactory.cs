@@ -342,6 +342,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.AdaptivePenaltyGa,
             "MetaheuristicsPlatform.Algorithms.Constraints.AdaptivePenaltyGa.AdaptivePenaltyGaOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.TessemaYenPenaltyGa,
+            "MetaheuristicsPlatform.Algorithms.Constraints.TessemaYenPenaltyGa.TessemaYenPenaltyGaOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

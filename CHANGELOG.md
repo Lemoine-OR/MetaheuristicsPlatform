@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.124.0] - 2026-08-28
+
+- Add canonical Tessema-Yen Adaptive Penalty Genetic Algorithm scientific identity (Tessema & Yen, 2009; DOI 10.1109/TSMCA.2009.2013333).
+- Stable ID: `adaptive-penalty-formulation-ga-tessema-yen-2009`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.123.0] - 2026-08-28
 
 - Add canonical Lemonge-Barbosa Adaptive Penalty Genetic Algorithm scientific identity (Lemonge & Barbosa, 2004; DOI 10.1002/nme.899).

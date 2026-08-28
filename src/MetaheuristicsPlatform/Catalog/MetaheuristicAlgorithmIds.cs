@@ -265,4 +265,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string AdaptivePenaltyGa =
         "adaptive-penalty-ga-lemonge-barbosa-2004";
+
+    public const string TessemaYenPenaltyGa =
+        "adaptive-penalty-formulation-ga-tessema-yen-2009";
 }

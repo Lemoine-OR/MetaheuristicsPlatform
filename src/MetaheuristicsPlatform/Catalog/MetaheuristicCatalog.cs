@@ -1572,7 +1572,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Constraints/AdaptivePenaltyGa/AdaptivePenaltyGaOptimizer.cs",
     "Lemonge & Barbosa (2004), An adaptive penalty scheme for genetic algorithms in structural optimization",
     "10.1002/nme.899",
-    "Parameter-less constraint-specific penalty coefficients are recomputed from population-average objective and violation information.")
+    "Parameter-less constraint-specific penalty coefficients are recomputed from population-average objective and violation information."),
+new(
+    "adaptive-penalty-formulation-ga-tessema-yen-2009",
+    "Tessema-Yen Adaptive Penalty Genetic Algorithm",
+    "TessemaYenPenaltyGaOptimizer",
+    "evolutionary-methods",
+    "Evolutionary methods",
+    "Population-based constrained search plus objective/constraint evaluations",
+    "O(N(D+C))",
+    "Bounded continuous constrained optimization",
+    false,
+    "src/MetaheuristicsPlatform/Algorithms/Constraints/TessemaYenPenaltyGa/TessemaYenPenaltyGaOptimizer.cs",
+    "Tessema & Yen (2009), An Adaptive Penalty Formulation for Constrained Evolutionary Optimization",
+    "10.1109/TSMCA.2009.2013333",
+    "Normalized objective and violation distance is combined with a feasible-ratio-driven adaptive penalty, retaining useful infeasible candidates without a user-tuned penalty coefficient.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

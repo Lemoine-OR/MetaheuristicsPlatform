@@ -47,6 +47,7 @@ Population methods based on structured variation or combination, selection, refe
 - **[Joines-Houck Nonstationary Penalty Genetic Algorithm](../algorithms/nonstationary-penalty-ga-joines-houck-1994.md)** - `nonstationary-penalty-ga-joines-houck-1994` - Generation-dependent nonstationary penalty pressure follows the Joines-Houck mechanism with explicit C, alpha and beta controls.
 - **[Homaifar-Qi-Lai Penalty Genetic Algorithm](../algorithms/homaifar-penalty-ga-1994.md)** - `homaifar-penalty-ga-1994` - Static multilevel penalty uses user-defined violation levels and a distinct penalty coefficient for each constraint/level pair; the active violation penalty is quadratic.
 - **[Lemonge-Barbosa Adaptive Penalty Genetic Algorithm](../algorithms/adaptive-penalty-ga-lemonge-barbosa-2004.md)** - `adaptive-penalty-ga-lemonge-barbosa-2004` - Parameter-less constraint-specific penalty coefficients are recomputed from population-average objective and violation information.
+- **[Tessema-Yen Adaptive Penalty Genetic Algorithm](../algorithms/adaptive-penalty-formulation-ga-tessema-yen-2009.md)** - `adaptive-penalty-formulation-ga-tessema-yen-2009` - Normalized objective and violation distance is combined with a feasible-ratio-driven adaptive penalty, retaining useful infeasible candidates without a user-tuned penalty coefficient.
 
 ## Navigation
 

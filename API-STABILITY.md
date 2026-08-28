@@ -1,5 +1,9 @@
 # API stability
 
+## v0.124.0
+
+- Added stable direct-factory algorithm ID `adaptive-penalty-formulation-ga-tessema-yen-2009` (`TessemaYenPenaltyGaOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.123.0
 
 - Added stable direct-factory algorithm ID `adaptive-penalty-ga-lemonge-barbosa-2004` (`AdaptivePenaltyGaOptimizer`). Existing public IDs and signatures are unchanged.
