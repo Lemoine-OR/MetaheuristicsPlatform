@@ -2743,6 +2743,28 @@
                            "assumptions":  "Finite bounded continuous decision box, finite objective values, explicit optimization sense and Euclidean decision-space distances.",
                            "convergence":  "No universal finite-time guarantee of finding every optimum is asserted; the named stochastic niching mechanism is preserved.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "vector-niche-pso-schoeman-engelbrecht-2004",
+                           "name":  "Vector-Niche Particle Swarm Optimization",
+                           "class":  "VectorNichePsoOptimizer",
+                           "category":  "swarm-intelligence",
+                           "kind":  "population",
+                           "family":  "Swarm intelligence",
+                           "time":  "Population-based multimodal search with decision-space niching",
+                           "space":  "O(ND) plus niche/archive state",
+                           "applicability":  "Bounded continuous multimodal optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multimodal/VectorNichePso/VectorNichePsoOptimizer.cs",
+                           "publication":  "Schoeman \u0026 Engelbrecht (2004), Using vector operations to identify niches for particle swarm optimization",
+                           "doi":  "10.1109/ICCIS.2004.1460441",
+                           "implementation":  "Vector relationships between particles and candidate niche leaders are used to demarcate niches and maintain independent subswarms.",
+                           "page":  "docs/pages/algorithms/vector-niche-pso-schoeman-engelbrecht-2004.md",
+                           "problem":  "\\operatorname{FindMany}_{x\\in\\mathcal X} f(x)",
+                           "update":  "\\begin{aligned}s_i\u0026=\\mathrm{VectorNicheBest}(x_i,P),\\\\v_i^{t+1}\u0026=wv_i^t+c_1r_1(p_i-x_i^t)+c_2r_2(s_i-x_i^t).\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, finite objective values, explicit optimization sense and Euclidean decision-space distances.",
+                           "convergence":  "No universal finite-time guarantee of finding every optimum is asserted; the named stochastic niching mechanism is preserved.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

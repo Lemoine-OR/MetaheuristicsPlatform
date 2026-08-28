@@ -295,4 +295,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string SpeciesBasedPso =
         "species-based-pso-li-2004";
+
+    public const string VectorNichePso =
+        "vector-niche-pso-schoeman-engelbrecht-2004";
 }

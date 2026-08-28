@@ -1712,7 +1712,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Multimodal/SpeciesBasedPso/SpeciesBasedPsoOptimizer.cs",
     "Li (2004), Adaptively choosing neighbourhood bests using species in a particle swarm optimizer for multimodal function optimization",
     "10.1007/978-3-540-24854-5_10",
-    "Particles are grouped into species around dominant seeds; each particle uses its species seed as its neighborhood best.")
+    "Particles are grouped into species around dominant seeds; each particle uses its species seed as its neighborhood best."),
+new(
+    "vector-niche-pso-schoeman-engelbrecht-2004",
+    "Vector-Niche Particle Swarm Optimization",
+    "VectorNichePsoOptimizer",
+    "swarm-intelligence",
+    "Swarm intelligence",
+    "Population-based multimodal search with decision-space niching",
+    "O(ND) to O(N^2D) plus objective evaluations depending on niching mechanism",
+    "Bounded continuous multimodal optimization",
+    false,
+    "src/MetaheuristicsPlatform/Algorithms/Multimodal/VectorNichePso/VectorNichePsoOptimizer.cs",
+    "Schoeman & Engelbrecht (2004), Using vector operations to identify niches for particle swarm optimization",
+    "10.1109/ICCIS.2004.1460441",
+    "Vector relationships between particles and candidate niche leaders are used to demarcate niches and maintain independent subswarms.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

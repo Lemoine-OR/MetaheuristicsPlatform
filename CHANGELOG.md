@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.134.0] - 2026-08-28
+
+- Add canonical Vector-Niche Particle Swarm Optimization scientific identity (Schoeman & Engelbrecht, 2004; DOI 10.1109/ICCIS.2004.1460441).
+- Stable ID: `vector-niche-pso-schoeman-engelbrecht-2004`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.133.0] - 2026-08-28
 
 - Add canonical Species-Based Particle Swarm Optimization scientific identity (Li, 2004; DOI 10.1007/978-3-540-24854-5_10).

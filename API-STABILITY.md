@@ -1,5 +1,9 @@
 # API stability
 
+## v0.134.0
+
+- Added stable direct-factory algorithm ID `vector-niche-pso-schoeman-engelbrecht-2004` (`VectorNichePsoOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.133.0
 
 - Added stable direct-factory algorithm ID `species-based-pso-li-2004` (`SpeciesBasedPsoOptimizer`). Existing public IDs and signatures are unchanged.
