@@ -20,6 +20,8 @@ $catalog =
 $algorithms = @($catalog.algorithms)
 $families = @($catalog.families)
 
+& (Join-Path $Root "docs\Test-AdaptiveRestrictedTournamentGa.ps1") -Root $Root
+
 & (Join-Path $Root "docs\Test-FuzzyClusteringNichingGa.ps1") -Root $Root
 
 & (Join-Path $Root "docs\Test-DynamicNicheSharingGa.ps1") -Root $Root
@@ -166,7 +168,7 @@ $families = @($catalog.families)
 
 & (Join-Path $Root "docs\Test-BiogeographyBasedOptimization.ps1") -Root $Root
 
-if ($algorithms.Count -lt 130) {
+if ($algorithms.Count -lt 131) {
     throw "Documentation parity: expected at least 57 currently public algorithms."
 }
 
@@ -477,6 +479,8 @@ $requiredRepoFiles = @(
     "docs\pages\algorithms\dynamic-niche-sharing-ga-miller-shaw-1996.md",
     "docs\Test-FuzzyClusteringNichingGa.ps1",
     "docs\pages\algorithms\fuzzy-clustering-niching-ga-imrani-bouroumi-zine-limouri-2000.md",
+    "docs\Test-AdaptiveRestrictedTournamentGa.ps1",
+    "docs\pages\algorithms\adaptive-rts-ga-roy-parmee-2006.md",
     "docs\Test-DoxygenMarkupSafety.ps1",
     "docs\Test-ContinuousCrossEntropy.ps1",
     "docs\Test-LargeNeighborhoodSearch.ps1",
@@ -624,8 +628,8 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.140.0") {
-    throw "Documentation parity: version.json must be 0.140.0 for this release."
+if ([string]$version.version -ne "0.141.0") {
+    throw "Documentation parity: version.json must be 0.141.0 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root

@@ -36,7 +36,7 @@ catalog IDs and literature-backed documentation.
 <table>
 <tr>
 <td width="20%"><strong>32 swarm methods</strong><br><sub>PSO, Artificial Bee Colony, Firefly, Ant System, ACS and MAX-MIN Ant System.</sub></td>
-<td width="20%"><strong>53 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
+<td width="20%"><strong>54 evolutionary methods</strong><br><sub>GA, CMA-ES family, DE family, Cross-Entropy and Scatter Search.</sub></td>
 <td width="20%"><strong>21 trajectory methods</strong><br><sub>Acceptance methods, Tabu, local search, ILS, Iterated Greedy, LNS, ALNS, VNS and GLS.</sub></td>
 <td width="20%"><strong>3 constructive methods</strong><br><sub>GRASP, Reactive GRASP and GRASP with Path Relinking.</sub></td>
 <td width="20%"><strong>1 hybrid / memetic method</strong><br><sub>Moscato-style memetic evolution with local improvement.</sub></td>
@@ -45,7 +45,7 @@ catalog IDs and literature-backed documentation.
 </tr>
 </table>
 
-<p align="center"><strong>130 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>131 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -187,6 +187,7 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/biobjective-multimodal-ea-deb-saha-2012.html"><strong>Bi-Objective Evolutionary Multimodal Optimizer</strong></a><br><sub>The original objective is paired with a finite-difference gradient-norm objective; weak Pareto selection preserves separated stationary optima under the platform's bounded continuous contract.</sub><br><code>biobjective-multimodal-ea-deb-saha-2012</code><br><sub><code>BiobjectiveMultimodalEaOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/dynamic-niche-sharing-ga-miller-shaw-1996.html"><strong>Dynamic Niche Sharing Genetic Algorithm</strong></a><br><sub>The sharing radius is updated from the current population structure and shared fitness penalizes densely occupied niches.</sub><br><code>dynamic-niche-sharing-ga-miller-shaw-1996</code><br><sub><code>DynamicNicheSharingGaOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/fuzzy-clustering-niching-ga-imrani-bouroumi-zine-limouri-2000.html"><strong>Fuzzy-Clustering Niching Genetic Algorithm</strong></a><br><sub>Fuzzy clustering identifies and maintains niches without a fixed sharing radius; reproduction is organized within the inferred clusters.</sub><br><code>fuzzy-clustering-niching-ga-imrani-bouroumi-zine-limouri-2000</code><br><sub><code>FuzzyClusteringNichingGaOptimizer</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/adaptive-rts-ga-roy-parmee-2006.html"><strong>Adaptive Restricted Tournament Selection Genetic Algorithm</strong></a><br><sub>Shared near-neighbor clustering adapts the restricted tournament competition neighborhood, avoiding a fixed modality-dependent niche radius.</sub><br><code>adaptive-rts-ga-roy-parmee-2006</code><br><sub><code>AdaptiveRestrictedTournamentGaOptimizer</code></sub></td></tr>
 </table>
 
 ### Trajectory-based methods

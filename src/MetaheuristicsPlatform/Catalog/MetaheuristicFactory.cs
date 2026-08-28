@@ -410,6 +410,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.FuzzyClusteringNichingGa,
             "MetaheuristicsPlatform.Algorithms.Multimodal.FuzzyClusteringNichingGa.FuzzyClusteringNichingGaOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.AdaptiveRestrictedTournamentGa,
+            "MetaheuristicsPlatform.Algorithms.Multimodal.AdaptiveRestrictedTournamentGa.AdaptiveRestrictedTournamentGaOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

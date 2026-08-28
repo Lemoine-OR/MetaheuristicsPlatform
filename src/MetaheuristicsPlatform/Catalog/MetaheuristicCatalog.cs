@@ -1810,7 +1810,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Multimodal/FuzzyClusteringNichingGa/FuzzyClusteringNichingGaOptimizer.cs",
     "Imrani, Bouroumi, Zine & Limouri (2000), A fuzzy clustering-based niching approach to multimodal function optimization",
     "10.1016/S1389-0417(99)00013-3",
-    "Fuzzy clustering identifies and maintains niches without a fixed sharing radius; reproduction is organized within the inferred clusters.")
+    "Fuzzy clustering identifies and maintains niches without a fixed sharing radius; reproduction is organized within the inferred clusters."),
+new(
+    "adaptive-rts-ga-roy-parmee-2006",
+    "Adaptive Restricted Tournament Selection Genetic Algorithm",
+    "AdaptiveRestrictedTournamentGaOptimizer",
+    "evolutionary-methods",
+    "Evolutionary methods",
+    "Population-based multimodal search with decision-space niching",
+    "O(ND) to O(N^2D) plus objective evaluations depending on niching mechanism",
+    "Bounded continuous multimodal optimization",
+    false,
+    "src/MetaheuristicsPlatform/Algorithms/Multimodal/AdaptiveRestrictedTournamentGa/AdaptiveRestrictedTournamentGaOptimizer.cs",
+    "Roy & Parmee (2006), Adaptive Restricted Tournament Selection for the identification of multiple sub-optima in a multi-modal function",
+    "10.1007/BFb0032787",
+    "Shared near-neighbor clustering adapts the restricted tournament competition neighborhood, avoiding a fixed modality-dependent niche radius.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

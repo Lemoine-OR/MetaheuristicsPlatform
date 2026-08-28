@@ -316,4 +316,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string FuzzyClusteringNichingGa =
         "fuzzy-clustering-niching-ga-imrani-bouroumi-zine-limouri-2000";
+
+    public const string AdaptiveRestrictedTournamentGa =
+        "adaptive-rts-ga-roy-parmee-2006";
 }

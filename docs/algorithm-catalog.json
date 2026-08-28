@@ -2897,6 +2897,28 @@
                            "assumptions":  "Finite bounded continuous decision box, finite objective values, explicit optimization sense and Euclidean decision-space distances.",
                            "convergence":  "No universal finite-time guarantee of finding every optimum is asserted; the named stochastic niching mechanism is preserved.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "adaptive-rts-ga-roy-parmee-2006",
+                           "name":  "Adaptive Restricted Tournament Selection Genetic Algorithm",
+                           "class":  "AdaptiveRestrictedTournamentGaOptimizer",
+                           "category":  "evolutionary-methods",
+                           "kind":  "population",
+                           "family":  "Evolutionary methods",
+                           "time":  "Population-based multimodal search with decision-space niching",
+                           "space":  "O(ND) plus niche/archive state",
+                           "applicability":  "Bounded continuous multimodal optimization",
+                           "requiresComposition":  false,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Multimodal/AdaptiveRestrictedTournamentGa/AdaptiveRestrictedTournamentGaOptimizer.cs",
+                           "publication":  "Roy \u0026 Parmee (2006), Adaptive Restricted Tournament Selection for the identification of multiple sub-optima in a multi-modal function",
+                           "doi":  "10.1007/BFb0032787",
+                           "implementation":  "Shared near-neighbor clustering adapts the restricted tournament competition neighborhood, avoiding a fixed modality-dependent niche radius.",
+                           "page":  "docs/pages/algorithms/adaptive-rts-ga-roy-parmee-2006.md",
+                           "problem":  "\\operatorname{FindMany}_{x\\in\\mathcal X} f(x)",
+                           "update":  "\\begin{aligned}w_t\u0026=\\mathrm{AdaptiveWindow}(P_t),\\\\j^\\star\u0026=\\arg\\min_{j\\in\\mathcal T_i(w_t)}\\lVert u_i-x_j\\rVert_2,\\\\x_{j^\\star}\u0026\\leftarrow u_i\\quad\\text{if }u_i\\text{ is better}.\\end{aligned}",
+                           "assumptions":  "Finite bounded continuous decision box, finite objective values, explicit optimization sense and Euclidean decision-space distances.",
+                           "convergence":  "No universal finite-time guarantee of finding every optimum is asserted; the named stochastic niching mechanism is preserved.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

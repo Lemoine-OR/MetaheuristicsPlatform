@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.141.0] - 2026-08-28
+
+- Add canonical Adaptive Restricted Tournament Selection Genetic Algorithm scientific identity (Roy & Parmee, 2006; DOI 10.1007/BFb0032787).
+- Stable ID: `adaptive-rts-ga-roy-parmee-2006`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.140.0] - 2026-08-28
 
 - Add canonical Fuzzy-Clustering Niching Genetic Algorithm scientific identity (Imrani, Bouroumi, Zine & Limouri, 2000; DOI 10.1016/S1389-0417(99)00013-3).
