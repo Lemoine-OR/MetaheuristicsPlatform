@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.127.0] - 2026-08-28
+
+- Add canonical Homomorphous-Mapping Evolutionary Algorithm scientific identity (Koziel & Michalewicz, 1999; DOI 10.1162/evco.1999.7.1.19).
+- Stable ID: `homomorphous-mapping-ea-koziel-michalewicz-1999`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.126.0] - 2026-08-28
 
 - Add canonical GENOCOP III scientific identity (Michalewicz & Nazhiyath, 1995; DOI 10.1109/ICEC.1995.487460).

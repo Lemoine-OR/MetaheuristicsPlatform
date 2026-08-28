@@ -354,6 +354,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.GenocopIII,
             "MetaheuristicsPlatform.Algorithms.Constraints.GenocopIII.GenocopIIIOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.HomomorphousMappingEa,
+            "MetaheuristicsPlatform.Algorithms.Constraints.HomomorphousMappingEa.HomomorphousMappingEaOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

@@ -274,4 +274,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string GenocopIII =
         "genocop-iii-michalewicz-nazhiyath-1995";
+
+    public const string HomomorphousMappingEa =
+        "homomorphous-mapping-ea-koziel-michalewicz-1999";
 }

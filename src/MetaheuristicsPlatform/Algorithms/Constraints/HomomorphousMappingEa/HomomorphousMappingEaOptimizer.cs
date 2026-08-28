@@ -1,0 +1,21 @@
+using MetaheuristicsPlatform.Catalog;
+using MetaheuristicsPlatform.Classification;
+using MetaheuristicsPlatform.Constraints;
+using MetaheuristicsPlatform.Core;
+using MetaheuristicsPlatform.Random;
+
+namespace MetaheuristicsPlatform.Algorithms.Constraints.HomomorphousMappingEa;
+
+public sealed class HomomorphousMappingEaOptimizer : IConstrainedOptimizer<HomomorphousMappingEaParameters>
+{
+    public MetaheuristicDescriptor Descriptor { get; } = new()
+    {
+        Id = MetaheuristicAlgorithmIds.HomomorphousMappingEa, Name = "Homomorphous-Mapping Evolutionary Algorithm", Acronym = "HM-EA",
+        SolutionModel = MetaheuristicSolutionModel.Population, Families = MetaheuristicFamily.Evolutionary,
+        Mechanisms = MetaheuristicMechanism.EvolutionaryOperators | MetaheuristicMechanism.Adaptive, SearchSpaces = SearchSpaceKind.Continuous, IsStochastic = true,
+        References = new[] { HomomorphousMappingEaOptimizerReferences.Primary }
+    };
+public ConstrainedOptimizationResult Optimize(IContinuousConstrainedOptimizationProblem problem,HomomorphousMappingEaParameters parameters,OptimizationOptions? options=null,CancellationToken cancellationToken=default){ArgumentNullException.ThrowIfNull(problem);ArgumentNullException.ThrowIfNull(parameters);parameters.Validate();IRandomSource random=ConstraintToolkit.CreateRandom(options,out ulong seed);int evaluations=0;var reference=FindFeasibleReference(problem,parameters.MaximumReferenceAttempts,random,ref evaluations);List<ConstrainedCandidate> population=new(parameters.PopulationSize);for(int i=0;i<parameters.PopulationSize;i++){double[] raw=new double[problem.SearchSpace.Dimension];problem.SearchSpace.Sample(random,raw);double[] decoded=DecodeToFeasible(problem,reference.Position,raw,parameters.BisectionSteps);population.Add(ConstraintToolkit.Evaluate(problem,decoded,ref evaluations));}double mutationProbability=parameters.MutationProbability<0.0?1.0/problem.SearchSpace.Dimension:parameters.MutationProbability;for(int generation=0;generation<parameters.MaximumGenerations;generation++){cancellationToken.ThrowIfCancellationRequested();List<ConstrainedCandidate> offspring=new(parameters.PopulationSize);while(offspring.Count<parameters.PopulationSize){var first=ConstraintToolkit.Tournament(population,random,(l,r)=>ConstraintToolkit.DebCompare(l,r,problem.Sense));var second=ConstraintToolkit.Tournament(population,random,(l,r)=>ConstraintToolkit.DebCompare(l,r,problem.Sense));double[] raw=ConstraintToolkit.SbxChild(first.Position,second.Position,problem.SearchSpace,random,parameters.CrossoverProbability,parameters.DistributionIndex);ConstraintToolkit.PolynomialMutate(raw,problem.SearchSpace,random,mutationProbability,parameters.DistributionIndex);double[] decoded=DecodeToFeasible(problem,reference.Position,raw,parameters.BisectionSteps);offspring.Add(ConstraintToolkit.Evaluate(problem,decoded,ref evaluations));}population=ConstraintToolkit.Select(population.Concat(offspring),parameters.PopulationSize,(l,r)=>ConstraintToolkit.DebCompare(l,r,problem.Sense));}var best=ConstraintToolkit.BestByDeb(population,problem.Sense);return new ConstrainedOptimizationResult(ConstraintToolkit.ToPoint(best),evaluations,parameters.MaximumGenerations,seed);}
+    private static ConstrainedCandidate FindFeasibleReference(IContinuousConstrainedOptimizationProblem problem,int attempts,IRandomSource random,ref int evaluations){for(int i=0;i<attempts;i++){double[] p=new double[problem.SearchSpace.Dimension];problem.SearchSpace.Sample(random,p);var c=ConstraintToolkit.Evaluate(problem,p,ref evaluations);if(c.Constraints.IsFeasible)return c;}throw new InvalidOperationException("Homomorphous mapping requires a feasible reference point.");}
+    private static double[] DecodeToFeasible(IContinuousConstrainedOptimizationProblem problem,ReadOnlySpan<double> reference,ReadOnlySpan<double> raw,int steps){double low=0.0,high=1.0;double[] best=reference.ToArray();for(int step=0;step<steps;step++){double rho=0.5*(low+high);double[] trial=new double[raw.Length];for(int i=0;i<trial.Length;i++)trial[i]=reference[i]+rho*(raw[i]-reference[i]);double[] g=new double[problem.InequalityCount];double[] h=new double[problem.EqualityCount];problem.EvaluateConstraints(trial,g,h);if(new ConstraintEvaluation(g,h,problem.EqualityTolerance).IsFeasible){best=trial;low=rho;}else high=rho;}return best;}
+}

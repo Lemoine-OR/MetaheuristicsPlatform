@@ -1,5 +1,9 @@
 # API stability
 
+## v0.127.0
+
+- Added stable direct-factory algorithm ID `homomorphous-mapping-ea-koziel-michalewicz-1999` (`HomomorphousMappingEaOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.126.0
 
 - Added stable direct-factory algorithm ID `genocop-iii-michalewicz-nazhiyath-1995` (`GenocopIIIOptimizer`). Existing public IDs and signatures are unchanged.

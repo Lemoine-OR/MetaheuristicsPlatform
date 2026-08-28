@@ -1614,7 +1614,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Constraints/GenocopIII/GenocopIIIOptimizer.cs",
     "Michalewicz & Nazhiyath (1995), GENOCOP III: A co-evolutionary algorithm for numerical optimization problems with nonlinear constraints",
     "10.1109/ICEC.1995.487460",
-    "Search and feasible reference populations co-evolve; infeasible search points are repaired toward feasible reference points by segment bisection before evaluation.")
+    "Search and feasible reference populations co-evolve; infeasible search points are repaired toward feasible reference points by segment bisection before evaluation."),
+new(
+    "homomorphous-mapping-ea-koziel-michalewicz-1999",
+    "Homomorphous-Mapping Evolutionary Algorithm",
+    "HomomorphousMappingEaOptimizer",
+    "evolutionary-methods",
+    "Evolutionary methods",
+    "Population-based constrained search plus objective/constraint evaluations",
+    "O(N(D+C))",
+    "Bounded continuous constrained optimization",
+    false,
+    "src/MetaheuristicsPlatform/Algorithms/Constraints/HomomorphousMappingEa/HomomorphousMappingEaOptimizer.cs",
+    "Koziel & Michalewicz (1999), Evolutionary algorithms, homomorphous mappings, and constrained parameter optimization",
+    "10.1162/evco.1999.7.1.19",
+    "A feasible reference point anchors a decoder that maps search points into the feasible region by radial segment projection and bisection.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>
