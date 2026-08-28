@@ -26,6 +26,7 @@ policies, bandit/credit mechanisms and move-acceptance combinations.
 - **[Dynamic Multi-Armed Bandit Adaptive Operator Selection](../algorithms/dynamic-mab-aos-da-costa-fialho-schoenauer-sebag-2008.md)** - `dynamic-mab-aos-da-costa-fialho-schoenauer-sebag-2008` - Low-level heuristics are arms of a dynamic multi-armed bandit; UCB selection is coupled to a change statistic that can reset stale credit.
 - **[Extreme-Value Dynamic Multi-Armed Bandit AOS](../algorithms/extreme-value-dmab-fialho-da-costa-schoenauer-sebag-2009.md)** - `extreme-value-dmab-fialho-da-costa-schoenauer-sebag-2009` - Operator credit is the extreme recent improvement in a bounded reward window and is combined with upper-confidence exploration.
 - **[Bandit-Based Adaptive Operator Selection](../algorithms/bandit-aos-fialho-da-costa-schoenauer-sebag-2010.md)** - `bandit-aos-fialho-da-costa-schoenauer-sebag-2010` - Each low-level heuristic is a bandit arm whose empirical mean reward is balanced against an upper-confidence exploration bonus.
+- **[Fitness-Rate-Rank Multi-Armed Bandit](../algorithms/frrmab-li-fialho-kwong-zhang-2014.md)** - `frrmab-li-fialho-kwong-zhang-2014` - A sliding window accumulates fitness-improvement rewards, ranks operators by recent fitness-rate credit and combines rank credit with bandit exploration.
 
 ## Navigation
 

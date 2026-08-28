@@ -1922,7 +1922,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/HyperHeuristics/BanditAosHyperHeuristic/BanditAosHyperHeuristicOptimizer.cs",
     "Fialho, Da Costa, Schoenauer & Sebag (2010), Analyzing bandit-based adaptive operator selection mechanisms",
     "10.1007/s10472-010-9213-y",
-    "Each low-level heuristic is a bandit arm whose empirical mean reward is balanced against an upper-confidence exploration bonus.")
+    "Each low-level heuristic is a bandit arm whose empirical mean reward is balanced against an upper-confidence exploration bonus."),
+new(
+    "frrmab-li-fialho-kwong-zhang-2014",
+    "Fitness-Rate-Rank Multi-Armed Bandit",
+    "FrrmabHyperHeuristicOptimizer",
+    "hyper-heuristics",
+    "Hyper-heuristics and algorithm selection",
+    "One or more low-level heuristic applications/evaluations per high-level iteration plus selector overhead",
+    "O(H + M) high-level policy state plus domain solution state",
+    "Reusable cross-domain heuristic selection and adaptive operator control",
+    true,
+    "src/MetaheuristicsPlatform/Algorithms/HyperHeuristics/FrrmabHyperHeuristic/FrrmabHyperHeuristicOptimizer.cs",
+    "Li, Fialho, Kwong & Zhang (2014), Adaptive Operator Selection With Bandits for a Multiobjective Evolutionary Algorithm Based on Decomposition",
+    "10.1109/TEVC.2013.2239648",
+    "A sliding window accumulates fitness-improvement rewards, ranks operators by recent fitness-rate credit and combines rank credit with bandit exploration.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

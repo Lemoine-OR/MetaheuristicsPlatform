@@ -1,5 +1,9 @@
 # API stability
 
+## v0.149.0
+
+- Added stable direct-factory algorithm ID `frrmab-li-fialho-kwong-zhang-2014` (`FrrmabHyperHeuristicOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.148.0
 
 - Added stable direct-factory algorithm ID `bandit-aos-fialho-da-costa-schoenauer-sebag-2010` (`BanditAosHyperHeuristicOptimizer`). Existing public IDs and signatures are unchanged.

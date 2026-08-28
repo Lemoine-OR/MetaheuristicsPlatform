@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.149.0] - 2026-08-28
+
+- Add canonical Fitness-Rate-Rank Multi-Armed Bandit scientific identity (Li, Fialho, Kwong & Zhang, 2014; DOI 10.1109/TEVC.2013.2239648).
+- Stable ID: `frrmab-li-fialho-kwong-zhang-2014`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.148.0] - 2026-08-28
 
 - Add canonical Bandit-Based Adaptive Operator Selection scientific identity (Fialho, Da Costa, Schoenauer & Sebag, 2010; DOI 10.1007/s10472-010-9213-y).

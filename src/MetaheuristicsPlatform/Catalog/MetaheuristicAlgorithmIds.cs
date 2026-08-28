@@ -340,4 +340,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string BanditAosHyperHeuristic =
         "bandit-aos-fialho-da-costa-schoenauer-sebag-2010";
+
+    public const string FrrmabHyperHeuristic =
+        "frrmab-li-fialho-kwong-zhang-2014";
 }

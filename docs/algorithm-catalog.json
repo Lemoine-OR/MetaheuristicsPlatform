@@ -3078,6 +3078,28 @@
                            "assumptions":  "Finite objective values, non-empty unique low-level heuristic pool and clonable state.",
                            "convergence":  "No universal finite-time global-convergence guarantee is asserted.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "frrmab-li-fialho-kwong-zhang-2014",
+                           "name":  "Fitness-Rate-Rank Multi-Armed Bandit",
+                           "class":  "FrrmabHyperHeuristicOptimizer",
+                           "category":  "hyper-heuristics",
+                           "kind":  "single-solution",
+                           "family":  "Hyper-heuristics and algorithm selection",
+                           "time":  "One or more low-level heuristic applications/evaluations per high-level iteration plus selector overhead",
+                           "space":  "O(H + M) high-level policy state plus domain solution state",
+                           "applicability":  "Reusable cross-domain heuristic selection and adaptive operator control",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/HyperHeuristics/FrrmabHyperHeuristic/FrrmabHyperHeuristicOptimizer.cs",
+                           "publication":  "Li, Fialho, Kwong \u0026 Zhang (2014), Adaptive Operator Selection With Bandits for a Multiobjective Evolutionary Algorithm Based on Decomposition",
+                           "doi":  "10.1109/TEVC.2013.2239648",
+                           "implementation":  "A sliding window accumulates fitness-improvement rewards, ranks operators by recent fitness-rate credit and combines rank credit with bandit exploration.",
+                           "page":  "docs/pages/algorithms/frrmab-li-fialho-kwong-zhang-2014.md",
+                           "problem":  "\\operatorname{HH}(\\mathcal H,\\phi,x_0)",
+                           "update":  "\\begin{aligned}q_i\u0026=\\sum_{s\\in W_t:h_s=i}r_s,\\qquad c_i=q_i\\delta^{\\operatorname{rank}(i)},\\\\h_t\u0026=\\arg\\max_i\\left(c_i+c\\sqrt{\\frac{2\\log t}{n_i}}\\right).\\end{aligned}",
+                           "assumptions":  "Finite objective values, non-empty unique low-level heuristic pool and clonable state.",
+                           "convergence":  "No universal finite-time global-convergence guarantee is asserted.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }
