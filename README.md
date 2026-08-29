@@ -283,6 +283,7 @@ Each card also exposes the stable catalog/factory ID.
 - **v0.167.0 — Reproducibility Manifest** — `reference-grade-reproducibility-manifest` — Add canonical run manifests binding algorithm, version, seed, parameters, data and provenance.
 - **v0.168.0 — Parameter Schema Registry** — `reference-grade-parameter-schema-registry` — Add stable parameter-schema descriptors and duplicate-safe registry validation.
 - **v0.169.0 — Benchmark Protocol & Result Envelope** — `reference-grade-benchmark-protocol` — Add reproducible benchmark protocols, metric envelopes and exact run metadata.
+- **v0.170.0 — Cross-Family Composition Contract** — `reference-grade-cross-family-composition` — Add explicit typed composition nodes and acyclic cross-family dependency validation.
 <!-- REFERENCE-GRADE-END -->
 
 ## Scientific components

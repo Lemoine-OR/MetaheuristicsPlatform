@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.170.0] - 2026-08-29
+
+- Add explicit typed composition nodes and acyclic cross-family dependency validation.
+- Consolidation ID: `reference-grade-cross-family-composition`.
+
 ## [0.169.0] - 2026-08-29
 
 - Add reproducible benchmark protocols, metric envelopes and exact run metadata.
