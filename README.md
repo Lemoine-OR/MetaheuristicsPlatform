@@ -286,6 +286,7 @@ Each card also exposes the stable catalog/factory ID.
 - **v0.170.0 — Cross-Family Composition Contract** — `reference-grade-cross-family-composition` — Add explicit typed composition nodes and acyclic cross-family dependency validation.
 - **v0.171.0 — Deterministic Random Stream Trace** — `reference-grade-random-stream-trace` — Add deterministic named random-stream derivation and immutable seed tracing.
 - **v0.172.0 — Scientific Reference Integrity** — `reference-grade-scientific-reference-integrity` — Add DOI normalization, uniqueness checks and reference-set fingerprints.
+- **v0.173.0 — Reference-Grade Stability Gate** — `reference-grade-stability-gate` — Add the final reference-grade gate integrating provenance, reproducibility, schema, benchmark, composition, random-trace and reference checks.
 <!-- REFERENCE-GRADE-END -->
 
 ## Scientific components

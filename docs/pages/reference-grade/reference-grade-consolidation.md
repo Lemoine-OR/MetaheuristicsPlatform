@@ -13,6 +13,7 @@ This section documents the v0.166.0-v0.173.0 hardening layer. These releases do 
 - @subpage reference_grade_cross_family_composition "Cross-Family Composition Contract" - `reference-grade-cross-family-composition`
 - @subpage reference_grade_random_stream_trace "Deterministic Random Stream Trace" - `reference-grade-random-stream-trace`
 - @subpage reference_grade_scientific_reference_integrity "Scientific Reference Integrity" - `reference-grade-scientific-reference-integrity`
+- @subpage reference_grade_reference_grade_stability_gate "Reference-Grade Stability Gate" - `reference-grade-stability-gate`
 <!-- REFERENCE-GRADE-PAGES-END -->
 
 ## Navigation

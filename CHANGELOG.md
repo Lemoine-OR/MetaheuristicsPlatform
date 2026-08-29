@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.173.0] - 2026-08-29
+
+- Add the final reference-grade gate integrating provenance, reproducibility, schema, benchmark, composition, random-trace and reference checks.
+- Consolidation ID: `reference-grade-stability-gate`.
+
 ## [0.172.0] - 2026-08-29
 
 - Add DOI normalization, uniqueness checks and reference-set fingerprints.

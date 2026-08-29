@@ -1,5 +1,9 @@
 # API stability
 
+## v0.173.0
+
+- Added `ReferenceGradeStabilityGate` reference-grade contract; existing algorithm IDs and optimizer signatures are unchanged.
+
 ## v0.172.0
 
 - Added `ScientificReferenceIntegrity` reference-grade contract; existing algorithm IDs and optimizer signatures are unchanged.
