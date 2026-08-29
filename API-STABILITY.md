@@ -1,5 +1,9 @@
 # API stability
 
+## v0.162.0
+
+- Added stable direct-factory algorithm ID `rens-berthold-2014` (`RensMatheuristicOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.161.0
 
 - Added stable direct-factory algorithm ID `mip-alns-muller-spoorendonk-pisinger-2012` (`MipAdaptiveLargeNeighborhoodSearchOptimizer`). Existing public IDs and signatures are unchanged.

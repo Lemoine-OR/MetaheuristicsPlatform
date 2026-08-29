@@ -379,4 +379,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string MipAdaptiveLargeNeighborhoodSearch =
         "mip-alns-muller-spoorendonk-pisinger-2012";
+
+    public const string RensMatheuristic =
+        "rens-berthold-2014";
 }

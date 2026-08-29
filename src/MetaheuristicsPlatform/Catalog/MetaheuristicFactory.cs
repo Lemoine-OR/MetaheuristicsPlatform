@@ -494,6 +494,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.MipAdaptiveLargeNeighborhoodSearch,
             "MetaheuristicsPlatform.Algorithms.Matheuristics.MipAdaptiveLns.MipAdaptiveLargeNeighborhoodSearchOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.RensMatheuristic,
+            "MetaheuristicsPlatform.Algorithms.Matheuristics.RENS.RensMatheuristicOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

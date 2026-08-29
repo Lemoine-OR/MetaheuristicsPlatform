@@ -2104,7 +2104,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Matheuristics/MipAdaptiveLns/MipAdaptiveLargeNeighborhoodSearchOptimizer.cs",
     "Muller, Spoorendonk & Pisinger (2012), A hybrid adaptive large neighborhood search heuristic for lot-sizing with setup times",
     "10.1016/j.ejor.2011.11.036",
-    "Destroys a variable subset, fixes the complement to the incumbent and invokes the exact solver as a large-neighborhood repair operator with adaptive destroy size.")
+    "Destroys a variable subset, fixes the complement to the incumbent and invokes the exact solver as a large-neighborhood repair operator with adaptive destroy size."),
+new(
+    "rens-berthold-2014",
+    "Relaxation Enforced Neighborhood Search",
+    "RensMatheuristicOptimizer",
+    "matheuristics-exact-repair",
+    "Matheuristics and exact-repair integration",
+    "One relaxation solve followed by one exact restricted rounding solve.",
+    "O(n) relaxation-derived fixing/bound state plus solver state.",
+    "MIP/MINLP-style domains exposing a relaxation and exact restricted solve.",
+    true,
+    "src/MetaheuristicsPlatform/Algorithms/Matheuristics/RENS/RensMatheuristicOptimizer.cs",
+    "Berthold (2014), RENS: The optimal rounding",
+    "10.1007/s12532-013-0060-9",
+    "Fixes relaxation-integral integer variables and bounds fractional integer variables to floor/ceiling values before solving the exact rounding subproblem.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

@@ -30,6 +30,7 @@ search, proximity objectives and constructive reduced-instance solve/adapt frame
 - **[Distance Induced Neighborhood Search](../algorithms/dins-ghosh-2007.md)** - `dins-ghosh-2007` - Builds an exact neighborhood whose distance to the relaxation is bounded by the incumbent-to-relaxation distance, with hard fixings for strong agreements.
 - **[Kernel Search](../algorithms/kernel-search-angelelli-mansini-speranza-2010.md)** - `kernel-search-angelelli-mansini-speranza-2010` - Ranks binary variables from relaxation information, solves exact subproblems on a kernel plus one bucket, and promotes useful bucket variables into the kernel.
 - **[MIP-based Adaptive Large Neighborhood Search](../algorithms/mip-alns-muller-spoorendonk-pisinger-2012.md)** - `mip-alns-muller-spoorendonk-pisinger-2012` - Destroys a variable subset, fixes the complement to the incumbent and invokes the exact solver as a large-neighborhood repair operator with adaptive destroy size.
+- **[Relaxation Enforced Neighborhood Search](../algorithms/rens-berthold-2014.md)** - `rens-berthold-2014` - Fixes relaxation-integral integer variables and bounds fractional integer variables to floor/ceiling values before solving the exact rounding subproblem.
 
 ## Navigation
 

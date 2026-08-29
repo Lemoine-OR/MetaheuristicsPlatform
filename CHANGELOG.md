@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.162.0] - 2026-08-29
+
+- Add canonical Relaxation Enforced Neighborhood Search scientific identity (Berthold, 2014; DOI 10.1007/s12532-013-0060-9).
+- Stable ID: `rens-berthold-2014`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.161.0] - 2026-08-29
 
 - Add canonical MIP-based Adaptive Large Neighborhood Search scientific identity (Muller, Spoorendonk & Pisinger, 2012; DOI 10.1016/j.ejor.2011.11.036).

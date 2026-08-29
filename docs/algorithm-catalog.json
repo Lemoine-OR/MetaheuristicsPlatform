@@ -3369,6 +3369,28 @@
                            "assumptions":  "Finite solver outputs; declared variable kinds; exact-repair requests are honored by the injected domain backend.",
                            "convergence":  "No universal global-convergence claim; exactness applies only to restricted subproblems actually solved to optimality by the backend.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "rens-berthold-2014",
+                           "name":  "Relaxation Enforced Neighborhood Search",
+                           "class":  "RensMatheuristicOptimizer",
+                           "category":  "matheuristics-exact-repair",
+                           "kind":  "single-solution",
+                           "family":  "Matheuristics and exact-repair integration",
+                           "time":  "One relaxation solve followed by one exact restricted rounding solve.",
+                           "space":  "O(n) relaxation-derived fixing/bound state plus solver state.",
+                           "applicability":  "MIP/MINLP-style domains exposing a relaxation and exact restricted solve.",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Matheuristics/RENS/RensMatheuristicOptimizer.cs",
+                           "publication":  "Berthold (2014), RENS: The optimal rounding",
+                           "doi":  "10.1007/s12532-013-0060-9",
+                           "implementation":  "Fixes relaxation-integral integer variables and bounds fractional integer variables to floor/ceiling values before solving the exact rounding subproblem.",
+                           "page":  "docs/pages/algorithms/rens-berthold-2014.md",
+                           "problem":  "\\min\\{c^\\top x:x\\in X\\cap\\mathbb Z^p\\}",
+                           "update":  "\\begin{aligned}x_j\u0026=\\tilde x_j\u0026\u0026(\\tilde x_j\\in\\mathbb Z),\\\\\n\\lfloor\\tilde x_j\\rfloor\\le x_j\u0026\\le\\lceil\\tilde x_j\\rceil\u0026\u0026(\\tilde x_j\\notin\\mathbb Z).\\end{aligned}",
+                           "assumptions":  "Finite solver outputs; declared variable kinds; exact-repair requests are honored by the injected domain backend.",
+                           "convergence":  "No universal global-convergence claim; exactness applies only to restricted subproblems actually solved to optimality by the backend.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }
