@@ -45,7 +45,7 @@ catalog IDs and literature-backed documentation.
 </tr>
 </table>
 
-<p align="center"><strong>146 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>147 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -265,6 +265,7 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/local-branching-fischetti-lodi-2003.html"><strong>Local Branching</strong></a><br><sub>Adds a Hamming-distance local-branching constraint around the incumbent and delegates the resulting neighborhood to the exact subsolver.</sub><br><code>local-branching-fischetti-lodi-2003</code><br><sub><code>LocalBranchingMatheuristicOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/rins-danna-rothberg-le-pape-2005.html"><strong>Relaxation Induced Neighborhood Search</strong></a><br><sub>Fixes integer variables on which the incumbent and relaxation agree, then solves the induced exact neighborhood.</sub><br><code>rins-danna-rothberg-le-pape-2005</code><br><sub><code>RinsMatheuristicOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/feasibility-pump-fischetti-glover-lodi-2005.html"><strong>Feasibility Pump</strong></a><br><sub>Alternates integer rounding with relaxation solves that minimize distance to the current integer target, with deterministic cycle perturbation.</sub><br><code>feasibility-pump-fischetti-glover-lodi-2005</code><br><sub><code>FeasibilityPumpMatheuristicOptimizer</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/general-mip-feasibility-pump-bertacco-fischetti-lodi-2007.html"><strong>General-MIP Feasibility Pump</strong></a><br><sub>Extends the pump to general-integer variables and uses structured perturbation plus an exact finishing neighborhood when direct pumping stalls.</sub><br><code>general-mip-feasibility-pump-bertacco-fischetti-lodi-2007</code><br><sub><code>GeneralMipFeasibilityPumpOptimizer</code></sub></td></tr>
 </table>
 
 ## Scientific components

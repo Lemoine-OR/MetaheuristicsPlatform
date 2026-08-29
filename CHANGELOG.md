@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.157.0] - 2026-08-29
+
+- Add canonical General-MIP Feasibility Pump scientific identity (Bertacco, Fischetti & Lodi, 2007; DOI 10.1016/j.disopt.2006.10.001).
+- Stable ID: `general-mip-feasibility-pump-bertacco-fischetti-lodi-2007`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.156.0] - 2026-08-29
 
 - Add canonical Feasibility Pump scientific identity (Fischetti, Glover & Lodi, 2005; DOI 10.1007/s10107-004-0570-3).

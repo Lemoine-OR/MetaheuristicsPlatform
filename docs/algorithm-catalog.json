@@ -3259,6 +3259,28 @@
                            "assumptions":  "Finite solver outputs; declared variable kinds; exact-repair requests are honored by the injected domain backend.",
                            "convergence":  "No universal global-convergence claim; exactness applies only to restricted subproblems actually solved to optimality by the backend.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "general-mip-feasibility-pump-bertacco-fischetti-lodi-2007",
+                           "name":  "General-MIP Feasibility Pump",
+                           "class":  "GeneralMipFeasibilityPumpOptimizer",
+                           "category":  "matheuristics-exact-repair",
+                           "kind":  "single-solution",
+                           "family":  "Matheuristics and exact-repair integration",
+                           "time":  "Relaxation projections per pump iteration plus one bounded exact finishing solve when needed.",
+                           "space":  "O(n) target/history state plus solver state.",
+                           "applicability":  "Mixed binary/general-integer feasibility search with exact or relaxation repair callbacks.",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Matheuristics/GeneralFeasibilityPump/GeneralMipFeasibilityPumpOptimizer.cs",
+                           "publication":  "Bertacco, Fischetti \u0026 Lodi (2007), A feasibility pump heuristic for general mixed-integer problems",
+                           "doi":  "10.1016/j.disopt.2006.10.001",
+                           "implementation":  "Extends the pump to general-integer variables and uses structured perturbation plus an exact finishing neighborhood when direct pumping stalls.",
+                           "page":  "docs/pages/algorithms/general-mip-feasibility-pump-bertacco-fischetti-lodi-2007.md",
+                           "problem":  "\\min\\{c^\\top x:Ax\\ge b,\\ x_I\\in\\mathbb Z\\}",
+                           "update":  "\\begin{aligned}\\tilde x^k\u0026=\\Pi_{\\mathbb Z}(x^k),\\\\x^{k+1}\u0026\\in\\arg\\min_{x\\in P}\\Delta(x,\\tilde x^k),\\\\\\tilde x^k\u0026\\leftarrow\\operatorname{perturb}(\\tilde x^k)\\ \\text{on cycles}.\\end{aligned}",
+                           "assumptions":  "Finite solver outputs; declared variable kinds; exact-repair requests are honored by the injected domain backend.",
+                           "convergence":  "No universal global-convergence claim; exactness applies only to restricted subproblems actually solved to optimality by the backend.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

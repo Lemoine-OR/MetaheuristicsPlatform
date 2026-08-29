@@ -474,6 +474,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.FeasibilityPumpMatheuristic,
             "MetaheuristicsPlatform.Algorithms.Matheuristics.FeasibilityPump.FeasibilityPumpMatheuristicOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.GeneralMipFeasibilityPump,
+            "MetaheuristicsPlatform.Algorithms.Matheuristics.GeneralFeasibilityPump.GeneralMipFeasibilityPumpOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

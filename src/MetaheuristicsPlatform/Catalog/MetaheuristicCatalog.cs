@@ -2034,7 +2034,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Matheuristics/FeasibilityPump/FeasibilityPumpMatheuristicOptimizer.cs",
     "Fischetti, Glover & Lodi (2005), The feasibility pump",
     "10.1007/s10107-004-0570-3",
-    "Alternates integer rounding with relaxation solves that minimize distance to the current integer target, with deterministic cycle perturbation.")
+    "Alternates integer rounding with relaxation solves that minimize distance to the current integer target, with deterministic cycle perturbation."),
+new(
+    "general-mip-feasibility-pump-bertacco-fischetti-lodi-2007",
+    "General-MIP Feasibility Pump",
+    "GeneralMipFeasibilityPumpOptimizer",
+    "matheuristics-exact-repair",
+    "Matheuristics and exact-repair integration",
+    "Relaxation projections per pump iteration plus one bounded exact finishing solve when needed.",
+    "O(n) target/history state plus solver state.",
+    "Mixed binary/general-integer feasibility search with exact or relaxation repair callbacks.",
+    true,
+    "src/MetaheuristicsPlatform/Algorithms/Matheuristics/GeneralFeasibilityPump/GeneralMipFeasibilityPumpOptimizer.cs",
+    "Bertacco, Fischetti & Lodi (2007), A feasibility pump heuristic for general mixed-integer problems",
+    "10.1016/j.disopt.2006.10.001",
+    "Extends the pump to general-integer variables and uses structured perturbation plus an exact finishing neighborhood when direct pumping stalls.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

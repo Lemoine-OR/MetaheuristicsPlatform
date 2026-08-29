@@ -364,4 +364,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string FeasibilityPumpMatheuristic =
         "feasibility-pump-fischetti-glover-lodi-2005";
+
+    public const string GeneralMipFeasibilityPump =
+        "general-mip-feasibility-pump-bertacco-fischetti-lodi-2007";
 }
