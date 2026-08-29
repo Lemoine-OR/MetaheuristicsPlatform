@@ -284,6 +284,7 @@ Each card also exposes the stable catalog/factory ID.
 - **v0.168.0 — Parameter Schema Registry** — `reference-grade-parameter-schema-registry` — Add stable parameter-schema descriptors and duplicate-safe registry validation.
 - **v0.169.0 — Benchmark Protocol & Result Envelope** — `reference-grade-benchmark-protocol` — Add reproducible benchmark protocols, metric envelopes and exact run metadata.
 - **v0.170.0 — Cross-Family Composition Contract** — `reference-grade-cross-family-composition` — Add explicit typed composition nodes and acyclic cross-family dependency validation.
+- **v0.171.0 — Deterministic Random Stream Trace** — `reference-grade-random-stream-trace` — Add deterministic named random-stream derivation and immutable seed tracing.
 <!-- REFERENCE-GRADE-END -->
 
 ## Scientific components

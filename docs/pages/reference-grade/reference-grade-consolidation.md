@@ -11,6 +11,7 @@ This section documents the v0.166.0-v0.173.0 hardening layer. These releases do 
 - @subpage reference_grade_parameter_schema_registry "Parameter Schema Registry" - `reference-grade-parameter-schema-registry`
 - @subpage reference_grade_benchmark_protocol "Benchmark Protocol & Result Envelope" - `reference-grade-benchmark-protocol`
 - @subpage reference_grade_cross_family_composition "Cross-Family Composition Contract" - `reference-grade-cross-family-composition`
+- @subpage reference_grade_random_stream_trace "Deterministic Random Stream Trace" - `reference-grade-random-stream-trace`
 <!-- REFERENCE-GRADE-PAGES-END -->
 
 ## Navigation

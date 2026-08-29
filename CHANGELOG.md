@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.171.0] - 2026-08-29
+
+- Add deterministic named random-stream derivation and immutable seed tracing.
+- Consolidation ID: `reference-grade-random-stream-trace`.
+
 ## [0.170.0] - 2026-08-29
 
 - Add explicit typed composition nodes and acyclic cross-family dependency validation.

@@ -1,5 +1,9 @@
 # API stability
 
+## v0.171.0
+
+- Added `ReferenceRandomStreamTrace` reference-grade contract; existing algorithm IDs and optimizer signatures are unchanged.
+
 ## v0.170.0
 
 - Added `CrossFamilyCompositionContract` reference-grade contract; existing algorithm IDs and optimizer signatures are unchanged.
