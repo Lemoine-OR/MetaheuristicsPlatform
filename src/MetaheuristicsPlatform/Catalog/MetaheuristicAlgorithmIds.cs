@@ -367,4 +367,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string GeneralMipFeasibilityPump =
         "general-mip-feasibility-pump-bertacco-fischetti-lodi-2007";
+
+    public const string ImprovedFeasibilityPump =
+        "improved-feasibility-pump-achterberg-berthold-2007";
 }

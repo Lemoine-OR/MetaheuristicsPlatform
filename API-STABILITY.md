@@ -1,5 +1,9 @@
 # API stability
 
+## v0.158.0
+
+- Added stable direct-factory algorithm ID `improved-feasibility-pump-achterberg-berthold-2007` (`ImprovedFeasibilityPumpOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.157.0
 
 - Added stable direct-factory algorithm ID `general-mip-feasibility-pump-bertacco-fischetti-lodi-2007` (`GeneralMipFeasibilityPumpOptimizer`). Existing public IDs and signatures are unchanged.

@@ -2048,7 +2048,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Matheuristics/GeneralFeasibilityPump/GeneralMipFeasibilityPumpOptimizer.cs",
     "Bertacco, Fischetti & Lodi (2007), A feasibility pump heuristic for general mixed-integer problems",
     "10.1016/j.disopt.2006.10.001",
-    "Extends the pump to general-integer variables and uses structured perturbation plus an exact finishing neighborhood when direct pumping stalls.")
+    "Extends the pump to general-integer variables and uses structured perturbation plus an exact finishing neighborhood when direct pumping stalls."),
+new(
+    "improved-feasibility-pump-achterberg-berthold-2007",
+    "Improved Feasibility Pump",
+    "ImprovedFeasibilityPumpOptimizer",
+    "matheuristics-exact-repair",
+    "Matheuristics and exact-repair integration",
+    "One weighted relaxation projection per iteration plus O(n) rounding.",
+    "O(n) current target plus solver state.",
+    "MIP feasibility search where objective quality matters in addition to attaining integrality.",
+    true,
+    "src/MetaheuristicsPlatform/Algorithms/Matheuristics/ImprovedFeasibilityPump/ImprovedFeasibilityPumpOptimizer.cs",
+    "Achterberg & Berthold (2007), Improving the feasibility pump",
+    "10.1016/j.disopt.2006.10.004",
+    "Biases the pump projection with the original objective while retaining the distance-to-rounded-target term to improve solution quality.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

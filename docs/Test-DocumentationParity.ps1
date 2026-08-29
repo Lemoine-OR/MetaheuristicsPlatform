@@ -20,6 +20,8 @@ $catalog =
 $algorithms = @($catalog.algorithms)
 $families = @($catalog.families)
 
+& (Join-Path $Root "docs\Test-ImprovedFeasibilityPump.ps1") -Root $Root
+
 & (Join-Path $Root "docs\Test-GeneralMipFeasibilityPump.ps1") -Root $Root
 
 & (Join-Path $Root "docs\Test-FeasibilityPumpMatheuristic.ps1") -Root $Root
@@ -200,7 +202,7 @@ $families = @($catalog.families)
 
 & (Join-Path $Root "docs\Test-BiogeographyBasedOptimization.ps1") -Root $Root
 
-if ($algorithms.Count -lt 147) {
+if ($algorithms.Count -lt 148) {
     throw "Documentation parity: expected at least 57 currently public algorithms."
 }
 
@@ -545,6 +547,8 @@ $requiredRepoFiles = @(
     "docs\pages\algorithms\feasibility-pump-fischetti-glover-lodi-2005.md",
     "docs\Test-GeneralMipFeasibilityPump.ps1",
     "docs\pages\algorithms\general-mip-feasibility-pump-bertacco-fischetti-lodi-2007.md",
+    "docs\Test-ImprovedFeasibilityPump.ps1",
+    "docs\pages\algorithms\improved-feasibility-pump-achterberg-berthold-2007.md",
     "docs\Test-DoxygenMarkupSafety.ps1",
     "docs\Test-ContinuousCrossEntropy.ps1",
     "docs\Test-LargeNeighborhoodSearch.ps1",
@@ -692,8 +696,8 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.157.0") {
-    throw "Documentation parity: version.json must be 0.157.0 for this release."
+if ([string]$version.version -ne "0.158.0") {
+    throw "Documentation parity: version.json must be 0.158.0 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root

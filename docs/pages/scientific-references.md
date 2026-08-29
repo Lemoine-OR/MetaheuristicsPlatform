@@ -272,3 +272,4 @@ v0.67.0 adaptive-harmony-search-differential-evolution-zhao-li-hao-liu-yuan-2020
 - **Danna, Rothberg & Le Pape (2005)** - *Exploring relaxation induced neighborhoods to improve MIP solutions*, Mathematical Programming 102(1), 71-90. DOI: [10.1007/s10107-004-0518-7](https://doi.org/10.1007/s10107-004-0518-7).
 - **Fischetti, Glover & Lodi (2005)** - *The feasibility pump*, Mathematical Programming 104(1), 91-104. DOI: [10.1007/s10107-004-0570-3](https://doi.org/10.1007/s10107-004-0570-3).
 - **Bertacco, Fischetti & Lodi (2007)** - *A feasibility pump heuristic for general mixed-integer problems*, Discrete Optimization 4(1), 63-76. DOI: [10.1016/j.disopt.2006.10.001](https://doi.org/10.1016/j.disopt.2006.10.001).
+- **Achterberg & Berthold (2007)** - *Improving the feasibility pump*, Discrete Optimization 4(1), 77-86. DOI: [10.1016/j.disopt.2006.10.004](https://doi.org/10.1016/j.disopt.2006.10.004).

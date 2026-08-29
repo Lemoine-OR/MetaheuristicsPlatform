@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.158.0] - 2026-08-29
+
+- Add canonical Improved Feasibility Pump scientific identity (Achterberg & Berthold, 2007; DOI 10.1016/j.disopt.2006.10.004).
+- Stable ID: `improved-feasibility-pump-achterberg-berthold-2007`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.157.0] - 2026-08-29
 
 - Add canonical General-MIP Feasibility Pump scientific identity (Bertacco, Fischetti & Lodi, 2007; DOI 10.1016/j.disopt.2006.10.001).

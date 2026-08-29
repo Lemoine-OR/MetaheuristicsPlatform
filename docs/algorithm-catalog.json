@@ -3281,6 +3281,28 @@
                            "assumptions":  "Finite solver outputs; declared variable kinds; exact-repair requests are honored by the injected domain backend.",
                            "convergence":  "No universal global-convergence claim; exactness applies only to restricted subproblems actually solved to optimality by the backend.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "improved-feasibility-pump-achterberg-berthold-2007",
+                           "name":  "Improved Feasibility Pump",
+                           "class":  "ImprovedFeasibilityPumpOptimizer",
+                           "category":  "matheuristics-exact-repair",
+                           "kind":  "single-solution",
+                           "family":  "Matheuristics and exact-repair integration",
+                           "time":  "One weighted relaxation projection per iteration plus O(n) rounding.",
+                           "space":  "O(n) current target plus solver state.",
+                           "applicability":  "MIP feasibility search where objective quality matters in addition to attaining integrality.",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Matheuristics/ImprovedFeasibilityPump/ImprovedFeasibilityPumpOptimizer.cs",
+                           "publication":  "Achterberg \u0026 Berthold (2007), Improving the feasibility pump",
+                           "doi":  "10.1016/j.disopt.2006.10.004",
+                           "implementation":  "Biases the pump projection with the original objective while retaining the distance-to-rounded-target term to improve solution quality.",
+                           "page":  "docs/pages/algorithms/improved-feasibility-pump-achterberg-berthold-2007.md",
+                           "problem":  "\\min\\{c^\\top x:Ax\\ge b,\\ x_I\\in\\mathbb Z\\}",
+                           "update":  "\\begin{aligned}\\tilde x^k\u0026=\\operatorname{round}(x^k),\\\\x^{k+1}\u0026\\in\\arg\\min_{x\\in P}\\bigl((1-\\alpha_k)\\Delta(x,\\tilde x^k)+\\alpha_k c^\\top x\\bigr).\\end{aligned}",
+                           "assumptions":  "Finite solver outputs; declared variable kinds; exact-repair requests are honored by the injected domain backend.",
+                           "convergence":  "No universal global-convergence claim; exactness applies only to restricted subproblems actually solved to optimality by the backend.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }
