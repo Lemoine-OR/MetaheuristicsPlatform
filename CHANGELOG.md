@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.167.0] - 2026-08-29
+
+- Add canonical run manifests binding algorithm, version, seed, parameters, data and provenance.
+- Consolidation ID: `reference-grade-reproducibility-manifest`.
+
 ## [0.166.0] - 2026-08-29
 
 - Add immutable scientific provenance records with canonical SHA-256 fingerprints.

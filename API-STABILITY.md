@@ -1,5 +1,9 @@
 # API stability
 
+## v0.167.0
+
+- Added `ReproducibilityManifest` reference-grade contract; existing algorithm IDs and optimizer signatures are unchanged.
+
 ## v0.166.0
 
 - Added `ScientificProvenanceRecord` reference-grade contract; existing algorithm IDs and optimizer signatures are unchanged.
