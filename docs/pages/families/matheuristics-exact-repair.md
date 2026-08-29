@@ -32,6 +32,7 @@ search, proximity objectives and constructive reduced-instance solve/adapt frame
 - **[MIP-based Adaptive Large Neighborhood Search](../algorithms/mip-alns-muller-spoorendonk-pisinger-2012.md)** - `mip-alns-muller-spoorendonk-pisinger-2012` - Destroys a variable subset, fixes the complement to the incumbent and invokes the exact solver as a large-neighborhood repair operator with adaptive destroy size.
 - **[Relaxation Enforced Neighborhood Search](../algorithms/rens-berthold-2014.md)** - `rens-berthold-2014` - Fixes relaxation-integral integer variables and bounds fractional integer variables to floor/ceiling values before solving the exact rounding subproblem.
 - **[Proximity Search](../algorithms/proximity-search-fischetti-monaci-2014.md)** - `proximity-search-fischetti-monaci-2014` - Replaces the subproblem objective by distance to the incumbent while imposing an original-objective cutoff that forces improvement.
+- **[Construct, Merge, Solve & Adapt](../algorithms/cmsa-blum-pinacho-lopez-ibanez-lozano-2016.md)** - `cmsa-blum-pinacho-lopez-ibanez-lozano-2016` - Constructs candidate solutions, merges their active components into a reduced exact subproblem, solves it, then ages and removes stale components.
 
 ## Navigation
 

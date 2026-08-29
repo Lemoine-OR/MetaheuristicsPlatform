@@ -502,6 +502,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.ProximitySearchMatheuristic,
             "MetaheuristicsPlatform.Algorithms.Matheuristics.ProximitySearch.ProximitySearchMatheuristicOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.CmsaMatheuristic,
+            "MetaheuristicsPlatform.Algorithms.Matheuristics.CMSA.CmsaMatheuristicOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

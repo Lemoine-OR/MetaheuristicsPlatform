@@ -2132,7 +2132,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Matheuristics/ProximitySearch/ProximitySearchMatheuristicOptimizer.cs",
     "Fischetti & Monaci (2014), Proximity search for 0-1 mixed-integer convex programming",
     "10.1007/s10732-014-9266-x",
-    "Replaces the subproblem objective by distance to the incumbent while imposing an original-objective cutoff that forces improvement.")
+    "Replaces the subproblem objective by distance to the incumbent while imposing an original-objective cutoff that forces improvement."),
+new(
+    "cmsa-blum-pinacho-lopez-ibanez-lozano-2016",
+    "Construct, Merge, Solve & Adapt",
+    "CmsaMatheuristicOptimizer",
+    "matheuristics-exact-repair",
+    "Matheuristics and exact-repair integration",
+    "Several constructive samples plus one exact reduced-instance solve per CMSA iteration.",
+    "O(n) component set/ages plus exact-solver state.",
+    "Component-based combinatorial optimization where candidate solutions identify active binary components and a reduced instance can be solved exactly.",
+    true,
+    "src/MetaheuristicsPlatform/Algorithms/Matheuristics/CMSA/CmsaMatheuristicOptimizer.cs",
+    "Blum, Pinacho, Lopez-Ibanez & Lozano (2016), Construct, Merge, Solve & Adapt A new general algorithm for combinatorial optimization",
+    "10.1016/j.cor.2015.10.014",
+    "Constructs candidate solutions, merges their active components into a reduced exact subproblem, solves it, then ages and removes stale components.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

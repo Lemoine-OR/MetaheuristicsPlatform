@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.164.0] - 2026-08-29
+
+- Add canonical Construct, Merge, Solve & Adapt scientific identity (Blum, Pinacho, Lopez-Ibanez & Lozano, 2016; DOI 10.1016/j.cor.2015.10.014).
+- Stable ID: `cmsa-blum-pinacho-lopez-ibanez-lozano-2016`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.163.0] - 2026-08-29
 
 - Add canonical Proximity Search scientific identity (Fischetti & Monaci, 2014; DOI 10.1007/s10732-014-9266-x).

@@ -3413,6 +3413,28 @@
                            "assumptions":  "Finite solver outputs; declared variable kinds; exact-repair requests are honored by the injected domain backend.",
                            "convergence":  "No universal global-convergence claim; exactness applies only to restricted subproblems actually solved to optimality by the backend.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "cmsa-blum-pinacho-lopez-ibanez-lozano-2016",
+                           "name":  "Construct, Merge, Solve \u0026 Adapt",
+                           "class":  "CmsaMatheuristicOptimizer",
+                           "category":  "matheuristics-exact-repair",
+                           "kind":  "single-solution",
+                           "family":  "Matheuristics and exact-repair integration",
+                           "time":  "Several constructive samples plus one exact reduced-instance solve per CMSA iteration.",
+                           "space":  "O(n) component set/ages plus exact-solver state.",
+                           "applicability":  "Component-based combinatorial optimization where candidate solutions identify active binary components and a reduced instance can be solved exactly.",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Matheuristics/CMSA/CmsaMatheuristicOptimizer.cs",
+                           "publication":  "Blum, Pinacho, Lopez-Ibanez \u0026 Lozano (2016), Construct, Merge, Solve \u0026 Adapt A new general algorithm for combinatorial optimization",
+                           "doi":  "10.1016/j.cor.2015.10.014",
+                           "implementation":  "Constructs candidate solutions, merges their active components into a reduced exact subproblem, solves it, then ages and removes stale components.",
+                           "page":  "docs/pages/algorithms/cmsa-blum-pinacho-lopez-ibanez-lozano-2016.md",
+                           "problem":  "\\min\\{f(x):x\\in X,\\ C(x)\\subseteq\\mathcal C\\}",
+                           "update":  "\\begin{aligned}C_t\u0026\\leftarrow C_t\\cup\\bigcup_{r=1}^{n_a}C(x_t^{(r)}),\\\\x_t^*\u0026\\in\\arg\\min\\{f(x):x\\in X(C_t)\\},\\\\C_{t+1}\u0026=\\operatorname{adapt}(C_t,x_t^*).\\end{aligned}",
+                           "assumptions":  "Finite solver outputs; declared variable kinds; exact-repair requests are honored by the injected domain backend.",
+                           "convergence":  "No universal global-convergence claim; exactness applies only to restricted subproblems actually solved to optimality by the backend.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

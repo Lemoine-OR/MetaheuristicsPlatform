@@ -385,4 +385,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string ProximitySearchMatheuristic =
         "proximity-search-fischetti-monaci-2014";
+
+    public const string CmsaMatheuristic =
+        "cmsa-blum-pinacho-lopez-ibanez-lozano-2016";
 }

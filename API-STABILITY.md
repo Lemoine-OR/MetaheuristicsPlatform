@@ -1,5 +1,9 @@
 # API stability
 
+## v0.164.0
+
+- Added stable direct-factory algorithm ID `cmsa-blum-pinacho-lopez-ibanez-lozano-2016` (`CmsaMatheuristicOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.163.0
 
 - Added stable direct-factory algorithm ID `proximity-search-fischetti-monaci-2014` (`ProximitySearchMatheuristicOptimizer`). Existing public IDs and signatures are unchanged.
