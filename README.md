@@ -45,7 +45,7 @@ catalog IDs and literature-backed documentation.
 </tr>
 </table>
 
-<p align="center"><strong>142 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>143 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -255,6 +255,7 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/reinforcement-learning-great-deluge-hh-ozcan-misir-ochoa-burke-2010.html"><strong>Reinforcement Learning Great-Deluge Hyper-Heuristic</strong></a><br><sub>Reinforcement-learning utility values adapt low-level heuristic selection online, while Great Deluge supplies move acceptance through a decreasing water level.</sub><br><code>reinforcement-learning-great-deluge-hh-ozcan-misir-ochoa-burke-2010</code><br><sub><code>ReinforcementLearningGreatDelugeHyperHeuristicOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/ils-hyperheuristic-soria-alcaraz-ochoa-sotelo-burke-2017.html"><strong>ILS Hyper-Heuristic with Effective Heuristic Subset</strong></a><br><sub>A bandit model identifies an effective low-level heuristic subset; the search iterates within that subset and periodically perturbs/refines it.</sub><br><code>ils-hyperheuristic-soria-alcaraz-ochoa-sotelo-burke-2017</code><br><sub><code>IlsBanditHyperHeuristicOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/late-acceptance-selection-hh-jackson-ozcan-drake-2013.html"><strong>Late-Acceptance Cross-Domain Selection Hyper-Heuristic</strong></a><br><sub>A choice-function score balances learned performance and recency, while late acceptance provides move acceptance.</sub><br><code>late-acceptance-selection-hh-jackson-ozcan-drake-2013</code><br><sub><code>LateAcceptanceCrossDomainHyperHeuristicOptimizer</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/fuzzy-adaptive-late-acceptance-hh-jackson-ozcan-john-2014.html"><strong>Fuzzy Adaptive Late-Acceptance Hyper-Heuristic</strong></a><br><sub>The late-acceptance history length adapts online from improvement and stagnation signals through a portable rule-based fuzzy-control adaptation.</sub><br><code>fuzzy-adaptive-late-acceptance-hh-jackson-ozcan-john-2014</code><br><sub><code>FuzzyAdaptiveLateAcceptanceHyperHeuristicOptimizer</code></sub></td></tr>
 </table>
 
 ## Scientific components

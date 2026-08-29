@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.153.0] - 2026-08-28
+
+- Add canonical Fuzzy Adaptive Late-Acceptance Hyper-Heuristic scientific identity (Jackson, Ozcan & John, 2014; DOI 10.1109/UKCI.2014.6930167).
+- Stable ID: `fuzzy-adaptive-late-acceptance-hh-jackson-ozcan-john-2014`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.152.0] - 2026-08-28
 
 - Add canonical Late-Acceptance Cross-Domain Selection Hyper-Heuristic scientific identity (Jackson, Ozcan & Drake, 2013; DOI 10.1109/UKCI.2013.6651310).

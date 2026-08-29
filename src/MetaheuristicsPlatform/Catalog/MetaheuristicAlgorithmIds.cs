@@ -352,4 +352,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string LateAcceptanceCrossDomainHyperHeuristic =
         "late-acceptance-selection-hh-jackson-ozcan-drake-2013";
+
+    public const string FuzzyAdaptiveLateAcceptanceHyperHeuristic =
+        "fuzzy-adaptive-late-acceptance-hh-jackson-ozcan-john-2014";
 }

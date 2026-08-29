@@ -1978,7 +1978,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/HyperHeuristics/LateAcceptanceCrossDomainHyperHeuristic/LateAcceptanceCrossDomainHyperHeuristicOptimizer.cs",
     "Jackson, Ozcan & Drake (2013), Late acceptance-based selection hyper-heuristics for cross-domain heuristic search",
     "10.1109/UKCI.2013.6651310",
-    "A choice-function score balances learned performance and recency, while late acceptance provides move acceptance.")
+    "A choice-function score balances learned performance and recency, while late acceptance provides move acceptance."),
+new(
+    "fuzzy-adaptive-late-acceptance-hh-jackson-ozcan-john-2014",
+    "Fuzzy Adaptive Late-Acceptance Hyper-Heuristic",
+    "FuzzyAdaptiveLateAcceptanceHyperHeuristicOptimizer",
+    "hyper-heuristics",
+    "Hyper-heuristics and algorithm selection",
+    "One or more low-level heuristic applications/evaluations per high-level iteration plus selector overhead",
+    "O(H + M) high-level policy state plus domain solution state",
+    "Reusable cross-domain heuristic selection and adaptive operator control",
+    true,
+    "src/MetaheuristicsPlatform/Algorithms/HyperHeuristics/FuzzyAdaptiveLateAcceptanceHyperHeuristic/FuzzyAdaptiveLateAcceptanceHyperHeuristicOptimizer.cs",
+    "Jackson, Ozcan & John (2014), Fuzzy adaptive parameter control of a late acceptance hyper-heuristic",
+    "10.1109/UKCI.2014.6930167",
+    "The late-acceptance history length adapts online from improvement and stagnation signals through a portable rule-based fuzzy-control adaptation.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

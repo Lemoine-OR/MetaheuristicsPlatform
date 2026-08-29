@@ -1,5 +1,9 @@
 # API stability
 
+## v0.153.0
+
+- Added stable direct-factory algorithm ID `fuzzy-adaptive-late-acceptance-hh-jackson-ozcan-john-2014` (`FuzzyAdaptiveLateAcceptanceHyperHeuristicOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.152.0
 
 - Added stable direct-factory algorithm ID `late-acceptance-selection-hh-jackson-ozcan-drake-2013` (`LateAcceptanceCrossDomainHyperHeuristicOptimizer`). Existing public IDs and signatures are unchanged.
