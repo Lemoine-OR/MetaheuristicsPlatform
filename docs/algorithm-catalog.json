@@ -3144,6 +3144,28 @@
                            "assumptions":  "Finite objective values, non-empty unique low-level heuristic pool and clonable state.",
                            "convergence":  "No universal finite-time global-convergence guarantee is asserted.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "late-acceptance-selection-hh-jackson-ozcan-drake-2013",
+                           "name":  "Late-Acceptance Cross-Domain Selection Hyper-Heuristic",
+                           "class":  "LateAcceptanceCrossDomainHyperHeuristicOptimizer",
+                           "category":  "hyper-heuristics",
+                           "kind":  "single-solution",
+                           "family":  "Hyper-heuristics and algorithm selection",
+                           "time":  "One or more low-level heuristic applications/evaluations per high-level iteration plus selector overhead",
+                           "space":  "O(H + M) high-level policy state plus domain solution state",
+                           "applicability":  "Reusable cross-domain heuristic selection and adaptive operator control",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/HyperHeuristics/LateAcceptanceCrossDomainHyperHeuristic/LateAcceptanceCrossDomainHyperHeuristicOptimizer.cs",
+                           "publication":  "Jackson, Ozcan \u0026 Drake (2013), Late acceptance-based selection hyper-heuristics for cross-domain heuristic search",
+                           "doi":  "10.1109/UKCI.2013.6651310",
+                           "implementation":  "A choice-function score balances learned performance and recency, while late acceptance provides move acceptance.",
+                           "page":  "docs/pages/algorithms/late-acceptance-selection-hh-jackson-ozcan-drake-2013.md",
+                           "problem":  "\\operatorname{HH}(\\mathcal H,\\phi,x_0)",
+                           "update":  "\\begin{aligned}C_i(t)\u0026=S_i(t)+\\lambda(t-\\ell_i(t)),\\\\h_t\u0026=\\arg\\max_iC_i(t).\\end{aligned}",
+                           "assumptions":  "Finite objective values, non-empty unique low-level heuristic pool and clonable state.",
+                           "convergence":  "No universal finite-time global-convergence guarantee is asserted.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

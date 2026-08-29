@@ -454,6 +454,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.IlsBanditHyperHeuristic,
             "MetaheuristicsPlatform.Algorithms.HyperHeuristics.IlsBanditHyperHeuristic.IlsBanditHyperHeuristicOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.LateAcceptanceCrossDomainHyperHeuristic,
+            "MetaheuristicsPlatform.Algorithms.HyperHeuristics.LateAcceptanceCrossDomainHyperHeuristic.LateAcceptanceCrossDomainHyperHeuristicOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

@@ -349,4 +349,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string IlsBanditHyperHeuristic =
         "ils-hyperheuristic-soria-alcaraz-ochoa-sotelo-burke-2017";
+
+    public const string LateAcceptanceCrossDomainHyperHeuristic =
+        "late-acceptance-selection-hh-jackson-ozcan-drake-2013";
 }

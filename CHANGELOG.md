@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.152.0] - 2026-08-28
+
+- Add canonical Late-Acceptance Cross-Domain Selection Hyper-Heuristic scientific identity (Jackson, Ozcan & Drake, 2013; DOI 10.1109/UKCI.2013.6651310).
+- Stable ID: `late-acceptance-selection-hh-jackson-ozcan-drake-2013`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.151.0] - 2026-08-28
 
 - Add canonical ILS Hyper-Heuristic with Effective Heuristic Subset scientific identity (Soria-Alcaraz, Ochoa, Sotelo-Figeroa & Burke, 2017; DOI 10.1016/j.ejor.2017.01.042).

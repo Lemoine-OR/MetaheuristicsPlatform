@@ -1,0 +1,116 @@
+using MetaheuristicsPlatform.Catalog;
+using MetaheuristicsPlatform.Classification;
+using MetaheuristicsPlatform.Core;
+using MetaheuristicsPlatform.HyperHeuristics;
+using MetaheuristicsPlatform.Random;
+
+namespace MetaheuristicsPlatform.Algorithms.HyperHeuristics.LateAcceptanceCrossDomainHyperHeuristic;
+
+public sealed class LateAcceptanceCrossDomainHyperHeuristicOptimizer :
+    IHyperHeuristicOptimizer<LateAcceptanceCrossDomainHyperHeuristicParameters>
+{
+    public MetaheuristicDescriptor Descriptor { get; } =
+        new()
+        {
+            Id = MetaheuristicAlgorithmIds.LateAcceptanceCrossDomainHyperHeuristic,
+            Name = "Late-Acceptance Cross-Domain Selection Hyper-Heuristic",
+            Acronym = "LA-CDHH",
+            SolutionModel = MetaheuristicSolutionModel.SingleSolution,
+            Families =
+                MetaheuristicFamily.Other |
+                MetaheuristicFamily.Hybrid,
+            Mechanisms =
+                MetaheuristicMechanism.MemoryBased |
+                MetaheuristicMechanism.Adaptive |
+                MetaheuristicMechanism.Hybrid,
+            SearchSpaces =
+                SearchSpaceKind.Continuous |
+                SearchSpaceKind.Binary |
+                SearchSpaceKind.Integer |
+                SearchSpaceKind.Permutation |
+                SearchSpaceKind.Combinatorial |
+                SearchSpaceKind.Mixed,
+            IsStochastic = true,
+            References =
+                new[]
+                {
+                    LateAcceptanceCrossDomainHyperHeuristicOptimizerReferences.Primary
+                }
+        };
+
+public HyperHeuristicOptimizationResult Optimize(
+        IHyperHeuristicDomain domain,
+        LateAcceptanceCrossDomainHyperHeuristicParameters parameters,
+        OptimizationOptions? options = null,
+        CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(domain);
+        ArgumentNullException.ThrowIfNull(parameters);
+        parameters.Validate();
+        HyperHeuristicToolkit.ValidateDomain(domain);
+
+        IRandomSource random =
+            HyperHeuristicToolkit.CreateRandom(options, out ulong seed);
+
+        int evaluations = 0;
+        HyperHeuristicCandidate current =
+            HyperHeuristicToolkit.Initialize(domain, random, ref evaluations);
+        HyperHeuristicCandidate best =
+            new(current.Solution.Clone(), current.Objective);
+        List<string> trace = new(parameters.MaximumIterations);
+        int count = domain.Heuristics.Count;
+        double[] history = Enumerable.Repeat(HyperHeuristicToolkit.Key(current.Objective, domain.Sense), parameters.HistoryLength).ToArray();
+        int activeHistoryLength = history.Length;
+        double[] scores = new double[count];
+        int[] lastUsed = Enumerable.Repeat(-1, count).ToArray();
+
+        for (int iteration = 0; iteration < parameters.MaximumIterations; iteration++)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+
+            int selected = ChoiceFunctionSelect(scores, lastUsed, iteration, parameters.ChoiceRecencyWeight, random);
+
+            HyperHeuristicCandidate candidate =
+                HyperHeuristicToolkit.CloneAndApply(
+                    domain, current, selected, random, ref evaluations);
+
+            double reward = HyperHeuristicToolkit.Improvement(current.Objective, candidate.Objective, domain.Sense);
+            int slot = iteration % activeHistoryLength;
+            double candidateKey = HyperHeuristicToolkit.Key(candidate.Objective, domain.Sense);
+            double currentKey = HyperHeuristicToolkit.Key(current.Objective, domain.Sense);
+            if (LateAcceptance(candidateKey, currentKey, history[slot])) current = candidate;
+            history[slot] = HyperHeuristicToolkit.Key(current.Objective, domain.Sense);
+            scores[selected] = (1.0 - parameters.LearningRate) * scores[selected] + parameters.LearningRate * reward;
+            lastUsed[selected] = iteration;
+
+            if (HyperHeuristicToolkit.Better(
+                    current.Objective,
+                    best.Objective,
+                    domain.Sense))
+                best =
+                    new HyperHeuristicCandidate(
+                        current.Solution.Clone(),
+                        current.Objective);
+
+            trace.Add(domain.Heuristics[selected].Id);
+        }
+
+        return HyperHeuristicToolkit.Result(
+            best, trace, evaluations, parameters.MaximumIterations, seed);
+    }
+
+    private static bool LateAcceptance(double candidate, double current, double historical)
+    {
+        return candidate <= current || candidate <= historical;
+    }
+    private static int ChoiceFunctionSelect(IReadOnlyList<double> scores, IReadOnlyList<int> lastUsed, int iteration, double recency, IRandomSource random)
+    {
+        double[] values = new double[scores.Count];
+        for (int i = 0; i < values.Length; i++)
+        {
+            int age = lastUsed[i] < 0 ? iteration + 1 : iteration - lastUsed[i];
+            values[i] = scores[i] + recency * age;
+        }
+        return HyperHeuristicToolkit.BestScoreIndex(values, random);
+    }
+}

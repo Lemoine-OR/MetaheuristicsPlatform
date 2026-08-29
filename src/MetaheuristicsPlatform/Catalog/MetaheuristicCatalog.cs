@@ -1964,7 +1964,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/HyperHeuristics/IlsBanditHyperHeuristic/IlsBanditHyperHeuristicOptimizer.cs",
     "Soria-Alcaraz, Ochoa, Sotelo-Figeroa & Burke (2017), A methodology for determining an effective subset of heuristics in selection hyper-heuristics",
     "10.1016/j.ejor.2017.01.042",
-    "A bandit model identifies an effective low-level heuristic subset; the search iterates within that subset and periodically perturbs/refines it.")
+    "A bandit model identifies an effective low-level heuristic subset; the search iterates within that subset and periodically perturbs/refines it."),
+new(
+    "late-acceptance-selection-hh-jackson-ozcan-drake-2013",
+    "Late-Acceptance Cross-Domain Selection Hyper-Heuristic",
+    "LateAcceptanceCrossDomainHyperHeuristicOptimizer",
+    "hyper-heuristics",
+    "Hyper-heuristics and algorithm selection",
+    "One or more low-level heuristic applications/evaluations per high-level iteration plus selector overhead",
+    "O(H + M) high-level policy state plus domain solution state",
+    "Reusable cross-domain heuristic selection and adaptive operator control",
+    true,
+    "src/MetaheuristicsPlatform/Algorithms/HyperHeuristics/LateAcceptanceCrossDomainHyperHeuristic/LateAcceptanceCrossDomainHyperHeuristicOptimizer.cs",
+    "Jackson, Ozcan & Drake (2013), Late acceptance-based selection hyper-heuristics for cross-domain heuristic search",
+    "10.1109/UKCI.2013.6651310",
+    "A choice-function score balances learned performance and recency, while late acceptance provides move acceptance.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

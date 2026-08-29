@@ -29,6 +29,7 @@ policies, bandit/credit mechanisms and move-acceptance combinations.
 - **[Fitness-Rate-Rank Multi-Armed Bandit](../algorithms/frrmab-li-fialho-kwong-zhang-2014.md)** - `frrmab-li-fialho-kwong-zhang-2014` - A sliding window accumulates fitness-improvement rewards, ranks operators by recent fitness-rate credit and combines rank credit with bandit exploration.
 - **[Reinforcement Learning Great-Deluge Hyper-Heuristic](../algorithms/reinforcement-learning-great-deluge-hh-ozcan-misir-ochoa-burke-2010.md)** - `reinforcement-learning-great-deluge-hh-ozcan-misir-ochoa-burke-2010` - Reinforcement-learning utility values adapt low-level heuristic selection online, while Great Deluge supplies move acceptance through a decreasing water level.
 - **[ILS Hyper-Heuristic with Effective Heuristic Subset](../algorithms/ils-hyperheuristic-soria-alcaraz-ochoa-sotelo-burke-2017.md)** - `ils-hyperheuristic-soria-alcaraz-ochoa-sotelo-burke-2017` - A bandit model identifies an effective low-level heuristic subset; the search iterates within that subset and periodically perturbs/refines it.
+- **[Late-Acceptance Cross-Domain Selection Hyper-Heuristic](../algorithms/late-acceptance-selection-hh-jackson-ozcan-drake-2013.md)** - `late-acceptance-selection-hh-jackson-ozcan-drake-2013` - A choice-function score balances learned performance and recency, while late acceptance provides move acceptance.
 
 ## Navigation
 
