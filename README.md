@@ -276,6 +276,12 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/kernel-pump-assuncao-urrutia-santos-2026.html"><strong>Kernel Pump</strong></a><br><sub>Partitions binary variables into an initial kernel and ranked buckets using relaxation integrality distance and reduced-cost information, then runs restricted feasibility-pump projections while progressively admitting buckets.</sub><br><code>kernel-pump-assuncao-urrutia-santos-2026</code><br><sub><code>KernelPumpMatheuristicOptimizer</code></sub></td></tr>
 </table>
 
+
+## Reference-grade guarantees
+
+- **v0.166.0 — Scientific Provenance Contract** — `reference-grade-scientific-provenance` — Add immutable scientific provenance records with canonical SHA-256 fingerprints.
+<!-- REFERENCE-GRADE-END -->
+
 ## Scientific components
 
 Every component catalog is integrated into the same balanced grid; no scientific component

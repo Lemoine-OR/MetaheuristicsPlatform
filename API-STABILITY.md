@@ -1,5 +1,9 @@
 # API stability
 
+## v0.166.0
+
+- Added `ScientificProvenanceRecord` reference-grade contract; existing algorithm IDs and optimizer signatures are unchanged.
+
 ## v0.165.0
 
 - Added stable direct-factory algorithm ID `kernel-pump-assuncao-urrutia-santos-2026` (`KernelPumpMatheuristicOptimizer`). Existing public IDs and signatures are unchanged.

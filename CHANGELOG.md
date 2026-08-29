@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.166.0] - 2026-08-29
+
+- Add immutable scientific provenance records with canonical SHA-256 fingerprints.
+- Consolidation ID: `reference-grade-scientific-provenance`.
+
 ## [0.165.0] - 2026-08-29
 
 - Add canonical Kernel Pump scientific identity (Assuncao, Urrutia & Santos, 2026; DOI 10.1007/s12532-026-00333-2).
