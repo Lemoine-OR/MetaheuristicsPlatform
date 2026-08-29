@@ -1,5 +1,9 @@
 # API stability
 
+## v0.160.0
+
+- Added stable direct-factory algorithm ID `kernel-search-angelelli-mansini-speranza-2010` (`KernelSearchMatheuristicOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.159.0
 
 - Added stable direct-factory algorithm ID `dins-ghosh-2007` (`DinsMatheuristicOptimizer`). Existing public IDs and signatures are unchanged.

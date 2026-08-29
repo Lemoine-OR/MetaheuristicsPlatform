@@ -2076,7 +2076,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Matheuristics/DINS/DinsMatheuristicOptimizer.cs",
     "Ghosh (2007), DINS, a MIP Improvement Heuristic",
     "10.1007/978-3-540-72792-7_24",
-    "Builds an exact neighborhood whose distance to the relaxation is bounded by the incumbent-to-relaxation distance, with hard fixings for strong agreements.")
+    "Builds an exact neighborhood whose distance to the relaxation is bounded by the incumbent-to-relaxation distance, with hard fixings for strong agreements."),
+new(
+    "kernel-search-angelelli-mansini-speranza-2010",
+    "Kernel Search",
+    "KernelSearchMatheuristicOptimizer",
+    "matheuristics-exact-repair",
+    "Matheuristics and exact-repair integration",
+    "One relaxation solve plus one exact restricted solve per bucket.",
+    "O(n) ranking/kernel/bucket state plus exact-solver state.",
+    "Binary-selection MILPs where relaxation values/reduced costs can rank promising active variables.",
+    true,
+    "src/MetaheuristicsPlatform/Algorithms/Matheuristics/KernelSearch/KernelSearchMatheuristicOptimizer.cs",
+    "Angelelli, Mansini & Speranza (2010), Kernel search: A general heuristic for the multi-dimensional knapsack problem",
+    "10.1016/j.cor.2010.02.002",
+    "Ranks binary variables from relaxation information, solves exact subproblems on a kernel plus one bucket, and promotes useful bucket variables into the kernel.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

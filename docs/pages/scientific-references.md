@@ -274,3 +274,4 @@ v0.67.0 adaptive-harmony-search-differential-evolution-zhao-li-hao-liu-yuan-2020
 - **Bertacco, Fischetti & Lodi (2007)** - *A feasibility pump heuristic for general mixed-integer problems*, Discrete Optimization 4(1), 63-76. DOI: [10.1016/j.disopt.2006.10.001](https://doi.org/10.1016/j.disopt.2006.10.001).
 - **Achterberg & Berthold (2007)** - *Improving the feasibility pump*, Discrete Optimization 4(1), 77-86. DOI: [10.1016/j.disopt.2006.10.004](https://doi.org/10.1016/j.disopt.2006.10.004).
 - **Ghosh (2007)** - *DINS, a MIP Improvement Heuristic*, IPCO 2007, LNCS. DOI: [10.1007/978-3-540-72792-7_24](https://doi.org/10.1007/978-3-540-72792-7_24).
+- **Angelelli, Mansini & Speranza (2010)** - *Kernel search: A general heuristic for the multi-dimensional knapsack problem*, Computers & Operations Research 37(11), 2017-2026. DOI: [10.1016/j.cor.2010.02.002](https://doi.org/10.1016/j.cor.2010.02.002).

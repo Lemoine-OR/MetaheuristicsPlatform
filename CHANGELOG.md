@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.160.0] - 2026-08-29
+
+- Add canonical Kernel Search scientific identity (Angelelli, Mansini & Speranza, 2010; DOI 10.1016/j.cor.2010.02.002).
+- Stable ID: `kernel-search-angelelli-mansini-speranza-2010`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.159.0] - 2026-08-29
 
 - Add canonical Distance Induced Neighborhood Search scientific identity (Ghosh, 2007; DOI 10.1007/978-3-540-72792-7_24).

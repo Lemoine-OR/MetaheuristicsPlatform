@@ -373,4 +373,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string DinsMatheuristic =
         "dins-ghosh-2007";
+
+    public const string KernelSearchMatheuristic =
+        "kernel-search-angelelli-mansini-speranza-2010";
 }

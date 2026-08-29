@@ -3325,6 +3325,28 @@
                            "assumptions":  "Finite solver outputs; declared variable kinds; exact-repair requests are honored by the injected domain backend.",
                            "convergence":  "No universal global-convergence claim; exactness applies only to restricted subproblems actually solved to optimality by the backend.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "kernel-search-angelelli-mansini-speranza-2010",
+                           "name":  "Kernel Search",
+                           "class":  "KernelSearchMatheuristicOptimizer",
+                           "category":  "matheuristics-exact-repair",
+                           "kind":  "single-solution",
+                           "family":  "Matheuristics and exact-repair integration",
+                           "time":  "One relaxation solve plus one exact restricted solve per bucket.",
+                           "space":  "O(n) ranking/kernel/bucket state plus exact-solver state.",
+                           "applicability":  "Binary-selection MILPs where relaxation values/reduced costs can rank promising active variables.",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Matheuristics/KernelSearch/KernelSearchMatheuristicOptimizer.cs",
+                           "publication":  "Angelelli, Mansini \u0026 Speranza (2010), Kernel search: A general heuristic for the multi-dimensional knapsack problem",
+                           "doi":  "10.1016/j.cor.2010.02.002",
+                           "implementation":  "Ranks binary variables from relaxation information, solves exact subproblems on a kernel plus one bucket, and promotes useful bucket variables into the kernel.",
+                           "page":  "docs/pages/algorithms/kernel-search-angelelli-mansini-speranza-2010.md",
+                           "problem":  "\\min\\{c^\\top x:x\\in X,\\ x_B\\in\\{0,1\\}^{|B|}\\}",
+                           "update":  "\\begin{aligned}K_0\u0026=\\operatorname{top}_q(\\rho_j),\\\\x^t\u0026\\in\\arg\\min\\{c^\\top x:x\\in X,\\operatorname{supp}(x)\\subseteq K_t\\cup B_t\\},\\\\K_{t+1}\u0026=K_t\\cup(\\operatorname{supp}(x^t)\\cap B_t).\\end{aligned}",
+                           "assumptions":  "Finite solver outputs; declared variable kinds; exact-repair requests are honored by the injected domain backend.",
+                           "convergence":  "No universal global-convergence claim; exactness applies only to restricted subproblems actually solved to optimality by the backend.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

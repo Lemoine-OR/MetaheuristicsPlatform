@@ -486,6 +486,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.DinsMatheuristic,
             "MetaheuristicsPlatform.Algorithms.Matheuristics.DINS.DinsMatheuristicOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.KernelSearchMatheuristic,
+            "MetaheuristicsPlatform.Algorithms.Matheuristics.KernelSearch.KernelSearchMatheuristicOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>
