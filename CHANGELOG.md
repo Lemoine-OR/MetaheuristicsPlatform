@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.172.0] - 2026-08-29
+
+- Add DOI normalization, uniqueness checks and reference-set fingerprints.
+- Consolidation ID: `reference-grade-scientific-reference-integrity`.
+
 ## [0.171.0] - 2026-08-29
 
 - Add deterministic named random-stream derivation and immutable seed tracing.
