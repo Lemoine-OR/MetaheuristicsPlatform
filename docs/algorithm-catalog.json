@@ -3237,6 +3237,28 @@
                            "assumptions":  "Finite solver outputs; declared variable kinds; exact-repair requests are honored by the injected domain backend.",
                            "convergence":  "No universal global-convergence claim; exactness applies only to restricted subproblems actually solved to optimality by the backend.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "feasibility-pump-fischetti-glover-lodi-2005",
+                           "name":  "Feasibility Pump",
+                           "class":  "FeasibilityPumpMatheuristicOptimizer",
+                           "category":  "matheuristics-exact-repair",
+                           "kind":  "single-solution",
+                           "family":  "Matheuristics and exact-repair integration",
+                           "time":  "One relaxation projection per pump iteration plus O(n) rounding and cycle handling.",
+                           "space":  "O(n) fractional/rounded targets plus relaxation-solver state.",
+                           "applicability":  "Generic MIP feasibility search when the domain can solve relaxation projections and test integer feasibility.",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Matheuristics/FeasibilityPump/FeasibilityPumpMatheuristicOptimizer.cs",
+                           "publication":  "Fischetti, Glover \u0026 Lodi (2005), The feasibility pump",
+                           "doi":  "10.1007/s10107-004-0570-3",
+                           "implementation":  "Alternates integer rounding with relaxation solves that minimize distance to the current integer target, with deterministic cycle perturbation.",
+                           "page":  "docs/pages/algorithms/feasibility-pump-fischetti-glover-lodi-2005.md",
+                           "problem":  "\\min\\{c^\\top x:Ax\\ge b,\\ x_I\\in\\mathbb Z\\}",
+                           "update":  "\\begin{aligned}\\tilde x^k\u0026=\\operatorname{round}(x^k),\\\\x^{k+1}\u0026\\in\\arg\\min_{x\\in P}\\Delta(x,\\tilde x^k).\\end{aligned}",
+                           "assumptions":  "Finite solver outputs; declared variable kinds; exact-repair requests are honored by the injected domain backend.",
+                           "convergence":  "No universal global-convergence claim; exactness applies only to restricted subproblems actually solved to optimality by the backend.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

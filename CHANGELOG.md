@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.156.0] - 2026-08-29
+
+- Add canonical Feasibility Pump scientific identity (Fischetti, Glover & Lodi, 2005; DOI 10.1007/s10107-004-0570-3).
+- Stable ID: `feasibility-pump-fischetti-glover-lodi-2005`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.155.0] - 2026-08-29
 
 - Add canonical Relaxation Induced Neighborhood Search scientific identity (Danna, Rothberg & Le Pape, 2005; DOI 10.1007/s10107-004-0518-7).

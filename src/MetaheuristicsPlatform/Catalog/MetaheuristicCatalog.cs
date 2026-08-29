@@ -2020,7 +2020,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Matheuristics/RINS/RinsMatheuristicOptimizer.cs",
     "Danna, Rothberg & Le Pape (2005), Exploring relaxation induced neighborhoods to improve MIP solutions",
     "10.1007/s10107-004-0518-7",
-    "Fixes integer variables on which the incumbent and relaxation agree, then solves the induced exact neighborhood.")
+    "Fixes integer variables on which the incumbent and relaxation agree, then solves the induced exact neighborhood."),
+new(
+    "feasibility-pump-fischetti-glover-lodi-2005",
+    "Feasibility Pump",
+    "FeasibilityPumpMatheuristicOptimizer",
+    "matheuristics-exact-repair",
+    "Matheuristics and exact-repair integration",
+    "One relaxation projection per pump iteration plus O(n) rounding and cycle handling.",
+    "O(n) fractional/rounded targets plus relaxation-solver state.",
+    "Generic MIP feasibility search when the domain can solve relaxation projections and test integer feasibility.",
+    true,
+    "src/MetaheuristicsPlatform/Algorithms/Matheuristics/FeasibilityPump/FeasibilityPumpMatheuristicOptimizer.cs",
+    "Fischetti, Glover & Lodi (2005), The feasibility pump",
+    "10.1007/s10107-004-0570-3",
+    "Alternates integer rounding with relaxation solves that minimize distance to the current integer target, with deterministic cycle perturbation.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

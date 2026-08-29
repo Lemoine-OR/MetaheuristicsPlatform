@@ -361,4 +361,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string RinsMatheuristic =
         "rins-danna-rothberg-le-pape-2005";
+
+    public const string FeasibilityPumpMatheuristic =
+        "feasibility-pump-fischetti-glover-lodi-2005";
 }

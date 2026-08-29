@@ -270,3 +270,4 @@ v0.67.0 adaptive-harmony-search-differential-evolution-zhao-li-hao-liu-yuan-2020
 - **Jackson, Ozcan & John (2014)** - *Fuzzy adaptive parameter control of a late acceptance hyper-heuristic*, 14th UK Workshop on Computational Intelligence. DOI: [10.1109/UKCI.2014.6930167](https://doi.org/10.1109/UKCI.2014.6930167).
 - **Fischetti & Lodi (2003)** - *Local branching*, Mathematical Programming 98(1-3), 23-47. DOI: [10.1007/s10107-003-0395-5](https://doi.org/10.1007/s10107-003-0395-5).
 - **Danna, Rothberg & Le Pape (2005)** - *Exploring relaxation induced neighborhoods to improve MIP solutions*, Mathematical Programming 102(1), 71-90. DOI: [10.1007/s10107-004-0518-7](https://doi.org/10.1007/s10107-004-0518-7).
+- **Fischetti, Glover & Lodi (2005)** - *The feasibility pump*, Mathematical Programming 104(1), 91-104. DOI: [10.1007/s10107-004-0570-3](https://doi.org/10.1007/s10107-004-0570-3).
