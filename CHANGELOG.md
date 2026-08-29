@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.169.0] - 2026-08-29
+
+- Add reproducible benchmark protocols, metric envelopes and exact run metadata.
+- Consolidation ID: `reference-grade-benchmark-protocol`.
+
 ## [0.168.0] - 2026-08-29
 
 - Add stable parameter-schema descriptors and duplicate-safe registry validation.
