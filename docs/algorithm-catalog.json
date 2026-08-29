@@ -3303,6 +3303,28 @@
                            "assumptions":  "Finite solver outputs; declared variable kinds; exact-repair requests are honored by the injected domain backend.",
                            "convergence":  "No universal global-convergence claim; exactness applies only to restricted subproblems actually solved to optimality by the backend.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "dins-ghosh-2007",
+                           "name":  "Distance Induced Neighborhood Search",
+                           "class":  "DinsMatheuristicOptimizer",
+                           "category":  "matheuristics-exact-repair",
+                           "kind":  "single-solution",
+                           "family":  "Matheuristics and exact-repair integration",
+                           "time":  "One relaxation solve and one bounded exact neighborhood solve per iteration.",
+                           "space":  "O(n) incumbent/relaxation state plus exact-solver state.",
+                           "applicability":  "Generic MIP incumbent improvement using a relaxation-guided distance neighborhood.",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Matheuristics/DINS/DinsMatheuristicOptimizer.cs",
+                           "publication":  "Ghosh (2007), DINS, a MIP Improvement Heuristic",
+                           "doi":  "10.1007/978-3-540-72792-7_24",
+                           "implementation":  "Builds an exact neighborhood whose distance to the relaxation is bounded by the incumbent-to-relaxation distance, with hard fixings for strong agreements.",
+                           "page":  "docs/pages/algorithms/dins-ghosh-2007.md",
+                           "problem":  "\\min\\{c^\\top x:x\\in X\\cap\\mathbb Z^p\\}",
+                           "update":  "\\begin{aligned}D(x,\\tilde x)\u0026=\\sum_{j\\in I}|x_j-\\tilde x_j|,\\\\D(x,\\tilde x)\u0026\\le D(\\bar x,\\tilde x).\\end{aligned}",
+                           "assumptions":  "Finite solver outputs; declared variable kinds; exact-repair requests are honored by the injected domain backend.",
+                           "convergence":  "No universal global-convergence claim; exactness applies only to restricted subproblems actually solved to optimality by the backend.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

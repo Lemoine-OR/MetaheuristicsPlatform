@@ -27,6 +27,7 @@ search, proximity objectives and constructive reduced-instance solve/adapt frame
 - **[Feasibility Pump](../algorithms/feasibility-pump-fischetti-glover-lodi-2005.md)** - `feasibility-pump-fischetti-glover-lodi-2005` - Alternates integer rounding with relaxation solves that minimize distance to the current integer target, with deterministic cycle perturbation.
 - **[General-MIP Feasibility Pump](../algorithms/general-mip-feasibility-pump-bertacco-fischetti-lodi-2007.md)** - `general-mip-feasibility-pump-bertacco-fischetti-lodi-2007` - Extends the pump to general-integer variables and uses structured perturbation plus an exact finishing neighborhood when direct pumping stalls.
 - **[Improved Feasibility Pump](../algorithms/improved-feasibility-pump-achterberg-berthold-2007.md)** - `improved-feasibility-pump-achterberg-berthold-2007` - Biases the pump projection with the original objective while retaining the distance-to-rounded-target term to improve solution quality.
+- **[Distance Induced Neighborhood Search](../algorithms/dins-ghosh-2007.md)** - `dins-ghosh-2007` - Builds an exact neighborhood whose distance to the relaxation is bounded by the incumbent-to-relaxation distance, with hard fixings for strong agreements.
 
 ## Navigation
 

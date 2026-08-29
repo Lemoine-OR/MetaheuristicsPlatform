@@ -1,5 +1,9 @@
 # API stability
 
+## v0.159.0
+
+- Added stable direct-factory algorithm ID `dins-ghosh-2007` (`DinsMatheuristicOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.158.0
 
 - Added stable direct-factory algorithm ID `improved-feasibility-pump-achterberg-berthold-2007` (`ImprovedFeasibilityPumpOptimizer`). Existing public IDs and signatures are unchanged.

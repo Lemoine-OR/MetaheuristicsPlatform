@@ -370,4 +370,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string ImprovedFeasibilityPump =
         "improved-feasibility-pump-achterberg-berthold-2007";
+
+    public const string DinsMatheuristic =
+        "dins-ghosh-2007";
 }

@@ -482,6 +482,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.ImprovedFeasibilityPump,
             "MetaheuristicsPlatform.Algorithms.Matheuristics.ImprovedFeasibilityPump.ImprovedFeasibilityPumpOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.DinsMatheuristic,
+            "MetaheuristicsPlatform.Algorithms.Matheuristics.DINS.DinsMatheuristicOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

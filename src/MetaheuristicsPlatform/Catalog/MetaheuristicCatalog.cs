@@ -2062,7 +2062,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Matheuristics/ImprovedFeasibilityPump/ImprovedFeasibilityPumpOptimizer.cs",
     "Achterberg & Berthold (2007), Improving the feasibility pump",
     "10.1016/j.disopt.2006.10.004",
-    "Biases the pump projection with the original objective while retaining the distance-to-rounded-target term to improve solution quality.")
+    "Biases the pump projection with the original objective while retaining the distance-to-rounded-target term to improve solution quality."),
+new(
+    "dins-ghosh-2007",
+    "Distance Induced Neighborhood Search",
+    "DinsMatheuristicOptimizer",
+    "matheuristics-exact-repair",
+    "Matheuristics and exact-repair integration",
+    "One relaxation solve and one bounded exact neighborhood solve per iteration.",
+    "O(n) incumbent/relaxation state plus exact-solver state.",
+    "Generic MIP incumbent improvement using a relaxation-guided distance neighborhood.",
+    true,
+    "src/MetaheuristicsPlatform/Algorithms/Matheuristics/DINS/DinsMatheuristicOptimizer.cs",
+    "Ghosh (2007), DINS, a MIP Improvement Heuristic",
+    "10.1007/978-3-540-72792-7_24",
+    "Builds an exact neighborhood whose distance to the relaxation is bounded by the incumbent-to-relaxation distance, with hard fixings for strong agreements.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

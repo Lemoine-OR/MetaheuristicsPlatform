@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.159.0] - 2026-08-29
+
+- Add canonical Distance Induced Neighborhood Search scientific identity (Ghosh, 2007; DOI 10.1007/978-3-540-72792-7_24).
+- Stable ID: `dins-ghosh-2007`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.158.0] - 2026-08-29
 
 - Add canonical Improved Feasibility Pump scientific identity (Achterberg & Berthold, 2007; DOI 10.1016/j.disopt.2006.10.004).
