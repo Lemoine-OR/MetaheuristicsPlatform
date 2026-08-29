@@ -3391,6 +3391,28 @@
                            "assumptions":  "Finite solver outputs; declared variable kinds; exact-repair requests are honored by the injected domain backend.",
                            "convergence":  "No universal global-convergence claim; exactness applies only to restricted subproblems actually solved to optimality by the backend.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "proximity-search-fischetti-monaci-2014",
+                           "name":  "Proximity Search",
+                           "class":  "ProximitySearchMatheuristicOptimizer",
+                           "category":  "matheuristics-exact-repair",
+                           "kind":  "single-solution",
+                           "family":  "Matheuristics and exact-repair integration",
+                           "time":  "One exact proximity subproblem per iteration.",
+                           "space":  "O(n) incumbent/reference state plus exact-solver state.",
+                           "applicability":  "0-1 mixed-integer optimization with an incumbent and exact solver supporting objective cutoffs.",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Matheuristics/ProximitySearch/ProximitySearchMatheuristicOptimizer.cs",
+                           "publication":  "Fischetti \u0026 Monaci (2014), Proximity search for 0-1 mixed-integer convex programming",
+                           "doi":  "10.1007/s10732-014-9266-x",
+                           "implementation":  "Replaces the subproblem objective by distance to the incumbent while imposing an original-objective cutoff that forces improvement.",
+                           "page":  "docs/pages/algorithms/proximity-search-fischetti-monaci-2014.md",
+                           "problem":  "\\min\\{c^\\top x:x\\in X,\\ x_B\\in\\{0,1\\}^{|B|}\\}",
+                           "update":  "\\begin{aligned}\\min\\ \u0026\\Delta_B(x,\\bar x)\\\\\n\\text{s.t. }\u0026c^\\top x\\le c^\\top\\bar x-\\theta,\\quad x\\in X.\\end{aligned}",
+                           "assumptions":  "Finite solver outputs; declared variable kinds; exact-repair requests are honored by the injected domain backend.",
+                           "convergence":  "No universal global-convergence claim; exactness applies only to restricted subproblems actually solved to optimality by the backend.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

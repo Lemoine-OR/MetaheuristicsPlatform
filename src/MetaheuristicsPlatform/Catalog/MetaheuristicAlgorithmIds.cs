@@ -382,4 +382,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string RensMatheuristic =
         "rens-berthold-2014";
+
+    public const string ProximitySearchMatheuristic =
+        "proximity-search-fischetti-monaci-2014";
 }

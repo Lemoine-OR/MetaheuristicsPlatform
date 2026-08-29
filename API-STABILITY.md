@@ -1,5 +1,9 @@
 # API stability
 
+## v0.163.0
+
+- Added stable direct-factory algorithm ID `proximity-search-fischetti-monaci-2014` (`ProximitySearchMatheuristicOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.162.0
 
 - Added stable direct-factory algorithm ID `rens-berthold-2014` (`RensMatheuristicOptimizer`). Existing public IDs and signatures are unchanged.

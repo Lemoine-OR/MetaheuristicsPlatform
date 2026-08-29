@@ -498,6 +498,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.RensMatheuristic,
             "MetaheuristicsPlatform.Algorithms.Matheuristics.RENS.RensMatheuristicOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.ProximitySearchMatheuristic,
+            "MetaheuristicsPlatform.Algorithms.Matheuristics.ProximitySearch.ProximitySearchMatheuristicOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

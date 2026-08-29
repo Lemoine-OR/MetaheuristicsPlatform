@@ -2118,7 +2118,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Matheuristics/RENS/RensMatheuristicOptimizer.cs",
     "Berthold (2014), RENS: The optimal rounding",
     "10.1007/s12532-013-0060-9",
-    "Fixes relaxation-integral integer variables and bounds fractional integer variables to floor/ceiling values before solving the exact rounding subproblem.")
+    "Fixes relaxation-integral integer variables and bounds fractional integer variables to floor/ceiling values before solving the exact rounding subproblem."),
+new(
+    "proximity-search-fischetti-monaci-2014",
+    "Proximity Search",
+    "ProximitySearchMatheuristicOptimizer",
+    "matheuristics-exact-repair",
+    "Matheuristics and exact-repair integration",
+    "One exact proximity subproblem per iteration.",
+    "O(n) incumbent/reference state plus exact-solver state.",
+    "0-1 mixed-integer optimization with an incumbent and exact solver supporting objective cutoffs.",
+    true,
+    "src/MetaheuristicsPlatform/Algorithms/Matheuristics/ProximitySearch/ProximitySearchMatheuristicOptimizer.cs",
+    "Fischetti & Monaci (2014), Proximity search for 0-1 mixed-integer convex programming",
+    "10.1007/s10732-014-9266-x",
+    "Replaces the subproblem objective by distance to the incumbent while imposing an original-objective cutoff that forces improvement.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

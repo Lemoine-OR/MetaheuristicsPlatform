@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.163.0] - 2026-08-29
+
+- Add canonical Proximity Search scientific identity (Fischetti & Monaci, 2014; DOI 10.1007/s10732-014-9266-x).
+- Stable ID: `proximity-search-fischetti-monaci-2014`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.162.0] - 2026-08-29
 
 - Add canonical Relaxation Enforced Neighborhood Search scientific identity (Berthold, 2014; DOI 10.1007/s12532-013-0060-9).
