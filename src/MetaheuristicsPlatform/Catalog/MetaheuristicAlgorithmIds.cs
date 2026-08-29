@@ -388,4 +388,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string CmsaMatheuristic =
         "cmsa-blum-pinacho-lopez-ibanez-lozano-2016";
+
+    public const string KernelPumpMatheuristic =
+        "kernel-pump-assuncao-urrutia-santos-2026";
 }

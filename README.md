@@ -45,7 +45,7 @@ catalog IDs and literature-backed documentation.
 </tr>
 </table>
 
-<p align="center"><strong>154 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>155 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -273,6 +273,7 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/rens-berthold-2014.html"><strong>Relaxation Enforced Neighborhood Search</strong></a><br><sub>Fixes relaxation-integral integer variables and bounds fractional integer variables to floor/ceiling values before solving the exact rounding subproblem.</sub><br><code>rens-berthold-2014</code><br><sub><code>RensMatheuristicOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/proximity-search-fischetti-monaci-2014.html"><strong>Proximity Search</strong></a><br><sub>Replaces the subproblem objective by distance to the incumbent while imposing an original-objective cutoff that forces improvement.</sub><br><code>proximity-search-fischetti-monaci-2014</code><br><sub><code>ProximitySearchMatheuristicOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/cmsa-blum-pinacho-lopez-ibanez-lozano-2016.html"><strong>Construct, Merge, Solve & Adapt</strong></a><br><sub>Constructs candidate solutions, merges their active components into a reduced exact subproblem, solves it, then ages and removes stale components.</sub><br><code>cmsa-blum-pinacho-lopez-ibanez-lozano-2016</code><br><sub><code>CmsaMatheuristicOptimizer</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/kernel-pump-assuncao-urrutia-santos-2026.html"><strong>Kernel Pump</strong></a><br><sub>Partitions binary variables into an initial kernel and ranked buckets using relaxation integrality distance and reduced-cost information, then runs restricted feasibility-pump projections while progressively admitting buckets.</sub><br><code>kernel-pump-assuncao-urrutia-santos-2026</code><br><sub><code>KernelPumpMatheuristicOptimizer</code></sub></td></tr>
 </table>
 
 ## Scientific components

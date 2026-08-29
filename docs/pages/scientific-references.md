@@ -279,3 +279,4 @@ v0.67.0 adaptive-harmony-search-differential-evolution-zhao-li-hao-liu-yuan-2020
 - **Berthold (2014)** - *RENS: The optimal rounding*, Mathematical Programming Computation 6(1), 33-54. DOI: [10.1007/s12532-013-0060-9](https://doi.org/10.1007/s12532-013-0060-9).
 - **Fischetti & Monaci (2014)** - *Proximity search for 0-1 mixed-integer convex programming*, Journal of Heuristics 20(6), 709-731. DOI: [10.1007/s10732-014-9266-x](https://doi.org/10.1007/s10732-014-9266-x).
 - **Blum, Pinacho, Lopez-Ibanez & Lozano (2016)** - *Construct, Merge, Solve & Adapt A new general algorithm for combinatorial optimization*, Computers & Operations Research 68, 75-88. DOI: [10.1016/j.cor.2015.10.014](https://doi.org/10.1016/j.cor.2015.10.014).
+- **Assunção, Urrutia & Santos (2026)** - *Kernel pump*, Mathematical Programming Computation (online first, 2026). DOI: [10.1007/s12532-026-00333-2](https://doi.org/10.1007/s12532-026-00333-2).

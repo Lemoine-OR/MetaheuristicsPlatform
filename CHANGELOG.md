@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.165.0] - 2026-08-29
+
+- Add canonical Kernel Pump scientific identity (Assuncao, Urrutia & Santos, 2026; DOI 10.1007/s12532-026-00333-2).
+- Stable ID: `kernel-pump-assuncao-urrutia-santos-2026`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.164.0] - 2026-08-29
 
 - Add canonical Construct, Merge, Solve & Adapt scientific identity (Blum, Pinacho, Lopez-Ibanez & Lozano, 2016; DOI 10.1016/j.cor.2015.10.014).

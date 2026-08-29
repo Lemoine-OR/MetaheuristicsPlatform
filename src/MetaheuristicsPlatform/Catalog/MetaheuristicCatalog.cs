@@ -2146,7 +2146,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Matheuristics/CMSA/CmsaMatheuristicOptimizer.cs",
     "Blum, Pinacho, Lopez-Ibanez & Lozano (2016), Construct, Merge, Solve & Adapt A new general algorithm for combinatorial optimization",
     "10.1016/j.cor.2015.10.014",
-    "Constructs candidate solutions, merges their active components into a reduced exact subproblem, solves it, then ages and removes stale components.")
+    "Constructs candidate solutions, merges their active components into a reduced exact subproblem, solves it, then ages and removes stale components."),
+new(
+    "kernel-pump-assuncao-urrutia-santos-2026",
+    "Kernel Pump",
+    "KernelPumpMatheuristicOptimizer",
+    "matheuristics-exact-repair",
+    "Matheuristics and exact-repair integration",
+    "One initial relaxation plus restricted pump iterations across progressively enlarged buckets.",
+    "O(n) kernel/buckets/targets plus relaxation-solver state.",
+    "Generic MILP feasibility search with binary variables, relaxation values/reduced costs and restricted pump subproblems.",
+    true,
+    "src/MetaheuristicsPlatform/Algorithms/Matheuristics/KernelPump/KernelPumpMatheuristicOptimizer.cs",
+    "Assuncao, Urrutia & Santos (2026), Kernel pump",
+    "10.1007/s12532-026-00333-2",
+    "Partitions binary variables into an initial kernel and ranked buckets using relaxation integrality distance and reduced-cost information, then runs restricted feasibility-pump projections while progressively admitting buckets.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

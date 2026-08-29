@@ -3435,6 +3435,28 @@
                            "assumptions":  "Finite solver outputs; declared variable kinds; exact-repair requests are honored by the injected domain backend.",
                            "convergence":  "No universal global-convergence claim; exactness applies only to restricted subproblems actually solved to optimality by the backend.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "kernel-pump-assuncao-urrutia-santos-2026",
+                           "name":  "Kernel Pump",
+                           "class":  "KernelPumpMatheuristicOptimizer",
+                           "category":  "matheuristics-exact-repair",
+                           "kind":  "single-solution",
+                           "family":  "Matheuristics and exact-repair integration",
+                           "time":  "One initial relaxation plus restricted pump iterations across progressively enlarged buckets.",
+                           "space":  "O(n) kernel/buckets/targets plus relaxation-solver state.",
+                           "applicability":  "Generic MILP feasibility search with binary variables, relaxation values/reduced costs and restricted pump subproblems.",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Matheuristics/KernelPump/KernelPumpMatheuristicOptimizer.cs",
+                           "publication":  "Assunção, Urrutia \u0026 Santos (2026), Kernel pump",
+                           "doi":  "10.1007/s12532-026-00333-2",
+                           "implementation":  "Partitions binary variables into an initial kernel and ranked buckets using relaxation integrality distance and reduced-cost information, then runs restricted feasibility-pump projections while progressively admitting buckets.",
+                           "page":  "docs/pages/algorithms/kernel-pump-assuncao-urrutia-santos-2026.md",
+                           "problem":  "\\min\\{c^\\top x:Ax\\ge b,\\ x_B\\in\\{0,1\\}^{|B|},\\ x_I\\in\\mathbb Z^{|I|}\\}",
+                           "update":  "\\begin{aligned}d_j\u0026=|\\bar x_j-[\\bar x_j]|,\\\\(K,\\Lambda_1,\\ldots,\\Lambda_q)\u0026=\\operatorname{rank}(d_j,rc_j),\\\\x^{k+1}\u0026\\in\\arg\\min_{x\\in P(K\\cup\\Lambda_1\\cup\\cdots\\cup\\Lambda_t)}\\Delta(x,\\tilde x^k).\\end{aligned}",
+                           "assumptions":  "Finite solver outputs; declared variable kinds; exact-repair requests are honored by the injected domain backend.",
+                           "convergence":  "No universal global-convergence claim; exactness applies only to restricted subproblems actually solved to optimality by the backend.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

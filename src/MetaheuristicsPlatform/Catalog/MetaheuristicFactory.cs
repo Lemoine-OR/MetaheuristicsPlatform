@@ -506,6 +506,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.CmsaMatheuristic,
             "MetaheuristicsPlatform.Algorithms.Matheuristics.CMSA.CmsaMatheuristicOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.KernelPumpMatheuristic,
+            "MetaheuristicsPlatform.Algorithms.Matheuristics.KernelPump.KernelPumpMatheuristicOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

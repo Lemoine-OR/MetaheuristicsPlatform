@@ -1,5 +1,9 @@
 # API stability
 
+## v0.165.0
+
+- Added stable direct-factory algorithm ID `kernel-pump-assuncao-urrutia-santos-2026` (`KernelPumpMatheuristicOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.164.0
 
 - Added stable direct-factory algorithm ID `cmsa-blum-pinacho-lopez-ibanez-lozano-2016` (`CmsaMatheuristicOptimizer`). Existing public IDs and signatures are unchanged.
