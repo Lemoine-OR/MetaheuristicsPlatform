@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.154.0] - 2026-08-29
+
+- Add canonical Local Branching scientific identity (Fischetti & Lodi, 2003; DOI 10.1007/s10107-003-0395-5).
+- Stable ID: `local-branching-fischetti-lodi-2003`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.153.0] - 2026-08-28
 
 - Add canonical Fuzzy Adaptive Late-Acceptance Hyper-Heuristic scientific identity (Jackson, Ozcan & John, 2014; DOI 10.1109/UKCI.2014.6930167).

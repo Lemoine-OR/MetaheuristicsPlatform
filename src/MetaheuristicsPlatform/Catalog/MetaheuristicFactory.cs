@@ -462,6 +462,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.FuzzyAdaptiveLateAcceptanceHyperHeuristic,
             "MetaheuristicsPlatform.Algorithms.HyperHeuristics.FuzzyAdaptiveLateAcceptanceHyperHeuristic.FuzzyAdaptiveLateAcceptanceHyperHeuristicOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.LocalBranchingMatheuristic,
+            "MetaheuristicsPlatform.Algorithms.Matheuristics.LocalBranching.LocalBranchingMatheuristicOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

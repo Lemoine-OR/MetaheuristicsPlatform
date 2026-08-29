@@ -1992,7 +1992,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/HyperHeuristics/FuzzyAdaptiveLateAcceptanceHyperHeuristic/FuzzyAdaptiveLateAcceptanceHyperHeuristicOptimizer.cs",
     "Jackson, Ozcan & John (2014), Fuzzy adaptive parameter control of a late acceptance hyper-heuristic",
     "10.1109/UKCI.2014.6930167",
-    "The late-acceptance history length adapts online from improvement and stagnation signals through a portable rule-based fuzzy-control adaptation.")
+    "The late-acceptance history length adapts online from improvement and stagnation signals through a portable rule-based fuzzy-control adaptation."),
+new(
+    "local-branching-fischetti-lodi-2003",
+    "Local Branching",
+    "LocalBranchingMatheuristicOptimizer",
+    "matheuristics-exact-repair",
+    "Matheuristics and exact-repair integration",
+    "Up to one exact restricted solve per local-branching iteration plus O(n) neighborhood construction.",
+    "O(n) incumbent/reference state plus exact-solver state.",
+    "Generic binary or mixed-integer improvement when an incumbent and exact restricted solve are available.",
+    true,
+    "src/MetaheuristicsPlatform/Algorithms/Matheuristics/LocalBranching/LocalBranchingMatheuristicOptimizer.cs",
+    "Fischetti & Lodi (2003), Local branching",
+    "10.1007/s10107-003-0395-5",
+    "Adds a Hamming-distance local-branching constraint around the incumbent and delegates the resulting neighborhood to the exact subsolver.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

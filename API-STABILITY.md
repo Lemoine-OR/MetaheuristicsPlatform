@@ -1,5 +1,9 @@
 # API stability
 
+## v0.154.0
+
+- Added stable direct-factory algorithm ID `local-branching-fischetti-lodi-2003` (`LocalBranchingMatheuristicOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.153.0
 
 - Added stable direct-factory algorithm ID `fuzzy-adaptive-late-acceptance-hh-jackson-ozcan-john-2014` (`FuzzyAdaptiveLateAcceptanceHyperHeuristicOptimizer`). Existing public IDs and signatures are unchanged.

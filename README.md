@@ -45,7 +45,7 @@ catalog IDs and literature-backed documentation.
 </tr>
 </table>
 
-<p align="center"><strong>143 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>144 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -256,6 +256,13 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/ils-hyperheuristic-soria-alcaraz-ochoa-sotelo-burke-2017.html"><strong>ILS Hyper-Heuristic with Effective Heuristic Subset</strong></a><br><sub>A bandit model identifies an effective low-level heuristic subset; the search iterates within that subset and periodically perturbs/refines it.</sub><br><code>ils-hyperheuristic-soria-alcaraz-ochoa-sotelo-burke-2017</code><br><sub><code>IlsBanditHyperHeuristicOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/late-acceptance-selection-hh-jackson-ozcan-drake-2013.html"><strong>Late-Acceptance Cross-Domain Selection Hyper-Heuristic</strong></a><br><sub>A choice-function score balances learned performance and recency, while late acceptance provides move acceptance.</sub><br><code>late-acceptance-selection-hh-jackson-ozcan-drake-2013</code><br><sub><code>LateAcceptanceCrossDomainHyperHeuristicOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/fuzzy-adaptive-late-acceptance-hh-jackson-ozcan-john-2014.html"><strong>Fuzzy Adaptive Late-Acceptance Hyper-Heuristic</strong></a><br><sub>The late-acceptance history length adapts online from improvement and stagnation signals through a portable rule-based fuzzy-control adaptation.</sub><br><code>fuzzy-adaptive-late-acceptance-hh-jackson-ozcan-john-2014</code><br><sub><code>FuzzyAdaptiveLateAcceptanceHyperHeuristicOptimizer</code></sub></td></tr>
+</table>
+
+
+### Matheuristics and exact-repair integration
+
+<table>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/local-branching-fischetti-lodi-2003.html"><strong>Local Branching</strong></a><br><sub>Adds a Hamming-distance local-branching constraint around the incumbent and delegates the resulting neighborhood to the exact subsolver.</sub><br><code>local-branching-fischetti-lodi-2003</code><br><sub><code>LocalBranchingMatheuristicOptimizer</code></sub></td></tr>
 </table>
 
 ## Scientific components

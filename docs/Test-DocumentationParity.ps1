@@ -20,6 +20,8 @@ $catalog =
 $algorithms = @($catalog.algorithms)
 $families = @($catalog.families)
 
+& (Join-Path $Root "docs\Test-LocalBranchingMatheuristic.ps1") -Root $Root
+
 & (Join-Path $Root "docs\Test-FuzzyAdaptiveLateAcceptanceHyperHeuristic.ps1") -Root $Root
 
 & (Join-Path $Root "docs\Test-LateAcceptanceCrossDomainHyperHeuristic.ps1") -Root $Root
@@ -192,7 +194,7 @@ $families = @($catalog.families)
 
 & (Join-Path $Root "docs\Test-BiogeographyBasedOptimization.ps1") -Root $Root
 
-if ($algorithms.Count -lt 143) {
+if ($algorithms.Count -lt 144) {
     throw "Documentation parity: expected at least 57 currently public algorithms."
 }
 
@@ -529,6 +531,8 @@ $requiredRepoFiles = @(
     "docs\pages\algorithms\late-acceptance-selection-hh-jackson-ozcan-drake-2013.md",
     "docs\Test-FuzzyAdaptiveLateAcceptanceHyperHeuristic.ps1",
     "docs\pages\algorithms\fuzzy-adaptive-late-acceptance-hh-jackson-ozcan-john-2014.md",
+    "docs\Test-LocalBranchingMatheuristic.ps1",
+    "docs\pages\algorithms\local-branching-fischetti-lodi-2003.md",
     "docs\Test-DoxygenMarkupSafety.ps1",
     "docs\Test-ContinuousCrossEntropy.ps1",
     "docs\Test-LargeNeighborhoodSearch.ps1",
@@ -676,8 +680,8 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.153.0") {
-    throw "Documentation parity: version.json must be 0.153.0 for this release."
+if ([string]$version.version -ne "0.154.0") {
+    throw "Documentation parity: version.json must be 0.154.0 for this release."
 }
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root

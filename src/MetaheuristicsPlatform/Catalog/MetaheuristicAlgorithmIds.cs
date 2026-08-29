@@ -355,4 +355,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string FuzzyAdaptiveLateAcceptanceHyperHeuristic =
         "fuzzy-adaptive-late-acceptance-hh-jackson-ozcan-john-2014";
+
+    public const string LocalBranchingMatheuristic =
+        "local-branching-fischetti-lodi-2003";
 }
