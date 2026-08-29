@@ -2090,7 +2090,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Matheuristics/KernelSearch/KernelSearchMatheuristicOptimizer.cs",
     "Angelelli, Mansini & Speranza (2010), Kernel search: A general heuristic for the multi-dimensional knapsack problem",
     "10.1016/j.cor.2010.02.002",
-    "Ranks binary variables from relaxation information, solves exact subproblems on a kernel plus one bucket, and promotes useful bucket variables into the kernel.")
+    "Ranks binary variables from relaxation information, solves exact subproblems on a kernel plus one bucket, and promotes useful bucket variables into the kernel."),
+new(
+    "mip-alns-muller-spoorendonk-pisinger-2012",
+    "MIP-based Adaptive Large Neighborhood Search",
+    "MipAdaptiveLargeNeighborhoodSearchOptimizer",
+    "matheuristics-exact-repair",
+    "Matheuristics and exact-repair integration",
+    "One exact repair subproblem per ALNS iteration plus O(n) destroy/fix construction.",
+    "O(n) incumbent/destroy mask plus exact-solver state.",
+    "Combinatorial/MIP problems where exact reoptimization is an effective repair mechanism for large destroyed neighborhoods.",
+    true,
+    "src/MetaheuristicsPlatform/Algorithms/Matheuristics/MipAdaptiveLns/MipAdaptiveLargeNeighborhoodSearchOptimizer.cs",
+    "Muller, Spoorendonk & Pisinger (2012), A hybrid adaptive large neighborhood search heuristic for lot-sizing with setup times",
+    "10.1016/j.ejor.2011.11.036",
+    "Destroys a variable subset, fixes the complement to the incumbent and invokes the exact solver as a large-neighborhood repair operator with adaptive destroy size.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.161.0] - 2026-08-29
+
+- Add canonical MIP-based Adaptive Large Neighborhood Search scientific identity (Muller, Spoorendonk & Pisinger, 2012; DOI 10.1016/j.ejor.2011.11.036).
+- Stable ID: `mip-alns-muller-spoorendonk-pisinger-2012`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.160.0] - 2026-08-29
 
 - Add canonical Kernel Search scientific identity (Angelelli, Mansini & Speranza, 2010; DOI 10.1016/j.cor.2010.02.002).

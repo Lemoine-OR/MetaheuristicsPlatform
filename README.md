@@ -45,7 +45,7 @@ catalog IDs and literature-backed documentation.
 </tr>
 </table>
 
-<p align="center"><strong>150 public algorithms · one lifecycle · stable catalog IDs</strong></p>
+<p align="center"><strong>151 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
 ## Start in 30 seconds
 
@@ -269,6 +269,7 @@ Each card also exposes the stable catalog/factory ID.
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/improved-feasibility-pump-achterberg-berthold-2007.html"><strong>Improved Feasibility Pump</strong></a><br><sub>Biases the pump projection with the original objective while retaining the distance-to-rounded-target term to improve solution quality.</sub><br><code>improved-feasibility-pump-achterberg-berthold-2007</code><br><sub><code>ImprovedFeasibilityPumpOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/dins-ghosh-2007.html"><strong>Distance Induced Neighborhood Search</strong></a><br><sub>Builds an exact neighborhood whose distance to the relaxation is bounded by the incumbent-to-relaxation distance, with hard fixings for strong agreements.</sub><br><code>dins-ghosh-2007</code><br><sub><code>DinsMatheuristicOptimizer</code></sub></td></tr>
 <tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/kernel-search-angelelli-mansini-speranza-2010.html"><strong>Kernel Search</strong></a><br><sub>Ranks binary variables from relaxation information, solves exact subproblems on a kernel plus one bucket, and promotes useful bucket variables into the kernel.</sub><br><code>kernel-search-angelelli-mansini-speranza-2010</code><br><sub><code>KernelSearchMatheuristicOptimizer</code></sub></td></tr>
+<tr><td colspan="2"><a href="https://lemoine-or.github.io/MetaheuristicsPlatform/algorithms/mip-alns-muller-spoorendonk-pisinger-2012.html"><strong>MIP-based Adaptive Large Neighborhood Search</strong></a><br><sub>Destroys a variable subset, fixes the complement to the incumbent and invokes the exact solver as a large-neighborhood repair operator with adaptive destroy size.</sub><br><code>mip-alns-muller-spoorendonk-pisinger-2012</code><br><sub><code>MipAdaptiveLargeNeighborhoodSearchOptimizer</code></sub></td></tr>
 </table>
 
 ## Scientific components

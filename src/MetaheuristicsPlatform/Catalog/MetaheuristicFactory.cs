@@ -490,6 +490,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.KernelSearchMatheuristic,
             "MetaheuristicsPlatform.Algorithms.Matheuristics.KernelSearch.KernelSearchMatheuristicOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.MipAdaptiveLargeNeighborhoodSearch,
+            "MetaheuristicsPlatform.Algorithms.Matheuristics.MipAdaptiveLns.MipAdaptiveLargeNeighborhoodSearchOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

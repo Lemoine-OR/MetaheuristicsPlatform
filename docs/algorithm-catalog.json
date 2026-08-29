@@ -3347,6 +3347,28 @@
                            "assumptions":  "Finite solver outputs; declared variable kinds; exact-repair requests are honored by the injected domain backend.",
                            "convergence":  "No universal global-convergence claim; exactness applies only to restricted subproblems actually solved to optimality by the backend.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "mip-alns-muller-spoorendonk-pisinger-2012",
+                           "name":  "MIP-based Adaptive Large Neighborhood Search",
+                           "class":  "MipAdaptiveLargeNeighborhoodSearchOptimizer",
+                           "category":  "matheuristics-exact-repair",
+                           "kind":  "single-solution",
+                           "family":  "Matheuristics and exact-repair integration",
+                           "time":  "One exact repair subproblem per ALNS iteration plus O(n) destroy/fix construction.",
+                           "space":  "O(n) incumbent/destroy mask plus exact-solver state.",
+                           "applicability":  "Combinatorial/MIP problems where exact reoptimization is an effective repair mechanism for large destroyed neighborhoods.",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Matheuristics/MipAdaptiveLns/MipAdaptiveLargeNeighborhoodSearchOptimizer.cs",
+                           "publication":  "Muller, Spoorendonk \u0026 Pisinger (2012), A hybrid adaptive large neighborhood search heuristic for lot-sizing with setup times",
+                           "doi":  "10.1016/j.ejor.2011.11.036",
+                           "implementation":  "Destroys a variable subset, fixes the complement to the incumbent and invokes the exact solver as a large-neighborhood repair operator with adaptive destroy size.",
+                           "page":  "docs/pages/algorithms/mip-alns-muller-spoorendonk-pisinger-2012.md",
+                           "problem":  "\\min\\{c^\\top x:x\\in X\\cap\\mathbb Z^p\\}",
+                           "update":  "\\begin{aligned}U_t\u0026=\\operatorname{destroy}(x^t),\\\\x^{t+1}\u0026\\in\\arg\\min\\{c^\\top x:x\\in X,\\ x_j=x_j^t\\ \\forall j\\notin U_t\\}.\\end{aligned}",
+                           "assumptions":  "Finite solver outputs; declared variable kinds; exact-repair requests are honored by the injected domain backend.",
+                           "convergence":  "No universal global-convergence claim; exactness applies only to restricted subproblems actually solved to optimality by the backend.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

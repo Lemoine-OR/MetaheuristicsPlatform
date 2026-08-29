@@ -376,4 +376,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string KernelSearchMatheuristic =
         "kernel-search-angelelli-mansini-speranza-2010";
+
+    public const string MipAdaptiveLargeNeighborhoodSearch =
+        "mip-alns-muller-spoorendonk-pisinger-2012";
 }

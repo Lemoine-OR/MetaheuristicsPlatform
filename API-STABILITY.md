@@ -1,5 +1,9 @@
 # API stability
 
+## v0.161.0
+
+- Added stable direct-factory algorithm ID `mip-alns-muller-spoorendonk-pisinger-2012` (`MipAdaptiveLargeNeighborhoodSearchOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.160.0
 
 - Added stable direct-factory algorithm ID `kernel-search-angelelli-mansini-speranza-2010` (`KernelSearchMatheuristicOptimizer`). Existing public IDs and signatures are unchanged.
