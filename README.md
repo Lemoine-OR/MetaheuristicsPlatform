@@ -281,6 +281,7 @@ Each card also exposes the stable catalog/factory ID.
 
 - **v0.166.0 — Scientific Provenance Contract** — `reference-grade-scientific-provenance` — Add immutable scientific provenance records with canonical SHA-256 fingerprints.
 - **v0.167.0 — Reproducibility Manifest** — `reference-grade-reproducibility-manifest` — Add canonical run manifests binding algorithm, version, seed, parameters, data and provenance.
+- **v0.168.0 — Parameter Schema Registry** — `reference-grade-parameter-schema-registry` — Add stable parameter-schema descriptors and duplicate-safe registry validation.
 <!-- REFERENCE-GRADE-END -->
 
 ## Scientific components

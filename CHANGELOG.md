@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.168.0] - 2026-08-29
+
+- Add stable parameter-schema descriptors and duplicate-safe registry validation.
+- Consolidation ID: `reference-grade-parameter-schema-registry`.
+
 ## [0.167.0] - 2026-08-29
 
 - Add canonical run manifests binding algorithm, version, seed, parameters, data and provenance.
