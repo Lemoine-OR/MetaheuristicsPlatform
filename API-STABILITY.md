@@ -1,5 +1,9 @@
 # API stability
 
+## v0.155.0
+
+- Added stable direct-factory algorithm ID `rins-danna-rothberg-le-pape-2005` (`RinsMatheuristicOptimizer`). Existing public IDs and signatures are unchanged.
+
 ## v0.154.0
 
 - Added stable direct-factory algorithm ID `local-branching-fischetti-lodi-2003` (`LocalBranchingMatheuristicOptimizer`). Existing public IDs and signatures are unchanged.

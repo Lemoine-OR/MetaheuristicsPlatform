@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.155.0] - 2026-08-29
+
+- Add canonical Relaxation Induced Neighborhood Search scientific identity (Danna, Rothberg & Le Pape, 2005; DOI 10.1007/s10107-004-0518-7).
+- Stable ID: `rins-danna-rothberg-le-pape-2005`.
+- Direct factory registration, mathematical documentation, semantic tests and benchmark included.
+
 ## [0.154.0] - 2026-08-29
 
 - Add canonical Local Branching scientific identity (Fischetti & Lodi, 2003; DOI 10.1007/s10107-003-0395-5).

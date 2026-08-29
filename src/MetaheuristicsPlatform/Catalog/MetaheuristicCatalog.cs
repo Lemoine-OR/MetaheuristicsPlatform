@@ -2006,7 +2006,21 @@ new(
     "src/MetaheuristicsPlatform/Algorithms/Matheuristics/LocalBranching/LocalBranchingMatheuristicOptimizer.cs",
     "Fischetti & Lodi (2003), Local branching",
     "10.1007/s10107-003-0395-5",
-    "Adds a Hamming-distance local-branching constraint around the incumbent and delegates the resulting neighborhood to the exact subsolver.")
+    "Adds a Hamming-distance local-branching constraint around the incumbent and delegates the resulting neighborhood to the exact subsolver."),
+new(
+    "rins-danna-rothberg-le-pape-2005",
+    "Relaxation Induced Neighborhood Search",
+    "RinsMatheuristicOptimizer",
+    "matheuristics-exact-repair",
+    "Matheuristics and exact-repair integration",
+    "One relaxation solve and up to one restricted exact solve per RINS iteration.",
+    "O(n) relaxation/incumbent vectors and fixing map plus exact-solver state.",
+    "Generic MIP improvement with an incumbent, a relaxation solution and an exact subsolver.",
+    true,
+    "src/MetaheuristicsPlatform/Algorithms/Matheuristics/RINS/RinsMatheuristicOptimizer.cs",
+    "Danna, Rothberg & Le Pape (2005), Exploring relaxation induced neighborhoods to improve MIP solutions",
+    "10.1007/s10107-004-0518-7",
+    "Fixes integer variables on which the incumbent and relaxation agree, then solves the induced exact neighborhood.")
     ];
 
     private static readonly IReadOnlyDictionary<string, MetaheuristicCatalogEntry>

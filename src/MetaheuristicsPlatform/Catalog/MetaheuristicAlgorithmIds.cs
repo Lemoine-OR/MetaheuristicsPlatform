@@ -358,4 +358,7 @@ public static class MetaheuristicAlgorithmIds
 
     public const string LocalBranchingMatheuristic =
         "local-branching-fischetti-lodi-2003";
+
+    public const string RinsMatheuristic =
+        "rins-danna-rothberg-le-pape-2005";
 }

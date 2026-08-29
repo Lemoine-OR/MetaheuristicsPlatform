@@ -466,6 +466,10 @@ public static class MetaheuristicFactory
         RegisterAssemblyType(
             MetaheuristicAlgorithmIds.LocalBranchingMatheuristic,
             "MetaheuristicsPlatform.Algorithms.Matheuristics.LocalBranching.LocalBranchingMatheuristicOptimizer");
+
+        RegisterAssemblyType(
+            MetaheuristicAlgorithmIds.RinsMatheuristic,
+            "MetaheuristicsPlatform.Algorithms.Matheuristics.RINS.RinsMatheuristicOptimizer");
     }
 
     public static IReadOnlyCollection<string> RegisteredIds =>

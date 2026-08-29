@@ -3215,6 +3215,28 @@
                            "assumptions":  "Finite solver outputs; declared variable kinds; exact-repair requests are honored by the injected domain backend.",
                            "convergence":  "No universal global-convergence claim; exactness applies only to restricted subproblems actually solved to optimality by the backend.",
                            "factoryMode":  "direct"
+                       },
+                       {
+                           "id":  "rins-danna-rothberg-le-pape-2005",
+                           "name":  "Relaxation Induced Neighborhood Search",
+                           "class":  "RinsMatheuristicOptimizer",
+                           "category":  "matheuristics-exact-repair",
+                           "kind":  "single-solution",
+                           "family":  "Matheuristics and exact-repair integration",
+                           "time":  "One relaxation solve and up to one restricted exact solve per RINS iteration.",
+                           "space":  "O(n) relaxation/incumbent vectors and fixing map plus exact-solver state.",
+                           "applicability":  "Generic MIP improvement with an incumbent, a relaxation solution and an exact subsolver.",
+                           "requiresComposition":  true,
+                           "sourcePath":  "src/MetaheuristicsPlatform/Algorithms/Matheuristics/RINS/RinsMatheuristicOptimizer.cs",
+                           "publication":  "Danna, Rothberg \u0026 Le Pape (2005), Exploring relaxation induced neighborhoods to improve MIP solutions",
+                           "doi":  "10.1007/s10107-004-0518-7",
+                           "implementation":  "Fixes integer variables on which the incumbent and relaxation agree, then solves the induced exact neighborhood.",
+                           "page":  "docs/pages/algorithms/rins-danna-rothberg-le-pape-2005.md",
+                           "problem":  "\\min\\{c^\\top x:x\\in X\\cap\\mathbb Z^p\\}",
+                           "update":  "\\begin{aligned}F\u0026=\\{j\\in I:\\bar x_j=\\tilde x_j\\},\\\\x_j\u0026=\\bar x_j\\quad(j\\in F).\\end{aligned}",
+                           "assumptions":  "Finite solver outputs; declared variable kinds; exact-repair requests are honored by the injected domain backend.",
+                           "convergence":  "No universal global-convergence claim; exactness applies only to restricted subproblems actually solved to optimality by the backend.",
+                           "factoryMode":  "direct"
                        }
                    ]
 }

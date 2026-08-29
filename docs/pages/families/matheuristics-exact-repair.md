@@ -23,6 +23,7 @@ search, proximity objectives and constructive reduced-instance solve/adapt frame
 
 ## Methods
 - **[Local Branching](../algorithms/local-branching-fischetti-lodi-2003.md)** - `local-branching-fischetti-lodi-2003` - Adds a Hamming-distance local-branching constraint around the incumbent and delegates the resulting neighborhood to the exact subsolver.
+- **[Relaxation Induced Neighborhood Search](../algorithms/rins-danna-rothberg-le-pape-2005.md)** - `rins-danna-rothberg-le-pape-2005` - Fixes integer variables on which the incumbent and relaxation agree, then solves the induced exact neighborhood.
 
 ## Navigation
 
