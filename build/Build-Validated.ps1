@@ -24,6 +24,7 @@ try {
     if ($LASTEXITCODE -ne 0) { throw "dotnet test failed." }
 
     & .\docs\Test-DocumentationParity.ps1 -Root $Root
+    & .\docs\Test-ProfessionalReadme.ps1 -Root $Root
     & .\docs\Test-V1CompatibilityFreeze.ps1 -Root $Root
 }
 finally {

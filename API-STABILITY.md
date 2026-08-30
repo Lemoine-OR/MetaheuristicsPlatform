@@ -1,5 +1,10 @@
 # API stability
 
+## v1.0.1 - documentation and discoverability hardening
+
+- No public API signature changes.
+- No stable algorithm ID, DOI, family, factory mode or scientific mapping changes.
+- README presentation is generated from the canonical catalog and validated for complete eight-family/two-column scientific coverage.
 ## v1.0.0 - stable compatibility baseline
 
 MetaheuristicsPlatform follows Semantic Versioning from v1.0.0 onward.

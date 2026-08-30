@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.1] - 2026-08-30
+
+- Replace the hand-maintained GitHub README catalog with a deterministic generator driven by the canonical algorithm catalog.
+- Present all 155 algorithms across all 8 scientific families in uniform two-column tables, with no full-width algorithm cards.
+- Make multi-objective, many-objective, constrained, multimodal, hyper-heuristic and matheuristic capabilities explicit and searchable.
+- Add professional README parity and discoverability validation without changing any public API or scientific algorithm identity.
 ## [1.0.0] - 2026-08-30
 
 - Establish the stable v1 public API and scientific catalog compatibility baselines.
