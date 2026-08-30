@@ -724,9 +724,95 @@ $version =
     [System.IO.File]::ReadAllText((Join-Path $Root "version.json"), [System.Text.Encoding]::UTF8) |
     ConvertFrom-Json
 
-if ([string]$version.version -ne "0.173.0") {
-    throw "Documentation parity: version.json must be 0.173.0 for this release."
+# CURRENT-RELEASE-VERSION-CONTRACT
+$currentVersion =
+    [string]$version.version
+
+if ([string]::IsNullOrWhiteSpace($currentVersion) -or
+    -not [regex]::IsMatch(
+        $currentVersion,
+        '^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?$')) {
+
+    throw (
+        "Documentation parity: version.json contains an invalid semantic version '{0}'." -f
+        $currentVersion)
 }
+
+$citationPath =
+    Join-Path $Root "CITATION.cff"
+
+$citationText =
+    [System.IO.File]::ReadAllText(
+        $citationPath,
+        [System.Text.Encoding]::UTF8)
+
+$citationVersionMatches =
+    @(
+        [regex]::Matches(
+            $citationText,
+            '(?m)^version:[ \t]*"?([^"\r\n]+)"?[ \t]*\r?$')
+    )
+
+if (@($citationVersionMatches).Length -ne 1) {
+    throw (
+        "Documentation parity: CITATION.cff must contain exactly one version key; found {0}." -f
+        @($citationVersionMatches).Length)
+}
+
+$citationVersion =
+    ([string]$citationVersionMatches[0].Groups[1].Value).Trim()
+
+if (-not [string]::Equals(
+        $citationVersion,
+        $currentVersion,
+        [System.StringComparison]::Ordinal)) {
+
+    throw (
+        "Documentation parity: CITATION.cff version '{0}' does not match version.json '{1}'." -f
+        $citationVersion,
+        $currentVersion)
+}
+
+$changelogVersionMarker =
+    "## [" +
+    $currentVersion +
+    "]"
+
+$changelogText =
+    [System.IO.File]::ReadAllText(
+        (Join-Path $Root "CHANGELOG.md"),
+        [System.Text.Encoding]::UTF8)
+
+if ($changelogText.IndexOf(
+        $changelogVersionMarker,
+        [System.StringComparison]::Ordinal) -lt 0) {
+
+    throw (
+        "Documentation parity: CHANGELOG.md does not contain the current version marker '{0}'." -f
+        $changelogVersionMarker)
+}
+
+$apiVersionMarker =
+    "## v" +
+    $currentVersion
+
+$apiStabilityText =
+    [System.IO.File]::ReadAllText(
+        (Join-Path $Root "API-STABILITY.md"),
+        [System.Text.Encoding]::UTF8)
+
+if ($apiStabilityText.IndexOf(
+        $apiVersionMarker,
+        [System.StringComparison]::Ordinal) -lt 0) {
+
+    throw (
+        "Documentation parity: API-STABILITY.md does not contain the current version marker '{0}'." -f
+        $apiVersionMarker)
+}
+
+Write-Host (
+    "CURRENT RELEASE VERSION CONTRACT GREEN: version.json, CITATION.cff, CHANGELOG.md and API-STABILITY.md agree on {0}." -f
+    $currentVersion) -ForegroundColor Green
 
 & (Join-Path $Root "docs\Test-TextEncoding.ps1") -Root $Root
 & (Join-Path $Root "docs\Test-SimulatedAnnealingCoolingCatalog.ps1") -Root $Root

@@ -47,6 +47,10 @@ catalog IDs and literature-backed documentation.
 
 <p align="center"><strong>155 public algorithms · one lifecycle · stable catalog IDs</strong></p>
 
+## v1.0 stability contract
+
+Version 1.0.0 establishes the stable Semantic Versioning baseline for the public API and scientific catalog. The 155 existing algorithm identities and 8 family identities remain frozen as compatibility baselines; compatible 1.x releases may add capabilities but must preserve every v1 baseline signature and scientific mapping.
+
 ## Start in 30 seconds
 
 For a parameterless built-in method, use its stable factory ID:

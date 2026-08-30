@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.0] - 2026-08-30
+
+- Establish the stable v1 public API and scientific catalog compatibility baselines.
+- Freeze the existing 155 algorithm identities and 8 family identities without adding a new algorithm.
+- Add machine-checkable compatibility guards while preserving all v0.173.0 optimizer signatures and scientific mappings.
+
 ## [0.173.0] - 2026-08-29
 
 - Add the final reference-grade gate integrating provenance, reproducibility, schema, benchmark, composition, random-trace and reference checks.

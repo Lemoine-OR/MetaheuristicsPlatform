@@ -1,5 +1,17 @@
 # API stability
 
+## v1.0.0 - stable compatibility baseline
+
+MetaheuristicsPlatform follows Semantic Versioning from v1.0.0 onward.
+
+The v1 baseline freezes all public signatures exported at v0.173.0 and all 155 scientific catalog identities with their class, DOI, primary family, factory mode and canonical documentation mappings.
+
+- Existing v1 public signatures must remain available throughout compatible 1.x releases.
+- Existing stable algorithm IDs must not be removed, renamed or silently remapped.
+- Existing scientific DOI/class/factory/documentation mappings are part of the compatibility contract.
+- Additive public APIs, new algorithm identities and new families remain allowed in compatible 1.x releases.
+- Removing or changing a frozen baseline element requires a major-version decision.
+
 ## v0.173.0
 
 - Added `ReferenceGradeStabilityGate` reference-grade contract; existing algorithm IDs and optimizer signatures are unchanged.

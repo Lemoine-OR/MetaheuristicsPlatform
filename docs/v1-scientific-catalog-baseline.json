@@ -1,0 +1,1281 @@
+{
+    "schemaVersion":  1,
+    "baselineRelease":  "1.0.0",
+    "sourceCommit":  "7ac478247fc88052296565f22a2eb2d2809f0b5f",
+    "families":  [
+                     {
+                         "id":  "constructive-methods",
+                         "name":  "Constructive methods"
+                     },
+                     {
+                         "id":  "evolutionary-methods",
+                         "name":  "Evolutionary methods"
+                     },
+                     {
+                         "id":  "hybrid-methods",
+                         "name":  "Hybrid / memetic methods"
+                     },
+                     {
+                         "id":  "hyper-heuristics",
+                         "name":  "Hyper-heuristics and algorithm selection"
+                     },
+                     {
+                         "id":  "matheuristics-exact-repair",
+                         "name":  "Matheuristics and exact-repair integration"
+                     },
+                     {
+                         "id":  "other-metaheuristics",
+                         "name":  "Other / music-inspired methods"
+                     },
+                     {
+                         "id":  "swarm-intelligence",
+                         "name":  "Swarm intelligence"
+                     },
+                     {
+                         "id":  "trajectory-based-methods",
+                         "name":  "Trajectory-based methods"
+                     }
+                 ],
+    "algorithms":  [
+                       {
+                           "id":  "active-cma-es-hansen-ros-2010",
+                           "class":  "ActiveCmaEsOptimizer",
+                           "doi":  "10.1145/1830761.1830788",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/active-cma-es-hansen-ros-2010.md"
+                       },
+                       {
+                           "id":  "adaptive-harmony-search-differential-evolution-zhao-li-hao-liu-yuan-2020",
+                           "class":  "AdaptiveHarmonySearchDifferentialEvolutionOptimizer",
+                           "doi":  "10.3390/app10082916",
+                           "category":  "other-metaheuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/adaptive-harmony-search-differential-evolution-zhao-li-hao-liu-yuan-2020.md"
+                       },
+                       {
+                           "id":  "adaptive-large-neighborhood-search-ropke-pisinger-2006",
+                           "class":  "AdaptiveLargeNeighborhoodSearchOptimizer\u003cTSolution,TRemoved\u003e",
+                           "doi":  "10.1287/trsc.1050.0135",
+                           "category":  "trajectory-based-methods",
+                           "factoryMode":  "composition",
+                           "page":  "docs/pages/algorithms/adaptive-large-neighborhood-search-ropke-pisinger-2006.md"
+                       },
+                       {
+                           "id":  "adaptive-niching-pso-bird-li-2006",
+                           "class":  "AdaptiveNichingPsoOptimizer",
+                           "doi":  "10.1145/1143997.1143999",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/adaptive-niching-pso-bird-li-2006.md"
+                       },
+                       {
+                           "id":  "adaptive-penalty-formulation-ga-tessema-yen-2009",
+                           "class":  "TessemaYenPenaltyGaOptimizer",
+                           "doi":  "10.1109/TSMCA.2009.2013333",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/adaptive-penalty-formulation-ga-tessema-yen-2009.md"
+                       },
+                       {
+                           "id":  "adaptive-penalty-ga-lemonge-barbosa-2004",
+                           "class":  "AdaptivePenaltyGaOptimizer",
+                           "doi":  "10.1002/nme.899",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/adaptive-penalty-ga-lemonge-barbosa-2004.md"
+                       },
+                       {
+                           "id":  "adaptive-rts-ga-roy-parmee-2006",
+                           "class":  "AdaptiveRestrictedTournamentGaOptimizer",
+                           "doi":  "10.1007/BFb0032787",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/adaptive-rts-ga-roy-parmee-2006.md"
+                       },
+                       {
+                           "id":  "advanced-parameter-setting-free-harmony-search-iteration-jeong-park-geem-sim-2020",
+                           "class":  "AdvancedParameterSettingFreeHarmonySearchIterationOptimizer",
+                           "doi":  "10.3390/app10072586",
+                           "category":  "other-metaheuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/advanced-parameter-setting-free-harmony-search-iteration-jeong-park-geem-sim-2020.md"
+                       },
+                       {
+                           "id":  "advanced-parameter-setting-free-harmony-search-object-jeong-park-geem-sim-2020",
+                           "class":  "AdvancedParameterSettingFreeHarmonySearchObjectOptimizer",
+                           "doi":  "10.3390/app10072586",
+                           "category":  "other-metaheuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/advanced-parameter-setting-free-harmony-search-object-jeong-park-geem-sim-2020.md"
+                       },
+                       {
+                           "id":  "ant-colony-system-dorigo-gambardella-1997",
+                           "class":  "AntColonySystemOptimizer\u003cTSolution,TComponent,TPheromoneKey,TEnumerator\u003e",
+                           "doi":  "10.1109/4235.585892",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "composition",
+                           "page":  "docs/pages/algorithms/ant-colony-system-dorigo-gambardella-1997.md"
+                       },
+                       {
+                           "id":  "ant-system-dorigo-maniezzo-colorni-1996",
+                           "class":  "AntSystemOptimizer\u003cTSolution,TComponent,TPheromoneKey,TEnumerator\u003e",
+                           "doi":  "10.1109/3477.484436",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "registered",
+                           "page":  "docs/pages/algorithms/ant-system-dorigo-maniezzo-colorni-1996.md"
+                       },
+                       {
+                           "id":  "artificial-bee-colony-karaboga-basturk-2007",
+                           "class":  "ArtificialBeeColonyOptimizer",
+                           "doi":  "10.1007/s10898-007-9149-x",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/artificial-bee-colony-karaboga-basturk-2007.md"
+                       },
+                       {
+                           "id":  "bandit-aos-fialho-da-costa-schoenauer-sebag-2010",
+                           "class":  "BanditAosHyperHeuristicOptimizer",
+                           "doi":  "10.1007/s10472-010-9213-y",
+                           "category":  "hyper-heuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/bandit-aos-fialho-da-costa-schoenauer-sebag-2010.md"
+                       },
+                       {
+                           "id":  "bare-bones-particle-swarm-kennedy-2003",
+                           "class":  "BareBonesParticleSwarmOptimizer",
+                           "doi":  "10.1109/SIS.2003.1202251",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/bare-bones-particle-swarm-kennedy-2003.md"
+                       },
+                       {
+                           "id":  "bat-algorithm-yang-2010",
+                           "class":  "BatAlgorithmOptimizer",
+                           "doi":  "10.1007/978-3-642-12538-6_6",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/bat-algorithm-yang-2010.md"
+                       },
+                       {
+                           "id":  "big-bang-big-crunch-erol-eksin-2006",
+                           "class":  "BigBangBigCrunchOptimizer",
+                           "doi":  "10.1016/j.advengsoft.2005.04.005",
+                           "category":  "other-metaheuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/big-bang-big-crunch-erol-eksin-2006.md"
+                       },
+                       {
+                           "id":  "biobjective-multimodal-ea-deb-saha-2012",
+                           "class":  "BiobjectiveMultimodalEaOptimizer",
+                           "doi":  "10.1162/EVCO_a_00042",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/biobjective-multimodal-ea-deb-saha-2012.md"
+                       },
+                       {
+                           "id":  "biogeography-based-optimization-simon-2008",
+                           "class":  "BiogeographyBasedOptimizationOptimizer",
+                           "doi":  "10.1109/TEVC.2008.919004",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/biogeography-based-optimization-simon-2008.md"
+                       },
+                       {
+                           "id":  "bipop-cma-es-hansen-2009",
+                           "class":  "BipopCmaEsOptimizer",
+                           "doi":  "10.1145/1570256.1570333",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/bipop-cma-es-hansen-2009.md"
+                       },
+                       {
+                           "id":  "black-hole-algorithm-hatamlou-2013",
+                           "class":  "BlackHoleOptimizer",
+                           "doi":  "10.1016/j.ins.2012.08.023",
+                           "category":  "other-metaheuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/black-hole-algorithm-hatamlou-2013.md"
+                       },
+                       {
+                           "id":  "case-based-heuristic-selection-burke-petrovic-qu-2006",
+                           "class":  "CaseBasedHyperHeuristicOptimizer",
+                           "doi":  "10.1007/s10951-006-6775-y",
+                           "category":  "hyper-heuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/case-based-heuristic-selection-burke-petrovic-qu-2006.md"
+                       },
+                       {
+                           "id":  "clearing-ga-petrowski-1996",
+                           "class":  "ClearingGaOptimizer",
+                           "doi":  "10.1109/ICEC.1996.542703",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/clearing-ga-petrowski-1996.md"
+                       },
+                       {
+                           "id":  "cma-es-hansen-ostermeier-2001",
+                           "class":  "CmaEsOptimizer",
+                           "doi":  "10.1162/106365601750190398",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/cma-es-hansen-ostermeier-2001.md"
+                       },
+                       {
+                           "id":  "cmsa-blum-pinacho-lopez-ibanez-lozano-2016",
+                           "class":  "CmsaMatheuristicOptimizer",
+                           "doi":  "10.1016/j.cor.2015.10.014",
+                           "category":  "matheuristics-exact-repair",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/cmsa-blum-pinacho-lopez-ibanez-lozano-2016.md"
+                       },
+                       {
+                           "id":  "comprehensive-learning-particle-swarm-liang-qin-suganthan-baskar-2006",
+                           "class":  "ComprehensiveLearningParticleSwarmOptimizer",
+                           "doi":  "10.1109/TEVC.2005.857610",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/comprehensive-learning-particle-swarm-liang-qin-suganthan-baskar-2006.md"
+                       },
+                       {
+                           "id":  "constriction-particle-swarm-clerc-kennedy-2002",
+                           "class":  "ConstrictionParticleSwarmOptimizer",
+                           "doi":  "10.1109/4235.985692",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/constriction-particle-swarm-clerc-kennedy-2002.md"
+                       },
+                       {
+                           "id":  "cooperative-particle-swarm-cpso-sk-van-den-bergh-engelbrecht-2004",
+                           "class":  "CooperativeParticleSwarmOptimizer",
+                           "doi":  "10.1109/TEVC.2004.826069",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/cooperative-particle-swarm-cpso-sk-van-den-bergh-engelbrecht-2004.md"
+                       },
+                       {
+                           "id":  "cross-entropy-continuous-kroese-porotsky-rubinstein-2006",
+                           "class":  "ContinuousCrossEntropyOptimizer",
+                           "doi":  "10.1007/s11009-006-9753-0",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/cross-entropy-continuous-kroese-porotsky-rubinstein-2006.md"
+                       },
+                       {
+                           "id":  "crowding-de-thomsen-2004",
+                           "class":  "CrowdingDeOptimizer",
+                           "doi":  "10.1109/CEC.2004.1331058",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/crowding-de-thomsen-2004.md"
+                       },
+                       {
+                           "id":  "crow-search-algorithm-askarzadeh-2016",
+                           "class":  "CrowSearchOptimizer",
+                           "doi":  "10.1016/j.compstruc.2016.03.001",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/crow-search-algorithm-askarzadeh-2016.md"
+                       },
+                       {
+                           "id":  "cuckoo-search-yang-deb-2009",
+                           "class":  "CuckooSearchOptimizer",
+                           "doi":  "10.1109/NABIC.2009.5393690",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/cuckoo-search-yang-deb-2009.md"
+                       },
+                       {
+                           "id":  "deb-feasibility-rules-ga-2000",
+                           "class":  "DebConstraintGaOptimizer",
+                           "doi":  "10.1016/S0045-7825(99)00389-8",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/deb-feasibility-rules-ga-2000.md"
+                       },
+                       {
+                           "id":  "demon-based-acceptance-talbi-2009",
+                           "class":  "DemonBasedAcceptanceOptimizer\u003cTSolution,TMove,TUndo\u003e",
+                           "doi":  "10.1002/9780470496916.ch2",
+                           "category":  "trajectory-based-methods",
+                           "factoryMode":  "composition",
+                           "page":  "docs/pages/algorithms/demon-based-acceptance-talbi-2009.md"
+                       },
+                       {
+                           "id":  "differential-evolution",
+                           "class":  "DifferentialEvolutionOptimizer",
+                           "doi":  "10.1023/A:1008202821328",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/differential-evolution.md"
+                       },
+                       {
+                           "id":  "differential-harmony-search-chakraborty-roy-das-jain-abraham-2009",
+                           "class":  "DifferentialHarmonySearchOptimizer",
+                           "doi":  "10.3233/FI-2009-157",
+                           "category":  "other-metaheuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/differential-harmony-search-chakraborty-roy-das-jain-abraham-2009.md"
+                       },
+                       {
+                           "id":  "dins-ghosh-2007",
+                           "class":  "DinsMatheuristicOptimizer",
+                           "doi":  "10.1007/978-3-540-72792-7_24",
+                           "category":  "matheuristics-exact-repair",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/dins-ghosh-2007.md"
+                       },
+                       {
+                           "id":  "distance-based-lips-qu-suganthan-das-2013",
+                           "class":  "LocallyInformedPsoOptimizer",
+                           "doi":  "10.1109/TEVC.2012.2203138",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/distance-based-lips-qu-suganthan-das-2013.md"
+                       },
+                       {
+                           "id":  "dominance-based-tournament-ga-coello-mezura-2002",
+                           "class":  "DominanceTournamentGaOptimizer",
+                           "doi":  "10.1016/S1474-0346(02)00011-3",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/dominance-based-tournament-ga-coello-mezura-2002.md"
+                       },
+                       {
+                           "id":  "dynamic-mab-aos-da-costa-fialho-schoenauer-sebag-2008",
+                           "class":  "DynamicMabHyperHeuristicOptimizer",
+                           "doi":  "10.1145/1389095.1389272",
+                           "category":  "hyper-heuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/dynamic-mab-aos-da-costa-fialho-schoenauer-sebag-2008.md"
+                       },
+                       {
+                           "id":  "dynamic-niche-sharing-ga-miller-shaw-1996",
+                           "class":  "DynamicNicheSharingGaOptimizer",
+                           "doi":  "10.1109/ICEC.1996.542701",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/dynamic-niche-sharing-ga-miller-shaw-1996.md"
+                       },
+                       {
+                           "id":  "ensemble-constraint-handling-mallipeddi-suganthan-2010",
+                           "class":  "EnsembleConstraintHandlingOptimizer",
+                           "doi":  "10.1109/TEVC.2009.2033582",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/ensemble-constraint-handling-mallipeddi-suganthan-2010.md"
+                       },
+                       {
+                           "id":  "epsilon-constrained-de-takahama-sakai-iwane-2006",
+                           "class":  "EpsilonConstrainedDeOptimizer",
+                           "doi":  "10.1109/ICSMC.2006.385209",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/epsilon-constrained-de-takahama-sakai-iwane-2006.md"
+                       },
+                       {
+                           "id":  "equilibrium-optimizer-faramarzi-heidarinejad-stephens-mirjalili-2020",
+                           "class":  "EquilibriumOptimizer",
+                           "doi":  "10.1016/j.knosys.2019.105190",
+                           "category":  "other-metaheuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/equilibrium-optimizer-faramarzi-heidarinejad-stephens-mirjalili-2020.md"
+                       },
+                       {
+                           "id":  "exploratory-harmony-search-das-mukhopadhyay-roy-abraham-panigrahi-2011",
+                           "class":  "ExploratoryHarmonySearchOptimizer",
+                           "doi":  "10.1109/TSMCB.2010.2046035",
+                           "category":  "other-metaheuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/exploratory-harmony-search-das-mukhopadhyay-roy-abraham-panigrahi-2011.md"
+                       },
+                       {
+                           "id":  "extreme-value-dmab-fialho-da-costa-schoenauer-sebag-2009",
+                           "class":  "ExtremeValueMabHyperHeuristicOptimizer",
+                           "doi":  "10.1007/978-3-642-11169-3_13",
+                           "category":  "hyper-heuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/extreme-value-dmab-fialho-da-costa-schoenauer-sebag-2009.md"
+                       },
+                       {
+                           "id":  "feasibility-pump-fischetti-glover-lodi-2005",
+                           "class":  "FeasibilityPumpMatheuristicOptimizer",
+                           "doi":  "10.1007/s10107-004-0570-3",
+                           "category":  "matheuristics-exact-repair",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/feasibility-pump-fischetti-glover-lodi-2005.md"
+                       },
+                       {
+                           "id":  "firefly-algorithm-yang-2009",
+                           "class":  "FireflyOptimizer",
+                           "doi":  "10.1007/978-3-642-04944-6_14",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/firefly-algorithm-yang-2009.md"
+                       },
+                       {
+                           "id":  "flower-pollination-algorithm-yang-2012",
+                           "class":  "FlowerPollinationOptimizer",
+                           "doi":  "10.1007/978-3-642-32894-7_27",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/flower-pollination-algorithm-yang-2012.md"
+                       },
+                       {
+                           "id":  "frrmab-li-fialho-kwong-zhang-2014",
+                           "class":  "FrrmabHyperHeuristicOptimizer",
+                           "doi":  "10.1109/TEVC.2013.2239648",
+                           "category":  "hyper-heuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/frrmab-li-fialho-kwong-zhang-2014.md"
+                       },
+                       {
+                           "id":  "fully-informed-particle-swarm-mendes-kennedy-neves-2004",
+                           "class":  "FullyInformedParticleSwarmOptimizer",
+                           "doi":  "10.1109/TEVC.2004.826074",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/fully-informed-particle-swarm-mendes-kennedy-neves-2004.md"
+                       },
+                       {
+                           "id":  "fuzzy-adaptive-late-acceptance-hh-jackson-ozcan-john-2014",
+                           "class":  "FuzzyAdaptiveLateAcceptanceHyperHeuristicOptimizer",
+                           "doi":  "10.1109/UKCI.2014.6930167",
+                           "category":  "hyper-heuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/fuzzy-adaptive-late-acceptance-hh-jackson-ozcan-john-2014.md"
+                       },
+                       {
+                           "id":  "fuzzy-clustering-niching-ga-imrani-bouroumi-zine-limouri-2000",
+                           "class":  "FuzzyClusteringNichingGaOptimizer",
+                           "doi":  "10.1016/S1389-0417(99)00013-3",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/fuzzy-clustering-niching-ga-imrani-bouroumi-zine-limouri-2000.md"
+                       },
+                       {
+                           "id":  "general-mip-feasibility-pump-bertacco-fischetti-lodi-2007",
+                           "class":  "GeneralMipFeasibilityPumpOptimizer",
+                           "doi":  "10.1016/j.disopt.2006.10.001",
+                           "category":  "matheuristics-exact-repair",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/general-mip-feasibility-pump-bertacco-fischetti-lodi-2007.md"
+                       },
+                       {
+                           "id":  "general-variable-neighborhood-search",
+                           "class":  "GeneralVariableNeighborhoodSearchOptimizer\u003cTSolution\u003e",
+                           "doi":  "10.1007/s13675-016-0075-x",
+                           "category":  "trajectory-based-methods",
+                           "factoryMode":  "composition",
+                           "page":  "docs/pages/algorithms/general-variable-neighborhood-search.md"
+                       },
+                       {
+                           "id":  "genetic-algorithm-generational",
+                           "class":  "GenerationalGeneticAlgorithmOptimizer\u003cTSolution\u003e",
+                           "doi":  "10.1007/978-3-662-05094-1_3",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "registration",
+                           "page":  "docs/pages/algorithms/genetic-algorithm-generational.md"
+                       },
+                       {
+                           "id":  "genocop-iii-michalewicz-nazhiyath-1995",
+                           "class":  "GenocopIIIOptimizer",
+                           "doi":  "10.1109/ICEC.1995.487460",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/genocop-iii-michalewicz-nazhiyath-1995.md"
+                       },
+                       {
+                           "id":  "global-best-harmony-search-omran-mahdavi-2008",
+                           "class":  "GlobalBestHarmonySearchOptimizer",
+                           "doi":  "10.1016/j.amc.2007.09.004",
+                           "category":  "other-metaheuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/global-best-harmony-search-omran-mahdavi-2008.md"
+                       },
+                       {
+                           "id":  "graph-based-hyperheuristic-burke-mccollum-meisels-petrovic-qu-2007",
+                           "class":  "GraphBasedHyperHeuristicOptimizer",
+                           "doi":  "10.1016/j.ejor.2005.08.012",
+                           "category":  "hyper-heuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/graph-based-hyperheuristic-burke-mccollum-meisels-petrovic-qu-2007.md"
+                       },
+                       {
+                           "id":  "grasp-feo-resende-1995",
+                           "class":  "GraspOptimizer\u003cTSolution\u003e",
+                           "doi":  "10.1007/BF01096763",
+                           "category":  "constructive-methods",
+                           "factoryMode":  "composition",
+                           "page":  "docs/pages/algorithms/grasp-feo-resende-1995.md"
+                       },
+                       {
+                           "id":  "grasp-path-relinking",
+                           "class":  "GraspPathRelinkingOptimizer\u003cTSolution\u003e",
+                           "doi":  "10.1287/ijoc.1030.0059",
+                           "category":  "constructive-methods",
+                           "factoryMode":  "composition",
+                           "page":  "docs/pages/algorithms/grasp-path-relinking.md"
+                       },
+                       {
+                           "id":  "gravitational-search-algorithm-rashedi-nezamabadi-pour-saryazdi-2009",
+                           "class":  "GravitationalSearchOptimizer",
+                           "doi":  "10.1016/j.ins.2009.03.004",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/gravitational-search-algorithm-rashedi-nezamabadi-pour-saryazdi-2009.md"
+                       },
+                       {
+                           "id":  "great-deluge-dueck-1993",
+                           "class":  "GreatDelugeOptimizer\u003cTSolution,TMove,TUndo\u003e",
+                           "doi":  "10.1006/jcph.1993.1010",
+                           "category":  "trajectory-based-methods",
+                           "factoryMode":  "composition",
+                           "page":  "docs/pages/algorithms/great-deluge-dueck-1993.md"
+                       },
+                       {
+                           "id":  "grey-wolf-optimizer-mirjalili-mirjalili-lewis-2014",
+                           "class":  "GreyWolfOptimizer",
+                           "doi":  "10.1016/j.advengsoft.2013.12.007",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/grey-wolf-optimizer-mirjalili-mirjalili-lewis-2014.md"
+                       },
+                       {
+                           "id":  "grid-based-evolutionary-algorithm-yang-li-liu-zheng-2013",
+                           "class":  "GreaOptimizer",
+                           "doi":  "10.1109/TEVC.2012.2227145",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/grid-based-evolutionary-algorithm-yang-li-liu-zheng-2013.md"
+                       },
+                       {
+                           "id":  "guided-local-search-voudouris-tsang-1999",
+                           "class":  "GuidedLocalSearchOptimizer\u003cTSolution,TMove,TUndo,TMoveEnumerator,TFeature,TFeatureEnumerator\u003e",
+                           "doi":  "10.1016/S0377-2217(98)00099-X",
+                           "category":  "trajectory-based-methods",
+                           "factoryMode":  "composition",
+                           "page":  "docs/pages/algorithms/guided-local-search-voudouris-tsang-1999.md"
+                       },
+                       {
+                           "id":  "harmony-search-geem-kim-loganathan-2001",
+                           "class":  "HarmonySearchOptimizer",
+                           "doi":  "10.1177/003754970107600201",
+                           "category":  "other-metaheuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/harmony-search-geem-kim-loganathan-2001.md"
+                       },
+                       {
+                           "id":  "harris-hawks-optimization-heidari-mirjalili-faris-aljarah-mafarja-chen-2019",
+                           "class":  "HarrisHawksOptimizer",
+                           "doi":  "10.1016/j.future.2019.02.028",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/harris-hawks-optimization-heidari-mirjalili-faris-aljarah-mafarja-chen-2019.md"
+                       },
+                       {
+                           "id":  "homaifar-penalty-ga-1994",
+                           "class":  "HomaifarPenaltyGaOptimizer",
+                           "doi":  "10.1177/003754979406200405",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/homaifar-penalty-ga-1994.md"
+                       },
+                       {
+                           "id":  "homomorphous-mapping-ea-koziel-michalewicz-1999",
+                           "class":  "HomomorphousMappingEaOptimizer",
+                           "doi":  "10.1162/evco.1999.7.1.19",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/homomorphous-mapping-ea-koziel-michalewicz-1999.md"
+                       },
+                       {
+                           "id":  "hype-bader-zitzler-2011",
+                           "class":  "HypeOptimizer",
+                           "doi":  "10.1162/EVCO_A_00009",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/hype-bader-zitzler-2011.md"
+                       },
+                       {
+                           "id":  "ibea-zitzler-kunzli-2004",
+                           "class":  "IbeaOptimizer",
+                           "doi":  "10.1007/978-3-540-30217-9_84",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/ibea-zitzler-kunzli-2004.md"
+                       },
+                       {
+                           "id":  "ils-hyperheuristic-soria-alcaraz-ochoa-sotelo-burke-2017",
+                           "class":  "IlsBanditHyperHeuristicOptimizer",
+                           "doi":  "10.1016/j.ejor.2017.01.042",
+                           "category":  "hyper-heuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/ils-hyperheuristic-soria-alcaraz-ochoa-sotelo-burke-2017.md"
+                       },
+                       {
+                           "id":  "imperialist-competitive-algorithm-atashpaz-gargari-lucas-2007",
+                           "class":  "ImperialistCompetitiveAlgorithmOptimizer",
+                           "doi":  "10.1109/CEC.2007.4425083",
+                           "category":  "other-metaheuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/imperialist-competitive-algorithm-atashpaz-gargari-lucas-2007.md"
+                       },
+                       {
+                           "id":  "improved-feasibility-pump-achterberg-berthold-2007",
+                           "class":  "ImprovedFeasibilityPumpOptimizer",
+                           "doi":  "10.1016/j.disopt.2006.10.004",
+                           "category":  "matheuristics-exact-repair",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/improved-feasibility-pump-achterberg-berthold-2007.md"
+                       },
+                       {
+                           "id":  "improved-harmony-search-differential-mutation-yong-liu-zhang-feng-2012",
+                           "class":  "ImprovedHarmonySearchDifferentialMutationOptimizer",
+                           "doi":  "10.1155/2012/147950",
+                           "category":  "other-metaheuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/improved-harmony-search-differential-mutation-yong-liu-zhang-feng-2012.md"
+                       },
+                       {
+                           "id":  "improved-harmony-search-mahdavi-fesanghary-damangir-2007",
+                           "class":  "ImprovedHarmonySearchOptimizer",
+                           "doi":  "10.1016/j.amc.2006.11.033",
+                           "category":  "other-metaheuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/improved-harmony-search-mahdavi-fesanghary-damangir-2007.md"
+                       },
+                       {
+                           "id":  "inertia-weight-particle-swarm-shi-eberhart-1998",
+                           "class":  "InertiaWeightParticleSwarmOptimizer",
+                           "doi":  "10.1109/ICEC.1998.699146",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/inertia-weight-particle-swarm-shi-eberhart-1998.md"
+                       },
+                       {
+                           "id":  "infeasibility-driven-ea-ray-singh-isaacs-smith-2009",
+                           "class":  "InfeasibilityDrivenEaOptimizer",
+                           "doi":  "10.1007/978-3-642-00619-7_7",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/infeasibility-driven-ea-ray-singh-isaacs-smith-2009.md"
+                       },
+                       {
+                           "id":  "ipop-cma-es-auger-hansen-2005",
+                           "class":  "IpopCmaEsOptimizer",
+                           "doi":  "10.1109/CEC.2005.1554902",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/ipop-cma-es-auger-hansen-2005.md"
+                       },
+                       {
+                           "id":  "iterated-greedy-ruiz-stutzle-2007",
+                           "class":  "IteratedGreedyOptimizer\u003cTSolution,TRemoved\u003e",
+                           "doi":  "10.1016/j.ejor.2005.12.009",
+                           "category":  "trajectory-based-methods",
+                           "factoryMode":  "composition",
+                           "page":  "docs/pages/algorithms/iterated-greedy-ruiz-stutzle-2007.md"
+                       },
+                       {
+                           "id":  "iterated-local-search-lourenco-martin-stutzle",
+                           "class":  "IteratedLocalSearchOptimizer\u003cTSolution\u003e",
+                           "doi":  "10.1007/0-306-48056-5_11",
+                           "category":  "trajectory-based-methods",
+                           "factoryMode":  "composition",
+                           "page":  "docs/pages/algorithms/iterated-local-search-lourenco-martin-stutzle.md"
+                       },
+                       {
+                           "id":  "jade-2009",
+                           "class":  "JadeOptimizer",
+                           "doi":  "10.1109/TEVC.2009.2014613",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/jade-2009.md"
+                       },
+                       {
+                           "id":  "jaya-algorithm-rao-2016",
+                           "class":  "JayaOptimizer",
+                           "doi":  "10.5267/j.ijiec.2015.8.004",
+                           "category":  "other-metaheuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/jaya-algorithm-rao-2016.md"
+                       },
+                       {
+                           "id":  "jde-brest-2006",
+                           "class":  "SelfAdaptiveDifferentialEvolutionOptimizer",
+                           "doi":  "10.1109/TEVC.2006.872133",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/jde-brest-2006.md"
+                       },
+                       {
+                           "id":  "kernel-pump-assuncao-urrutia-santos-2026",
+                           "class":  "KernelPumpMatheuristicOptimizer",
+                           "doi":  "10.1007/s12532-026-00333-2",
+                           "category":  "matheuristics-exact-repair",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/kernel-pump-assuncao-urrutia-santos-2026.md"
+                       },
+                       {
+                           "id":  "kernel-search-angelelli-mansini-speranza-2010",
+                           "class":  "KernelSearchMatheuristicOptimizer",
+                           "doi":  "10.1016/j.cor.2010.02.002",
+                           "category":  "matheuristics-exact-repair",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/kernel-search-angelelli-mansini-speranza-2010.md"
+                       },
+                       {
+                           "id":  "knea-zhang-tian-jin-2015",
+                           "class":  "KneaOptimizer",
+                           "doi":  "10.1109/TEVC.2014.2378512",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/knea-zhang-tian-jin-2015.md"
+                       },
+                       {
+                           "id":  "large-neighborhood-search-shaw-1998",
+                           "class":  "LargeNeighborhoodSearchOptimizer\u003cTSolution,TRemoved\u003e",
+                           "doi":  "10.1007/3-540-49481-2_30",
+                           "category":  "trajectory-based-methods",
+                           "factoryMode":  "composition",
+                           "page":  "docs/pages/algorithms/large-neighborhood-search-shaw-1998.md"
+                       },
+                       {
+                           "id":  "late-acceptance-hill-climbing-burke-bykov-2017",
+                           "class":  "LateAcceptanceHillClimbingOptimizer\u003cTSolution,TMove,TUndo\u003e",
+                           "doi":  "10.1016/j.ejor.2016.07.012",
+                           "category":  "trajectory-based-methods",
+                           "factoryMode":  "composition",
+                           "page":  "docs/pages/algorithms/late-acceptance-hill-climbing-burke-bykov-2017.md"
+                       },
+                       {
+                           "id":  "late-acceptance-hyperheuristic-ozcan-bykov-birben-burke-2009",
+                           "class":  "LateAcceptanceHyperHeuristicOptimizer",
+                           "doi":  "10.1109/CEC.2009.4983054",
+                           "category":  "hyper-heuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/late-acceptance-hyperheuristic-ozcan-bykov-birben-burke-2009.md"
+                       },
+                       {
+                           "id":  "late-acceptance-selection-hh-jackson-ozcan-drake-2013",
+                           "class":  "LateAcceptanceCrossDomainHyperHeuristicOptimizer",
+                           "doi":  "10.1109/UKCI.2013.6651310",
+                           "category":  "hyper-heuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/late-acceptance-selection-hh-jackson-ozcan-drake-2013.md"
+                       },
+                       {
+                           "id":  "local-branching-fischetti-lodi-2003",
+                           "class":  "LocalBranchingMatheuristicOptimizer",
+                           "doi":  "10.1007/s10107-003-0395-5",
+                           "category":  "matheuristics-exact-repair",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/local-branching-fischetti-lodi-2003.md"
+                       },
+                       {
+                           "id":  "local-search-best-improvement",
+                           "class":  "BestImprovementLocalSearchOptimizer\u003cTSolution,TMove,TUndo,TEnumerator\u003e",
+                           "doi":  "10.1002/9780470496916",
+                           "category":  "trajectory-based-methods",
+                           "factoryMode":  "composition",
+                           "page":  "docs/pages/algorithms/local-search-best-improvement.md"
+                       },
+                       {
+                           "id":  "local-search-first-improvement",
+                           "class":  "FirstImprovementLocalSearchOptimizer\u003cTSolution,TMove,TUndo,TEnumerator\u003e",
+                           "doi":  "10.1002/9780470496916",
+                           "category":  "trajectory-based-methods",
+                           "factoryMode":  "composition",
+                           "page":  "docs/pages/algorithms/local-search-first-improvement.md"
+                       },
+                       {
+                           "id":  "lshade-2014",
+                           "class":  "LShadeOptimizer",
+                           "doi":  "10.1109/CEC.2014.6900380",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/lshade-2014.md"
+                       },
+                       {
+                           "id":  "max-min-ant-system-stutzle-hoos-2000",
+                           "class":  "MaxMinAntSystemOptimizer\u003cTSolution,TComponent,TPheromoneKey,TEnumerator\u003e",
+                           "doi":  "10.1016/S0167-739X(00)00043-1",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "composition",
+                           "page":  "docs/pages/algorithms/max-min-ant-system-stutzle-hoos-2000.md"
+                       },
+                       {
+                           "id":  "memetic-algorithm-moscato-1989",
+                           "class":  "MemeticAlgorithmOptimizer\u003cTSolution\u003e",
+                           "doi":  "10.1109/TEVC.2005.850260",
+                           "category":  "hybrid-methods",
+                           "factoryMode":  "composition",
+                           "page":  "docs/pages/algorithms/memetic-algorithm-moscato-1989.md"
+                       },
+                       {
+                           "id":  "mip-alns-muller-spoorendonk-pisinger-2012",
+                           "class":  "MipAdaptiveLargeNeighborhoodSearchOptimizer",
+                           "doi":  "10.1016/j.ejor.2011.11.036",
+                           "category":  "matheuristics-exact-repair",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/mip-alns-muller-spoorendonk-pisinger-2012.md"
+                       },
+                       {
+                           "id":  "moead-de-li-zhang-2009",
+                           "class":  "MoeadDeOptimizer",
+                           "doi":  "10.1109/TEVC.2008.925798",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/moead-de-li-zhang-2009.md"
+                       },
+                       {
+                           "id":  "moeadd-li-deb-zhang-kwong-2015",
+                           "class":  "MoeaddOptimizer",
+                           "doi":  "10.1109/TEVC.2014.2373386",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/moeadd-li-deb-zhang-kwong-2015.md"
+                       },
+                       {
+                           "id":  "moead-zhang-li-2007",
+                           "class":  "MoeadOptimizer",
+                           "doi":  "10.1109/TEVC.2007.892759",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/moead-zhang-li-2007.md"
+                       },
+                       {
+                           "id":  "mopso-coello-pulido-lechuga-2004",
+                           "class":  "MopsoOptimizer",
+                           "doi":  "10.1109/TEVC.2004.826067",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/mopso-coello-pulido-lechuga-2004.md"
+                       },
+                       {
+                           "id":  "moth-flame-optimization-mirjalili-2015",
+                           "class":  "MothFlameOptimizer",
+                           "doi":  "10.1016/j.knosys.2015.07.006",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/moth-flame-optimization-mirjalili-2015.md"
+                       },
+                       {
+                           "id":  "multiobjective-cma-es-igel-hansen-roth-2007",
+                           "class":  "MoCmaEsOptimizer",
+                           "doi":  "10.1162/evco.2007.15.1.1",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/multiobjective-cma-es-igel-hansen-roth-2007.md"
+                       },
+                       {
+                           "id":  "multi-start-local-search",
+                           "class":  "MultiStartLocalSearchOptimizer\u003cTSolution\u003e",
+                           "doi":  "10.1007/0-306-48056-5_12",
+                           "category":  "trajectory-based-methods",
+                           "factoryMode":  "composition",
+                           "page":  "docs/pages/algorithms/multi-start-local-search.md"
+                       },
+                       {
+                           "id":  "multi-verse-optimizer-mirjalili-mirjalili-hatamlou-2016",
+                           "class":  "MultiVerseOptimizer",
+                           "doi":  "10.1007/s00521-015-1870-7",
+                           "category":  "other-metaheuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/multi-verse-optimizer-mirjalili-mirjalili-hatamlou-2016.md"
+                       },
+                       {
+                           "id":  "neighborhood-mutation-de-qu-suganthan-liang-2012",
+                           "class":  "NeighborhoodMutationDeOptimizer",
+                           "doi":  "10.1109/TEVC.2011.2161873",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/neighborhood-mutation-de-qu-suganthan-liang-2012.md"
+                       },
+                       {
+                           "id":  "nondominated-sorting-genetic-algorithm-srinivas-deb-1994",
+                           "class":  "NsgaOptimizer",
+                           "doi":  "10.1162/evco.1994.2.3.221",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/nondominated-sorting-genetic-algorithm-srinivas-deb-1994.md"
+                       },
+                       {
+                           "id":  "nonstationary-penalty-ga-joines-houck-1994",
+                           "class":  "JoinesHouckPenaltyGaOptimizer",
+                           "doi":  "10.1109/ICEC.1994.349995",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/nonstationary-penalty-ga-joines-houck-1994.md"
+                       },
+                       {
+                           "id":  "novel-global-harmony-search-zou-gao-wu-li-2010",
+                           "class":  "NovelGlobalHarmonySearchOptimizer",
+                           "doi":  "10.1016/j.cie.2009.11.003",
+                           "category":  "other-metaheuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/novel-global-harmony-search-zou-gao-wu-li-2010.md"
+                       },
+                       {
+                           "id":  "novel-self-adaptive-harmony-search-luo-2013",
+                           "class":  "NovelSelfAdaptiveHarmonySearchOptimizer",
+                           "doi":  "10.1155/2013/653749",
+                           "category":  "other-metaheuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/novel-self-adaptive-harmony-search-luo-2013.md"
+                       },
+                       {
+                           "id":  "nsga-ii-deb-pratap-agarwal-meyarivan-2002",
+                           "class":  "NsgaIIOptimizer",
+                           "doi":  "10.1109/4235.996017",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/nsga-ii-deb-pratap-agarwal-meyarivan-2002.md"
+                       },
+                       {
+                           "id":  "nsga-iii-deb-jain-2014",
+                           "class":  "NsgaIIIOptimizer",
+                           "doi":  "10.1109/TEVC.2013.2281535",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/nsga-iii-deb-jain-2014.md"
+                       },
+                       {
+                           "id":  "paes-knowles-corne-2000",
+                           "class":  "PaesOptimizer",
+                           "doi":  "10.1162/106365600568167",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/paes-knowles-corne-2000.md"
+                       },
+                       {
+                           "id":  "parameter-setting-free-harmony-search-geem-sim-2010",
+                           "class":  "ParameterSettingFreeHarmonySearchOptimizer",
+                           "doi":  "10.1016/j.amc.2010.09.049",
+                           "category":  "other-metaheuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/parameter-setting-free-harmony-search-geem-sim-2010.md"
+                       },
+                       {
+                           "id":  "particle-swarm",
+                           "class":  "ParticleSwarmOptimizer",
+                           "doi":  "10.1109/4235.985692",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/particle-swarm.md"
+                       },
+                       {
+                           "id":  "pesa-ii-corne-jerram-knowles-oates-2001",
+                           "class":  "PesaIIOptimizer",
+                           "doi":  "10.5555/2955239.2955289",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/pesa-ii-corne-jerram-knowles-oates-2001.md"
+                       },
+                       {
+                           "id":  "proximity-search-fischetti-monaci-2014",
+                           "class":  "ProximitySearchMatheuristicOptimizer",
+                           "doi":  "10.1007/s10732-014-9266-x",
+                           "category":  "matheuristics-exact-repair",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/proximity-search-fischetti-monaci-2014.md"
+                       },
+                       {
+                           "id":  "reactive-grasp-prais-ribeiro-2000",
+                           "class":  "ReactiveGraspOptimizer\u003cTSolution\u003e",
+                           "doi":  "10.1287/ijoc.12.3.164.12639",
+                           "category":  "constructive-methods",
+                           "factoryMode":  "composition",
+                           "page":  "docs/pages/algorithms/reactive-grasp-prais-ribeiro-2000.md"
+                       },
+                       {
+                           "id":  "reactive-tabu-search-battiti-tecchiolli-1994",
+                           "class":  "ReactiveTabuSearchOptimizer\u003cTSolution,TMove,TUndo,TAttribute,TEnumerator\u003e",
+                           "doi":  "10.1287/ijoc.6.2.126",
+                           "category":  "trajectory-based-methods",
+                           "factoryMode":  "composition",
+                           "page":  "docs/pages/algorithms/reactive-tabu-search-battiti-tecchiolli-1994.md"
+                       },
+                       {
+                           "id":  "record-to-record-travel-dueck-1993",
+                           "class":  "RecordToRecordTravelOptimizer\u003cTSolution,TMove,TUndo\u003e",
+                           "doi":  "10.1006/jcph.1993.1010",
+                           "category":  "trajectory-based-methods",
+                           "factoryMode":  "composition",
+                           "page":  "docs/pages/algorithms/record-to-record-travel-dueck-1993.md"
+                       },
+                       {
+                           "id":  "reduced-variable-neighborhood-search",
+                           "class":  "ReducedVariableNeighborhoodSearchOptimizer\u003cTSolution\u003e",
+                           "doi":  "10.1007/s13675-016-0075-x",
+                           "category":  "trajectory-based-methods",
+                           "factoryMode":  "composition",
+                           "page":  "docs/pages/algorithms/reduced-variable-neighborhood-search.md"
+                       },
+                       {
+                           "id":  "reinforcement-learning-great-deluge-hh-ozcan-misir-ochoa-burke-2010",
+                           "class":  "ReinforcementLearningGreatDelugeHyperHeuristicOptimizer",
+                           "doi":  "10.4018/jamc.2010102603",
+                           "category":  "hyper-heuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/reinforcement-learning-great-deluge-hh-ozcan-misir-ochoa-burke-2010.md"
+                       },
+                       {
+                           "id":  "rens-berthold-2014",
+                           "class":  "RensMatheuristicOptimizer",
+                           "doi":  "10.1007/s12532-013-0060-9",
+                           "category":  "matheuristics-exact-repair",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/rens-berthold-2014.md"
+                       },
+                       {
+                           "id":  "rins-danna-rothberg-le-pape-2005",
+                           "class":  "RinsMatheuristicOptimizer",
+                           "doi":  "10.1007/s10107-004-0518-7",
+                           "category":  "matheuristics-exact-repair",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/rins-danna-rothberg-le-pape-2005.md"
+                       },
+                       {
+                           "id":  "rvea-cheng-jin-olhofer-sendhoff-2016",
+                           "class":  "RveaOptimizer",
+                           "doi":  "10.1109/TEVC.2016.2519378",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/rvea-cheng-jin-olhofer-sendhoff-2016.md"
+                       },
+                       {
+                           "id":  "salp-swarm-algorithm-mirjalili-gandomi-mirjalili-saremi-faris-mirjalili-2017",
+                           "class":  "SalpSwarmAlgorithmOptimizer",
+                           "doi":  "10.1016/j.advengsoft.2017.07.002",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/salp-swarm-algorithm-mirjalili-gandomi-mirjalili-saremi-faris-mirjalili-2017.md"
+                       },
+                       {
+                           "id":  "scatter-search-marti-laguna-glover-2006",
+                           "class":  "ScatterSearchOptimizer\u003cTSolution\u003e",
+                           "doi":  "10.1016/j.ejor.2004.08.004",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "registration",
+                           "page":  "docs/pages/algorithms/scatter-search-marti-laguna-glover-2006.md"
+                       },
+                       {
+                           "id":  "self-adaptive-global-best-harmony-search-pan-suganthan-tasgetiren-liang-2010",
+                           "class":  "SelfAdaptiveGlobalBestHarmonySearchOptimizer",
+                           "doi":  "10.1016/j.amc.2010.01.088",
+                           "category":  "other-metaheuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/self-adaptive-global-best-harmony-search-pan-suganthan-tasgetiren-liang-2010.md"
+                       },
+                       {
+                           "id":  "separable-cma-es-ros-hansen-2008",
+                           "class":  "SeparableCmaEsOptimizer",
+                           "doi":  "10.1007/978-3-540-87700-4_30",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/separable-cma-es-ros-hansen-2008.md"
+                       },
+                       {
+                           "id":  "shade-2013",
+                           "class":  "ShadeOptimizer",
+                           "doi":  "10.1109/CEC.2013.6557555",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/shade-2013.md"
+                       },
+                       {
+                           "id":  "simulated-annealing-metropolis",
+                           "class":  "SimulatedAnnealingOptimizer\u003cTSolution,TMove,TUndo\u003e",
+                           "doi":  "10.1126/science.220.4598.671",
+                           "category":  "trajectory-based-methods",
+                           "factoryMode":  "composition",
+                           "page":  "docs/pages/algorithms/simulated-annealing-metropolis.md"
+                       },
+                       {
+                           "id":  "sine-cosine-algorithm-mirjalili-2016",
+                           "class":  "SineCosineAlgorithmOptimizer",
+                           "doi":  "10.1016/j.knosys.2015.12.022",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/sine-cosine-algorithm-mirjalili-2016.md"
+                       },
+                       {
+                           "id":  "skewed-variable-neighborhood-search-hansen-mladenovic-2001",
+                           "class":  "SkewedVariableNeighborhoodSearchOptimizer\u003cTSolution\u003e",
+                           "doi":  "10.1016/S0377-2217(00)00100-4",
+                           "category":  "trajectory-based-methods",
+                           "factoryMode":  "composition",
+                           "page":  "docs/pages/algorithms/skewed-variable-neighborhood-search-hansen-mladenovic-2001.md"
+                       },
+                       {
+                           "id":  "smpso-nebro-durillo-garcia-nieto-coello-luna-alba-2009",
+                           "class":  "SmpsoOptimizer",
+                           "doi":  "10.1109/MCDM.2009.4938830",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/smpso-nebro-durillo-garcia-nieto-coello-luna-alba-2009.md"
+                       },
+                       {
+                           "id":  "sms-emoa-beume-naujoks-emmerich-2007",
+                           "class":  "SmsEmoaOptimizer",
+                           "doi":  "10.1016/j.ejor.2006.08.008",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/sms-emoa-beume-naujoks-emmerich-2007.md"
+                       },
+                       {
+                           "id":  "spea2-zitzler-laumanns-thiele-2001",
+                           "class":  "Spea2Optimizer",
+                           "doi":  "10.3929/ethz-a-004284029",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/spea2-zitzler-laumanns-thiele-2001.md"
+                       },
+                       {
+                           "id":  "species-based-particle-swarm-parrott-li-2006",
+                           "class":  "SpeciesBasedParticleSwarmOptimizer",
+                           "doi":  "10.1109/TEVC.2005.859468",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/species-based-particle-swarm-parrott-li-2006.md"
+                       },
+                       {
+                           "id":  "species-based-pso-li-2004",
+                           "class":  "SpeciesBasedPsoOptimizer",
+                           "doi":  "10.1007/978-3-540-24854-5_10",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/species-based-pso-li-2004.md"
+                       },
+                       {
+                           "id":  "species-conserving-ga-li-balazs-parks-clarkson-2002",
+                           "class":  "SpeciesConservingGaOptimizer",
+                           "doi":  "10.1162/106365602760234081",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/species-conserving-ga-li-balazs-parks-clarkson-2002.md"
+                       },
+                       {
+                           "id":  "standard-particle-swarm-bratton-kennedy-2007",
+                           "class":  "StandardPso2007Optimizer",
+                           "doi":  "10.1109/SIS.2007.368035",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/standard-particle-swarm-bratton-kennedy-2007.md"
+                       },
+                       {
+                           "id":  "stochastic-ranking-es-runarsson-yao-2000",
+                           "class":  "StochasticRankingEsOptimizer",
+                           "doi":  "10.1109/4235.873238",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/stochastic-ranking-es-runarsson-yao-2000.md"
+                       },
+                       {
+                           "id":  "strength-pareto-evolutionary-algorithm-zitzler-thiele-1999",
+                           "class":  "SpeaOptimizer",
+                           "doi":  "10.1109/4235.797969",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/strength-pareto-evolutionary-algorithm-zitzler-thiele-1999.md"
+                       },
+                       {
+                           "id":  "symbiotic-organisms-search-cheng-prayogo-2014",
+                           "class":  "SymbioticOrganismsSearchOptimizer",
+                           "doi":  "10.1016/j.compstruc.2014.03.007",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/symbiotic-organisms-search-cheng-prayogo-2014.md"
+                       },
+                       {
+                           "id":  "tabu-search-glover",
+                           "class":  "TabuSearchOptimizer\u003cTSolution,TMove,TUndo,TAttribute,TEnumerator\u003e",
+                           "doi":  "10.1287/ijoc.1.3.190",
+                           "category":  "trajectory-based-methods",
+                           "factoryMode":  "composition",
+                           "page":  "docs/pages/algorithms/tabu-search-glover.md"
+                       },
+                       {
+                           "id":  "tabu-search-hyperheuristic-burke-kendall-soubeiga-2003",
+                           "class":  "TabuSearchHyperHeuristicOptimizer",
+                           "doi":  "10.1023/B:HEUR.0000012446.94732.B6",
+                           "category":  "hyper-heuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/tabu-search-hyperheuristic-burke-kendall-soubeiga-2003.md"
+                       },
+                       {
+                           "id":  "teaching-learning-based-optimization-rao-savsani-vakharia-2011",
+                           "class":  "TeachingLearningBasedOptimizationOptimizer",
+                           "doi":  "10.1016/j.cad.2010.12.015",
+                           "category":  "other-metaheuristics",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/teaching-learning-based-optimization-rao-savsani-vakharia-2011.md"
+                       },
+                       {
+                           "id":  "theta-dea-yuan-xu-wang-yao-2016",
+                           "class":  "ThetaDeaOptimizer",
+                           "doi":  "10.1109/TEVC.2015.2420112",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/theta-dea-yuan-xu-wang-yao-2016.md"
+                       },
+                       {
+                           "id":  "threshold-accepting-dueck-scheuer-1990",
+                           "class":  "ThresholdAcceptingOptimizer\u003cTSolution,TMove,TUndo\u003e",
+                           "doi":  "10.1016/0021-9991(90)90201-B",
+                           "category":  "trajectory-based-methods",
+                           "factoryMode":  "composition",
+                           "page":  "docs/pages/algorithms/threshold-accepting-dueck-scheuer-1990.md"
+                       },
+                       {
+                           "id":  "two-arch2-wang-jiao-yao-2015",
+                           "class":  "TwoArch2Optimizer",
+                           "doi":  "10.1109/TEVC.2014.2350987",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/two-arch2-wang-jiao-yao-2015.md"
+                       },
+                       {
+                           "id":  "vaea-xiang-zhou-li-chen-2017",
+                           "class":  "VaeaOptimizer",
+                           "doi":  "10.1109/TEVC.2016.2587808",
+                           "category":  "evolutionary-methods",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/vaea-xiang-zhou-li-chen-2017.md"
+                       },
+                       {
+                           "id":  "variable-neighborhood-descent",
+                           "class":  "VariableNeighborhoodDescentOptimizer\u003cTSolution\u003e",
+                           "doi":  "10.1016/S0377-2217(00)00100-4",
+                           "category":  "trajectory-based-methods",
+                           "factoryMode":  "composition",
+                           "page":  "docs/pages/algorithms/variable-neighborhood-descent.md"
+                       },
+                       {
+                           "id":  "variable-neighborhood-search-mladenovic-hansen",
+                           "class":  "VariableNeighborhoodSearchOptimizer\u003cTSolution\u003e",
+                           "doi":  "10.1016/S0305-0548(97)00031-2",
+                           "category":  "trajectory-based-methods",
+                           "factoryMode":  "composition",
+                           "page":  "docs/pages/algorithms/variable-neighborhood-search-mladenovic-hansen.md"
+                       },
+                       {
+                           "id":  "vector-niche-pso-schoeman-engelbrecht-2004",
+                           "class":  "VectorNichePsoOptimizer",
+                           "doi":  "10.1109/ICCIS.2004.1460441",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/vector-niche-pso-schoeman-engelbrecht-2004.md"
+                       },
+                       {
+                           "id":  "whale-optimization-algorithm-mirjalili-lewis-2016",
+                           "class":  "WhaleOptimizationAlgorithmOptimizer",
+                           "doi":  "10.1016/j.advengsoft.2016.01.008",
+                           "category":  "swarm-intelligence",
+                           "factoryMode":  "direct",
+                           "page":  "docs/pages/algorithms/whale-optimization-algorithm-mirjalili-lewis-2016.md"
+                       }
+                   ]
+}

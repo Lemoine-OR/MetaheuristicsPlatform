@@ -40,6 +40,7 @@ use, start from the project portal and the short guides below.
 - @subpage cma_es_components - local-improvement and learning policies for v0.43.0.
 ## Validation and reproducibility
 
+- @subpage reference_grade_v1_api_catalog_freeze - v1.0 public API and scientific catalog compatibility baseline.
 - @subpage complexity_applicability
 - @subpage validation_benchmarks
 - @subpage scientific_references
