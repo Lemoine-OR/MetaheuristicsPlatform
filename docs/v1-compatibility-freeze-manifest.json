@@ -2,9 +2,10 @@
     "schemaVersion":  1,
     "baselineRelease":  "1.0.0",
     "sourceCommit":  "7ac478247fc88052296565f22a2eb2d2809f0b5f",
+    "hashSemantics":  "canonical-utf8-lf-no-bom",
     "algorithmCount":  155,
     "familyCount":  8,
     "publicApiSignatureCount":  16365,
-    "catalogBaselineSha256":  "78b149a9101a0802cd0987558e9f16f0cb0b4dc48bab2d89e30ee32a56cc7173",
-    "publicApiBaselineSha256":  "cf2fbbdc34715a87f21427968a2dc9e8302e021b06026752f58ff36e6a4ee9f7"
+    "catalogBaselineSha256":  "f0c4986d8c88f396289e4ba122dd0bd6177441475aa210601ce59299a2595924",
+    "publicApiBaselineSha256":  "2b735b4ddaef0d1e1c9498809c1cd3ad1a2fa5bd4774489fe3bb46f32bdc6d93"
 }

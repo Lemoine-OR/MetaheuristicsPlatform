@@ -21,12 +21,82 @@ $Root =
     [System.IO.Path]::GetFullPath(
         $Root)
 
-function Sha([string]$Path) {
+# CANONICAL-TEXT-SHA256-CONTRACT
+function Get-CanonicalTextSha256FromText([string]$Text) {
+    $canonical =
+        $Text.Replace(
+            "`r`n",
+            "`n")
+
+    $canonical =
+        $canonical.Replace(
+            "`r",
+            "`n")
+
+    $encoding =
+        New-Object System.Text.UTF8Encoding(
+            $false)
+
+    $bytes =
+        $encoding.GetBytes(
+            $canonical)
+
+    $sha256 =
+        [System.Security.Cryptography.SHA256]::Create()
+
+    try {
+        $hashBytes =
+            $sha256.ComputeHash(
+                $bytes)
+    }
+    finally {
+        $sha256.Dispose()
+    }
+
     return (
-        Get-FileHash `
-            -LiteralPath $Path `
-            -Algorithm SHA256
-    ).Hash.ToLowerInvariant()
+        [System.BitConverter]::ToString(
+            $hashBytes
+        ).Replace(
+            "-",
+            ""
+        ).ToLowerInvariant())
+}
+
+function Get-CanonicalTextSha256([string]$Path) {
+    $text =
+        [System.IO.File]::ReadAllText(
+            $Path,
+            [System.Text.Encoding]::UTF8)
+
+    return Get-CanonicalTextSha256FromText `
+        -Text $text
+}
+
+$canonicalLfProbe =
+    "alpha`nbeta`n"
+
+$canonicalCrlfProbe =
+    "alpha`r`nbeta`r`n"
+
+$canonicalCrProbe =
+    "alpha`rbeta`r"
+
+$canonicalLfHash =
+    Get-CanonicalTextSha256FromText `
+        -Text $canonicalLfProbe
+
+$canonicalCrlfHash =
+    Get-CanonicalTextSha256FromText `
+        -Text $canonicalCrlfProbe
+
+$canonicalCrHash =
+    Get-CanonicalTextSha256FromText `
+        -Text $canonicalCrProbe
+
+if ($canonicalLfHash -ne $canonicalCrlfHash -or
+    $canonicalLfHash -ne $canonicalCrHash) {
+
+    throw "Canonical text SHA-256 contract failed across LF/CRLF/CR."
 }
 
 function Read-Json([string]$Path) {
@@ -87,15 +157,24 @@ if ([string]$manifest.sourceCommit -ne
 
     throw "Unexpected v1 freeze source commit."
 }
+$hashSemanticsProperty =
+    $manifest.PSObject.Properties["hashSemantics"]
+
+if ($null -eq $hashSemanticsProperty -or
+    [string]$hashSemanticsProperty.Value -ne
+    "canonical-utf8-lf-no-bom") {
+
+    throw "Unexpected v1 freeze hash semantics."
+}
 
 if ([string]$manifest.catalogBaselineSha256 -ne
-    (Sha $catalogBaselinePath)) {
+    (Get-CanonicalTextSha256 -Path $catalogBaselinePath)) {
 
     throw "Scientific catalog baseline SHA-256 mismatch."
 }
 
 if ([string]$manifest.publicApiBaselineSha256 -ne
-    (Sha $apiBaselinePath)) {
+    (Get-CanonicalTextSha256 -Path $apiBaselinePath)) {
 
     throw "Public API baseline SHA-256 mismatch."
 }
