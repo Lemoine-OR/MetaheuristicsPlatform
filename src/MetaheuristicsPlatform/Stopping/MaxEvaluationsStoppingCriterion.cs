@@ -20,7 +20,10 @@ public sealed class MaxEvaluationsStoppingCriterion : IStoppingCriterion
     public string Name => "MaxEvaluations";
 
     public StoppingDecision Evaluate(in OptimizationState state, OptimizationSense sense) =>
-        state.Evaluations >= MaxEvaluations
+        EvaluateEvaluations(state.Evaluations);
+
+    internal StoppingDecision EvaluateEvaluations(long evaluations) =>
+        evaluations >= MaxEvaluations
             ? StoppingDecision.Stop(Name, $"Maximum number of evaluations ({MaxEvaluations}) reached.")
             : StoppingDecision.Continue(Name);
 }

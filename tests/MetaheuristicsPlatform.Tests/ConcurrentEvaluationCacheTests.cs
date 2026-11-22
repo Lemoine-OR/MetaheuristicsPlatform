@@ -78,4 +78,26 @@ public sealed class ConcurrentEvaluationCacheTests
             10,
             retry.Value);
     }
+
+    [Fact]
+    public void CanceledFactory_AllowsRetryForSameKey()
+    {
+        var cache = new ConcurrentEvaluationCache<int, int>();
+        var cancellationToken = new CancellationToken(canceled: true);
+
+        Assert.Throws<OperationCanceledException>(
+            () => cache.GetOrAdd(
+                1,
+                _ =>
+                {
+                    cancellationToken.ThrowIfCancellationRequested();
+                    return 0;
+                }));
+        Assert.Equal(0, cache.Count);
+
+        EvaluationCacheLookup<int> retry = cache.GetOrAdd(1, static _ => 10);
+
+        Assert.False(retry.IsHit);
+        Assert.Equal(10, retry.Value);
+    }
 }

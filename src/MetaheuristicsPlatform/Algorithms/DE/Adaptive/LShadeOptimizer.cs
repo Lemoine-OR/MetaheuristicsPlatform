@@ -146,8 +146,8 @@ public sealed class LShadeOptimizer :
             new int[
                 initialPopulationSize];
 
-        var survivorFlags =
-            new bool[
+        var survivorIndices =
+            new int[
                 initialPopulationSize];
 
         var feedback =
@@ -162,10 +162,9 @@ public sealed class LShadeOptimizer :
             GC.AllocateUninitializedArray<bool>(
                 initialPopulationSize);
 
-        var rankingComparer =
-            new DeFitnessIndexComparer(
-                population,
-                problem.Sense);
+        OptimizationSense rankingSense = problem.Sense;
+        var rankingComparer = new DeFitnessIndexComparer(population, rankingSense);
+        double[] rankingKeys = new double[initialPopulationSize];
 
         var schedule =
             new LShadePopulationSchedule();
@@ -248,6 +247,7 @@ public sealed class LShadeOptimizer :
         }
 
         int generation = 0;
+        bool rankingIsCurrent = false;
 
         while (true)
         {
@@ -255,15 +255,12 @@ public sealed class LShadeOptimizer :
 
             generation++;
 
-            PrepareRanking(
-                ranking,
-                activePopulationSize);
+            if (!rankingIsCurrent)
+            {
+                RankPopulation(population, ranking, rankingKeys, activePopulationSize, rankingSense, rankingComparer);
+            }
 
-            Array.Sort(
-                ranking,
-                0,
-                activePopulationSize,
-                rankingComparer);
+            rankingIsCurrent = false;
 
             var adaptationContext =
                 new DeGenerationAdaptationContext(
@@ -361,10 +358,13 @@ public sealed class LShadeOptimizer :
                         population,
                         parameterBuffers,
                         ranking,
-                        survivorFlags,
+                        survivorIndices,
+                        rankingKeys,
+                        rankingSense,
                         rankingComparer,
                         activePopulationSize,
                         targetPopulationSize);
+                rankingIsCurrent = true;
             }
 
             archiveLimit =
@@ -952,11 +952,54 @@ public sealed class LShadeOptimizer :
             cancellationToken);
     }
 
+    private static void RankPopulation(
+        DePopulationBuffers population,
+        int[] ranking,
+        double[] keys,
+        int count,
+        OptimizationSense sense,
+        DeFitnessIndexComparer rankingComparer)
+    {
+        PrepareRanking(ranking, count);
+        if (sense is not (OptimizationSense.Minimize or OptimizationSense.Maximize))
+        {
+            Array.Sort(ranking, 0, count, rankingComparer);
+            return;
+        }
+
+        ReadOnlySpan<double> fitness = population.FitnessReadOnly;
+        bool maximize = sense == OptimizationSense.Maximize;
+        for (int i = 0; i < count; i++)
+        {
+            double value = fitness[i];
+            keys[i] = double.IsNaN(value) ? double.PositiveInfinity : maximize ? -value : value;
+        }
+
+        Array.Sort(keys, ranking, 0, count);
+
+        // The primitive sort gives the fitness order. Resolve equal keys with
+        // the canonical comparer, including the NaN and infinity group.
+        for (int start = 0; start < count;)
+        {
+            int end = start + 1;
+            while (end < count && keys[end] == keys[start])
+                end++;
+
+            if (end - start > 1)
+                Array.Sort(ranking, start, end - start, rankingComparer);
+
+            start = end;
+        }
+    }
+
+
     private static int ReducePopulation(
         DePopulationBuffers population,
         DeParameterBuffers parameterBuffers,
         int[] ranking,
-        bool[] survivorFlags,
+        int[] survivorIndices,
+        double[] rankingKeys,
+        OptimizationSense rankingSense,
         DeFitnessIndexComparer rankingComparer,
         int activePopulationSize,
         int targetPopulationSize)
@@ -967,40 +1010,21 @@ public sealed class LShadeOptimizer :
             return activePopulationSize;
         }
 
-        PrepareRanking(
-            ranking,
-            activePopulationSize);
+        RankPopulation(population, ranking, rankingKeys, activePopulationSize, rankingSense, rankingComparer);
 
-        Array.Sort(
-            ranking,
-            0,
-            activePopulationSize,
-            rankingComparer);
-
-        Array.Clear(
-            survivorFlags,
-            0,
-            activePopulationSize);
-
-        for (int rank = 0;
-             rank < targetPopulationSize;
-             rank++)
-        {
-            survivorFlags[
-                ranking[rank]] =
-                true;
-        }
+        // Survivors retain their original relative order during compaction.
+        // A missing index is marked until the new position is known.
+        Array.Fill(survivorIndices, -1, 0, activePopulationSize);
+        for (int rank = 0; rank < targetPopulationSize; rank++)
+            survivorIndices[ranking[rank]] = 0;
 
         int write = 0;
-
-        for (int read = 0;
-             read < activePopulationSize;
-             read++)
+        for (int read = 0; read < activePopulationSize; read++)
         {
-            if (!survivorFlags[read])
-            {
+            if (survivorIndices[read] < 0)
                 continue;
-            }
+
+            survivorIndices[read] = write;
 
             if (write != read)
             {
@@ -1036,6 +1060,9 @@ public sealed class LShadeOptimizer :
             throw new InvalidOperationException(
                 "L-SHADE population compaction did not produce the requested size.");
         }
+
+        for (int rank = 0; rank < targetPopulationSize; rank++)
+            ranking[rank] = survivorIndices[ranking[rank]];
 
         return targetPopulationSize;
     }

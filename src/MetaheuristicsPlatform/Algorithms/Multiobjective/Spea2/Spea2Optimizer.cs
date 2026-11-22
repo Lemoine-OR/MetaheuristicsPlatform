@@ -151,6 +151,18 @@ public sealed class Spea2Optimizer :
                         senses) < 0)
                     strength[i]++;
 
+        // Array-backed senses have no user-defined indexer. Keep the original
+        // distance path for custom collections.
+        double[][]? normalized = null;
+        if (n > 1 && senses is OptimizationSense[])
+        {
+            normalized = new double[n][];
+            for (int i = 0; i < n; i++)
+                normalized[i] = MultiobjectiveAdvancedToolkit.NormalizeObjectives(
+                    candidates[i], candidates, senses);
+        }
+
+
         int k =
             Math.Max(
                 1,
@@ -176,11 +188,11 @@ public sealed class Spea2Optimizer :
                     continue;
 
                 distances.Add(
-                    MultiobjectiveAdvancedToolkit.ObjectiveDistance(
-                        candidates[i],
-                        candidates[j],
-                        candidates,
-                        senses));
+                    normalized is null
+                        ? MultiobjectiveAdvancedToolkit.ObjectiveDistance(
+                            candidates[i], candidates[j], candidates, senses)
+                        : MultiobjectiveAdvancedToolkit.DecisionDistance(
+                            normalized[i], normalized[j]));
             }
 
             distances.Sort();

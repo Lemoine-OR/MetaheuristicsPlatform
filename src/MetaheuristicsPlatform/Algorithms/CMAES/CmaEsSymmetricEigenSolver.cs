@@ -27,8 +27,13 @@ internal static class CmaEsSymmetricEigenSolver
                 "CMA-ES eigensolver buffer dimensions are inconsistent.");
         }
 
-        double[] a =
-            matrix.ToArray();
+        const int maximumStackDimension = 32;
+        bool useStack = dimension <= maximumStackDimension;
+        Span<double> a = useStack
+            ? stackalloc double[matrix.Length]
+            : matrix.ToArray();
+        if (useStack)
+            matrix.CopyTo(a);
 
         eigenvectors.Clear();
 
@@ -50,9 +55,14 @@ internal static class CmaEsSymmetricEigenSolver
 
             for (int p = 0; p < dimension - 1; p++)
             {
+                int pOffset = p * dimension;
+                int pp = pOffset + p;
+
                 for (int q = p + 1; q < dimension; q++)
                 {
-                    int pq = (p * dimension) + q;
+                    int qOffset = q * dimension;
+                    int qq = qOffset + q;
+                    int pq = pOffset + q;
                     double apq = a[pq];
 
                     offDiagonalMax =
@@ -60,11 +70,8 @@ internal static class CmaEsSymmetricEigenSolver
                             offDiagonalMax,
                             Math.Abs(apq));
 
-                    double app =
-                        a[(p * dimension) + p];
-
-                    double aqq =
-                        a[(q * dimension) + q];
+                    double app = a[pp];
+                    double aqq = a[qq];
 
                     double scale =
                         Math.Sqrt(
@@ -104,27 +111,25 @@ internal static class CmaEsSymmetricEigenSolver
                     double newAqq =
                         aqq + (t * apq);
 
-                    a[(p * dimension) + p] =
-                        newApp;
-
-                    a[(q * dimension) + q] =
-                        newAqq;
+                    a[pp] = newApp;
+                    a[qq] = newAqq;
 
                     a[pq] = 0.0;
-                    a[(q * dimension) + p] = 0.0;
+                    a[qOffset + p] = 0.0;
 
-                    for (int r = 0; r < dimension; r++)
+                    for (int r = 0, rowOffset = 0;
+                         r < dimension;
+                         r++, rowOffset += dimension)
                     {
                         if (r == p || r == q)
                         {
                             continue;
                         }
 
-                        double arp =
-                            a[(r * dimension) + p];
-
-                        double arq =
-                            a[(r * dimension) + q];
+                        int rp = rowOffset + p;
+                        int rq = rowOffset + q;
+                        double arp = a[rp];
+                        double arq = a[rq];
 
                         double rotatedP =
                             (c * arp) - (s * arq);
@@ -132,36 +137,23 @@ internal static class CmaEsSymmetricEigenSolver
                         double rotatedQ =
                             (s * arp) + (c * arq);
 
-                        a[(r * dimension) + p] =
-                            rotatedP;
-
-                        a[(p * dimension) + r] =
-                            rotatedP;
-
-                        a[(r * dimension) + q] =
-                            rotatedQ;
-
-                        a[(q * dimension) + r] =
-                            rotatedQ;
+                        a[rp] = rotatedP;
+                        a[pOffset + r] = rotatedP;
+                        a[rq] = rotatedQ;
+                        a[qOffset + r] = rotatedQ;
                     }
 
-                    for (int r = 0; r < dimension; r++)
+                    for (int r = 0, rowOffset = 0;
+                         r < dimension;
+                         r++, rowOffset += dimension)
                     {
-                        double vrp =
-                            eigenvectors[
-                                (r * dimension) + p];
+                        int rp = rowOffset + p;
+                        int rq = rowOffset + q;
+                        double vrp = eigenvectors[rp];
+                        double vrq = eigenvectors[rq];
 
-                        double vrq =
-                            eigenvectors[
-                                (r * dimension) + q];
-
-                        eigenvectors[
-                            (r * dimension) + p] =
-                            (c * vrp) - (s * vrq);
-
-                        eigenvectors[
-                            (r * dimension) + q] =
-                            (s * vrp) + (c * vrq);
+                        eigenvectors[rp] = (c * vrp) - (s * vrq);
+                        eigenvectors[rq] = (s * vrp) + (c * vrq);
                     }
                 }
             }

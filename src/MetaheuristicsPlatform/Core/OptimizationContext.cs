@@ -21,7 +21,10 @@ public sealed class OptimizationContext<TSolution>
     private readonly OptimizationOptions _options;
     private readonly IOptimizationCallback<TSolution>? _callback;
     private readonly CancellationToken _cancellationToken;
-    private readonly Stopwatch _stopwatch = new();
+    // The context starts and stops once. Keep the timestamps in the context
+    // and use Stopwatch's own conversion without allocating a second object.
+    private long _clockTicks; // Start timestamp while running, elapsed counter ticks after completion.
+    private bool _clockRunning;
 
     private long _iteration;
     private long _evaluations;
@@ -72,7 +75,7 @@ public sealed class OptimizationContext<TSolution>
     public OptimizationState State => new(
         _iteration,
         _evaluations,
-        _stopwatch.Elapsed,
+        Elapsed,
         _hasBestSolution,
         _bestFitness,
         _lastImprovementIteration,
@@ -91,7 +94,8 @@ public sealed class OptimizationContext<TSolution>
 
         _started = true;
         _algorithmState = algorithmState;
-        _stopwatch.Start();
+        _clockTicks = Stopwatch.GetTimestamp();
+        _clockRunning = true;
 
         Emit(
             OptimizationCallbackEvents.Started,
@@ -124,7 +128,7 @@ public sealed class OptimizationContext<TSolution>
             _hasBestSolution = true;
             _lastImprovementIteration = _iteration;
             _lastImprovementEvaluation = _evaluations;
-            _lastImprovementElapsed = _stopwatch.Elapsed;
+            _lastImprovementElapsed = Elapsed;
             _improvementCount++;
 
             Emit(
@@ -211,7 +215,7 @@ public sealed class OptimizationContext<TSolution>
             _lastImprovementEvaluation =
                 _evaluations;
             _lastImprovementElapsed =
-                _stopwatch.Elapsed;
+                Elapsed;
             _improvementCount++;
 
             Emit(
@@ -254,7 +258,7 @@ public sealed class OptimizationContext<TSolution>
             _lastImprovementEvaluation =
                 _evaluations;
             _lastImprovementElapsed =
-                _stopwatch.Elapsed;
+                Elapsed;
             _improvementCount++;
 
             Emit(
@@ -315,7 +319,7 @@ public sealed class OptimizationContext<TSolution>
         _hasBestSolution = true;
         _lastImprovementIteration = _iteration;
         _lastImprovementEvaluation = evaluationIndex;
-        _lastImprovementElapsed = _stopwatch.Elapsed;
+        _lastImprovementElapsed = Elapsed;
         _improvementCount++;
 
         Emit(
@@ -332,7 +336,7 @@ public sealed class OptimizationContext<TSolution>
         _iteration++;
         _algorithmState = algorithmState;
 
-        if ((_iteration % _options.IterationCallbackFrequency) == 0)
+        if (_callback is not null && (_iteration % _options.IterationCallbackFrequency) == 0)
         {
             Emit(
                 OptimizationCallbackEvents.IterationCompleted,
@@ -356,6 +360,15 @@ public sealed class OptimizationContext<TSolution>
             return StoppingDecision.Stop("Cancellation", "Cancellation was requested.");
         }
 
+        if (_stoppingCriterion is MaxEvaluationsStoppingCriterion evaluationLimit)
+        {
+            // Capture the count before invoking the user-supplied Sense getter,
+            // as the full state snapshot does for all other criteria.
+            long evaluations = _evaluations;
+            _ = _problem.Sense;
+            return evaluationLimit.EvaluateEvaluations(evaluations);
+        }
+
         OptimizationState state = State;
         return _stoppingCriterion.Evaluate(in state, _problem.Sense);
     }
@@ -376,7 +389,8 @@ public sealed class OptimizationContext<TSolution>
         }
 
         _completed = true;
-        _stopwatch.Stop();
+        _clockTicks = Stopwatch.GetTimestamp() - _clockTicks;
+        _clockRunning = false;
 
         Emit(
             OptimizationCallbackEvents.Completed,
@@ -396,7 +410,7 @@ public sealed class OptimizationContext<TSolution>
                 _iteration,
                 _evaluations,
                 _improvementCount,
-                _stopwatch.Elapsed,
+                Elapsed,
                 _lastImprovementIteration,
                 _lastImprovementEvaluation,
                 _lastImprovementElapsed)
@@ -425,6 +439,9 @@ public sealed class OptimizationContext<TSolution>
 
         _callback.OnEvent(in optimizationEvent);
     }
+
+    private TimeSpan Elapsed =>
+        _clockRunning ? Stopwatch.GetElapsedTime(_clockTicks) : Stopwatch.GetElapsedTime(0, _clockTicks);
 
     private void EnsureRunning()
     {

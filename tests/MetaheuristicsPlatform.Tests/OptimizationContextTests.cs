@@ -26,7 +26,9 @@ public sealed class OptimizationContextTests
             new ImmutableSolutionCloner<double>(),
             new MaxIterationsStoppingCriterion(2));
 
+        Assert.Equal(TimeSpan.Zero, context.State.Elapsed);
         context.Start();
+        TimeSpan runningElapsed = context.State.Elapsed;
         context.Evaluate(5.0);
         context.CompleteIteration();
         context.Evaluate(3.0);
@@ -40,11 +42,53 @@ public sealed class OptimizationContextTests
         Assert.Equal(2, result.Statistics.Iterations);
         Assert.Equal(2, result.Statistics.Evaluations);
         Assert.Equal(2, result.Statistics.Improvements);
+        Assert.True(result.Statistics.Elapsed >= runningElapsed);
+        Assert.Equal(result.Statistics.Elapsed, context.State.Elapsed);
+    }
+
+    [Fact]
+    public void EvaluationLimit_UsesCountBeforeReadingProblemSense()
+    {
+        var descriptor = new MetaheuristicDescriptor
+        {
+            Id = "evaluation-limit-test",
+            Name = "Evaluation limit test",
+            SolutionModel = MetaheuristicSolutionModel.SingleSolution,
+            Families = MetaheuristicFamily.Other,
+            Mechanisms = MetaheuristicMechanism.None,
+            SearchSpaces = SearchSpaceKind.Continuous
+        };
+
+        OptimizationContext<double>? context = null;
+        var problem = new ScalarProblem
+        {
+            OnSenseRead = () => context?.RegisterExternalProbeEvaluation(1.0)
+        };
+        context = new OptimizationContext<double>(
+            descriptor,
+            problem,
+            new ImmutableSolutionCloner<double>(),
+            new MaxEvaluationsStoppingCriterion(1));
+        context.Start();
+
+        Assert.False(context.EvaluateStopping().ShouldStop);
+        Assert.Equal(1, context.State.Evaluations);
+        Assert.True(context.EvaluateStopping().ShouldStop);
+        Assert.Equal(2, context.State.Evaluations);
     }
 
     private sealed class ScalarProblem : IOptimizationProblem<double>
     {
-        public OptimizationSense Sense => OptimizationSense.Minimize;
+        public Action? OnSenseRead { get; init; }
+
+        public OptimizationSense Sense
+        {
+            get
+            {
+                OnSenseRead?.Invoke();
+                return OptimizationSense.Minimize;
+            }
+        }
 
         public double Evaluate(double solution) => solution;
     }
