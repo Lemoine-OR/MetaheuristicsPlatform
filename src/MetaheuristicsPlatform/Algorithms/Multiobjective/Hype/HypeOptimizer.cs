@@ -255,6 +255,8 @@ public sealed class HypeOptimizer :
         double[] sample =
             new double[objectives];
 
+        int[] dominators = new int[points.Length];
+
         for (int draw = 0; draw < samples; draw++)
         {
             for (int objective = 0;
@@ -267,7 +269,7 @@ public sealed class HypeOptimizer :
                         lower[objective]) *
                     random.NextDouble();
 
-            List<int> dominators = new();
+            int dominatorCount = 0;
 
             for (int i = 0; i < points.Length; i++)
             {
@@ -284,18 +286,18 @@ public sealed class HypeOptimizer :
                     }
 
                 if (dominates)
-                    dominators.Add(i);
+                    dominators[dominatorCount++] = i;
             }
 
-            if (dominators.Count == 0)
+            if (dominatorCount == 0)
                 continue;
 
             double credit =
                 1.0 /
-                dominators.Count;
+                dominatorCount;
 
-            foreach (int index in dominators)
-                contribution[index] += credit;
+            for (int i = 0; i < dominatorCount; i++)
+                contribution[dominators[i]] += credit;
         }
 
         for (int i = 0; i < candidates.Count; i++)

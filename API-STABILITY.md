@@ -1,5 +1,10 @@
 # API stability
 
+## v1.0.2 - validated performance improvements
+
+This patch retains the v1 public signatures, scientific identifiers and algorithm families. The performance changes preserve the selection order, deterministic random streams and support for custom problems and generators. The changelog records the measured scope and validation coverage.
+
+
 ## v1.0.1 - documentation and discoverability hardening
 
 - No public API signature changes.

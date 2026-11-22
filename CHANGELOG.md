@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.2] - 2026-11-22
+
+- Reduce repeated calculations in HypE, SPEA2, IBEA, SHADE and L-SHADE while preserving selection rules and deterministic results.
+- Reduce managed allocations in the optimization context, sequential PSO and the CMA-ES eigensolver. The solver uses up to 8 KiB of stack workspace for dimensions up to 32.
+- Add benchmark coverage for 23 catalog methods. The final local validation replayed 324 scenarios against the preceding validated build with identical observable outputs, and ran 887 Release tests.
+- Preserve the v1 public API and scientific catalog. Performance gains depend on the benchmark workload. The Active CMA-ES timing experiments were withdrawn after inconclusive full-matrix measurements.
+
+
 ## [1.0.1] - 2026-08-30
 
 - Replace the hand-maintained GitHub README catalog with a deterministic generator driven by the canonical algorithm catalog.

@@ -38,6 +38,16 @@ public static class PsoRangeExecutor
             return;
         }
 
+        ForParticlesParallel(particleCount, options, action, cancellationToken);
+    }
+
+    // Create the range closure only after the caller has selected parallel execution.
+    private static void ForParticlesParallel(
+        int particleCount,
+        PsoExecutionOptions options,
+        PsoParticleRangeAction action,
+        CancellationToken cancellationToken)
+    {
         int maxWorkers =
             options.MaxDegreeOfParallelism > 0
                 ? Math.Min(

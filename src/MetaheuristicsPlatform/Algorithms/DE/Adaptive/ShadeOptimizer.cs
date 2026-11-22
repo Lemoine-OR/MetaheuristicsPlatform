@@ -1,3 +1,4 @@
+using System.Numerics;
 using MetaheuristicsPlatform.Algorithms.DE.Execution;
 using MetaheuristicsPlatform.Algorithms.DE.Random;
 using MetaheuristicsPlatform.Algorithms.DE.State;
@@ -127,10 +128,15 @@ public sealed class ShadeOptimizer :
             ranking[i] = i;
         }
 
-        var rankingComparer =
-            new DeFitnessIndexComparer(
-                population,
-                problem.Sense);
+        OptimizationSense rankingSense = problem.Sense;
+        var rankingComparer = new DeFitnessIndexComparer(population, rankingSense);
+        bool canPartition = rankingSense is OptimizationSense.Minimize or OptimizationSense.Maximize;
+        Comparison<int> compareRank = rankingComparer.Compare;
+        int pBestCount =
+            Math.Clamp(
+                (int)Math.Ceiling(parameters.PBestFraction * populationSize),
+                1,
+                populationSize);
 
         var feedback =
             GC.AllocateUninitializedArray<DeSelectionFeedback>(
@@ -207,11 +213,7 @@ public sealed class ShadeOptimizer :
 
             generation++;
 
-            Array.Sort(
-                ranking,
-                0,
-                populationSize,
-                rankingComparer);
+            RankBestCandidates(ranking, pBestCount, compareRank, canPartition);
 
             var adaptationContext =
                 new DeGenerationAdaptationContext(
@@ -230,6 +232,7 @@ public sealed class ShadeOptimizer :
                 parameterBuffers,
                 archive,
                 ranking,
+                pBestCount,
                 continuousProblem.SearchSpace,
                 parameters,
                 randomStreams,
@@ -441,23 +444,70 @@ public sealed class ShadeOptimizer :
         }
     }
 
+    private static void RankBestCandidates(
+        Span<int> ranking,
+        int pBestCount,
+        Comparison<int> compareRank,
+        bool canPartition)
+    {
+        if (!canPartition || ranking.Length < 32 || pBestCount > ranking.Length / 2)
+        {
+            ranking.Sort(compareRank);
+            return;
+        }
+
+        int left = 0;
+        int right = ranking.Length - 1;
+        int lastBest = pBestCount - 1;
+        int remainingPartitions = 2 * (BitOperations.Log2((uint)ranking.Length) + 1);
+
+        // Until the cutoff is isolated, leave each partition wholly on its side
+        // of the final prefix. Only the prefix needs the original sorted order.
+        while (left < right)
+        {
+            if (remainingPartitions-- == 0)
+            {
+                ranking.Sort(compareRank);
+                return;
+            }
+
+            int pivot = ranking[left + (right - left) / 2];
+            int low = left;
+            int high = right;
+            while (true)
+            {
+                while (compareRank(ranking[low], pivot) < 0)
+                    low++;
+                while (compareRank(ranking[high], pivot) > 0)
+                    high--;
+                if (low >= high)
+                    break;
+
+                (ranking[low], ranking[high]) = (ranking[high], ranking[low]);
+                low++;
+                high--;
+            }
+
+            if (lastBest <= high)
+                right = high;
+            else
+                left = high + 1;
+        }
+
+        ranking[..pBestCount].Sort(compareRank);
+    }
+
     private static void BuildTrialPopulation(
         DePopulationBuffers buffers,
         DeParameterBuffers parameterBuffers,
         DeExternalArchive? archive,
         int[] ranking,
+        int pBestCount,
         IBoundedContinuousSearchSpace searchSpace,
         ShadeParameters parameters,
         DeTargetRandomStreams randomStreams,
         CancellationToken cancellationToken)
     {
-        int pBestCount =
-            Math.Clamp(
-                (int)Math.Ceiling(
-                    parameters.PBestFraction *
-                    buffers.PopulationSize),
-                1,
-                buffers.PopulationSize);
 
         DeRangeExecutor.ForTargets(
             buffers.PopulationSize,
